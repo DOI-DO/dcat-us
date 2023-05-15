@@ -1,5 +1,5 @@
 # DCAT-US Schema v3.0
-FAIRness Project Metadata Schema
+The FAIRness Project aims to improve and enhance data users' ability to find and assess federal data, reduce complexity for metadata producers, and standardize metadata requirements for geospatial, statistical, and other open data.
 
 ## How to Contribute
 
