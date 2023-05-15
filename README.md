@@ -10,11 +10,11 @@ Please contribute your requirements for the emerging DCAT-US metadata profile. H
 
 1. Submit your requirements on the project [GitHub here](https://github.com/DOI-DO/dcat-us/issues/new/choose), or
 
-2. Or complete the [Requirements Template document](.github/ISSUE_TEMPLATE/DCAT-US-3-Requirements-Template.docx) and email to: dcat-us@doi.gov 
+2. Or complete the [Requirements Template document](docs/DCAT-US-3-Requirements-Template.docx) and email to: dcat-us@doi.gov 
 
 The requirements collection process is scheduled to be open for 30 days (ending June 29, 2023). The process is summarized here: 
 
-* Submit your requirement(s) via [GitHub](https://github.com/DOI-DO/dcat-us/issues/new/choose) or the [Requirements Template](.github/ISSUE_TEMPLATE/DCAT-US-3-Requirements-Template.docx).
+* Submit your requirement(s) via [GitHub](https://github.com/DOI-DO/dcat-us/issues/new/choose) or the [Requirements Template](docs/DCAT-US-3-Requirements-Template.docx).
 
 * Based on submitted requirements, the schema development team reviews and analyzes the requirements to develop an initial draft DCAT-US application profile schema. 
 
