@@ -14,7 +14,7 @@ Please contribute your requirements for the emerging DCAT-US metadata profile. H
 
 The requirements collection process is scheduled to be open for 30 days (ending June 29, 2023). The process is summarized here: 
 
-* Submit your requirement(s) via [GitHub](https://github.com/DOI-DO/dcat-us/issues/new/choose) or the [Requirements Template](https://github.com/DOI-DO/dcat-us/files/11479875/DCAT-US-3-Requirements-Template.docx).
+* Submit your requirement(s) via [GitHub](https://github.com/DOI-DO/dcat-us/issues/new/choose) or the [Requirements Template document](https://github.com/DOI-DO/dcat-us/files/11479875/DCAT-US-3-Requirements-Template.docx).
 
 * Based on submitted requirements, the schema development team reviews and analyzes the requirements to develop an initial draft DCAT-US application profile schema. 
 
