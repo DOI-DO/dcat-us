@@ -13,13 +13,13 @@ Please contribute your requirements for the emerging DCAT-US metadata profile. H
 
 2. Or complete the [Requirements Template document](https://github.com/DOI-DO/dcat-us/files/11479875/DCAT-US-3-Requirements-Template.docx) and email to: dcat-us@doi.gov 
 
-The requirements collection process is scheduled to be open for 30 days (ending June 29, 2023). The process is summarized here: 
+The requirements collection process is scheduled to be open for 30 days (ending June 30, 2023). The process is summarized here: 
 
 * Submit your requirement(s) via [GitHub](https://github.com/DOI-DO/dcat-us/issues/new/choose) or the [Requirements Template document](https://github.com/DOI-DO/dcat-us/files/11479875/DCAT-US-3-Requirements-Template.docx).
 
 * Based on submitted requirements, the schema development team reviews and analyzes the requirements to develop an initial draft DCAT-US application profile schema. 
 
-* An initial draft schema, specification, and crosswalk for the DCAT-US application profile is targeted for posting to the GitHub project for review on July 15, 2023.    
+* An initial draft schema, specification, and crosswalk for the DCAT-US application profile is targeted for posting to the GitHub project for review on July 24, 2023.    
 
 For more information about the FAIRness project, the schema development process, and the governance of the application profile, please visit the project site on [GitHub here](https://github.com/DOI-DO/dcat-us/). 
 
