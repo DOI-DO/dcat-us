@@ -1,4 +1,5 @@
-# DCAT-US Schema v3.0 (FAIRness Project Metadata Schema)
+# DCAT-US Schema v3.0
+FAIRness Project Metadata Schema
 
 ## How to Contribute
 
