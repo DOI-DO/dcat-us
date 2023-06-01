@@ -54,7 +54,7 @@ The schema governance process consists of three phases:
 
 3. **Post-release governance** — The period following the publication of the final application profile. During this period, experience recommends an open, transparent process to manage the application profile through any subsequent version releases. 
 
-![DCAT_Process](https://user-images.githubusercontent.com/15839361/236303342-d161e810-2533-42ed-a76d-962c402ae397.png)
+![DCAT_Process](https://github.com/DOI-DO/dcat-us/assets/2589997/539ba9d6-2b9a-4cfe-a520-36312115c494)
 
 Please review the FAIRness Project Governance Process documentation for more information about the process. 
 
