@@ -3338,10 +3338,10 @@
             <td><a href="#concept-prefLabel">preferred label</a></td>
             <td><a data-cite="SKOS-REFERENCE#prefLabel"><code>skos:prefLabel</code></a>
             </td>
-            <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a>
+            <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
             </td>
             <td><strong>M</strong></td>
-            <td>1..1</td>
+            <td>1.n</td>
           </tr>
 
         </tbody>
@@ -3362,7 +3362,7 @@
               </tr>
               <tr>
                 <th>Cardinality</th>
-                <td>1</td>
+                <td>0..n</td>
               </tr>
               <tr>
                 <th>URI</th>
@@ -3378,7 +3378,7 @@
               </tr>
               <tr>
                 <th>Definition</th>
-                <td>Preferred label for the controlled vocabulary term</td>
+                <td>Preferred label for the controlled vocabulary term (one per language)</td>
               </tr>
             </tbody>
           </table>
