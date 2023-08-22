@@ -1,1 +1,1 @@
-# fellahst-github.io
+# DCAT-US 3.0 Draft specification
