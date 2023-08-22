@@ -1,0 +1,6 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+
+<tierstatistik.identitas.ch/data/fig-equids-size>
+  a dcat:Distribution ;
+  dcat:accessURL <https://tierstatistik.identitas.ch/data/fig-equids-size.csv> ;
+  dcat:downloadURL <https://tierstatistik.identitas.ch/data/fig-equids-size.csv> .

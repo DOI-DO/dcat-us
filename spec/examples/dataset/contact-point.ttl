@@ -1,0 +1,14 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+
+<https://uscensus.gov/123>
+  a dcat:Dataset ;
+  dcat:contactPoint [
+    a vcard:Organization ;
+    vcard:fn "Abteilung Lärm BAFU" ;
+    vcard:hasEmail <mailto:noise@bafu.admin.ch>
+  ], [
+    a vcard:Individual ;
+    vcard:fn "Sekretariat BAFU" ;
+    vcard:hasEmail <mailto:sekretariat@bafu.admin.ch>
+  ] .

@@ -1,0 +1,37 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+
+
+<https://doi.org/10.7265/N5K072F8>
+  a dcat:Dataset ;
+  dct:title "Sea Ice Index"@en,   
+            "Índice de hielo marino"@es. 
+  # creator of the resource          
+  dct:creator <https://orcid.org/0000-0002-0693-466X>;
+  dct:contributor <https://orcid.org/0000-0002-8881-2550>
+  dct:publisher <https://www.uscensus.gov>;
+  dct:rightsHolder <https://www.uscensus.gov>;
+  prov:qualifiedAttribution [
+    a prov:Attribution ;
+    prov:agent <https://orcid.org/0000-0002-8881-2550> ;
+    dcat:hadRole <http://resources.data.gov/vocab/isotc211/CI_RoleCode/principalInvestigator>
+  ] ;
+  prov:qualifiedAttribution [
+    a prov:Attribution ;
+    prov:agent <https://www.uscensus.gov> ;
+    dcat:hadRole <http://resources.data.gov/vocab/isotc211/CI_RoleCode/distributor>
+  ] ;
+  prov:qualifiedAttribution [
+    a prov:Attribution ;
+    prov:agent <https://www.doi.gov> ;
+    dcat:hadRole <http://resources.data.gov/vocab/isotc211/CI_RoleCode/funder>
+  ] ;
+.
+
+<https://orcid.org/0000-0002-0693-466X> a foaf:Person.
+
+<https://orcid.org/0000-0002-8881-2550> a foaf:Person.
+   
+<https://www.uscensus.gov>  a org:Organization.

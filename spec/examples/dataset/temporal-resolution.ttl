@@ -1,0 +1,14 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex: <http://www.example.com#> .
+
+
+ex:budget-va-2018 a dcat:Dataset;
+    dct:title "Virginia State budget for 2018";
+	dcat:temporalResolution "P1Y"^^xsd:duration;   # 1 year period
+	dct:temporal [ a dct:PeriodOfTime ;
+	   dcat:startDate "2018-01-01"^^xsd:date ;
+	   dcat:endDate   "2018-12-31"^^xsd:date ;
+	] ;
+	dct:spatial <http://census.gov/vocab/ansi/state/VA> . #TBD

@@ -1,0 +1,7 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://opendata.zurich/opendata/data/1234>
+  a dcat:Dataset ;
+  dct:modified "2021-04-26"^^xsd:date .

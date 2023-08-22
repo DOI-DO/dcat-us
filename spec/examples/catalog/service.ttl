@@ -1,0 +1,34 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+# ---------- class Catalog --------------------------------------------------
+<https://data.census.gov/catalog>
+  a dcat:Catalog ;
+
+ # recommended property
+
+  dcat:service <https://data.census.gov/service/123>, 
+               <https://data.census.gov/service/345> .
+
+
+# ---------- class Dataset --------------------------------------------------
+<https://data.census.gov/data/123>
+  a dcat:Dataset .
+
+<https://data.census.gov/data/345>
+  a dcat:Dataset .
+
+# ---------- class Document --------------------------------------------------
+<https://data.census.gov/index.html>
+  a foaf:Document .
+
+# ---------- class DataService -----------------------------------------------
+<https://data.census.gov/service/123>
+  a dcat:DataService .
+
+<https://data.census.gov/service/345>
+  a dcat:DataService .
+
+# ---------- class Agent -----------------------------------------------------
+<https://census.gov>
+  a foaf:Organizatin .

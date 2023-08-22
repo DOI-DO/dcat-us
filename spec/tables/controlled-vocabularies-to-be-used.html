@@ -1,0 +1,457 @@
+<table class="simple" id="table-controlled-vocabularies-to-be-used">
+<thead>
+<tr>
+<th>
+<p>Property URI</p>
+</th>
+<th>
+<p>Used for Class</p>
+</th>
+<th>
+<p>Vocabulary name</p>
+</th>
+<th>
+<p>Vocabulary URI</p>
+</th>
+<th>
+<p>Usage note</p>
+</th>
+</tr>
+</thead>
+<tbody>
+
+<!-- Role -->
+
+<tr>
+<td>
+<p>+<code>adms:representationTechnique</code></p>
+</td>
+<td>
+<p><a href="#distribution-representation-technique">Distribution</a></p>
+</td>
+<td>
+<p>DATA.GOV Spatial Representation Type [[DATAGOV-SRT]]</p>
+</td>
+<td>
+<p><a href="http://resources.data.gov/vocab/SpatialRepresentationType">http://resources.data.gov/vocab/SpatialRepresentationType</a></p>
+</td>
+<td>
+<p>DCAT-US extension.</p>
+</td>
+</tr>
+
+
+<tr>
+<td>
+<p><code>adms:status</code></p>
+</td>
+<td>
+<p><a href="#distribution-status">Distribution</a></p>
+</td>
+<td>
+<p>ADMS status [[ADMS-SKOS]] vocabulary</p>
+</td>
+<td>
+<p><a href="http://purl.org/adms/status/">http://purl.org/adms/status/</a></p>
+</td>
+<td>
+<p>The list of terms in the ADMS status vocabulary is included in the [[ADMS]] specification</p>
+</td>
+</tr>
+
+<!-- Role -->
+
+<tr>
+<td>
+<p>+<code>dcat:hadRole</code></p>
+</td>
+<td>
+<p><a href="#attribution-had-role">Attribution</a></p>
+</td>
+<td>
+<p>DATA.GOV Responsible Party Roles [[DATAGOV-RPR]]</p>
+</td>
+<td>
+<p><a href="http://resources.data.gov/vocab/ResponsiblePartyRole">http://resources.data.gov/vocab/ResponsiblePartyRole</a></p>
+</td>
+<td>
+<p>DCAT-US extension.</p>
+</td>
+</tr>
+
+<!-- Media type -->
+
+<tr>
+<td>
+<p><code>dcat:mediaType</code></p>
+</td>
+<td>
+<p><a href="#distribution-media-type">Distribution</a></p>
+</td>
+<td>
+<p>IANA Media Types [[IANA-MEDIA-TYPES]]</p>
+</td>
+<td>
+<p><a href="http://www.iana.org/assignments/media-types">http://www.iana.org/assignments/media-types</a></p>
+</td>
+<td>&nbsp;</td>
+</tr>
+
+<!-- Theme -->
+
+<tr>
+<td>
+<p><code>dcat:theme</code></p>
+</td>
+<td>
+<p><a href="#dataset-category">Dataset</a></p>
+</td>
+<td rowspan="2">
+<p>Dataset Theme Vocabulary [[DATAGOV-THEMES]]</p>
+<p>Geoplatform Spatial Data Themes [[GEOPLATFORM-THEMES]]</p>
+</td>
+<td rowspan="2">
+<p><a href="https://resources.data.gov/vocab/data-theme">https://resources.data.gov/vocab/data-theme</a></p>
+<p><a href="http://inspire.ec.europa.eu/theme">http://inspire.ec.europa.eu/theme</a></p>
+</td>
+<td>
+<p>The values to be used for this property are the URIs of the concepts in the vocabulary.</p>
+</td>
+</tr>
+
+<tr>
+<td>
+<p>+<code>dcat:theme</code></p>
+</td>
+<td>
+<p><a href="#catalog-category">Catalog</a></p>
+<p><a href="#data-service-category">Data Service</a></p>
+</td>
+<td>
+<p>The use of this property for Catalogs and Data Services is a DCAT-US extension.</p>
+</td>
+</tr>
+
+<!-- Theme taxonomy -->
+
+<tr>
+<td>
+<p><code>dcat:themeTaxonomy</code></p>
+</td>
+<td>
+<p><a href="#catalog-themes">Catalog</a></p>
+</td>
+<td>
+<p>Dataset Theme Vocabulary [[DATAGOV-THEMES]]</p>
+</td>
+<td>
+<p><a href="https://resources.data.gov/vocab/data-theme">https://resources.data.gov/vocab/data-theme</a></p>
+</td>
+<td>
+<p>The value to be used for this property is the URI of the vocabulary itself, i.e. the concept scheme, not the URIs of the concepts in the vocabulary.</p>
+</td>
+</tr>
+
+<!-- Availability -->
+
+<tr>
+<td>
+<p><code>dcat-us:availability</code></p>
+</td>
+<td>
+<p><a href="#distribution-availability">Distribution</a></p>
+</td>
+<td>
+<p>Distribution availability vocabulary [[DCAT-US]]</p>
+</td>
+<td>
+<p><a href="https://resources.data.gov/vocab/availability/">https://resources.data.gov/vocab/availability/</a></p>
+</td>
+<td>
+<p>The list of terms for the avalability levels of a dataset distribution in the DCAT-US specification.</p>
+</td>
+</tr>
+
+<!-- Access rights -->
+
+<tr>
+<td rowspan="2">
+<p><code>dct:accessRights</code></p>
+</td>
+<td rowspan="2">
+<p><a href="#data-service-access-rights">Data Service</a></p>
+<p><a href="#dataset-access-rights">Dataset</a></p>
+</td>
+<td>
+<p>DATA.GOV Vocabularies Access rights [[DATAGOV-AR]]</p>
+</td>
+<td>
+<p><a href="https://resources.data.gov/vocab/access-right">https://resources.data.gov/vocab/access-right</a></p>
+</td>
+<td>
+<p></p>
+</td>
+</tr>
+
+<tr>
+<td>
+<p>INSPIRE Limitations on Public Access [[?INSPIRE-LPA]]</p>
+</td>
+<td>
+<p><a href="https://resources.data.gov/vocab/LimitationsOnPublicAccess">https://resources.data.gov/vocab/LimitationsOnPublicAccess</a></p>
+</td>
+<td>
+<p>DCAT-US extension.</p>
+</td>
+</tr>
+
+<tr>
+<td rowspan="2">
+<p>+<code>dct:accessRights</code></p>
+</td>
+<td rowspan="2">
+<p><a href="#catalog-access-rights">Catalog</a></p>
+<p><a href="#distribution-access-rights">Distribution</a></p>
+</td>
+<td>
+<p>EU Vocabularies Access rights [[?EUV-AR]]</p>
+</td>
+<td>
+<p><a href="https://resources.data.gov/vocab/access-right">https://resources.data.gov/vocab/access-right</a></p>
+</td>
+<td>
+<p></p>
+</td>
+</tr>
+
+<tr>
+<td>
+<p>DATA.GOV Limitations on Public Access [[DATAGOV-LPA]]</p>
+</td>
+<td>
+<p><a href="https://resources.data.gov/vocab/LimitationsOnPublicAccess">https://resources.data.gov/vocab/LimitationsOnPublicAccess</a></p>
+</td>
+<td>
+<p>DCAT-US extension.</p>
+</td>
+</tr>
+
+<!-- Update frequency -->
+
+<tr>
+<td rowspan="2">
+<p><code>dct:accrualPeriodicity</code></p>
+</td>
+<td rowspan="2">
+<p><a href="#dataset-frequency">Dataset</a></p>
+</td>
+<td>
+<p>DATA.GOV Vocabularies Frequency Named Authority List [[DATAGOV-FREQ]]</p>
+</td>
+<td>
+<p><a href="https://resources.data.gov/vocab/frequency">https://resources.data.gov/vocab/frequency</a></p>
+</td>
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td>
+<p>DATA.GOV Maintenance Frequency [[INSPIRE-MF]]</p>
+</td>
+<td>
+<p><a href="https://resources.data.gov/vocab/MaintenanceFrequency">https://resources.data.gov/vocab/MaintenanceFrequency</a></p>
+</td>
+<td>
+<p>DCAT-US extension.</p>
+</td>
+</tr>
+
+<!-- Conforms to -->
+
+<tr>
+<td rowspan="2">
+<p>+<code>dct:conformsTo</code></p>
+</td>
+<td>
+<p><a href="#data-service-reference-system">Data Service</a></p>
+<p><a href="#dataset-reference-system">Dataset</a></p>
+<p><a href="#distribution-reference-system">Distribution</a></p>
+</td>
+<td>
+<p>OGC EPSG Coordinate Reference Systems Register [[OGC-EPSG]]</p>
+</td>
+<td>
+<p><a href="http://www.opengis.net/def/crs/EPSG/0/">http://www.opengis.net/def/crs/EPSG/0/</a></p>
+</td>
+<td rowspan="2">
+<p>DCAT-US extension.</p>
+</td>
+</tr>
+
+<tr>
+<td>
+<p><a href="#data-service-conforms-to">Data Service</a></p>
+</td>
+<td>
+<p>DATA.GOV Protocol Values [[DATAGOV-PV]]</p>
+</td>
+<td>
+<p><a href="https://resources.data.gov/vocab/ProtocolValue">https://resources.data.gov/vocab/ProtocolValue</a></p>
+</td>
+</tr>
+
+<!-- Format -->
+
+<tr>
+<td>
+<p><code>dct:format</code></p>
+</td>
+<td>
+<p><a href="#distribution-format">Distribution</a></p>
+</td>
+<td>
+<p>DATA.GOV Vocabularies File Type Named Authority List [[DATAGOV-FT]]</p>
+</td>
+<td>
+<p><a href="https://resources.data.gov/vocab/file-type">https://resources.data.gov/vocab/file-type</a></p>
+</td>
+<td>&nbsp;</td>
+</tr>
+
+<!-- Language -->
+
+<tr>
+<td>
+<p><code>dct:language</code></p>
+</td>
+<td>
+<p><a href="#catalog-language">Catalog</a></p>
+<p><a href="#catalog-record-language">Catalog Record</a></p>
+<p><a href="#dataset-language">Dataset</a></p>
+<p><a href="#distribution-language">Distribution</a></p>
+</td>
+<td>
+<p>DATA.GOV Vocabularies Languages Named Authority List [[DATAGOV-LANG]]</p>
+</td>
+<td>
+<p><a href="https://resources.data.gov/vocab/language">https://resources.data.gov/vocab/language</a></p>
+</td>
+<td>&nbsp;</td>
+</tr>
+
+<!-- Publisher -->
+
+<tr>
+<td>
+<p><code>dct:publisher</code></p>
+</td>
+<td>
+<p><a href="#catalog-publisher">Catalog</a></p>
+<p><a href="#dataset-publisher">Dataset</a></p>
+</td>
+<td>
+<p>DATA.GOV Vocabularies Corporate bodies Named Authority List [[DATAGOV-CB]]</p>
+</td>
+<td>
+<p><a href="https://resources.data.gov/vocab/corporate-body">https://resources.data.gov/vocab/corporate-body</a></p>
+</td>
+<td>
+<p>The Corporate bodies must be used for US institutions and a small set of international organisations. In case of other types of organisations, national, regional or local vocabularies should be used.</p>
+</td>
+</tr>
+
+<tr>
+<td>
+<p>+<code>dct:publisher</code></p>
+</td>
+<td>
+<p><a href="#data-service-publisher">Data Service</a></p>
+</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>
+<p>The use of this property for Data Services is a DCAT-US extension.</p>
+</td>
+</tr>
+
+<!-- Spatial -->
+
+<tr>
+<td>
+<p><code>dct:spatial</code></p>
+</td>
+<td>
+<p><a href="#catalog-spatial-coverage">Catalog</a></p>
+<p><a href="#dataset-spatial-coverage">Dataset</a></p>
+</td>
+<td>
+<p>EU Vocabularies Continents Named Authority List [[EUV-CONT]], EU Vocabularies Countries Named Authority List [[EUV-COUNTRIES]], EU Vocabularies Places Named Authority List [[EUV-PLACES]], [[GEONAMES]]</p>
+</td>
+<td>
+<p><a href="https://resources.data.gov/resource/continent">https://resources.data.gov/resource/continent</a></p> 
+<p><a href="https://resources.data.gov/resource/country">https://resources.data.gov/resource/country</a></p> 
+<p><a href="https://resources.data.gov/resource/place">https://resources.data.gov/resource/place</a></p> 
+<p><a href="http://sws.geonames.org/">http://sws.geonames.org/</a></p>
+</td>
+<td>
+<p>The EU Vocabularies Name Authority Lists must be used for continents, countries and places that are in those lists; if a particular location is not in one of the mentioned Named Authority Lists, [[GEONAMES]] URIs must be used.</p>
+</td>
+</tr>
+
+<tr>
+<td>
+<p>+<code>dct:spatial</code></p>
+</td>
+<td>
+<p><a href="#data-service-spatial-coverage">Data Service</a></p>
+</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>
+<p>The use of this property for Data Services is a DCAT-US extension.</p>
+</td>
+</tr>
+
+<!-- Subject -->
+
+<tr>
+<td>
+<p>+<code>dct:subject</code></p>
+</td>
+<td>
+<p><a href="#catalog-topic-category">Catalog</a></p>
+<p><a href="#data-service-topic-category">Data Service</a></p>
+<p><a href="#dataset-topic-category">Dataset</a></p>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td>
+<p>+<code>sdmx-attribute:unitMeasure</code></p>
+</td>
+<td>
+<p><a href="#quality-measurement-unit-of-measure">Quality Measurement</a></p>
+</td>
+<!--
+<td>
+<p>Ontology of units of Measure [[OM]]</p>
+</td>
+<td>
+<p><a href="http://www.wurvoc.org/vocabularies/om-1.8/">http://www.wurvoc.org/vocabularies/om-1.8/</a></p>
+</td>
+-->
+<td>
+<p>QUDT Units Vocabulary [[QUDT-UNITS]]</p>
+</td>
+<td>
+<p><a href="http://www.qudt.org/vocab/unit">http://www.qudt.org/vocab/unit</a></p>
+</td>
+<td>
+<p>DCAT-US extension.</p>
+</td>
+</tr>
+
+</tbody>
+</table>

@@ -1,0 +1,36 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://uscensus.gov/catalog-endpoint.rdf>
+  a dcat:Catalog ;
+
+  dcat:dataset <https://uscensus.gov/data/123>, <https://uscensus.gov/data/345> ;
+
+  dct:title "Open Data Catalog for New York City"@en;
+  dct:description "Open Data Catalog for New York Cityh"@en ;
+
+  dct:issued "2021-01-07T00:00:00"^^xsd:dateTime ;
+  foaf:homepage <https://uscensus.gov/index.html> ;
+  dct:publisher <https://uscensus.gov> ;
+  dct:modified "2021-01-07T00:00:00"^^xsd:dateTime ;
+  dct:language: "en" .
+
+<https://uscensus.gov/data/123>
+  a dcat:Dataset ;
+  dct:title "some title"@en ;
+  dct:description "some dataset"@en .
+
+<https://uscensus.gov/data/345>
+  a dcat:Dataset ;
+  dct:title "some title"@en ;
+  dct:description "some dataset"@en .
+
+<https://uscensus.gov/index.html>
+  a foaf:Document .
+
+<https://uscensus.gov>
+  a foaf:Organization   ;
+  foaf:name "US Census"@en .
+

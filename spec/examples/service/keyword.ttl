@@ -1,0 +1,8 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+<https://opendata/dataservice/1234>
+  a dcat:DataService ;
+  dcat:keyword "cadastre"@en,
+               "land management"@en,
+               "cadastro"@es.

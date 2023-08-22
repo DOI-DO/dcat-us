@@ -1,0 +1,13 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://uscensus.gov/123>
+  a dcat:Dataset ;
+  dct:relation <http://www.bafu.admin.ch/laerm/index>,
+               <http://www.bafu.admin.ch/legal_info>,
+               <http://www.bafu.admin.ch/laerm/about> .
+
+<http://www.bafu.admin.ch/laerm/index> rdfs:label "Webseite des BAFU" .
+<http://www.bafu.admin.ch/laerm/about> rdfs:label "Somthing about noise" .
+<http://www.bafu.admin.ch/legal_info> rdfs:label "legal information" .

@@ -1,0 +1,8 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+
+<https://bafu/service>
+  a dcat:DataService ;
+  dcat:endpointDescription <https://bafu/api/doku> .
+
+<https://bafu/api/doku>
+  a rdfs:Resource .

@@ -1,0 +1,34 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+<https://doi.org/10.7265/N5K072F8>
+  a dcat:Dataset ;
+
+  # mandatory property 
+  dct:description """The <a href="/data/seaice_index/">Sea Ice Index</a> provides 
+  a quick look at Arctic- and Antarctic-wide changes in sea ice. It is a source for 
+  consistent, up-to-date sea ice extent and concentration images, in PNG format, 
+  and data values, in GeoTIFF and ASCII text files, from November 1978 to the present. 
+  Sea Ice Index images also depict trends and anomalies in ice cover calculated 
+  using a 30-year reference period of 1981 through 2010. The images and data are 
+  produced in a consistent way that makes the Index time-series appropriate for 
+  use when looking at long-term trends in sea ice cover. Both monthly and daily 
+  products are available. However, monthly products are better to use for long-term 
+  trend analysis because errors in the daily product tend to be averaged out in 
+  the monthly product and because day-to-day variations are often the result of 
+  short-term weather."""@en,  # english description
+
+  """El <a href="/data/seaice_index/">Índice de Hielo Marino</a> proporciona una 
+  visión rápida de los cambios en el hielo marino en el Ártico y la Antártida. 
+  Es una fuente de imágenes consistentes y actualizadas de la extensión y 
+  concentración del hielo marino, en formato PNG, y valores de datos en archivos 
+  GeoTIFF y texto ASCII, desde noviembre de 1978 hasta la actualidad. Las imágenes 
+  del Índice de Hielo Marino también muestran tendencias y anomalías en la cobertura 
+  de hielo calculadas utilizando un período de referencia de 30 años, de 1981 a 2010. 
+  Las imágenes y los datos se producen de manera consistente, lo que hace que la 
+  serie temporal del Índice sea apropiada para su uso al examinar tendencias a largo 
+  plazo en la cobertura de hielo marino. Se encuentran disponibles productos mensuales 
+  y diarios. Sin embargo, los productos mensuales son mejores para analizar tendencias 
+  a largo plazo, ya que los errores en el producto diario tienden a ser promediados en el 
+  producto mensual y las variaciones de un día a otro suelen ser el resultado 
+  de condiciones climáticas a corto plazo."""@es . #spanish translation

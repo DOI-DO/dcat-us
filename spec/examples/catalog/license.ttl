@@ -1,0 +1,11 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+# ---------- class Catalog --------------------------------------------------
+<https://data.census.gov/catalog>
+  a dcat:Catalog ;
+
+  # recommended property
+  dct:license <https://creativecommons.org/publicdomain/zero/1.0/> .
+
+<https://creativecommons.org/publicdomain/zero/1.0/> a dct:LicenseDocument .

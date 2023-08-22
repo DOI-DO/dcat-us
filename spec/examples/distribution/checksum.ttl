@@ -1,0 +1,13 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+
+<tierstatistik.identitas.ch/data/fig-equids-size>
+  a dcat:Distribution ;
+  dcat:accessURL <https://tierstatistik.identitas.ch/data/fig-equids-size.csv> ;
+  dcat:downloadURL <https://tierstatistik.identitas.ch/data/fig-equids-size.csv> .
+  spdx:checksum :checksum001
+
+:checksum001
+  a spdx:Checksum;
+  spdx:algorithm <https://spdx.org/rdf/terms/#checksumAlgorithm_sha256>
+  spdx:checksumValue: 5bcc814127be171c75595d419f371c74c9cf041419c45d6e8d2c789e5c303b47 .
+

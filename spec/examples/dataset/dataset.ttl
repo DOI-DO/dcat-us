@@ -1,0 +1,55 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# ---------- class Dataset --------------------------------------------------
+<https://uscensus.gov/dataset1>
+  a dcat:Dataset ;
+
+  # mandatory properties
+
+  dcat:contactPoint [
+    a vcard:Organization ;
+    vcard:fn "US Census" ;
+    vcard:hasEmail <mailto:noise@uscensus.gov> .
+  ], [
+    a vcard:Individual ;
+    vcard:fn "John Smith" ;
+    vcard:hasEmail <mailto:johnsmith@uscensus.gov> .
+  ] ;
+  dct:description 
+                 """This dataset contains information regarding the
+                 census in County of Loudoun"""@en ;
+  dct:publisher <https://uscensus.gov/> ;
+  dct:title "Loudoun County"@en, "Condado de Loudoun"@es ;
+
+  # recommended properties
+
+  dcat:distribution <https://uscensus.gov/data/123> ,
+                    <https://uscensus.gov/data/456> ;
+  dcat:keyword "loudoun"@en,
+               "census"@en,
+            
+  dcat:landingPage <https://opendata.uscensus.gov/1234/about> ;
+  dct:issued "2021-04-26"^^xsd:date ;
+  dct:spatial <http://publications.europa.eu/resource/authority/country/CHE> ;
+  dct:temporal: [ a dct:PeriodOfTime ;
+            dcat:endDate "2021-06-22T00:00:00"^^xsd:dateTime ;
+            dcat:startDate "2020-01-01T00:00:00"^^xsd:dateTime ] ;
+  dcat:theme <http://publications.europa.eu/resource/authority/data-theme/GOVE> ;
+             <http://publications.europa.eu/resource/authority/data-theme/SOCI> ;
+  dct:modified "2021-04-26"^^xsd:date .
+
+# ---------- class Publisher ------------------------------------------------
+<https://uscensus.gov>
+  a foaf:Organization ;
+  foaf:name: "US Census"@en .
+
+# ---------- class Distribution ----------------------------------------------
+<https://uscensus.gov/data/123>
+  a dcat:Distribution .
+
+<https://uscensus.gov/data/456>
+  a dcat:Distribution .

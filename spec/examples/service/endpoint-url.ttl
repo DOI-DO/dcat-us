@@ -1,0 +1,5 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+
+<https://bafu/service>
+  a dcat:DataService ;
+  dcat:endpointURL <https://bafu/api> .

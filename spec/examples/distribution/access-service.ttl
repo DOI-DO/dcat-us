@@ -1,0 +1,8 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+
+<https://uscensus.gov/opendata/123>
+  a dcat:Distribution ;
+  dcat:accessService <https://uscensus.gov/data/123> .
+
+<https://uscensus.gov/data/123>
+  a dcat:DataService .

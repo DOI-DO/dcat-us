@@ -1,0 +1,15 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+<http://bfs/echtzeitdaten-Abstimmungsvorlagen>
+    a dcat:Dataset ;
+    dcat:distribution <http://bfs/kantonalen-Abstimmungsvorlagen/11> ,
+                        <http://bfs/echtzeitdaten-Abstimmungsvorlagen/12> .
+
+<http://bfs/kantonalen-Abstimmungsvorlagen/11>
+    a dcat:Distribution ;
+    dct:coverage "2019-09-22" .
+
+<http://bfs/echtzeitdaten-Abstimmungsvorlagen/12>
+    a dcat:Distribution ;
+    dct:coverage "2019-09-01" .

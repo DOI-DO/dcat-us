@@ -1,0 +1,10 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# ---------- class Catalog --------------------------------------------------
+<https://data.census.gov/catalog>
+  a dcat:Catalog ;
+
+  # recommended property
+  dct:issued "2020-05-25"^^xsd:date .

@@ -1,0 +1,6 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+
+<https://eth-bibliothek/1234>
+  a dcat:Distribution ;
+    dcat:downloadURL <https://commons.wikimedia.org/wiki/file> ;
+    dcat:mediaType <https://www.iana.org/assignments/media-types/text/csv> ; .

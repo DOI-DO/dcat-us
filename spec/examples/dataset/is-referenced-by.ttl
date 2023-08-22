@@ -1,0 +1,9 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+<https://uscensus.gov/123>
+  a dcat:Dataset ;
+    dct:isReferencedBy <https://uscensus.gov/456> .
+
+<https://uscensus.gov/456>
+  a dcat:Dataset .

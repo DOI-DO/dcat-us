@@ -1,0 +1,14 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix odrs: <http://schema.theodi.org/odrs#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://tierstatistik/data/fig-equids-size>
+  a dcat:Distribution ;
+  dcat:accessURL <https://tierstatistik/data/fig-equids-size> ;
+  dct:license <http://opendatacommons.org/licenses/odbl/1.0/> ;
+  dct:rights :identitas-rights-statement .
+
+:identitas-rights-statement
+    a odrs:RightsStatement;
+    odrs:attributionText "The Identitas organization" .

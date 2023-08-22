@@ -1,0 +1,29 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix foaf:<	http://xmlns.com/foaf/0.1/>.
+@prefix vann:<http://purl.org/vocab/vann/>.
+@prefix rdfs:<http://www.w3.org/2000/01/rdf-schema#>.
+@prefix ex: <http://www.example.com#>.
+
+
+:Dataset1
+    vann:usageNote [
+        a foaf:Document;
+        rdfs:label "The MAPPE model is a collection of ArcGIS raster calculations, 
+        originally implemented in VBA for ArcGIS 9.x; as this environment 
+        is obsolete, the author recommends to develop the calculations 
+        anew just by picking the syntax from the reports. Anyway, the 
+        value of the work is in the data and concept more than in the 
+        original scripts. In order to facilitate running calculations, 
+        all formulas for the European scale version are in a 'formulas.cfg' 
+        file (search either in the catalogue within the project MAPPE the 
+        'Formula' Dataset, or in the FTP folder under 
+        \MAPPE\MAPPE_Europe\LATEST the file 'formula.cfg').
+        Finally, also an Excel workbook with a list of chemicals and 
+        associated physic-chemical properties that can be used as a 
+        starting point for calculations is provided, (this dataset, 
+        search also in the FTP folder under \MAPPE\MAPPE_Europe\LATEST 
+        the file 'chemicals.xls'). For additional information see 
+        related publications"
+    ]
+.
+

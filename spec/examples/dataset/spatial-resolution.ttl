@@ -1,0 +1,9 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex: <http://www.example.com#> .
+
+ex:LandsatImage-001
+  a dcat:Dataset ;
+  dcterms:title "Landsat Image"@en ;
+  dcat:spatialResolutionInMeters "30.0"^^xsd:decimal ;

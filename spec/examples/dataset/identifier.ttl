@@ -1,0 +1,8 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://doi.org/10.7265/N5K072F8>
+  a dcat:Dataset ;
+  
+  dct:identifier "10.7265/N5K072F8" .

@@ -1,0 +1,18 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+
+
+ex:Dataset1
+  a dcat:Dataset ;
+  prov:qualifiedAttribution [
+    a prov:Attribution ;
+    prov:agent <https://www.uscensus.gov> ;
+    dcat:hadRole <http://resources.data.gov/vocab/isotc211/CI_RoleCode/distributor>
+  ] ;
+  prov:qualifiedAttribution [
+    a prov:Attribution ;
+    prov:agent <https://www.doi.gov> ;
+    dcat:hadRole <http://resources.data.gov/vocab/isotc211/CI_RoleCode/funder>
+  ] ;
+.

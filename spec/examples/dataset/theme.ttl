@@ -1,0 +1,7 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+
+<https://uscensus.gov/opendata/1234>
+  a dcat:Dataset ;
+
+  dcat:theme <http://publications.europa.eu/resource/authority/data-theme/GOVE> ,
+             <http://publications.europa.eu/resource/authority/data-theme/SOCI> .

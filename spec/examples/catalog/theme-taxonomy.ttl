@@ -1,0 +1,7 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+
+<https://data.census.gov/catalog>
+  a dcat:Catalog ;
+
+ #Recommended Property 
+  dcat:themeTaxonomy <http://data.gov/resource/authority/data-theme>  .

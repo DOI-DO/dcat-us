@@ -1,0 +1,21 @@
+:csvCompletenessMetric
+    a dqv:Metric ; 	
+    skos:definition "Ratio between the number of objects represented in the csv and the 
+    number of  objects expected to be represented according to the declared dataset
+    scope."@en ;
+    dqv:expectedDataType xsd:double ;
+    dqv:inDimension :completeness .
+
+:completeness
+    a dqv:Dimension ;
+    skos:prefLabel "Completeness"@en ;
+    skos:definition "Completeness refers to the degree to which all required information
+    is present in a particular dataset."@en ;
+    dqv:inCategory :intrinsicDimensions
+    .
+    
+:intrinsicDimensions a dqv:Category ; 
+   skos:prefLabel "Intrinsic dimensions"@en. 
+
+
+

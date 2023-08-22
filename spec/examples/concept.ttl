@@ -1,0 +1,11 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+
+<https://gcmd.earthdata.nasa.gov/kms/concept/bb27bbb7-7bc4-4e38-833a-30e0a7861ccc>
+    skos:inScheme <https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/sciencekeywords>;
+    skos:prefLabel "SEA ICE CONCENTRATION";
+    skos:definition "The ratio of the area of the water surface covered by ice as a 
+    fraction of the whole area. Sea ice concentration has been monitored by polar 
+    orbiting satellites at all wavelengths."
+ .     

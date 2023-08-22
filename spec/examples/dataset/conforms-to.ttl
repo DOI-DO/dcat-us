@@ -1,0 +1,6 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://uscensus.gov/1234>
+  a dcat:Dataset ;
+  dct:conformsTo <http://resource.geosciml.org/ontology/timescale/gts> ;

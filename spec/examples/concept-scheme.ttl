@@ -1,0 +1,25 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/sciencekeywords> 
+    a skos:ConceptScheme;
+
+    # required property
+    
+    dct:title "Global Change Master Directory (GCMD) Science Keywords";
+    
+    # recommended properties
+    
+    dct:description "The Earth Science Keywords have a six-level keyword structure 
+    with the option for a seventh uncontrolled field. Category and Topic levels 
+    define how the keywords are organized and the associated Earth science discipline 
+    within the hierarchy. The Term and Variables levels define the subject area, 
+    measured variables/parameters, and the hierarchical-type relationship for the 
+    subject area.";
+    
+    # optional properties
+    
+    dct:issued "2023-06-23"^^xsd:date;
+    dct:version "16.4"
+.

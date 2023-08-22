@@ -1,0 +1,7 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix schema: <http://schema.org/> .
+
+<https://ogd/logos/1234>
+  a dcat:Distribution ;
+  schema:image <https://opendata.swiss/images/logo_horizontal.png> ,
+               <https://opendata.swiss/images/logo_default.png> .

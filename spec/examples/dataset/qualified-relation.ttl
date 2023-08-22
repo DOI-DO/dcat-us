@@ -1,0 +1,10 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+<https://uscensus.gov/123>
+  a dcat:Dataset ;
+    dcat:qualifiedRelation [
+    a dcat:Relationship ;
+    dct:relation <http://example.org/Original987> ;
+    dcat:hadRole <http://www.iana.org/assignments/relation/original>
+  ] .

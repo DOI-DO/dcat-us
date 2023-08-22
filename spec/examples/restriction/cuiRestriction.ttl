@@ -1,0 +1,14 @@
+
+
+:distribution1 a dcat:Distribution;
+    dcat-us:cuiRestriction [
+        a dcat-us:CuiRestriction;
+        dcat-us:cuiBannerMarking "CUI//NNPI//NOFORN ";
+        dcat-us:designationIndicator 
+        "Controlled by: OUSD(I&S)
+         Controlled by: CL&S INFOSEC
+         CUI Category(ies): NNPI
+         Distribution/Limited Dissemination Control: NOFORN
+         POC: John Brown, 703-555-0123 ";
+        dcat-us:requiredIndicatorPerAuthority " "
+    ]
