@@ -712,13 +712,15 @@
               <a href="#properties-for-dataset-series">Dataset Series</a>
             </td>
             <td>
-              <p>A collection of datasets that are published separately, but share some characteristics that group them.</p>
+              <p>A collection of datasets that are published separately, but share some characteristics that group them.
+              </p>
             </td>
             <td>
               <p><code>dcat:DatasetSeries</code></p>
             </td>
             <td>
-              <p><a href="https://www.w3.org/TR/vocab-dcat-3/#Class:Dataset_Series">§&nbsp;<bdi class="secno">6.6 </bdi>Class:
+              <p><a href="https://www.w3.org/TR/vocab-dcat-3/#Class:Dataset_Series">§&nbsp;<bdi class="secno">6.6
+                  </bdi>Class:
                   Dataset Series</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-vocab-dcat-3"
                     title="Data Catalog Vocabulary (DCAT) - Version 3">VOCAB-DCAT-3</a></cite>]</p>
             </td>
@@ -3627,7 +3629,8 @@
           </tr>
           <tr>
             <td><a href="#concept-scheme-version">version info</a></td>
-            <td><a data-cite="https://www.w3.org/TR/vocab-dcat-3/#Property:resource_version"><code>dcat:version</code></a>
+            <td><a
+                data-cite="https://www.w3.org/TR/vocab-dcat-3/#Property:resource_version"><code>dcat:version</code></a>
             </td>
             <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a>
             </td>
@@ -3850,7 +3853,8 @@
               </tr>
               <tr>
                 <th>URI</th>
-                <td><a data-cite="https://www.w3.org/TR/vocab-dcat-3/#Property:resource_version"><code>dcat:version</code></a>
+                <td><a
+                    data-cite="https://www.w3.org/TR/vocab-dcat-3/#Property:resource_version"><code>dcat:version</code></a>
                 </td>
               </tr>
               <tr>
@@ -6068,73 +6072,74 @@
             <td><a href="http://www.w3.org/ns/adms#Identifier"><code>adms:Identifier</code></a></td>
             <td>O</td>
             <td>0..n</td>
-            </tr>
-            <tr>
-              <td><a href="#dataset-provenance">provenance</a></td>
-              <td><a data-cite="DCTERMS#http://purl.org/dc/terms/provenance"><code>dct:provenance</code></a>
-              </td>
-              <td><a data-cite="DCTERMS#http://purl.org/dc/terms/ProvenanceStatement"><code>dct:ProvenanceStatement</code></a>
-              </td>
-              <td>O</td>
-              <td>0..n</td>
-            </tr>
-            <tr>
-              <td><a href="#dataset-qualified-attribution">qualified attribution</a></td>
-              <td><a data-cite="PROV#property:qualifiedAttribution"><code>prov:qualifiedAttribution</code></a></td>
-              <td><a data-cite="PROV#Attribution">
-                  <code>prov:Attribution</code></a>
-              </td>
-              <td>O</td>
-              <td>0..n</td>
-            </tr>
-            <tr>
-              <td><a href="#dataset-qualified-relation">qualified relation</a></td>
-              <td><a data-cite="VOCAB-DCAT-3#Property:resource_qualified_relation">
-                  <code>dcat:qualifiedRelation</code></a>
-              </td>
-              <td><a data-cite="VOCAB-DCAT-3#Class:Relationship">
-                  <code>dcat:Relationship</code></a>
-              </td>
-              <td>O</td>
-              <td>0..n</td>
-            </tr>
-            <tr>
-              <td><a href="#dataset-related-resource">related resource</a></td>
-              <td><a data-cite="DCTERMS#http://purl.org/dc/terms/relation"><code>dct:relation</code></a></td>
-              <td><a data-cite="RDF-SCHEMA#ch_resource"><code>rdfs:Resource</code></a></td>
-              <td>O</td>
-              <td>0..n</td>
-            </tr>
-            <tr>
-              <td><a href="#dataset-release-date">release date</a></td>
-              <td><a data-cite="DCTERMS#http://purl.org/dc/terms/issued"><code>dct:issued</code></a>
-              </td>
-              <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
-                (typed as
-                as <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>,
-                <a data-cite="XMLSCHEMA11-2#dateTime"><code>xsd:dateTime</code></a>,
-                <a data-cite="XMLSCHEMA11-2##gYear"><code>xsd:gYear</code></a>
-                or <a data-cite="XMLSCHEMA11-2#gYearMonth"><code>xsd:gYearMonth</code></a>)
-              </td>
-              <td>O</td>
-              <td>0..1</td>
-            </tr>
-            <tr>
-              <td><a href="#dataset-sample">sample</a></td>
-              <td><a data-cite="VOCAB-ADMS#sample"><code>adms:sample</code></a></td>
-              <td><a data-cite="VOCAB-DCAT-3#Class:Distributio"><code>dcat:Distribution</code></a>
-              </td>
-              <td>O</td>
-              <td>0..n</td>
-            </tr>
-            <tr>
-              <td><a href="#dataset-contributor">contributor</a></td>
-              <td><a data-cite="DCTERMS#http://purl.org/dc/terms/contributor"><code>dct:contributor</code></a></td>
-              <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Agent"><code>dct:Agent</code></a>
-              </td>
-              <td>O</td>
-              <td>0..n</td>
-            </tr>
+          </tr>
+          <tr>
+            <td><a href="#dataset-provenance">provenance</a></td>
+            <td><a data-cite="DCTERMS#http://purl.org/dc/terms/provenance"><code>dct:provenance</code></a>
+            </td>
+            <td><a
+                data-cite="DCTERMS#http://purl.org/dc/terms/ProvenanceStatement"><code>dct:ProvenanceStatement</code></a>
+            </td>
+            <td>O</td>
+            <td>0..n</td>
+          </tr>
+          <tr>
+            <td><a href="#dataset-qualified-attribution">qualified attribution</a></td>
+            <td><a data-cite="PROV#property:qualifiedAttribution"><code>prov:qualifiedAttribution</code></a></td>
+            <td><a data-cite="PROV#Attribution">
+                <code>prov:Attribution</code></a>
+            </td>
+            <td>O</td>
+            <td>0..n</td>
+          </tr>
+          <tr>
+            <td><a href="#dataset-qualified-relation">qualified relation</a></td>
+            <td><a data-cite="VOCAB-DCAT-3#Property:resource_qualified_relation">
+                <code>dcat:qualifiedRelation</code></a>
+            </td>
+            <td><a data-cite="VOCAB-DCAT-3#Class:Relationship">
+                <code>dcat:Relationship</code></a>
+            </td>
+            <td>O</td>
+            <td>0..n</td>
+          </tr>
+          <tr>
+            <td><a href="#dataset-related-resource">related resource</a></td>
+            <td><a data-cite="DCTERMS#http://purl.org/dc/terms/relation"><code>dct:relation</code></a></td>
+            <td><a data-cite="RDF-SCHEMA#ch_resource"><code>rdfs:Resource</code></a></td>
+            <td>O</td>
+            <td>0..n</td>
+          </tr>
+          <tr>
+            <td><a href="#dataset-release-date">release date</a></td>
+            <td><a data-cite="DCTERMS#http://purl.org/dc/terms/issued"><code>dct:issued</code></a>
+            </td>
+            <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+              (typed as
+              as <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>,
+              <a data-cite="XMLSCHEMA11-2#dateTime"><code>xsd:dateTime</code></a>,
+              <a data-cite="XMLSCHEMA11-2##gYear"><code>xsd:gYear</code></a>
+              or <a data-cite="XMLSCHEMA11-2#gYearMonth"><code>xsd:gYearMonth</code></a>)
+            </td>
+            <td>O</td>
+            <td>0..1</td>
+          </tr>
+          <tr>
+            <td><a href="#dataset-sample">sample</a></td>
+            <td><a data-cite="VOCAB-ADMS#sample"><code>adms:sample</code></a></td>
+            <td><a data-cite="VOCAB-DCAT-3#Class:Distributio"><code>dcat:Distribution</code></a>
+            </td>
+            <td>O</td>
+            <td>0..n</td>
+          </tr>
+          <tr>
+            <td><a href="#dataset-contributor">contributor</a></td>
+            <td><a data-cite="DCTERMS#http://purl.org/dc/terms/contributor"><code>dct:contributor</code></a></td>
+            <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Agent"><code>dct:Agent</code></a>
+            </td>
+            <td>O</td>
+            <td>0..n</td>
+          </tr>
           <tr>
             <td><a href="#dataset-image">image</a></td>
             <td><a data-cite="SCHEMA-ORG/image" data-no-xref=""><code>schema:image</code></a></td>
@@ -7039,7 +7044,8 @@
               </tr>
               <tr>
                 <th>Range</th>
-                <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LinguisticSystem"><code>dct:LinguisticSystem</code></a>
+                <td><a
+                    data-cite="DCTERMS#http://purl.org/dc/terms/LinguisticSystem"><code>dct:LinguisticSystem</code></a>
                 </td>
               </tr>
               <tr>
@@ -7124,7 +7130,8 @@
               </tr>
               <tr>
                 <th>Range</th>
-                <td><a data-cite="DCTERMS#http://purl.org/dc/terms/ProvenanceStatement"><code>dct:ProvenanceStatement</code></a>
+                <td><a
+                    data-cite="DCTERMS#http://purl.org/dc/terms/ProvenanceStatement"><code>dct:ProvenanceStatement</code></a>
                 </td>
               </tr>
               <tr>
@@ -7644,7 +7651,8 @@
         </tr>
         <tr>
           <th class="prop">Definition:</th>
-          <td>A collection of datasets that are published separately, but share some characteristics that group them.</td>
+          <td>A collection of datasets that are published separately, but share some characteristics that group them.
+          </td>
         </tr>
         <tr>
           <th class="prop">Subclass Of:</th>
@@ -7658,7 +7666,7 @@
             </ul>
           </td>
         </tr>
-    
+
       </table>
       <table class="simple">
         <thead>
@@ -7686,7 +7694,7 @@
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
             <td><strong>M</strong></td>
             <td>1..n</td>
-          </tr> 
+          </tr>
           <!-- Recommended Properties-->
           <tr>
             <td><a href="#dataset-series-contact-point">contact point</a></td>
@@ -7760,7 +7768,8 @@
           <!-- Optional Properties-->
           <tr>
             <td><a href="#dataset-series-frequency">frequency</a></td>
-            <td><a data-cite="DCTERMS#http://purl.org/dc/terms/accrualPeriodicity"><code>dct:accrualPeriodicity</code></a>
+            <td><a
+                data-cite="DCTERMS#http://purl.org/dc/terms/accrualPeriodicity"><code>dct:accrualPeriodicity</code></a>
             </td>
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Frequency"><code>dct:Frequency</code></a>
             </td>
@@ -7783,7 +7792,7 @@
           </tr>
         </tbody>
       </table>
-    
+
       <section id="dataset-series-mandatory-props">
         <h4>Mandatory Properties</h4>
         <section id="dataset-series-title">
@@ -7861,7 +7870,8 @@
                     <li>This property contains a free-text account of the Dataset Series.</li>
                     <li>
                       This property can be repeated for parallel language versions of the
-                      description (see <a class="no-sectionRef" href="#multilingualism"></a>). It is recommended to provide
+                      description (see <a class="no-sectionRef" href="#multilingualism"></a>). It is recommended to
+                      provide
                       an indication
                       about the dimensions the Dataset Series evolves.
                     </li>
@@ -7877,7 +7887,7 @@
       </section>
       <section id="dataset-series-recommended-props">
         <h4>Recommended Properties</h4>
-    
+
         <section id="dataset-series-contact-point">
           <h4>Property: contact point</h4>
           <table class="def">
@@ -7946,7 +7956,8 @@
                 <th>Usage Note</th>
                 <td>
                   <ul>
-                    <li>The first resource in an ordered collection or series of resources, to which the current resource
+                    <li>The first resource in an ordered collection or series of resources, to which the current
+                      resource
                       belongs.</li>
                   </ul>
                 </td>
@@ -7990,9 +8001,11 @@
                     <li>
                       This property refers to a geographic region that is covered by the Dataset Series.
                     </li>
-                    <li>When spatial coverage is a dimension in the dataset series then the spatial coverage of each dataset
+                    <li>When spatial coverage is a dimension in the dataset series then the spatial coverage of each
+                      dataset
                       in the collection
-                      should be part of the spatial coverage. In that case, an open ended value is recommended, e.g. EU or a
+                      should be part of the spatial coverage. In that case, an open ended value is recommended, e.g. EU
+                      or a
                       broad bounding
                       box covering the expected values.</li>
                     <li>CV to be used: The Vocabularies Name Authority Lists MUST be used for continents,
@@ -8137,7 +8150,8 @@
                     <li>This property refers to an entity (organization) responsible for ensuring the coherency of the
                       Dataset Series.
                     </li>
-                    <li>The publisher of the dataset series may not be the publisher of all datasets. E.g. a digital archive
+                    <li>The publisher of the dataset series may not be the publisher of all datasets. E.g. a digital
+                      archive
                       could take over the publishing of older datasets in the series.</li>
                   </ul>
                 </td>
@@ -8182,7 +8196,8 @@
               </tr>
             </tbody>
           </table>
-          <aside class="example" id="ex-dataset-series-seriesMember" title="Usage of dcat:seriesMember for dcat:DatasetSeries">
+          <aside class="example" id="ex-dataset-series-seriesMember"
+            title="Usage of dcat:seriesMember for dcat:DatasetSeries">
             <pre data-include-format="text" data-include="./examples/dataset-series/seriesMember.ttl"></pre>
           </aside>
         </section>
@@ -8217,10 +8232,13 @@
                 <td>
                   <ul>
                     <li>A temporal period that the Dataset Series covers.</li>
-                    <li>When temporal coverage is a dimension in the dataset series then the temporal coverage of each dataset in the collection
-                    should be part of the temporal coverage. In that case, an open ended value is recommended, e.g. after 2012.</li>
-                    <li>The temporal coverage of a dataset series may be encoded as an instance of dcterms:PeriodOfTime, or may be
-                    indicated using an IRI reference (link) to a resource describing a time period</li>
+                    <li>When temporal coverage is a dimension in the dataset series then the temporal coverage of each
+                      dataset in the collection
+                      should be part of the temporal coverage. In that case, an open ended value is recommended, e.g.
+                      after 2012.</li>
+                    <li>The temporal coverage of a dataset series may be encoded as an instance of dcterms:PeriodOfTime,
+                      or may be
+                      indicated using an IRI reference (link) to a resource describing a time period</li>
                   </ul>.
                 </td>
               </tr>
@@ -8232,7 +8250,7 @@
         </section>
       </section>
       <section id="dataset-series-optional-props">
-    
+
         <h4>Optional Properties</h4>
         <section id="dataset-series-frequency">
           <h4>Property: frequency</h4>
@@ -8266,7 +8284,8 @@
                 <td>
                   <ul>
                     <li>This property refers to the frequency at which the Dataset Series is updated.</li>
-                    <li>The frequency of a dataset series is not equal to the frequency of the dataset in the collection.
+                    <li>The frequency of a dataset series is not equal to the frequency of the dataset in the
+                      collection.
                     </li>
                     <li>CV to be used: [[VOCAB-US-FREQUENCY]].</li>
                   </ul>
@@ -8315,7 +8334,8 @@
                   <ul>
                     <li>This property contains the date of formal issuance (e.g.,publication) of the Dataset Series.
                     </li>
-                    <li>The moment when the dataset series was established as a managed resource. This is not equal to the
+                    <li>The moment when the dataset series was established as a managed resource. This is not equal to
+                      the
                       release date of the oldest dataset in the collection of the dataset series.
                     </li>
                   </ul>
@@ -8328,7 +8348,7 @@
           </aside>
         </section>
       </section>
-    
+
       <section id="dataset-series-example">
         <h4>Example</h4>
         <aside class="example" id="ex-dataset-series" title="DatasetSeries">
@@ -11057,7 +11077,8 @@
           </tr>
           <tr>
             <td><a href="#identifier-version">version</a></td>
-            <td><a data-cite="https://www.w3.org/TR/vocab-dcat-3/#Property:resource_version"><code>dcat:version</code></a>
+            <td><a
+                data-cite="https://www.w3.org/TR/vocab-dcat-3/#Property:resource_version"><code>dcat:version</code></a>
             </td>
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
             </td>
@@ -11192,7 +11213,8 @@
               </tr>
               <tr>
                 <th>URI</th>
-                <td><a data-cite="https://www.w3.org/TR/vocab-dcat-3/#Property:resource_version"><code>dcat:version</code></a>
+                <td><a
+                    data-cite="https://www.w3.org/TR/vocab-dcat-3/#Property:resource_version"><code>dcat:version</code></a>
                 </td>
               </tr>
               <tr>
@@ -11965,7 +11987,9 @@
               </tr>
               <tr>
                 <th>URI</th>
-                <td><a href="https://www.w3.org/TR/vocab-dqv/#dqv:expectedDataType"><code>dqv:expectedDataType</code></a></td>
+                <td><a
+                    href="https://www.w3.org/TR/vocab-dqv/#dqv:expectedDataType"><code>dqv:expectedDataType</code></a>
+                </td>
 
               </tr>
               <tr>
@@ -11975,7 +11999,8 @@
               </tr>
               <tr>
                 <th>Definition</th>
-                <td>Represents the expected data type for the metric's observed value (e.g., xsd:boolean, xsd:double etc...)</td>
+                <td>Represents the expected data type for the metric's observed value (e.g., xsd:boolean, xsd:double
+                  etc...)</td>
               </tr>
             </tbody>
           </table>
@@ -12732,7 +12757,7 @@
         <tbody>
           <tr>
             <td><a href="#quality_measurement-is_measurement_of">is measurement of</a></td>
-            <td><a href="http://purl.org/dc/terms/relation"><code>dqv:isMeasurementOf</code></a></td>
+            <td><a href="https://www.w3.org/TR/vocab-dqv/#dqv:isMeasurementOf"><code>dqv:isMeasurementOf</code></a></td>
 
             <td><a href="https://www.w3.org/TR/vocab-dqv/#dqv:Metric"><code>dqv:Metric</code></a>
             </td>
@@ -12748,17 +12773,124 @@
             <td><strong>M</strong></td>
             <td>1</td>
           </tr>
+          <tr>
+            <td><a href="#quality_measurement_unit_measure">value</a></td>
+            <td><a href="https://TBD/#unitMeasure"><code>sdmx-attribute:unitMeasure</code></a>
+            </td>
+            <td><a data-cite="RDF-SCHEMA#ch_resource"><code>rdfs:Resource</code></a></td>
+            </td>
+            <td><strong>O</strong></td>
+            <td>0..1</td>
+          </tr>
         </tbody>
       </table>
       <section id="quality_measurement-mandatory-props">
         <h4>Mandatory Properties</h4>
+        <section id="quality_measurement-is_measurement_of">
+          <h4>Property: is measurement of</h4>
+          <table class="def">
+            <tbody>
+              <tr>
+                <th>Property</th>
+                <td>is measurement of</td>
+              </tr>
+              <tr>
+                <th>Requirement level</th>
+                <td>Mandatory</td>
+              </tr>
+              <tr>
+                <th>Cardinality</th>
+                <td>1</td>
+              </tr>
+              <tr>
+                <th>URI</th>
+                <td><a href="https://www.w3.org/TR/vocab-dqv/#dqv:isMeasurementOf"><code>dqv:isMeasurementOf</code></a>
+                </td>
+                </td>
+              </tr>
+              <tr>
+                <th>Range</th>
+                <td><a href="https://www.w3.org/TR/vocab-dqv/#dqv:Metric"><code>dqv:Metric</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Definition</th>
+                <td>Indicates the metric being observed.</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section id="quality_measurement_value">
+          <h4>Property: value</h4>
+          <table class="def">
+            <tbody>
+              <tr>
+                <th>Property</th>
+                <td>value</td>
+              </tr>
+              <tr>
+                <th>Requirement level</th>
+                <td>Mandatory</td>
+              </tr>
+              <tr>
+                <th>Cardinality</th>
+                <td>1</td>
+              </tr>
+              <tr>
+                <th>URI</th>
+                <td><a href="https://www.w3.org/TR/vocab-dqv/#dqv:value"><code>dqv:value</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Range</th>
+                <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
+                </td>
+              </tr>
+              <tr>
+                <th>Definition</th>
+                <td>Refers to values computed by metric.</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </section>
 
-      </section>
-      <section id="quality_measurement-recommended-props">
-        <h4>Recommended Properties</h4>
-      </section>
       <section id="quality_measurement-optional-props">
         <h4>Optional Properties</h4>
+
+        <section id="quality_measurement_unit_measure">
+          <h4>Property: unit of measure</h4>
+          <table class="def">
+            <tbody>
+              <tr>
+                <th>Property</th>
+                <td>unit of measure</td>
+              </tr>
+              <tr>
+                <th>Requirement level</th>
+                <td>Optional</td>
+              </tr>
+              <tr>
+                <th>Cardinality</th>
+                <td>0..1</td>
+              </tr>
+              <tr>
+                <th>URI</th>
+                <td><a href="https://TBD/#unitMeasure"><code>sdmx-attribute:unitMeasure</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Range</th>
+                <td><a data-cite="RDF-SCHEMA#ch_resource"><code>rdfs:Resource</code></a></td>
+                </td>
+              </tr>
+              <tr>
+                <th>Definition</th>
+                <td>Unit of measure associated with the value</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
       </section>
     </section>
 
@@ -12823,10 +12955,10 @@
         </thead>
         <tbody>
           <tr>
-            <td><a href="#relationship-relation">agent</a></td>
+            <td><a href="#relationship-relation">relation</a></td>
             <td><a href="http://purl.org/dc/terms/relation"><code>dcterms:relation</code></a></td>
 
-            <td><a href="http://xmlns.com/foaf/0.1/#term_Agent"><code></code></a>
+            <td><a data-cite="RDF-SCHEMA#ch_resourcel"><code>dcat:Resource</code></a></td>
             </td>
             <td><strong>M</strong></td>
             <td>1</td>
@@ -12941,10 +13073,12 @@
         </tr>
         <tr>
           <th class="prop">Usage note:</th>
-          <td>Information about rights SHOULD be provided on the level of Distribution. Information about rights MAY be
+          <td>Information about rights SHOULD be provided on the level of Distribution. Information about rights MAY
+            be
             provided for a Dataset in addition to but not instead of the information provided for the Distributions of
             that Dataset.
-            Providing rights information for a Dataset that is different from information provided for a Distribution of
+            Providing rights information for a Dataset that is different from information provided for a Distribution
+            of
             that Dataset
             SHOULD be avoided as this can create legal conflicts.
           </td>
@@ -13018,7 +13152,8 @@
               </tr>
               <tr>
                 <th>Definition</th>
-                <td>This property contains the text of the Rights Statement. This property can be repeated for parallel
+                <td>This property contains the text of the Rights Statement. This property can be repeated for
+                  parallel
                   language versions of the name - see § 4.3. Multilingualism section.</td>
               </tr>
             </tbody>
@@ -13150,7 +13285,8 @@
           </tr>
           <tr>
             <td><a href="#standard-version">version</a></td>
-            <td><a data-cite="https://www.w3.org/TR/vocab-dcat-3/#Property:resource_version"><code>dcat:version</code></a>
+            <td><a
+                data-cite="https://www.w3.org/TR/vocab-dcat-3/#Property:resource_version"><code>dcat:version</code></a>
             <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a></td>
             <td>R</td>
             <td>0..1</td>
@@ -13278,7 +13414,8 @@
               </tr>
               <tr>
                 <th>Definition</th>
-                <td>This property contains the main identifier for the Standard, e.g. the URI or other unique identifier
+                <td>This property contains the main identifier for the Standard, e.g. the URI or other unique
+                  identifier
                   in the
                   context of
                   the Catalog, or of a reference register</td>
@@ -13369,7 +13506,8 @@
               </tr>
               <tr>
                 <th>URI</th>
-                <td><a data-cite="https://www.w3.org/TR/vocab-dcat-3/#Property:resource_version"><code>dcat:version</code></a>
+                <td><a
+                    data-cite="https://www.w3.org/TR/vocab-dcat-3/#Property:resource_version"><code>dcat:version</code></a>
                 </td>
               </tr>
               <tr>
@@ -13671,6 +13809,28 @@
   </section>
 
   <!-- Dereferenceable identifiers -->
+  <section id="json-ld-context">
+
+    <h2>JSON-LD context file</h2>
+
+    One common technical question is the format in which the data is being exchanged.
+    For DCAT-US 3.0 conformance, it is not mandatory that this happens in a RDF serialisation, but the exchanged
+    format
+    SHOULD be unambiguously be transformable into RDF.
+    For the format JSON, a popular format to exchange data between systems, DCAT-US profile provides a <a
+      href="./context/dcat-us.jsonld">JSON-LD context file</a>.
+    JSON-LD is a W3C Recommendation [[[json-ld11]]] that provided a standard approach to interpret JSON structures as
+    RDF.
+    The provided JSON-LD context file can be used by implementers to base their data exchange upon, and so create a
+    DCAT-US conformant data exchange.
+    This JSON-LD context is not normative, i.e. other JSON-LD contexts are allowed to create a a conformant DCAT-UD
+    data
+    exchange.
+    <p />
+    The JSON-LD context file downloadable <a href="./context/dcat-us.jsonld">here</a>.
+
+  </section>
+  <!-- Dereferenceable identifiers -->
   <section id="deferenceable-identifiers">
 
     <h2>Dereferenceable identifiers</h2>
@@ -13861,10 +14021,12 @@
       to reuse candidate data. The absence of clear legal details poses a risk to data reuse, as individuals are left
       unaware of permissible actions. While prior regulations and initiatives, like the Findable, Accessible,
       Interoperable, and Reusable (FAIR)
-      data principles, underline this importance, contemporary laws have become more rigorous by stipulating a baseline
+      data principles, underline this importance, contemporary laws have become more rigorous by stipulating a
+      baseline
       level of reuse standards.
       Selecting the right way to express conditions for access to and re-use of resources can be complex.
-      In essence, it is advisable for data publishers to engage their legal experts to ensure the provision of suitable
+      In essence, it is advisable for data publishers to engage their legal experts to ensure the provision of
+      suitable
       guidelines.
 
     </p>
@@ -13872,7 +14034,8 @@
       This specification distinguishes the following main situations:
       one where a statement is associated with a resource that is explicitly declared as a 'license';
       a second, where the statement is associated with a resource denoting only access rights;
-      a third, covering all the other cases - i.e., statements not concerning licensing conditions and/or access rights
+      a third, covering all the other cases - i.e., statements not concerning licensing conditions and/or access
+      rights
       (e.g., copyright statements).
 
     </p>
@@ -13886,7 +14049,8 @@
       </p>
     </aside>
 
-    <p>Licensing information is specified on (a) data catalogues (services) and on (b) the distribution(s) of a dataset,
+    <p>Licensing information is specified on (a) data catalogues (services) and on (b) the distribution(s) of a
+      dataset,
       and not on the dataset itself. The principle is that different dataset distributions may be associated with
       different licensing terms. Moreover, [<cite><a class="bibref" data-link-type="biblio" href="#bib-dcat-ap-20200608"
           title="DCAT Application Profile for data portals in Europe. Version 2.0.1">DCAT-AP-20200608</a></cite>]
@@ -13895,7 +14059,8 @@
     <p>Based on this, GeoDCAT-AP specifies use and access limitations by using, respectively, <code>dct:license</code>
       and <code>dct:accessRights</code>. These properties take as value the URI of the use / access limitations, when
       available. Otherwise, since the range of these properties is not a literal, but, respectively, classes
-      <code>dct:LicenseDocument</code> and <code>dct:RightsStatement</code>, the free-text content of the corresponding
+      <code>dct:LicenseDocument</code> and <code>dct:RightsStatement</code>, the free-text content of the
+      corresponding
       ISO&nbsp;19115 / <abbr title="Infrastructure for spatial information in Europe">INSPIRE</abbr> metadata elements
       can be expressed by using <code>rdfs:label</code>, as illustrated in [<cite><a class="bibref"
           data-link-type="biblio" href="#bib-dc-ug-pm"
@@ -13911,7 +14076,8 @@
           recommends the use of the relevant URI sets operated by the <abbr
             title="Infrastructure for spatial information in Europe">INSPIRE</abbr> Registry - namely, [<cite><a
               class="bibref" data-link-type="biblio" href="#bib-inspire-cau"
-              title="INSPIRE Registry: Conditions applying to access and use">INSPIRE-CAU</a></cite>], for two cases of
+              title="INSPIRE Registry: Conditions applying to access and use">INSPIRE-CAU</a></cite>], for two cases
+          of
           use limitations (“no conditions apply” and “conditions unknown”), and [<cite><a class="bibref"
               data-link-type="biblio" href="#bib-inspire-lpa"
               title="INSPIRE Registry: Limitations on public access">INSPIRE-LPA</a></cite>], for access limitations.
@@ -13949,7 +14115,8 @@
         <tr>
           <td><code title="http://data.gov/vocab/access-rights/no-limitations">no-limitations</code></td>
           <td>No limitations</td>
-          <td>Anybody can directly and anonymously access the data, without being required to register or authenticate.
+          <td>Anybody can directly and anonymously access the data, without being required to register or
+            authenticate.
           </td>
         </tr>
         <tr>
