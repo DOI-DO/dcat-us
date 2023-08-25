@@ -1,0 +1,11 @@
+[] a prov:Attribution ;
+   dcat:hadRole <http://resources.data.gov/vocab/isotc211/CI_RoleCode/ResponsiblePartyRole/custodian> ;
+   prov:agent [ 
+        a prov:Agent , foaf:Organization ;
+        foaf:mbox <mailto:custodian@doi.gov> ;
+        foaf:name "Custodian" ]  ;
+
+
+[] a prov:Attribution ;
+    prov:agent <https://orcid.org/0000-0002-8881-2550> ;
+    dcat:hadRole <http://resources.data.gov/vocab/isotc211/CI_RoleCode/principalInvestigator>        
