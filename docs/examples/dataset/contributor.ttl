@@ -1,0 +1,13 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+
+
+<https://doi.org/10.7265/N5K072F8>
+  a dcat:Dataset ;
+  # contributor of the resource          
+  dct:contributor <https://orcid.org/0000-0002-0693-466X>.
+
+
+<https://orcid.org/0000-0002-0693-466X> a foaf:Person.
