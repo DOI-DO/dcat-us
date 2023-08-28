@@ -1,0 +1,23 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+[] a dct:ProvenanceStatement ;
+  rdfs:label """
+    The raster data sets have been created out of the Noise Spatial Database, 
+    which in turn contains all versions delivered by the relevant countries 
+    to Reportnet (CDR). The data from Reportnet is automatically 
+    incorporated into the database, with the exception of those data sets which 
+    require a manual review (due to problems with naming conventions or 
+    Coordinate Reference System). The data set covers any submission by the 
+    countries until 01/01/2019.
+  """@en .
+
+# Example of multilingual provenance statement
+[] a dct:ProvenanceStatement ;
+    rdfs:label "The temperature measurements were collected from weather stations worldwide over the past century."@en,
+               "Las mediciones de temperatura fueron recolectadas de estaciones meteorológicas en todo el mundo durante el último siglo"@es .
+

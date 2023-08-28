@@ -6799,6 +6799,48 @@
             <pre data-include-format="text" data-include="./examples/dataset/conforms-to.ttl"></pre>
           </aside>
         </section>
+        <section id="dataset-contributor">
+          <h4>Property: contributor</h4>
+          <table class="def">
+            <tbody>
+              <tr>
+                <th>Property</th>
+                <td>contributor</td>
+              </tr>
+              <tr>
+                <th>Requirement level</th>
+                <td><strong>Optional</strong></td>
+              </tr>
+              <tr>
+                <th>Cardinality</th>
+                <td>0..n</td>
+              </tr>
+              <tr>
+                <th>URI</th>
+                <td><a data-cite="DCTERMS#http://purl.org/dc/terms/contributor">
+                    <code>dct:contributor</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Range</th>
+                <td><a href="http://xmlns.com/foaf/0.1/#term_Agent"><code>foaf:Agent</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Usage Note</th>
+                <td>
+                  <ul>
+                    <li>This property refers to an agent contributing to the Dataset.
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <aside class="example" title="Usage of dct:contributor for dcat:Dataset">
+            <pre data-include-format="text" data-include="./examples/dataset/contributor.ttl"></pre>
+          </aside>
+        </section>
         <section id="dataset-creator">
           <h4>Property: creator</h4>
           <table class="def">
@@ -7123,6 +7165,15 @@
                 </td>
               </tr>
               <tr>
+                <th>Definition</th>
+                <td>
+                  <ul>
+                    <li>A statement of any changes in ownership and custody of the resource since its creation that are significant for its authenticity, integrity, and interpretation.
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
                 <th>Usage Note</th>
                 <td>
                   <ul>
@@ -7133,9 +7184,9 @@
               </tr>
             </tbody>
           </table>
-          <!-- TODO: Create example of dct:provenance for dcat:Dataset-->
+
           <aside class="example" title="Usage of dct:provenance for dcat:Dataset">
-            <!-- <pre data-include-format="text" data-include="./examples/dataset/provenance.ttl"></pre> -->
+             <pre data-include-format="text" data-include="./examples/dataset/provenance.ttl"></pre>
           </aside>
         </section>
         <section id="dataset-qualified-attribution">
@@ -7367,48 +7418,7 @@
           </aside>
         </section>
 
-        <section id="dataset-contributor">
-          <h4>Property: contributor</h4>
-          <table class="def">
-            <tbody>
-              <tr>
-                <th>Property</th>
-                <td>contributor</td>
-              </tr>
-              <tr>
-                <th>Requirement level</th>
-                <td><strong>Optional</strong></td>
-              </tr>
-              <tr>
-                <th>Cardinality</th>
-                <td>0..n</td>
-              </tr>
-              <tr>
-                <th>URI</th>
-                <td><a data-cite="DCTERMS#http://purl.org/dc/terms/contributor">
-                    <code>dct:contributor</code></a>
-                </td>
-              </tr>
-              <tr>
-                <th>Range</th>
-                <td><a href="http://xmlns.com/foaf/0.1/#term_Agent"><code>foaf:Agent</code></a>
-                </td>
-              </tr>
-              <tr>
-                <th>Usage Note</th>
-                <td>
-                  <ul>
-                    <li>This property refers to an agent contributing to the Dataset.
-                    </li>
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <aside class="example" title="Usage of dct:contributor for dcat:Dataset">
-            <pre data-include-format="text" data-include="./examples/dataset/contributor.ttl"></pre>
-          </aside>
-        </section>
+        
         <section id="dataset-image">
           <h4>Property: image</h4>
           <table class="def">
@@ -12610,7 +12620,7 @@
       <table class="def" id="table-class-provenance-statement">
         <tr>
           <th>RDF Class:</th>
-          <td><a data-cite="DCTerms#terms_Provenance Statement"><code>dcterms:Provenance Statement</code></a></td>
+          <td><a data-cite="DCTerms#terms_Provenance Statement"><code>dcterms:ProvenanceStatement</code></a></td>
         </tr>
         <tr>
           <th>Obligation</th>
@@ -12666,7 +12676,7 @@
             <tbody>
               <tr>
                 <th>Property</th>
-                <td>provenance statement tet</td>
+                <td>provenance statement text</td>
               </tr>
               <tr>
                 <th>Requirement level</th>
@@ -12695,6 +12705,9 @@
           </table>
         </section>
       </section>
+      <aside class="example" title="Examples of dcterms:ProvenanceStatement">
+        <pre data-include-format="text" data-include="./examples/provenance-statement.ttl"></pre>
+     </aside>
     </section>
 
     <!-- dqv:QualityMeasurement-->
