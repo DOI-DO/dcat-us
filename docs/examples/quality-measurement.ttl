@@ -1,0 +1,15 @@
+@prefix dqv: <http://www.w3.org/ns/dqv#> .
+@prefix sdmx-attribute: <http://purl.org/linked-data/sdmx/2009/attribute#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix qudt: <http://qudt.org/vocab/unit/> .
+
+:myDatasetPrecisionAS a dqv:QualityMeasurement ;
+     dqv:isMeasurementOf :spatialResolutionAsAngularDistance ;
+     dqv:value "3.5"^^xsd:decimal ;
+     sdmx-attribute:unitMeasure qudt:DEG .  
+     
+:spatialResolutionAsAngularDistance a dqv:Metric;
+     skos:definition "Spatial resolution of a dataset expressed as angular distance"@en ;
+     dqv:expectedDataType xsd:decimal ;
+     dqv:inDimension dqv:precision .
