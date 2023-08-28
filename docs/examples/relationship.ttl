@@ -1,0 +1,7 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+
+ [] a dcat:Relationship ;
+    dct:relation <http://example.org/Test543R> ;
+    dcat:hadRole <http://registry.it.csiro.au/def/isotc211/DS_AssociationTypeCode/stereoMate>.
