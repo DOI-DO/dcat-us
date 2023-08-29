@@ -1,7 +1,16 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
 @prefix schema: <http://schema.org/> .
+@prefix ex: <http://example.org/ns#> .
 
-<https://ogd/logos/1234>
-  a dcat:Dataset ;
-  schema:image <https://opendata.swiss/images/logo_horizontal.png> ,
-               <https://opendata.swiss/images/logo_default.png> .
+# Define the dataset
+ex:WeatherDataset a dcat:Dataset ;
+    dct:title "Weather Information" ;
+    dct:description "This dataset contains weather information including temperature, humidity, and wind speed." ;
+    dcat:distribution ex:WeatherDataDistribution ;
+    schema:image ex:WeatherThumbnail .
+
+# Define the thumbnail or representative image of the dataset
+ex:WeatherThumbnail a schema:ImageObject ;
+    schema:contentURL <http://example.org/images/weather-thumbnail.jpg> ;
+    schema:caption "Thumbnail image representing the Weather Information dataset" .
