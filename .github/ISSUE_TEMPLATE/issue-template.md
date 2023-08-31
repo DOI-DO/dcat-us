@@ -8,14 +8,16 @@ assignees: fellahst, sofianef
 
 ---
 
-Give the issue a short but meaningful title, for example mentioning the class or property to which the issue is related.
+_This information will help the Core Team resolve issues with the draft DCAT3-US application profile.  So we can track all issues, please submit different issues in separate issue tickets. The Core Team will review and adjudicate the submitted issue and provide comments on this ticket indicating steps taken to address the issue as submitted._
 
-Furthermore, in the body of the issue, please provide as much information as possible, for example:
-- submitter name and affiliation
-- portal, service or software product represented or affected
-- clear and concise description of the problem or requirement
-- proposed solution, if any
+**Name:**  _[put your name here]_
 
-This information will help the Core Development Team classify the issue as a bug fix, semantic issue, or requirements request
+**Affiliation:** _[name of your organization]_
 
-The Development Team of the DCAT-US specification will respond to the issue within two weeks with an initial reaction and an indication of the next steps to be taken.
+**Type of issue:** _[**Schema** (class, property, range, cardinality, requirement level), **Editorial**, or **General Comment**]_
+
+**Issue:** _[one issue per ticket please.... identify and describe the issue, providing a link to the closest section in the document]_
+- _[provide a link to the section heading in the document and other context (e.g., links to other sections, screenshots, etc) to pinpoint the issue in the document]_
+- _[description of the issue, including the verbiage or formatting that needs to be corrected/changed]_
+
+**Recommended change(s):** _[enter your recommended changes to correct the issue below]_
