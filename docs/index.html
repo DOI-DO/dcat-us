@@ -28,24 +28,26 @@
 
 <body>
   <section class="notoc" id="abstract">
-    <p>The DCAT-US Profile Version 3 is an updated specification meticulously designed to facilitate data cataloging,
+    <p>The DCAT-US Profile Version 3 (DCAT-US 3.0) is an updated specification meticulously designed to facilitate data
+      cataloging,
       discovery, and interoperability among US government agencies. Leveraging the strong foundation laid by the Project
-      Open Data (POD) 1.1 standard, this profile seamlessly aligns with the cutting-edge DCAT 3.0 recommendations put
+      Open Data (POD) 1.1 standard (also known as DCAT-US 1.1), this profile seamlessly aligns with the cutting-edge
+      DCAT 3.0 recommendations put
       forth by the World Wide Web Consortium (W3C), all while upholding the essential FAIR principles. Moreover, it
       places a strong emphasis on maintaining compatibility with the existing POD 1.1 standard, ensuring a fluid
       transition. The result is a robust commitment to ensuring data's Findability, Accessibility, Interoperability, and
       Reusability.</p>
 
-    <p>The paramount significance of the DCAT-US Profile Version 3 lies in its role as a bridge between the
+    <p>The paramount significance of the DCAT-US 3.0 lies in its role as a bridge between the
       well-established POD 1.1 and the forward-looking DCAT 3.0, uniting them under a single, standardized approach for
       the articulation and exchange of datasets. By harmonizing the standout attributes of both standards, this profile
-      addresses the distinctive metadata prerequisites inherent to the US context. It goes above and beyond by
+      also addresses the distinctive metadata prerequisites inherent to the US context. It goes above and beyond by
       encompassing specialized properties to cater to geospatial and statistical datasets, effectively harnessing
       established vocabularies to elevate the process of data sharing and subsequent reuse.</p>
 
     <p>Distinguished by its utilization of the Shapes Constraint Language (SHACL) for structural and semantic
-      validation, the DCAT-US Profile Version 3
-      introduces a remarkably refined, interoperable, and future-proof framework for the description and validation of
+      validation, the DCAT-US 3.0 introduces a remarkably refined, interoperable, and future-proof framework for the
+      description and validation of
       dataset metadata. In essence, it is not just a specification; it is a progressive stride towards achieving a
       data-centric landscape where meticulous metadata description empowers the efficient flow of information while
       laying the groundwork for sustained innovation.</p>
@@ -60,11 +62,15 @@
     </p>
     <p>In the realm of implementations, any fresh deployment is expected to embrace the DCAT 3 standard, harnessing its
       evolved capabilities. However, pre-existing implementations need not undergo an upgrade unless they seek to
-      leverage the newfound functionalities. Specifically, current instances of DCAT 2/ POD 1.1 deployments that do not intersect
+      leverage the newfound functionalities. Specifically, current instances of DCAT 2/ POD 1.1 deployments that do not
+      intersect
       with DCAT 3's novel elements—such as versioning, dataset series, and inverse properties—can continue without
       alteration, maintaining full compliance with the DCAT 3 specifications.
     </p>
   </aside>
+
+  <!-- Introduction-->
+
   <section id="introduction" class="informative">
     <h2>Introduction</h2>
     <p>The DCAT-US Profile Version 3 is a comprehensive update to the Project Open Data (POD) 1.1 standard, designed to
@@ -75,6 +81,8 @@
       the gaps between POD 1.1 and DCAT 3.0, and elaborate on the differences and enhancements offered by the DCAT-US
       Profile Version 3.
     </p>
+
+    <!-- Purpose and Evolution-->
     <h3>Purpose and Evolution</h3>
     <p>The purpose of the DCAT-US Profile Version 3 is to improve data discoverability, accessibility, and
       interoperability among US government agencies. By adhering to the FAIR principles, the profile promotes more
@@ -91,6 +99,7 @@
       standardized approach for describing and exchanging datasets, thereby enabling more efficient data sharing and
       reuse.
     </p>
+    <!-- Gaps between POD 1.1 and DCAT -->
     <h3>Gaps between POD 1.1 and DCAT</h3>
     <p>The POD 1.1 standard, while effective for its time, had some limitations that the DCAT 3.0 standard has
       addressed. The key differences between the two standards include:
@@ -123,6 +132,8 @@
       profile also introduces new properties to handle geospatial data and statistical datasets, leveraging established
       vocabularies in these domains.
     </p>
+
+    <!-- Encoding of DCAT-US Profile -->
     <h3>Encoding of DCAT-US Profile: Facilitating Interoperable Data Exchange</h3>
 
     <p>The encoding of the DCAT-US profile involves the technical aspects of how data is represented and exchanged,
@@ -239,7 +250,8 @@
   </section>
   <section id="changes-overview">
     <h3>Overview of Changes</h3>
-    <p>The main focus of the Expert Group by the creation of DCAT-US v3 was to ensure the compatibility to DCAT 3.
+    <p>The main focus of the Expert Group by the creation of DCAT-US v3 was to ensure the compatibility to DCAT 3 and be
+      backward compatible with DCAT-US 1.1.
     </p>
   </section>
   </section>
@@ -1400,8 +1412,16 @@
       </ul>
     </section>
     <section id="properties-for-access-restriction">
+      <aside class="note">New DCAT-US specific class</aside>
       <h2>Class: AccessRestriction</h2>
-      <p>TODO</p>
+      <p>The class "AccessRestriction" used by the National Archives and Records Administration (NARA) refers to a
+        categorization or specification that denotes limitations or conditions imposed on the accessibility of certain
+        records, documents, or information within their archival holdings. Access restrictions are employed to regulate
+        and control access to sensitive or confidential content based on legal, ethical, security, or other relevant
+        considerations. These restrictions may pertain to who can access the information, the purposes for which it can
+        be accessed, and the conditions under which it can be utilized. The "AccessRestriction" class provides a
+        structured framework for classifying and managing these access limitations within NARA's archival context,
+        contributing to the proper governance and responsible dissemination of historical records and data.</p>
       <table class="def">
         <tr>
           <th>RDF Class:</th>
@@ -1410,13 +1430,21 @@
         </tr>
         <tr>
           <th class="prop">Definition:</th>
-          <td></td>
+          <td>The "AccessRestriction" class used by NARA represents limitations placed on accessing specific records or
+            information within their archives, ensuring controlled and responsible access based on legal, ethical, or
+            security considerations.</td>
         </tr>
         <tr>
           <th class="prop">Usage note:</th>
           <td>
             <ul>
-
+              <p>The "AccessRestriction" class serves as a valuable tool within NARA's archival framework, enabling the
+                organization to effectively manage and communicate access limitations for specific records or
+                information. By employing this class, NARA can categorize and enforce controlled access to sensitive
+                content, safeguarding confidentiality, adhering to legal requirements, and preserving the integrity of
+                historical data. Researchers, archivists, and authorized users can rely on "AccessRestriction" to
+                navigate and understand the accessibility parameters associated with archived materials, facilitating
+                responsible information dissemination and usage.</p>
             </ul>
           </td>
         </tr>
@@ -1466,7 +1494,9 @@
       <section id="access_restriction-mandatory-props">
         <h3>Mandatory Properties</h3>
         <section id="access_restriction-restriction_status">
+
           <h4>Property: restriction status</h4>
+          <aside class="note">Property added in DCAT-US 3.0</aside>
           <table class="def">
             <tbody>
               <tr>
@@ -1503,7 +1533,9 @@
       <section id="access_restriction-recommended-props">
         <h3>Recommended Properties</h3>
         <section id="access_restriction-authority">
+
           <h4>Property: restriction authority</h4>
+          <aside class="note">Property added in DCAT-US 3.0</aside>
           <table class="def">
             <tbody>
               <tr>
@@ -1541,6 +1573,7 @@
         <h3>Optional Properties</h3>
         <section id="access_restriction-restriction_note">
           <h4>Property: restriction note</h4>
+          <aside class="note">Property added in DCAT-US 3.0</aside>
           <table class="def">
             <tbody>
               <tr>
@@ -1572,10 +1605,15 @@
           </table>
         </section>
       </section>
+      <section id="access_restriction-example">
+        <h4>Example</h4>
+        <aside class="example" title="dcat-us:AccessRestriction examples">
+        <!-- TODO  <pre data-include-format="text" data-include="./examples/attribution.ttl"></pre> -->
+        </aside>
+      </section>
     </section>
     <section id="properties-for-agent">
       <h2>Class: Agent</h2>
-      <p>TODO</p>
       <table class="def">
         <tr>
           <th>RDF Class:</th>
@@ -1584,17 +1622,18 @@
         </tr>
         <tr>
           <th class="prop">Definition:</th>
-          <td></td>
+          <td>An entity that acts on something (eg. person, group, software or physical artifact).</td>
         </tr>
         <tr>
           <th class="prop">Usage note:</th>
           <td>
             <ul>
-
-            </ul>
+            <li>An entity (e.g., an individual or an organisation) that is associated with Catalogues, Catalogue Records, Data Services, or Datasets.</li>
+            <li>If the Agent is an organisation, the use of the Organization Ontology [VOCAB-ORG] is recommended.</li> 
+            <li>If the Agent is a person, the use of Person if FOAF Ontology [VOCAB-FOAF] is recommended</li>
+          </ul>
           </td>
         </tr>
-
       </table>
 
       <p><strong>Properties Summary</strong></p>
@@ -1918,6 +1957,12 @@
             </tbody>
           </table>
         </section>
+      </section>
+      <section id="access_restriction-example">
+        <h4>Example</h4>
+        <aside class="example" title="foaf:Agent examples">
+        <!-- TODO  <pre data-include-format="text" data-include="./examples/attribution.ttl"></pre> -->
+        </aside>
       </section>
     </section>
     <section id="properties-for-attribution">
