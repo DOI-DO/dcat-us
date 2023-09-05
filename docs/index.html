@@ -109,6 +109,35 @@
       profile also introduces new properties to handle geospatial data and statistical datasets, leveraging established
       vocabularies in these domains.
     </p>
+    <h3>Encoding of DCAT-US Profile: Facilitating Interoperable Data Exchange</h3>
+
+    <p>The encoding of the DCAT-US profile involves the technical aspects of how data is represented and exchanged,
+      addressing questions about data format and interoperability. While the DCAT-US 3.0 conformance does not strictly
+      mandate the use of RDF serialization for data exchange, it emphasizes the importance of ensuring that the
+      exchanged format can be unambiguously transformed into RDF. This flexibility allows for interoperability while
+      accommodating various data exchange requirements.</p>
+
+    <p>One prevalent format for data exchange between systems is JSON (JavaScript Object Notation), which is widely used
+      due to its simplicity and human-readable nature. To facilitate data exchange in JSON while adhering to the DCAT-US
+      profile, a dedicated mechanism is provided: the JSON-LD context file. JSON-LD (JSON for Linked Data) is a W3C
+      Recommendation (JSON-LD 1.1) that establishes a standardized approach for interpreting JSON structures as RDF,
+      enhancing the potential for semantic integration and interoperability.</p>
+
+    <p> The DCAT-US profile offers a JSON-LD context file that implementers can utilize as a foundation for their data
+      exchange processes. By incorporating this JSON-LD context file, implementers can ensure that their data adheres to
+      the DCAT-US standards while being exchanged in a JSON format. This allows for a coherent and consistent
+      representation of the data that aligns with the RDF model, promoting interoperability among different systems and
+      tools.</p>
+      
+    <p> It's important to note that the provided JSON-LD context file is not normative, indicating that other JSON-LD
+      contexts can also be used to establish a conformant DCAT-US data exchange. This flexibility caters to various
+      implementation scenarios and data requirements, while still adhering to the overarching principles of the DCAT-US
+      profile. Overall, the encoding of the DCAT-US profile acknowledges the significance of data format and interchange
+      methods, leveraging JSON-LD and related mechanisms to facilitate seamless and interoperable data exchange within
+      the context of the DCAT-US specification.</p>
+
+
+
     <h3>SHACL and the DCAT-US Profile Version 3</h3>
     <p>While the JSON Schema approach used in POD 1.1 was effective in certain scenarios, it has limitations when
       compared to using SHACL for defining data models and constraints:
@@ -1706,7 +1735,7 @@
           </table>
         </section>
       </section>
-      
+
       <section id="agent-optional-props">
         <h3>Optional Properties</h3>
         <section id="agent-mbox">
@@ -6395,14 +6424,16 @@
             <!-- TODO: Add links in this block -->
             <td><code>dqv:hasQualityMeasurement</code>
             </td>
-            <td><a href="https://www.w3.org/TR/vocab-dqv/#dqv:QualityMeasurement"><code>dqv:QualityMeasurement</code></a>
+            <td><a
+                href="https://www.w3.org/TR/vocab-dqv/#dqv:QualityMeasurement"><code>dqv:QualityMeasurement</code></a>
             </td>
             <td>O</td>
             <td>0..n</td>
           </tr>
           <tr>
             <td><a href="#dataset-spatial-resolution">spatial resolution in meters</a></td>
-            <td><a data-cite="VOCAB-DCAT-3#Property:dataset_spatial_resolution"><code>dcat:spatialResolutionInMeters</code></a>
+            <td><a
+                data-cite="VOCAB-DCAT-3#Property:dataset_spatial_resolution"><code>dcat:spatialResolutionInMeters</code></a>
             </td>
             <td><a data-cite="RDF-SCHEMA#ch_literal">
                 <code>rdfs:Literal</code></a>
@@ -6411,57 +6442,58 @@
             </td>
             <td>O</td>
             <td>0..n</td>
-            </tr>
-            <tr>
-              <td><a href="#dataset-temporal-resolution">temporal resolution</a></td>
-              <td><a data-cite="VOCAB-DCAT-3#Property:dataset_temporal_resolution"><code>dcat:temporalResolution</code></a>
-              </td>
-              <td><a data-cite="RDF-SCHEMA#ch_literal">
-                  <code>rdfs:Literal</code></a>
-                (typed as
-                as <a data-cite="XMLSCHEMA11-2#duration"><code>xsd:duration</code></a>)
-              </td>
-              <td>O</td>
-              <td>0..n</td>
-              </tr>
-              <tr>
-                <td><a href="#dataset-type">type</a></td>
-                <td><a data-cite="DCTERMS#http://purl.org/dc/terms/type"><code>dct:type</code></a></td>
-                <td><a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a>
-                </td>
-                <td>O</td>
-                <td>0..1</td>
-              </tr>
-              <tr>
-                <td><a href="#dataset-version">version</a></td>
-                <td><a data-cite="VOCAB-DCAT-3#Property:resource_version">
-                    <code>dcat:version</code></a>
-                </td>
-                <td><a data-cite="RDF-SCHEMA#ch_literal">
-                    <code>rdfs:Literal</code></a>
-                </td>
-                <td>O</td>
-                <td>0..n</td>
-              </tr>
-              <tr>
-                <td><a href="#dataset-versionNotes">version notes</a></td>
-                <td><a data-cite="VOCAB-ADMS#versionNotes"><code>adms:versionNotes</code></a>
-                </td>
-                <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
-                </td>
-                <td>O</td>
-                <td>0..n</td>
-              </tr>
-              <tr>
-                <td><a href="#dataset-wasGeneratedBy">was generated by</a></td>
-                <td><a data-cite="PROV#Property:prov_wasGeneratedBy"><code>prov:wasGeneratedBy</code></a>
-                </td>
-                <td><a data-cite="PROV#Class:prov_Activity"><code>prov:Activity</code></a></td>
-                <td>O</td>
-                <td>0..n</td>
-              </tr>
-              <!-- TODO: Determine whether this property is needed (it is not in DCAT-AP 3.0)-->
-              <!-- <tr>
+          </tr>
+          <tr>
+            <td><a href="#dataset-temporal-resolution">temporal resolution</a></td>
+            <td><a
+                data-cite="VOCAB-DCAT-3#Property:dataset_temporal_resolution"><code>dcat:temporalResolution</code></a>
+            </td>
+            <td><a data-cite="RDF-SCHEMA#ch_literal">
+                <code>rdfs:Literal</code></a>
+              (typed as
+              as <a data-cite="XMLSCHEMA11-2#duration"><code>xsd:duration</code></a>)
+            </td>
+            <td>O</td>
+            <td>0..n</td>
+          </tr>
+          <tr>
+            <td><a href="#dataset-type">type</a></td>
+            <td><a data-cite="DCTERMS#http://purl.org/dc/terms/type"><code>dct:type</code></a></td>
+            <td><a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a>
+            </td>
+            <td>O</td>
+            <td>0..1</td>
+          </tr>
+          <tr>
+            <td><a href="#dataset-version">version</a></td>
+            <td><a data-cite="VOCAB-DCAT-3#Property:resource_version">
+                <code>dcat:version</code></a>
+            </td>
+            <td><a data-cite="RDF-SCHEMA#ch_literal">
+                <code>rdfs:Literal</code></a>
+            </td>
+            <td>O</td>
+            <td>0..n</td>
+          </tr>
+          <tr>
+            <td><a href="#dataset-versionNotes">version notes</a></td>
+            <td><a data-cite="VOCAB-ADMS#versionNotes"><code>adms:versionNotes</code></a>
+            </td>
+            <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+            </td>
+            <td>O</td>
+            <td>0..n</td>
+          </tr>
+          <tr>
+            <td><a href="#dataset-wasGeneratedBy">was generated by</a></td>
+            <td><a data-cite="PROV#Property:prov_wasGeneratedBy"><code>prov:wasGeneratedBy</code></a>
+            </td>
+            <td><a data-cite="PROV#Class:prov_Activity"><code>prov:Activity</code></a></td>
+            <td>O</td>
+            <td>0..n</td>
+          </tr>
+          <!-- TODO: Determine whether this property is needed (it is not in DCAT-AP 3.0)-->
+          <!-- <tr>
                 <td><a href="#dataset-attribution">attribution</a></td>
                 <td><a data-cite="PROV#property:wasAttributedTo">
                     <code>prov:wasAttributedTo</code></a>
@@ -6472,80 +6504,80 @@
                 <td>O</td>
                 <td>0..n</td>
               </tr> -->
-              <tr>
-                <td><a href="#dataset-program">program</a></td>
-                <td><a href="http://TBD#program">
-                    <code>dcat-us:program</code></a>
-                </td>
-                <td><a href="http://TBD#Program">
-                    <code>dcat-us:Program</code></a>
-                </td>
-                <td>O</td>
-                <td>0..n</td>
-              </tr>
-              <tr>
-                <td><a href="#dataset-investment">investment</a></td>
-                <td><a href="http://TBD#investment">
-                    <code>dcat-us:investment</code></a>
-                </td>
-                <td><a href="http://TBD#Investment">
-                    <code>dcat-us:Investment</code></a>
-                </td>
-                <td>O</td>
-                <td>0..n</td>
-              </tr>
-              <tr>
-                <td><a href="#dataset-applicableLegislation">application legislation</a></td>
-                <td><a href="http://TBD#applicableLegislation">
-                    <code>dcat-us:applicableLegislation</code></a>
-                </td>
-                <td><a href="http://TBD#Legislation">
-                    <code>dcat-us:Legislation</code></a>
-                </td>
-                <td>O</td>
-                <td>0..n</td>
-              </tr>
-              <tr>
-                <td><a href="#dataset-supportedSchema">supported schema</a></td>
-                <td><a data-cite="VOCAB-ADMS#supportedSchema"><code>adms:supportedSchema</code></a>
-                </td>
-                <td><a data-cite="VOCAB-DCAT-3#Class:Dataset"><code>dcat:Dataset</code></a>
-                </td>
-                <td>O</td>
-                <td>0..1</td>
-              </tr>
-              <tr>
-                <td><a href="#dataset-metadataDistribution">metadata distribution</a></td>
-                <td><a href="http://TBD#metadataDistribution">
-                    <code>dcat-us:metadataDistribution</code></a>
-                </td>
-                <td><a data-cite="VOCAB-DCAT-3#Class:Distribution"><code>dcat:Distribution</code></a>
-                </td>
-                <td>O</td>
-                <td>0..n</td>
-              </tr>
-              <tr>
-                <td><a href="#dataset-liabilityStatement">liability statement</a></td>
-                <td><a data-cite="VOCAB-ADMS#supportedSchema"><code>adms:supportedSchema</code></a>
-                </td>
-                <td><a href="http://TBD#LiabilityStatement">
-                    <code>dcat-us:LiabilityStatement</code></a>
-                </td>
-                <td>O</td>
-                <td>0..1</td>
-              </tr>
-              <tr>
-                <td><a href="#dataset-purpose">purpose</a></td>
-                <td><a href="http://TBD#purpose">
-                    <code>dcat-us:purpose</code></a>
-                </td>
-                <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
-                </td>
-                <td>O</td>
-                <td>0..n</td>
-              </tr>
-              <!-- TODO: Remove these if not needed (they did not exist in DCAT-AP 3.0)-->
-              <!-- <tr>
+          <tr>
+            <td><a href="#dataset-program">program</a></td>
+            <td><a href="http://TBD#program">
+                <code>dcat-us:program</code></a>
+            </td>
+            <td><a href="http://TBD#Program">
+                <code>dcat-us:Program</code></a>
+            </td>
+            <td>O</td>
+            <td>0..n</td>
+          </tr>
+          <tr>
+            <td><a href="#dataset-investment">investment</a></td>
+            <td><a href="http://TBD#investment">
+                <code>dcat-us:investment</code></a>
+            </td>
+            <td><a href="http://TBD#Investment">
+                <code>dcat-us:Investment</code></a>
+            </td>
+            <td>O</td>
+            <td>0..n</td>
+          </tr>
+          <tr>
+            <td><a href="#dataset-applicableLegislation">application legislation</a></td>
+            <td><a href="http://TBD#applicableLegislation">
+                <code>dcat-us:applicableLegislation</code></a>
+            </td>
+            <td><a href="http://TBD#Legislation">
+                <code>dcat-us:Legislation</code></a>
+            </td>
+            <td>O</td>
+            <td>0..n</td>
+          </tr>
+          <tr>
+            <td><a href="#dataset-supportedSchema">supported schema</a></td>
+            <td><a data-cite="VOCAB-ADMS#supportedSchema"><code>adms:supportedSchema</code></a>
+            </td>
+            <td><a data-cite="VOCAB-DCAT-3#Class:Dataset"><code>dcat:Dataset</code></a>
+            </td>
+            <td>O</td>
+            <td>0..1</td>
+          </tr>
+          <tr>
+            <td><a href="#dataset-metadataDistribution">metadata distribution</a></td>
+            <td><a href="http://TBD#metadataDistribution">
+                <code>dcat-us:metadataDistribution</code></a>
+            </td>
+            <td><a data-cite="VOCAB-DCAT-3#Class:Distribution"><code>dcat:Distribution</code></a>
+            </td>
+            <td>O</td>
+            <td>0..n</td>
+          </tr>
+          <tr>
+            <td><a href="#dataset-liabilityStatement">liability statement</a></td>
+            <td><a data-cite="VOCAB-ADMS#supportedSchema"><code>adms:supportedSchema</code></a>
+            </td>
+            <td><a href="http://TBD#LiabilityStatement">
+                <code>dcat-us:LiabilityStatement</code></a>
+            </td>
+            <td>O</td>
+            <td>0..1</td>
+          </tr>
+          <tr>
+            <td><a href="#dataset-purpose">purpose</a></td>
+            <td><a href="http://TBD#purpose">
+                <code>dcat-us:purpose</code></a>
+            </td>
+            <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+            </td>
+            <td>O</td>
+            <td>0..n</td>
+          </tr>
+          <!-- TODO: Remove these if not needed (they did not exist in DCAT-AP 3.0)-->
+          <!-- <tr>
                                                           <td><a href="#dataset-contributor">contributor</a></td>
                                                           <td><a data-cite="DCTERMS#http://purl.org/dc/terms/contributor"><code>dct:contributor</code></a></td>
                                                           <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Agent"><code>dct:Agent</code></a>
@@ -6569,7 +6601,7 @@
                                                           <td>O</td>
                                                           <td>0..n</td>
                                                         </tr> -->
-          </tbody>
+        </tbody>
       </table>
 
       <section id="dataset-mandatory-props">
@@ -7053,11 +7085,14 @@
               </tr>
               <tr>
                 <th>URI</th>
-                <td><a data-cite="DCAT-US##http://TBD/geographicBoundingBox"><code>dcat-us:geographicBoundingBox</code></a></td>
+                <td><a
+                    data-cite="DCAT-US##http://TBD/geographicBoundingBox"><code>dcat-us:geographicBoundingBox</code></a>
+                </td>
               </tr>
               <tr>
                 <th>Range</th>
-                <td><a data-cite="DCAT-US#http://TBD/GeographicBoundingBox"><code>dcat-us:GeographicBoundingBox</code></a>
+                <td><a
+                    data-cite="DCAT-US#http://TBD/GeographicBoundingBox"><code>dcat-us:GeographicBoundingBox</code></a>
                 </td>
               </tr>
               <tr>
@@ -7624,7 +7659,8 @@
                 <th>Definition</th>
                 <td>
                   <ul>
-                    <li>A statement of any changes in ownership and custody of the resource since its creation that are significant for its authenticity, integrity, and interpretation.
+                    <li>A statement of any changes in ownership and custody of the resource since its creation that are
+                      significant for its authenticity, integrity, and interpretation.
                     </li>
                   </ul>
                 </td>
@@ -7642,7 +7678,7 @@
           </table>
 
           <aside class="example" title="Usage of dct:provenance for dcat:Dataset">
-             <pre data-include-format="text" data-include="./examples/dataset/provenance.ttl"></pre>
+            <pre data-include-format="text" data-include="./examples/dataset/provenance.ttl"></pre>
           </aside>
         </section>
         <section id="dataset-qualified-attribution">
@@ -7871,8 +7907,8 @@
             <pre data-include-format="text" data-include="./examples/dataset/sample.ttl"></pre>
           </aside>
         </section>
-<section id="dataset-source">
-  <h4>Property: source</h4>
+        <section id="dataset-source">
+          <h4>Property: source</h4>
           <table class="def">
             <tbody>
               <tr>
@@ -7894,49 +7930,50 @@
               <tr>
                 <th>Range</th>
                 <td><a data-cite="VOCAB-DCAT-3#Class:Dataset"><code>dcat:Dataset</code></a></td>
-                </tr>
-                <tr>
-                  <th>Usage Note</th>
-                  <td>
-                    <ul>
-                      <li>A related Dataset from which the described Dataset is derived.
-                      </li>
-                    </ul>
+              </tr>
+              <tr>
+                <th>Usage Note</th>
+                <td>
+                  <ul>
+                    <li>A related Dataset from which the described Dataset is derived.
+                    </li>
+                  </ul>
                 </td>
               </tr>
             </tbody>
-            </table>
-            <!-- TODO: Determine whether an example is needed for dct:source on dcat:Dataset -->
-            <!-- <aside class="example" title="Usage of dct:source for dcat:Dataset">
+          </table>
+          <!-- TODO: Determine whether an example is needed for dct:source on dcat:Dataset -->
+          <!-- <aside class="example" title="Usage of dct:source for dcat:Dataset">
                                                                               <pre data-include-format="text" data-include="./examples/dataset/source.ttl"></pre>
                                                                             </aside> -->
-            </section>
-            <section id="dataset-hasQualityMeasurement">
-              <h4>Property: spatial resolution</h4>
-              <table class="def">
-                <tbody>
+        </section>
+        <section id="dataset-hasQualityMeasurement">
+          <h4>Property: spatial resolution</h4>
+          <table class="def">
+            <tbody>
               <tr>
                 <th>Property</th>
                 <td>spatial resolution</td>
-                </tr>
-                <tr>
-                  <th>Requirement level</th>
-                  <td>Optional</td>
-                </tr>
-                <tr>
-                  <th>Cardinality</th>
-                  <td>0..n</td>
-                </tr>
-                <tr>
-                  <th>URI</th>
-                  <!-- TODO: add href here-->
-                  <td><code>dqv:hasQualityMeasurement</code>
-                  </td>
-                </tr>
-                <tr>
-                  <th>Range</th>
-                  <td><a href="href=" https://www.w3.org/TR/vocab-dqv/#dqv:QualityMeasurement"><code>dqv:QualityMeasurement</code></a>
-                  </td>
+              </tr>
+              <tr>
+                <th>Requirement level</th>
+                <td>Optional</td>
+              </tr>
+              <tr>
+                <th>Cardinality</th>
+                <td>0..n</td>
+              </tr>
+              <tr>
+                <th>URI</th>
+                <!-- TODO: add href here-->
+                <td><code>dqv:hasQualityMeasurement</code>
+                </td>
+              </tr>
+              <tr>
+                <th>Range</th>
+                <td><a href="href="
+                    https://www.w3.org/TR/vocab-dqv/#dqv:QualityMeasurement"><code>dqv:QualityMeasurement</code></a>
+                </td>
               </tr>
               <tr>
                 <th>Usage Note</th>
@@ -13728,7 +13765,7 @@
       </section>
       <aside class="example" title="Examples of dcterms:ProvenanceStatement">
         <pre data-include-format="text" data-include="./examples/provenance-statement.ttl"></pre>
-     </aside>
+      </aside>
     </section>
 
     <!-- dqv:QualityMeasurement-->
