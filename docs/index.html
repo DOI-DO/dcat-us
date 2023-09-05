@@ -28,27 +28,41 @@
 
 <body>
   <section class="notoc" id="abstract">
-    <p>The DCAT-US Profile Version 3 is an updated specification designed to facilitate data cataloging, discovery, and
-      interoperability among US government agencies. Building upon the foundation of the Project Open Data (POD) 1.1
-      standard, this profile aligns with the latest DCAT 3.0 recommendations from the World Wide Web Consortium (W3C)
-      while adhering to the FAIR principles. This ensures that data is Findable, Accessible, Interoperable, and
-      Reusable. The DCAT-US Profile Version 3 bridges the gaps between POD 1.1 and DCAT 3.0, providing a standardized
-      approach for describing and exchanging datasets. It incorporates the best features of both standards and addresses
-      specific metadata requirements unique to the US context. The profile includes properties for handling geospatial
-      and statistical datasets, leveraging established vocabularies to improve data sharing and reuse. Defined using the
-      Shapes Constraint Language (SHACL), the DCAT-US Profile Version 3 offers a more expressive, interoperable, and
-      future-proof framework for dataset metadata description and validation.
-    </p>
+    <p>The DCAT-US Profile Version 3 is an updated specification meticulously designed to facilitate data cataloging,
+      discovery, and interoperability among US government agencies. Leveraging the strong foundation laid by the Project
+      Open Data (POD) 1.1 standard, this profile seamlessly aligns with the cutting-edge DCAT 3.0 recommendations put
+      forth by the World Wide Web Consortium (W3C), all while upholding the essential FAIR principles. Moreover, it
+      places a strong emphasis on maintaining compatibility with the existing POD 1.1 standard, ensuring a fluid
+      transition. The result is a robust commitment to ensuring data's Findability, Accessibility, Interoperability, and
+      Reusability.</p>
+
+    <p>The paramount significance of the DCAT-US Profile Version 3 lies in its role as a bridge between the
+      well-established POD 1.1 and the forward-looking DCAT 3.0, uniting them under a single, standardized approach for
+      the articulation and exchange of datasets. By harmonizing the standout attributes of both standards, this profile
+      addresses the distinctive metadata prerequisites inherent to the US context. It goes above and beyond by
+      encompassing specialized properties to cater to geospatial and statistical datasets, effectively harnessing
+      established vocabularies to elevate the process of data sharing and subsequent reuse.</p>
+
+    <p>Distinguished by its utilization of the Shapes Constraint Language (SHACL) for structural and semantic
+      validation, the DCAT-US Profile Version 3
+      introduces a remarkably refined, interoperable, and future-proof framework for the description and validation of
+      dataset metadata. In essence, it is not just a specification; it is a progressive stride towards achieving a
+      data-centric landscape where meticulous metadata description empowers the efficient flow of information while
+      laying the groundwork for sustained innovation.</p>
   </section>
+
   <aside class="note">
-    <p>DCAT 3 supersedes DCAT 2 [[?VOCAB-DCAT-2]], but it does not make it obsolete. DCAT 3 maintains the DCAT namespace
-      as its terms preserve backward compatibility with DCAT 2. DCAT 3 relaxes constraints and adds new classes and
-      properties, but these changes do not break the definition of previous terms.
+    <p>DCAT 3 advances beyond its predecessor, DCAT 2 [[?VOCAB-DCAT-2]], yet preserves its relevance without rendering
+      it obsolete. The foundational DCAT namespace persists in DCAT 3, ensuring a harmonious coexistence with the
+      terminology of DCAT 2. Notably, while DCAT 3 introduces enhancements such as relaxed constraints, novel classes,
+      and properties, these modifications uphold the integrity of prior terms, preventing any disruption to their
+      definitions.
     </p>
-    <p>Any new implementation is expected to adopt DCAT 3, while the existing implementations do not need to upgrade to
-      it, unless they want to use the new features. In particular, current DCAT 2 deployments that do not overlap with
-      the DCAT 3 new features (e.g., versioning, dataset series and inverse properties) don't need to change anything to
-      remain in conformance with DCAT 3.
+    <p>In the realm of implementations, any fresh deployment is expected to embrace the DCAT 3 standard, harnessing its
+      evolved capabilities. However, pre-existing implementations need not undergo an upgrade unless they seek to
+      leverage the newfound functionalities. Specifically, current instances of DCAT 2/ POD 1.1 deployments that do not intersect
+      with DCAT 3's novel elements—such as versioning, dataset series, and inverse properties—can continue without
+      alteration, maintaining full compliance with the DCAT 3 specifications.
     </p>
   </aside>
   <section id="introduction" class="informative">
@@ -128,7 +142,7 @@
       the DCAT-US standards while being exchanged in a JSON format. This allows for a coherent and consistent
       representation of the data that aligns with the RDF model, promoting interoperability among different systems and
       tools.</p>
-      
+
     <p> It's important to note that the provided JSON-LD context file is not normative, indicating that other JSON-LD
       contexts can also be used to establish a conformant DCAT-US data exchange. This flexibility caters to various
       implementation scenarios and data requirements, while still adhering to the overarching principles of the DCAT-US
