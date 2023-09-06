@@ -1,5 +1,5 @@
 var respecConfig = {
-  specStatus: "base",
+  specStatus: "unofficial",
   logos: [],
   editors: [
 
