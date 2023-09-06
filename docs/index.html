@@ -32,7 +32,7 @@
       cataloging,
       discovery, and interoperability among US government agencies. Leveraging the strong foundation laid by the Project
       Open Data (POD) 1.1 standard (also known as DCAT-US 1.1), this profile seamlessly aligns with the cutting-edge
-      DCAT 3.0 recommendations put
+      [[[VOCAB-DCAT-3]]] (DCAT 3.0) recommendations put
       forth by the World Wide Web Consortium (W3C), all while upholding the essential FAIR principles. Moreover, it
       places a strong emphasis on maintaining compatibility with the existing POD 1.1 standard, ensuring a fluid
       transition. The result is a robust commitment to ensuring data's Findability, Accessibility, Interoperability, and
@@ -54,7 +54,7 @@
   </section>
 
   <aside class="note">
-    <p>DCAT 3 advances beyond its predecessor, DCAT 2 [[?VOCAB-DCAT-2]], yet preserves its relevance without rendering
+    <p>DCAT 3 advances beyond its predecessor, DCAT 2 [[[VOCAB-DCAT-2]]], yet preserves its relevance without rendering
       it obsolete. The foundational DCAT namespace persists in DCAT 3, ensuring a harmonious coexistence with the
       terminology of DCAT 2. Notably, while DCAT 3 introduces enhancements such as relaxed constraints, novel classes,
       and properties, these modifications uphold the integrity of prior terms, preventing any disruption to their
@@ -63,8 +63,8 @@
     <p>In the realm of implementations, any fresh deployment is expected to embrace the DCAT 3 standard, harnessing its
       evolved capabilities. However, pre-existing implementations need not undergo an upgrade unless they seek to
       leverage the newfound functionalities. Specifically, current instances of DCAT 2/ POD 1.1 deployments that do not
-      intersect
-      with DCAT 3's novel elements—such as versioning, dataset series, and inverse properties—can continue without
+      intersect with DCAT 3's novel elements—such as versioning, dataset series, and inverse properties—can continue
+      without
       alteration, maintaining full compliance with the DCAT 3 specifications.
     </p>
   </aside>
@@ -713,20 +713,17 @@
             <td>
               <p>An entity (e.g., an individual or an organisation) that is associated with Catalogs, Catalog
                 Records, Data Services, or Datasets. If the Agent is an organisation, the use of the Organization
-                Ontology [<cite><a class="bibref" data-link-type="biblio" href="#bib-vocab-org"
-                    title="The Organization Ontology">VOCAB-ORG</a></cite>] is recommended. See <a
-                  class="no-sectionRef sec-ref" href="#agent-roles">§&nbsp;<bdi class="secno">7. </bdi>Agent Roles</a>
+                Ontology [[VOCAB-ORG]] is recommended. See <a class="no-sectionRef sec-ref"
+                  href="#resource-attributions">§&nbsp;<bdi class="secno"></bdi>Resource Attributions</a>
                 for a discussion on Agent roles.</p>
             </td>
             <td>
               <p><code>foaf:Agent</code></p>
             </td>
             <td>
-              <p><a class="sec-ref" href="http://xmlns.com/foaf/spec#term_Agent">§&nbsp;Class: foaf:Agent</a> [<cite><a
-                    class="bibref" data-link-type="biblio" href="#bib-foaf"
-                    title="FOAF Vocabulary Specification 0.99 (Paddington Edition)">FOAF</a></cite>]</p>
-              <p>[<cite><a class="bibref" data-link-type="biblio" href="#bib-vocab-org"
-                    title="The Organization Ontology">VOCAB-ORG</a></cite>]</p>
+              <p><a class="sec-ref" href="http://xmlns.com/foaf/spec#term_Agent">§&nbsp;Class: foaf:Agent</a> [[FOAF]]
+              </p>
+              <p>[[VOCAB-ORG]]</p>
             </td>
           </tr>
           <tr class="class mandatory" id="catalog">
@@ -742,8 +739,7 @@
             </td>
             <td>
               <p><a href="https://www.w3.org/TR/vocab-dcat-3/#Class:Catalog">§&nbsp;<bdi class="secno">6.3 </bdi>Class:
-                  Catalog</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-vocab-dcat-3"
-                    title="Data Catalog Vocabulary (DCAT) - Version 3">VOCAB-DCAT-3</a></cite>]</p>
+                  Catalog</a> [[VOCAB-DCAT-3]]</p>
             </td>
           </tr>
           <tr class="class mandatory" id="dataset">
@@ -758,8 +754,7 @@
             </td>
             <td>
               <p><a href="https://www.w3.org/TR/vocab-dcat-3/#Class:Dataset">§&nbsp;<bdi class="secno">6.6 </bdi>Class:
-                  Dataset</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-vocab-dcat-3"
-                    title="Data Catalog Vocabulary (DCAT) - Version 3">VOCAB-DCAT-3</a></cite>]</p>
+                  Dataset</a> [[VOCAB-DCAT-3]]</p>
             </td>
           </tr>
           <tr class="class mandatory" id="dataset-series">
@@ -776,8 +771,7 @@
             <td>
               <p><a href="https://www.w3.org/TR/vocab-dcat-3/#Class:Dataset_Series">§&nbsp;<bdi class="secno">6.6
                   </bdi>Class:
-                  Dataset Series</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-vocab-dcat-3"
-                    title="Data Catalog Vocabulary (DCAT) - Version 3">VOCAB-DCAT-3</a></cite>]</p>
+                  Dataset Series</a> [[VOCAB-DCAT-3]]</p>
             </td>
           </tr>
           <tr class="class mandatory" id="literal">
@@ -787,8 +781,7 @@
             <td>
               <p>A literal value such as a string or integer; Literals may be typed, e.g. as a date according to
                 <code>xsd:date</code>. Literals that contain human-readable text have an optional language tag as
-                defined by [<cite><a class="bibref" data-link-type="biblio" href="#bib-bcp47"
-                    title="Tags for Identifying Languages">BCP47</a></cite>].
+                defined by [[BCP47]].
               </p>
             </td>
             <td>
@@ -796,8 +789,7 @@
             </td>
             <td>
               <p><a class="sec-ref" href="https://www.w3.org/TR/rdf11-concepts/#section-Graph-Literal">§&nbsp;<bdi
-                    class="secno">3.3 </bdi>Literals</a> [<cite><a class="bibref" data-link-type="biblio"
-                    href="#bib-rdf11-concepts" title="RDF 1.1 Concepts and Abstract Syntax">RDF11-CONCEPTS</a></cite>]
+                    class="secno">3.3 </bdi>Literals</a> [[RDF11-CONCEPTS]]
               </p>
             </td>
           </tr>
@@ -10420,7 +10412,7 @@
                   <ul>
                     <li>This property refers to the maturity of the Distribution. It MUST take one of the values
                       Completed, Deprecated, Under
-                      Development, Withdrawn from the ADMS status [ADMS-SKOS] vocabulary.</li>
+                      Development, Withdrawn from the ADMS status [[VOCAB-ADMS-SKOS] vocabulary.</li>
                   </ul>
                 </td>
               </tr>
@@ -10726,7 +10718,7 @@
                       have not changed.
                     </li>
                     <li>The checksum is related to the downloadURL.</li>
-                    <li>Property added in [[VOCAB-DCAT-3-3]]:
+                    <li>Property added in [[VOCAB-DCAT-3]]:
                       <a data-cite="VOCAB-DCAT-3#Property:distribution_checksum">
                         <code>spdx:checksum</code>
                       </a>
@@ -12171,7 +12163,7 @@
           <th>Reference</th>
           <td>
             <p><a href="https://semiceu.github.io/ADMS/releases/2.00/#Identifier">§&nbsp;Term name: Identifier</a>
-              [<cite><a class="bibref" data-link-type="biblio" href="#bib-adms"
+              [<cite><a class="bibref" data-link-type="biblio" href="#bib-vocab-adms"
                   title="Asset Description Metadata Schema (ADMS)">ADMS</a></cite>]</p>
           </td>
         </tr>
