@@ -4576,9 +4576,6 @@
                 as the Data.GOV spatial data service type code list
                 [[DATAGOV-SDST]].
               </li>
-              <li>TOFIX: DCAT-AP provides guidelines about the usage of Data services and Distribution in relation to
-                Datasets:
-                [[DCAT-AP-USAGEGUIDE]].</li>
             </ul>
           </td>
         </tr>
@@ -6189,7 +6186,7 @@
         </tr>
         <tr>
           <th class="prop">Definition:</th>
-          <td></td>
+          <td>A collection of data, published or curated by a single agent, and available for access or download in one or more representations.</td>
         </tr>
         <tr>
           <th class="prop">Subclass Of:</th>
@@ -6199,7 +6196,9 @@
           <th class="prop">Usage note:</th>
           <td>
             <ul>
-              <li></li>
+              <li>This class describes the conceptual dataset. One or more representations might be available, with differing schematic layouts and formats or serializations.</li>
+              <li>This class describes the actual dataset as published by the dataset provider. In cases where a distinction between the actual dataset and its entry in the catalog is necessary (because metadata such as modification date might differ), the dcat:CatalogRecord class can be used for the latter.</li>
+              <li>The notion of dataset in DCAT is broad and inclusive, with the intention of accommodating resource types arising from all communities. Data comes in many forms including numbers, text, pixels, imagery, sound and other multi-media, and potentially other types, any of which might be collected into a dataset.</li> 
             </ul>
           </td>
         </tr>
@@ -8780,7 +8779,8 @@
           <th class="prop">Usage note:</th>
           <td>
             <ul>
-              <li></li>
+              <li>Dataset series can be also soft-typed via property dcterms:type as in the approach used in [[GeoDCAT-AP]]</li>
+              <li>Common scenarios for dataset series include: time series composed of periodically released subsets; map-series composed of items of the same type or theme but with differing spatial footprints.</li>
             </ul>
           </td>
         </tr>
@@ -9527,7 +9527,7 @@
         </tr>
         <tr>
           <th class="prop">Definition:</th>
-          <td></td>
+          <td>A specific representation of a dataset. A dataset might be available in multiple serializations that may differ in various ways, including natural language, media-type or format, schematic organization, temporal and spatial resolution, level of detail or profiles (which might specify any or all of the above).</td>
         </tr>
         <tr>
           <th class="prop">Subclass Of:</th>
@@ -9537,12 +9537,14 @@
           <th class="prop">Usage note:</th>
           <td>
             <ul>
-              <li></li>
+              <li>This represents a general availability of a dataset. It implies no information about the actual access method of the data, i.e., whether by direct download, API, or through a Web page. 
+                The use of dcat:downloadURL property indicates directly downloadable distributions.</li>
             </ul>
           </td>
         </tr>
 
       </table>
+      
       <table class="simple">
         <thead>
           <tr>
@@ -13463,7 +13465,7 @@
           <th class="prop">Usage note:</th>
           <td>
             <ul>
-
+              <li>The start and end of the interval SHOULD be given by using properties <a data-cite="DCAT-US#Property:period_start-date"><code>dcat:startDate</code></a>, and <a data-cite="DCAT-US#Property:period_end-date"><code>dcat:endDate</code></a>, respectively. The interval can also be open - i.e., it can have just a start or just an end.</li>
             </ul>
           </td>
         </tr>
@@ -13482,7 +13484,7 @@
         <tbody>
           <tr>
             <td><a href="#period_start-date">start date</a></td>
-            <td><a data-cite="DCAT-US#Property:dcat_startDate"><code>dcat:startDate</code></a>
+            <td><a data-cite="DCAT-US#Property:period_start-date"><code>dcat:startDate</code></a>
             </td>
             <td><a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>
             </td>
@@ -13491,7 +13493,7 @@
           </tr>
           <tr>
             <td><a href="#period_end-date">end date</a></td>
-            <td><a data-cite="DCAT-US#Property:dcat_endDate"><code>dcat:endDate</code></a>
+            <td><a data-cite="DCAT-US#Property:period_end-date"><code>dcat:endDate</code></a>
             </td>
             <td><a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>
             </td>
@@ -14397,7 +14399,7 @@
         </tr>
         <tr>
           <th class="prop">Definition: </th>
-          <td></td>
+          <td>A standard or other specification to which a Dataset or Distribution conforms.</td>
         </tr>
         <tr>
           <th class="prop">Usage note:</th>
