@@ -1,5 +1,6 @@
 var respecConfig = {
   specStatus: "base",
+  latestVersion: "https://doi-do.github.io/dcat-us/",
   logos: [],
   editors: [
 
@@ -35,7 +36,7 @@ var respecConfig = {
     branch: "main",
     repoURL: "https://github.com/DOI-DO/dcat-us/",
   },
-  edDraftURI: "https://github.com/DOI-DO/dcat-us/dcat-us.html",
+  edDraftURI: "https://doi-do.github.io/dcat-us/",
   subtitle: "A DCAT Application Profile for United States Of America (Working Draft)",
   localBiblio: {
     "CC": {
