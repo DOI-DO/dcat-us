@@ -1960,6 +1960,7 @@
     </section>
     <section id="properties-for-attribution">
       <h2>Class: Attribution</h2>
+      <aside class="note">New in DCAT-US 3.0 (defined in DCAT 2)</aside>
       <p>
       </p>
       <table class="def">
@@ -1975,7 +1976,10 @@
           <th class="prop">Usage note:</th>
           <td>
             <ul>
-
+                <li>Used to link to an Agent where the nature of the relationship is known but does not match one of the standard [[DCTERMS]] properties (<a href="http://purl.org/dc/terms/creator"><code>dcterms:creator</code></a>,
+                  <a href="http://purl.org/dc/terms/contributor"><code>dcterms:contributor</code></a>,
+                  <a href="http://purl.org/dc/terms/rightsHolder"><code>dcterms:rightsHolder</code></a>,
+                  and <a href="http://purl.org/dc/terms/publisher"><code>dcterms:publisher</code></a>). Use <a data-cite="VOCAB-DCAT-3#Property:relationship_hadRole"><code>dcat:hadRole</code></a> on the <a data-cite="PROV#Class:Attribution"><code>prov:Attribution</code></a> to capture the responsibility of the Agent with respect to the Resource.</li>
             </ul>
           </td>
         </tr>
@@ -2019,6 +2023,7 @@
       <section id="attribution-mandatory-props">
         <h4>Mandatory Properties</h4>
         <section id="attribution-agent">
+          <aside class="note">New in DCAT-US 3.0 (defined in DCAT 2)</aside>
           <h4>Property: agent</h4>
           <table class="def">
             <tbody>
@@ -2053,6 +2058,7 @@
         </section>
         <section id="attribution-role">
           <h4>Property: role</h4>
+          <aside class="note">New in DCAT-US 3.0 (defined in DCAT 2)</aside>
           <table class="def">
             <tbody>
               <tr>
