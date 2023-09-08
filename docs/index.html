@@ -31,7 +31,7 @@
     <p>The DCAT-US Profile Version 3 (DCAT-US 3.0) is an updated specification meticulously designed to facilitate data
       cataloging,
       discovery, and interoperability among US government agencies. Leveraging the strong foundation laid by the Project
-      Open Data (POD) 1.1 standard (also known as DCAT-US 1.1), this profile seamlessly aligns with the cutting-edge
+      Open Data (POD) 1.1 standard (also known as [[DCAT-US-1.1]]), this profile seamlessly aligns with the cutting-edge
       [[[VOCAB-DCAT-3]]] (DCAT 3.0) recommendations put
       forth by the World Wide Web Consortium (W3C), all while upholding the essential FAIR principles. Moreover, it
       places a strong emphasis on maintaining compatibility with the existing POD 1.1 standard, ensuring a fluid
@@ -39,7 +39,8 @@
       Reusability.</p>
 
     <p>The paramount significance of the DCAT-US 3.0 lies in its role as a bridge between the
-      well-established POD 1.1 and the forward-looking DCAT 3.0, uniting them under a single, standardized approach for
+      well-established DCAT-US 1.1 and the forward-looking DCAT 3.0, uniting them under a single, standardized approach
+      for
       the articulation and exchange of datasets. By harmonizing the standout attributes of both standards, this profile
       also addresses the distinctive metadata prerequisites inherent to the US context. It goes above and beyond by
       encompassing specialized properties to cater to geospatial and statistical datasets, effectively harnessing
@@ -100,8 +101,8 @@
       reuse.
     </p>
     <!-- Gaps between POD 1.1 and DCAT -->
-    <h3>Gaps between POD 1.1 and DCAT</h3>
-    <p>The POD 1.1 standard, while effective for its time, had some limitations that the DCAT 3.0 standard has
+    <h3>Gaps between DCAT-US 1.1 and DCAT</h3>
+    <p>The DCAT-US 1.1 standard, while effective for its time, had some limitations that the DCAT 3.0 standard has
       addressed. The key differences between the two standards include:
     </p>
     <ul>
@@ -1976,10 +1977,16 @@
           <th class="prop">Usage note:</th>
           <td>
             <ul>
-                <li>Used to link to an Agent where the nature of the relationship is known but does not match one of the standard [[DCTERMS]] properties (<a href="http://purl.org/dc/terms/creator"><code>dcterms:creator</code></a>,
-                  <a href="http://purl.org/dc/terms/contributor"><code>dcterms:contributor</code></a>,
-                  <a href="http://purl.org/dc/terms/rightsHolder"><code>dcterms:rightsHolder</code></a>,
-                  and <a href="http://purl.org/dc/terms/publisher"><code>dcterms:publisher</code></a>). Use <a data-cite="VOCAB-DCAT-3#Property:relationship_hadRole"><code>dcat:hadRole</code></a> on the <a data-cite="PROV#Class:Attribution"><code>prov:Attribution</code></a> to capture the responsibility of the Agent with respect to the Resource.</li>
+              <li>Used to link to an Agent where the nature of the relationship is known but does not match one of the
+                standard [[DCTERMS]] properties (<a
+                  href="http://purl.org/dc/terms/creator"><code>dcterms:creator</code></a>,
+                <a href="http://purl.org/dc/terms/contributor"><code>dcterms:contributor</code></a>,
+                <a href="http://purl.org/dc/terms/rightsHolder"><code>dcterms:rightsHolder</code></a>,
+                and <a href="http://purl.org/dc/terms/publisher"><code>dcterms:publisher</code></a>). Use <a
+                  data-cite="VOCAB-DCAT-3#Property:relationship_hadRole"><code>dcat:hadRole</code></a> on the <a
+                  data-cite="PROV#Class:Attribution"><code>prov:Attribution</code></a> to capture the responsibility of
+                the Agent with respect to the Resource.
+              </li>
             </ul>
           </td>
         </tr>
@@ -2100,6 +2107,19 @@
     </section>
     <section id="properties-for-catalog">
       <h3>Class: Catalog</h3>
+      <aside class="note">
+        <p>The scope of [[VOCAB-DCAT-20140116]] (DCAT-1) and [[DCAT-US-1.1]] was catalogs of datasets. This has been
+          generalized in [[VOCAB-DCAT-3]] and DCAT-US 3.0 application profile.
+          Properties common to all cataloged resources are now associated with a super-class <a
+            data-cite="VOCAB-DCAT-3#Class:Resource"><code>dcat:Resource</code></a>.</p>
+
+        <p>Moreover, an explicit class for data services has been added in this revision of DCAT, to enable these to be
+          part of a catalog. </p>
+        <p>Finally, <a data-cite="VOCAB-DCAT-3#Class:Catalog"><code>dcat:Catalog</code></a> has been made a sub-class of
+          <a data-cite="VOCAB-DCAT-3#Class:Dataset"><code>dcat:Dataset</code></a>, and provision for catalogs to be
+          composed of
+          other catalogs is also enabled.</p>
+      </aside>
       <p>
         A Catalog or repository that hosts the Datasets or Data Services being described.
       </p>
@@ -2336,13 +2356,6 @@
             <td>0..n</td>
           </tr>
           <tr>
-            <td><a href="#catalog-isPartOf">is part of</a></td>
-            <td><a data-cite="DCTERMS#http://purl.org/dc/terms/isPartOf"><code>dct:isPartOf</code></a></td>
-            <td><a data-cite="VOCAB-DCAT-3#Class:Catalog"><code>dcat:Catalog</code></a></td>
-            <td>O</td>
-            <td>0..1</td>
-          </tr>
-          <tr>
             <td><a href="#catalog-rightsHolder">rights holder</a></td>
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/rightsHolder"><code>dct:rightsHolder</code></a></td>
             <td><a href="http://xmlns.com/foaf/0.1/term_Organization"><code>foaf:Organization</code></a></td>
@@ -2375,9 +2388,10 @@
 
       <section id="catalog-mandatory-props">
         <h4>Mandatory Properties</h4>
-
+      
         <section id="catalog-title">
           <h5>Property: title</h5>
+          <aside class="note">New in DCAT-US 3.0 (defined in DCAT 1)</aside>
           <table class="def">
             <tbody>
               <tr>
@@ -2419,6 +2433,7 @@
           </aside>
         </section>
         <section id="catalog-description">
+          <aside class="note">New in DCAT-US 3.0 (defined in DCAT 1)</aside>
           <h4>Property: description</h4>
           <table class="def">
             <tbody>
@@ -2470,6 +2485,7 @@
           </aside>
         </section>
         <section id="catalog-publisher">
+          <aside class="note">New in DCAT-US 3.0 (defined in DCAT 1)</aside>
           <h4>Property: publisher</h4>
           <table class="def">
             <tbody>
@@ -2566,6 +2582,7 @@
 
         <section id="catalog-homepage">
           <h4>Property: homepage</h4>
+          <aside class="note">New in DCAT-US 3.0 (defined in DCAT 1)</aside>
           <table class="def">
             <tbody>
               <tr>
@@ -2607,6 +2624,7 @@
         </section>
         <section id="catalog-language">
           <h4>Property: language</h4>
+          <aside class="note">New in DCAT-US 3.0 (defined in DCAT 2)</aside>
           <table class="def">
             <tbody>
               <tr>
@@ -2655,6 +2673,7 @@
         </section>
         <section id="catalog-license">
           <h4>Property: license</h4>
+          <aside class="note">New in DCAT-US 3.0 (defined in DCAT 1)</aside>
           <table class="def">
             <tbody>
               <tr>
@@ -2697,6 +2716,7 @@
         </section>
         <section id="catalog-issued">
           <h4>Property: release date</h4>
+          <aside class="note">New in DCAT-US 3.0 (defined in DCAT 2)</aside>
           <table class="def">
             <tbody>
               <tr>
@@ -2742,6 +2762,7 @@
           </aside>
         </section>
         <section id="catalog-rights">
+          <aside class="note">New in DCAT-US 3.0 (defined in DCAT 1)</aside>
           <h4>Property: rights</h4>
           <table class="def">
             <tbody>
@@ -2778,11 +2799,13 @@
             </tbody>
           </table>
           <aside class="example" title="Usage of dct:rights for dcat:Catalog">
-            <pre data-include-format="text" data-include="./examples/catalog/rights.ttl"></pre>
+       <!--TODO-->
+       <!--     <pre data-include-format="text" data-include="./examples/catalog/rights.ttl"></pre> -->
           </aside>
         </section>
         <section id="catalog-spatial-geographic">
           <h4>Property: spatial/ geographic</h4>
+          <aside class="note">New in DCAT-US 3.0 (defined in DCAT 1)</aside>
           <table class="def">
             <tbody>
               <tr>
@@ -2832,6 +2855,7 @@
         </section>
         <section id="catalog-theme-taxonomy">
           <h4>Property: themes</h4>
+          <aside class="note">New in DCAT-US 3.0 (defined in DCAT 1)</aside>
           <table class="def">
             <tbody>
               <tr>
@@ -2875,6 +2899,7 @@
           </aside>
         </section>
         <section id="catalog-modified">
+          <aside class="note">New in DCAT-US 3.0 (defined in DCAT 1)</aside>
           <h4>Property: update/ modification date</h4>
           <table class="def">
             <tbody>
@@ -2921,6 +2946,7 @@
         </section>
         <section id="catalog-conformsTo">
           <h4>Property: schema version</h4>
+          <aside class="note">New in DCAT-US 3.0 (defined in DCAT 2)</aside>
           <table class="def">
             <tbody>
               <tr>
@@ -2970,11 +2996,12 @@
         <h4>Optional Properties</h4>
         <section id="catalog-creator">
           <h4>Property: creator</h4>
+          <aside class="note">New in DCAT-US 3.0 (defined in DCAT 2)</aside>
           <table class="def">
             <tbody>
               <tr>
                 <th>Property</th>
-                <td>creattor</td>
+                <td>creator</td>
               </tr>
               <tr>
                 <th>Requirement level</th>
@@ -3012,6 +3039,7 @@
         </section>
         <section id="catalog-access-rights">
           <h4>Property: access rights</h4>
+          <aside class="note">New in DCAT-US 3.0 (defined in DCAT 2)</aside>
           <table class="def">
             <tbody>
               <tr>
@@ -3052,11 +3080,13 @@
             </tbody>
           </table>
           <aside class="example" title="Usage of dct:rights for dcat:Catalog">
-            <pre data-include-format="text" data-include="./examples/catalog/rights.ttl"></pre>
+         <!--TODO-->
+       <!--      <pre data-include-format="text" data-include="./examples/catalog/rights.ttl"></pre> -->
           </aside>
         </section>
         <section id="catalog-catalog">
           <h4>Property: catalog</h4>
+          <aside class="note">New in DCAT-US 3.0 (defined in DCAT 2)</aside>
           <table class="def">
             <tbody>
               <tr>
@@ -3091,7 +3121,8 @@
             </tbody>
           </table>
           <aside class="example" title="Usage of dcat:catalog for dcat:Catalog">
-            <pre data-include-format="text" data-include="./examples/catalog/subcatalog.ttl"></pre>
+             <!--TODO-->
+       <!--  <pre data-include-format="text" data-include="./examples/catalog/subcatalog.ttl"></pre> -->
           </aside>
         </section>
         <section id="catalog-contactPoint">
@@ -3137,6 +3168,7 @@
         </section>
         <section id="catalog-keyword">
           <h4>Property: keyword/tag</h4>
+          <aside class="note">New in DCAT-US 3.0 (defined in DCAT 2)</aside>
           <table class="def">
             <tbody>
               <tr>
@@ -3177,6 +3209,7 @@
         </section>
         <section id="catalog-hasPart">
           <h4>Property: has part</h4>
+          <aside class="note">New in DCAT-US 3.0 (defined in DCAT 2)</aside>
           <table class="def">
             <tbody>
               <tr>
@@ -3216,6 +3249,7 @@
           </aside>
         </section>
         <section id="catalog-catalog-record">
+          <aside class="note">New in DCAT-US 3.0 (defined in DCAT 1)</aside>
           <h4>Property: catalog record</h4>
           <table class="def">
             <tbody>
@@ -3226,9 +3260,7 @@
               <tr>
                 <th>Definition:</th>
                 <td>A record describing the registration of a single resource (e.g., a dataset, a data service) that is
-                  part
-                  of
-                  the catalog.</td>
+                  part of the catalog.</td>
               </tr>
               <tr>
                 <th>Requirement level</th>
@@ -3262,6 +3294,7 @@
         </section>
         <section id="catalog-service">
           <h4>Property: service</h4>
+          <aside class="note">New in DCAT-US 3.0 (defined in DCAT 2)</aside>
           <table class="def">
             <tbody>
               <tr>
@@ -3305,6 +3338,7 @@
         </section>
         <section id="catalog-theme-category">
           <h4>Property: theme/category</h4>
+          <aside class="note">New in DCAT-US 3.0 (defined in DCAT 2)</aside>
           <table class="def">
             <tbody>
               <tr>
@@ -3348,6 +3382,7 @@
         </section>
         <section id="catalog-identifier">
           <h4>Property: identifier</h4>
+          <aside class="note">New in DCAT-US 3.0 (defined in DCAT 2)</aside>
           <table class="def">
             <tbody>
               <tr>
@@ -3388,50 +3423,10 @@
             <!-- <pre data-include-format="text" data-include="./examples/catalog/identifier.ttl"></pre> -->
           </aside>
         </section>
-        <section id="catalog-isPartOf">
-          <h4>Property: is part of</h4>
-          <table class="def">
-            <tbody>
-              <tr>
-                <th>Property</th>
-                <td>is part of</td>
-              </tr>
-              <tr>
-                <th>Requirement level</th>
-                <td>Optional</td>
-              </tr>
-              <tr>
-                <th>Cardinality</th>
-                <td>0..1</td>
-              </tr>
-              <tr>
-                <th>URI</th>
-                <td><a data-cite="VOCAB-DCAT-3#Property:resource_has_part"><code>dcterms:hasPart</code></a></td>
-              </tr>
-              <tr>
-                <th>Range</th>
-                <td><a data-cite="VOCAB-DCAT-3#Class:Catalog"><code>dcat:Catalog</code></a></td>
-              </tr>
-              <tr>
-                <th>Usage Note</th>
-                <td>
-                  <ul>
-                    <li>This property refers to a related Catalog in which the described Catalog is physically or
-                      logically
-                      included.
-                    </li>
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <aside class="example" title="Usage of dcterms:isPartOf for dcat:Catalog">
-            <!-- TODO: uncomment below and add a dcterms:isPartOf example for dcat:Catalog-->
-            <!-- <pre data-include-format="text" data-include="./examples/catalog/isPartOf.ttl"></pre> -->
-          </aside>
-        </section>
+        
         <section id="catalog-rightsHolder">
           <h4>Property:rights holder</h4>
+          <aside class="note">New in DCAT-US 3.0 (defined in DCAT 2)</aside>
           <table class="def">
             <tbody>
               <tr>
@@ -3473,6 +3468,7 @@
         </section>
         <section id="catalog-subject">
           <h4>Property: subject</h4>
+          <aside class="note">New in DCAT-US 3.0</aside>
           <table class="def">
             <tbody>
               <tr>
@@ -3511,6 +3507,7 @@
         </section>
         <section id="catalog-temporal">
           <h4>Property: temporal coverage</h4>
+          <aside class="note">New in DCAT-US 3.0 (defined in DCAT 2)</aside>
           <table class="def">
             <tbody>
               <tr>
@@ -3550,6 +3547,7 @@
         </section>
         <section id="catalog-qualifiedAttribution">
           <h4>Property: qualified attribution</h4>
+          <aside class="note">New in DCAT-US 3.0 (defined in DCAT 2)</aside>
           <table class="def">
             <tbody>
               <tr>
@@ -6192,7 +6190,8 @@
         </tr>
         <tr>
           <th class="prop">Definition:</th>
-          <td>A collection of data, published or curated by a single agent, and available for access or download in one or more representations.</td>
+          <td>A collection of data, published or curated by a single agent, and available for access or download in one
+            or more representations.</td>
         </tr>
         <tr>
           <th class="prop">Subclass Of:</th>
@@ -6202,9 +6201,15 @@
           <th class="prop">Usage note:</th>
           <td>
             <ul>
-              <li>This class describes the conceptual dataset. One or more representations might be available, with differing schematic layouts and formats or serializations.</li>
-              <li>This class describes the actual dataset as published by the dataset provider. In cases where a distinction between the actual dataset and its entry in the catalog is necessary (because metadata such as modification date might differ), the dcat:CatalogRecord class can be used for the latter.</li>
-              <li>The notion of dataset in DCAT is broad and inclusive, with the intention of accommodating resource types arising from all communities. Data comes in many forms including numbers, text, pixels, imagery, sound and other multi-media, and potentially other types, any of which might be collected into a dataset.</li> 
+              <li>This class describes the conceptual dataset. One or more representations might be available, with
+                differing schematic layouts and formats or serializations.</li>
+              <li>This class describes the actual dataset as published by the dataset provider. In cases where a
+                distinction between the actual dataset and its entry in the catalog is necessary (because metadata such
+                as modification date might differ), the dcat:CatalogRecord class can be used for the latter.</li>
+              <li>The notion of dataset in DCAT is broad and inclusive, with the intention of accommodating resource
+                types arising from all communities. Data comes in many forms including numbers, text, pixels, imagery,
+                sound and other multi-media, and potentially other types, any of which might be collected into a
+                dataset.</li>
             </ul>
           </td>
         </tr>
@@ -8785,8 +8790,10 @@
           <th class="prop">Usage note:</th>
           <td>
             <ul>
-              <li>Dataset series can be also soft-typed via property dcterms:type as in the approach used in [[GeoDCAT-AP]]</li>
-              <li>Common scenarios for dataset series include: time series composed of periodically released subsets; map-series composed of items of the same type or theme but with differing spatial footprints.</li>
+              <li>Dataset series can be also soft-typed via property dcterms:type as in the approach used in
+                [[GeoDCAT-AP]]</li>
+              <li>Common scenarios for dataset series include: time series composed of periodically released subsets;
+                map-series composed of items of the same type or theme but with differing spatial footprints.</li>
             </ul>
           </td>
         </tr>
@@ -9533,7 +9540,9 @@
         </tr>
         <tr>
           <th class="prop">Definition:</th>
-          <td>A specific representation of a dataset. A dataset might be available in multiple serializations that may differ in various ways, including natural language, media-type or format, schematic organization, temporal and spatial resolution, level of detail or profiles (which might specify any or all of the above).</td>
+          <td>A specific representation of a dataset. A dataset might be available in multiple serializations that may
+            differ in various ways, including natural language, media-type or format, schematic organization, temporal
+            and spatial resolution, level of detail or profiles (which might specify any or all of the above).</td>
         </tr>
         <tr>
           <th class="prop">Subclass Of:</th>
@@ -9543,14 +9552,15 @@
           <th class="prop">Usage note:</th>
           <td>
             <ul>
-              <li>This represents a general availability of a dataset. It implies no information about the actual access method of the data, i.e., whether by direct download, API, or through a Web page. 
+              <li>This represents a general availability of a dataset. It implies no information about the actual access
+                method of the data, i.e., whether by direct download, API, or through a Web page.
                 The use of dcat:downloadURL property indicates directly downloadable distributions.</li>
             </ul>
           </td>
         </tr>
 
       </table>
-      
+
       <table class="simple">
         <thead>
           <tr>
@@ -11284,7 +11294,7 @@
         </tr>
         <tr>
           <th class="prop">Definition:</th>
-          <td>A publication - as a scientific paper, a techni   cal report, a book, book chapter, but also a blog post.
+          <td>A publication - as a scientific paper, a techni cal report, a book, book chapter, but also a blog post.
           </td>
         </tr>
         <tr>
@@ -12523,7 +12533,7 @@
     </section>
 
     <!-- dcat-us:LiabilityStatement-->
-    
+
     <section id="properties-for-liablity-statement">
       <h2>Class: Liability Statement</h2>
       <table class="def" id="table-class-liability-statement">
@@ -12539,41 +12549,41 @@
         <tr>
           <th class="prop">Usage note:</th>
           <td>
-            
-              </td>
-            </tr>
-            <tr>
-              <th>Reference</th>
-              <td>
-                <p><a href="http://TBD#LiablityStatement">§&nbsp;Term name: Liability Statement</a>
-                  [<cite><a class="bibref" data-link-type="biblio" href="#bib-dcterms"
-                      title="DCMI Metadata Terms">DCTERMS</a></cite>]</p>
-              </td>
-            </tr>
-          </table>
-          <p><strong>Properties Summary</strong></p>
-          <table class="simple">
-            <thead>
-              <tr>
-                <th>Property</th>
-                <th>URI</th>
-                <th>Range</th>
-                <th>ReqLevel</th>
-                <th>Card</th>
-              </tr>
-            </thead>
-            <tbody>
-    
-              <tr>
-                <td><a href="#license-document-license-text">license text</a></td>
-                <td><a href="http://spdx.org/rdf/terms#licenseText"><code>spdx:licenseText</code></a>
+
           </td>
-          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
-          </td>
-          <td><strong>O</strong></td>
-          <td>0..n</td>
         </tr>
-    
+        <tr>
+          <th>Reference</th>
+          <td>
+            <p><a href="http://TBD#LiablityStatement">§&nbsp;Term name: Liability Statement</a>
+              [<cite><a class="bibref" data-link-type="biblio" href="#bib-dcterms"
+                  title="DCMI Metadata Terms">DCTERMS</a></cite>]</p>
+          </td>
+        </tr>
+      </table>
+      <p><strong>Properties Summary</strong></p>
+      <table class="simple">
+        <thead>
+          <tr>
+            <th>Property</th>
+            <th>URI</th>
+            <th>Range</th>
+            <th>ReqLevel</th>
+            <th>Card</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+            <td><a href="#license-document-license-text">license text</a></td>
+            <td><a href="http://spdx.org/rdf/terms#licenseText"><code>spdx:licenseText</code></a>
+            </td>
+            <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+            </td>
+            <td><strong>O</strong></td>
+            <td>0..n</td>
+          </tr>
+
         </tbody>
       </table>
       <section id="license-document-optional-props">
@@ -13675,7 +13685,10 @@
           <th class="prop">Usage note:</th>
           <td>
             <ul>
-              <li>The start and end of the interval SHOULD be given by using properties <a data-cite="DCAT-US#Property:period_start-date"><code>dcat:startDate</code></a>, and <a data-cite="DCAT-US#Property:period_end-date"><code>dcat:endDate</code></a>, respectively. The interval can also be open - i.e., it can have just a start or just an end.</li>
+              <li>The start and end of the interval SHOULD be given by using properties <a
+                  data-cite="DCAT-US#Property:period_start-date"><code>dcat:startDate</code></a>, and <a
+                  data-cite="DCAT-US#Property:period_end-date"><code>dcat:endDate</code></a>, respectively. The interval
+                can also be open - i.e., it can have just a start or just an end.</li>
             </ul>
           </td>
         </tr>

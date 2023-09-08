@@ -70,6 +70,11 @@ var respecConfig = {
       "title": "DCAT-US Version 3.0",
       "publisher": "https://github.com/DOI-DO"
     },
+    "DCAT-US-1.1": {
+      "href": "https://resources.data.gov/resources/dcat-us/",
+      "title": "DCAT-US Schema v1.1",
+      "publisher": "https://resources.data.gov/"
+    },
     "DCAT-US-GITHUB-ISSUES": {
       "href": "https://github.com/DOI-DO/dcat-us/issues",
       "title": "GitHub issues for DCAT-US Version 3.0",
