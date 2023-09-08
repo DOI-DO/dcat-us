@@ -11278,7 +11278,7 @@
         </tr>
         <tr>
           <th class="prop">Definition:</th>
-          <td>A publication - as a scientific paper, a technical report, a book, book chapter, but also a blog post.
+          <td>A publication - as a scientific paper, a techni   cal report, a book, book chapter, but also a blog post.
           </td>
         </tr>
         <tr>
@@ -11429,6 +11429,24 @@
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
             </td>
             <td><strong>R</strong></td>
+            <td>0..n</td>
+          </tr>
+          <tr>
+            <td><a href="#document-conformsTo">conforms to</a></td>
+            <td><a href="http://purl.org/dc/terms/conformsTo"><code>dcterms:conformsTo</code></a>
+            </td>
+            <td><a data-cite="DCTerms#terms_Standard"><code>dct:Standard</code></a>
+            </td>
+            <td><strong>O</strong></td>
+            <td>0..n</td>
+          </tr>
+          <tr>
+            <td><a href="#document-mediaType">media type</a></td>
+            <td><a href="http://purl.org/dc/terms/mediaType"><code>dcterms:mediaType</code></a>
+            </td>
+            <td><a href="http://purl.org/dc/terms/MediaType"><code>dct:MediaType</code></a>
+            </td>
+            <td><strong>O</strong></td>
             <td>0..n</td>
           </tr>
         </tbody>
@@ -11909,6 +11927,86 @@
           </table>
           <aside class="example" title="Usage of dct:creator for foaf:Document">
             <!-- <pre data-include-format="text" data-include="./examples/document/creator.ttl"></pre> -->
+          </aside>
+        </section>
+        <section id="document-conformsTo">
+          <h4>Property: conforms to</h4>
+          <table class="def">
+            <tbody>
+              <tr>
+                <th>Property</th>
+                <td>conforms to</td>
+              </tr>
+              <tr>
+                <th>Requirement level</th>
+                <td>Optional</td>
+              </tr>
+              <tr>
+                <th>Cardinality</th>
+                <td>0..n</td>
+              </tr>
+              <tr>
+                <th>URI</th>
+                <td><a href="http://purl.org/dc/terms/conformsTo"><code>dcterms:identifier</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Range</th>
+                <td><a data-cite="DCTerms#terms_Standard"><code>dct:Standard</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Usage Note</th>
+                <td>
+                  <ul>An implementing rule or other specification.
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- TODO: Finish dcterms:conformsTo example for foaf:Document -->
+          <aside class="example" title="Usage of dcterms:conformsTo for foaf:Document">
+            <!-- <pre data-include-format="text" data-include="./examples/document/identifier.ttl"></pre> -->
+          </aside>
+        </section>
+        <section id="document-mediaType">
+          <h4>Property: media type</h4>
+          <table class="def">
+            <tbody>
+              <tr>
+                <th>Property</th>
+                <td>media type</td>
+              </tr>
+              <tr>
+                <th>Requirement level</th>
+                <td>Optional</td>
+              </tr>
+              <tr>
+                <th>Cardinality</th>
+                <td>0..n</td>
+              </tr>
+              <tr>
+                <th>URI</th>
+                <td><a href="http://purl.org/dc/terms/mediaType"><code>dcterms:mediaType</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Range</th>
+                <td><a data-cite="DCTerms#terms_MediaType"><code>dct:MediaType</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Usage Note</th>
+                <td>
+                  <ul>An implementing rule or other specification.
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- TODO: Finish dcterms:conformsTo example for foaf:Document -->
+          <aside class="example" title="Usage of dcterms:conformsTo for foaf:Document">
+            <!-- <pre data-include-format="text" data-include="./examples/document/identifier.ttl"></pre> -->
           </aside>
         </section>
       </section>
@@ -12415,6 +12513,112 @@
           </table>
         </section>
 
+      </section>
+    </section>
+
+    <!-- dcat-us:LiabilityStatement-->
+    
+    <section id="properties-for-liablity-statement">
+      <h2>Class: Liability Statement</h2>
+      <table class="def" id="table-class-liability-statement">
+        <tr>
+          <th>RDF Class:</th>
+          <td><a href="http://TBD#LiabilityStatement"><code>dcat-us:LiabilityStatement</code></a></td>
+        </tr>
+        <tr>
+          <th class="prop">Definition:</th>
+          <!-- TODO: Define this liability statement class -->
+          <td></td>
+        </tr>
+        <tr>
+          <th class="prop">Usage note:</th>
+          <td>
+            
+              </td>
+            </tr>
+            <tr>
+              <th>Reference</th>
+              <td>
+                <p><a href="http://TBD#LiablityStatement">§&nbsp;Term name: Liability Statement</a>
+                  [<cite><a class="bibref" data-link-type="biblio" href="#bib-dcterms"
+                      title="DCMI Metadata Terms">DCTERMS</a></cite>]</p>
+              </td>
+            </tr>
+          </table>
+          <p><strong>Properties Summary</strong></p>
+          <table class="simple">
+            <thead>
+              <tr>
+                <th>Property</th>
+                <th>URI</th>
+                <th>Range</th>
+                <th>ReqLevel</th>
+                <th>Card</th>
+              </tr>
+            </thead>
+            <tbody>
+    
+              <tr>
+                <td><a href="#license-document-license-text">license text</a></td>
+                <td><a href="http://spdx.org/rdf/terms#licenseText"><code>spdx:licenseText</code></a>
+          </td>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+          </td>
+          <td><strong>O</strong></td>
+          <td>0..n</td>
+        </tr>
+    
+        </tbody>
+      </table>
+      <section id="license-document-optional-props">
+        <h3>Optional Properties</h3>
+        <section id="license-document-license-text">
+          <h4>Property: license text</h4>
+          <table class="def">
+            <tbody>
+              <tr>
+                <th>Property</th>
+                <td>license text</td>
+              </tr>
+              <tr>
+                <th>Requirement level</th>
+                <td>Optional</td>
+              </tr>
+              <tr>
+                <th>Cardinality</th>
+                <td>0..n</td>
+              </tr>
+              <tr>
+                <th>URI</th>
+                <td><a href="http://spdx.org/rdf/terms#licenseText"><code>spdx:licenseText</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Range</th>
+                <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Definition</th>
+                <td>Full text of the license.</td>
+              </tr>
+              <tr>
+                <th>Usage Notes</th>
+                <td>Property <code>spdx:licenseText</code> MAY only be used to specify license information in legacy
+                  metadata records, not compliant with
+                  standard license from an endorsed registry. This property can be repeated for
+                  parallel language versions of the description </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </section>
+      <section id="license-document-example">
+        <h4>Example</h4>
+        <aside class="example" title="License example">
+          <!--TODO-->
+          <!--           <pre data-include-format="text" data-include="./examples/license.ttl"></pre> -->
+        </aside>
       </section>
     </section>
 
