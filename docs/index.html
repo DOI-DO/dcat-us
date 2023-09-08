@@ -2118,7 +2118,8 @@
         <p>Finally, <a data-cite="VOCAB-DCAT-3#Class:Catalog"><code>dcat:Catalog</code></a> has been made a sub-class of
           <a data-cite="VOCAB-DCAT-3#Class:Dataset"><code>dcat:Dataset</code></a>, and provision for catalogs to be
           composed of
-          other catalogs is also enabled.</p>
+          other catalogs is also enabled.
+        </p>
       </aside>
       <p>
         A Catalog or repository that hosts the Datasets or Data Services being described.
@@ -2388,7 +2389,7 @@
 
       <section id="catalog-mandatory-props">
         <h4>Mandatory Properties</h4>
-      
+
         <section id="catalog-title">
           <h5>Property: title</h5>
           <aside class="note">New in DCAT-US 3.0 (defined in DCAT 1)</aside>
@@ -2799,8 +2800,8 @@
             </tbody>
           </table>
           <aside class="example" title="Usage of dct:rights for dcat:Catalog">
-       <!--TODO-->
-       <!--     <pre data-include-format="text" data-include="./examples/catalog/rights.ttl"></pre> -->
+            <!--TODO-->
+            <!--     <pre data-include-format="text" data-include="./examples/catalog/rights.ttl"></pre> -->
           </aside>
         </section>
         <section id="catalog-spatial-geographic">
@@ -3080,8 +3081,8 @@
             </tbody>
           </table>
           <aside class="example" title="Usage of dct:rights for dcat:Catalog">
-         <!--TODO-->
-       <!--      <pre data-include-format="text" data-include="./examples/catalog/rights.ttl"></pre> -->
+            <!--TODO-->
+            <!--      <pre data-include-format="text" data-include="./examples/catalog/rights.ttl"></pre> -->
           </aside>
         </section>
         <section id="catalog-catalog">
@@ -3121,8 +3122,8 @@
             </tbody>
           </table>
           <aside class="example" title="Usage of dcat:catalog for dcat:Catalog">
-             <!--TODO-->
-       <!--  <pre data-include-format="text" data-include="./examples/catalog/subcatalog.ttl"></pre> -->
+            <!--TODO-->
+            <!--  <pre data-include-format="text" data-include="./examples/catalog/subcatalog.ttl"></pre> -->
           </aside>
         </section>
         <section id="catalog-contactPoint">
@@ -3423,7 +3424,7 @@
             <!-- <pre data-include-format="text" data-include="./examples/catalog/identifier.ttl"></pre> -->
           </aside>
         </section>
-        
+
         <section id="catalog-rightsHolder">
           <h4>Property:rights holder</h4>
           <aside class="note">New in DCAT-US 3.0 (defined in DCAT 2)</aside>
@@ -6481,7 +6482,7 @@
             <td>0..n</td>
           </tr>
           <tr>
-            <td><a href="#dataset-hasQualityMeasurement">spatial resolution</a></td>
+            <td><a href="#dataset-hasQualityMeasurement">quality measurement</a></td>
             <!-- TODO: Add links in this block -->
             <td><code>dqv:hasQualityMeasurement</code>
             </td>
@@ -6619,7 +6620,7 @@
           </tr>
           <tr>
             <td><a href="#dataset-liabilityStatement">liability statement</a></td>
-            <td><a data-cite="VOCAB-ADMS#supportedSchema"><code>adms:supportedSchema</code></a>
+            <td><a href=#dataset-liabilityStatement"><code>dcat-us:liabilityStatement</code></a>
             </td>
             <td><a href="http://TBD#LiabilityStatement">
                 <code>dcat-us:LiabilityStatement</code></a>
@@ -6637,31 +6638,30 @@
             <td>O</td>
             <td>0..n</td>
           </tr>
-          <!-- TODO: Remove these if not needed (they did not exist in DCAT-AP 3.0)-->
-          <!-- <tr>
-                                                          <td><a href="#dataset-contributor">contributor</a></td>
-                                                          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/contributor"><code>dct:contributor</code></a></td>
-                                                          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Agent"><code>dct:Agent</code></a>
-                                                          </td>
-                                                          <td>O</td>
-                                                          <td>0..n</td>
-                                                        </tr>
-                                                        <tr>
-                                                          <td><a href="#dataset-image">image</a></td>
-                                                          <td><a data-cite="SCHEMA-ORG/image" data-no-xref=""><code>schema:image</code></a></td>
-                                                          <td><a data-cite="SCHEMA-ORG/url" data-no-xref=""><code>schema:url</code></a> or
-                                                            <a data-cite="SCHEMA-ORG/ImageObject" data-no-xref=""><code>schema:ImageObject</code></a>
-                                                          </td>
-                                                          <td>O</td>
-                                                          <td>0..n</td>
-                                                        </tr>
-                                                        <tr>
-                                                          <td><a href="#dataset-usage-note">related resource</a></td>
-                                                          <td><a href="https://vocab.org/vann/#usageNote"><code>vann:usageNote</code></a></td>
-                                                          <td><a data-cite="RDF-SCHEMA#ch_resource"><code>rdfs:Resource</code></a></td>
-                                                          <td>O</td>
-                                                          <td>0..n</td>
-                                                        </tr> -->
+          <tr>
+            <td><a href="#dataset-contributor">contributor</a></td>
+            <td><a data-cite="DCTERMS#http://purl.org/dc/terms/contributor"><code>dct:contributor</code></a></td>
+            <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Agent"><code>dct:Agent</code></a>
+            </td>
+            <td>O</td>
+            <td>0..n</td>
+          </tr>
+          <tr>
+            <td><a href="#dataset-image">image</a></td>
+            <td><a data-cite="SCHEMA-ORG/image" data-no-xref=""><code>schema:image</code></a></td>
+            <td><a data-cite="SCHEMA-ORG/url" data-no-xref=""><code>schema:url</code></a> or
+              <a data-cite="SCHEMA-ORG/ImageObject" data-no-xref=""><code>schema:ImageObject</code></a>
+            </td>
+            <td>O</td>
+            <td>0..n</td>
+          </tr>
+          <tr>
+            <td><a href="#dataset-usage-note">related resource</a></td>
+            <td><a href="https://vocab.org/vann/#usageNote"><code>vann:usageNote</code></a></td>
+            <td><a data-cite="RDF-SCHEMA#ch_resource"><code>rdfs:Resource</code></a></td>
+            <td>O</td>
+            <td>0..n</td>
+          </tr>
         </tbody>
       </table>
 
@@ -8554,7 +8554,7 @@
               </tr>
               <tr>
                 <th>URI</th>
-                <td><a data-cite="VOCAB-ADMS#supportedSchema"><code>adms:supportedSchema</code></a>
+                <td><a href="dataset-liabilityStatement"><code>dcat-us:liabilityStatement</code></a>
                 </td>
                 </td>
               </tr>
@@ -8616,9 +8616,7 @@
           </table>
         </section>
 
-
-        <!-- TODO: Remove these if not needed (they did not exist in DCAT-AP 3.0)-->
-        <!-- <section id="dataset-contributor">
+        <section id="dataset-contributor">
           <h4>Property: contributor</h4>
           <table class="def">
             <tbody>
@@ -8756,7 +8754,7 @@
           <aside class="example" id="ex-dataset-usage-note" title="Usage of vann:usageNote for dcat:Dataset">
             <pre data-include-format="text" data-include="./examples/dataset/usage-note.ttl"></pre>
           </aside>
-        </section> -->
+        </section>
       </section>
       <section id="dataset-example">
         <h4>Example</h4>
@@ -9502,7 +9500,8 @@
       <section id="dataset-series-example">
         <h4>Example</h4>
         <aside class="example" id="ex-dataset-series" title="DatasetSeries">
-          <pre data-include-format="text" data-include="./examples/dataset-series/dataset-series.ttl"></pre>
+          <!-- TODO -->
+          <!-- <pre data-include-format="text" data-include="./examples/dataset-series/dataset-series.ttl"></pre> -->
         </aside>
       </section>
     </section>
@@ -12536,6 +12535,7 @@
 
     <section id="properties-for-liablity-statement">
       <h2>Class: Liability Statement</h2>
+      <aside class="note">New DCAT-US 3.0 Class </aside>
       <table class="def" id="table-class-liability-statement">
         <tr>
           <th>RDF Class:</th>
@@ -12543,21 +12543,32 @@
         </tr>
         <tr>
           <th class="prop">Definition:</th>
-          <!-- TODO: Define this liability statement class -->
-          <td></td>
+
+          <td>A formal declaration accompanying a dataset which outlines the responsibilities and limitations of the
+            data provider in terms of the accuracy, completeness, and potential use of the data. It often serves to
+            limit the legal exposure of the data provider by defining the scope of allowed uses and disclaiming
+            warranties or guarantees.
+          </td>
         </tr>
         <tr>
           <th class="prop">Usage note:</th>
           <td>
-
-          </td>
-        </tr>
-        <tr>
-          <th>Reference</th>
-          <td>
-            <p><a href="http://TBD#LiablityStatement">§&nbsp;Term name: Liability Statement</a>
-              [<cite><a class="bibref" data-link-type="biblio" href="#bib-dcterms"
-                  title="DCMI Metadata Terms">DCTERMS</a></cite>]</p>
+            <ul>
+              <li>
+                The LiabilityStatement should be attached to a dcat:Dataset to indicate the terms and conditions of the
+                dataset's usage.</li>
+              <li>This statement should provide information on:
+                <ul>
+                  <li>The accuracy or completeness of the dataset.</li>
+                  <li>Limitations on how the dataset may be used.</li>
+                  <li>Any disclaimers or lack of guarantees/warranties.</li>
+                  <li>Indemnification details.</li>
+                </ul>
+              <li>The statement may be provided as a literal text or as a URL pointing to a detailed liability
+                statement.</li>
+              <li>Utilizing the LiabilityStatement helps in setting clear expectations for consumers of the dataset and
+                limits potential legal exposures of the data provider.</li>
+            </ul>
           </td>
         </tr>
       </table>
@@ -12575,8 +12586,8 @@
         <tbody>
 
           <tr>
-            <td><a href="#license-document-license-text">license text</a></td>
-            <td><a href="http://spdx.org/rdf/terms#licenseText"><code>spdx:licenseText</code></a>
+            <td><a href="#liability_statement-label">liability statement text</a></td>
+            <td><a href="http://spdx.org/rdf/terms#licenseText"><code>rdfs:label</code></a>
             </td>
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
             </td>
@@ -12586,15 +12597,15 @@
 
         </tbody>
       </table>
-      <section id="license-document-optional-props">
+      <section id="liability-document-optional-props">
         <h3>Optional Properties</h3>
-        <section id="license-document-license-text">
-          <h4>Property: license text</h4>
+        <section id="liability_statement-label">
+          <h4>Property: liability statement text</h4>
           <table class="def">
             <tbody>
               <tr>
                 <th>Property</th>
-                <td>license text</td>
+                <td>liability statement text</td>
               </tr>
               <tr>
                 <th>Requirement level</th>
@@ -12606,7 +12617,7 @@
               </tr>
               <tr>
                 <th>URI</th>
-                <td><a href="http://spdx.org/rdf/terms#licenseText"><code>spdx:licenseText</code></a>
+                <td><a data-cite="RDF-SCHEMA#ch_label"><code>rdfs:label</code></a>
                 </td>
               </tr>
               <tr>
@@ -12616,24 +12627,22 @@
               </tr>
               <tr>
                 <th>Definition</th>
-                <td>Full text of the license.</td>
+                <td>Full text of the liability statement.</td>
               </tr>
               <tr>
                 <th>Usage Notes</th>
-                <td>Property <code>spdx:licenseText</code> MAY only be used to specify license information in legacy
-                  metadata records, not compliant with
-                  standard license from an endorsed registry. This property can be repeated for
+                <td>Property <code>rdfs:label</code> MAY only be used to specify the text of liability statement
+                  information. This property can be repeated for
                   parallel language versions of the description </td>
               </tr>
             </tbody>
           </table>
         </section>
       </section>
-      <section id="license-document-example">
+      <section id="liability_statement-example">
         <h4>Example</h4>
-        <aside class="example" title="License example">
-          <!--TODO-->
-          <!--           <pre data-include-format="text" data-include="./examples/license.ttl"></pre> -->
+        <aside class="example" title="LiabilityStatement example">
+          <pre data-include-format="text" data-include="./examples/liability-statement.ttl"></pre>
         </aside>
       </section>
     </section>
@@ -13326,7 +13335,7 @@
 
       <section id="metric-mandatory-props">
         <h4>Mandatory Properties</h4>
-        <section id="#metric-in_dimension">
+        <section id="metric-in_dimension">
           <h4>Property: in dimension</h4>
           <table class="def">
             <tbody>
@@ -13454,7 +13463,10 @@
         </tr>
         <tr>
           <th class="prop">Definition:</th>
-          <td></td>
+          <td>Represents a collection of people organized together into a community or other social, commercial or
+            political structure. The group has some common purpose or reason for existence which goes beyond the set of
+            people belonging to it and can act as an Agent. Organizations are often decomposable into hierarchical
+            structures.</td>
         </tr>
         <tr>
           <th class="prop">Subclass Of:</th>
@@ -13543,7 +13555,7 @@
               </tr>
               <tr>
                 <th>Definition</th>
-                <td>The full name of the Person</td>
+                <td>The legal name or preferred name of the Organization</td>
               </tr>
             </tbody>
           </table>
@@ -13613,7 +13625,7 @@
               </tr>
               <tr>
                 <th>Definition</th>
-                <td>abbreviations or codes from code lists for an organization</td>
+                <td>abbreviations or codes from code lists for an organization (e.g. DOI, DOD)</td>
               </tr>
             </tbody>
           </table>
@@ -13847,7 +13859,7 @@
         </thead>
         <tbody>
           <tr>
-            <td><a href="#agent-name">start date</a></td>
+            <td><a href="#agent-name">name</a></td>
             <td><a href="http://xmlns.com/foaf/0.1/#term_name"><code>foaf_name</code></a>
             </td>
             <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a>
@@ -13976,11 +13988,11 @@
               </tr>
               <tr>
                 <th>Requirement level</th>
-                <td>Mandatory</td>
+                <td>Optional</td>
               </tr>
               <tr>
                 <th>Cardinality</th>
-                <td>1</td>
+                <td>0..n</td>
               </tr>
               <tr>
                 <th>URI</th>

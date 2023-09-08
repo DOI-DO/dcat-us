@@ -1,0 +1,10 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcat-us: <http://TBD/dcat-us#> .
+@prefix ex: <http://example.org/vocab#> .
+
+<http://example.org/datasets/1>
+    a dcat:Dataset ;
+    dcat-us:liabilityStatement [
+        a dcat-us:LiabilityStatement;
+        rdfs:label "This dataset is provided 'as-is' without any guarantees or warranties. The provider is not responsible for any inaccuracies or omissions." 
+    ].
