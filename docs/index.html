@@ -289,7 +289,7 @@
       <h3>The core structure of DCAT-US 3.0</h3>
       <section id="classes">
         <h4>Classes</h4>
-        <p>The DCAT US Application Profile (“DCAT-US ”) are structured around the following main 4 classes:
+        <p>The DCAT US Application Profile (“DCAT-US ”) are structured around the following main classes:
         </p>
         <table class="simple">
           <thead>
@@ -301,172 +301,39 @@
           </thead>
           <tbody>
             <tr>
-              <td><a href="VOCAB-DCAT-3#Class:Catalog">Catalog</a></td>
+              <td><a href="#properties-for-catalog">Catalog</a></td>
               <td>A catalog or repository that hosts the Datasets or Data Services being described.</td>
               <td><a data-cite="VOCAB-DCAT-3#Class:Catalog"><code>dcat:Catalog</code></a></td>
             </tr>
             <tr>
-              <td><a href="#catalog-publisher">Dataset</a></td>
+              <td><a href="#properties-for-dataset">Dataset</a></td>
               <td>A conceptual entity that represents the information published.</td>
               <td><a data-cite="VOCAB-DCAT-3#Class:Dataset"><code>dcat:Dataset</code></a></td>
             </tr>
             <tr>
-              <td><a href="#catalog-dataset">Distribution</a></td>
+              <td><a href="#properties-for-distribution">Distribution</a></td>
               <td>A physical embodiment of the Dataset in a particular format.</td>
               <td><a data-cite="VOCAB-DCAT-3#Class:Distribution"><code>dcat:Distribution</code></a></td>
             </tr>
             <tr>
-              <td><a href="#catalog-title">Data Service</a></td>
+              <td><a href="#properties-for-data-service">Data Service</a></td>
               <td>A collection of operations that provides access to one or more datasets or data processing functions.
               </td>
               <td><a data-cite="VOCAB-DCAT-3#Class:DataService"><code>dcat:DataService</code></a></td>
             </tr>
+            <tr>
+              <td><a href="#properties-for-dataset-series">Dataset Series</a></td>
+              <td>A collection of datasets that are published separately, but share some characteristics that group them.
+              </td>
+              <td><a data-cite="VOCAB-DCAT-3#Class:DatasetSeries"><code>dcat:DatasetSeries</code></a></td>
+            </tr>
           </tbody>
         </table>
-        <div id="diagram" class="mermaid">
-          classDiagram
-          Catalog --> Dataset : dcat:dataset
-          Catalog --> DataService : dcat:service
-          DataService --> Dataset : dcat:servesDataset
-          Dataset --> "0..n" Distribution : dcat:distribution
-          Dataset --> "0..n" Location : dct:spatial
-          Dataset --> "0..n" PeriodOfTime : dct:temporal
-          Dataset --> "0..n" GeographicBoundingBox: dcat-us:geographicBoundingBox
-          Dataset --> "0..n" Attribution: prov:qualifiedAttribution
-          Dataset --> "0..n" Agent: dct:creator
-          Dataset --> "0..n" Agent: dct:contributor
-          Dataset --> "1" Agent: dct:publisher
-          Dataset --> "0..n" Agent: dct:rightsHolder
-          Attribution --> "1" Agent: prov:agent
-          Distribution --> DataService : dcat:accessService
-
-          class Catalog {
-          Mandatory:
-          - dct:title
-          - dct:description
-          - dct:publisher
-          Recommended:
-          - dcat:dataset
-          - foaf:homepage
-          - dct:language
-          - dct:issued
-          - dct:modified
-          - dct:rights
-          - dct:license
-          - dcat:service
-          - dct:spatial
-          - dct:temporal
-          - dcat:themeTaxonomy
-          Optional:
-          - dct:contributor
-          - dct:creator
-          - prov:wasAttributedTo
-          - prov:qualifiedAttribution
-          - dcat:theme
-          - dct:accessRights
-          - dcat:catalog
-          }
-          class DataService {
-          Mandatory:
-          - dcat:endpointURL
-          - dcat:contactPoint
-          - dct:publisher
-          - dct:title
-          Recommended:
-          - dct:endpointDescription
-          - dct:license
-          - dcat:servesDataset
-          }
-          class Dataset {
-          Mandatory:
-          - dct:title
-          - dct:description
-          - dcat:contactPoint
-          - dct:identifier
-          - dct:publisher
-          Recommended:
-          - dcat:distribution
-          - dct:keyword
-          - dcat:landingPage
-          - dct:spatial
-          - dcat-us:geographicBoundingBox
-          - dct:temporal
-          - dcat:theme
-          Optional:
-          - dct:accessRights
-          - dct:accrualPeriodicity
-          - dct:created
-          - dct:contributor
-          - dct:creator
-          - dct:modified
-          - dct:issued
-          - dct:rightsHolder
-          - prov:qualifiedAttribution
-          - prov:wasAttributedTo
-          - dct:conformsTo
-          - dcat:landingPage
-          - dcat:hasVersion
-          - dcat:spatialResolutionInMeters
-          - dcat:temporalResolution
-          - prov:qualifiedAttribution
-          - prov:wasAttributedTo
-          - vann:usageNote
-          }
-          class Distribution {
-          Mandatory:
-          - dct:accessURL
-          - dct:license
-          Recommended:
-          - dctap:availability
-          - dct:description
-          - dct:format
-          - dct:rights
-          - dct:title
-          - dct:modified
-          Optional
-          - dcat:accessService
-          - dct:accessRights
-          - dct:conformsTo
-          - vann:usageNote
-          }
-          class Location {
-          Recommended:
-          - geosparql:geometry
-          Optional:
-          - dcat:centroid
-          }
-          class PeriodOfTime {
-          Recommended:
-          - dcat:startDate
-          - dcat:endDate
-          }
-          class GeographicBoundingBox {
-          Mandatory:
-          - dcat-us:northBoundLatitude
-          - dcat-us:southBoundLatitude
-          - dcat-us:westBoundLongitude
-          - dcat-us:eastBoundLongitude
-          }
-          class Attribution {
-          Mandatory:
-          - prov:agent
-          - dcat:hadRole
-          }
-          class Agent {
-          Mandatory:
-          - foaf:name
-          }
-
-          class Person {
-          Mandatory:
-          - foaf:name
-          }
-
-          class Organization {
-          Mandatory:
-          - foaf:name
-          }
-        </div>
+        <div id="diagram">
+          <!--TODO-->
+          <aside class="note">TODO :ADD UML DIAGRAM</aside>
+        </div> 
+      
       </section>
       <section id="requirement-levels">
         <h4>Requirement levels</h4>
@@ -513,7 +380,7 @@
             <tr>
               <td><code>dcatap:availability</code></td>
               <td>Distribution</td>
-              <td>[[VOCAB-US-AVAILABLITY]]
+              <td>[[DATA-GOV-AVAILABILITY]]
               </td>
               <td>The list of terms for the availability levels of a dataset distribution in the DCAT-AP specification.
               </td>
@@ -521,7 +388,7 @@
             <tr>
               <td><a data-cite="DCTERMS#http://purl.org/dc/terms/accessRights"><code>dct:accessRights</code></a></td>
               <td>Dataset, Data Service</td>
-              <td>[[VOCAB-US-ACCESS-RIGHT]]
+              <td>[[DATA-GOV-AR]]
               </td>
               <td>Use one of the following values (:public, :restricted, :non-public).</td>
             </tr>
@@ -530,14 +397,14 @@
                   data-cite="DCTERMS#http://purl.org/dc/terms/accrualPeriodicity"><code>dct:accrualPeriodicity</code></a>
               </td>
               <td>Dataset</td>
-              <td>[[VOCAB-US-FREQUENCY]]
+              <td>[[DATA-GOV-FREQ]]
               </td>
               <td></td>
             </tr>
             <tr>
               <td><a data-cite="DCTERMS#http://purl.org/dc/terms/format"><code>dct:format</code></a></td>
               <td>Distribution</td>
-              <td>[[VOCAB-US-FILE-TYPE]]
+              <td>[[DATA-GOV-FT]]
               </td>
               <td></td>
             </tr>
@@ -545,14 +412,14 @@
               <td><a data-cite="DCTERMS#http://purl.org/dc/terms/language"><code>dct:language</code></a></td>
               <td>Catalog, Dataset, Catalog Record, Distribution
               </td>
-              <td>[[VOCAB-US-LANGUAGE]]
+              <td>[[ISO 639-1]]
               </td>
               <td></td>
             </tr>
             <tr>
               <td><a data-cite="DCTERMS#http://purl.org/dc/terms/license"><code>dct:license</code></a></td>
               <td>Distribution</td>
-              <td>[[VOCAB-US-LICENSE]]
+              <td>[[DATA-GOV-LICENSE]]
               </td>
               <td>Within the federal level only the “Terms of use data.gov iss are applicable”</td>
             </tr>
@@ -568,14 +435,14 @@
             <tr>
               <td><a data-cite="DCTERMS#http://purl.org/dc/terms/spatial"><code>dct:spatial</code></a></td>
               <td>Catalog, Dataset</td>
-              <td>[[VOCAB-US-CONTINENT]], [[VOCAB-US-COUNTRY]], [[VOCAB-US-PLACE]], [[GEONAMES]]</td>
+              <td>[[DATA-GOV-CONT]], [[DATA-GOV-COUNTRY]], [[DATA-GOV-PLACE]], [[GEONAMES]]</td>
               <td></td>
             <tr>
               <td><a data-cite="VOCAB-DCAT-3#Property:resource_theme">
                   <code>dcat:theme</code></a>
               </td>
               <td>Dataset</td>
-              <td>[[VOCAB-US-THEME]]
+              <td>[[DATA-GOV-THEME]]
               </td>
               <td>The values to be used for this property are the URIs of the concepts in the vocabulary.
               </td>
@@ -585,7 +452,7 @@
                   <code>dcat:themeTaxonomy</code></a>
               </td>
               <td>Catalog</td>
-              <td>[[VOCAB-US-THEME]]
+              <td>[[DATA-GOV-THEME]]
               </td>
               <td>The value to be used for this property is the URI of the vocabulary itself, i.e.
                 the concept scheme, not the URIs of the concepts in the vocabulary.
@@ -2612,7 +2479,7 @@
                   <ul>
                     <li>This property refers to a web page that acts as the main page for the Catalog</li>
                     <li>For instance data.gov, would be the homepage of the Data Catalog exported
-                      to [[DATAGOV]].
+                      to [[DATA-GOV]].
                     </li>
                   </ul>
                 </td>
@@ -2662,7 +2529,7 @@
                       can be provided in multiple languages. In that case, it makes sense to also list
                       these languages on the Catalog level.
                     </li>
-                    <li>CV to be used: [[VOCAB-US-LANGUAGE]]</li>
+                    <li>CV to be used: [[ISO 639-1]]</li>
                   </ul>
                 </td>
               </tr>
@@ -2705,7 +2572,7 @@
                   <ul>
                     <li>This property refers to the licence under which the Catalog can be used or reused.
                     </li>
-                    <li>CV to be used: [[VOCAB-US-LICENSE]]</li>
+                    <li>CV to be used: [[DATA-GOV-LICENSE]]</li>
                   </ul>
                 </td>
               </tr>
@@ -2840,9 +2707,9 @@
                       continents, countries and
                       places that are in those lists; if a particular location is not in one of the mentioned Named
                       Authority Lists, Geonames URIs MUST be used:
-                      [[VOCAB-US-CONTINENT]],
-                      [[VOCAB-US-COUNTRY]],
-                      [[VOCAB-US-PLACE]],
+                      [[DATA-GOV-CONT]],
+                      [[DATA-GOV-COUNTRY]],
+                      [[DATA-GOV-PLACE]],
                       [[GEONAMES]]
                     </li>
                   </ul>
@@ -3028,7 +2895,7 @@
                   <ul>
                     <li>This property refers to the licence under which the Catalog can be used or reused.
                     </li>
-                    <li>CV to be used: [[VOCAB-US-LICENSE]]</li>
+                    <li>CV to be used: [[DATA-GOV-LICENSE]]</li>
                   </ul>
                 </td>
               </tr>
@@ -3073,7 +2940,7 @@
                       restrictions or is not public.
                     </li>
                     <li>
-                      CV to be used: [[VOCAB-US-ACCESS-RIGHT]].
+                      CV to be used: [[DATA-GOV-AR]].
                     </li>
                   </ul>
                 </td>
@@ -3371,7 +3238,7 @@
                       This property refers to a category of the Catalog. A Catalog may be associated with multiple
                       themes.
                     </li>
-                    <li>CV to be used: [[VOCAB-US-THEME]]</li>
+                    <li>CV to be used: [[DATA-GOV-THEME]]</li>
                   </ul>
                 </td>
               </tr>
@@ -4579,7 +4446,7 @@
                 <a href="http://purl.org/dc/terms/type"><code>dcterms:type</code></a>
                 property. Its value may be taken from a controlled vocabulary such
                 as the Data.GOV spatial data service type code list
-                [[DATAGOV-SDST]].
+                [[DATA-GOV-SDST]].
               </li>
             </ul>
           </td>
@@ -5148,7 +5015,7 @@
                 <td>
                   <ul>
                     <li>This property refers to the licence under which the Data Service is made available.</li>
-                    <li>CV to used: [[VOCAB-US-LICENSE]]</li>
+                    <li>CV to used: [[DATA-GOV-LICENSE]]</li>
                   </ul>
                 </td>
               </tr>
@@ -5236,7 +5103,6 @@
                 <td>
                   <ul>
                     <li>This property contains a keyword or tag describing the Data Service.</li>
-                    <li>If available, the keyword from [[TERMDAT]] SHOULD be used.</li>
                   </ul>
                 </td>
               </tr>
@@ -5366,7 +5232,7 @@
                       This property refers to a Category of the Data Service. A Data Service may be associated with
                       multiple Categories.
                     </li>
-                    <li>CV to be used: [[VOCAB-US-THEME]]</li>
+                    <li>CV to be used: [[DATA-GOV-THEME]]</li>
                   </ul>
                 </td>
               </tr>
@@ -5410,7 +5276,7 @@
                     <li>This property MAY include information regarding access or restrictions based on privacy,
                       security, or other policies.
                     </li>
-                    <li>CV must be used: [[VOCAB-US-ACCESS-RIGHT]]</li>
+                    <li>CV must be used: [[DATA-GOV-AR]]</li>
                   </ul>
                 </td>
               </tr>
@@ -5673,7 +5539,7 @@
                       if multiple languages
                       are supported in the Data Service.
                     </li>
-                    <li>CV to be used: [[VOCAB-US-LANGUAGE]]</li>
+                    <li>CV to be used: [[ISO 639-1]]</li>
                   </ul>
                 </td>
               </tr>
@@ -5850,9 +5716,9 @@
                       continents, countries and
                       places that are in those lists; if a particular location is not in one of the mentioned Named
                       Authority Lists, Geonames URIs MUST be used:
-                      [[VOCAB-US-CONTINENT]],
-                      [[VOCAB-US-COUNTRY]],
-                      [[VOCAB-US-PLACE]],
+                      [[DATA-GOV-CONT]],
+                      [[DATA-GOV-COUNTRY]],
+                      [[DATA-GOV-PLACE]],
                       [[GEONAMES]]
                     </li>
                   </ul>
@@ -6181,7 +6047,7 @@
       </p>
       <p>
         DCAT 3 provides guidelines about the usage of Data services and Distribution in relation to Datasets
-        [[DCAT-3-USAGEGUIDE]].:
+        [[VOCAB-DCAT-3]].:
       </p>
       <table class="def">
         <tr>
@@ -6931,9 +6797,9 @@
                     <li>CV to be used: The Vocabularies Name Authority Lists MUST be used for continents,
                       countries and places that are in those lists; if a particular location is not in one of
                       the mentioned Named Authority Lists, Geonames URIs MUST be used:
-                      [[VOCAB-US-CONTINENT]],
-                      [[VOCAB-US-COUNTRY]],
-                      [[VOCAB-US-PLACE]],
+                      [[DATA-GOV-CONT]],
+                      [[DATA-GOV-COUNTRY]],
+                      [[DATA-GOV-PLACE]],
                       [[GEONAMES]]
                     </li>
                   </ul>
@@ -6976,7 +6842,6 @@
                 <td>
                   <ul>
                     <li>This property contains a keyword or tag describing the Dataset.</li>
-                    <li>If a suitable keyword is available in [[TERMDAT]] then this SHOULD be used.</li>
                     <li>Good practice: mark the language of the keywords with the [[ISO 639-1]] language code such as
                       "geodata"@en.
                     </li>
@@ -7251,7 +7116,7 @@
                       This property refers to a category of the Dataset. A Dataset may be associated with multiple
                       themes.
                     </li>
-                    <li>CV to be used: [[VOCAB-US-THEME]]</li>
+                    <li>CV to be used: [[DATA-GOV-THEME]]</li>
                   </ul>
                 </td>
               </tr>
@@ -7300,7 +7165,7 @@
                       restrictions or is not public.
                     </li>
                     <li>
-                      CV to be used: [[VOCAB-US-ACCESS-RIGHT]].
+                      CV to be used: [[DATA-GOV-AR]].
                     </li>
                   </ul>
                 </td>
@@ -7510,7 +7375,7 @@
                 <td>
                   <ul>
                     <li>This property refers to the frequency at which the Dataset is updated.</li>
-                    <li>CV to be used: [[VOCAB-US-FREQUENCY]].</li>
+                    <li>CV to be used: [[DATA-GOV-FREQ]].</li>
                   </ul>
                 </td>
               </tr>
@@ -7642,7 +7507,7 @@
                     <li>This property refers to a language of the Dataset.
                       This property can be repeated if there are multiple languages in the Dataset.
                     </li>
-                    <li>CV to be used: [[VOCAB-US-LANGUAGE]]</li>
+                    <li>CV to be used: [[ISO 639-1]]</li>
                   </ul>
                 </td>
               </tr>
@@ -8728,7 +8593,7 @@
               </tr>
               <tr>
                 <th>URI</th>
-                <td><a data-cite="http://purl.org/vocab/vann/usageNote"><code>vann:usageNote</code></a>
+                <td><a href="http://purl.org/vocab/vann/usageNote"><code>vann:usageNote</code></a>
                 </td>
               </tr>
               <tr>
@@ -9149,9 +9014,9 @@
                     <li>CV to be used: The Vocabularies Name Authority Lists MUST be used for continents,
                       countries and places that are in those lists; if a particular location is not in one of
                       the mentioned Named Authority Lists, Geonames URIs MUST be used:
-                      [[VOCAB-US-CONTINENT]],
-                      [[VOCAB-US-COUNTRY]],
-                      [[VOCAB-US-PLACE]],
+                      [[DATA-GOV-CONT]],
+                      [[DATA-GOV-COUNTRY]],
+                      [[DATA-GOV-PLACE]],
                       [[GEONAMES]]
                     </li>
                   </ul>
@@ -9433,7 +9298,7 @@
                     <li>The frequency of a dataset series is not equal to the frequency of the dataset in the
                       collection.
                     </li>
-                    <li>CV to be used: [[VOCAB-US-FREQUENCY]].</li>
+                    <li>CV to be used: [[DATA-GOV-FREQ]].</li>
                   </ul>
                 </td>
               </tr>
@@ -9527,8 +9392,8 @@
         no information about the actual access method of the data, i.e. whether by direct download or
         through a Web page. The use of dcat:downloadURL property indicates directly downloadable distributions.
       </p>
-      <p>DCAT-AP provides guidelines about the usage of Data services and Distribution in relation to Dataset:
-        [[DCAT-AP-USAGEGUIDE]].
+      <p>DCAT 3 provides guidelines about the usage of Data services and Distribution in relation to Dataset:
+        [[VOCAB-DCAT-3]].
       </p>
 
       <table class="def">
@@ -9629,10 +9494,10 @@
           </tr>
           <tr>
             <td><a href="#distribution-access_restriction">Access Restriction</a></td>
-            <td><a data-cite="http://TBD#accessRestriction">
+            <td><a href="http://TBD#accessRestriction">
                 <code>dcat-us:accessRestriction</code></a>
             </td>
-            <td><a data-cite="http://TBD#AccessRestriction">
+            <td><a href="http://TBD#AccessRestriction">
                 <code>dcat-us:AccessRestriction</code></a>
             </td>
             <td>R</td>
@@ -9640,10 +9505,10 @@
           </tr>
           <tr>
             <td><a href="#distribution-use_restriction">Use Restriction</a></td>
-            <td><a data-cite="http://TBD#useRestriction">
+            <td><a href="http://TBD#useRestriction">
                 <code>dcat-us:useRestriction</code></a>
             </td>
-            <td><a data-cite="http://TBD#UseRestriction">
+            <td><a href="http://TBD#UseRestriction">
                 <code>dcat-us:UseRestriction</code></a>
             </td>
             <td>R</td>
@@ -9651,10 +9516,10 @@
           </tr>
           <tr>
             <td><a href="#distribution-cui_restriction">CUI Restriction</a></td>
-            <td><a data-cite="http://TBD#cuiRestriction">
+            <td><a href="http://TBD#cuiRestriction">
                 <code>dcat-us:cuiRestriction</code></a>
             </td>
-            <td><a data-cite="http://TBD#CuiRestriction">
+            <td><a href="http://TBD#CuiRestriction">
                 <code>dcat-us:CuiRestriction</code></a>
             </td>
             <td>R</td>
@@ -9956,7 +9821,7 @@
                 <td>
                   <ul>
                     <li>This property refers to the licence under which the Distribution is made available.</li>
-                    <li>CV to used: [[VOCAB-US-LICENSE]]</li>
+                    <li>CV to used: [[DATA-GOV-LICENSE]]</li>
                   </ul>
                 </td>
               </tr>
@@ -10091,11 +9956,11 @@
                 <td>
                   <ul>
                     <li>This property refers to the file format of the Distribution.</li>
-                    <li>CV to be used: [[VOCAB-US-FILE-TYPE]]</li>
+                    <li>CV to be used: [[DATA-GOV-FT]]</li>
                     <li>If a format is not available:
                       a) media type ([[IANA-MEDIA-TYPES]]) should be used
                       b) If necessary, a discussion to evaluate the adoption within the US should be
-                      launched (Contact point: [[VOCAB-US-OP-CONTACT]]).
+                      launched.
                     </li>
                   </ul>
                 </td>
@@ -10165,11 +10030,11 @@
               </tr>
               <tr>
                 <th>URI</th>
-                <td><a data-cite="http://TBD#accessRestriction"><code>dcat-us:accessRestriction</code></a></td>
+                <td><a href="http://TBD#accessRestriction"><code>dcat-us:accessRestriction</code></a></td>
               </tr>
               <tr>
                 <th>Range</th>
-                <td><a data-cite="http://TBD#AccessRestriction">
+                <td><a href="http://TBD#AccessRestriction">
                     <code>dcat-us:AccessRestriction</code></a>
                 </td>
               </tr>
@@ -10207,11 +10072,11 @@
               </tr>
               <tr>
                 <th>URI</th>
-                <td><a data-cite="http://TBD#useRestriction"><code>dcat-us:useRestriction</code></a></td>
+                <td><a href="http://TBD#useRestriction"><code>dcat-us:useRestriction</code></a></td>
               </tr>
               <tr>
                 <th>Range</th>
-                <td><a data-cite="http://TBD#UseRestriction">
+                <td><a href="http://TBD#UseRestriction">
                     <code>dcat-us:UseRestriction</code></a>
                 </td>
               </tr>
@@ -10249,11 +10114,11 @@
               </tr>
               <tr>
                 <th>URI</th>
-                <td><a data-cite="http://TBD#cuiRestriction"><code>dcat-us:cuiRestriction</code></a></td>
+                <td><a href="http://TBD#cuiRestriction"><code>dcat-us:cuiRestriction</code></a></td>
               </tr>
               <tr>
                 <th>Range</th>
-                <td><a data-cite="http://TBD#CUIRestriction">
+                <td><a href="http://TBD#CUIRestriction">
                     <code>dcat-us:CUIRestriction</code></a>
                 </td>
               </tr>
@@ -11030,7 +10895,7 @@
                     <li>The property MUST be set if the distribution is language-dependent, or if it is given in
                       some of the languages German, French, Italian and English but not in all four languages.
                     </li>
-                    <li>CV to be used: [[VOCAB-US-LANGUAGE]]
+                    <li>CV to be used: [[ISO 639-1]]
                     </li>
                   </ul>
                 </td>
@@ -12347,7 +12212,7 @@
           <tr>
             <td><a href="#identifier-version">version</a></td>
             <td><a
-                data-cite="https://www.w3.org/TR/vocab-dcat-3/#Property:resource_version"><code>dcat:version</code></a>
+               href="https://www.w3.org/TR/vocab-dcat-3/#Property:resource_version"><code>dcat:version</code></a>
             </td>
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
             </td>
@@ -12483,7 +12348,7 @@
               <tr>
                 <th>URI</th>
                 <td><a
-                    data-cite="https://www.w3.org/TR/vocab-dcat-3/#Property:resource_version"><code>dcat:version</code></a>
+                    href="https://www.w3.org/TR/vocab-dcat-3/#Property:resource_version"><code>dcat:version</code></a>
                 </td>
               </tr>
               <tr>
@@ -14702,7 +14567,7 @@
           <tr>
             <td><a href="#standard-version">version</a></td>
             <td><a
-                data-cite="https://www.w3.org/TR/vocab-dcat-3/#Property:resource_version"><code>dcat:version</code></a>
+                href="https://www.w3.org/TR/vocab-dcat-3/#Property:resource_version"><code>dcat:version</code></a>
             <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a></td>
             <td>R</td>
             <td>0..1</td>
@@ -14923,7 +14788,7 @@
               <tr>
                 <th>URI</th>
                 <td><a
-                    data-cite="https://www.w3.org/TR/vocab-dcat-3/#Property:resource_version"><code>dcat:version</code></a>
+                    href="https://www.w3.org/TR/vocab-dcat-3/#Property:resource_version"><code>dcat:version</code></a>
                 </td>
               </tr>
               <tr>
@@ -15770,12 +15635,9 @@
 
       <p>For two of these controlled vocabularies, namely the NGDA spatial data themes [[NGDA-THEMES]] and
         the ISO
-        topic categories [[ISO-TC]], the DCAT-US Working Group has defined a set of harmonised mappings to
-        the US
-        Data.gov
-        Vocabularies Data Themes [[DATAGOV-THEMES]], in order to facilitate the identification of the
-        relevant theme in
-        [[DATAGOV-THEMES]] for geospatial/statistical metadata.</p>
+        topic categories [[ISO-19115-1]], the DCAT-US Working Group has defined a set of harmonised mappings to
+        the Data.gov Vocabularies Data Themes [[DATA-GOV-THEME]], in order to facilitate the identification of the
+        relevant theme in [[DATA-GOV-THEME]] for geospatial/statistical metadata.</p>
 
       <div data-include-format="html" data-include-replace="true"
         data-include="./tables/controlled-vocabularies-to-be-used.html"></div>
@@ -15859,7 +15721,7 @@
         used.
        </p>
 
-      <p>Further activities in this area are undertaken by the Open Data Institute [[ODI]] with the Open
+      <p>Further activities in this area are undertaken by the Open Data Institute (ODI) with the Open
         Data Rights Statement Vocabulary [[ODRS]] and by the Open Digital Rights Language (ODRL) Initiative
         [[VOCAB-ODRL]].</p>
 

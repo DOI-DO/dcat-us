@@ -60,11 +60,7 @@ var respecConfig = {
       "publisher": "Open Data Commons"
     },
 
-    "DATA-GOV": {
-      "href": "https://data.gov/",
-      "title": "data.gov - The official portal for US Data",
-      "publisher": "OMB?"
-    },
+
     "DCAT-US": {
       "href": "https://github.com/DOI-DO/dcat-us/",
       "title": "DCAT-US Version 3.0",
@@ -88,6 +84,11 @@ var respecConfig = {
       "publisher": "Nature",
       "href": "https://doi.org/10.1038/sdata.2016.18"
     },
+    "GCMD": {
+      "href": "https://data.nasa.gov/d/gt6i-nuv6",
+      "title": "Global Change Master Directory (GCMD)",
+      "publisher": "https://www.earthdata.nasa.gov/",
+    },
     "GEONAMES": {
       "href": "http://sws.geonames.org/",
       "title": "GeoNames",
@@ -100,15 +101,46 @@ var respecConfig = {
       "status": "Draft",
       "date": "16 December 2020"
     },
+    "HYDRA": {
+      "href": "https://www.hydra-cg.com/spec/latest/core/",
+      "title": "Hydra Core Vocabulary - A Vocabulary for Hypermedia-Driven Web APIs",
+      "publisher": "https://www.hydra-cg.com",
+    },
+
     "ISO 639-1": {
-      "href": "https://en.wikipedia.org/wiki/ISO_639-1",
-      "title": "Language 2 Letter Code",
-      "publisher": "Wikipedia",
+      "href": "https://id.loc.gov/vocabulary/iso639-1",
+      "title": "ISO 639-1: Codes for the Representation of Names of Languages - Part 1: Two-letter codes for languages",
+      "publisher": "Library of Congress",
+    },
+    "NGDA-THEMES": {
+      "href": "https://www.fgdc.gov/what-we-do/manage-federal-geospatial-resources/a-16-portfolio-management/ngda-themes-and-datasets",
+      "title": "NGDA Data Themes",
+      "publisher": "https://www.fgdc.gov/",
+    },
+    "ODRS": {
+      "href": "http://schema.theodi.org/odrs/",
+      "title": "Open Data Rights Statement Vocabulary (ODRS)",
+      "publisher": "https://theodi.org/",
+    },
+    "OGC-EPSG": {
+      "href": "http://www.opengis.net/def/crs/EPSG/0/",
+      "title": "OGC EPSG register of coordinate reference systems",
+      "publisher": "https://www.ogc.org/",
+    },
+    "PAV": {
+      "href": "http://purl.org/pav/",
+      "title": "PAV - Provenance, Authoring and Versioning",
+      "publisher": "http://www.mindinformatics.org/",
     },
     "PROV": {
       "href": "http://www.w3.org/ns/prov/",
       "title": "The PROV Namespace",
       "publisher": "Provenance Working Group",
+    },
+    "QUDT-UNITS": {
+      "href": "http://www.qudt.org/vocab/unit",
+      "title": "QUDT Units Vocabulary ",
+      "publisher": "http://www.qudt.org",
     },
     "SPDX": {
       "href": "https://spdx.org/rdf/terms/",
@@ -120,60 +152,100 @@ var respecConfig = {
       "title": "Respec.org",
       "publisher": "W3C",
     },
-    "VOCAB-US-LICENSE": {
-      "href": "https://dcat-us/vocabulary/licenses",
-      "title": "List of licenses for US opendata to enter in dct:license",
-      "publisher": "??",
+    "VOCAB-ADMS-SKOS": {
+      "href": "http://purl.org/adms",
+      "title": "Controlled vocabularies for the Asset Description Metadata Schema",
+      "publisher": "http://ec.europa.eu/",
     },
-    "VOCAB-US": {
-      "href": "http://publications.europa.eu/resource/authority/",
-      "title": "EU Vocabularies",
-      "publisher": "Publications Office of the European Union",
+
+
+    "DATA-GOV-LICENSE": {
+      "href": "https://TBD/vocabulary/licenses",
+      "title": "Data.Gov List of licenses for US opendata to enter in dct:license",
+      "publisher": "United States Government",
     },
-    "VOCAB-US-ACCESS-RIGHT": {
-      "href": "http://publications.europa.eu/resource/authority/access-right",
-      "title": "Access Rights Named Authority List",
-      "publisher": "Publications Office of the European Union",
+    "DATA-GOV": {
+      "href": "https://data.gov/",
+      "title": "data.gov - The official portal for US Data",
+      "publisher": "United States Government"
     },
-    "VOCAB-US-AVAILABLITY": {
-      "href": "http://publications.europa.eu/resource/authority/planned-availability",
-      "title": "Distribution availability vocabulary",
-      "publisher": "Publications Office of the European Union",
+    "DATA-GOV-AR": {
+      "href": "http://TBD/access-right",
+      "title": "Data.gov Access Rights Named Authority List (TBD)",
+      "publisher": "United States Government",
     },
-    "VOCAB-US-CONTINENT": {
-      "href": "http://publications.europa.eu/resource/authority/continent",
-      "title": "EU Vocabularies Continents Named Authority List",
-      "publisher": "Publications Office of the European Union",
+    "DATA-GOV-AVAILABILITY": {
+      "href": "http://TBD/planned-availability",
+      "title": "Data.gov Distribution availability vocabulary (TBD)",
+      "publisher": "United States Government",
     },
-    "VOCAB-US-COUNTRY": {
+    "DATA-GOV-CB": {
+      "href": "http://TBD/corporate-bodies",
+      "title": "Data.gov Vocabularies Corporate bodies Named Authority List  (TBD)",
+      "publisher": "United States Government",
+    },
+    "DATA-GOV-CONT": {
+      "href": "http://TBD/continent",
+      "title": "Data.gov Vocabularies Continents Named Authority List (TBD)",
+      "publisher": "United States Government",
+    },
+    "DATA-GOV-COUNTRY": {
       "href": "http://id.loc.gov/vocabulary/countries",
-      "title": "MARC List for Countries",
+      "title": "MARC List for Countries (TBD)",
       "publisher": "Library of Congress",
     },
-    "VOCAB-US-FILE-TYPE": {
-      "href": "http://publications.europa.eu/resource/authority/file-type",
-      "title": "EU Vocabularies File Type Named Authority List",
-      "publisher": "Publications Office of the European Union",
+
+    "DATA-GOV-FREQ": {
+      "href": "http://TBD/frequency",
+      "title": "Data.gov Vocabularies Frequency Named Authority List (TBD)",
+      "publisher": "United States Government",
     },
-    "VOCAB-US-FREQUENCY": {
-      "href": "http://publications.europa.eu/resource/authority/frequency",
-      "title": "EU Vocabularies Frequency Named Authority List",
-      "publisher": "Publications Office of the European Union",
+    "DATA-GOV-FT": {
+      "href": "http://TBD/file-type",
+      "title": "Data.gov Vocabularies File Type Named Authority List (TBD)",
+      "publisher": "United States Government",
     },
-    "VOCAB-US-LANGUAGE": {
-      "href": "https://id.loc.gov/vocabulary/iso639-1",
-      "title": "ISO 639-1: Codes for the Representation of Names of Languages - Part 1: Two-letter codes for languages",
-      "publisher": "Library of Congress",
+   
+
+    "DATA-GOV-LPA": {
+      "href": "http://TBD/LimitationsOnPublicAccess",
+      "title": "Data.Gov Limitations on Public Access (TBD)",
+      "publisher": "United States Government",
     },
-    "VOCAB-US-PLACE": {
-      "href": "https://publications.europa.eu/resource/authority/place",
-      "title": "Vocabularies Places Named Authority List",
-      "publisher": "Publications Office of the European Union",
+    "DATA-GOV-PLACE": {
+      "href": "http://TBD/place",
+      "title": "Data.gov Vocabularies Places Named Authority List (TBD)",
+      "publisher": "United States Government",
     },
-    "VOCAB-US-THEME": {
-      "href": "https://publications.europa.eu/resource/authority/data-theme",
-      "title": "Dataset Theme Vocabulary",
-      "publisher": "Publications Office of the European Union",
+    "DATA-GOV-PV": {
+      "href": "http://TBD/continent",
+      "title": "Data.gov Vocabularies Continents Named Authority List (TBD)",
+      "publisher": "United States Government",
+    },
+    "DATA-GOV-REG": {
+      "href": "https://TBD/registry",
+      "title": "Data.Gov registry (TBD)",
+      "publisher": "United States Government",
+    },
+    "DATA-GOV-RPR": {
+      "href": "http://resources.data.gov/vocab/ResponsiblePartyRole",
+      "title": "Data.Gov Responsible Party Roles  (TBD)",
+      "publisher": "United States Government",
+    },
+    "DATA-GOV-SDST": {
+      "href": "http://resources.data.gov/vocab/SpatialDataServiceTypes",
+      "title": "Data.Gov Spatial Data Service Types (TBD)",
+      "publisher": "United States Government",
+    },
+    "DATA-GOV-SRT": {
+      "href": "http://resources.data.gov/vocab/SpatialRepresentationType",
+      "title": "Data.Gov Spatial Data Representation (TBD)",
+      "publisher": "United States Government",
+    },
+    "DATA-GOV-THEME": {
+      "href": "http://TBD/data-theme",
+      "title": "Data.gov Dataset Theme Vocabulary (TBD)",
+      "publisher": "TBD",
     }
   }
 };
