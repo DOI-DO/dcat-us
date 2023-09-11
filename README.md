@@ -3,25 +3,27 @@ The FAIRness Project aims to improve and enhance data users' ability to find and
 
 ## How to Contribute
 
-This project constitutes collaborative work in an open, consensus-based process. Federal employees and members of the public are encouraged to improve the project by contributing and participating in various ways.  Your participation and input are needed! 
+This project relies on collaborative work in an open, consensus-based process. Federal employees and members of the public are encouraged to contribute to the success of the project by sharing their requirements, reporting issues with metadata schema, and tracking progress as the project progresses. Your participation and input are needed! 
 
-### Submitting your Requirements
+### Submitting your Comments and Issues
 
-Please contribute your requirements for the emerging DCAT-US metadata profile. Here’s how: 
+Please contribute your comments and issues for the emerging DCAT-US metadata profile. Here’s how: 
 
-1. Submit your requirements on the project [GitHub here](https://github.com/DOI-DO/dcat-us/issues/new/choose), or
+1. Submit your comment and/or issue on the project [GitHub here](https://github.com/DOI-DO/dcat-us/issues/new/choose) (GitHub account required),
 
-2. Or complete the [Requirements Template document](https://github.com/DOI-DO/dcat-us/files/11479875/DCAT-US-3-Requirements-Template.docx) and email to: dcat-us@doi.gov 
+OR
 
-The requirements collection process is scheduled to be open for 30 days (ending June 30, 2023). The process is summarized here: 
+2. Complete the [Comment Review Matrix Document](https://github.com/DOI-DO/dcat-us/files/12580549/FAIRness.Project.-.DCAT-US-3-AP.-.Comment.Review.Matrix.xlsx) and email it to: dcat-us@doi.gov 
 
-* Submit your requirement(s) via [GitHub](https://github.com/DOI-DO/dcat-us/issues/new/choose) or the [Requirements Template document](https://github.com/DOI-DO/dcat-us/files/11479875/DCAT-US-3-Requirements-Template.docx).
+The comment review period is scheduled to be open for approximately 60 days (ending November 17th, 2023). The process is summarized here:
 
-* Based on submitted requirements, the schema development team reviews and analyzes the requirements to develop an initial draft DCAT-US application profile schema. 
+* Submit your comment(s) and issue(s) via [GitHub](https://github.com/DOI-DO/dcat-us/issues/new/choose) or the [Comment Review Matrix Document](https://github.com/DOI-DO/dcat-us/files/12580549/FAIRness.Project.-.DCAT-US-3-AP.-.Comment.Review.Matrix.xlsx).
 
-* An initial draft schema, specification, and crosswalk for the DCAT-US application profile is targeted for posting to the GitHub project for review on July 24, 2023.    
+* Based on the submitted comments/issues, the schema development team reviews and analyzes the comments to correct and refine the initial draft schema for the DCAT-US v3.0 application profile. 
 
-For more information about the FAIRness project, the schema development process, and the governance of the application profile, please visit the project site on [GitHub here](https://github.com/DOI-DO/dcat-us/). 
+* The final version of the draft schema, specification, and crosswalk will be posted to the GitHub project in December 2023.  
+
+For more information about the FAIRness project, the schema development process, and the governance of the application profile, please visit the project site on [GitHub here](https://github.com/DOI-DO/dcat-us/wiki/). 
 
 ## Introduction
 
