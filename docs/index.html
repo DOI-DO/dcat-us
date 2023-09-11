@@ -27,7 +27,32 @@
 </head>
 
 <body>
+  <aside class="note" title="BACKGROUND">
+  
+    <p>Introducing a draft update to the Data Catalog (DCAT) standard for the United States! This update, “DCAT-US v3.0
+      Schema,” builds upon the requirements we received from agencies as well as data creators, providers, and users,
+      the Data Inventory statutory requirements, and the lessons learned over ten years of successful implementation of
+      the Project Open Data Metadata Standard (DCAT-US v1.1) used by Data.gov. </p>
+    <p>We need your help to review and comment on this draft so that it meets agencies’ data inventory needs and those
+      of cross-government programs like Data.gov, GeoPlatform, and the Standard Application Process Portal.</p>
+    <p>Once approved and implemented, the update will improve the FAIRness, or Findability, Accessibility,
+      Interoperability, and Reusability of all types of federal data. DCAT-US v3 will provide a *single* metadata
+      standard able to support most requirements for documentation of business, technical, statistical, and geospatial
+      data consistently.</p>
+    <p>Key features of the DCAT-3 Schema are:</p>
+    <ul>
+      <li>DCAT-US v3 is not a “new” standard; it is a “profile” of or implementation of the World Wide Web Consortium’s (W3C) DCAT standard [[VOCAB-DCAT-3]]</li>
+      <li>DCAT-US v3 is compatible with existing DCAT v1.1 metadata. No translation is required to implement the new schema. New metadata elements are added, but there are no major changes to existing elements.</li>
+      <li>DCAT-US v3 supports new and updated controlled vocabularies, allowing for consistently naming items like federal agencies, file formats, and units of measure.</li>
+      <li>DCAT-US v3 will overcome the limitations of DCAT v1.1 when documenting geospatial data, eliminating the need for a separate federal standard for this subset of data.</li>
+      <li>DCAT-US v3 follows a similar approach to European metadata DCAT-AP; vendor support is already in place, with additional support underway.</li>
+    </ul>
+    <p>Please review the documentation below and provide feedback to help make this standard as useful as possible to you and the broader federal data user community.</p>
+    <p><b>FAIRness Project Team</b></p>
+  
+  </aside>
   <section class="notoc" id="abstract">
+  
     <p>The DCAT-US Profile Version 3 (DCAT-US 3.0) is an updated specification meticulously designed to facilitate data
       cataloging,
       discovery, and interoperability among US government agencies. Leveraging the strong foundation laid by the Project
@@ -323,7 +348,8 @@
             </tr>
             <tr>
               <td><a href="#properties-for-dataset-series">Dataset Series</a></td>
-              <td>A collection of datasets that are published separately, but share some characteristics that group them.
+              <td>A collection of datasets that are published separately, but share some characteristics that group
+                them.
               </td>
               <td><a data-cite="VOCAB-DCAT-3#Class:DatasetSeries"><code>dcat:DatasetSeries</code></a></td>
             </tr>
@@ -332,8 +358,8 @@
         <div id="diagram">
           <!--TODO-->
           <aside class="note">TODO :ADD UML DIAGRAM</aside>
-        </div> 
-      
+        </div>
+
       </section>
       <section id="requirement-levels">
         <h4>Requirement levels</h4>
@@ -712,7 +738,7 @@
             </td>
             <td>
               <p><a href="https://www.w3.org/TR/vocab-dcat-3/#Class:Concept">§&nbsp;<bdi class="secno">6.11</bdi>Class:
-                  Concept</a>  [[VOCAB-DCAT-3]]
+                  Concept</a> [[VOCAB-DCAT-3]]
             </td>
           </tr>
           <tr class="class recommended" id="concept-scheme">
@@ -727,7 +753,7 @@
             </td>
             <td>
               <p><a href="https://www.w3.org/TR/vocab-dcat-3/#Class:Concept_Scheme">§&nbsp;<bdi class="secno">6.10
-                  </bdi>Class: Concept Scheme</a>  [[VOCAB-DCAT-3]]
+                  </bdi>Class: Concept Scheme</a> [[VOCAB-DCAT-3]]
               </p>
             </td>
           </tr>
@@ -743,7 +769,7 @@
             </td>
             <td>
               <p><a href="https://www.w3.org/TR/vocab-dcat-3/#Class:Distribution">§&nbsp;<bdi class="secno">6.8
-                  </bdi>Class: Distribution</a>  [[VOCAB-DCAT-3]]
+                  </bdi>Class: Distribution</a> [[VOCAB-DCAT-3]]
               </p>
             </td>
           </tr>
@@ -760,7 +786,7 @@
             <td>
               <p><a
                   href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#terms-LicenseDocument">§&nbsp;Term
-                </td>
+            </td>
       </table>
     </section>
     <section id="optional-classes">
@@ -802,7 +828,7 @@
               <p>
                 <a href="https://www.w3.org/TR/prov-o/#Activity">§&nbsp;(2) Class: prov:Activity</a> [[PROV-O]];
                 <a class="src-ref" href="https://www.w3.org/TR/vocab-dcat-3/#quality-conformance-degree">§&nbsp;<bdi
-                    class="secno">12.2.2 </bdi>Relationships between datasets and agents</a>  [[VOCAB-DCAT-3]]
+                    class="secno">12.2.2 </bdi>Relationships between datasets and agents</a> [[VOCAB-DCAT-3]]
               </p>
             </td>
           </tr>
@@ -853,7 +879,7 @@
                     class="bibref" data-link-type="biblio" href="#bib-prov-o"
                     title="PROV-O: The PROV Ontology">PROV-O</a></cite>];
                 <a class="src-ref" href="https://www.w3.org/TR/vocab-dcat-3/#qualified-attribution">§&nbsp;<bdi
-                    class="secno">13.1 </bdi>Relationships between datasets and agents</a>  [[VOCAB-DCAT-3]]
+                    class="secno">13.1 </bdi>Relationships between datasets and agents</a> [[VOCAB-DCAT-3]]
               </p>
             </td>
           </tr>
@@ -12166,8 +12192,7 @@
           </tr>
           <tr>
             <td><a href="#identifier-version">version</a></td>
-            <td><a
-               href="https://www.w3.org/TR/vocab-dcat-3/#Property:resource_version"><code>dcat:version</code></a>
+            <td><a href="https://www.w3.org/TR/vocab-dcat-3/#Property:resource_version"><code>dcat:version</code></a>
             </td>
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
             </td>
@@ -14521,8 +14546,7 @@
           </tr>
           <tr>
             <td><a href="#standard-version">version</a></td>
-            <td><a
-                href="https://www.w3.org/TR/vocab-dcat-3/#Property:resource_version"><code>dcat:version</code></a>
+            <td><a href="https://www.w3.org/TR/vocab-dcat-3/#Property:resource_version"><code>dcat:version</code></a>
             <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a></td>
             <td>R</td>
             <td>0..1</td>
