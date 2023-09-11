@@ -50,11 +50,11 @@ The FAIRness project will provide an updated DCAT-US (3.0) schema that addresses
 ### The Process
 The schema governance process consists of three phases:
 
-1. **Initial schema development** — The period from project inception to the first release of a draft application profile for comment. During this phase, the schema development team develops an initial application profile using the initial set of requirements and inputs. 
+1. **Initial Schema Development** — The period from project inception to the first release of a draft application profile for comment. During this phase, the schema development team develops an initial application profile using the initial set of requirements and inputs. 
 
-2. **Pre-release governance** — The period from the first release of a draft application profile for comment and the publication of the final schema. During this phase, the community of potential users and providers will provide input as issues containing possible changes for adjudication and resolution in an open, transparent process. As a result, the application profile will continually evolve, reflecting the adopted changes.
+2. **Pre-release Governance** — The period from the first release of a draft application profile for comment and the publication of the final schema. During this phase, the community of potential users and providers will provide input as issues containing possible changes for adjudication and resolution in an open, transparent process. As a result, the application profile will continually evolve, reflecting the adopted changes.
 
-3. **Post-release governance** — The period following the publication of the final application profile. During this period, experience recommends an open, transparent process to manage the application profile through any subsequent version releases. 
+3. **Post-release Governance** — The period following the publication of the final application profile. During this period, experience recommends an open, transparent process to manage the application profile through any subsequent version releases. 
 
 ![DCAT_Process](https://github.com/DOI-DO/dcat-us/assets/2589997/539ba9d6-2b9a-4cfe-a520-36312115c494)
 
