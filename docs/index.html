@@ -27,73 +27,83 @@
 </head>
 
 <body>
-  <aside class="note" title="BACKGROUND">
-  
-    <p>Introducing a draft update to the Data Catalog (DCAT) standard for the United States! This update, “DCAT-US v3.0
-      Schema,” builds upon the requirements we received from agencies as well as data creators, providers, and users,
-      the Data Inventory statutory requirements, and the lessons learned over ten years of successful implementation of
-      the Project Open Data Metadata Standard (DCAT-US v1.1) used by Data.gov. </p>
+
+  <section class="notoc" id="abstract">
+
+    <p>The DCAT-US Profile Version 3 (DCAT-US 3.0) is an updated specification designed to facilitate data cataloging,
+      discovery, and interoperability among US government agencies. Leveraging the strong foundation laid by the Project
+      Open Data (POD) 1.1 standard (also known as [[DCAT-US-1.1]]), this profile seamlessly aligns with the
+      emerging Data Catalog Vocabulary (DCAT) - Version 3 (DCAT 3.0)[[[VOCAB-DCAT-3]]] recommendations approved by the
+      World Wide Web Consortium (W3C), all while upholding the essential FAIR principles. Moreover, it emphasizes
+      maintaining compatibility with the existing POD 1.1 standard, ensuring a fluid transition. The result ensures
+      data's Findability, Accessibility, Interoperability, and Reusability (FAIR). </p>
+
+    <p>The predominant significance of the DCAT-US 3.0 lies in its role as a bridge between the well-established DCAT-US
+      1.1 and the forward-looking DCAT 3.0, uniting them under a single, standardized approach for articulating and
+      exchanging datasets. By harmonizing the most significant attributes of both standards, this profile also addresses
+      the distinctive metadata prerequisites inherent to the US context. It goes above and beyond by encompassing
+      specialized properties to address geospatial and statistical datasets, effectively harnessing established
+      vocabularies to elevate the process of data sharing and subsequent reuse. </p>
+
+    <p>Distinguished by its usage of the Shapes Constraint Language (SHACL) for structural and semantic validation, the
+      DCAT-US 3.0 introduces a highly refined, interoperable, and future-proof framework for describing and validating
+      dataset metadata. In essence, it is not just a specification but an advanced stride towards achieving a
+      data-centric landscape where precise metadata description empowers the efficient flow of information while laying
+      the groundwork for sustained innovation. </p>
+  </section>
+
+  <aside class="note">
+    <p>DCAT 3 advances beyond its predecessor, DCAT 2 Data Catalog Vocabulary (DCAT) - Version 2, while preserving its
+      relevance without rendering it obsolete. The foundational DCAT namespace persists in DCAT 3, ensuring a harmonious
+      coexistence with the terminology of DCAT 2. Notably, while DCAT 3 introduces enhancements such as relaxed
+      constraints, novel classes, and properties, these modifications uphold the integrity of prior terms, preventing
+      any disruption to their definitions.
+    </p>
+    <p>
+
+      In the realm of implementations, any fresh deployment is expected to embrace the DCAT 3 standard, harnessing its
+      evolved capabilities. However, pre-existing implementations need not undergo an upgrade unless they seek to
+      leverage the newfound functionalities. Specifically, current instances of DCAT 2/ POD 1.1 deployments that do not
+      intersect with DCAT 3's novel elements—such as versioning, dataset series, and inverse properties—can continue
+      without alteration, maintaining full compliance with the DCAT 3 specifications.
+    </p>
+  </aside>
+
+
+  <section id="background" class="informative">
+    <h2>Background</h2>
+    <p>The <a href="https://github.com/DOI-DO/dcat-us">FAIRness Project</a> is introducing a draft update to the Data
+      Catalog (DCAT) standard for the United States!
+      This update, “DCAT-US v3.0 Schema,” builds upon the requirements we received from agencies as well as data
+      creators, providers, and users, Data Inventory statutory requirements, and the lessons learned over ten years of
+      successful implementation of the Project Open Data Metadata Standard (DCAT-US v1.1) used by Data.gov.</p>
+
     <p>We need your help to review and comment on this draft so that it meets agencies’ data inventory needs and those
       of cross-government programs like Data.gov, GeoPlatform, and the Standard Application Process Portal.</p>
+
     <p>Once approved and implemented, the update will improve the FAIRness, or Findability, Accessibility,
       Interoperability, and Reusability of all types of federal data. DCAT-US v3 will provide a *single* metadata
       standard able to support most requirements for documentation of business, technical, statistical, and geospatial
       data consistently.</p>
+
     <p>Key features of the DCAT-3 Schema are:</p>
     <ul>
-      <li>DCAT-US v3 is not a “new” standard; it is a “profile” of or implementation of the World Wide Web Consortium’s (W3C) DCAT standard [[VOCAB-DCAT-3]]</li>
-      <li>DCAT-US v3 is compatible with existing DCAT v1.1 metadata. No translation is required to implement the new schema. New metadata elements are added, but there are no major changes to existing elements.</li>
-      <li>DCAT-US v3 supports new and updated controlled vocabularies, allowing for consistently naming items like federal agencies, file formats, and units of measure.</li>
-      <li>DCAT-US v3 will overcome the limitations of DCAT v1.1 when documenting geospatial data, eliminating the need for a separate federal standard for this subset of data.</li>
-      <li>DCAT-US v3 follows a similar approach to European metadata DCAT-AP; vendor support is already in place, with additional support underway.</li>
+      <li>DCAT-US v3 is not a “new” standard; it is a “profile” of or implementation of the World Wide Web Consortium’s
+        (W3C) DCAT standard [[VOCAB-DCAT-3]]</li>
+      <li>DCAT-US v3 is compatible with existing DCAT v1.1 metadata. No translation is required to implement the new
+        schema. New metadata elements are added, but there are no major changes to existing elements.</li>
+      <li>DCAT-US v3 supports new and updated controlled vocabularies, allowing for consistently naming items like
+        federal agencies, file formats, and units of measure.</li>
+      <li>DCAT-US v3 will overcome the limitations of DCAT v1.1 when documenting geospatial data, eliminating the need
+        for a separate federal standard for this subset of data.</li>
+      <li>DCAT-US v3 follows a similar approach to European metadata DCAT-AP; vendor support is already in place, with
+        additional support underway.</li>
     </ul>
-    <p>Please review the documentation below and provide feedback to help make this standard as useful as possible to you and the broader federal data user community.</p>
+    <p>Please review the documentation below and provide feedback to help make this standard as useful as possible to
+      you and the broader federal data user community.</p>
     <p><b>FAIRness Project Team</b></p>
-  
-  </aside>
-  <section class="notoc" id="abstract">
-  
-    <p>The DCAT-US Profile Version 3 (DCAT-US 3.0) is an updated specification meticulously designed to facilitate data
-      cataloging,
-      discovery, and interoperability among US government agencies. Leveraging the strong foundation laid by the Project
-      Open Data (POD) 1.1 standard (also known as [[DCAT-US-1.1]]), this profile seamlessly aligns with the cutting-edge
-      [[[VOCAB-DCAT-3]]] (DCAT 3.0) recommendations put
-      forth by the World Wide Web Consortium (W3C), all while upholding the essential FAIR principles. Moreover, it
-      places a strong emphasis on maintaining compatibility with the existing POD 1.1 standard, ensuring a fluid
-      transition. The result is a robust commitment to ensuring data's Findability, Accessibility, Interoperability, and
-      Reusability.</p>
 
-    <p>The paramount significance of the DCAT-US 3.0 lies in its role as a bridge between the
-      well-established DCAT-US 1.1 and the forward-looking DCAT 3.0, uniting them under a single, standardized approach
-      for
-      the articulation and exchange of datasets. By harmonizing the standout attributes of both standards, this profile
-      also addresses the distinctive metadata prerequisites inherent to the US context. It goes above and beyond by
-      encompassing specialized properties to cater to geospatial and statistical datasets, effectively harnessing
-      established vocabularies to elevate the process of data sharing and subsequent reuse.</p>
-
-    <p>Distinguished by its utilization of the Shapes Constraint Language (SHACL) for structural and semantic
-      validation, the DCAT-US 3.0 introduces a remarkably refined, interoperable, and future-proof framework for the
-      description and validation of
-      dataset metadata. In essence, it is not just a specification; it is a progressive stride towards achieving a
-      data-centric landscape where meticulous metadata description empowers the efficient flow of information while
-      laying the groundwork for sustained innovation.</p>
   </section>
-
-  <aside class="note">
-    <p>DCAT 3 advances beyond its predecessor, DCAT 2 [[[VOCAB-DCAT-2]]], yet preserves its relevance without rendering
-      it obsolete. The foundational DCAT namespace persists in DCAT 3, ensuring a harmonious coexistence with the
-      terminology of DCAT 2. Notably, while DCAT 3 introduces enhancements such as relaxed constraints, novel classes,
-      and properties, these modifications uphold the integrity of prior terms, preventing any disruption to their
-      definitions.
-    </p>
-    <p>In the realm of implementations, any fresh deployment is expected to embrace the DCAT 3 standard, harnessing its
-      evolved capabilities. However, pre-existing implementations need not undergo an upgrade unless they seek to
-      leverage the newfound functionalities. Specifically, current instances of DCAT 2/ POD 1.1 deployments that do not
-      intersect with DCAT 3's novel elements—such as versioning, dataset series, and inverse properties—can continue
-      without
-      alteration, maintaining full compliance with the DCAT 3 specifications.
-    </p>
-  </aside>
 
   <!-- Introduction-->
 
@@ -238,12 +248,12 @@
     </p>
     <section id="document-status">
       <h3>Status of the document</h3>
-      <p></p>
+      <p>Initial Draft</p>
     </section>
     <h2>Motivation for change</h2>
-    <!--aside class="ednote">
-            <p>This section will be updated to cover DCAT3 work in a later draft</p>
-            </aside-->
+    <aside class="ednote">
+      <p>This section will be updated to cover DCAT-US work in a later draft</p>
+    </aside>
     <p>
     </p>
   </section>
