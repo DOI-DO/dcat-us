@@ -7,7 +7,7 @@ Once approved and implemented, the update will improve the FAIRness, or Findabil
 
 Key features of the [DCAT-US v3.0 Schema](https://doi-do.github.io/dcat-us/) are: 
 
-1. DCAT-US v3 is not a “new” standard; it is a “profile” of or implementation of the World Wide Web Consortium’s (W3C) DCAT standard.  https://www.w3.org/TR/vocab-dcat-3/   
+1. DCAT-US v3 is not a “new” standard; it is a “profile” of or implementation of the [World Wide Web Consortium’s (W3C) DCAT standard]( https://www.w3.org/TR/vocab-dcat-3/).
 1. DCAT-US v3 is compatible with existing DCAT v1.1 metadata.  No translation is required to implement the new schema.  New metadata elements are added, but there are no major changes to existing elements. 
 1. DCAT-US v3 supports new and updated controlled vocabularies, allowing for consistently naming items like federal agencies, file formats, and units of measure. 
 1. DCAT-US v3 will overcome the limitations of DCAT v1.1 when documenting geospatial data, eliminating the need for a separate federal standard for this subset of data. 
