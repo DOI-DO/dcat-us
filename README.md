@@ -1,64 +1,26 @@
-# DCAT-US Schema v3.0
+# [DCAT-US Schema v3.0](https://doi-do.github.io/dcat-us/)
 The FAIRness Project aims to improve and enhance data users' ability to find and assess federal data, reduce complexity for metadata producers, and standardize metadata requirements for geospatial, statistical, and other open data.
 
-## How to Contribute
+The FAIRness Project is introducing a draft update to the Data Catalog (DCAT) standard for the United States!  This update, “DCAT-US v3.0 Schema,” builds upon the requirements we received from agencies as well as data creators, providers, and users, Data Inventory statutory requirements, and the lessons learned over ten years of successful implementation of the Project Open Data Metadata Standard (DCAT-US v1.1) used by Data.gov.    
 
-This project relies on collaborative work in an open, consensus-based process. Federal employees and members of the public are encouraged to contribute to the success of the project by sharing their requirements, reporting issues with metadata schema, and tracking progress as the project progresses. Your participation and input are needed! 
+We need your help to review and comment on this draft so that it meets agencies’ data inventory needs and those of cross-government programs like Data.gov, GeoPlatform, and the Standard Application Process Portal.   
 
-### Submitting your Comments and Issues
+Once approved and implemented, the update will improve the FAIRness, or Findability, Accessibility, Interoperability, and Reusability of all types of federal data.  DCAT-US v3 will provide a *single* metadata standard able to support most requirements for documentation of business, technical, statistical, and geospatial data consistently. 
 
-Please contribute your comments and issues for the emerging DCAT-US metadata profile. Here’s how: 
+Key features of the [DCAT-3 Schema](https://doi-do.github.io/dcat-us/) are: 
 
-1. Submit your comment and/or issue on the project [GitHub here](https://github.com/DOI-DO/dcat-us/issues/new/choose) (GitHub account required),
+1. DCAT-US v3 is not a “new” standard; it is a “profile” of or implementation of the World Wide Web Consortium’s (W3C) DCAT standard.  https://www.w3.org/TR/vocab-dcat-3/   
+1. DCAT-US v3 is compatible with existing DCAT v1.1 metadata.  No translation is required to implement the new schema.  New metadata elements are added, but there are no major changes to existing elements. 
+1. DCAT-US v3 supports new and updated controlled vocabularies, allowing for consistently naming items like federal agencies, file formats, and units of measure. 
+1. DCAT-US v3 will overcome the limitations of DCAT v1.1 when documenting geospatial data, eliminating the need for a separate federal standard for this subset of data. 
+1. DCAT-US v3 follows a similar approach to European metadata DCAT-AP; vendor support is already in place, with additional support underway.  
 
-OR
+Please review the [DCAT-3 Schema](https://doi-do.github.io/dcat-us/) and the material found in the links below, and provide feedback to help make this standard as useful as possible to you and the broader federal data user community. 
 
-2. Complete the [Comment Review Matrix Document](https://github.com/DOI-DO/dcat-us/files/12580549/FAIRness.Project.-.DCAT-US-3-AP.-.Comment.Review.Matrix.xlsx) and email it to: dcat-us@doi.gov 
-
-The comment review period is scheduled to be open for approximately 60 days (ending November 17th, 2023). The process is summarized here:
-
-* Submit your comment(s) and issue(s) via [GitHub](https://github.com/DOI-DO/dcat-us/issues/new/choose) or the [Comment Review Matrix Document](https://github.com/DOI-DO/dcat-us/files/12580549/FAIRness.Project.-.DCAT-US-3-AP.-.Comment.Review.Matrix.xlsx).
-
-* Based on the submitted comments/issues, the schema development team reviews and analyzes the comments to correct and refine the initial draft schema for the DCAT-US v3.0 application profile. 
-
-* The final version of the draft schema, specification, and crosswalk will be posted to the GitHub project in December 2023.  
-
-For more information about the FAIRness project, the schema development process, and the governance of the application profile, please visit the project site on [GitHub here](https://github.com/DOI-DO/dcat-us/wiki/). 
-
-## Introduction
-
-The FAIRness Project is designed to advance efforts toward improving and enhancing data users' (both internal and external to the federal government) ability to find and assess the utility of federal data essential to implementing the new data-sharing authorities under Title III of the Evidence Act. The FAIRness Project's scope focuses on development and delivery of three products: 
-
-1. A proposed governance model for updating and maintaining the federal metadata schema profiles in accordance with data inventory and data cataloging standards.  
-
-2. An updated DCAT-US Schema v1.1 (Project Open Data Metadata Schema) to a United States profile of the W3C DCAT version 3 standard, aligning the schema with international standards, metadata for geospatial data and statistical data catalogs, and improving adoption by software vendors and open-source technologies.  
-
-3. A strategic two-year sequencing plan to improve and integrate government-wide metadata cataloging to facilitate data users' ability to easily find, access, assess for fitness-for-use, and use federal data.  
-
-### Background
-
-In alignment with the **Building Trust and FAIRness into the Process for Finding and Using Government Data Project (FAIRness Project)**, this project was built as a planned update to the existing Project Open Data (DCAT-US 1.1) metadata standard. Data inventories are essential to implementing the new data-sharing authorities under Title III of the Evidence Act.    
-
-### Problem
-
-The existing metadata standards used for data catalogs and data inventories are out-of-date compared to current international metadata standards. They are generally purpose-built and focused on metadata producers.
-
-### How this Project Solves this Problem 
-
-The FAIRness project will provide an updated DCAT-US (3.0) schema that addresses the gaps and issues from Project Open Data (DCAT-US 1.1) metadata standards.  Enterprise-wide requirements and data user feedback from real-world implementations will drive the updated schema. 
-
-### The Process
-The schema governance process consists of three phases:
-
-1. **Initial Schema Development** — The period from project inception to the first release of a draft application profile for comment. During this phase, the schema development team develops an initial application profile using the initial set of requirements and inputs. 
-
-2. **Pre-release Governance** — The period from the first release of a draft application profile for comment and the publication of the final schema. During this phase, the community of potential users and providers will provide input as issues containing possible changes for adjudication and resolution in an open, transparent process. As a result, the application profile will continually evolve, reflecting the adopted changes.
-
-3. **Post-release Governance** — The period following the publication of the final application profile. During this period, experience recommends an open, transparent process to manage the application profile through any subsequent version releases. 
-
-![DCAT_Process](https://github.com/DOI-DO/dcat-us/assets/2589997/539ba9d6-2b9a-4cfe-a520-36312115c494)
-
-Please review the FAIRness Project Governance Process documentation for more information about the process. 
+1. [Project Overview](https://github.com/DOI-DO/dcat-us/wiki/Project-Overview)
+1. [How to Contribute](https://github.com/DOI-DO/dcat-us/wiki#contribute)
+1. [What is DCAT-US?](https://github.com/DOI-DO/dcat-us/wiki/What-is-DCAT%E2%80%90US%3F)
+1. [Discussion and Topics](https://github.com/DOI-DO/dcat-us/wiki#discussion-and-topics)
 
 ## License
 
