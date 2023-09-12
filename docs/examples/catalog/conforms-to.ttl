@@ -1,0 +1,7 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://uscensus.gov/Catalog1>
+  a dcat:Catalog ;
+  dct:conformsTo <http://resource.data.gov/profile/dcat-us#> ;
+.
