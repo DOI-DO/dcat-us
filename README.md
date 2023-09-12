@@ -1,6 +1,4 @@
 # [DCAT-US Schema v3.0](https://doi-do.github.io/dcat-us/)
-The FAIRness Project aims to improve and enhance data users' ability to find and assess federal data, reduce complexity for metadata producers, and standardize metadata requirements for geospatial, statistical, and other open data.
-
 The FAIRness Project is introducing a draft update to the Data Catalog (DCAT) standard for the United States!  This update, “DCAT-US v3.0 Schema,” builds upon the requirements we received from agencies as well as data creators, providers, and users, Data Inventory statutory requirements, and the lessons learned over ten years of successful implementation of the Project Open Data Metadata Standard (DCAT-US v1.1) used by Data.gov.    
 
 We need your help to review and comment on this draft so that it meets agencies’ data inventory needs and those of cross-government programs like Data.gov, GeoPlatform, and the Standard Application Process Portal.   
@@ -17,6 +15,7 @@ Key features of the [DCAT-3 Schema](https://doi-do.github.io/dcat-us/) are:
 
 Please review the [DCAT-3 Schema](https://doi-do.github.io/dcat-us/) and the material found in the links below, and provide feedback to help make this standard as useful as possible to you and the broader federal data user community. 
 
+1. [Project Wiki](https://github.com/DOI-DO/dcat-us/wiki)
 1. [Project Overview](https://github.com/DOI-DO/dcat-us/wiki/Project-Overview)
 1. [How to Contribute](https://github.com/DOI-DO/dcat-us/wiki#contribute)
 1. [What is DCAT-US?](https://github.com/DOI-DO/dcat-us/wiki/What-is-DCAT%E2%80%90US%3F)
