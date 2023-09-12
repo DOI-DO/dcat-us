@@ -37,7 +37,7 @@ var respecConfig = {
     repoURL: "https://github.com/DOI-DO/dcat-us/",
   },
   edDraftURI: "https://doi-do.github.io/dcat-us/",
-  subtitle: "A DCAT Application Profile for United States Of America (Working Draft)",
+  subtitle: "A DCAT Application Profile for the United States of America (Working Draft)",
   localBiblio: {
     "CC": {
       "href": "http://creativecommons.org/licenses/",
