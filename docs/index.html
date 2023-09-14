@@ -28,7 +28,7 @@
 
 <body>
 
-  <section  id="abstract">
+  <section id="abstract">
     <p>The DCAT-US Profile Version 3 (DCAT-US 3.0) is an updated specification designed to facilitate data cataloging,
       discovery, and interoperability among US government agencies. Leveraging the strong foundation laid by the Project
       Open Data (POD) 1.1 standard (also known as [[DCAT-US-1.1]]), this profile seamlessly aligns with the
@@ -100,7 +100,8 @@
     </ul>
     <p>Please review the documentation below and provide feedback to help make this standard as useful as possible to
       you and the broader federal data user community.</p>
-    <p>Please follow the instructions found <a href=https://github.com/DOI-DO/dcat-us/wiki#contribute>here</a> to submit your comments and issues with the current draft schema specification.</p>
+    <p>Please follow the instructions found <a href=https://github.com/DOI-DO/dcat-us/wiki#contribute>here</a> to submit
+      your comments and issues with the current draft schema specification.</p>
 
   </section>
 
@@ -249,7 +250,7 @@
       <h3>Status of the document</h3>
       <p>Initial Draft</p>
     </section>
-    
+
   </section>
   <section id="area-of-application">
     <h3>Area of application</h3>
@@ -1770,20 +1771,9 @@
               </tr>
             </tbody>
           </table>
-        </section>0..n</
-                <th>Range</th>
-                <td>><a href="http://xmlns.com/foaf/0.1/#term_Organization"><code>foaf:Organization</code></a>
-                </td>
-              </tr>
-              <tr>
-                <th>Definition</th>
-                <td>This property MAY be used to specify the organizational membership of the Agent.</td>
-              </tr>
-            </tbody>
-          </table>
         </section>
       </section>
-      <section id="access_restriction-example">
+      <section id=agent-example">
         <h4>Example</h4>
         <aside class="example" title="foaf:Agent examples">
           <!-- TODO  <pre data-include-format="text" data-include="./examples/attribution.ttl"></pre> -->
@@ -2190,7 +2180,7 @@
             <td>0..n</td>
           </tr>
         </tbody>
-      </table>
+        </table>
 
       <section id="catalog-mandatory-props">
         <h4>Mandatory Properties</h4>
@@ -2605,7 +2595,7 @@
             </tbody>
           </table>
           <aside class="example" title="Usage of dct:rights for dcat:Catalog">
-             <pre data-include-format="text" data-include="./examples/catalog/rights.ttl"></pre>
+            <pre data-include-format="text" data-include="./examples/catalog/rights.ttl"></pre>
           </aside>
         </section>
         <section id="catalog-spatial-geographic">
@@ -2792,7 +2782,7 @@
             </tbody>
           </table>
           <aside class="example" title="Usage of dct:conformsTo for dcat:Catalog">
-            <pre data-include-format="text" data-include="./examples/catalog/conforms-to.ttl"></pre> 
+            <pre data-include-format="text" data-include="./examples/catalog/conforms-to.ttl"></pre>
           </aside>
         </section>
       </section>
@@ -3436,7 +3426,7 @@
           </td>
         </tr>
       </table>
-    
+
       <p><strong>Properties Summary</strong></p>
       <table class="simple">
         <thead>
@@ -3555,11 +3545,12 @@
               <tr>
                 <th>Range</th>
                 <td>a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
-                (typed as
-                as <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>,
-                <a data-cite="XMLSCHEMA11-2#dateTime"><code>xsd:dateTime</code></a>,
-                <a data-cite="XMLSCHEMA11-2##gYear"><code>xsd:gYear</code></a>
-                or <a data-cite="XMLSCHEMA11-2#gYearMonth"><code>xsd:gYearMonth</code></a>)</td>
+                  (typed as
+                  as <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>,
+                  <a data-cite="XMLSCHEMA11-2#dateTime"><code>xsd:dateTime</code></a>,
+                  <a data-cite="XMLSCHEMA11-2##gYear"><code>xsd:gYear</code></a>
+                  or <a data-cite="XMLSCHEMA11-2#gYearMonth"><code>xsd:gYearMonth</code></a>)
+                </td>
               </tr>
               <tr>
                 <th>Definition</th>
@@ -3598,15 +3589,18 @@
               </tr>
               <tr>
                 <th>Usage note:</th>
-                <td>A catalog record will refer to one entity in a catalog. This can be either a Dataset or a Data Service. To ensure an
-                unambigous reading of the cardinality the range is set to Cataloged Resource. However it is not the intend with this
-                range to require the explicit use of the class Cataloged Record. As abstract class, an subclass should be used.</td>
+                <td>A catalog record will refer to one entity in a catalog. This can be either a Dataset or a Data
+                  Service. To ensure an
+                  unambigous reading of the cardinality the range is set to Cataloged Resource. However it is not the
+                  intend with this
+                  range to require the explicit use of the class Cataloged Record. As abstract class, an subclass should
+                  be used.</td>
               </tr>
             </tbody>
           </table>
         </section>
       </section>
-    
+
       <!-- * CatalogRecord recommended properties -->
       <section id="catalog-record-recommended-props">
         <h3>Recommended Properties</h3>
@@ -3675,7 +3669,7 @@
           </table>
         </section>
       </section>
-    
+
       <!-- * CatalogRecord optional properties -->
       <section id="catalog-record-optional-props">
         <h3>Optional Properties</h3>
@@ -3706,7 +3700,8 @@
               </tr>
               <tr>
                 <th>Definition</th>
-                <td>A free-text account of the record. This property can be repeated for parallel language versions of the
+                <td>A free-text account of the record. This property can be repeated for parallel language versions of
+                  the
                   description.</td>
               </tr>
             </tbody>
@@ -3734,7 +3729,8 @@
               </tr>
               <tr>
                 <th>Range</th>
-                <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LinguisticSystem"><code>dct:LinguisticSystem</code></a>
+                <td><a
+                    data-cite="DCTERMS#http://purl.org/dc/terms/LinguisticSystem"><code>dct:LinguisticSystem</code></a>
                 </td>
               </tr>
               <tr>
@@ -3857,10 +3853,10 @@
 
       <!-- TODO: Figure out an example for CatalogRecord -->
     </section>
-    
+
     <!-- spdx:Checksum -->
     <section id="properties-for-checksum">
-      <aside class="note">Class added in DCAT-US 3.0</aside>
+      <aside class="note">Class introduced in DCAT 3.0</aside>
       <h2>Class: Checksum</h2>
       <table class="def">
         <tr>
@@ -3890,7 +3886,7 @@
           </td>
         </tr>
       </table>
-    
+
       <p><strong>Properties Summary</strong></p>
       <table class="simple">
         <thead>
@@ -3922,7 +3918,7 @@
           </tr>
         </tbody>
       </table>
-    
+
       <section id="checksum-mandatory-props">
         <h3>Mandatory Properties</h3>
         <section id="checksum-algorithm">
@@ -3943,7 +3939,8 @@
               </tr>
               <tr>
                 <th>URI</th>
-                <td><a data-cite="SPDX#d4e46"><code title="http://spdx.org/rdf/terms#algorithm">spdx:algorithm</code></a>
+                <td><a data-cite="SPDX#d4e46"><code
+                      title="http://spdx.org/rdf/terms#algorithm">spdx:algorithm</code></a>
                 </td>
               </tr>
               <tr>
