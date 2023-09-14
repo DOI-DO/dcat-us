@@ -1551,7 +1551,7 @@
             <td>0..1</td>
           </tr>
           <tr>
-            <td><a href="#agent-memberOf">member of</a></td>
+            <td><a href="#agent-member_of">member of</a></td>
             <td><a href="http://www.w3c.org/ns/org#memberOf"><code>org:memberOf</code></a>
             </td>
             <td><a href="http://xmlns.com/foaf/0.1/#term_Organization"><code>foaf:Organization</code></a>
@@ -1768,6 +1768,39 @@
               <tr>
                 <th>Definition</th>
                 <td>This property MAY be used to specify the address of the Agent.</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section id="agent-member_of">
+          <h4>Property: affiliation</h4>
+          <table class="def">
+            <tbody>
+              <tr>
+                <th>Property</th>
+                <td>name</td>
+              </tr>
+              <tr>
+                <th>Requirement level</th>
+                <td>Optional</td>
+              </tr>
+              <tr>
+                <th>Cardinality</th>
+                <td>0..n</td>
+              </tr>
+              <tr>
+                <th>URI</th>
+                <td><a href="http://www.w3c.org/ns/org#memberOf"><code>org:memberOf</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Range</th>
+                <td><a href="http://www.w3c.org/ns/org#Organization"><code>org:Organization</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Definition</th>
+                <td>This property MAY be used to specify the affiliation of the Person to an organization.</td>
               </tr>
             </tbody>
           </table>
@@ -2036,7 +2069,7 @@
             <td>0..1</td>
           </tr>
           <tr>
-            <td><a href="#catalog-spatial-geographic">spatial /geographic</a></td>
+            <td><a href="#catalog-spatial">spatial /geographic</a></td>
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/spatial"><code>dct:spatial</code></a>
             </td>
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Location"><code>dct:Location</code></a></td>
@@ -2044,7 +2077,7 @@
             <td>0..n</td>
           </tr>
           <tr>
-            <td><a href="#catalog-theme-taxonomy">themes</a></td>
+            <td><a href="#catalog-theme_taxonomy">themes</a></td>
             <td><a data-cite="VOCAB-DCAT-3#Property:catalog_themes"><code>dcat:themeTaxonomy</code></a></td>
             <td><a data-cite="SKOS-REFERENCE#ConceptScheme"><code>skos:ConceptScheme</code></a></td>
             <td>R</td>
@@ -2598,7 +2631,7 @@
             <pre data-include-format="text" data-include="./examples/catalog/rights.ttl"></pre>
           </aside>
         </section>
-        <section id="catalog-spatial-geographic">
+        <section id="catalog-spatial">
           <h4>Property: spatial/ geographic</h4>
           <aside class="note">New in DCAT-US 3.0 (defined in DCAT 1)</aside>
           <table class="def">
@@ -2648,7 +2681,7 @@
             <pre data-include-format="text" data-include="./examples/catalog/spatial.ttl"></pre>
           </aside>
         </section>
-        <section id="catalog-theme-taxonomy">
+        <section id="catalog-theme_taxonomy">
           <h4>Property: themes</h4>
           <aside class="note">New in DCAT-US 3.0 (defined in DCAT 1)</aside>
           <table class="def">
@@ -5059,7 +5092,7 @@
             <td>0..n</td>
           </tr>
           <tr>
-            <td><a href="#data-service-spatialResolution">spatial resolution in meters</a></td>
+            <td><a href="#data-service-spatial_resolution_in_meters">spatial resolution in meters</a></td>
             <td><a
                 href="http://www.w3.org/ns/dcat#spatialResolutionInMeters"><code>dcat:spatialResolutionInMeters</code></a>
             </td>
@@ -5069,7 +5102,7 @@
             <td>0..n</td>
           </tr>
           <tr>
-            <td><a href="#data-service-temporalResolution">temporal resolution</a></td>
+            <td><a href="#data-service-temporal_resolution">temporal resolution</a></td>
             <td><a href="VOCAB-DCAT-3#Property:dataset_temporal_resolution"><code>dcat:temporalResolution</code></a>
             </td>
             <td>
@@ -5098,7 +5131,7 @@
             <td>0..1</td>
           </tr>
           <tr>
-            <td><a href="#data-service-conforms-to">conforms to</a></td>
+            <td><a href="#data-service-conforms_to">conforms to</a></td>
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/conformsTo"><code>dct:conformsTo</code></a>
             </td>
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Standard"><code>dct:Standard</code></a>
@@ -5180,7 +5213,7 @@
             <td>0..n</td>
           </tr>
           <tr>
-            <td><a href="#data-service-spatial-geographic">spatial/geographic coverage</a></td>
+            <td><a href="#data-service-spatial">spatial/geographic coverage</a></td>
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/spatial"><code>dct:spatial</code></a>
             </td>
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Location"><code>dct:Location</code></a></td>
@@ -5637,7 +5670,7 @@
             <pre data-include-format="text" data-include="./examples/service/keyword.ttl"></pre>
           </aside>
         </section>
-        <section id="data-service-spatialResolution">
+        <section id="data-service-spatial_resolution_in_meters">
           <h4>Property: spatial resolution in meters</h4>
           <table class="def">
             <tbody>
@@ -5680,7 +5713,7 @@
             <pre data-include-format="text" data-include="./examples/service/spatial-resolution.ttl"></pre>
           </aside> -->
         </section>
-        <section id="data-service-temporalResolution">
+        <section id="data-service-temporal_resolution">
           <h4>Property: temporal resolution</h4>
           <table class="def">
             <tbody>
@@ -5811,7 +5844,7 @@
             <pre data-include-format="text" data-include="./examples/service/access-rights.ttl"></pre>
           </aside>
         </section>
-        <section id="data-service-conforms-to">
+        <section id="data-service-conforms_to">
           <h4>Property: conforms to</h4>
           <table class="def">
             <tbody>
@@ -6206,7 +6239,7 @@
             <!-- <pre data-include-format="text" data-include="./examples/service/rightsHolder.ttl"></pre> -->
           </aside>
         </section>
-        <section id="data-service-spatial-geographic">
+        <section id="data-service-spatial">
           <h4>Property: spatial/geographic coverage</h4>
           <table class="def">
             <tbody>
@@ -6657,7 +6690,7 @@
             <td>0..n</td>
           </tr>
           <tr>
-            <td><a href="#dataset-spatial-geographical-coverage">spatial/geographical coverage</a></td>
+            <td><a href="#dataset-spatial">spatial/geographical coverage</a></td>
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/spatial"><code>dct:spatial</code></a>
             </td>
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Location"><code>dct:Location</code></a></td>
@@ -6738,7 +6771,7 @@
             <td>0..1</td>
           </tr>
           <tr>
-            <td><a href="#dataset-conforms-to">conforms to</a></td>
+            <td><a href="#dataset-conforms_to">conforms to</a></td>
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/conformsTo"><code>dct:conformsTo</code></a>
             </td>
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Standard"><code>dct:Standard</code></a>
@@ -6897,7 +6930,7 @@
             <td>0..n</td>
           </tr>
           <tr>
-            <td><a href="#dataset-temporal-resolution">temporal resolution</a></td>
+            <td><a href="#dataset-temporal_resolution">temporal resolution</a></td>
             <td><a
                 data-cite="VOCAB-DCAT-3#Property:dataset_temporal_resolution"><code>dcat:temporalResolution</code></a>
             </td>
@@ -7010,8 +7043,8 @@
             <td>0..n</td>
           </tr>
           <tr>
-            <td><a href="#dataset-liabilityStatement">liability statement</a></td>
-            <td><a href=#dataset-liabilityStatement"><code>dcat-us:liabilityStatement</code></a>
+            <td><a href="#dataset-liability_statement">liability statement</a></td>
+            <td><a href="#dataset-liability_statement"><code>dcat-us:liabilityStatement</code></a>
             </td>
             <td><a href="http://TBD#LiabilityStatement">
                 <code>dcat-us:LiabilityStatement</code></a>
@@ -7089,7 +7122,7 @@
                   <ul>
                     <li>This property contains a name given to the Dataset.</li>
                     <li>This property can be repeated for parallel language versions of the title
-                      (see <a class="no-sectionRef" href="#multilingualism"></a>).
+                      (see <a href="#multilingualism">Multilingualism</a>).
                     </li>
                   </ul>
                 </td>
@@ -7133,7 +7166,7 @@
                     <li>This property contains a free-text account of the Dataset.</li>
                     <li>
                       This property can be repeated for parallel language versions of the
-                      description (see <a class="no-sectionRef" href="#multilingualism"></a>). On the user interface
+                      description (see <a href="#multilingualism">Multilingualism</a>). On the user interface
                       of
                       data portals, the content of the element whose language corresponds to the
                       display language selected by the user is displayed.
@@ -7286,7 +7319,7 @@
             <pre data-include-format="text" data-include="./examples/dataset/distribution.ttl"></pre>
           </aside>
         </section>
-        <section id="dataset-spatial-geographical-coverage">
+        <section id="dataset-spatial">
           <h4>Property: spatial/ geographical coverage</h4>
           <table class="def">
             <tbody>
@@ -7702,7 +7735,7 @@
             <!--  <pre data-include-format="text" data-include="./examples/catalog/rights.ttl"></pre> -->
           </aside>
         </section>
-        <section id="dataset-conforms-to">
+        <section id="dataset-conforms_to">
           <h4>Property: conforms to</h4>
           <table class="def">
             <tbody>
@@ -8502,12 +8535,12 @@
               </tr>
             </tbody>
           </table>
-          <aside class="example" id="ex-dataset-spatial-resolution"
+          <aside class="example" id="ex-dataset-spatial_resolution"
             title="Usage of dcat:spatialResolutionInMeters for dcat:Dataset">
             <pre data-include-format="text" data-include="./examples/dataset/spatial-resolution.ttl"></pre>
           </aside>
         </section>
-        <section id="dataset-temporal-resolution">
+        <section id="dataset-temporal_resolution">
           <h4>Property: temporal resolution</h4>
           <table class="def">
             <tbody>
@@ -8554,7 +8587,7 @@
               </tr>
             </tbody>
           </table>
-          <aside class="example" id="ex-dataset-temporal-resolution"
+          <aside class="example" id="ex-dataset-temporal_resolution"
             title="Usage of dcat:temporalResolution for dcat:Dataset">
             <pre data-include-format="text" data-include="./examples/dataset/temporal-resolution.ttl"></pre>
           </aside>
@@ -8926,7 +8959,7 @@
             </tbody>
           </table>
         </section>
-        <section id="dataset-liabilityStatement">
+        <section id="dataset-liability_statement">
           <h4>Property: liability statement</h4>
           <table class="def">
             <tbody>
@@ -8944,7 +8977,7 @@
               </tr>
               <tr>
                 <th>URI</th>
-                <td><a href="dataset-liabilityStatement"><code>dcat-us:liabilityStatement</code></a>
+                <td><a href="dataset-liability_statement"><code>dcat-us:liabilityStatement</code></a>
                 </td>
                 </td>
               </tr>
@@ -9231,7 +9264,7 @@
             <td>0..1</td>
           </tr>
           <tr>
-            <td><a href="#dataset-series-spatial-geographical-coverage">spatial/geographical coverage</a></td>
+            <td><a href="#dataset-series-spatial">spatial/geographical coverage</a></td>
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/spatial"><code>dct:spatial</code></a>
             </td>
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Location"><code>dct:Location</code></a></td>
@@ -9345,7 +9378,7 @@
                   <ul>
                     <li>This property contains a name given to the Dataset Series.</li>
                     <li>This property can be repeated for parallel language versions of the name
-                      (see <a class="no-sectionRef" href="#multilingualism"></a>).
+                      (see <a href="#multilingualism">Multilingualism</a>).
                     </li>
                   </ul>
                 </td>
@@ -9390,7 +9423,7 @@
                     <li>This property contains a free-text account of the Dataset Series.</li>
                     <li>
                       This property can be repeated for parallel language versions of the
-                      description (see <a class="no-sectionRef" href="#multilingualism"></a>). It is recommended to
+                      description (see <a href="#multilingualism">Multilingualism</a>). It is recommended to
                       provide
                       an indication
                       about the dimensions the Dataset Series evolves.
@@ -9495,7 +9528,7 @@
             <pre data-include-format="text" data-include="./examples/dataset-series/first.ttl"></pre> -->
           </aside>
         </section>
-        <section id="dataset-series-spatial-geographical-coverage">
+        <section id="dataset-series-spatial">
           <h4>Property: spatial/geographical coverage</h4>
           <table class="def">
             <tbody>
@@ -10108,7 +10141,7 @@
             <td>0..1</td>
           </tr>
           <tr>
-            <td><a href="#distribution-spatialResolution">spatial resolution in meters</a></td>
+            <td><a href="#distribution-spatial_resolution_in_meters">spatial resolution in meters</a></td>
             <td><a
                 href="http://www.w3.org/ns/dcat#spatialResolutionInMeters"><code>dcat:spatialResolutionInMeters</code></a>
             </td>
@@ -10211,7 +10244,7 @@
             <td>0..n</td>
           </tr>
           <tr>
-            <td><a href="#distribution-linked-schemas">linked schemas</a></td>
+            <td><a href="#distribution-conforms_to">linked schemas</a></td>
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/conformsTo"><code>dct:conformsTo</code></a>
             </td>
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Standard"><code>dct:Standard</code></a>
@@ -10254,7 +10287,7 @@
             <td>0..1</td>
           </tr>
           <tr>
-            <td><a href="#distribution-temporal-resolution">temporal resolution</a></td>
+            <td><a href="#distribution-temporal_resolution">temporal resolution</a></td>
             <td><a data-cite="VOCAB-DCAT-3#Property:distribution_temporal_resolution">
                 <code>dcat:temporalResolution</code></a>
             </td>
@@ -10436,7 +10469,7 @@
                       offered by the Dataset.
                     </li>
                     <li>This property can be repeated for parallel language versions of the description
-                      (see <a class="no-sectionRef" href="#multilingualism"></a>).
+                      (see <a class="no-sectionRef" href="#multilingualism">Multilingualism</a>).
                     </li>
                   </ul>
                 </td>
@@ -10694,7 +10727,7 @@
                   <ul>
                     <li>This property contains a name given to the Distribution. This property can be repeated for
                       parallel language versions of the description
-                      (see <a class="no-sectionRef" href="#multilingualism"></a>).
+                      (see <a href="#multilingualism">Multilingualism</a>).
                     </li>
                     <li>The title MUST be given if the distribution contains only part of the data offered by the
                       Dataset
@@ -10937,7 +10970,7 @@
             <!-- <pre data-include-format="text" data-include="./examples/distribution/compress-format.ttl"></pre> -->
           </aside>
         </section>
-        <section id="distribution-spatialResolution">
+        <section id="distribution-spatial_resolution_in_meters">
           <h4>Property: spatial resolution in meters</h4>
           <table class="def">
             <tbody>
@@ -11431,7 +11464,7 @@
             <!--        <pre data-include-format="text" data-include="./examples/distribution/language.ttl"></pre> -->
           </aside>
         </section>
-        <section id="distribution-linked-schemas">
+        <section id="distribution-conforms_to">
           <h4>Property: linked schemas</h4>
           <table class="def">
             <tbody>
@@ -11618,7 +11651,7 @@
             <pre data-include-format="text" data-include="./examples/distribution/issued.ttl"></pre>
           </aside>
         </section>
-        <section id="distribution-temporal-resolution">
+        <section id="distribution-temporal_resolution">
           <h4>Property: temporal resolution</h4>
           <table class="def">
             <tbody>
@@ -12922,10 +12955,10 @@
 
     <!-- dcat-us:LiabilityStatement-->
 
-    <section id="properties-for-liablity-statement">
+    <section id="properties-for-liability_statement">
       <h2>Class: Liability Statement</h2>
       <aside class="note">New DCAT-US 3.0 Class </aside>
-      <table class="def" id="table-class-liability-statement">
+      <table class="def" id="table-class-liability_statement">
         <tr>
           <th>RDF Class:</th>
           <td><a href="http://TBD#LiabilityStatement"><code>dcat-us:LiabilityStatement</code></a></td>
@@ -14367,7 +14400,7 @@
 
       <section id="person-optional-props">
         <h3>Optional Properties</h3>
-        <section id="person-affiliation">
+        <section id="person-member_of">
           <h4>Property: affiliation</h4>
           <table class="def">
             <tbody>
@@ -15183,10 +15216,7 @@
               <tr>
                 <th>Definition</th>
                 <td>This property contains a free-text account of the Standard. This property can be repeated for
-                  parallel language versions of the description - see <a class="no-secRef sec-ref"
-                    href="#accessibility-and-multilingual-aspects">§&nbsp;<bdi class="secno">9. </bdi>Accessibility
-                    and
-                    Multilingual Aspects</a></p> .</td>
+                  parallel language versions of the description - see <a href="#multilingualism">Multilinguism</a></p> .</td>
               </tr>
             </tbody>
           </table>

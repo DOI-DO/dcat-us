@@ -68,7 +68,7 @@
                 <p>+<code>dcat:hadRole</code></p>
             </td>
             <td>
-                <p><a href="#attribution-had-role">Attribution</a></p>
+                <p><a href="#attribution-role">Attribution</a></p>
             </td>
             <td>
                 <p>DATA.GOV Responsible Party Roles [[DATA-GOV-RPR]]</p>
@@ -109,34 +109,24 @@
                 <p><code>dcat:theme</code></p>
             </td>
             <td>
-                <p><a href="#dataset-category">Dataset</a></p>
+                <p><a href="#dataset-theme-category">Dataset</a></p>
+                <p><a href="#catalog-theme-category">Catalog</a></p>
+                <p><a href="#data-service-theme-category">Data Service</a></p>
             </td>
-            <td rowspan="2">
+            <td>
                 <p>Dataset Theme Vocabulary [[DATA-GOV-THEME]]</p>
                 <p>Geoplatform NGDA Spatial Data Themes [[NGDA-THEMES]]</p>
             </td>
-            <td rowspan="2">
+            <td>
                 <p><a href="https://resources.data.gov/vocab/data-theme">https://resources.data.gov/vocab/data-theme</a>
                 </p>
-                <p><a href="http://inspire.ec.europa.eu/theme">http://inspire.ec.europa.eu/theme</a></p>
+                <p><a href="https://resources.data.gov/vocab/ngda-data-theme">https://resources.data.gov/vocab/ngda-data-theme</a></p>
             </td>
             <td>
                 <p>The values to be used for this property are the URIs of the concepts in the vocabulary.</p>
             </td>
         </tr>
 
-        <tr>
-            <td>
-                <p>+<code>dcat:theme</code></p>
-            </td>
-            <td>
-                <p><a href="#catalog-category">Catalog</a></p>
-                <p><a href="#data-service-category">Data Service</a></p>
-            </td>
-            <td>
-                <p>The use of this property for Catalogs and Data Services is a DCAT-US extension.</p>
-            </td>
-        </tr>
 
         <!-- Theme taxonomy -->
 
@@ -145,7 +135,7 @@
                 <p><code>dcat:themeTaxonomy</code></p>
             </td>
             <td>
-                <p><a href="#catalog-themes">Catalog</a></p>
+                <p><a href="#catalog-theme_taxonomy">Catalog</a></p>
             </td>
             <td>
                 <p>Dataset Theme Vocabulary [[DATA-GOV-THEME]]</p>
@@ -186,12 +176,14 @@
         <!-- Access rights -->
 
         <tr>
-            <td rowspan="2">
+            <td>
                 <p><code>dct:accessRights</code></p>
             </td>
-            <td rowspan="2">
+            <td>
                 <p><a href="#data-service-access-rights">Data Service</a></p>
                 <p><a href="#dataset-access-rights">Dataset</a></p>
+                <p><a href="#catalog-access-rights">Catalog</a></p>
+                <p><a href="#distribution-access-rights">Distribution</a></p>
             </td>
             <td>
                 <p>DATA.GOV Vocabularies Access rights [[DATA-GOV-AR]]</p>
@@ -206,54 +198,8 @@
             </td>
         </tr>
 
-        <tr>
-            <td>
-                <p>Data.Gov Limitations on Public Access [[DATA-GOV-LPA]]</p>
-            </td>
-            <td>
-                <p><a
-                        href="https://resources.data.gov/vocab/LimitationsOnPublicAccess">https://resources.data.gov/vocab/LimitationsOnPublicAccess</a>
-                </p>
-            </td>
-            <td>
-                <p>DCAT-US extension.</p>
-            </td>
-        </tr>
+       
 
-        <tr>
-            <td rowspan="2">
-                <p>+<code>dct:accessRights</code></p>
-            </td>
-            <td rowspan="2">
-                <p><a href="#catalog-access-rights">Catalog</a></p>
-                <p><a href="#distribution-access-rights">Distribution</a></p>
-            </td>
-            <td>
-                <p>US Vocabularies Access rights [[DATA-GOV-AR]]</p>
-            </td>
-            <td>
-                <p><a
-                        href="https://resources.data.gov/vocab/access-right">https://resources.data.gov/vocab/access-right</a>
-                </p>
-            </td>
-            <td>
-                <p></p>
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <p>DATA.GOV Limitations on Public Access [[DATA-GOV-LPA]]</p>
-            </td>
-            <td>
-                <p><a
-                        href="https://resources.data.gov/vocab/LimitationsOnPublicAccess">https://resources.data.gov/vocab/LimitationsOnPublicAccess</a>
-                </p>
-            </td>
-            <td>
-                <p>DCAT-US extension.</p>
-            </td>
-        </tr>
 
         <!-- Update frequency -->
 
@@ -278,38 +224,29 @@
         <!-- Conforms to -->
 
         <tr>
-            <td rowspan="2">
+            <td>
                 <p>+<code>dct:conformsTo</code></p>
             </td>
             <td>
-                <p><a href="#data-service-reference-system">Data Service</a></p>
-                <p><a href="#dataset-reference-system">Dataset</a></p>
-                <p><a href="#distribution-reference-system">Distribution</a></p>
+                <p><a href="#data-service-conforms_to">Data Service</a></p>
+                <p><a href="#dataset-conforms_to">Dataset</a></p>
+                <p><a href="#distribution-conforms_to">Distribution</a></p>
+                <p><a href="#data-service-conforms_to">Data Service</a></p>
             </td>
             <td>
                 <p>OGC EPSG Coordinate Reference Systems Register [[OGC-EPSG]]</p>
-            </td>
-            <td>
-                <p><a href="http://www.opengis.net/def/crs/EPSG/0/">http://www.opengis.net/def/crs/EPSG/0/</a></p>
-            </td>
-            <td rowspan="2">
-                <p>DCAT-US extension.</p>
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <p><a href="#data-service-conforms-to">Data Service</a></p>
-            </td>
-            <td>
                 <p>DATA.GOV Protocol Values [[DATA-GOV-PV]]</p>
             </td>
             <td>
+                <p><a href="http://www.opengis.net/def/crs/EPSG/0/">http://www.opengis.net/def/crs/EPSG/0/</a></p>
                 <p><a
-                        href="https://resources.data.gov/vocab/ProtocolValue">https://resources.data.gov/vocab/ProtocolValue</a>
-                </p>
+                    href="https://resources.data.gov/vocab/ProtocolValue">https://resources.data.gov/vocab/ProtocolValue</a>
+            </p>
             </td>
+            <td>&nbsp;</td>
         </tr>
+
+    
 
         <!-- Format -->
 
@@ -397,8 +334,9 @@
                 <p><code>dct:spatial</code></p>
             </td>
             <td>
-                <p><a href="#catalog-spatial-coverage">Catalog</a></p>
-                <p><a href="#dataset-spatial-coverage">Dataset</a></p>
+                <p><a href="#catalog-spatial">Catalog</a></p>
+                <p><a href="#dataset-spatial">Dataset</a></p>
+                <p><a href="#data-service-spatial">Data Service</a></p>
             </td>
             <td>
                 <p>US Vocabularies Continents Named Authority List [[DATA-GOV-CONT]], US Vocabularies Countries Named
@@ -421,41 +359,14 @@
             </td>
         </tr>
 
-        <tr>
-            <td>
-                <p>+<code>dct:spatial</code></p>
-            </td>
-            <td>
-                <p><a href="#data-service-spatial-coverage">Data Service</a></p>
-            </td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>
-                <p>The use of this property for Data Services is a DCAT-US extension.</p>
-            </td>
-        </tr>
-
-        <!-- Subject -->
-
-        <tr>
-            <td>
-                <p>+<code>dct:subject</code></p>
-            </td>
-            <td>
-                <p><a href="#catalog-topic-category">Catalog</a></p>
-                <p><a href="#data-service-topic-category">Data Service</a></p>
-                <p><a href="#dataset-topic-category">Dataset</a></p>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
+    
 
         <tr>
             <td>
                 <p>+<code>sdmx-attribute:unitMeasure</code></p>
             </td>
             <td>
-                <p><a href="#quality-measurement-unit-of-measure">Quality Measurement</a></p>
+                <p><a href="#quality_measurement_unit_measure">Quality Measurement</a></p>
             </td>
             <!--
 <td>
