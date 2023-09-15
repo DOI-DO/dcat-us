@@ -15689,8 +15689,162 @@
   <section id="deferenceable-identifiers">
 
     <h2>Dereferenceable identifiers</h2>
-    <aside class="note">TODO</aside>
+
+    <p>The FAIR principles, under the Findability and the Accessibility chapters respectively, state that:
+    <ul>
+      <li>F1. (Meta)data are assigned a globally unique and persistent identifier</li>
+
+      <li>A1. (Meta)data are retrievable by their identifier using a standardized communications protocol</li>
+    </ul>
+
+    <p>
+      In the expansive realm of digital data and ontology, the ability to unambiguously identify and access resources is
+      foundational. this section delves deep into the principles and practices that underpin this crucial aspect of
+      digital data management. Guided by the FAIR principles, this section unravels the nuances of generating resolvable
+      URLs, the importance of URI resolution, the roles of various identifier resolution services, and the distinctions
+      between alternate identifier properties. Through a comprehensive exploration, this section offers insights into
+      ensuring data is not only uniquely identifiable but also consistently accessible in an ever-evolving digital
+      landscape.</p>
+      
+    <h3>Generating Resolvable URLs</h3>
+    <p>In the context of FAIR data, resources on the web must have unique, persistent, and resolvable identifiers. In
+      order to achieve the capability of persistence, it is necessary for the resource identifiers to comply to the RFC
+      3986 IETF standard for URIs (and IRIs, which are URI extended to cope with unicode). This means that it must
+      comprise the following components:
+    <ul>
+      <li><b>scheme:</b>http or https</li>
+      <li><b>an authority:</b> www.example.com</li>
+      <li><b>optionally a path:</b> /dataset-name/</li>
+      <li><b>a local identifier</b> (such as database accession number, such as P12133 from uniprot) or a globally
+        unique identifier (such as a UUID or hash code).</li>
+    </ul>
+
+    </p>
+    <h3><span data-dfn-for="Identifier Resolution">Identifier Resolution</span> - Enabling persistence through
+      indirection</h3>
+
+    <p>URI resolution is a fundamental process that involves directing requests to the appropriate identified entity.
+      The standard approach typically entails resolving an HTTP GET request through content negotiation, enabling the
+      selection of different representations of the desired resource.</p>
+
+    <p> A PURL, or persistent URL, serves as a permanent address for accessing web resources. To grasp the concept of
+      PURLs, it's essential to first understand the concept of URL indirection (also known as URL redirect or URL
+      forwarding). This practice involves providing a stable and fixed web address/URL that is configured to point to
+      different content, which might undergo periodic modifications.</p>
+
+    <p> When a user accesses a PURL, they are automatically redirected to the current location of the resource. This
+      means that when an author decides to relocate a page, they can easily update the PURL to direct it to the new
+      location.</p>
+
+    <p> The practice of indirection proves beneficial as it ensures a consistent URL address for resources that are
+      prone to change, such as due to version updates or ownership changes.</p>
+
+    <p>A concrete example of this practice can be observed in the utilization of purl.org URLs for identifying OBO
+      Foundry resources. For instance, the URL <a
+        href="http://purl.obolibrary.org/obo/stato.owl">http://purl.obolibrary.org/obo/stato.owl</a> redirects to the
+      latest release of the file, which can be found at <a
+        href="https://raw.githubusercontent.com/ISA-tools/stato/dev/releases/latest_release/stato.owl">https://raw.githubusercontent.com/ISA-tools/stato/dev/releases/latest_release/stato.owl</a>.
+    </p>
+
+    <p>PURLs sharing a common prefix are organized into <b>domains</b>, each managed by a single maintainer. The
+      maintainer has the authority to add new PURLs to the domain and make modifications to existing PURLs within that
+      domain.</p>
+    <p>According to FAIR Principle A1, it is essential for (meta)data to be retrievable using its identifier. When the
+      identifier itself is not a resolvable URL, <b>Identifier Resolution Services</b> are required. These services
+      possess the capability to map an Internationalized Resource Identifier (IRI) to a specific location where the
+      corresponding data can be accessed.</p>
+
+    <h3>Identifier Resolution services</h3>
+    <p>In the digital realm, ensuring consistent and persistent access to resources is paramount. <b>Identifier
+        Resolution
+        Services</b> play a crucial role in achieving this by providing unique and persistent identifiers for various
+      digital
+      objects and entities. This section delves into several prominent services, detailing their functions and
+      significance in the broader digital ecosystem.</p>
+    <dl>
+      <dt><a href="https://archive.org/services/purl/">purl.org</a></dt>
+      <dd>The PURL system is a service of the Internet Archive, which provides an interface to administer domain. For
+        more
+        information about the service, visit <a
+          href="https://archive.org/services/purl/help">https://archive.org/services/purl/help</a></dd>
+
+      <dt><a href="https://w3id.org/">w3ids</a></dt>
+      <dd>
+        <p>W3IDs.org provides persistent identifiers for Linked Data resources. These identifiers can be used in DCAT to
+          uniquely identify datasets and data services. This can help to improve the discoverability and
+          interoperability of
+          datasets and data services. W3IDs.org is an important part of the Linked Data ecosystem and plays a key role
+          in
+          making data more discoverable and interoperable.</p>
+        <p>Send a request to add a redirect to the <a href="mailto:public-perma-id%40w3.org">public-perma-id@w3.org</a>
+          mailing list. Make sure to include the URL that you want on <a href="http://w3id.org/">w3id.org</a>, the URL
+          that
+          you want to redirect to, and the HTTP code that you want to use when redirecting. An administrator will then
+          create the redirect for you.</p>
+      </dd>
+
+      <dt><a href="https://doi.org/">doi.org</a></dt>
+      <dd>DOI.org is a digital identifier system that assigns unique and persistent identifiers to digital objects.
+        These
+        identifiers can be used to cite, share, and track digital objects across different platforms and systems.
+        DOI.org
+        identifiers can be used in DCAT to uniquely identify datasets and data services. This can help to improve the
+        discoverability and interoperability of datasets and data services.</dd>
+
+      <dt><a href="https://orcid.org">orcid.org</a></dt>
+      <dd>ORCID (Open Researcher and Contributor ID) is a global, non-profit organization that provides a unique and
+        persistent identifier for researchers. ORCID IDs are used to link researchers to their professional activities,
+        such as publications, grants, and affiliations. This helps to ensure that researchers are properly credited for
+        their work and that their work is more easily discoverable. ORCID is a valuable tool for researchers, and it is
+        becoming increasingly important as the research landscape becomes more complex.</dd>
+
+      <dt><a href="https://info.arxiv.org/help/arxiv_identifier.html">arxiv.org</a></dt>
+      <dd>ArXiv identifiers are globally unique identifiers (GUIDs) assigned to scholarly articles submitted to the
+        arXiv
+        preprint server. These identifiers can be used in DCAT (Data Catalog Vocabulary) to uniquely identify authors
+        and
+        their publications. This can help to improve the discoverability and interoperability of research data.</dd>
+
+      <dt><a href="https://identifiers.org">Identifiers.org</a></dt>
+      <dd>The Identifiers.org Resolution Service provides consistent access to life science data using Compact
+        Identifiers.
+        Compact Identifiers consist of an assigned unique prefix and a local provider designated accession number
+        (prefix:accession). The resolving location of Compact Identifiers is determined using information that is stored
+        in the Identifiers.org <a href="https://registry.identifiers.org/">Registry</a>.</dd>
+    </dl>
+    <h3>Alternate identifiers</h3>
+
+    <p>In the realm of data cataloging, identifiers play a pivotal role in ensuring the uniqueness, traceability, and
+      interoperability of resources. Different namespaces and vocabularies offer distinct properties to denote
+      identifiers. Here, we discuss three such properties: <code>dcterms:identifier</code>,
+      <code>adms:hasIdentifier</code>, and <code>skos:notation</code>, shedding light on their distinct usages and
+      nuances.
+    </p>
+
+    <h4>dcterms:identifier</h4>
+    <p>Originating from the Dublin Core Metadata Terms (DCTERMS), <code>dcterms:identifier</code> is a broad and general
+      property used to denote a unique reference for a resource. It does not impose any constraint on the format or
+      nature of the identifier. In essence, it's a flexible property that can be employed across various domains and for
+      diverse types of resources, be they digital documents, physical artifacts, or abstract concepts.</p>
+
+    <h4>adms:hasIdentifier</h4>
+    <p>The Asset Description Metadata Schema ([[VOCAB-ADMS]]) introduces <code>adms:hasIdentifier</code>. Unlike the
+      more generic <code>dcterms:identifier</code>, this property is more structured. It's designed to link a resource
+      to its identifier, which is itself described using further properties. This allows for a richer description of the
+      identifier, such as specifying its type (e.g., ISBN, DOI), its status, and its version. It's particularly useful
+      in contexts where there's a need to provide additional metadata about the identifier itself, beyond just its
+      value.</p>
+
+    <h4>skos:notation</h4>
+    <p><code>skos:notation</code> is a property from the Simple Knowledge Organization System ([[SKOS-REFERENCE]])
+      vocabulary. It's used to provide a symbolic string notation for a concept. While it can function similarly to an
+      identifier, its primary intention is to give a machine-readable, often standardized, symbolic name to a concept,
+      especially when such a notation exists in a legacy or external system. For example, in a controlled vocabulary,
+      each concept might have a notation that denotes its code in a classification scheme.</p>
+    <!-- TODO -->
+    <aside class="note">TODO Add examples</aside>
   </section>
+
 
   <!-- Agents -->
   <section id="agents">
@@ -15908,7 +16062,7 @@
         seamlessly, facilitating cross-domain analysis and decision-making. With a common reference system, data
         publishers can provide metadata that adheres to a standard, making it easier for data consumers to understand
         and utilize the data.</li>
-      <li><b>Simplified Search and Discovery:</b> The dcat-us:geographicBoundingBox property simplifies the search and
+      <li><b>Simplified Search and Discovery:</b> The <code>>dcat-us:geographicBoundingBox</code> property simplifies the search and
         discovery process for geospatial data. Instead of relying on complex geometric representations like polygons,
         users can specify a bounding box by defining the minimum and maximum values of latitude and longitude. Filtering
         geospatial data using a bounding box involves numeric comparisons, where the latitude and longitude values of
