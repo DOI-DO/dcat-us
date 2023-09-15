@@ -4,3 +4,8 @@
   a dcat:Distribution ;
     dcat:downloadURL <https://commons.wikimedia.org/wiki/file> ;
     dcat:mediaType <https://www.iana.org/assignments/media-types/text/csv> ; .
+
+    
+[] a dcat:Distribution ;
+  dct:format [ a dct:MediaType ;
+      rdfs:label "Geopackage" ] .

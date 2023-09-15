@@ -1,0 +1,8 @@
+prefix spdx:<http://spdx.org/rdf/terms#>
+prefix : <http://example.com>
+
+:checksum001
+  a spdx:Checksum;
+  spdx:algorithm <https://spdx.org/rdf/terms/#checksumAlgorithm_sha256>
+  spdx:checksumValue "5bcc814127be171c75595d419f371c74c9cf041419c45d6e8d2c789e5c303b47" .
+
