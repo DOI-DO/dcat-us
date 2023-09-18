@@ -101,7 +101,8 @@
     </ul>
     <p>Please review the documentation below and provide feedback to help make this standard as useful as possible to
       you and the broader federal data user community.</p>
-    <p>Please follow the instructions found <a href=https://github.com/DOI-DO/dcat-us/wiki#contribute>here</a> to submit
+    <p>Please follow the instructions found <a href="https://github.com/DOI-DO/dcat-us/wiki#contribute">here</a> to
+      submit
       your comments and issues with the current draft schema specification.</p>
 
   </section>
@@ -1807,11 +1808,9 @@
           </table>
         </section>
       </section>
-      <section id=agent-example">
+      <section id="agent-example">
         <h4>Example</h4>
-        <aside class="example" title="foaf:Agent examples">
-          <!-- TODO  <pre data-include-format="text" data-include="./examples/attribution.ttl"></pre> -->
-        </aside>
+        <!--TODO -->
       </section>
     </section>
     <section id="properties-for-attribution">
@@ -2471,7 +2470,7 @@
               </tr>
               <tr>
                 <th>URI</th>
-                <td><a data-cite=VOCAB-DCAT-3#Property:resource_language><code>dct:language</code></a>
+                <td><a data-cite="VOCAB-DCAT-3#Property:resource_language"><code>dct:language</code></a>
                 </td>
               </tr>
               <tr>
@@ -11448,7 +11447,7 @@
               </tr>
               <tr>
                 <th>URI</th>
-                <td><a data-cite=VOCAB-DCAT-3#Property:resource_language><code>dct:language</code></a>
+                <td><a data-cite="VOCAB-DCAT-3#Property:resource_language"><code>dct:language</code></a>
                 </td>
               </tr>
               <tr>
@@ -12895,8 +12894,8 @@
               </tr>
               <tr>
                 <th>Range</th>
-                <td<a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
-                  </td>
+                <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+                </td>
               </tr>
             </tbody>
           </table>
@@ -15675,21 +15674,16 @@
 
     <h2>JSON-LD context file</h2>
 
-    One common technical question is the format in which the data is being exchanged.
-    For DCAT-US 3.0 conformance, it is not mandatory that this happens in a RDF serialisation, but the exchanged
-    format
-    SHOULD be unambiguously be transformable into RDF.
-    For the format JSON, a popular format to exchange data between systems, DCAT-US profile provides a <a
-      href="./context/dcat-us.jsonld">JSON-LD context file</a>.
-    JSON-LD is a W3C Recommendation [[[json-ld11]]] that provided a standard approach to interpret JSON structures as
-    RDF.
-    The provided JSON-LD context file can be used by implementers to base their data exchange upon, and so create a
-    DCAT-US conformant data exchange.
-    This JSON-LD context is not normative, i.e. other JSON-LD contexts are allowed to create a a conformant DCAT-UD
-    data
-    exchange.
-    <p />
-    The JSON-LD context file downloadable <a href="./context/dcat-us.jsonld">here</a>.
+    <p>One common technical question is the format in which the data is being exchanged.
+      For DCAT-US 3.0 conformance, it is not mandatory that this happens in a RDF serialisation, but the exchanged
+      format SHOULD be unambiguously be transformable into RDF.
+      For the format JSON, a popular format to exchange data between systems, DCAT-US profile provides a <a
+        href="./context/dcat-us.jsonld">JSON-LD context file</a>.
+      JSON-LD is a W3C Recommendation [[[json-ld11]]] that provided a standard approach to interpret JSON structures as
+      RDF. The provided JSON-LD context file can be used by implementers to base their data exchange upon, and so create
+      a DCAT-US conformant data exchange.
+      This JSON-LD context is not normative, i.e. other JSON-LD contexts are allowed to create a a conformant DCAT-UD
+      data exchange. The JSON-LD context file downloadable <a href="./context/dcat-us.jsonld">here</a>. </p>
 
   </section>
   <!-- Dereferenceable identifiers -->
@@ -15868,8 +15862,7 @@
 
       <h3>Person</h3>
       <p>A person agent represents an individual involved in producing or managing datasets. It provides
-        information
-        about the person and their associated contact details.</p>
+        information about the person and their associated contact details.</p>
 
     </section>
     <section id="organization">
@@ -15979,8 +15972,7 @@
     </p>
 
     <p>The <a data-cite="PROV-O#qualifiedAttribution"><code>prov:qualifiedAttribution</code></a> property
-      is used to
-      provide more detailed and structured information about the attribution of a resource. It allows for
+      is used to provide more detailed and structured information about the attribution of a resource. It allows for
       specifying additional attributes, such as the role or position of the attributed entity, the date of
       attribution, or other relevant details. The [PROV-O]-based approach is meant to
       give data providers an extension mechanism to specify, in a harmonised way, any kind of role, and,
@@ -16001,8 +15993,6 @@
       <pre class="nohighlight turtle" data-include-format="text"
         data-include="./examples/dataset/attributions.ttl"></pre>
     </aside>
-
-
   </section>
 
   <!-- Spatial Metadata -->
@@ -16029,37 +16019,38 @@
 
     <p>A bounding box represents the minimum and maximum coordinates that enclose a specific geographic area. In
       DCAT-US, the dcat-us:geographicBoundingBox property and the class dcat-us:GeographicBoundingBox are introduced
-      and
-      utilized to define the spatial extent of a resource. This class consists of four numerical properties: the west
-      (dcat-us:westBoundLongitude) and east longitude (dcat-us:eastBoundLongitude), followed by the north
+      and utilized to define the spatial extent of a resource. This class consists of four numerical properties: the
+      west (dcat-us:westBoundLongitude) and east longitude (dcat-us:eastBoundLongitude), followed by the north
       (dcat-us:northBoundLatitude) and south latitude (dcat-us:southBoundLatitude), which are based on the WGS84
       coordinate system.</p>
 
     <aside class="example" id="ex-data-geographicBoundingBox2"
       title="Example for dcat-us:geographicBoundingBox on dcat:Dataset">
-      <pre data-include-format="text" data-include="./examples/dataset/geographicbbox.ttl">
+      <pre data-include-format="text" data-include="./examples/dataset/geographicbbox.ttl"></pre>
     </aside>
-    <p>By specifying a bounding box, datasets can be associated with a particular geographic region. <b>If the west bound
-      longitude is greater than the east bound longitude, then the box spans the anti-meridian</b></p>
+    <p>By specifying a bounding box, datasets can be associated with a particular geographic region. <b>If the west
+        bound longitude is greater than the east bound longitude, then the box spans the anti-meridian</b></p>
 
     <figure id="figure">
       <img src="images/AntimeridianCrossing.png" alt="Antimeridian crossing" />
       <figcaption>Geographic Bounding Box crossing antimeridian</figcaption>
     </figure>
     <aside class="example" id="ex-data-antimeridian-geographicBoundingBox"
-    title="Example for dcat-us:geographicBoundingBox on dcat:Dataset crossing antimeridian">
-    <pre data-include-format="text" data-include="./examples/antimeridian-bbox.ttl">
-</aside>
+      title="Example for dcat-us:geographicBoundingBox on dcat:Dataset crossing antimeridian">
+      <pre data-include-format="text" data-include="./examples/antimeridian-bbox.ttl"></pre>
+    </aside>
     <p>Defining a common reference system is of utmost importance when searching for geospatial data. Geospatial
       datasets are typically represented using different coordinate systems, projections, and datums, which can lead to
-      challenges in interoperability and data integration. A common reference system ensures that data from diverse sources can be
+      challenges in interoperability and data integration. A common reference system ensures that data from diverse
+      sources can be
       accurately aligned and combined, enabling effective analysis, visualization, and decision-making.</p>
     <p>The introduction of the dcat-us:geographicBoundingBox property in DCAT-US profile addresses this challenge by
       providing a standardized way to express the spatial extent of a resource. Unlike using a Polygon, which requires
       explicit geometric coordinates, the dcat-us:GeographicBoundingBox offers a simpler and more interoperable
       approach. Here are a few reasons why the dcat-us:GeographicBoundingBox is advantageous:</p>
     <ul>
-      <li><b>Consistent Spatial Representation</b>: Geospatial datasets can be represented in various coordinate systems,
+      <li><b>Consistent Spatial Representation</b>: Geospatial datasets can be represented in various coordinate
+        systems,
         projections, and datums. Without a common reference system, it becomes difficult to align and compare datasets
         accurately. By establishing a common reference system, data publishers and consumers can ensure consistent
         spatial representation, enabling seamless integration and analysis of geospatial data from different sources.
@@ -16069,7 +16060,8 @@
         seamlessly, facilitating cross-domain analysis and decision-making. With a common reference system, data
         publishers can provide metadata that adheres to a standard, making it easier for data consumers to understand
         and utilize the data.</li>
-      <li><b>Simplified Search and Discovery:</b> The <code>>dcat-us:geographicBoundingBox</code> property simplifies the search and
+      <li><b>Simplified Search and Discovery:</b> The <code>>dcat-us:geographicBoundingBox</code> property simplifies
+        the search and
         discovery process for geospatial data. Instead of relying on complex geometric representations like polygons,
         users can specify a bounding box by defining the minimum and maximum values of latitude and longitude. Filtering
         geospatial data using a bounding box involves numeric comparisons, where the latitude and longitude values of
@@ -16080,11 +16072,13 @@
         geospatial data can be filtered and retrieved faster, optimizing the search process in various geospatial
         applications. This makes it easier for users to define their area of interest and retrieve relevant datasets
         that intersect with that spatial extent.</li>
-      <li><b>Query Efficiency and Performance:</b> The use of dcat-us:GeographicBoundingBox enables efficient spatial querying
+      <li><b>Query Efficiency and Performance:</b> The use of dcat-us:GeographicBoundingBox enables efficient spatial
+        querying
         of datasets. Data consumers can quickly filter and retrieve resources based on their spatial extent, reducing
         the need to process unnecessary data. This improves search performance and query efficiency, particularly when
         dealing with large-scale geospatial data collections.</li>
-      <li><b>Compatibility with Existing Tools and Standards:</b> The adoption of the dcat-us:geographicBoundingBox property
+      <li><b>Compatibility with Existing Tools and Standards:</b> The adoption of the dcat-us:geographicBoundingBox
+        property
         aligns with established practices and existing geospatial tools and standards. Many geospatial software
         applications and systems already support bounding box queries, making it easier for data consumers to integrate
         DCAT resources into their existing workflows and applications without major modifications or customizations.
@@ -16149,9 +16143,11 @@
   <section id="temporal-metadata">
 
     <h2>Temporal Metadata</h2>
-    <p>Temporal metadata provides the time-related context of datasets. It informs about the time period data covers, the frequency of updates, and other temporal nuances. 
-      Properly documented temporal metadata ensures data is discoverable, understandable, and relevant for time-based analyses.</p>
-      <aside class="note">TODO</aside>
+    <p>Temporal metadata provides the time-related context of datasets. It informs about the time period data covers,
+      the frequency of updates, and other temporal nuances.
+      Properly documented temporal metadata ensures data is discoverable, understandable, and relevant for time-based
+      analyses.</p>
+    <aside class="note">TODO</aside>
   </section>
 
   <!-- Citations -->
@@ -16170,10 +16166,10 @@
       Supplying accurate and adequate legal information holds significance in establishing trust among those who wish
       to reuse candidate data. The absence of clear legal details poses a risk to data reuse, as individuals are left
       unaware of permissible actions. While prior regulations and initiatives, like the Findable, Accessible,
-      Interoperable, and Reusable (FAIR) data principles, underline this importance, contemporary laws have become more rigorous by stipulating a
-      baseline level of reuse standards. Selecting the right way to express conditions for access to and re-use of resources can be complex.
-      In essence, it is advisable for data publishers to engage their legal experts to ensure the provision of
-      suitable guidelines.
+      Interoperable, and Reusable (FAIR) data principles, underline this importance, contemporary laws have become more
+      rigorous by stipulating a baseline level of reuse standards. Selecting the right way to express conditions for
+      access to and re-use of resources can be complex. In essence, it is advisable for data publishers to engage their
+      legal experts to ensure the provision of suitable guidelines.
 
     </p>
     <p>
@@ -16194,11 +16190,11 @@
       </p>
     </aside>
 
- 
+
     </div>
 
 
-   
+
   </section>
 
   <!-- Resource Restrictions -->
@@ -16260,13 +16256,67 @@
 
 
   <!-- Versioning -->
-  <section id="versioning">
 
+  <section id="versioning">
     <h2>Versioning</h2>
-    <aside class="note">TODO</aside>
+
+    <p>Versioning is a concept used to describe the relationship between an original resource and its variations,
+      updates, or translations. In this section, we explore how DCAT (Data Catalog Vocabulary) is employed to document
+      versions resulting from updates or modifications throughout a resource's lifecycle.</p>
+
+    <p>DCAT relies on established vocabularies, including the versioning section of the PAV ontology and terms from
+      DCTERMS, OWL2-OVERVIEW, and VOCAB-ADMS.</p>
+
+    <p>It's important to note that versioning applies to all primary DCAT-US resources, including Catalogs, Catalog
+      Records, Datasets, Dataset Series, and Distributions.</p>
+
+    <p>The versioning approach within DCAT is designed to complement existing methods specific to certain resources
+      (such as versioning properties for ontologies in OWL2-OVERVIEW) and those prevalent in particular domains. A
+      detailed comparison with other vocabularies can be found in section 11.4: Complementary Approaches to Versioning.
+    </p>
+
+    <p>Versioning is closely linked to community conventions, data management strategies, and existing processes. Data
+      providers bear the responsibility of determining when and why a new version should be released.</p>
+
+    <p><strong>Handling Dataset Changes </strong></p>
+    <p>Datasets published on the Web are subject to change over time. Some datasets are updated on a regular schedule,
+      while others evolve as improvements in data collection methods make updates necessary. To manage these changes
+      effectively, new versions of a dataset may be created. However, there isn't a unanimous consensus on when changes
+      to a dataset should categorize it as an entirely new dataset or simply a new version. Below, we outline scenarios
+      where most publishers would agree that a revision warrants consideration as a new version:</p>
+
+    <p><strong>Scenarios:</strong></p>
+    <ol>
+      <li>
+        <strong>Scenario 1:</strong> Creation of a new bus stop that needs to be added to the dataset.
+      </li>
+      <li>
+        <strong>Scenario 2:</strong> Removal of an existing bus stop, necessitating its deletion from the dataset.
+      </li>
+      <li>
+        <strong>Scenario 3:</strong> Identification and correction of an error in one of the existing bus stops stored
+        in the dataset.
+      </li>
+    </ol>
+
+    <p>In general, when dealing with datasets that represent time series or spatial series, such as data for different
+      regions or years, these are not typically regarded as multiple versions of the same dataset. Instead, each dataset
+      covers a distinct set of observations about the world and should be treated as a new dataset. This principle also
+      applies to datasets collecting data about weekly weather forecasts for a specific city, where a new dataset is
+      created each week to store data for that particular week.</p>
+
+    <p>Scenario 1 and 2 may trigger major version updates, while Scenario 3 is likely to trigger only a minor version
+      update. However, the distinction between minor and major versions is less critical than ensuring that any changes
+      are clearly indicated by incrementing the version number. Even for minor changes, maintaining a record of
+      different dataset versions is essential for ensuring the dataset's reliability. Publishers should be mindful that
+      a dataset may be in use by one or more data consumers, and they should take reasonable steps to inform those
+      consumers when a new version is released. For real-time data, an automated timestamp can serve as a version
+      identifier. It's crucial for publishers to adopt a consistent and informative approach to versioning for each
+      dataset, ensuring that data consumers can effectively understand and work with evolving data.</p>
   </section>
 
- <!-- Dataset Series  -->
+
+  <!-- Dataset Series  -->
   <section id="dataset-series-guidance">
     <h2>Dataset Series</h2>
     <p>A Dataset Series is a way for publishers to convey that a dataset is evolving across specific dimensions and is
@@ -16278,7 +16328,7 @@
     <p><strong>Guidelines for Using Dataset Series:</strong></p>
     <ul>
       <li>Only create a Dataset Series if planning to manage multiple datasets. Avoid having only one dataset in a
-        series.</li>
+        series. </li>
       <li>If a series has no datasets, ensure its metadata is current. If all datasets in a series are removed, consider
         retracting the series too, especially if using persistent identifiers.</li>
       <li>Conceptually, a Dataset Series doesn't have distributions. If one views a Dataset Series as a singular
@@ -16311,18 +16361,14 @@
   <section id="controlled-vocabularies">
 
     <h2>Controlled Vocabularies</h2>
-  
+
     <section id="importance-of-controlled-vocabularies">
       <h3>Importance of Controlled Vocabularies</h3>
       <p>Controlled vocabularies are predetermined sets of terms that have been carefully curated to
-        ensure consistency,
-        accuracy, and standardized representation of concepts within a specific domain. In the context of
-        DCAT-US,
-        controlled vocabularies are used to define and constrain the values of specific metadata elements.
-        These
-        vocabularies enable the creation of a common language for describing datasets, facilitating data
-        integration and
-        harmonization across different repositories.
+        ensure consistency, accuracy, and standardized representation of concepts within a specific domain. In the
+        context of DCAT-US, controlled vocabularies are used to define and constrain the values of specific metadata
+        elements. These vocabularies enable the creation of a common language for describing datasets, facilitating data
+        integration and harmonization across different repositories.
 
       <p>The use of controlled vocabularies in DCAT-US offers several key benefits:
 
@@ -16429,7 +16475,7 @@
         Profile, they
         may serve to increase interoperability across applications in the same region or domain. Examples
         are the full
-        set of concepts in GCMD [[GCMD]],and  numerous other schemes.</p>
+        set of concepts in GCMD [[GCMD]],and numerous other schemes.</p>
 
       <p>For geospatial metadata, the working group has identified the following additional vocabularies:
       </p>
@@ -16472,7 +16518,7 @@
         </li>
         <li>
           <p><strong>Keywords (with controlled vocabularies):</strong></p>
-          
+
         </li>
       </ul>
 
@@ -16482,16 +16528,11 @@
       <h3>Licence vocabularies</h3>
 
       <p>Concerning licence vocabularies, implementers are encouraged to use widely recognised licences
-        such as Creative
-        Commons licences [[?CC]], and in particular the CC Zero Public Domain Dedication [[?CC0]] or CC-BY
-        Attribution
-        4.0
-        International [[?CC-BY]], or the Open Data Commons Public Domain Dedication and License (PDDL)
-        [[?PDDL]].
-        Often there is applicable legislation or a licency policy in place which determine the set of
-        licences to be
-        used.
-       </p>
+        such as Creative Commons licences [[?CC]], and in particular the CC Zero Public Domain Dedication [[?CC0]] or
+        CC-BY Attribution 4.0 International [[?CC-BY]], or the Open Data Commons Public Domain Dedication and License
+        (PDDL) [[?PDDL]]. Often there is applicable legislation or a licency policy in place which determine the set of
+        licences to be used.
+      </p>
 
       <p>Further activities in this area are undertaken by the Open Data Institute (ODI) with the Open
         Data Rights Statement Vocabulary [[ODRS]] and by the Open Digital Rights Language (ODRL) Initiative
@@ -16522,13 +16563,13 @@
               - specifies controlled vocabulary
           }
   </div>
-       
   </section>
   <section id="conformance">
     <strong>Conformance to DCAT-US </strong>
     <aside class="ednote" title="Conformance statement">
       The first part of the conformance statement (above this note) is generated by [[RESPEC]] as it is
-      considered an integral part of any specification. The second part (below this note) has been added by the editor and follows similar conformance notes
+      considered an integral part of any specification. The second part (below this note) has been added by the editor
+      and follows similar conformance notes
       in [[VOCAB-DCAT-3]].
     </aside>
     <section id="provider-requirements">
