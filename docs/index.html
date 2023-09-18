@@ -16259,11 +16259,51 @@
   </section>
 
 
-  <!-- Auditing Metadata -->
-  <section id="auditing-metadata">
+  <!-- Versioning -->
+  <section id="versioning">
 
-    <h2>Auditing Metadata</h2>
+    <h2>Versioning</h2>
     <aside class="note">TODO</aside>
+  </section>
+
+ <!-- Dataset Series  -->
+  <section id="dataset-series-guidance">
+    <h2>Dataset Series</h2>
+    <p>A Dataset Series is a way for publishers to convey that a dataset is evolving across specific dimensions and is
+      available as a set of related datasets. However, choosing to group datasets this way depends on the use case.
+      Since it demands extra metadata management from the publisher, it's optional. For instance, a dataset updated
+      frequently via an API may not require individual records for each yearly snapshot unless the publisher wishes to
+      share each snapshot's lifecycle.</p>
+
+    <p><strong>Guidelines for Using Dataset Series:</strong></p>
+    <ul>
+      <li>Only create a Dataset Series if planning to manage multiple datasets. Avoid having only one dataset in a
+        series.</li>
+      <li>If a series has no datasets, ensure its metadata is current. If all datasets in a series are removed, consider
+        retracting the series too, especially if using persistent identifiers.</li>
+      <li>Conceptually, a Dataset Series doesn't have distributions. If one views a Dataset Series as a singular
+        Dataset, its associated Distributions should represent the combined data of all its datasets. However, this can
+        cause confusion, so it's best not to associate distributions with a Dataset Series.</li>
+      <li>Describe members of a Dataset Series so they make sense even outside the series context. Membership in a
+        series shouldn't be the sole reason for a dataset's existence.</li>
+      <li>Dataset Series are special types of Datasets. Maintain the same metadata quality for both. However, specific
+        guidelines for Dataset Series take precedence over general dataset guidelines.</li>
+      <li>Members of a Dataset Series should have a strong connection, but there's no set criteria for this connection.
+        It could be based on shared attributes, like a topic or time frame, and the same publisher. But other factors
+        can also define a Dataset Series.</li>
+    </ul>
+    <p><strong>Expressing Connection in Dataset Series</strong></p>
+    <p>If datasets within a Dataset Series are tightly interconnected or generated through an automated process, it's
+      intuitive to use versioning to describe their relationship. For guidance on incorporating versioning in DCAT-US,
+      refer to the DCAT versioning guidelines. However, since versioning might not always be the best descriptor, DCAT
+      offers properties (like next, previous, inSeries, last, and others) to articulate the links between the Dataset
+      Series and its datasets. It's advised to consistently use these properties with Dataset Series, and apply
+      versioning where it fits.</p>
+
+    <p><strong>Membership Influence on Metadata</strong></p>
+    <p>Being part of a Dataset Series can affect a dataset's metadata to emphasize its uniqueness compared to others in
+      the collection. For example, a common adjustment is appending the release date to the dataset's title.</p>
+
   </section>
 
   <!-- Controlled vocabularies -->
@@ -16271,7 +16311,7 @@
   <section id="controlled-vocabularies">
 
     <h2>Controlled Vocabularies</h2>
-    <aside class="note">TODO</aside>
+  
     <section id="importance-of-controlled-vocabularies">
       <h3>Importance of Controlled Vocabularies</h3>
       <p>Controlled vocabularies are predetermined sets of terms that have been carefully curated to
