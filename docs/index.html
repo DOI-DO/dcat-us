@@ -16248,13 +16248,270 @@
   </section>
 
   <!-- Content Description -->
-  <section id="content-description">
+  <section id="distribution-description">
 
-    <h2>Content Description</h2>
+    <h2>Distribution Description</h2>
     <aside class="note">TODO</aside>
+
+    <h3>Format and Representation</h3>
+    <p>This category of properties deals with how data is encoded, structured, and presented, as well as the media type
+      and language
+      it's available in. Properly understanding and managing these aspects is essential for data interoperability,
+      accessibility, and usability.</p>
+
+
+    <section id="character-encoding--dataset-character-set-and-metadata-character-set">
+
+      <h4>Character encoding</h4>
+
+      <p>In [[VOCAB-DCAT-3]], the specification of the character encoding of a dataset and the character encoding of a
+        metadata record is not explicitly supported. According to [[RFC4288]], the character set can be part of the
+        media type specification, but only for type “text”. By contrast, in DCAT-US 3.0 application profile the
+        character set can be specified also for other media types.</p>
+
+      <p>The W3C Content vocabulary [[Content-in-RDF10]] provides a suitable candidate, namely, property
+        <a data-cite="Content-in-RDF10#characterEncodingProperty"><code>cnt:characterEncoding</code></a>, taking as
+        value the character set names in the IANA register [[IANA-CHARSETS]]. DCAT-US uses this property.
+      </p>
+
+      <p>Character encoding in [[ISO-19115]] metadata is specified with a code list that
+        can be mapped to the corresponding codes in [[IANA-CHARSETS]], as shown in the following table
+        (entries with 1-to-many mappings are in italic).</p>
+
+      <table class="simple">
+        <thead>
+          <tr>
+            <th>ISO 19115 - MD_CharacterSetCode</th>
+            <th>Description</th>
+            <th>IANA</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+            <td>ucs2</td>
+            <td>16-bit fixed size Universal Character Set, based on ISO/<abbr
+                title="International Electrotechnical Commission">IEC</abbr> 10646</td>
+            <td>ISO-10646-<abbr title="Universal Character Set">UCS</abbr>-2</td>
+          </tr>
+
+          <tr>
+            <td>ucs4</td>
+            <td>32-bit fixed size Universal Character Set, based on ISO/<abbr
+                title="International Electrotechnical Commission">IEC</abbr> 10646</td>
+            <td>ISO-10646-<abbr title="Universal Character Set">UCS</abbr>-4</td>
+          </tr>
+
+          <tr>
+            <td>utf7</td>
+            <td>7-bit variable size <abbr title="Universal Character Set">UCS</abbr> Transfer Format, based on ISO/<abbr
+                title="International Electrotechnical Commission">IEC</abbr> 10646</td>
+            <td><abbr title="UCS Transfer Format">UTF</abbr>-7</td>
+          </tr>
+
+          <tr>
+            <td>utf8</td>
+            <td>8-bit variable size <abbr title="Universal Character Set">UCS</abbr> Transfer Format, based on ISO/<abbr
+                title="International Electrotechnical Commission">IEC</abbr> 10646</td>
+            <td><abbr title="UCS Transfer Format">UTF</abbr>-8</td>
+          </tr>
+
+          <tr>
+            <td>utf16</td>
+            <td>16-bit variable size <abbr title="Universal Character Set">UCS</abbr> Transfer Format, based on
+              ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 10646</td>
+            <td><abbr title="UCS Transfer Format">UTF</abbr>-16</td>
+          </tr>
+
+          <tr>
+            <td>8859part1</td>
+            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-1, Information technology -
+              8-bit single byte coded graphic character sets - Part 1 : Latin alphabet No.1</td>
+            <td>ISO-8859-1</td>
+          </tr>
+
+          <tr>
+            <td>8859part2</td>
+            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-2, Information technology -
+              8-bit single byte coded graphic character sets - Part 2 : Latin alphabet No.2</td>
+            <td>ISO-8859-2</td>
+          </tr>
+
+          <tr>
+            <td>8859part3</td>
+            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-3, Information technology -
+              8-bit single byte coded graphic character sets - Part 3 : Latin alphabet No.3</td>
+            <td>ISO-8859-3</td>
+          </tr>
+
+          <tr>
+            <td>8859part4</td>
+            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-4, Information technology -
+              8-bit single byte coded graphic character sets - Part 4 : Latin alphabet No.4</td>
+            <td>ISO-8859-4</td>
+          </tr>
+
+          <tr>
+            <td>8859part5</td>
+            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-5, Information technology -
+              8-bit single byte coded graphic character sets - Part 5 : Latin/Cyrillic alphabet</td>
+            <td>ISO-8859-5</td>
+          </tr>
+
+          <tr>
+            <td>8859part6</td>
+            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-6, Information technology -
+              8-bit single byte coded graphic character sets - Part 6 : Latin/Arabic alphabet</td>
+            <td>ISO-8859-6</td>
+          </tr>
+
+          <tr>
+            <td>8859part7</td>
+            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-7, Information technology -
+              8-bit single byte coded graphic character sets - Part 7 : Latin/Greek alphabet</td>
+            <td>ISO-8859-7</td>
+          </tr>
+
+          <tr>
+            <td>8859part8</td>
+            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-8, Information technology -
+              8-bit single byte coded graphic character sets - Part 8 : Latin/Hebrew alphabet</td>
+            <td>ISO-8859-8</td>
+          </tr>
+
+          <tr>
+            <td>8859part9</td>
+            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-9, Information technology -
+              8-bit single byte coded graphic character sets - Part 9 : Latin alphabet No.5</td>
+            <td>ISO-8859-9</td>
+          </tr>
+
+          <tr>
+            <td>8859part10</td>
+            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-10, Information technology -
+              8-bit single byte coded graphic character sets - Part 10 : Latin alphabet No.6</td>
+            <td>ISO-8859-10</td>
+          </tr>
+
+          <tr>
+            <td>8859part11</td>
+            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-11, Information technology -
+              8-bit single byte coded graphic character sets - Part 11 : Latin/Thai alphabet</td>
+            <td>ISO-8859-11</td>
+          </tr>
+
+          <tr>
+            <td>8859part13</td>
+            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-13, Information technology -
+              8-bit single byte coded graphic character sets - Part 13 : Latin alphabet No.7</td>
+            <td>ISO-8859-13</td>
+          </tr>
+
+          <tr>
+            <td>8859part14</td>
+            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-14, Information technology -
+              8-bit single byte coded graphic character sets - Part 14 : Latin alphabet No.8 (Celtic)</td>
+            <td>ISO-8859-14</td>
+          </tr>
+
+          <tr>
+            <td>8859part15</td>
+            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-15, Information technology -
+              8-bit single byte coded graphic character sets - Part 15 : Latin alphabet No.9</td>
+            <td>ISO-8859-15</td>
+          </tr>
+
+          <tr>
+            <td>8859part16</td>
+            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-16, Information technology -
+              8-bit single byte coded graphic character sets - Part 16 : Latin alphabet No.10</td>
+            <td>ISO-8859-16</td>
+          </tr>
+
+          <tr>
+            <td><em>jis</em></td>
+            <td><em>japanese code set used for electronic transmission</em></td>
+            <td><em>JIS_Encoding</em></td>
+          </tr>
+
+          <tr>
+            <td>shiftJIS</td>
+            <td>japanese code set used on MS-DOS machines</td>
+            <td>Shift_JIS</td>
+          </tr>
+
+          <tr>
+            <td>eucJP</td>
+            <td>japanese code set used on UNIX based machines</td>
+            <td>EUC-JP</td>
+          </tr>
+
+          <tr>
+            <td>usAscii</td>
+            <td>United States ASCII code set (ISO 646 US)</td>
+            <td>US-ASCII</td>
+          </tr>
+
+          <tr>
+            <td><em>ebcdic</em></td>
+            <td><em>IBM mainframe code set</em></td>
+            <td><em>IBM037</em></td>
+          </tr>
+
+          <tr>
+            <td>eucKR</td>
+            <td>Korean code set</td>
+            <td>EUC-KR</td>
+          </tr>
+
+          <tr>
+            <td>big5</td>
+            <td>traditional Chinese code set used in Taiwan, Hong Kong of China and other areas</td>
+            <td>Big5</td>
+          </tr>
+
+          <tr>
+            <td>GB2312</td>
+            <td>simplified Chinese code set</td>
+            <td>GB2312</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+
+      <aside class="example" title="Example for character encoding">
+        <pre data-include-format="text" data-include="./examples/character-encoding.ttl"></pre>
+      </aside>
+
+    </section>
   </section>
+  <section id="data-quality">
+    <h2>Data Quality</h2>
+
+    <p>The quality of a dataset plays a pivotal role in shaping trust, reusability, and the overall performance of
+      applications that rely on it. As a result, it is imperative to integrate data quality information seamlessly
+      into
+      both the data publishing and consumption processes. This inclusion allows for a thorough evaluation of a
+      dataset's
+      quality, thereby determining its suitability for a particular application.</p>
+
+    <p>Thorough documentation of data quality significantly streamlines the dataset selection process, enhancing the
+      likelihood of reuse. Regardless of domain-specific nuances, documenting data quality and explicitly stating
+      known
+      quality issues in metadata are fundamental practices. Typically, assessing quality involves multiple dimensions,
+      each encapsulating characteristics of importance to both data publishers and consumers.</p>
+
+    <p>The Data Quality Vocabulary defines machine-readable concepts such as measurements and criteria to assess
+      quality
+      across various dimensions [[VOCAB-DQV]]. Tailored heuristics designed for specific assessment scenarios rely on
+      quality indicators, which encompass data content, metadata, and human ratings. These indicators offer valuable
+      insights into the dataset's suitability for its intended purpose.</p>
+
+    <aside class="note">TO COMPLETE</aside>
 
 
+  </section>
   <!-- Versioning -->
 
   <section id="versioning">
@@ -16265,14 +16522,15 @@
       versions resulting from updates or modifications throughout a resource's lifecycle.</p>
 
     <p>DCAT relies on established vocabularies, including the versioning section of the PAV ontology and terms from
-      DCTERMS, OWL2-OVERVIEW, and VOCAB-ADMS.</p>
+      [[PAV]], [[DCTERMS]], [[OWL2-OVERVIEW]], and [[VOCAB-ADMS]].</p>
 
     <p>It's important to note that versioning applies to all primary DCAT-US resources, including Catalogs, Catalog
       Records, Datasets, Dataset Series, and Distributions.</p>
 
     <p>The versioning approach within DCAT is designed to complement existing methods specific to certain resources
-      (such as versioning properties for ontologies in OWL2-OVERVIEW) and those prevalent in particular domains. A
-      detailed comparison with other vocabularies can be found in section 11.4: Complementary Approaches to Versioning.
+      (such as versioning properties for ontologies in [[OWL2-OVERVIEW]]) and those prevalent in particular domains. A
+      detailed comparison with other vocabularies can be found in section 11.4: Complementary Approaches to
+      Versioning.
     </p>
 
     <p>Versioning is closely linked to community conventions, data management strategies, and existing processes. Data
@@ -16281,8 +16539,10 @@
     <p><strong>Handling Dataset Changes </strong></p>
     <p>Datasets published on the Web are subject to change over time. Some datasets are updated on a regular schedule,
       while others evolve as improvements in data collection methods make updates necessary. To manage these changes
-      effectively, new versions of a dataset may be created. However, there isn't a unanimous consensus on when changes
-      to a dataset should categorize it as an entirely new dataset or simply a new version. Below, we outline scenarios
+      effectively, new versions of a dataset may be created. However, there isn't a unanimous consensus on when
+      changes
+      to a dataset should categorize it as an entirely new dataset or simply a new version. Below, we outline
+      scenarios
       where most publishers would agree that a revision warrants consideration as a new version:</p>
 
     <p><strong>Scenarios:</strong></p>
@@ -16300,19 +16560,26 @@
     </ol>
 
     <p>In general, when dealing with datasets that represent time series or spatial series, such as data for different
-      regions or years, these are not typically regarded as multiple versions of the same dataset. Instead, each dataset
-      covers a distinct set of observations about the world and should be treated as a new dataset. This principle also
+      regions or years, these are not typically regarded as multiple versions of the same dataset. Instead, each
+      dataset
+      covers a distinct set of observations about the world and should be treated as a new dataset. This principle
+      also
       applies to datasets collecting data about weekly weather forecasts for a specific city, where a new dataset is
       created each week to store data for that particular week.</p>
 
     <p>Scenario 1 and 2 may trigger major version updates, while Scenario 3 is likely to trigger only a minor version
-      update. However, the distinction between minor and major versions is less critical than ensuring that any changes
+      update. However, the distinction between minor and major versions is less critical than ensuring that any
+      changes
       are clearly indicated by incrementing the version number. Even for minor changes, maintaining a record of
-      different dataset versions is essential for ensuring the dataset's reliability. Publishers should be mindful that
+      different dataset versions is essential for ensuring the dataset's reliability. Publishers should be mindful
+      that
       a dataset may be in use by one or more data consumers, and they should take reasonable steps to inform those
       consumers when a new version is released. For real-time data, an automated timestamp can serve as a version
       identifier. It's crucial for publishers to adopt a consistent and informative approach to versioning for each
       dataset, ensuring that data consumers can effectively understand and work with evolving data.</p>
+
+
+    <aside class="note">TO COMPLETE</aside>
   </section>
 
 
@@ -16329,16 +16596,19 @@
     <ul>
       <li>Only create a Dataset Series if planning to manage multiple datasets. Avoid having only one dataset in a
         series. </li>
-      <li>If a series has no datasets, ensure its metadata is current. If all datasets in a series are removed, consider
+      <li>If a series has no datasets, ensure its metadata is current. If all datasets in a series are removed,
+        consider
         retracting the series too, especially if using persistent identifiers.</li>
       <li>Conceptually, a Dataset Series doesn't have distributions. If one views a Dataset Series as a singular
-        Dataset, its associated Distributions should represent the combined data of all its datasets. However, this can
+        Dataset, its associated Distributions should represent the combined data of all its datasets. However, this
+        can
         cause confusion, so it's best not to associate distributions with a Dataset Series.</li>
       <li>Describe members of a Dataset Series so they make sense even outside the series context. Membership in a
         series shouldn't be the sole reason for a dataset's existence.</li>
       <li>Dataset Series are special types of Datasets. Maintain the same metadata quality for both. However, specific
         guidelines for Dataset Series take precedence over general dataset guidelines.</li>
-      <li>Members of a Dataset Series should have a strong connection, but there's no set criteria for this connection.
+      <li>Members of a Dataset Series should have a strong connection, but there's no set criteria for this
+        connection.
         It could be based on shared attributes, like a topic or time frame, and the same publisher. But other factors
         can also define a Dataset Series.</li>
     </ul>
@@ -16351,9 +16621,11 @@
       versioning where it fits.</p>
 
     <p><strong>Membership Influence on Metadata</strong></p>
-    <p>Being part of a Dataset Series can affect a dataset's metadata to emphasize its uniqueness compared to others in
+    <p>Being part of a Dataset Series can affect a dataset's metadata to emphasize its uniqueness compared to others
+      in
       the collection. For example, a common adjustment is appending the release date to the dataset's title.</p>
 
+    <aside class="note">TO COMPLETE</aside>
   </section>
 
   <!-- Controlled vocabularies -->
@@ -16367,7 +16639,8 @@
       <p>Controlled vocabularies are predetermined sets of terms that have been carefully curated to
         ensure consistency, accuracy, and standardized representation of concepts within a specific domain. In the
         context of DCAT-US, controlled vocabularies are used to define and constrain the values of specific metadata
-        elements. These vocabularies enable the creation of a common language for describing datasets, facilitating data
+        elements. These vocabularies enable the creation of a common language for describing datasets, facilitating
+        data
         integration and harmonization across different repositories.
 
       <p>The use of controlled vocabularies in DCAT-US offers several key benefits:
@@ -16530,7 +16803,8 @@
       <p>Concerning licence vocabularies, implementers are encouraged to use widely recognised licences
         such as Creative Commons licences [[?CC]], and in particular the CC Zero Public Domain Dedication [[?CC0]] or
         CC-BY Attribution 4.0 International [[?CC-BY]], or the Open Data Commons Public Domain Dedication and License
-        (PDDL) [[?PDDL]]. Often there is applicable legislation or a licency policy in place which determine the set of
+        (PDDL) [[?PDDL]]. Often there is applicable legislation or a licency policy in place which determine the set
+        of
         licences to be used.
       </p>
 
@@ -16550,19 +16824,9 @@
     <p>The following diagram captures the relationship between DCAT and DCAT-US :</p>
     <div id="diagram2" class="mermaid">
       classDiagram
-          DCAT <|-- DCAT_US: is_profile_of
-          class DCAT {
-              - defines classes
-              - defines properties
-              - base vocabulary
-          }
-          class DCAT_US {
-              - uses classes of DCAT
-              - specifies requirement levels
-              - specifies cardinalities
-              - specifies controlled vocabulary
-          }
-  </div>
+      DCAT <|-- DCAT_US: is_profile_of class DCAT { - defines classes - defines properties - base vocabulary } class
+        DCAT_US { - uses classes of DCAT - specifies requirement levels - specifies cardinalities - specifies controlled
+        vocabulary } </div>
   </section>
   <section id="conformance">
     <strong>Conformance to DCAT-US </strong>
@@ -16627,6 +16891,11 @@
         </tr>
       </thead>
       <tbody>
+        <tr>
+          <td><code>cnt</code></td>
+          <td><code>http://www.w3.org/2011/content#</code></td>
+          <td>[[Content-in-RDF10]]</td>
+        </tr>
         <tr>
           <td><code>dcat</code></td>
           <td><code>https://www.w3.org/TR/vocab-dcat-3/</code></td>
