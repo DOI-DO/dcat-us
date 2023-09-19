@@ -411,6 +411,12 @@
           </thead>
           <tbody>
             <tr>
+              <td><code>cnt:characterEncoding</code></td>
+              <td>Distribution, Catalog</td>
+              <td>[[IANA-CHARSETS]] </td>
+              <td>The list of the character set names in the IANA register </td>
+            </tr>
+            <tr>
               <td><code>dcatap:availability</code></td>
               <td>Distribution</td>
               <td>[[DATA-GOV-AVAILABILITY]]
@@ -16254,13 +16260,54 @@
     <aside class="note">TODO</aside>
 
     <h3>Format and Representation</h3>
-    <p>This category of properties deals with how data is encoded, structured, and presented, as well as the media type
-      and language
-      it's available in. Properly understanding and managing these aspects is essential for data interoperability,
-      accessibility, and usability.</p>
+
+    <p>This category of properties deals with how data is encoded, structured, packaged, and presented, as well as the
+      media type and language it's available in. Properly understanding and managing these aspects is essential for data
+      interoperability, accessibility, discoverability, and usability. A set standardized property values ensure
+      cross-platform interoperability, enabling datasets to be seamlessly processed and integrated. They offer clear
+      semantics about a dataset's nature, ensuring users and systems have a precise understanding. Furthermore, by
+      promoting consistent descriptions, they enhance dataset discoverability, making it easier for users to find and
+      access relevant data.
+    </p>
+
+    <section id="format">
+
+      <h4>Distribution Format</h4>
 
 
-    <section id="character-encoding--dataset-character-set-and-metadata-character-set">
+      <p>Within [[VOCAB-DCAT-3]], format details are specifically tied to the distribution of a
+        dataset rather than the dataset itself. This distinction ensures that datasets, which can have multiple
+        distributions, can cater to varied format requirements while keeping the dataset definition consistent.</p>
+
+      <p>When defining the format of a distribution, consider the following properties:</p>
+      <ul>
+        <li><strong>dcat:mediaType</strong>: Ideal for scenarios where the format aligns with media types registered by
+          IANA [[IANA-MEDIA-TYPES]].</li>
+
+        <li><strong>dct:format</strong>: Suitable for other cases, especially when associating with file form registers
+          managed by a central authority such as Data.gov (TDB).</li>
+
+        <li><strong>dcat:compressFormat</strong>: This property defines when distribution files are compressed, such as
+          in ZIP format. If possible, leverage media types from IANA [[IANA-MEDIA-TYPES]] to express the
+          format.</li>
+
+        <li><strong>dcat:packageFormat</strong>: Use this property to detail the packaging of distributions that bundle
+          multiple data files. This can be crucial for scenarios where related files need collective downloads, like
+          TAR, ZIP, Frictionless Data Package, or Bagit files. Again, if an associated media type from
+          IANA [[IANA-MEDIA-TYPES]] exists, it's recommended to use it.</li>
+
+        <li><strong>adms:representationTechnique</strong>: This property can be used to specify the technique or method
+          by which the data is represented in the distribution. This is different from the file format as, for example,
+          a ZIP file (file format) could contain an XML schema (representation technique). It can help users understand
+          the underlying structure or
+          visualization method of the dataset.</li>
+      </ul>
+
+      <p>Utilizing these properties effectively can enhance data discoverability, interoperability, and the overall user
+        experience when accessing and working with datasets.</p>
+
+    </section>
+    <section id="character_encoding">
 
       <h4>Character encoding</h4>
 
@@ -16305,15 +16352,15 @@
 
           <tr>
             <td>utf7</td>
-            <td>7-bit variable size <abbr title="Universal Character Set">UCS</abbr> Transfer Format, based on ISO/<abbr
-                title="International Electrotechnical Commission">IEC</abbr> 10646</td>
+            <td>7-bit variable size <abbr title="Universal Character Set">UCS</abbr> Transfer Format, based on
+              ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 10646</td>
             <td><abbr title="UCS Transfer Format">UTF</abbr>-7</td>
           </tr>
 
           <tr>
             <td>utf8</td>
-            <td>8-bit variable size <abbr title="Universal Character Set">UCS</abbr> Transfer Format, based on ISO/<abbr
-                title="International Electrotechnical Commission">IEC</abbr> 10646</td>
+            <td>8-bit variable size <abbr title="Universal Character Set">UCS</abbr> Transfer Format, based on
+              ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 10646</td>
             <td><abbr title="UCS Transfer Format">UTF</abbr>-8</td>
           </tr>
 
@@ -16326,105 +16373,120 @@
 
           <tr>
             <td>8859part1</td>
-            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-1, Information technology -
+            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-1, Information technology
+              -
               8-bit single byte coded graphic character sets - Part 1 : Latin alphabet No.1</td>
             <td>ISO-8859-1</td>
           </tr>
 
           <tr>
             <td>8859part2</td>
-            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-2, Information technology -
+            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-2, Information technology
+              -
               8-bit single byte coded graphic character sets - Part 2 : Latin alphabet No.2</td>
             <td>ISO-8859-2</td>
           </tr>
 
           <tr>
             <td>8859part3</td>
-            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-3, Information technology -
+            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-3, Information technology
+              -
               8-bit single byte coded graphic character sets - Part 3 : Latin alphabet No.3</td>
             <td>ISO-8859-3</td>
           </tr>
 
           <tr>
             <td>8859part4</td>
-            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-4, Information technology -
+            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-4, Information technology
+              -
               8-bit single byte coded graphic character sets - Part 4 : Latin alphabet No.4</td>
             <td>ISO-8859-4</td>
           </tr>
 
           <tr>
             <td>8859part5</td>
-            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-5, Information technology -
+            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-5, Information technology
+              -
               8-bit single byte coded graphic character sets - Part 5 : Latin/Cyrillic alphabet</td>
             <td>ISO-8859-5</td>
           </tr>
 
           <tr>
             <td>8859part6</td>
-            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-6, Information technology -
+            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-6, Information technology
+              -
               8-bit single byte coded graphic character sets - Part 6 : Latin/Arabic alphabet</td>
             <td>ISO-8859-6</td>
           </tr>
 
           <tr>
             <td>8859part7</td>
-            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-7, Information technology -
+            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-7, Information technology
+              -
               8-bit single byte coded graphic character sets - Part 7 : Latin/Greek alphabet</td>
             <td>ISO-8859-7</td>
           </tr>
 
           <tr>
             <td>8859part8</td>
-            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-8, Information technology -
+            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-8, Information technology
+              -
               8-bit single byte coded graphic character sets - Part 8 : Latin/Hebrew alphabet</td>
             <td>ISO-8859-8</td>
           </tr>
 
           <tr>
             <td>8859part9</td>
-            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-9, Information technology -
+            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-9, Information technology
+              -
               8-bit single byte coded graphic character sets - Part 9 : Latin alphabet No.5</td>
             <td>ISO-8859-9</td>
           </tr>
 
           <tr>
             <td>8859part10</td>
-            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-10, Information technology -
+            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-10, Information technology
+              -
               8-bit single byte coded graphic character sets - Part 10 : Latin alphabet No.6</td>
             <td>ISO-8859-10</td>
           </tr>
 
           <tr>
             <td>8859part11</td>
-            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-11, Information technology -
+            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-11, Information technology
+              -
               8-bit single byte coded graphic character sets - Part 11 : Latin/Thai alphabet</td>
             <td>ISO-8859-11</td>
           </tr>
 
           <tr>
             <td>8859part13</td>
-            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-13, Information technology -
+            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-13, Information technology
+              -
               8-bit single byte coded graphic character sets - Part 13 : Latin alphabet No.7</td>
             <td>ISO-8859-13</td>
           </tr>
 
           <tr>
             <td>8859part14</td>
-            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-14, Information technology -
+            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-14, Information technology
+              -
               8-bit single byte coded graphic character sets - Part 14 : Latin alphabet No.8 (Celtic)</td>
             <td>ISO-8859-14</td>
           </tr>
 
           <tr>
             <td>8859part15</td>
-            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-15, Information technology -
+            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-15, Information technology
+              -
               8-bit single byte coded graphic character sets - Part 15 : Latin alphabet No.9</td>
             <td>ISO-8859-15</td>
           </tr>
 
           <tr>
             <td>8859part16</td>
-            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-16, Information technology -
+            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-16, Information technology
+              -
               8-bit single byte coded graphic character sets - Part 16 : Latin alphabet No.10</td>
             <td>ISO-8859-16</td>
           </tr>
