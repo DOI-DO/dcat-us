@@ -1,8 +1,10 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dct: <http://purl.org/dc/terms/> .
+@prefix : <http://example.org/> .
 
-<https://uscensus.gov/data/1234>
+:CSVDistributionExample1
   a dcat:Distribution ;
-      dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ;
+      dct:format <http://resources.data.gov/authority/file-type/csv> ;
       dcat:mediaType <http://www.iana.org/assignments/media-types/text/csv> ;
-      dcat:packageFormat <http://www.iana.org/assignments/media-types/application/zip> .
+      dcat:compressedFormat <http://www.iana.org/assignments/media-types/application/zip> .
+      dcat:packageFormat <http://resources.data.gov/authority/file-type/tar>.
