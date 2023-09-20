@@ -15894,16 +15894,11 @@
 
     <h2>Resource Attributions</h2>
 
-    <p><strong>Attribution</strong>, in the context of a data catalog, refers to the process of
-      associating a particular
-      resource (like a dataset or a service) with a responsible party, often referred to as an
-      <strong>"agent"</strong>.
-      Agents could be
-      individuals, organizations, or services that contribute to, create, publish, or have some
-      significant interaction
-      with the data. These attributions often include details about the role the agent played, such as
-      whether they were
-      a contributor, creator, publisher, funder, distributor, custodian, or editor, etc.
+    <p><strong>Attribution</strong>, in the context of a data catalog, refers to the process of associating a particular
+      resource (like a dataset or a service) with a responsible party, often referred to as an <strong>"agent"</strong>.
+      Agents could be individuals, organizations, or services that contribute to, create, publish, or have some
+      significant interaction with the data. These attributions often include details about the role the agent played,
+      such as whether they were a contributor, creator, publisher, funder, distributor, custodian, or editor, etc.
     </p>
 
     <p><strong>Attributions</strong> are critically important for data catalog search for several reasons:
@@ -15911,70 +15906,59 @@
 
     <ol>
       <li><strong>Provenance and Trustworthiness</strong>: Attributions help users understand who created
-        or has
-        interacted with the data, which can inform assessments of its quality and trustworthiness. For
-        example, data
-        published by a well-known and trusted organization might be deemed more reliable.</li>
-      <li><strong>Credit and Accountability</strong>: Attributions ensure that the individuals or
-        organizations that
-        contributed to the data are appropriately acknowledged. This is not only a matter of fairness but
-        can also be
+        or has interacted with the data, which can inform assessments of its quality and trustworthiness. For
+        example, data published by a well-known and trusted organization might be deemed more reliable.</li>
+      <li><strong>Credit and Accountability</strong>: Attributions ensure that the individuals or organizations that
+        contributed to the data are appropriately acknowledged. This is not only a matter of fairness but can also be
         legally required in some cases.</li>
-      <li><strong>Search and Discovery</strong>: Attributions can be used as a filter or search criterion.
-        For instance,
-        users might want to find all datasets created by a specific researcher or organization, or all
-        datasets on which
+      <li><strong>Search and Discovery</strong>: Attributions can be used as a filter or search criterion. For instance,
+        users might want to find all datasets created by a specific researcher or organization, or all datasets on which
         a certain individual was a contributor.</li>
-      <li><strong>Collaboration and Networking</strong>: Identifying the agents involved in a dataset can
-        lead to new
-        collaboration opportunities, allowing users to reach out to those who have relevant expertise or
-        shared research
+      <li><strong>Collaboration and Networking</strong>: Identifying the agents involved in a dataset can lead to new
+        collaboration opportunities, allowing users to reach out to those who have relevant expertise or shared research
         interests.</li>
-      <li><strong>Issue Resolution</strong>: When users find issues or have questions about a particular
-        dataset, they
+      <li><strong>Issue Resolution</strong>: When users find issues or have questions about a particular dataset, they
         can reach out to the attributed agent for clarification or resolution, thus ensuring data
-        reliability and
-        integrity.</li>
+        reliability and integrity.</li>
     </ol>
 
+    <h3>Attributions with well-known roles</h3>
     <p>
 
-      The [[DCTERMS]] standard properties <a href="http://purl.org/dc/terms/creator"><code>dcterms:creator</code></a>,
-      <a href="http://purl.org/dc/terms/contributor"><code>dcterms:contributor</code></a>,
-      <a href="http://purl.org/dc/terms/rightsHolder"><code>dcterms:rightsHolder</code></a>,
-      and <a href="http://purl.org/dc/terms/publisher"><code>dcterms:publisher</code></a>,
-      and the generic <a data-cite="!PROV-O#wasAttributedTo"><code>prov:wasAttributedTo</code></a> from
+      The [[DCTERMS]] standard properties <a data-cite="DCTERMS#creator"><code>dcterms:creator</code></a>,
+      <a data-cite="DCTERMS#contributor"><code>dcterms:contributor</code></a>,
+      <a data-cite="DCTERMS#rightsHolder"><code>dcterms:rightsHolder</code></a>,
+      and <a data-cite="DCTERMS#publisher"><code>dcterms:publisher</code></a>,
+      and the generic <a data-cite="PROV#wasAttributedTo"><code>prov:wasAttributedTo</code></a> from
       [[!PROV-O]], support basic associations of responsible agents with a cataloged resource.
-      However, there are many other roles of importance in relation to datasets and services - e.g.,
+
+    </p>
+    <h3>Attribution with other roles</h3>
+
+    <p>There are many other roles of importance in relation to datasets and services - e.g.,
       funder, distributor, custodian, editor. Some of these roles are enumerated in the
       <a href="https://standards.iso.org/iso/19115/resources/Codelists/gml/CI_RoleCode.xml"><code>CI_RoleCode</code></a>
       values from [[ISO-19115-1]], in the [[DataCite]] metadata schema, and included within the
       <a href="https://id.loc.gov/vocabulary/relators">MARC relators</a>.
     </p>
-    <p>
-      A general method for assigning an agent to a resource with a specified role is provided by using the
-      qualified
-      form <a data-cite="PROV-O#qualifiedAttribution"><code>prov:qualifiedAttribution</code></a> from
-      [[PROV-O]].
-      It is used to link to an Agent where the nature of the relationship is known but does
-      not match one of the standard attribution property roles (<code>dcterms:creator</code></a>,
-      <a href="http://purl.org/dc/terms/contributor"><code>dcterms:contributor</code></a>,
-      <a href="http://purl.org/dc/terms/rightsHolder"><code>dcterms:rightsHolder</code></a>,
-      and <a href="http://purl.org/dc/terms/publisher"><code>dcterms:publisher</code></a>). The
-      range of <a data-cite="PROV-O#qualifiedAttribution"><code>prov:qualifiedAttribution</code></a> is
+    <p> A general method for assigning an agent to a resource with a specified role is provided by using the
+      qualified form <a data-cite="PROV-O#qualifiedAttribution"><code>prov:qualifiedAttribution</code></a> from
+      [[PROV-O]]. It is used to link to an Agent where the nature of the relationship is known but does
+      not match one of the standard attribution property roles (
+      <a data-cite="DCTERMS#creator"><code>dcterms:creator</code></a>,
+      <a data-cite="DCTERMS#contributor"><code>dcterms:contributor</code></a>,
+      <a data-cite="DCTERMS#rightsHolder"><code>dcterms:rightsHolder</code></a>,
+      and <a data-cite="DCTERMS#publisher"><code>dcterms:publisher</code></a>).
+    </p>
+    <p> The range of <a data-cite="PROV-O#qualifiedAttribution"><code>prov:qualifiedAttribution</code></a> is
       <a data-cite="PROV-O#Attribution"><code>prov:Attribution</code></a>.
       Use <a data-cite="VOCAB-DCAT-3#Property:relationship_hadRole"><code>dcat:hadRole</code></a> on
-      the
-      <a data-cite="PROV-O#Attribution"><code>prov:Attribution</code></a> to capture the
+      the <a data-cite="PROV-O#Attribution"><code>prov:Attribution</code></a> to capture the
       responsibility of the Agent with respect to the Resource. More precisely, the relevant Agent is
-      specified via
-      property <a data-cite="PROV-O#agent"><code>prov:agent</code></a>, whereas the role is specified
-      with property
-      <a data-cite="VOCAB-DCAT-3#Property:relationship_hadRole"><code>dcat:hadRole</code></a>, which
-      takes as value a
-      <a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a>
-      describing that role - as those included in the relevant code list operated a US
-      Government-controlled Registry.
+      specified via property <a data-cite="PROV-O#agent"><code>prov:agent</code></a>, whereas the role is specified
+      with property <a data-cite="VOCAB-DCAT-3#Property:relationship_hadRole"><code>dcat:hadRole</code></a>, which
+      takes as value a <a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a>
+      describing that role - as those included in the relevant code list operated a US Government-controlled Registry.
     </p>
 
     <p>The <a data-cite="PROV-O#qualifiedAttribution"><code>prov:qualifiedAttribution</code></a> property
@@ -15982,15 +15966,11 @@
       specifying additional attributes, such as the role or position of the attributed entity, the date of
       attribution, or other relevant details. The [PROV-O]-based approach is meant to
       give data providers an extension mechanism to specify, in a harmonised way, any kind of role, and,
-      possibly,to
-      attach additional information to the role and the associated Agent. As such, it MAY be used in
-      combination
-      with or
-      to complement the property-based approach, but it MUST NOT replace it. For instance, it can be used
-      to specify
-      roles not covered by the agent role properties used in DCAT-US, and/or to specify additional
-      information that
-      cannot be expressed via a property (as the period during which an Agent covered a given role).</p>
+      possibly,to attach additional information to the role and the associated Agent. As such, it MAY be used in
+      combination with or to complement the property-based approach, but it MUST NOT replace it. For instance, it can be
+      used to specify roles not covered by the agent role properties used in DCAT-US, and/or to specify additional
+      information that cannot be expressed via a property (as the period during which an Agent covered a given role).
+    </p>
 
     <p><a href="#ex-attributions"></a> provides an illustration of the usage of attribution properties:
     </p>
@@ -16153,6 +16133,40 @@
       the frequency of updates, and other temporal nuances.
       Properly documented temporal metadata ensures data is discoverable, understandable, and relevant for time-based
       analyses.</p>
+
+    <h3>Temporal References</h3>
+    <p>Temporal reference encompasses into two categories:</p>
+    <ul>
+      <li>Temporal interval (or the duration of time it covers).</li>
+      <li>Dates indicating when something was published, revised, or first created.</li>
+    </ul>
+
+    <p>The temporal span aligns with the term <a data-cite="DCTERMS#temporal"><code>dct:temporal</code></a>, which has a
+      scope of
+      <a href="#properties-for-period-of-time"><code>dct:PeriodOfTime</code></a>. The exact moment or time frame is
+      denoted using <a href="#period_start-date"><code>dcat:startDate</code></a> for the start and <a
+        href="#period_end-date"><code>dcat:endDate</code></a> for the end.
+    </p>
+
+    <p>On the other hand, the dates for publishing, revising, and initiating are correspondingly linked to <a
+        data-cite="DCTERMS#issued"><code>dct:issued</code></a>, <a
+        data-cite="DCTERMS#modified"><code>dct:modified</code></a>, and <a
+        data-cite="DCTERMS#created"><code>dct:created</code></a>.
+    </p>
+
+    <p>The ISO 19115 metadata component labeled as <em>metadata date</em> is defined as:</p>
+    <blockquote>
+      The date marking the creation or latest update of the metadata record.
+    </blockquote>
+
+    <p>Given this vagueness, the mapped property for this component is identified as <a
+        data-cite="DCTERMS#modified"><code>dct:modified</code></a>.</p>
+
+
+    <h3>Temporal Resolution</h3>
+
+    <h3>Update Frequency</h3>
+
     <aside class="note">TODO</aside>
   </section>
 
