@@ -436,7 +436,7 @@
                   data-cite="DCTERMS#http://purl.org/dc/terms/accrualPeriodicity"><code>dct:accrualPeriodicity</code></a>
               </td>
               <td>Dataset</td>
-              <td>[[DATA-GOV-FREQ]]
+              <td>[[CLD-FREQ]]
               </td>
               <td></td>
             </tr>
@@ -7949,7 +7949,7 @@
                 <td>
                   <ul>
                     <li>This property refers to the frequency at which the Dataset is updated.</li>
-                    <li>CV to be used: [[DATA-GOV-FREQ]].</li>
+                    <li>CV to be used: [[CLD-FREQ]].</li>
                   </ul>
                 </td>
               </tr>
@@ -9873,7 +9873,7 @@
                     <li>The frequency of a dataset series is not equal to the frequency of the dataset in the
                       collection.
                     </li>
-                    <li>CV to be used: [[DATA-GOV-FREQ]].</li>
+                    <li>CV to be used: [[CLD-FREQ]].</li>
                   </ul>
                 </td>
               </tr>
@@ -16164,8 +16164,113 @@
 
 
     <h3>Temporal Resolution</h3>
+    <section id="maintenance-information">
+      <h3>Maintenance information</h3>
 
-    <h3>Update Frequency</h3>
+      <p>In [[ISO-19115]], element “Maintenance information” is meant mainly to describe how frequently a resource is
+        updated.</p>
+
+      <p>In DCAT-US, the update frequency is expressed through <code>dct:accrualPeriodicity</code>, with the frequency
+        codes defined in the Dublin Core Collection Description Frequency Vocabulary [[CLD-FREQ]],
+        which can be partially mapped to the ones used in [[ISO-19115]], as shown in the following table. The Collection
+        Description Frequency Vocabulary is based on the set of codes used for publication frequency in the MARC 21
+        Concise Format for Holdings Data.</p>
+
+      <table class="simple">
+        <thead>
+          <tr>
+            <th>ISO 19115 - MD_MaintenanceFrequencyCode</th>
+            <th>Dublin Core Collection Description Frequency Vocabulary [[CLD-FREQ]]</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>continual</td>
+            <td>continuous</td>
+          </tr>
+          <tr>
+            <td>daily</td>
+            <td>daily</td>
+          </tr>
+          <tr>
+            <td>weekly</td>
+            <td>weekly</td>
+          </tr>
+          <tr>
+            <td>fortnightly</td>
+            <td>biweekly</td>
+          </tr>
+          <tr>
+            <td>monthly</td>
+            <td>monthly</td>
+          </tr>
+          <tr>
+            <td>quarterly</td>
+            <td>quarterly</td>
+          </tr>
+          <tr>
+            <td>biannually</td>
+            <td>semiannual</td>
+          </tr>
+          <tr>
+            <td>annually</td>
+            <td>annual</td>
+          </tr>
+          <tr>
+            <td>asNeeded</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>Irregular</td>
+            <td>irregular</td>
+          </tr>
+          <tr>
+            <td>notPlanned</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>unknown</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>-</td>
+            <td>triennial</td>
+          </tr>
+          <tr>
+            <td>-</td>
+            <td>biennial</td>
+          </tr>
+          <tr>
+            <td>-</td>
+            <td>threeTimesAYear</td>
+          </tr>
+          <tr>
+            <td>-</td>
+            <td>bimonthly</td>
+          </tr>
+          <tr>
+            <td>-</td>
+            <td>semimonthly</td>
+          </tr>
+          <tr>
+            <td>-</td>
+            <td>threeTimesAMonth</td>
+          </tr>
+          <tr>
+            <td>-</td>
+            <td>semiweekly</td>
+          </tr>
+          <tr>
+            <td>-</td>
+            <td>threeTimesAWeek</td>
+          </tr>
+          <tr>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
 
     <aside class="note">TODO</aside>
   </section>
@@ -16186,9 +16291,11 @@
       Supplying accurate and adequate legal information holds significance in establishing trust among those who wish
       to reuse candidate data. The absence of clear legal details poses a risk to data reuse, as individuals are left
       unaware of permissible actions. While prior regulations and initiatives, like the Findable, Accessible,
-      Interoperable, and Reusable (FAIR) data principles, underline this importance, contemporary laws have become more
+      Interoperable, and Reusable (FAIR) data principles, underline this importance, contemporary laws have become
+      more
       rigorous by stipulating a baseline level of reuse standards. Selecting the right way to express conditions for
-      access to and re-use of resources can be complex. In essence, it is advisable for data publishers to engage their
+      access to and re-use of resources can be complex. In essence, it is advisable for data publishers to engage
+      their
       legal experts to ensure the provision of suitable guidelines.
 
     </p>
@@ -16276,7 +16383,8 @@
     <h3>Format and Representation</h3>
 
     <p>This category of properties deals with how data is encoded, structured, packaged, and presented, as well as the
-      media type and language it's available in. Properly understanding and managing these aspects is essential for data
+      media type and language it's available in. Properly understanding and managing these aspects is essential for
+      data
       interoperability, accessibility, discoverability, and usability. A set standardized property values ensure
       cross-platform interoperability, enabling datasets to be seamlessly processed and integrated. They offer clear
       semantics about a dataset's nature, ensuring users and systems have a precise understanding. Furthermore, by
@@ -16295,28 +16403,36 @@
 
       <p>When defining the format of a distribution, consider the following properties:</p>
       <ul>
-        <li><strong>dcat:mediaType</strong>: Ideal for scenarios where the format aligns with media types registered by
+        <li><strong>dcat:mediaType</strong>: Ideal for scenarios where the format aligns with media types registered
+          by
           IANA [[IANA-MEDIA-TYPES]].</li>
 
-        <li><strong>dct:format</strong>: Suitable for other cases, especially when associating with file form registers
+        <li><strong>dct:format</strong>: Suitable for other cases, especially when associating with file form
+          registers
           managed by a central authority such as Data.gov (TDB).</li>
 
-        <li><strong>dcat:compressFormat</strong>: This property defines when distribution files are compressed, such as
+        <li><strong>dcat:compressFormat</strong>: This property defines when distribution files are compressed, such
+          as
           in ZIP format. If possible, leverage media types from IANA [[IANA-MEDIA-TYPES]] to express the
           format.</li>
 
-        <li><strong>dcat:packageFormat</strong>: Use this property to detail the packaging of distributions that bundle
+        <li><strong>dcat:packageFormat</strong>: Use this property to detail the packaging of distributions that
+          bundle
           multiple data files. This can be crucial for scenarios where related files need collective downloads, like
           TAR, ZIP, Frictionless Data Package, or Bagit files. Again, if an associated media type from
           IANA [[IANA-MEDIA-TYPES]] exists, it's recommended to use it.</li>
 
-        <li><strong>adms:representationTechnique</strong>: This property can be used to specify the technique or method
-          by which the data is represented in the distribution. This is different from the file format as, for example,
-          a ZIP file (file format) could contain an XML schema (representation technique). It can help users understand
+        <li><strong>adms:representationTechnique</strong>: This property can be used to specify the technique or
+          method
+          by which the data is represented in the distribution. This is different from the file format as, for
+          example,
+          a ZIP file (file format) could contain an XML schema (representation technique). It can help users
+          understand
           the underlying structure or visualization method of the dataset.</li>
       </ul>
 
-      <p>Utilizing these properties effectively can enhance data discoverability, interoperability, and the overall user
+      <p>Utilizing these properties effectively can enhance data discoverability, interoperability, and the overall
+        user
         experience when accessing and working with datasets.</p>
 
       <aside class="example" title="Example of distribution of zipped CSV files packaged in tar format">

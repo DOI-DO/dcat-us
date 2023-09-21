@@ -54,6 +54,12 @@ var respecConfig = {
       "title": "CC-BY 4.0 Attribution 4.0 International",
       "publisher": "Creative Commons"
     },
+    "CLD-FREQ": {
+      "href": "http://dublincore.org/groups/collections/frequency/",
+      "title": "Dublin Core Collection Description Frequency Vocabulary",
+      "publisher": "Dublin Core Collection Description Task Group",
+      "date": "2013-06-26"
+    },
     "PDDL": {
       "href": "http://opendatacommons.org/licenses/pddl/",
       "title": "Public Domain Dedication and License (PDDL)",
@@ -193,12 +199,6 @@ var respecConfig = {
       "href": "http://id.loc.gov/vocabulary/countries",
       "title": "MARC List for Countries (TBD)",
       "publisher": "Library of Congress",
-    },
-
-    "DATA-GOV-FREQ": {
-      "href": "http://TBD/frequency",
-      "title": "Data.gov Vocabularies Frequency Named Authority List (TBD)",
-      "publisher": "United States Government",
     },
     "DATA-GOV-FT": {
       "href": "http://TBD/file-type",
