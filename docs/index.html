@@ -16133,37 +16133,39 @@
       the frequency of updates, and other temporal nuances.
       Properly documented temporal metadata ensures data is discoverable, understandable, and relevant for time-based
       analyses.</p>
+    <section id="temporal-references">
+      <h3>Temporal References</h3>
+      <p>Temporal reference encompasses into two categories:</p>
+      <ul>
+        <li>Temporal interval (or the duration of time it covers).</li>
+        <li>Dates indicating when something was published, revised, or first created.</li>
+      </ul>
 
-    <h3>Temporal References</h3>
-    <p>Temporal reference encompasses into two categories:</p>
-    <ul>
-      <li>Temporal interval (or the duration of time it covers).</li>
-      <li>Dates indicating when something was published, revised, or first created.</li>
-    </ul>
+      <p>The temporal span aligns with the term <a data-cite="DCTERMS#temporal"><code>dct:temporal</code></a>, which has
+        a
+        scope of
+        <a href="#properties-for-period-of-time"><code>dct:PeriodOfTime</code></a>. The exact moment or time frame is
+        denoted using <a href="#period_start-date"><code>dcat:startDate</code></a> for the start and <a
+          href="#period_end-date"><code>dcat:endDate</code></a> for the end.
+      </p>
 
-    <p>The temporal span aligns with the term <a data-cite="DCTERMS#temporal"><code>dct:temporal</code></a>, which has a
-      scope of
-      <a href="#properties-for-period-of-time"><code>dct:PeriodOfTime</code></a>. The exact moment or time frame is
-      denoted using <a href="#period_start-date"><code>dcat:startDate</code></a> for the start and <a
-        href="#period_end-date"><code>dcat:endDate</code></a> for the end.
-    </p>
+      <p>On the other hand, the dates for publishing, revising, and initiating are correspondingly linked to <a
+          data-cite="DCTERMS#issued"><code>dct:issued</code></a>, <a
+          data-cite="DCTERMS#modified"><code>dct:modified</code></a>, and <a
+          data-cite="DCTERMS#created"><code>dct:created</code></a>.
+      </p>
 
-    <p>On the other hand, the dates for publishing, revising, and initiating are correspondingly linked to <a
-        data-cite="DCTERMS#issued"><code>dct:issued</code></a>, <a
-        data-cite="DCTERMS#modified"><code>dct:modified</code></a>, and <a
-        data-cite="DCTERMS#created"><code>dct:created</code></a>.
-    </p>
+      <p>The ISO 19115 metadata component labeled as <em>metadata date</em> is defined as:</p>
+      <blockquote>
+        The date marking the creation or latest update of the metadata record.
+      </blockquote>
 
-    <p>The ISO 19115 metadata component labeled as <em>metadata date</em> is defined as:</p>
-    <blockquote>
-      The date marking the creation or latest update of the metadata record.
-    </blockquote>
-
-    <p>Given this vagueness, the mapped property for this component is identified as <a
-        data-cite="DCTERMS#modified"><code>dct:modified</code></a>.</p>
-
-
-    <h3>Temporal Resolution</h3>
+      <p>Given this vagueness, the mapped property for this component is identified as <a
+          data-cite="DCTERMS#modified"><code>dct:modified</code></a>.</p>
+    </section>
+    <section id="temporal-resolution">
+      <h3>Temporal Resolution</h3>
+    </section>
     <section id="maintenance-information">
       <h3>Maintenance information</h3>
 
@@ -16172,7 +16174,8 @@
 
       <p>In DCAT-US, the update frequency is expressed through <code>dct:accrualPeriodicity</code>, with the frequency
         codes defined in the Dublin Core Collection Description Frequency Vocabulary [[CLD-FREQ]],
-        which can be partially mapped to the ones used in [[ISO-19115]], as shown in the following table. The Collection
+        which can be partially mapped to the ones used in [[ISO-19115]] and [[ISO8601-1]], as shown in the following
+        table. The Collection
         Description Frequency Vocabulary is based on the set of codes used for publication frequency in the MARC 21
         Concise Format for Holdings Data.</p>
 
@@ -16180,97 +16183,125 @@
         <thead>
           <tr>
             <th>ISO 19115 - MD_MaintenanceFrequencyCode</th>
+            <th>ISO-8601</th>
             <th>Dublin Core Collection Description Frequency Vocabulary [[CLD-FREQ]]</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>continual</td>
+            <td>R/PT1S</td>
             <td>continuous</td>
           </tr>
           <tr>
             <td>daily</td>
+            <td>R/P1D</td>
             <td>daily</td>
           </tr>
           <tr>
             <td>weekly</td>
+            <td>R/P1W</td>
             <td>weekly</td>
           </tr>
           <tr>
             <td>fortnightly</td>
+            <td>R/P2W or R/P0.5W</td>
             <td>biweekly</td>
           </tr>
           <tr>
             <td>monthly</td>
+            <td>R/P1M</td>
             <td>monthly</td>
           </tr>
           <tr>
             <td>quarterly</td>
+            <td>R/P3M</td>
             <td>quarterly</td>
           </tr>
           <tr>
             <td>biannually</td>
+            <td>R/P6M</td>
             <td>semiannual</td>
           </tr>
           <tr>
             <td>annually</td>
+            <td>R/P1Y</td>
             <td>annual</td>
           </tr>
           <tr>
             <td>asNeeded</td>
             <td>-</td>
+            <td>-</td>
           </tr>
           <tr>
             <td>Irregular</td>
+            <td>-</td>
             <td>irregular</td>
           </tr>
           <tr>
             <td>notPlanned</td>
             <td>-</td>
+            <td>-</td>
           </tr>
           <tr>
             <td>unknown</td>
             <td>-</td>
+            <td>-</td>
           </tr>
           <tr>
             <td>-</td>
+            <td>R/P3Y</td>
             <td>triennial</td>
           </tr>
           <tr>
             <td>-</td>
+            <td>R/P2Y</td>
             <td>biennial</td>
           </tr>
           <tr>
             <td>-</td>
+            <td>R/P4M</td>
             <td>threeTimesAYear</td>
           </tr>
           <tr>
             <td>-</td>
+            <td>R/P2M or R/P0.5M</td>
             <td>bimonthly</td>
           </tr>
           <tr>
             <td>-</td>
+            <td>R/P0.5M</td>
             <td>semimonthly</td>
           </tr>
           <tr>
             <td>-</td>
+            <td>R/P0.33M</td>
             <td>threeTimesAMonth</td>
           </tr>
           <tr>
             <td>-</td>
+            <td>R/P1W</td>
             <td>semiweekly</td>
           </tr>
           <tr>
             <td>-</td>
+            <td>R/P3.5D</td>
             <td>threeTimesAWeek</td>
           </tr>
-          <tr>
-            <td>-</td>
-            <td>-</td>
-          </tr>
+
         </tbody>
       </table>
     </section>
+
+    <aside class="note">
+      In DCAT-US version 1.1, <code>dct:accrualPeriodicity</code> is modeled as a string based on [[ISO8601-1]]. This
+      approach contrasts with the expected range for <code>dct:accrualPeriodicity</code>, which should be a resource
+      from the <code>dct:Frequency</code> class. The use of [[ISO8601-1]] values can be challenging for end-users to
+      understand. To address this, DCAT-US 3.0 has adopted the [[CLD-FREQ]] vocabularies and expects a URL. For ease of
+      use in JSON-LD context, a shortcut has been defined, allowing the usage of only the local name of the URI. This
+      accomplished by
+      predefining the [[CLD-FREQ]] namespace for <code>dct:accrualPeriodicity</code> in the DCAT-US 3.0 JSON-LD context.
+    </aside>
 
     <aside class="note">TODO</aside>
   </section>
