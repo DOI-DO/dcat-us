@@ -60,6 +60,12 @@ var respecConfig = {
       "publisher": "Dublin Core Collection Description Task Group",
       "date": "2013-06-26"
     },
+    "DCMI-TYPES": {
+      "href":"https://www.dublincore.org/specifications/dublin-core/dcmi-terms/",
+      "title": "DCMI Metadata Terms",
+      "publisher": "DCMI Usage Board",
+      "date":"2020-01-20"
+    },
     "PDDL": {
       "href": "http://opendatacommons.org/licenses/pddl/",
       "title": "Public Domain Dedication and License (PDDL)",
