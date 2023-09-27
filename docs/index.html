@@ -6384,6 +6384,7 @@
             <th>Range</th>
             <th>ReqLevel</th>
             <th>Card</th>
+            <th>Changes from DCAT-US 1.1</th>
           </tr>
         </thead>
         <tbody>
@@ -6393,6 +6394,7 @@
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
             <td><strong>M</strong></td>
             <td>1..n</td>
+            <td><span style="color: green;">Multilingual support</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-description">description</a></td>
@@ -6401,6 +6403,7 @@
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
             <td><strong>M</strong></td>
             <td>1..n</td>
+            <td><span style="color: green;">Multilingual support</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-identifier">identifier</a></td>
@@ -6409,13 +6412,15 @@
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
             <td><strong>M</strong></td>
             <td>1..n</td>
+            <td><span style="color: black;">Unchanged</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-contact-point">contact point</a></td>
             <td><a data-cite="VOCAB-DCAT-3#Property:resource_contact_point"><code>dcat:contactPoint</code></a></td>
-            <td><a data-cite="VCARD-RDF#d4e1819"><code>vcard:Kind</code></a>
+            <td><a data-cite="VCARD-RDF#d4e1819"><code>vcard:Contact</code></a>
             <td>R</td>
             <td>0..n</td>
+            <td><span style="color: black;">Unchanged</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-distribution">dataset distribution</a></td>
@@ -6424,6 +6429,7 @@
             </td>
             <td>R</td>
             <td>0..n</td>
+            <td><span style="color: black;">Unchanged</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-spatial">spatial/geographical coverage</a></td>
@@ -6432,6 +6438,7 @@
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Location"><code>dct:Location</code></a></td>
             <td>R</td>
             <td>0..n</td>
+            <td><span style="color: green;">Fixed</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-keyword">keyword/tag</a></td>
@@ -6440,6 +6447,7 @@
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
             <td>R</td>
             <td>0..n</td>
+            <td><span style="color: black;">Unchanged</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-landing-page">landing page</a></td>
@@ -6449,6 +6457,7 @@
             </td>
             <td>R</td>
             <td>0..n</td>
+            <td><span style="color: black;">Unchanged</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-update-modification-date">update/modification date</a></td>
@@ -6462,6 +6471,7 @@
             </td>
             <td>R</td>
             <td>0..1</td>
+            <td><span style="color: black;">Unchanged</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-publisher">publisher</a></td>
@@ -6470,6 +6480,7 @@
             <td><a href="http://xmlns.com/foaf/0.1/#term_Agent"><code>foaf:Agent</code></a></td>
             <td><strong>R</strong></td>
             <td>0..1</td>
+            <td><span style="color: black;">Unchanged</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-geographic-extent">geographic bounding box</a></td>
@@ -6479,6 +6490,7 @@
             </td>
             <td>R</td>
             <td>0..n</td>
+            <td><span style="color: red;">New!</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-temporal-coverage">temporal coverage</a></td>
@@ -6488,6 +6500,7 @@
             </td>
             <td>R</td>
             <td>0..n</td>
+            <td><span style="color: green;">Fixed</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-theme-category">theme/category</a></td>
@@ -6496,6 +6509,7 @@
             </td>
             <td>R</td>
             <td>0..n</td>
+            <td><span style="color: green;">Fixed</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-access-rights">access rights</a></td>
@@ -6505,6 +6519,7 @@
             </td>
             <td>O</td>
             <td>0..1</td>
+            <td><span style="color: red;">New!</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-conforms_to">conforms to</a></td>
@@ -6514,6 +6529,7 @@
             </td>
             <td>O</td>
             <td>0..n</td>
+            <td><span style="color: black;">Unchanged</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-creator">creator</a></td>
@@ -6522,6 +6538,7 @@
             </td>
             <td>O</td>
             <td>0..n</td>
+            <td><span style="color: red;">New!</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-documentation">documentation</a></td>
@@ -6530,6 +6547,7 @@
             </td>
             <td>O</td>
             <td>0..n</td>
+            <td><span style="color: red;">New!</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-frequency">frequency</a></td>
@@ -6540,6 +6558,7 @@
             </td>
             <td>O</td>
             <td>0..1</td>
+            <td><span style="color: green;">Fixed</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-hasVersion">has version</a></td>
@@ -6548,6 +6567,7 @@
             </td>
             <td>O</td>
             <td>0..n</td>
+            <td><span style="color: red;">New!</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-is-referenced-by">is referenced by</a></td>
@@ -6557,6 +6577,7 @@
             </td>
             <td>O</td>
             <td>0..n</td>
+            <td><span style="color: red;">New!</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-language">language</a></td>
@@ -6566,6 +6587,7 @@
             </td>
             <td>O</td>
             <td>0..n</td>
+            <td><span style="color: green;">Fixed</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-otherIdentifier">other identifier</a></td>
@@ -6573,6 +6595,7 @@
             <td><a href="http://www.w3.org/ns/adms#Identifier"><code>adms:Identifier</code></a></td>
             <td>O</td>
             <td>0..n</td>
+            <td><span style="color: red;">New!</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-provenance">provenance</a></td>
@@ -6583,6 +6606,7 @@
             </td>
             <td>O</td>
             <td>0..n</td>
+            <td><span style="color: red;">New!</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-qualified-attribution">qualified attribution</a></td>
@@ -6592,6 +6616,7 @@
             </td>
             <td>O</td>
             <td>0..n</td>
+            <td><span style="color: red;">New!</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-qualified-relation">qualified relation</a></td>
@@ -6603,6 +6628,7 @@
             </td>
             <td>O</td>
             <td>0..n</td>
+            <td><span style="color: red;">New!</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-related-resource">related resource</a></td>
@@ -6610,6 +6636,7 @@
             <td><a data-cite="RDF-SCHEMA#ch_resource"><code>rdfs:Resource</code></a></td>
             <td>O</td>
             <td>0..n</td>
+            <td><span style="color: red;">New!</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-release-date">release date</a></td>
@@ -6624,6 +6651,7 @@
             </td>
             <td>O</td>
             <td>0..1</td>
+            <td>Unchanged</td>
           </tr>
           <tr>
             <td><a href="#dataset-sample">sample</a></td>
@@ -6632,6 +6660,7 @@
             </td>
             <td>O</td>
             <td>0..n</td>
+            <td><span style="color: red;">New!</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-source">source</a></td>
@@ -6640,6 +6669,7 @@
             </td>
             <td>O</td>
             <td>0..n</td>
+            <td><span style="color: red;">New!</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-hasQualityMeasurement">quality measurement</a></td>
@@ -6651,6 +6681,7 @@
             </td>
             <td>O</td>
             <td>0..n</td>
+            <td><span style="color: red;">New!</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-spatial-resolution">spatial resolution in meters</a></td>
@@ -6664,6 +6695,7 @@
             </td>
             <td>O</td>
             <td>0..n</td>
+            <td><span style="color: red;">New!</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-temporal_resolution">temporal resolution</a></td>
@@ -6677,14 +6709,16 @@
             </td>
             <td>O</td>
             <td>0..n</td>
+            <td><span style="color: red;">New!</span></td>
           </tr>
           <tr>
-            <td><a href="#dataset-type">type</a></td>
+            <td><a href="#dataset-type">category</a></td>
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/type"><code>dct:type</code></a></td>
             <td><a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a>
             </td>
             <td>O</td>
             <td>0..1</td>
+            <td><span style="color: red;">New!</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-version">version</a></td>
@@ -6696,6 +6730,7 @@
             </td>
             <td>O</td>
             <td>0..n</td>
+            <td><span style="color: red;">New!</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-versionNotes">version notes</a></td>
@@ -6705,6 +6740,7 @@
             </td>
             <td>O</td>
             <td>0..n</td>
+            <td><span style="color: red;">New!</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-wasGeneratedBy">was generated by</a></td>
@@ -6713,6 +6749,7 @@
             <td><a data-cite="PROV#Class:prov_Activity"><code>prov:Activity</code></a></td>
             <td>O</td>
             <td>0..n</td>
+            <td><span style="color: red;">New!</span></td>
           </tr>
           <!-- TODO: Determine whether this property is needed (it is not in DCAT-AP 3.0)-->
           <!-- <tr>
@@ -6736,6 +6773,7 @@
             </td>
             <td>O</td>
             <td>0..n</td>
+            <td><span style="color: red;">New!</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-investment">investment</a></td>
@@ -6747,6 +6785,7 @@
             </td>
             <td>O</td>
             <td>0..n</td>
+            <td><span style="color: red;">New!</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-applicableLegislation">application legislation</a></td>
@@ -6758,6 +6797,7 @@
             </td>
             <td>O</td>
             <td>0..n</td>
+            <td><span style="color: red;">New!</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-supportedSchema">supported schema</a></td>
@@ -6767,6 +6807,7 @@
             </td>
             <td>O</td>
             <td>0..1</td>
+            <td><span style="color: red;">New!</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-metadataDistribution">metadata distribution</a></td>
@@ -6777,6 +6818,7 @@
             </td>
             <td>O</td>
             <td>0..n</td>
+            <td><span style="color: red;">New!</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-liability_statement">liability statement</a></td>
@@ -6787,6 +6829,7 @@
             </td>
             <td>O</td>
             <td>0..1</td>
+            <td><span style="color: red;">New!</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-purpose">purpose</a></td>
@@ -6797,6 +6840,7 @@
             </td>
             <td>O</td>
             <td>0..n</td>
+            <td><span style="color: red;">New!</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-contributor">contributor</a></td>
@@ -6805,6 +6849,7 @@
             </td>
             <td>O</td>
             <td>0..n</td>
+            <td><span style="color: red;">New!</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-image">image</a></td>
@@ -6814,6 +6859,7 @@
             </td>
             <td>O</td>
             <td>0..n</td>
+            <td><span style="color: red;">New!</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-usage-note">related resource</a></td>
@@ -6821,6 +6867,7 @@
             <td><a data-cite="RDF-SCHEMA#ch_resource"><code>rdfs:Resource</code></a></td>
             <td>O</td>
             <td>0..n</td>
+            <td><span style="color: red;">New!</span></td>
           </tr>
         </tbody>
       </table>
@@ -15228,7 +15275,7 @@
     </section>
     <section id="properties-for-use_restriction">
       <h2>Class: UseRestriction</h2>
-      <aside class="note">New classe defined in DCAT-US 3.0</aside>
+      <aside class="note">New class defined in DCAT-US 3.0</aside>
       <p>A UseRestriction is a set of rules, guidelines, or legal provisions that dictate how a particular resource,
         asset, information, or object can be utilized. Use restrictions may encompass limitations on access,
         distribution, reproduction, modification, or sharing, and they are often put in place to protect privacy,
