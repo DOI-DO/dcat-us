@@ -1560,7 +1560,7 @@
           </tr>
           <tr>
             <td><a href="#agent-member_of">member of</a></td>
-            <td><a href="http://www.w3c.org/ns/org#memberOf"><code>org:memberOf</code></a>
+            <td><a data-cite="VOCAB-ORG#property-memberof"><code>org:memberOf</code></a>
             </td>
             <td><a href="http://xmlns.com/foaf/0.1/#term_Organization"><code>foaf:Organization</code></a>
             </td>
@@ -15869,6 +15869,40 @@
       <h3>Person</h3>
       <p>A person agent represents an individual involved in producing or managing datasets. It provides
         information about the person and their associated contact details.</p>
+      <p>
+        In the context of a DCAT-US 3.0, the <a data-cite="FOAF#term_Person"><code>foaf:Person</code></a> class plays a
+        crucial role. It is used to represent individuals who are associated with or responsible for the datasets or
+        resources described within the DCAT profile.
+      </p>
+      <p>
+        Let's break down the specific properties associated with <a
+          data-cite="FOAF#term_Person"><code>foaf:Person</code></a> and their significance within this context:
+      </p>
+      <ul>
+        <li>
+          <a data-cite="FOAF#term_name"><code>foaf:name:</code></a> This property represents the full name of a person.
+          It can be used to specify the full name of individuals associated with datasets. For example, if a person's
+          full name is "John Smith," you can use this property to provide their complete name. This property is the only
+          property mandatory for describing a person and is typically used for display.
+        </li>
+        <li>
+          <a data-cite="FOAF#term_firstName"><code>foaf:firstName:</code></a> This optional property represents the first name of
+          a person. It is used to provide the first name of individuals associated with or responsible for resources in
+          the DCAT-US profile. It can be used to provide structured information about an individual's first name.
+        </li>
+        <li>
+          <a data-cite="FOAF#term_givenName"><code>foaf:givenName:</code></a> This optional property represents the given
+          name of a person. It can be used to provide structured information about an individual's name.
+        </li>
+
+        <li>
+          <a data-cite="VOCAB-ORG#property-memberof"><code>org:memberOf</code></a> While not a FOAF property,this property is typically used to indicate the
+          organization or group to which a person is affiliated to. In the context of a DCAT-US profile, it can be used to
+          specify the organization or entity with which an individual is affiliated in relation to the described
+          resources. For instance, if a person is a member of an organization of Department of Interior, you can use this
+          property to link them to that organization identified by <code>http://www.doi.gov</code>.
+        </li>
+      </ul>
 
     </section>
     <section id="organization">
