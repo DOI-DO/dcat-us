@@ -9760,6 +9760,7 @@
             <th>Range</th>
             <th>ReqLevel</th>
             <th>Card</th>
+            <th>Changes from DCAT-US 1.1</th>
           </tr>
         </thead>
         <tbody>
@@ -9773,6 +9774,7 @@
             </td>
             <td><strong>M</strong></td>
             <td>1..n</td>
+            <td>Unchanged</td>
           </tr>
           <tr>
             <td><a href="#distribution-license">license</a></td>
@@ -9782,6 +9784,7 @@
             </td>
             <td><strong>M</strong></td>
             <td>1..1</td>
+            <td><span style="color: red;">NEW!</span></td>
           </tr>
           <tr>
             <td><a href="#distribution-availability">availability</a></td>
@@ -9789,6 +9792,7 @@
             <td><a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a></td>
             <td>R</td>
             <td>0..1</td>
+            <td><span style="color: red;">NEW!</span></td>
           </tr>
           <tr>
             <td><a href="#distribution-description">description</a></td>
@@ -9798,18 +9802,20 @@
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
             <td>R</td>
             <td>0..n</td>
+            <td><span style="color: green;">Multilingual support</span></td>
           </tr>
           <tr>
             <td><a href="#distribution-format">format</a></td>
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/format"><code>dct:format</code></a>
             </td>
-            <td><a data-cite="DCTERMS#http://purl.org/dc/terms/MediaTypeOrExtent"><code>dct:MediaTypeOrExtent</code></a>
+            <td><a href="http://purl.org/dc/terms/MediaType"><code>dcterms:MediaType</code></a>
             </td>
             <td>R</td>
             <td>0..1</td>
+            <td><span style="color: green;">Fixed</span></td>
           </tr>
           <tr>
-            <td><a href="#distribution-rights">Rights</a></td>
+            <td><a href="#distribution-rights">rights</a></td>
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/rights">
                 <code>dct:rights</code></a>
             </td>
@@ -9818,9 +9824,10 @@
             </td>
             <td>R</td>
             <td>0..1</td>
+            <td><span style="color: red;">NEW!</span></td>
           </tr>
           <tr>
-            <td><a href="#distribution-access_restriction">Access Restriction</a></td>
+            <td><a href="#distribution-access_restriction">access Restriction</a></td>
             <td><a href="http://TBD#accessRestriction">
                 <code>dcat-us:accessRestriction</code></a>
             </td>
@@ -9829,9 +9836,10 @@
             </td>
             <td>R</td>
             <td>0..n</td>
+            <td><span style="color: red;">NEW!</span></td>
           </tr>
           <tr>
-            <td><a href="#distribution-use_restriction">Use Restriction</a></td>
+            <td><a href="#distribution-use_restriction">usage restriction</a></td>
             <td><a href="http://TBD#useRestriction">
                 <code>dcat-us:useRestriction</code></a>
             </td>
@@ -9840,9 +9848,10 @@
             </td>
             <td>R</td>
             <td>0..n</td>
+            <td><span style="color: red;">NEW!</span></td>
           </tr>
           <tr>
-            <td><a href="#distribution-cui_restriction">CUI Restriction</a></td>
+            <td><a href="#distribution-cui_restriction">cui Restriction</a></td>
             <td><a href="http://TBD#cuiRestriction">
                 <code>dcat-us:cuiRestriction</code></a>
             </td>
@@ -9851,13 +9860,15 @@
             </td>
             <td>R</td>
             <td>0..1</td>
+            <td><span style="color: red;">NEW!</span></td>
           </tr>
           <tr>
-            <td><a href="#distribution-title">Title</a></td>
+            <td><a href="#distribution-title">title</a></td>
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/title"><code>dcterms:title</code></a></td>
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
             <td>R</td>
             <td>0..n</td>
+            <td><span style="color: green;">Multilingual support</span></td>
           </tr>
           <tr>
             <td><a href="#distribution-modification-date">update/ modification date</a></td>
@@ -9873,6 +9884,7 @@
             </td>
             <td>R</td>
             <td>0..1</td>
+            <td><span style="color: red;">NEW!</span></td>
           </tr>
           <tr>
             <td><a href="#distribution-representation-technique">representation technique</a></td>
@@ -9882,6 +9894,7 @@
             </td>
             <td>O</td>
             <td>0..1</td>
+            <td><span style="color: red;">NEW!</span></td>
           </tr>
           <tr>
             <td><a href="#distribution-status">status</a></td>
@@ -9890,6 +9903,7 @@
             </td>
             <td>O</td>
             <td>0..1</td>
+            <td><span style="color: red;">NEW!</span></td>
           </tr>
           <tr>
             <td><a href="#distribution-characterEncoding">character encoding</a></td>
@@ -9898,6 +9912,7 @@
             </td>
             <td>O</td>
             <td>0..n</td>
+            <td><span style="color: red;">NEW!</span></td>
           </tr>
           <tr>
             <td><a href="#distribution-compression-format">compression format</a></td>
@@ -9908,6 +9923,7 @@
             </td>
             <td>O</td>
             <td>0..1</td>
+            <td><span style="color: red;">NEW!</span></td>
           </tr>
           <tr>
             <td><a href="#distribution-spatial_resolution_in_meters">spatial resolution in meters</a></td>
@@ -9918,6 +9934,7 @@
             </td>
             <td>O</td>
             <td>0..1</td>
+            <td><span style="color: red;">NEW!</span></td>
           </tr>
           <tr>
             <td><a href="#distribution-access-rights">access rights</a></td>
@@ -9927,6 +9944,7 @@
             </td>
             <td>O</td>
             <td>0..1</td>
+            <td><span style="color: red;">NEW!</span></td>
           </tr>
           <tr>
             <td><a href="#distribution-access-service">access service</a></td>
@@ -9936,6 +9954,7 @@
             </td>
             <td>O</td>
             <td>0..n</td>
+            <td><span style="color: red;">NEW!</span></td>
           </tr>
           <tr>
             <td><a href="#distribution-byte-size">byte size</a></td>
@@ -9949,9 +9968,10 @@
             </td>
             <td>O</td>
             <td>0..1</td>
+            <td><span style="color: red;">NEW!</span></td>
           </tr>
           <tr>
-            <td><a href="#distribution-checksum">Checksum</a></td>
+            <td><a href="#distribution-checksum">checksum</a></td>
             <td><a data-cite="SPDX#checksum">
                 <code>spdx:checksum</code></a>
             </td>
@@ -9959,9 +9979,10 @@
             </td>
             <td>O</td>
             <td>0..1</td>
+            <td><span style="color: red;">NEW!</span></td>
           </tr>
           <tr>
-            <td><a href="#distribution-coverage">Coverage</a></td>
+            <td><a href="#distribution-coverage">coverage</a></td>
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/coverage"><code>dct:coverage</code></a>
             </td>
             <td><a
@@ -9969,13 +9990,15 @@
             </td>
             <td>O</td>
             <td>0..n</td>
+            <td><span style="color: red;">NEW!</span></td>
           </tr>
           <tr>
-            <td><a href="#distribution-documentation">Documentation</a></td>
+            <td><a href="#distribution-documentation">documentation</a></td>
             <td><a href="http://xmlns.com/foaf/0.1/#term_page"><code>foaf:page</code></a></td>
             <td><a href="http://xmlns.com/foaf/0.1/#term_Document"><code>foaf:Document</code></a></td>
             <td>O</td>
             <td>0..n</td>
+            <td><span style="color: red;">NEW!</span></td>
           </tr>
           <tr>
             <td><a href="#distribution-download-url">download URL</a></td>
@@ -9984,6 +10007,7 @@
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Location"><code>rdfs:Resource</code></a></td>
             <td>O</td>
             <td>0..n</td>
+            <td>Unchanged</td>
           </tr>
           <tr>
             <td><a href="#distribution-identifier">identifier</a></td>
@@ -9993,6 +10017,7 @@
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
             <td>O</td>
             <td>0..1</td>
+            <td><span style="color: red;">NEW!</span></td>
           </tr>
           <tr>
             <td><a href="#distribution-image">image</a></td>
@@ -10002,15 +10027,17 @@
             </td>
             <td>O</td>
             <td>0..3</td>
+            <td><span style="color: red;">NEW!</span></td>
           </tr>
           <tr>
-            <td><a href="#distribution-language">Language</a></td>
+            <td><a href="#distribution-language">language</a></td>
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/language"><code>dct:language</code></a>
             </td>
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LinguisticSystem"><code>dct:LinguisticSystem</code></a>
             </td>
             <td>O</td>
             <td>0..n</td>
+            <td><span style="color: red;">NEW!</span></td>
           </tr>
           <tr>
             <td><a href="#distribution-conforms_to">linked schemas</a></td>
@@ -10020,25 +10047,26 @@
             </td>
             <td>O</td>
             <td>0..n</td>
+            <td><span style="color: red;">unchanged</span></td>
           </tr>
           <tr>
             <td><a href="#distribution-media-type">media type</a></td>
             <td><a data-cite="VOCAB-DCAT-3#Property:distribution_media_type">
-                <code>dcat:mediaType</code></a> subproperty of dct:format
+                <code>dcat:mediaType</code></a>
             </td>
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/MediaType"><code>dct:MediaType</code></a></td>
             <td>O</td>
             <td>0..1</td>
+            <td><span style="color: green;">Fixed</span></td>
           </tr>
           <tr>
             <td><a href="#distribution-packaging-format">packaging format</a></td>
             <td><a data-cite="VOCAB-DCAT-3#Property:distribution_packaging_format"><code>dcat:packageFormat</code></a>
             </td>
-            <td><a data-cite="VOCAB-DCAT-3#Property:distribution_media_type">
-                <code>dcat:mediaType</code></a>
-            </td>
+            <td><a href="http://purl.org/dc/terms/MediaType"><code>dcterms:MediaType</code></a>
             <td>O</td>
             <td>0..1</td>
+            <td><span style="color: red;">NEW!</span></td>
           </tr>
           <tr>
             <td><a href="#distribution-release-date">release date</a></td>
@@ -10054,6 +10082,8 @@
             </td>
             <td>R</td>
             <td>0..1</td>
+            <td><span style="color: red;">NEW!</span></td>
+
           </tr>
           <tr>
             <td><a href="#distribution-temporal_resolution">temporal resolution</a></td>
@@ -10064,6 +10094,8 @@
             </td>
             <td>R</td>
             <td>0..1</td>
+            <td><span style="color: red;">NEW!</span></td>
+
           </tr>
         </tbody>
       </table>
