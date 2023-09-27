@@ -388,7 +388,7 @@
       <section id="supporting classes">
         <h3>Supporting Classes</h3>
 
-        <table class="simple" id="table-mandatory-classes">
+        <table class="simple">
           <thead>
             <tr>
               <th>Class name</th>
@@ -542,7 +542,21 @@
               <td><span style="color: red;">NEW!</span></td>
             </tr>
 
+            <tr>
+              <td>
+                <p><a href="#properties-for-cui_restriction">CUI Restriction</a></p>
+              </td>
+              <td>
+                <p>Controlled Unclassified Information (CUI) is information that requires safeguarding or dissemination
+                  controls pursuant to and consistent with applicable law, regulations, and government-wide policies but
+                  is not classified.
+                </p>
 
+              <td>
+                <p><a href="#properties-for-cui_restriction"><code>dcat-us:CuiRestriction</code></a></p>
+              </td>
+              <td><span style="color: red;">NEW!</span></td>
+            </tr>
             <tr>
               <td>
                 <a href="#properties-for-document">Document</a>
@@ -557,7 +571,20 @@
               <td><span style="color: red;">NEW!</span></td>
             </tr>
 
+            <tr>
+              <td>
+                <p><a href="#properties-for-geographic-bbox">Geographic Bounding Box</a></p>
+              </td>
+              <td>
+                <p>GeographicBoundingBox describes the spatial extent of domain of application of an resource and is
+                  standardized in WGS 84 Lat/Long coordinate system.
+                </p>
 
+              <td>
+                <p><a href="properties-for-geographic-bbox"><code>dcat-us:GeographicBoundingBox</code></a></p>
+              </td>
+              <td><span style="color: red;">NEW!</span></td>
+            </tr>
             <tr>
               <td>
                 <a href="#properties-for-identifier">Identifier</a>
@@ -568,12 +595,27 @@
                   an optional identifier for the agency that manages the identifier scheme</p>
               </td>
               <td>
-                <p><a class="sec-ref"
-                    href="https://www.w3.org/TR/vocab-adms/#identifier"><code>adms:Identifier</code></a></p>
+                <p><a href="https://www.w3.org/TR/vocab-adms/#identifier"><code>adms:Identifier</code></a></p>
               </td>
               <td><span style="color: red;">NEW!</span></td>
             </tr>
-
+            <tr>
+              <td>
+                <a href="#properties-for-liability_statement">LiabilityStatement</a>
+              </td>
+              <td>
+                <p>A formal declaration accompanying a dataset which outlines the responsibilities and limitations of
+                  the
+                  data provider in terms of the accuracy, completeness, and potential use of the data. It often serves
+                  to
+                  limit the legal exposure of the data provider by defining the scope of allowed uses and disclaiming
+                  warranties or guarantees.</p>
+              </td>
+              <td>
+                <p><a href="#properties-for-liability_statement"><code>dcat-us:LiabilityStatement</code></a></p>
+              </td>
+              <td><span style="color: red;">NEW!</span></td>
+            </tr>
             <tr>
               <td>
                 <a href="#properties-for-licence-document">Licence Document</a>
@@ -641,7 +683,19 @@
               </td>
               <td><span style="color: red;">NEW!</span></td>
             </tr>
-
+            <tr>
+              <td>
+                <a href="#properties-for-organization">Organization</a>
+              </td>
+              <td>
+                <p>Represents a collection of people organized together into a community or other social, commercial or
+                  political structure. The group has some common purpose or reason for existence which goes beyond the
+                  set of people belonging to it and can act as an Agent. Organizations are often decomposable into
+                  hierarchical structures.</p>
+              </td>
+              <td><a href="https://www.w3.org/TR/vocab-org/#org:Organization"><code>org:Organization</code></a>
+              <td><span style="color: green;">Updated</span></td>
+            </tr>
             <tr>
               <td>
                 <a href="#properties-for-period-of-time">Period of time</a>
@@ -656,7 +710,17 @@
               </td>
               <td><span style="color: red;">NEW!</span></td>
             </tr>
-
+            <tr>
+              <td>
+                <a href="#properties-for-person">Person</a>
+              </td>
+              <td>
+                <p>This class represents an individual human being or a person. It can be used to provide information
+                  about individuals, such as their name, email address, homepage URL, and other personal details. </p>
+              </td>
+              <td><a href="http://xmlns.com/foaf/0.1/#term_Person"><code>foaf:Person</code></a>
+              <td><span style="color: green;">Updated</span></td>
+            </tr>
             <tr>
               <td>
                 <a href="#properties-for-provenance-statement">Provenance Statement</a>
@@ -750,7 +814,19 @@
               </td>
               <td><span style="color: red;">NEW!</span></td>
             </tr>
+            <tr>
+              <td>
+                <p><a href="#properties-for-use_restriction">Use Restriction</a></p>
+              </td>
+              <td>
+                <p>A UseRestriction is a set of rules, guidelines, or legal provisions that dictate how a particular resource, asset, information, or object can be utilized. Use restrictions may encompass limitations on access, distribution, reproduction, modification, or sharing, and they are often put in place to protect privacy, intellectual property rights, security, or compliance with legal or ethical standards.
+                </p>
 
+              <td>
+                <p><a href="#properties-for-use_restriction"><code>dcat-us:UseRestriction</code></a></p>
+              </td>
+              <td><span style="color: red;">NEW!</span></td>
+            </tr>
           </tbody>
         </table>
 
@@ -4365,7 +4441,9 @@
       <section id="properties-for-cui_restriction">
         <h2>Class: CUI Restriction</h2>
         <aside class="note">New class defined in DCAT-US 3.0</aside>
-        <p>TODO</p>
+        <p>Controlled Unclassified Information (CUI) is information that requires safeguarding or dissemination
+          controls pursuant to and consistent with applicable law, regulations, and government-wide policies but
+          is not classified.</p>
         <table class="def">
           <tr>
             <th>RDF Class:</th>
@@ -13874,7 +13952,8 @@
             </tr>
             <tr>
               <th class="prop">Definition:</th>
-              <td></td>
+              <td>This class represents an individual human being or a person. It can be used to provide information
+                about individuals, such as their name, email address, homepage URL, and other personal details. </td>
             </tr>
             <tr>
               <th class="prop">Subclass Of:</th>
@@ -15108,10 +15187,10 @@
             </aside>
           </section>
         </section>
-        <section id="properties-for-use-restriction">
+        <section id="properties-for-use_restriction">
           <h2>Class: UseRestriction</h2>
           <aside class="note">New classe defined in DCAT-US 3.0</aside>
-          <p>TODO</p>
+          <p>A UseRestriction is a set of rules, guidelines, or legal provisions that dictate how a particular resource, asset, information, or object can be utilized. Use restrictions may encompass limitations on access, distribution, reproduction, modification, or sharing, and they are often put in place to protect privacy, intellectual property rights, security, or compliance with legal or ethical standards.</p>
           <table class="def">
             <tr>
               <th>RDF Class:</th>
@@ -15120,7 +15199,7 @@
             </tr>
             <tr>
               <th class="prop">Definition:</th>
-              <td></td>
+              <td>A UseRestriction is a set of rules, guidelines, or legal provisions that dictate how a particular resource, asset, information, or object can be utilized. Use restrictions may encompass limitations on access, distribution, reproduction, modification, or sharing, and they are often put in place to protect privacy, intellectual property rights, security, or compliance with legal or ethical standards.</td>
             </tr>
             <tr>
               <th class="prop">Usage note:</th>
