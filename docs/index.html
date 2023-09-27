@@ -170,7 +170,8 @@
         vocabulary.
       </p>
       <ul>
-        <li><strong>DCAT (“Data Catalog Vocabulary”)</strong> is a semantic definition to describe data by the means of an
+        <li><strong>DCAT (“Data Catalog Vocabulary”)</strong> is a semantic definition to describe data by the means of
+          an
           RDF vocabulary.
           It allows for a decentralized approach regarding the publication of data by enforcing interoperability
           via the use of a common language to describe the data.
@@ -308,28 +309,18 @@
     </section>
 
   </section>
-  
+
   <section id="conformance-to-dcat-3">
     <h2>Conformance</h2>
     <p>DCAT-US is an application profile of DCAT Version 3.</p>
     <p>The DCAT-Profile Guidance states that application profiles may form hierarchies.</p>
     <p>The following diagram captures the relationship between DCAT and DCAT-US :</p>
-    
-      <div id="diagram2" class="mermaid">
-        classDiagram
-          DCAT <|-- DCAT_US: is_profile_of 
-          class DCAT { 
-            - defines classes 
-            - defines properties 
-            - base vocabulary 
-          }
-          class DCAT_US { 
-            - uses classes of DCAT 
-            - specifies requirement levels 
-            - specifies cardinalities 
-            - specifies controlled vocabulary 
-          } 
-        </div>
+
+    <div id="diagram2" class="mermaid">
+      classDiagram
+      DCAT <|-- DCAT_US: is_profile_of class DCAT { - defines classes - defines properties - base vocabulary } class
+        DCAT_US { - uses classes of DCAT - specifies requirement levels - specifies cardinalities - specifies controlled
+        vocabulary } </div>
 
         <section id="provider-requirements">
           <h3>Data Provider requirements</h3>
@@ -372,7 +363,7 @@
             </li>
           </ul>
         </section>
-      
+
   </section>
   <section id="dcat-us-classes">
     <h2>DCAT-US Classes</h2>
@@ -1719,7 +1710,7 @@
             <td><a href="http://xmlns.com/foaf/0.1/#term_Agent"><code>foaf:Agent</code></a></td>
             <td><strong>M</strong></td>
             <td>1..1</td>
-            <td><span style="color: red;">New!</span></td>
+            <td><span style="color: red;">New! (DCAT 2/3)</span></td>
           </tr>
           <tr>
             <td><a href="#catalog-dataset">dataset</a></td>
@@ -1729,7 +1720,7 @@
             </td>
             <td><strong>M</strong></td>
             <td>1..n</td>
-            <td>None</td>
+            <td>No Change</td>
           </tr>
           <tr>
             <td><a href="#catalog-homepage">homepage</a></td>
@@ -1737,7 +1728,7 @@
             <td><a href="http://xmlns.com/foaf/0.1/#term_Document"><code>foaf:Document</code></a></td>
             <td>R</td>
             <td>0..1</td>
-            <td><span style="color: red;">New!</span></td>
+            <td><span style="color: red;">New! (DCAT 2/3)</span></td>
           </tr>
           <tr>
             <td><a href="#catalog-language">language</a></td>
@@ -1747,7 +1738,7 @@
             </td>
             <td>R</td>
             <td>0..n</td>
-            <td><span style="color: red;">New!</span></td>
+            <td><span style="color: red;">New! (DCAT 1)</span></td>
           </tr>
           <tr>
             <td><a href="#catalog-license">license</a></td>
@@ -1757,7 +1748,7 @@
             </td>
             <td>R</td>
             <td>0..1</td>
-            <td><span style="color: red;">New!</span></td>
+            <td><span style="color: red;">New! (DCAT 2/3)</span></td>
           </tr>
           <tr>
             <td><a href="#catalog-issued">release date</a></td>
@@ -1771,7 +1762,7 @@
             </td>
             <td>R</td>
             <td>0..1</td>
-            <td><span style="color: red;">New!</span></td>
+            <td><span style="color: red;">New! (DCAT 1)</span></td>
           </tr>
           <tr>
             <td><a href="#catalog-rights">rights</a></td>
@@ -1781,6 +1772,7 @@
             </td>
             <td>R</td>
             <td>0..1</td>
+            <td><span style="color: red;">New! (DCAT 1)</span></td>
           </tr>
           <tr>
             <td><a href="#catalog-spatial">spatial /geographic</a></td>
@@ -1789,7 +1781,7 @@
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Location"><code>dct:Location</code></a></td>
             <td>R</td>
             <td>0..n</td>
-            <td><span style="color: red;">New!</span></td>
+            <td><span style="color: red;">New! (DCAT 2/3)</span></td>
           </tr>
           <tr>
             <td><a href="#catalog-theme_taxonomy">themes</a></td>
@@ -1797,7 +1789,7 @@
             <td><a data-cite="SKOS-REFERENCE#ConceptScheme"><code>skos:ConceptScheme</code></a></td>
             <td>R</td>
             <td>0..n</td>
-            <td><span style="color: red;">New!</span></td>
+            <td><span style="color: red;">New! (DCAT 2/3)</span></td>
           </tr>
           <tr>
             <td><a href="#catalog-modified">update/ modification date</a></td>
@@ -1811,8 +1803,8 @@
             </td>
             <td>R</td>
             <td>0..1</td>
-            <td><span style="color: red;">New!</span></td>
-            
+            <td><span style="color: red;">New! (DCAT 1)</span></td>
+
           </tr>
           <tr>
             <td><a href="#catalog-conformsTo">schema version</a></td>
@@ -1820,7 +1812,7 @@
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Standard"><code>dct:Standard</code></a></td>
             <td>R</td>
             <td>0..1</td>
-            <td>None</td>
+            <td>No Change</td>
           </tr>
           <tr>
             <td><a href="#catalog-creator">creator</a></td>
@@ -1829,7 +1821,7 @@
             </td>
             <td>O</td>
             <td>0..n</td>
-            <td><span style="color: red;">New!</span></td>
+            <td><span style="color: red;">New! (DCAT 2/3)</span></td>
           </tr>
           <tr>
             <td><a href="#catalog-access-rights">access rights</a></td>
@@ -1839,7 +1831,7 @@
             </td>
             <td>O</td>
             <td>0..1</td>
-            <td><span style="color: red;">New!</span></td>
+            <td><span style="color: red;">New! (DCAT 2/3)</span></td>
           </tr>
           <tr>
             <td><a href="#catalog-catalog">catalog</a></td>
@@ -1848,7 +1840,7 @@
             </td>
             <td>O</td>
             <td>0..n</td>
-            <td><span style="color: red;">New!</span></td>
+            <td><span style="color: red;">New! (DCAT 2/3)</span></td>
           </tr>
           <tr>
             <td><a href="#catalog-contactPoint">contact point</a></td>
@@ -1857,7 +1849,7 @@
             </td>
             <td>O</td>
             <td>0..n</td>
-            <td><span style="color: red;">New!</span></td>
+            <td><span style="color: red;">New! (DCAT 2/3)</span></td>
           </tr>
           <tr>
             <td><a href="#catalog-keyword">keyword/tag</a></td>
@@ -1866,7 +1858,7 @@
             </td>
             <td>O</td>
             <td>0..n</td>
-            <td><span style="color: red;">New!</span></td>
+            <td><span style="color: red;">New! (DCAT 2/3)</span></td>
           </tr>
           <tr>
             <td><a href="#catalog-hasPart">has part</a></td>
@@ -1875,7 +1867,7 @@
             </td>
             <td>O</td>
             <td>0..n</td>
-            <td><span style="color: red;">New!</span></td>
+            <td><span style="color: red;">New! (DCAT 2/3)</span></td>
           </tr>
           <tr>
             <td><a href="#catalog-catalog-record">catalog record</a></td>
@@ -1884,7 +1876,7 @@
             </td>
             <td>O</td>
             <td>0..n</td>
-            <td><span style="color: red;">New!</span></td>
+            <td><span style="color: red;">New! (DCAT 1)</span></td>
           </tr>
           <tr>
             <td><a href="#catalog-service">service</a></td>
@@ -1894,7 +1886,7 @@
             </td>
             <td>O</td>
             <td>0..n</td>
-            <td><span style="color: red;">New!</span></td>
+            <td><span style="color: red;">New! (DCAT 2/3)</span></td>
           </tr>
           <tr>
             <td><a href="#catalog-theme-category">theme/category</a></td>
@@ -1903,7 +1895,7 @@
             </td>
             <td>O</td>
             <td>0..n</td>
-            <td><span style="color: red;">New!</span></td>
+            <td><span style="color: red;">New! (DCAT 2/3)</span></td>
           </tr>
           <tr>
             <td><a href="#catalog-identifier">identifier</a></td>
@@ -1911,7 +1903,7 @@
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
             <td>O</td>
             <td>0..n</td>
-            <td><span style="color: red;">New!</span></td>
+            <td><span style="color: red;">New! (DCAT 2/3)</span></td>
           </tr>
           <tr>
             <td><a href="#catalog-rightsHolder">rights holder</a></td>
@@ -1919,7 +1911,7 @@
             <td><a href="http://xmlns.com/foaf/0.1/term_Organization"><code>foaf:Organization</code></a></td>
             <td>O</td>
             <td>0..1</td>
-            <td><span style="color: red;">New!</span></td>
+            <td><span style="color: red;">New! (DCAT-US 3.0)</span></td>
           </tr>
           <tr>
             <td><a href="#catalog-subject">subject</a></td>
@@ -1927,15 +1919,15 @@
             <td><a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a></td>
             <td>O</td>
             <td>0..n</td>
-            <td><span style="color: red;">New!</span></td>
+            <td><span style="color: red;">New! (DCAT-US 3.0)</span></td>
           </tr>
           <tr>
-            <td><a href="#catalog-temporal">termporal coverage</a></td>
+            <td><a href="#catalog-temporal">temporal coverage</a></td>
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/temporal"><code>dct:temporal</code></a></td>
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/PeriodOfTime"><code>dct:PeriodOfTime</code></a></td>
             <td>O</td>
             <td>0..n</td>
-            <td><span style="color: red;">New!</span></td>
+            <td><span style="color: red;">New! (DCAT 2/3)</span></td>
           </tr>
           <tr>
             <td><a href="#catalog-qualifiedAttribution">qualified attribution</a></td>
@@ -1943,7 +1935,7 @@
             <td><a data-cite="PROV#Class:Attribution"><code>prov:Attribution</code></a></td>
             <td>O</td>
             <td>0..n</td>
-            <td><span style="color: red;">New!</span></td>
+            <td><span style="color: red;">New! (DCAT 2/3)</span></td>
           </tr>
         </tbody>
       </table>
@@ -2302,7 +2294,7 @@
                 <th>Range</th>
                 <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
                   (typed as
-                 <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>,
+                  <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>,
                   <a data-cite="XMLSCHEMA11-2#dateTime"><code>xsd:dateTime</code></a>,
                   <a data-cite="XMLSCHEMA11-2##gYear"><code>xsd:gYear</code></a>
                   or <a data-cite="XMLSCHEMA11-2#gYearMonth"><code>xsd:gYearMonth</code></a>)
@@ -2485,7 +2477,7 @@
                 <th>Range</th>
                 <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
                   (typed as
-                   <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>,
+                  <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>,
                   <a data-cite="XMLSCHEMA11-2#dateTime"><code>xsd:dateTime</code></a>,
                   <a data-cite="XMLSCHEMA11-2##gYear"><code>xsd:gYear</code></a>
                   or <a data-cite="XMLSCHEMA11-2#gYearMonth"><code>xsd:gYearMonth</code></a>)
@@ -3246,7 +3238,7 @@
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/issued"><code>dct:issued</code></a></td>
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
               (typed as
-               <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>,
+              <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>,
               <a data-cite="XMLSCHEMA11-2#dateTime"><code>xsd:dateTime</code></a>,
               <a data-cite="XMLSCHEMA11-2##gYear"><code>xsd:gYear</code></a>
               or <a data-cite="XMLSCHEMA11-2#gYearMonth"><code>xsd:gYearMonth</code></a>)
@@ -3259,7 +3251,7 @@
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/modified"><code>dct:modified</code></a></td>
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
               (typed as
-               <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>,
+              <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>,
               <a data-cite="XMLSCHEMA11-2#dateTime"><code>xsd:dateTime</code></a>,
               <a data-cite="XMLSCHEMA11-2##gYear"><code>xsd:gYear</code></a>
               or <a data-cite="XMLSCHEMA11-2#gYearMonth"><code>xsd:gYearMonth</code></a>)
@@ -3319,7 +3311,7 @@
                 <th>Range</th>
                 <td>a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
                   (typed as
-                   <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>,
+                  <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>,
                   <a data-cite="XMLSCHEMA11-2#dateTime"><code>xsd:dateTime</code></a>,
                   <a data-cite="XMLSCHEMA11-2##gYear"><code>xsd:gYear</code></a>
                   or <a data-cite="XMLSCHEMA11-2#gYearMonth"><code>xsd:gYearMonth</code></a>)
@@ -4524,7 +4516,7 @@
       <section id="contact-example">
         <h4>Example</h4>
         <aside class="example" title="vcard:Contact example">
-          <pre data-include-format="text" data-include="./examples/contact-point.ttl"></pre> 
+          <pre data-include-format="text" data-include="./examples/contact-point.ttl"></pre>
         </aside>
       </section>
     </section>
@@ -6440,7 +6432,7 @@
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
             <td><strong>M</strong></td>
             <td>1..n</td>
-            <td><span style="color: black;">None</span></td>
+            <td><span style="color: black;">No Change</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-contact-point">contact point</a></td>
@@ -6448,7 +6440,7 @@
             <td><a data-cite="VCARD-RDF#d4e1819"><code>vcard:Contact</code></a>
             <td>R</td>
             <td>0..n</td>
-            <td><span style="color: black;">None</span></td>
+            <td><span style="color: black;">No Change</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-distribution">dataset distribution</a></td>
@@ -6457,7 +6449,7 @@
             </td>
             <td>R</td>
             <td>0..n</td>
-            <td><span style="color: black;">None</span></td>
+            <td><span style="color: black;">No Change</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-spatial">spatial/geographical coverage</a></td>
@@ -6475,7 +6467,7 @@
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
             <td>R</td>
             <td>0..n</td>
-            <td><span style="color: black;">None</span></td>
+            <td><span style="color: black;">No Change</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-landing-page">landing page</a></td>
@@ -6485,7 +6477,7 @@
             </td>
             <td>R</td>
             <td>0..n</td>
-            <td><span style="color: black;">None</span></td>
+            <td><span style="color: black;">No Change</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-update-modification-date">update/modification date</a></td>
@@ -6499,7 +6491,7 @@
             </td>
             <td>R</td>
             <td>0..1</td>
-            <td><span style="color: black;">None</span></td>
+            <td><span style="color: black;">No Change</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-publisher">publisher</a></td>
@@ -6508,7 +6500,7 @@
             <td><a href="http://xmlns.com/foaf/0.1/#term_Agent"><code>foaf:Agent</code></a></td>
             <td><strong>R</strong></td>
             <td>0..1</td>
-            <td><span style="color: black;">None</span></td>
+            <td><span style="color: black;">No Change</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-geographic-extent">geographic bounding box</a></td>
@@ -6557,7 +6549,7 @@
             </td>
             <td>O</td>
             <td>0..n</td>
-            <td><span style="color: black;">None</span></td>
+            <td><span style="color: black;">No Change</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-creator">creator</a></td>
@@ -6679,7 +6671,7 @@
             </td>
             <td>O</td>
             <td>0..1</td>
-            <td>None</td>
+            <td>No Change</td>
           </tr>
           <tr>
             <td><a href="#dataset-sample">sample</a></td>
@@ -9802,7 +9794,7 @@
             </td>
             <td><strong>M</strong></td>
             <td>1..n</td>
-            <td>None</td>
+            <td>No Change</td>
           </tr>
           <tr>
             <td><a href="#distribution-license">license</a></td>
@@ -10035,7 +10027,7 @@
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Location"><code>rdfs:Resource</code></a></td>
             <td>O</td>
             <td>0..n</td>
-            <td>None</td>
+            <td>No Change</td>
           </tr>
           <tr>
             <td><a href="#distribution-identifier">identifier</a></td>
@@ -13763,17 +13755,29 @@
             <th>Range</th>
             <th>ReqLevel</th>
             <th>Card</th>
+            <th>Changes from DCAT-US 1.1</th>
           </tr>
         </thead>
         <tbody>
+          <tr>
+            <td><a href="#organization-name">name</a></td>
+            <td><a data-cite="FOAF#term_name"><code>foaf:name</code></a>
+            </td>
+            <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a>
+            </td>
+            <td><strong>M</strong></td>
+            <td>1..1</td>
+            <td>No Change</td>
+          </tr>
           <tr>
             <td><a href="#organization-prefLabel">preferred label</a></td>
             <td><a data-cite="SKOS-REFERENCE#prefLabel"><code>skos:prefLabel</code></a>
             </td>
             <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a>
             </td>
-            <td><strong>M</strong></td>
-            <td>1..1</td>
+            <td><strong>O</strong></td>
+            <td>0..1</td>
+            <td><span style="color: red;">New!</span></td>
           </tr>
           <tr>
             <td><a href="#organization-altLabel">alternative label</a></td>
@@ -13783,6 +13787,7 @@
             </td>
             <td><strong>O</strong></td>
             <td>0..n</td>
+            <td><span style="color: red;">New!</span></td>
           </tr>
           <tr>
             <td><a href="#organization-notation">notation</a></td>
@@ -13792,11 +13797,57 @@
             </td>
             <td><strong>O</strong></td>
             <td>0..n</td>
+            <td><span style="color: red;">New!</span></td>
+          </tr>
+          <tr>
+            <td><a href="#organization-sub_organization_of">subOrganizationOf</a></td>
+            <td><a href="https://www.w3.org/TR/vocab-org/#org:subOrganizationOf"><code>org:subOrganizationOf</code></a></td>
+            <td><a href="https://www.w3.org/TR/vocab-org/#org:Organization"><code>org:Organization</code></a></td>
+            <td><strong>O</strong></td>
+            <td>0..1</td>
+            <td>No Change</td>
           </tr>
         </tbody>
       </table>
       <section id="organization-mandatory-props">
         <h3>Mandatory Properties</h3>
+        <section id="organization-name">
+          <h4>Property: name</h4>
+          <table class="def">
+            <tbody>
+              <tr>
+                <th>Property</th>
+                <td>name</td>
+              </tr>
+              <tr>
+                <th>Requirement level</th>
+                <td>Mandatory</td>
+              </tr>
+              <tr>
+                <th>Cardinality</th>
+                <td>1</td>
+              </tr>
+              <tr>
+                <th>URI</th>
+                <td><a data-cite="FOAF#term_name"><code>foaf:name</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Range</th>
+                <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Definition</th>
+                <td>The name of the Organization</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </section>
+
+      <section id="organization-optional-props">
+        <h3>Optional Properties</h3>
         <section id="organization-prefLabel">
           <h4>Property: preferred label</h4>
           <table class="def">
@@ -13807,11 +13858,11 @@
               </tr>
               <tr>
                 <th>Requirement level</th>
-                <td>Mandatory</td>
+                <td>Optional</td>
               </tr>
               <tr>
                 <th>Cardinality</th>
-                <td>1</td>
+                <td>0..1</td>
               </tr>
               <tr>
                 <th>URI</th>
@@ -13830,10 +13881,6 @@
             </tbody>
           </table>
         </section>
-      </section>
-
-      <section id="organization-optional-props">
-        <h3>Optional Properties</h3>
         <section id="organization-altLabel">
           <h4>Property: alternate label</h4>
           <table class="def">
@@ -13900,7 +13947,7 @@
             </tbody>
           </table>
         </section>
-        <section id="organization-subOrganizationOf">
+        <section id="organization-sub_organization_of">
           <h4>Property: suborganization of</h4>
           <table class="def">
             <tbody>
@@ -15518,7 +15565,7 @@
   </section>
   </section>
 
- 
+
   <section id="usage_guideline">
     <h2>Usage Guidelines</h2>
     <!-- Dereferenceable identifiers -->
@@ -17125,8 +17172,8 @@
 
   </section>
 
-   <!-- Dereferenceable identifiers -->
-   <section id="json-ld-context">
+  <!-- Dereferenceable identifiers -->
+  <section id="json-ld-context">
 
     <h2>JSON-LD context file</h2>
 
@@ -17146,12 +17193,12 @@
 
   </section>
 
-   <!-- Dereferenceable identifiers -->
-   <section id="shacl-profile">
+  <!-- Dereferenceable identifiers -->
+  <section id="shacl-profile">
 
     <h2>SHACL Profile</h2>
     <aside class="NOTE">TODO</aside>
-  </section>  
+  </section>
   <section class="appendix" id="namespaces">
     <h2>Namespaces</h2>
     <p>Namespaces and prefixes used in normative parts of this recommendation are shown in the following
