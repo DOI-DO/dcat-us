@@ -1,14 +1,22 @@
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 
-<http://example.com/me/corky> a vcard:Individual;
-      vcard:hasEmail <mailto:corky@example.com>;
-      vcard:fn "Corky Crystal";
-      vcard:hasAddress [ a vcard:Home;
-        vcard:country-name "United States";
-        vcard:locality "Reston";
-        vcard:postal-code "5555";
-        vcard:street-address "111 Lake Drive" ];
-      vcard:hasTelephone [ a vcard:Home,
-        vcard:Voice;
-        vcard:hasValue <tel:+61755555555> ];
-       vcard:nickname "Corks" .
+# Define a vcard:Contact
+:vcard123 a vcard:Contact ;
+    vcard:fn "John Doe" ;   # Full name
+    vcard:email <mailto:john.doe@example.com> ;  # Email address
+    vcard:tel <tel:+123456789> ;  # Phone number
+
+# Define a vcard:Address associated with the vcard:Contact
+:vcard123 vcard:hasAddress :address456 .
+
+# Define the vcard:Address
+:address456 a vcard:Address ;
+    vcard:street-address "123 Main Street" ;
+    vcard:locality "Anytown" ;
+    vcard:region "CA" ;
+    vcard:postal-code "12345" ;
+    vcard:country-name "USA" .
+
+
+
+
