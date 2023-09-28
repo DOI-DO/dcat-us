@@ -367,6 +367,49 @@
   </section>
   <section id="dcat-us-classes">
     <h2>DCAT-US Classes</h2>
+    <p>This section displays the classes for the DCAT-US 3 profile. We distinguish <strong>core classes</strong>, which
+      represent the primary business entities that the application profile is concerned with, from <strong>supporting
+        classes</strong>, which are used to provide additional context, metadata, or structure to the core classes.</p>
+    <p>This following table provides a summary of critical changes and
+      updates in the DCAT-US 3.0 Application Profile, offering valuable insights into the evolution of class definitions
+      within this data cataloging standard. Each change type is carefully documented, from the introduction of new
+      classes specifically designed for DCAT-US 3.0 to updates and adaptations from the broader DCAT specifications,
+      such as DCAT 1, DCAT 2, and DCAT 3. Understanding these changes is essential for data practitioners, as it enables
+      them to grasp the evolving landscape of data cataloging and its alignment with various DCAT versions, ultimately
+      facilitating more effective data management and interoperability.</p>
+
+    <table class="simple">
+      <thead>
+        <tr>
+          <th>Change Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span style="color: red;">New! (DCAT-US 3.0)</span></td>
+          <td>New DCAT-US 3.0 specific class that is not referred in DCAT specifications</td>
+        </tr>
+        <tr>
+          <td><span style="color: green;">Updated! (DCAT 3)</span></td>
+          <td>Class introduced in DCAT-3 that does not exist in DCAT-US 1.1</td>
+        </tr>
+        <tr>
+          <td><span style="color: green;">Updated! (DCAT 2/3)</span></td>
+          <td>Class introduced in DCAT-2 and reused in DCAT 3 that does not exist in DCAT-US 1.1</td>
+        </tr>
+        <tr>
+          <td><span style="color: red;">New! (DCAT 1/2/3)</span></td>
+          <td>Class introduced in DCAT-1 and reused in DCAT 2 and DCAT 3 that does not exist in DCAT-US 1.1</td>
+        </tr>
+        <tr>
+          <td><span style="color: green;">Updated! (DCAT-US)</span></td>
+          <td>Updated existing class in DCAT-US with new properties that are profile specific or derived from latest
+            DCAT specification</td>
+        </tr>
+      </tbody>
+    </table>
+
     <section id="core-classes">
       <h3>Core Classes</h3>
       <p>The DCAT US Application Profile (“DCAT-US ”) are structured around the following main classes:
@@ -393,7 +436,7 @@
                 data-cite="VOCAB-DCAT-3#Class:Resource"><code>dcat:Resource</code></a>
             </td>
             <td><a data-cite="VOCAB-DCAT-3#Class:CatalogRecord"><code>dcat:CatalogRecord</code></a></td>
-            <td><span style="color: red;">New! (DCAT 2/3)</span></td>
+            <td><span style="color: red;">New! (DCAT 1/2/3)</span></td>
           </tr>
           <tr>
             <td><a href="#properties-for-dataset">Dataset</a></td>
@@ -420,7 +463,7 @@
               them.
             </td>
             <td><a data-cite="VOCAB-DCAT-3#Class:DatasetSeries"><code>dcat:DatasetSeries</code></a></td>
-            <td><span style="color: red;">New! (DCAT 2/3)</span></td>
+            <td><span style="color: red;">New! (DCAT 3)</span></td>
           </tr>
         </tbody>
       </table>
@@ -920,6 +963,60 @@
         <li><strong>CV</strong> (“Controlled Vocabulary”): defines which controlled vocabulary SHOULD be used.</li>
       </ul>
     </section>
+    <section id="property_evolution">
+      <h3>Property Evolution in DCAT-US 3.0.</h3>
+      <p>The following table provides an overview of the various types of changes and updates within the DCAT-US
+        specifications, shedding light on the evolution and adaptation of the data catalog standard. Each change type
+        is categorized, and its significance is explained, ranging from the introduction of new properties to updates
+        that align with the latest DCAT specifications. Understanding these changes is essential for data
+        practitioners and stakeholders seeking to keep pace with the evolving landscape of data cataloging and data
+        sharing standards.</p>
+      <table class="simple">
+        <thead>
+          <tr>
+            <th>Change Type</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span style="color: red;">New! (DCAT-US 3.0)</span></td>
+            <td>New DCAT-US 3.0 specific property that is not referred in DCAT specifications</td>
+          </tr>
+          <tr>
+            <td><span style="color: green;">Updated! (DCAT 3)</span></td>
+            <td>Property introduced in DCAT-3 that does not exist in DCAT-US 1.1</td>
+          </tr>
+          <tr>
+            <td><span style="color: green;">Updated! (DCAT 2/3)</span></td>
+            <td>Property introduced in DCAT-2 and reused in DCAT 3 that does not exist in DCAT-US 1.1</td>
+          </tr>
+          <tr>
+            <td><span style="color: red;">New! (DCAT 1/2/3)</span></td>
+            <td>Property introduced in DCAT-1 and reused in DCAT 2 and DCAT 3 that does not exist in DCAT-US 1.1</td>
+          </tr>
+          <tr>
+            <td><span style="color: green;"><span style="color: green;">Updated! (DCAT-US)</span></td>
+            <td>Updated existing property in DCAT-US with new properties that are profile specific or derived from
+              latest
+              DCAT specification</td>
+          </tr>
+          <tr>
+            <td><span style="color: green;">Fixed</span></td>
+            <td>Fixed property that is inconsistent with DCAT specification</td>
+          </tr>
+          <tr>
+            <td>No Change</td>
+            <td>No change from DCAT-US 1.1 profile</td>
+          </tr>
+          <tr>
+            <td><span style="color: green;">Multilingual Support</span></td>
+            <td>Extension of DCAT-US property to support multilingual values</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
     <section id="properties-for-access_restriction">
       <h2>Class: AccessRestriction</h2>
       <aside class="note"><span style="color: red;">New! DCAT-US 3.0 specific class</span> </aside>
@@ -1143,11 +1240,7 @@
       <aside class="note">New class (defined in DCAT 1/2/3)</aside>
       <aside class="note">TODO</aside>
     </section>
-    <section id="properties-for-activity">
-      <h2>Class: Activity</h2>
-      <aside class="note">New class (defined in DCAT 3)</aside>
-      <aside class="note">TODO</aside>
-    </section>
+
     <section id="properties-for-agent">
       <h2>Class: Agent</h2>
       <aside class="note">New class (defined in DCAT 1/2/3)</aside>
