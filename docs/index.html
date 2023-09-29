@@ -3,7 +3,7 @@
 
 <head>
   <title>DCAT-US - Version 3</title>
-  <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+  <meta content="text/html; charset=utf-8" http-equiv="content-type">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <script class="remove" src="https://www.w3.org/Tools/respec/respec-w3c" defer></script>
   <script class="remove" src="config.js"></script>
@@ -33,7 +33,7 @@
     <p>The DCAT-US Profile Version 3 (DCAT-US 3.0) is an updated specification designed to facilitate data cataloging,
       discovery, and interoperability among US government agencies. Leveraging the strong foundation laid by the Project
       Open Data (POD) 1.1 standard (also known as [[DCAT-US-1.1]]), this profile seamlessly aligns with the
-      emerging Data Catalog Vocabulary (DCAT) - Version 3 (DCAT 3.0)[[[VOCAB-DCAT-3]]] recommendations approved by the
+      emerging Data Catalog Vocabulary (DCAT) - Version 3 (DCAT 3.0)[[[VOCAB-DCAT-3]]] recommendations approved by the
       World Wide Web Consortium (W3C), all while upholding the essential FAIR principles. Moreover, it emphasizes
       maintaining compatibility with the existing POD 1.1 standard, ensuring a fluid transition. The result ensures
       data's Findability, Accessibility, Interoperability, and Reusability (FAIR). </p>
@@ -317,52 +317,53 @@
     <p>The following diagram captures the relationship between DCAT and DCAT-US :</p>
 
     <div id="diagram2" class="mermaid">
-      classDiagram
+      <!--   classDiagram
       DCAT <|-- DCAT_US: is_profile_of class DCAT { - defines classes - defines properties - base vocabulary } class
         DCAT_US { - uses classes of DCAT - specifies requirement levels - specifies cardinalities - specifies controlled
-        vocabulary } </div>
+        vocabulary }-->
+    </div>
 
-        <section id="provider-requirements">
-          <h3>Data Provider requirements</h3>
-          <p>A data catalog conforms to DCAT-US if:</p>
-          <ul>
-            <li>
-              An RDF description of the catalog is available
-            </li>
-            <li>
-              All classes and properties defined in DCAT-US 3.0 are used in a way consistent with the
-              semantics declared in this specification.
-            </li>
-            <li>
-              Properties not mentioned in this specification MAY be used if they are included in either
-              DCAT 3 and their usage conforms to DCAT 3 if they are
-              included in DCAT-US or to DCAT if they are only included in DCAT.
-            </li>
-          </ul>
-        </section>
-        <section id="receiver-requirements">
-          <h3>Receiver requirements</h3>
-          <p>An application (data portal) conforms to DCAT-US if:</p>
-          <ul>
-            <li>
-              It is able to process RDF catalogs that conform to DCAT-US .
-            </li>
-            <li>
-              Processing means that it MUST accept incoming data and transparently provide this
-              data to applications and services.
-            </li>
-            <li>
-              Processing does not prescribe whether and how the metadata is stored internally,
-              displayed or made searchable.
-            </li>
-            <li>
-              This processing of metadata also applies to classes and properties not mentioned in DCAT-US that
-              are part of
-              DCAT 3. A DCAT-US conformant receiver MUST also be able to process these classes and
-              properties].
-            </li>
-          </ul>
-        </section>
+    <section id="provider-requirements">
+      <h3>Data Provider requirements</h3>
+      <p>A data catalog conforms to DCAT-US if:</p>
+      <ul>
+        <li>
+          An RDF description of the catalog is available
+        </li>
+        <li>
+          All classes and properties defined in DCAT-US 3.0 are used in a way consistent with the
+          semantics declared in this specification.
+        </li>
+        <li>
+          Properties not mentioned in this specification MAY be used if they are included in either
+          DCAT 3 and their usage conforms to DCAT 3 if they are
+          included in DCAT-US or to DCAT if they are only included in DCAT.
+        </li>
+      </ul>
+    </section>
+    <section id="receiver-requirements">
+      <h3>Receiver requirements</h3>
+      <p>An application (data portal) conforms to DCAT-US if:</p>
+      <ul>
+        <li>
+          It is able to process RDF catalogs that conform to DCAT-US .
+        </li>
+        <li>
+          Processing means that it MUST accept incoming data and transparently provide this
+          data to applications and services.
+        </li>
+        <li>
+          Processing does not prescribe whether and how the metadata is stored internally,
+          displayed or made searchable.
+        </li>
+        <li>
+          This processing of metadata also applies to classes and properties not mentioned in DCAT-US that
+          are part of
+          DCAT 3. A DCAT-US conformant receiver MUST also be able to process these classes and
+          properties].
+        </li>
+      </ul>
+    </section>
 
   </section>
   <section id="dcat-us-classes">
@@ -460,7 +461,7 @@
       </div>
 
     </section>
-    <section id="supporting classes">
+    <section id="supporting_classes">
       <h3>Supporting Classes</h3>
 
       <table class="simple">
@@ -528,20 +529,20 @@
             </td>
             <td><span style="color: green;">Aligned</span></td>
           </tr>
+          <tr>
+            <td>
+              <a href="#properties-for-agent">Agent</a>
+            </td>
+            <td>
+              <p>An entity (e.g., an individual or an organisation) that is associated with Catalogs, Catalog
+                Records, Data Services, or Datasets. If the Agent is an organisation, the use of the Organization
+                Ontology [[VOCAB-ORG]] is recommended.</p>
+            </td>
+            <td>
+              <p><a href="http://xmlns.com/foaf/spec#term_Agent"><code>foaf:Agent</code></a></p>
+            </td>
+            <td><span style="color: green;">Aligned</span></td>
 
-          <td>
-            <a href="#properties-for-agent">Agent</a>
-          </td>
-          <td>
-            <p>An entity (e.g., an individual or an organisation) that is associated with Catalogs, Catalog
-              Records, Data Services, or Datasets. If the Agent is an organisation, the use of the Organization
-              Ontology [[VOCAB-ORG]] is recommended.</p>
-          </td>
-          <td>
-            <p><a href="http://xmlns.com/foaf/spec#term_Agent"><code>foaf:Agent</code></p>
-          </td>
-          <td><span style="color: green;">Aligned</span></td>
-          </td>
           </tr>
 
           <tr>
@@ -565,7 +566,7 @@
               <p>A subject of a Catalog, Dataset, or Data Service.</p>
             </td>
             <td>
-              <p><a data-cite="SKOS-REFERENCE#concepts"><code>skos:Concept</code></p>
+              <p><a data-cite="SKOS-REFERENCE#concepts"><code>skos:Concept</code></a></p>
             </td>
             <td><span style="color: green;">Aligned</span></td>
           </tr>
@@ -672,7 +673,8 @@
               <p><a href="#properties-for-investment">Investment</a></p>
             </td>
             <td>
-              <p>This new class specific to DCAT-US represents U.S. government-funded initiatives, allowing datasets to be linked with unique government identifiers, promoting transparency and effective resource management.
+              <p>This new class specific to DCAT-US represents U.S. government-funded initiatives, allowing datasets to
+                be linked with unique government identifiers, promoting transparency and effective resource management.
               </p>
             <td>
               <p><a href="#properties-for-investment"><code>dcat-us:Investment</code></a></p>
@@ -826,8 +828,8 @@
             </td>
             <td>
               <p><a
-                  href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#terms-ProvenanceStatement"><code>dct:ProvenanceStatement</code><a>
-                  </a></p>
+                  href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#terms-ProvenanceStatement"><code>dct:ProvenanceStatement</code>
+                </a></p>
             </td>
             <td><span style="color: red;">New!</span></td>
           </tr>
@@ -1046,16 +1048,16 @@
         <tr>
           <th class="prop">Usage note:</th>
           <td>
-            <ul>
-              <p>The "AccessRestriction" class serves as a valuable tool within NARA's archival framework, enabling
-                the
-                organization to effectively manage and communicate access limitations for specific records or
-                information. By employing this class, NARA can categorize and enforce controlled access to sensitive
-                content, safeguarding confidentiality, adhering to legal requirements, and preserving the integrity of
-                historical data. Researchers, archivists, and authorized users can rely on "AccessRestriction" to
-                navigate and understand the accessibility parameters associated with archived materials, facilitating
-                responsible information dissemination and usage.</p>
-            </ul>
+
+            <p>The "AccessRestriction" class serves as a valuable tool within NARA's archival framework, enabling
+              the
+              organization to effectively manage and communicate access limitations for specific records or
+              information. By employing this class, NARA can categorize and enforce controlled access to sensitive
+              content, safeguarding confidentiality, adhering to legal requirements, and preserving the integrity of
+              historical data. Researchers, archivists, and authorized users can rely on "AccessRestriction" to
+              navigate and understand the accessibility parameters associated with archived materials, facilitating
+              responsible information dissemination and usage.</p>
+
           </td>
         </tr>
         <tr>
@@ -3342,22 +3344,14 @@
           <th class="prop">Usage note:</th>
           <td>
             This class is optional and not all catalogs will use it. It exists for catalogs where a distinction
-            is
-            made between metadata about
-            a <em>dataset or service</em> and metadata about the <em>entry in the catalog about the dataset or
-              service</em>. For example, the <i>publication date</i> property of the <i>dataset</i> reflects
-            the date when the information was originally made available by the publishing agency, while the
-            publication
-            date of the <i>catalog record</i> is the date when the dataset was added to the catalog.
-            In cases where both dates differ, or where only the latter is known, the <em>publication date</em>
-            SHOULD
-            only be specified for the catalog record.
-            Notice that the <abbr title="World Wide Web Consortium">W3C</abbr> PROV Ontology [[?PROV-O]] allows
-            describing further provenance information such as the details of the process and the agent involved in
-            a
-            particular change to a dataset or its registration.
-
-          </td>
+            is made between metadata about a <em>dataset or service</em> and metadata about the <em>entry in the catalog
+              about the dataset or service</em>. For example, the <i>publication date</i> property of the <i>dataset</i>
+            reflects the date when the information was originally made available by the publishing agency, while the
+            publication date of the <i>catalog record</i> is the date when the dataset was added to the catalog. In
+            cases where both dates differ, or where only the latter is known, the <em>publication date</em> SHOULD only
+            be specified for the catalog record. Notice that the <abbr title="World Wide Web Consortium">W3C</abbr> PROV
+            Ontology [[?PROV-O]] allows describing further provenance information such as the details of the process and
+            the agent involved in a particular change to a dataset or its registration. </td>
         </tr>
         <tr>
           <th class="prop">Rationale</th>
@@ -3490,7 +3484,7 @@
               </tr>
               <tr>
                 <th>Range</th>
-                <td>a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+                <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
                   (typed as
                   <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>,
                   <a data-cite="XMLSCHEMA11-2#dateTime"><code>xsd:dateTime</code></a>,
@@ -3963,16 +3957,18 @@
         <tr>
           <th class="prop">Usage note:</th>
           <td>
-            <ul>Following FAIR Vocabulary principles, Concept URI should be made resolvable and accessible using SKOS
-              encoding and provided in Linked Data format (RDF/XML,TTL, JSON-LD, NTriples)
+            <ul>
+              <li>Following FAIR Vocabulary principles, Concept URI should be made resolvable and accessible using SKOS
+                encoding and provided in Linked Data format (RDF/XML,TTL, JSON-LD, NTriples)
+              </li>
+              <li>Ensure FAIR Resolvability: Make Concept URIs resolvable using FAIR principles, allowing them to be
+                Findable, Accessible, Interoperable, and Reusable. This ensures that <a
+                  href="SKOS-REFERENCE#Class:Concept"><code>skos:Concept</code></a> instances can be easily discovered,
+                accessed, integrated with other resources, and reused across the DCAT-US ecosystem, promoting data
+                interoperability and accessibility.</li>
+              <li>To enhance data interoperability and consistency, it is advisable to reuse established controlled
+                vocabularies such as GCMD, Agrovoc, and NAICS for data description.</li>
             </ul>
-            <ul>Ensure FAIR Resolvability: Make Concept URIs resolvable using FAIR principles, allowing them to be
-              Findable, Accessible, Interoperable, and Reusable. This ensures that <a
-                href="SKOS-REFERENCE#Class:Concept"><code>skos:Concept</code></a> instances can be easily discovered,
-              accessed, integrated with other resources, and reused across the DCAT-US ecosystem, promoting data
-              interoperability and accessibility.</ul>
-            <ul>To enhance data interoperability and consistency, it is advisable to reuse established controlled
-              vocabularies such as GCMD, Agrovoc, and NAICS for data description.</ul>
           </td>
         </tr>
         <tr>
@@ -4010,7 +4006,7 @@
             <td><a data-cite="SKOS-REFERENCE#altLabel"><code>skos:altLabel</code></a>
             </td>
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
-            </td>
+
             <td><strong>O</strong></td>
             <td>0..n</td>
           </tr>
@@ -4019,7 +4015,7 @@
             <td><a data-cite="SKOS-REFERENCE#definition"><code>skos:definition</code></a>
             </td>
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
-            </td>
+
             <td><strong>R</strong></td>
             <td>0..n</td>
           </tr>
@@ -4046,7 +4042,7 @@
             <td><a data-cite="SKOS-REFERENCE#prefLabel"><code>skos:prefLabel</code></a>
             </td>
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
-            </td>
+
             <td><strong>M</strong></td>
             <td>1.n</td>
           </tr>
@@ -4081,7 +4077,7 @@
 
 
                 <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
-                </td>
+
               </tr>
               <tr>
                 <th>Definition</th>
@@ -4150,7 +4146,7 @@
               <tr>
                 <th>Range</th>
                 <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
-                </td>
+
               </tr>
               <tr>
                 <th>Definition</th>
@@ -4186,7 +4182,7 @@
               <tr>
                 <th>Range</th>
                 <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
-                </td>
+
               </tr>
               <tr>
                 <th>Definition</th>
@@ -4256,11 +4252,13 @@
         <tr>
           <th class="prop">Usage note:</th>
           <td>
-            <ul>Following FAIR Vocabulary principles, Concept Scheme URI should be made resolvable and accessible
-              using SKOS encoding and provided in Linked Data format (RDF/XML,TTL, JSON-LD, NTriples)
+            <ul>
+              <li>Following FAIR Vocabulary principles, Concept Scheme URI should be made resolvable and accessible
+                using SKOS encoding and provided in Linked Data format (RDF/XML,TTL, JSON-LD, NTriples)
+              </li>
+              <li>To enhance data interoperability and consistency, it is advisable to reuse established controlled
+                vocabularies such as GCMD, Agrovoc, and NAICS for data description.</li>
             </ul>
-            <ul>To enhance data interoperability and consistency, it is advisable to reuse established controlled
-              vocabularies such as GCMD, Agrovoc, and NAICS for data description.</ul>
           </td>
         </tr>
         <tr>
@@ -4298,7 +4296,7 @@
             </td>
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
             </td>
-            </td>
+
             <td><strong>R</strong></td>
             <td>0..n</td>
           </tr>
@@ -4335,8 +4333,6 @@
               <a data-cite="XMLSCHEMA11-2#dateTime"><code>xsd:dateTime</code></a>,
               <a data-cite="XMLSCHEMA11-2##gYear"><code>xsd:gYear</code></a>
               or <a data-cite="XMLSCHEMA11-2#gYearMonth"><code>xsd:gYearMonth</code></a>)
-            </td>
-
             </td>
             <td><strong>O</strong></td>
             <td>0..1</td>
@@ -4457,7 +4453,7 @@
                   <a data-cite="XMLSCHEMA11-2##gYear"><code>xsd:gYear</code></a>
                   or <a data-cite="XMLSCHEMA11-2#gYearMonth"><code>xsd:gYearMonth</code></a>)
                 </td>
-                </td>
+
               </tr>
               <tr>
                 <th>Definition</th>
@@ -4497,7 +4493,7 @@
                   <a data-cite="XMLSCHEMA11-2##gYear"><code>xsd:gYear</code></a>
                   or <a data-cite="XMLSCHEMA11-2#gYearMonth"><code>xsd:gYearMonth</code></a>)
                 </td>
-                </td>
+
               </tr>
               <tr>
                 <th>Definition</th>
@@ -4537,7 +4533,7 @@
                   <a data-cite="XMLSCHEMA11-2##gYear"><code>xsd:gYear</code></a>
                   or <a data-cite="XMLSCHEMA11-2#gYearMonth"><code>xsd:gYearMonth</code></a>)
                 </td>
-                </td>
+
               </tr>
               <tr>
                 <th>Definition</th>
@@ -5488,7 +5484,7 @@
                 <td><a data-cite="VOCAB-DCAT-3#Property:data_service_endpoint_description">
                     <code>dcat:endpointDescription</code></a>
                 </td>
-                </td>
+
               </tr>
               <tr>
                 <th class="prop">Definition:</th>
@@ -5604,7 +5600,7 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  This property refers to a collection of data that this data service can distribute.</li>
+                  This property refers to a collection of data that this data service can distribute.
 
                 </td>
               </tr>
@@ -5646,7 +5642,7 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  This property contains a keyword or tag describing the Data Service.</li>
+                  This property contains a keyword or tag describing the Data Service.
 
                 </td>
               </tr>
@@ -6028,8 +6024,6 @@
                 <td>
                   This property contains the main identifier for the Data Service, e.g. the URI or other unique
                   identifier in the context of the Catalog.
-
-                  </ul>
                 </td>
               </tr>
             </tbody>
@@ -6790,7 +6784,7 @@
             <td><a href="#dataset-documentation">documentation</a></td>
             <td><a href="http://xmlns.com/foaf/0.1/#term_page"><code>foaf:page</code></a></td>
             <td><a href="http://xmlns.com/foaf/0.1/#term_Document"><code>foaf:Document</code></a></td>
-            </td>
+
             <td>O</td>
             <td>0..n</td>
             <td><span style="color: red;">New!</span></td>
@@ -6820,7 +6814,7 @@
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/isReferencedBy"><code>dct:isReferencedBy</code></a>
             </td>
             <td><a data-cite="RDF-SCHEMA#ch_resource"><code>rdfs:Resource</code></a></td>
-            </td>
+
             <td>O</td>
             <td>0..n</td>
             <td><span style="color: green;">Aligned</span></td>
@@ -6938,7 +6932,7 @@
                 <code>rdfs:Literal</code></a>
               (typed
               as <a data-cite="XMLSCHEMA11-2#decimal"><code>xsd:decimal</code></a>)</td>
-            </td>
+
             <td>O</td>
             <td>0..n</td>
             <td><span style="color: green;">Aligned</span></td>
@@ -8820,7 +8814,7 @@
                 <td><a href="http://TBD#investment">
                     <code>dcat-us:investment</code></a>
                 </td>
-                </td>
+
               </tr>
               <tr>
                 <th>Range</th>
@@ -8862,7 +8856,7 @@
                 <td><a href="http://TBD#applicableLegislation">
                     <code>dcat-us:applicableLegislation</code></a>
                 </td>
-                </td>
+
               </tr>
               <tr>
                 <th>Range</th>
@@ -8903,7 +8897,7 @@
                 <th>URI</th>
                 <td><a data-cite="VOCAB-ADMS#supportedSchema"><code>adms:supportedSchema</code></a>
                 </td>
-                </td>
+
               </tr>
               <tr>
                 <th>Range</th>
@@ -8944,7 +8938,7 @@
                 <td><a href="http://TBD#metadataDistribution">
                     <code>dcat-us:metadataDistribution</code></a>
                 </td>
-                </td>
+
               </tr>
               <tr>
                 <th>Range</th>
@@ -8981,7 +8975,7 @@
                 <th>URI</th>
                 <td><a href="dataset-liability_statement"><code>dcat-us:liabilityStatement</code></a>
                 </td>
-                </td>
+
               </tr>
               <tr>
                 <th>Range</th>
@@ -9037,46 +9031,6 @@
           </table>
         </section>
 
-        <section id="dataset-contributor">
-          <h4>Property: contributor</h4>
-          <table class="def">
-            <tbody>
-              <tr>
-                <th>Property</th>
-                <td>contributor</td>
-              </tr>
-              <tr>
-                <th>Requirement level</th>
-                <td><strong>Optional</strong></td>
-              </tr>
-              <tr>
-                <th>Cardinality</th>
-                <td>0..n</td>
-              </tr>
-              <tr>
-                <th>URI</th>
-                <td><a data-cite="DCTERMS#http://purl.org/dc/terms/contributor">
-                    <code>dct:contributor</code></a>
-                </td>
-              </tr>
-              <tr>
-                <th>Range</th>
-                <td><a href="http://xmlns.com/foaf/0.1/#term_Agent"><code>foaf:Agent</code></a>
-                </td>
-              </tr>
-              <tr>
-                <th>Usage Note</th>
-                <td>
-                  This property refers to an agent contributing to the Dataset.
-
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <aside class="example" title="Usage of dct:contributor for dcat:Dataset">
-            <pre data-include-format="text" data-include="./examples/dataset/contributor.ttl"></pre>
-          </aside>
-        </section>
         <section id="dataset-image">
           <h4>Property: image</h4>
           <table class="def">
@@ -10541,7 +10495,7 @@
               </tr>
             </tbody>
           </table>
-          <aside class="example" ttitle="Usage of dct:format for dcat:Distribution">
+          <aside class="example" title="Usage of dct:format for dcat:Distribution">
             <pre data-include-format="text" data-include="./examples/distribution/format.ttl"></pre>
           </aside>
         </section>
@@ -11824,7 +11778,7 @@
             </td>
             <td>M</td>
             <td>1</td>
-            </td>
+
           </tr>
           <tr>
             <td><a href="#document-bibliographicCitation">bibliographic citation</a></td>
@@ -13099,9 +13053,10 @@
           <th class="prop">Usage note:</th>
           <td>
             Licence document SHOULD be specified only with URIs from an endorsed Data.gov registry.
-            Property <a href="http://spdx.org/rdf/terms#licenseText"><code>spdx:licenseText</code> MAY only be used to
-              specify license information in legacy metadata records, not compliant with
-              standard license from an endorsed Data.Gov registry.
+            Property <a href="http://spdx.org/rdf/terms#licenseText"><code>spdx:licenseText</code></a> MAY only be used
+            to
+            specify license information in legacy metadata records, not compliant with
+            standard license from an endorsed Data.Gov registry.
           </td>
         </tr>
         <tr>
@@ -13795,7 +13750,7 @@
             <td><a href="https://www.w3.org/TR/vocab-dqv/#dqv:expectedDataType"><code>dqv:expectedDataType</code></a>
             </td>
             <td><a data-cite="XMLSCHEMA11-2#anySimpleType"><code>xsd:anySimpleType</code></a></td>
-            </td>
+
             <td><strong>M</strong></td>
             <td>1</td>
           </tr>
@@ -13804,7 +13759,7 @@
             <td><a data-cite="SKOS-REFERENCE#definition"><code>skos:definition</code></a>
             </td>
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
-            </td>
+
             <td><strong>R</strong></td>
             <td>0..n</td>
           </tr>
@@ -13909,7 +13864,7 @@
               <tr>
                 <th>Range</th>
                 <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
-                </td>
+
               </tr>
               <tr>
                 <th>Definition</th>
@@ -13959,14 +13914,14 @@
             When utilizing the <a href="http://www.w3c.org/ns/org#Organization"><code>org:Organization</code></a> class
             in DCAT-US 3.0, data publishers are encouraged to provide the preferred label (<a
               data-cite="SKOS-REFERENCE#prefLabel"><code>skos:prefLabel</code></a>) for the organization, along with any
-            relevant alternative labels (<a data-cite="SKOS-REFERENCE#altLabel"><code>skos:altLabel</code>) and
-              abbreviations <a data-cite="SKOS-REFERENCE#notation"><code>skos:notation</code></a>. This usage is
-              consistent with the W3C Organization Recommendation standard [[VOCAB-ORG]].This practice ensures
-              comprehensive and flexible organization identification, improving data discoverability and search
-              accuracy. Data publishers should strive to maintain consistency in naming conventions while considering
-              variations and common aliases used to refer to organizations. By providing a well-rounded representation
-              of organizations, DCAT-US 3.0 enhances data usability and transparency, facilitating efficient data search
-              and retrieval. </td>
+            relevant alternative labels (<a data-cite="SKOS-REFERENCE#altLabel"><code>skos:altLabel</code></a>) and
+            abbreviations <a data-cite="SKOS-REFERENCE#notation"><code>skos:notation</code></a>. This usage is
+            consistent with the W3C Organization Recommendation standard [[VOCAB-ORG]].This practice ensures
+            comprehensive and flexible organization identification, improving data discoverability and search
+            accuracy. Data publishers should strive to maintain consistency in naming conventions while considering
+            variations and common aliases used to refer to organizations. By providing a well-rounded representation
+            of organizations, DCAT-US 3.0 enhances data usability and transparency, facilitating efficient data search
+            and retrieval. </td>
         </tr>
         <tr>
           <th>Rationale:</th>
@@ -14697,7 +14652,7 @@
               <tr>
                 <th>URI</th>
                 <td><a data-cite="RDF-SCHEMA#ch_label"><code>rdfs:label</code></a></td>
-                </td>
+
               </tr>
               <tr>
                 <th>Range</th>
@@ -14796,7 +14751,7 @@
             <td><a href="https://www.w3.org/TR/vocab-dqv/#dqv:value"><code>dqv:value</code></a>
             </td>
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
-            </td>
+
             <td><strong>M</strong></td>
             <td>1</td>
           </tr>
@@ -14805,7 +14760,7 @@
             <td><a href="https://TBD/#unitMeasure"><code>sdmx-attribute:unitMeasure</code></a>
             </td>
             <td><a data-cite="RDF-SCHEMA#ch_resource"><code>rdfs:Resource</code></a></td>
-            </td>
+
             <td><strong>O</strong></td>
             <td>0..1</td>
           </tr>
@@ -14833,7 +14788,7 @@
                 <th>URI</th>
                 <td><a href="https://www.w3.org/TR/vocab-dqv/#dqv:isMeasurementOf"><code>dqv:isMeasurementOf</code></a>
                 </td>
-                </td>
+
               </tr>
               <tr>
                 <th>Range</th>
@@ -14871,7 +14826,7 @@
               <tr>
                 <th>Range</th>
                 <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
-                </td>
+
               </tr>
               <tr>
                 <th>Definition</th>
@@ -14909,7 +14864,7 @@
               <tr>
                 <th>Range</th>
                 <td><a data-cite="RDF-SCHEMA#ch_resource"><code>rdfs:Resource</code></a></td>
-                </td>
+
               </tr>
               <tr>
                 <th>Definition</th>
@@ -14976,14 +14931,13 @@
         </tr>
         <tr>
           <th>Rationale:</th>
-          <td>The introduction of <a data-cite="VOCAB-DCAT-3#Class:Relationship"><code>dcat:Relationship</code></a>in
+          <td>The introduction of <a data-cite="VOCAB-DCAT-3#Class:Relationship"><code>dcat:Relationship</code></a> in
             DCAT-US serves to enhance the representation and description of relationships between datasets and other
             resources. This class allows for the attachment of additional information to relationships that are not
             adequately characterized by standard properties, promoting a more comprehensive understanding of dataset
             connections. By accommodating nuanced relationship types beyond existing standards like [[DCTERMS]] and
             [[PROV-O]] properties, DCAT-US ensures greater flexibility and precision in documenting dataset
-            relationships,
-            facilitating more informed data discovery and utilization.</td>
+            relationships, facilitating more informed data discovery and utilization.</td>
         </tr>
       </table>
 
@@ -15005,7 +14959,7 @@
             <td><a href="http://purl.org/dc/terms/relation"><code>dcterms:relation</code></a></td>
 
             <td><a data-cite="RDF-SCHEMA#ch_resourcel"><code>dcat:Resource</code></a></td>
-            </td>
+
             <td><strong>M</strong></td>
             <td>1</td>
           </tr>
@@ -15042,7 +14996,7 @@
               <tr>
                 <th>URI</th>
                 <td><a href="http://purl.org/dc/terms/relation"><code>dcterms:relation</code></a></td>
-                </td>
+
               </tr>
               <tr>
                 <th>Range</th>
@@ -15203,7 +15157,7 @@
               <tr>
                 <th>URI</th>
                 <td><a data-cite="RDF-SCHEMA#ch_label"><code>rdfs:label</code></a></td>
-                </td>
+
               </tr>
               <tr>
                 <th>Range</th>
@@ -15401,7 +15355,7 @@
               <tr>
                 <th>URI</th>
                 <td><a href="http://purl.org/dc/terms/title"><code>dcterms:title</code></a></td>
-                </td>
+              
               </tr>
               <tr>
                 <th>Range</th>
@@ -15435,7 +15389,7 @@
               <tr>
                 <th>URI</th>
                 <td><a href="http://purl.org/dc/terms/description"><code>dcterms:description</code></a></td>
-                </td>
+               
               </tr>
               <tr>
                 <th>Range</th>
@@ -15445,8 +15399,7 @@
                 <th>Definition</th>
                 <td>This property contains a free-text account of the Standard. This property can be repeated for
                   parallel language versions of the description - see <a href="#multilingualism">Multilinguism</a>
-                  </p>
-                  .
+              
                 </td>
               </tr>
             </tbody>
@@ -15471,7 +15424,7 @@
               <tr>
                 <th>URI</th>
                 <td><a href="http://purl.org/dc/terms/identifier"><code>dcterms:identifier</code></a></td>
-                </td>
+               
               </tr>
               <tr>
                 <th>Range</th>
@@ -15507,7 +15460,7 @@
               <tr>
                 <th>URI</th>
                 <td><a href="http://purl.org/dc/terms/issued"><code>dcterms:issued</code></a></td>
-                </td>
+             
               </tr>
               <tr>
                 <th>Range</th>
@@ -15539,7 +15492,7 @@
               <tr>
                 <th>URI</th>
                 <td><a href="http://purl.org/dc/terms/type"><code>dcterms:type</code></a></td>
-                </td>
+           
               </tr>
               <tr>
                 <th>Range</th>
@@ -15555,7 +15508,7 @@
         </section>
         <section id="standard-version">
           <h4>Property: version</h4>
-          <table class="def" id="table-concept-scheme-version">
+          <table class="def" id="table-standard-version">
             <tbody>
               <tr>
                 <th>Property</th>
@@ -15643,7 +15596,7 @@
               <tr>
                 <th>URI</th>
                 <td><a href="http://purl.org/dc/terms/created"><code>dcterms:created</code></a></td>
-                </td>
+               
               </tr>
               <tr>
                 <th>Range</th>
@@ -15675,7 +15628,7 @@
               <tr>
                 <th>URI</th>
                 <td><a href="http://purl.org/dc/terms/modified"><code>dcterms:modified</code></a></td>
-                </td>
+              
               </tr>
               <tr>
                 <th>Range</th>
@@ -15894,7 +15847,7 @@
       </section>
     </section>
   </section>
-  </section>
+  
 
 
   <section id="usage_guideline">
@@ -15940,21 +15893,17 @@
           unique identifier (such as a UUID or hash code).</li>
       </ul>
 
-      </p>
+      
       <h4>Identifier Resolution</h4>
 
       <p>URI resolution is a fundamental process that involves directing requests to the appropriate identified
-        entity.
-        The standard approach typically entails resolving an HTTP GET request through content negotiation, enabling
-        the
-        selection of different representations of the desired resource.</p>
+        entity. The standard approach typically entails resolving an HTTP GET request through content negotiation,
+        enabling the selection of different representations of the desired resource.</p>
 
       <p> A PURL, or persistent URL, serves as a permanent address for accessing web resources. To grasp the concept
-        of
-        PURLs, it's essential to first understand the concept of URL indirection (also known as URL redirect or URL
+        of PURLs, it's essential to first understand the concept of URL indirection (also known as URL redirect or URL
         forwarding). This practice involves providing a stable and fixed web address/URL that is configured to point
-        to
-        different content, which might undergo periodic modifications.</p>
+        to different content, which might undergo periodic modifications.</p>
 
       <p> When a user accesses a PURL, they are automatically redirected to the current location of the resource. This
         means that when an author decides to relocate a page, they can easily update the PURL to direct it to the new
@@ -15983,18 +15932,13 @@
 
       <h4>Identifier Resolution services</h4>
       <p>In the digital realm, ensuring consistent and persistent access to resources is paramount. <b>Identifier
-          Resolution
-          Services</b> play a crucial role in achieving this by providing unique and persistent identifiers for
-        various
-        digital
-        objects and entities. This section delves into several prominent services, detailing their functions and
-        significance in the broader digital ecosystem.</p>
+          Resolution Services</b> play a crucial role in achieving this by providing unique and persistent identifiers
+        for various digital objects and entities. This section delves into several prominent services, detailing their
+        functions and significance in the broader digital ecosystem.</p>
       <dl>
         <dt><a href="https://archive.org/services/purl/">purl.org</a></dt>
         <dd>The PURL system is a service of the Internet Archive, which provides an interface to administer domain.
-          For
-          more
-          information about the service, visit <a
+          For more information about the service, visit <a
             href="https://archive.org/services/purl/help">https://archive.org/services/purl/help</a></dd>
 
         <dt><a href="https://w3id.org/">w3ids</a></dt>
@@ -16011,86 +15955,63 @@
           <p>Send a request to add a redirect to the <a
               href="mailto:public-perma-id%40w3.org">public-perma-id@w3.org</a>
             mailing list. Make sure to include the URL that you want on <a href="http://w3id.org/">w3id.org</a>, the
-            URL
-            that
-            you want to redirect to, and the HTTP code that you want to use when redirecting. An administrator will
-            then
-            create the redirect for you.</p>
+            URL that you want to redirect to, and the HTTP code that you want to use when redirecting. An administrator
+            will then create the redirect for you.</p>
         </dd>
 
         <dt><a href="https://doi.org/">doi.org</a></dt>
         <dd>DOI.org is a digital identifier system that assigns unique and persistent identifiers to digital objects.
-          These
-          identifiers can be used to cite, share, and track digital objects across different platforms and systems.
-          DOI.org
-          identifiers can be used in DCAT to uniquely identify datasets and data services. This can help to improve
-          the
-          discoverability and interoperability of datasets and data services.</dd>
+          These identifiers can be used to cite, share, and track digital objects across different platforms and
+          systems. DOI.org identifiers can be used in DCAT to uniquely identify datasets and data services. This can
+          help to improve the discoverability and interoperability of datasets and data services.</dd>
 
         <dt><a href="https://orcid.org">orcid.org</a></dt>
         <dd>ORCID (Open Researcher and Contributor ID) is a global, non-profit organization that provides a unique and
           persistent identifier for researchers. ORCID IDs are used to link researchers to their professional
-          activities,
-          such as publications, grants, and affiliations. This helps to ensure that researchers are properly credited
-          for
-          their work and that their work is more easily discoverable. ORCID is a valuable tool for researchers, and it
-          is
-          becoming increasingly important as the research landscape becomes more complex.</dd>
+          activities, such as publications, grants, and affiliations. This helps to ensure that researchers are properly
+          credited for their work and that their work is more easily discoverable. ORCID is a valuable tool for
+          researchers, and it is becoming increasingly important as the research landscape becomes more complex.</dd>
 
         <dt><a href="https://info.arxiv.org/help/arxiv_identifier.html">arxiv.org</a></dt>
         <dd>ArXiv identifiers are globally unique identifiers (GUIDs) assigned to scholarly articles submitted to the
-          arXiv
-          preprint server. These identifiers can be used in DCAT (Data Catalog Vocabulary) to uniquely identify
-          authors
-          and
-          their publications. This can help to improve the discoverability and interoperability of research data.</dd>
+          arXiv preprint server. These identifiers can be used in DCAT (Data Catalog Vocabulary) to uniquely identify
+          authors and their publications. This can help to improve the discoverability and interoperability of research
+          data.</dd>
 
         <dt><a href="https://identifiers.org">Identifiers.org</a></dt>
         <dd>The Identifiers.org Resolution Service provides consistent access to life science data using Compact
-          Identifiers.
-          Compact Identifiers consist of an assigned unique prefix and a local provider designated accession number
-          (prefix:accession). The resolving location of Compact Identifiers is determined using information that is
-          stored
-          in the Identifiers.org <a href="https://registry.identifiers.org/">Registry</a>.</dd>
+          Identifiers. Compact Identifiers consist of an assigned unique prefix and a local provider designated
+          accession number (prefix:accession). The resolving location of Compact Identifiers is determined using
+          information that is stored in the Identifiers.org <a href="https://registry.identifiers.org/">Registry</a>.
+        </dd>
       </dl>
       <h4>Alternate identifiers</h4>
 
       <p>In the realm of data cataloging, identifiers play a pivotal role in ensuring the uniqueness, traceability,
-        and
-        interoperability of resources. Different namespaces and vocabularies offer distinct properties to denote
+        and interoperability of resources. Different namespaces and vocabularies offer distinct properties to denote
         identifiers. Here, we discuss three such properties: <code>dcterms:identifier</code>,
         <code>adms:hasIdentifier</code>, and <code>skos:notation</code>, shedding light on their distinct usages and
         nuances.
       </p>
-
       <h5>dcterms:identifier</h5>
       <p>Originating from the Dublin Core Metadata Terms (DCTERMS), <code>dcterms:identifier</code> is a broad and
-        general
-        property used to denote a unique reference for a resource. It does not impose any constraint on the format or
-        nature of the identifier. In essence, it's a flexible property that can be employed across various domains and
-        for
-        diverse types of resources, be they digital documents, physical artifacts, or abstract concepts.</p>
-
+        general property used to denote a unique reference for a resource. It does not impose any constraint on the
+        format or nature of the identifier. In essence, it's a flexible property that can be employed across various
+        domains and for diverse types of resources, be they digital documents, physical artifacts, or abstract concepts.
+      </p>
       <h5>adms:hasIdentifier</h5>
       <p>The Asset Description Metadata Schema ([[VOCAB-ADMS]]) introduces <code>adms:hasIdentifier</code>. Unlike the
         more generic <code>dcterms:identifier</code>, this property is more structured. It's designed to link a
-        resource
-        to its identifier, which is itself described using further properties. This allows for a richer description of
-        the
-        identifier, such as specifying its type (e.g., ISBN, DOI), its status, and its version. It's particularly
-        useful
-        in contexts where there's a need to provide additional metadata about the identifier itself, beyond just its
-        value.</p>
-
+        resource to its identifier, which is itself described using further properties. This allows for a richer
+        description of the identifier, such as specifying its type (e.g., ISBN, DOI), its status, and its version. It's
+        particularly useful in contexts where there's a need to provide additional metadata about the identifier itself,
+        beyond just its value.</p>
       <h5>skos:notation</h5>
       <p><code>skos:notation</code> is a property from the Simple Knowledge Organization System ([[SKOS-REFERENCE]])
         vocabulary. It's used to provide a symbolic string notation for a concept. While it can function similarly to
-        an
-        identifier, its primary intention is to give a machine-readable, often standardized, symbolic name to a
-        concept,
-        especially when such a notation exists in a legacy or external system. For example, in a controlled
-        vocabulary,
-        each concept might have a notation that denotes its code in a classification scheme.</p>
+        an identifier, its primary intention is to give a machine-readable, often standardized, symbolic name to a
+        concept, especially when such a notation exists in a legacy or external system. For example, in a controlled
+        vocabulary, each concept might have a notation that denotes its code in a classification scheme.</p>
       <!-- TODO -->
       <aside class="note">TODO Add examples</aside>
     </section>
@@ -16214,35 +16135,27 @@
         <ul>
           <li>
             <a data-cite="FOAF#term_name"><code>foaf:name:</code></a> This property represents the full name of a
-            person.
-            It can be used to specify the full name of individuals associated with datasets. For example, if a person's
-            full name is "John Smith," you can use this property to provide their complete name. This property is the
-            only
-            property mandatory for describing a person and is typically used for display.
+            person. It can be used to specify the full name of individuals associated with datasets. For example, if a
+            person's full name is "John Smith," you can use this property to provide their complete name. This property
+            is the only property mandatory for describing a person and is typically used for display.
           </li>
           <li>
             <a data-cite="FOAF#term_firstName"><code>foaf:firstName:</code></a> This optional property represents the
-            first name of
-            a person. It is used to provide the first name of individuals associated with or responsible for resources
-            in
-            the DCAT-US profile. It can be used to provide structured information about an individual's first name.
+            first name of a person. It is used to provide the first name of individuals associated with or responsible
+            for resources in the DCAT-US profile. It can be used to provide structured information about an individual's
+            first name.
           </li>
           <li>
             <a data-cite="FOAF#term_givenName"><code>foaf:givenName:</code></a> This optional property represents the
-            given
-            name of a person. It can be used to provide structured information about an individual's name.
+            given name of a person. It can be used to provide structured information about an individual's name.
           </li>
-
           <li>
             <a data-cite="VOCAB-ORG#property-memberof"><code>org:memberOf</code></a> While not a FOAF property,this
-            property is typically used to indicate the
-            organization or group to which a person is affiliated to. In the context of a DCAT-US profile, it can be
-            used
-            to
-            specify the organization or entity with which an individual is affiliated in relation to the described
-            resources. For instance, if a person is a member of an organization of Department of Interior, you can use
-            this
-            property to link them to that organization identified by <code>http://www.doi.gov</code>.
+            property is typically used to indicate the organization or group to which a person is affiliated to. In the
+            context of a DCAT-US profile, it can be used to specify the organization or entity with which an individual
+            is affiliated in relation to the described resources. For instance, if a person is a member of an
+            organization of Department of Interior, you can use this property to link them to that organization
+            identified by <code>http://www.doi.gov</code>.
           </li>
         </ul>
 
@@ -16251,12 +16164,8 @@
 
         <h4>Organization</h4>
         <p>An organization agent represents an organization or institution involved in producing or managing
-          a resource.
-          It
-          provides information about the organization responsible for the resource and its associated
+          a resource. It provides information about the organization responsible for the resource and its associated
           contact details.</p>
-
-
       </section>
 
       <section id="point-of-contact">
@@ -16271,14 +16180,12 @@
       <h3>Resource Attributions</h3>
 
       <p><strong>Attribution</strong>, in the context of a data catalog, refers to the process of associating a
-        particular
-        resource (like a dataset or a service) with a responsible party, often referred to as an
-        <strong>"agent"</strong>.
-        Agents could be individuals, organizations, or services that contribute to, create, publish, or have some
-        significant interaction with the data. These attributions often include details about the role the agent played,
-        such as whether they were a contributor, creator, publisher, funder, distributor, custodian, or editor, etc.
+        particular resource (like a dataset or a service) with a responsible party, often referred to as an
+        <strong>"agent"</strong>. Agents could be individuals, organizations, or services that contribute to, create,
+        publish, or have some significant interaction with the data. These attributions often include details about the
+        role the agent played, such as whether they were a contributor, creator, publisher, funder, distributor,
+        custodian, or editor, etc.
       </p>
-
       <p><strong>Attributions</strong> are critically important for data catalog search for several reasons:
       </p>
 
@@ -16290,17 +16197,14 @@
           contributed to the data are appropriately acknowledged. This is not only a matter of fairness but can also be
           legally required in some cases.</li>
         <li><strong>Search and Discovery</strong>: Attributions can be used as a filter or search criterion. For
-          instance,
-          users might want to find all datasets created by a specific researcher or organization, or all datasets on
-          which
-          a certain individual was a contributor.</li>
+          instance, users might want to find all datasets created by a specific researcher or organization, or all
+          datasets on which a certain individual was a contributor.</li>
         <li><strong>Collaboration and Networking</strong>: Identifying the agents involved in a dataset can lead to new
           collaboration opportunities, allowing users to reach out to those who have relevant expertise or shared
-          research
-          interests.</li>
+          research interests.</li>
         <li><strong>Issue Resolution</strong>: When users find issues or have questions about a particular dataset, they
-          can reach out to the attributed agent for clarification or resolution, thus ensuring data
-          reliability and integrity.</li>
+          can reach out to the attributed agent for clarification or resolution, thus ensuring data reliability and
+          integrity.</li>
       </ol>
 
       <h4>Attributions with well-known roles</h4>
@@ -16350,8 +16254,7 @@
         give data providers an extension mechanism to specify, in a harmonised way, any kind of role, and,
         possibly,to attach additional information to the role and the associated Agent. As such, it MAY be used in
         combination with or to complement the property-based approach, but it MUST NOT replace it. For instance, it can
-        be
-        used to specify roles not covered by the agent role properties used in DCAT-US, and/or to specify additional
+        be used to specify roles not covered by the agent role properties used in DCAT-US, and/or to specify additional
         information that cannot be expressed via a property (as the period during which an Agent covered a given role).
       </p>
 
@@ -16369,25 +16272,19 @@
       <h3>Resource Classification</h3>
 
 
-      <p>Controlled vocabularies, encompassing taxonomies, thesauri have a
-        transformative impact on data searchability. By using these vocabularies, datasets can be classified,
-        tagged, and described with standardized terms and phrases. This standardization ensures that users searching
-        with
-        different terms or synonyms can still retrieve the most relevant datasets.</p>
-
+      <p>Controlled vocabularies, encompassing taxonomies, thesauri have a transformative impact on data searchability.
+        By using these vocabularies, datasets can be classified, tagged, and described with standardized terms and
+        phrases. This standardization ensures that users searching with different terms or synonyms can still retrieve
+        the most relevant datasets.</p>
       <p>More than just keyword matching, the use of controlled vocabularies facilitates <strong>semantic
-          search</strong>.
-        This means that the search process understands the context, relationships, and meanings behind terms, rather
-        than
-        just the terms themselves. For instance, when using a thesaurus-based vocabulary, searching for "automobiles"
-        might also yield results for "cars" or "vehicles".</p>
-
+          search</strong>. This means that the search process understands the context, relationships, and meanings
+        behind terms, rather than just the terms themselves. For instance, when using a thesaurus-based vocabulary,
+        searching for "automobiles" might also yield results for "cars" or "vehicles".</p>
       <p>Such an enriched search experience becomes especially vital when dealing with vast and diverse datasets. It
         ensures that users can find the most relevant and comprehensive results, even if the exact phrasing or
-        terminology
-        varies between the user's query and the dataset's metadata. In essence, controlled vocabularies bridge the gap
-        between user intent and dataset content, leading to more accurate and meaningful search outcomes.</p>
-
+        terminology varies between the user's query and the dataset's metadata. In essence, controlled vocabularies
+        bridge the gap between user intent and dataset content, leading to more accurate and meaningful search outcomes.
+      </p>
       <p>The DCAT US profile uses a range of properties from the DCAT 3 framework to classify and categorize resources,
         helping users and systems understand and navigate resources.</p>
 
@@ -16429,7 +16326,7 @@
       </p>
     </section>
     <!-- Spatial Metadata -->
-    <section id=" spatial-metadata">
+    <section id="spatial-metadata">
       <h3>Spatial Metadata</h3>
       <p>Spatial metadata play a vital role in the context of geospatial data within the US Government by providing
         essential information about data quality, facilitating data discovery and interoperability, and ensuring
@@ -16475,12 +16372,12 @@
       <p>Defining a common reference system is of utmost importance when searching for geospatial data. Geospatial
         datasets are typically represented using different coordinate systems, projections, and datums, which can lead
         to challenges in interoperability and data integration. A common reference system ensures that data from diverse
-        sources can be
-        accurately aligned and combined, enabling effective analysis, visualization, and decision-making.</p>
+        sources can be accurately aligned and combined, enabling effective analysis, visualization, and decision-making.
+      </p>
       <p>The introduction of the dcat-us:geographicBoundingBox property in DCAT-US profile addresses this challenge by
         providing a standardized way to express the spatial extent of a resource. Unlike using a Polygon, which requires
         explicit geometric coordinates, the dcat-us:GeographicBoundingBox offers a simpler and more interoperable
-        approach. Here are a few reasons why the dcat-us:GeographicBoundingBox is advantageous:</p>
+        approach. Here are a few reasons why the dcat-us:GeographicBoundingBox is advantageous:
       <ul>
         <li><b>Consistent Spatial Representation</b>: Geospatial datasets can be represented in various coordinate
           systems, projections, and datums. Without a common reference system, it becomes difficult to align and compare
@@ -16525,6 +16422,7 @@
           discoverability and usability, supporting the reuse of geospatial data in diverse applications and contexts.
         </li>
       </ul>
+
       <p>By utilizing multiple geographic bounding boxes, geospatial search results within the United States can be
         significantly enhanced in terms of relevance. The use of multiple bounding boxes allows for a more precise
         definition of the spatial extent of search criteria, ensuring that the retrieved results align closely with
@@ -16532,16 +16430,13 @@
         fall outside the defined bounding boxes, resulting in more targeted and pertinent search outcomes. For instance,
         when searching for national parks within the United States, using multiple bounding boxes for each park ensures
         that the search results only include relevant parks within their respective geographic boundaries. Similarly,
-        when
-        searching for metropolitan statistical areas, employing multiple bounding boxes for each area helps retrieve
-        data
-        specific to each metropolitan region, ensuring more accurate and focused results. Furthermore, non-contiguous
-        states like Alaska and Hawaii require separate bounding boxes to accurately capture their unique spatial
-        coverage.
-        The inclusion of multiple bounding boxes in geospatial searches improves the accuracy and relevance of the
-        retrieved datasets, facilitating more effective decision-making and analysis in various applications and
-        domains.
-      </p>
+        when searching for metropolitan statistical areas, employing multiple bounding boxes for each area helps
+        retrieve data specific to each metropolitan region, ensuring more accurate and focused results. Furthermore,
+        non-contiguous states like Alaska and Hawaii require separate bounding boxes to accurately capture their unique
+        spatial coverage. The inclusion of multiple bounding boxes in geospatial searches improves the accuracy and
+        relevance of the retrieved datasets, facilitating more effective decision-making and analysis in various
+        applications and domains. </p>
+
       <h4>Spatial Coverage</h4>
       <p>In DCAT 3, the use of the dct:spatial property is intended to provide information about the spatial coverage
         or location of a resource. This property allows for the description of the spatial aspect of a dataset, dataset
@@ -16804,12 +16699,6 @@
           respectively, from [[DWBP]].
         </p>
       </aside>
-
-
-      </div>
-
-
-
     </section>
 
     <!-- Resource Restrictions -->
@@ -16863,10 +16752,10 @@
     </section>
 
     <!-- Content Description -->
-    <section id="distribution-description">
+    <section id="distribution-guideline">
 
       <h3>Distribution Description</h3>
-      <aside class="note">TODO</aside>
+
 
       <h4>Format and Representation</h4>
 
@@ -17163,6 +17052,7 @@
           </tbody>
         </table>
 
+        <aside class="note">TO COMPLETE</aside>
 
         <aside class="example" title="Example for character encoding">
           <pre data-include-format="text" data-include="./examples/character-encoding.ttl"></pre>
@@ -17359,7 +17249,7 @@
             meaningful analysis and comparison of data from various sources.</li>
 
         </ul>
-        </p>
+      
       </section>
       <section id="requirements-for-controlled-vocabularies">
 
