@@ -1598,26 +1598,25 @@
         <tr>
           <th class="prop">Usage note:</th>
           <td>
-            <ul>
-              <li>Used to link to an Agent where the nature of the relationship is known but does not match one of the
-                standard [[DCTERMS]] properties (<a
-                  href="http://purl.org/dc/terms/creator"><code>dcterms:creator</code></a>,
-                <a href="http://purl.org/dc/terms/contributor"><code>dcterms:contributor</code></a>,
-                <a href="http://purl.org/dc/terms/rightsHolder"><code>dcterms:rightsHolder</code></a>,
-                and <a href="http://purl.org/dc/terms/publisher"><code>dcterms:publisher</code></a>). Use <a
-                  data-cite="VOCAB-DCAT-3#Property:relationship_hadRole"><code>dcat:hadRole</code></a> on the <a
-                  data-cite="PROV#Class:Attribution"><code>prov:Attribution</code></a> to capture the responsibility
-                of
-                the Agent with respect to the Resource.
-              </li>
-            </ul>
+            Used to link to an Agent where the nature of the relationship is known but does not match one of the
+            standard [[DCTERMS]] properties (<a
+              href="http://purl.org/dc/terms/creator"><code>dcterms:creator</code></a>,
+            <a href="http://purl.org/dc/terms/contributor"><code>dcterms:contributor</code></a>,
+            <a href="http://purl.org/dc/terms/rightsHolder"><code>dcterms:rightsHolder</code></a>,
+            and <a href="http://purl.org/dc/terms/publisher"><code>dcterms:publisher</code></a>). Use <a
+              data-cite="VOCAB-DCAT-3#Property:relationship_hadRole"><code>dcat:hadRole</code></a> on the <a
+              data-cite="PROV#Class:Attribution"><code>prov:Attribution</code></a> to capture the responsibility
+            of
+            the Agent with respect to the Resource.
+
           </td>
         </tr>
         <tr>
           <th class="prop">Rationale</th>
           <td>
 
-            The inclusion of <a data-cite="PROV#Class:Attribution"><code>prov:Attribution</code></a> in the DCAT profile enables clear data source attribution, promoting
+            The inclusion of <a data-cite="PROV#Class:Attribution"><code>prov:Attribution</code></a> in the DCAT profile
+            enables clear data source attribution, promoting
             responsible data sharing and proper citation practices. It aligns the profile with data provenance best
             practices for accurate attribution in data sharing.
           </td>
@@ -3256,23 +3255,22 @@
         <tr>
           <th class="prop">Usage note:</th>
           <td>
-            <ul>
-              <li>This class is optional and not all catalogs will use it. It exists for catalogs where a distinction
-                is
-                made between metadata about
-                a <em>dataset or service</em> and metadata about the <em>entry in the catalog about the dataset or
-                  service</em>. For example, the <i>publication date</i> property of the <i>dataset</i> reflects
-                the date when the information was originally made available by the publishing agency, while the
-                publication
-                date of the <i>catalog record</i> is the date when the dataset was added to the catalog.
-                In cases where both dates differ, or where only the latter is known, the <em>publication date</em>
-                SHOULD
-                only be specified for the catalog record.
-                Notice that the <abbr title="World Wide Web Consortium">W3C</abbr> PROV Ontology [[?PROV-O]] allows
-                describing further provenance information such as the details of the process and the agent involved in
-                a
-                particular change to a dataset or its registration.</li>
-            </ul>
+            This class is optional and not all catalogs will use it. It exists for catalogs where a distinction
+            is
+            made between metadata about
+            a <em>dataset or service</em> and metadata about the <em>entry in the catalog about the dataset or
+              service</em>. For example, the <i>publication date</i> property of the <i>dataset</i> reflects
+            the date when the information was originally made available by the publishing agency, while the
+            publication
+            date of the <i>catalog record</i> is the date when the dataset was added to the catalog.
+            In cases where both dates differ, or where only the latter is known, the <em>publication date</em>
+            SHOULD
+            only be specified for the catalog record.
+            Notice that the <abbr title="World Wide Web Consortium">W3C</abbr> PROV Ontology [[?PROV-O]] allows
+            describing further provenance information such as the details of the process and the agent involved in
+            a
+            particular change to a dataset or its registration.
+
           </td>
         </tr>
       </table>
@@ -4841,7 +4839,15 @@
             </ul>
           </td>
         </tr>
-
+        <tr>
+          <th class="prop">Rationale:</th>
+          <td>
+            Introducing  <a href="VOCAB-DCAT-3#Class:Data_Service"><code>dcat:DataService</code></a> is essential as it clarifies the representation of data services, addressing
+            the confusion caused by using  <a href="VOCAB-DCAT-3#Class:Distribution"><code>dcat:Distribution</code></a> to describe services in DCAT 1. This addition promotes clear
+            communication of service-related information, improving discoverability, and facilitating seamless
+            integration and usage by data consumers and applications.
+          </td>
+        </tr>
       </table>
       <table class="simple">
         <thead>
@@ -5159,9 +5165,8 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>The root location or primary endpoint of the service (a Web-resolvable IRI)</li>
-                  </ul>
+                  The root location or primary endpoint of the service (a Web-resolvable IRI)
+
                 </td>
               </tr>
             </tbody>
@@ -5254,10 +5259,8 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>This property refers to an entity (organisation) responsible for making the Catalog available.
-                    </li>
-                  </ul>
+                  This property refers to an entity (organisation) responsible for making the Catalog available.
+
                 </td>
               </tr>
             </tbody>
@@ -5449,9 +5452,8 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>This property refers to a collection of data that this data service can distribute.</li>
-                  </ul>
+                  This property refers to a collection of data that this data service can distribute.</li>
+
                 </td>
               </tr>
             </tbody>
@@ -5492,9 +5494,8 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>This property contains a keyword or tag describing the Data Service.</li>
-                  </ul>
+                  This property contains a keyword or tag describing the Data Service.</li>
+
                 </td>
               </tr>
             </tbody>
@@ -5532,11 +5533,9 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>This property refers to the minimum spatial separation resolvable in a Data Service, measured
-                      in
-                      metres.</li>
-                  </ul>
+                  This property refers to the minimum spatial separation resolvable in a Data Service, measured in
+                  metres.
+
                 </td>
               </tr>
             </tbody>
@@ -5578,9 +5577,7 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>This property refers to the minimum time period resolvable in the Data Service.</li>
-                  </ul>
+                  This property refers to the minimum time period resolvable in the Data Service.
                 </td>
               </tr>
             </tbody>
@@ -5707,10 +5704,8 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>This property is used to indicate the general standard or specification that the Data Service
-                      endpoints implement.</li>
-                  </ul>
+                  This property is used to indicate the general standard or specification that the Data Service
+                  endpoints implement.
                 </td>
               </tr>
             </tbody>
@@ -5750,10 +5745,8 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>This property contains the date on which the Data Service has been first created.
-                    </li>
-                  </ul>
+                  This property contains the date on which the Data Service has been first created.
+
                 </td>
               </tr>
             </tbody>
@@ -5793,10 +5786,8 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>This property refers to the Agent primarily responsible for producing the Data Service.
-                    </li>
-                  </ul>
+                  This property refers to the Agent primarily responsible for producing the Data Service.
+
                 </td>
               </tr>
             </tbody>
@@ -5883,11 +5874,9 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>This property contains the main identifier for the Data Service, e.g. the URI or other unique
-                      identifier in the context
-                      of the Catalog.
-                    </li>
+                  This property contains the main identifier for the Data Service, e.g. the URI or other unique
+                  identifier in the context of the Catalog.
+
                   </ul>
                 </td>
               </tr>
@@ -5979,10 +5968,8 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>This property contains the most recent date on which the Data Service was changed or modified.
-                    </li>
-                  </ul>
+                  This property contains the most recent date on which the Data Service was changed or modified.
+
                 </td>
               </tr>
             </tbody>
@@ -6021,12 +6008,10 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>A statement that concerns all rights for the Data Service not addressed with dcterms:license
-                      or
-                      dcterms:accessRights, such as copyright
-                      statements.</li>
-                  </ul>
+                  A statement that concerns all rights for the Data Service not addressed with dcterms:license
+                  or
+                  dcterms:accessRights, such as copyright
+                  statements.
                 </td>
               </tr>
             </tbody>
@@ -6064,10 +6049,8 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>This property refers to an Agent (organisation) holding rights on the Data Service.
-                    </li>
-                  </ul>
+                  This property refers to an Agent (organisation) holding rights on the Data Service.
+
                 </td>
               </tr>
             </tbody>
@@ -6155,9 +6138,8 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>This property refers to a temporal period that the Data Service covers.</li>
-                  </ul>
+                  This property refers to a temporal period that the Data Service covers.
+
                 </td>
               </tr>
             </tbody>
@@ -6319,11 +6301,9 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>This property refers to a link to an Agent having some form of responsibility for the Data
-                      Service.
-                    </li>
-                  </ul>
+                  This property refers to a link to an Agent having some form of responsibility for the Data
+                  Service.
+
                 </td>
               </tr>
             </tbody>
@@ -7430,10 +7410,7 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>This property refers to an entity (organization) responsible for making the Dataset available.
-                    </li>
-                  </ul>
+                  This property refers to an entity (organization) responsible for making the Dataset available.
                 </td>
               </tr>
             </tbody>
@@ -7698,10 +7675,7 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>This property refers to an agent contributing to the Dataset.
-                    </li>
-                  </ul>
+                  This property refers to an agent contributing to the Dataset.
                 </td>
               </tr>
             </tbody>
@@ -7740,10 +7714,7 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>This property refers to an entity responsible for producing the dataset.
-                    </li>
-                  </ul>
+                  This property refers to an entity responsible for producing the dataset.
                 </td>
               </tr>
             </tbody>
@@ -7779,9 +7750,7 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>This property refers to a page or document about this Dataset.</li>
-                  </ul>
+                  This property refers to a page or document about this Dataset.
                 </td>
               </tr>
             </tbody>
@@ -7907,11 +7876,9 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>This property is about a related resource, such as a publication, that references,
-                      cites, or otherwise points to the Dataset.
-                    </li>
-                  </ul>
+                  This property is about a related resource, such as a publication, that references,
+                  cites, or otherwise points to the Dataset.
+
                 </td>
               </tr>
             </tbody>
@@ -7993,11 +7960,9 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>A secondary identifier of the Dataset, such as MAST/ADS17, DataCite18, DOI19, EZID20 or
-                      W3ID21.
-                    </li>
-                  </ul>
+                  A secondary identifier of the Dataset, such as MAST/ADS17, DataCite18, DOI19, EZID20 or
+                  W3ID21.
+
                 </td>
               </tr>
             </tbody>
@@ -8048,10 +8013,8 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>This property contains a statement about the lineage of a Dataset.
-                    </li>
-                  </ul>
+                  This property contains a statement about the lineage of a Dataset.
+
                 </td>
               </tr>
             </tbody>
@@ -8091,11 +8054,9 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>This property refers to a link to an Agent having some form of responsibility for the
-                      resource.
-                    </li>
-                  </ul>
+                  This property refers to a link to an Agent having some form of responsibility for the
+                  resource.
+
                 </td>
               </tr>
             </tbody>
@@ -8317,10 +8278,8 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>A related Dataset from which the described Dataset is derived.
-                    </li>
-                  </ul>
+                  A related Dataset from which the described Dataset is derived.
+
                 </td>
               </tr>
             </tbody>
@@ -8553,9 +8512,7 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>The version indicator (name or identifier) of a resource.</li>
-                  </ul>
+                  The version indicator (name or identifier) of a resource.
                 </td>
               </tr>
             </tbody>
@@ -8634,10 +8591,8 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>An activity that generated, or provides the business context for, the creation of the dataset.
-                    </li>
-                  </ul>
+                  An activity that generated, or provides the business context for, the creation of the dataset.
+
                 </td>
               </tr>
             </tbody>
@@ -8839,10 +8794,8 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>Distribution to "original" metadata document
-                    </li>
-                  </ul>
+                  Distribution to "original" metadata document
+
                 </td>
               </tr>
             </tbody>
@@ -8879,10 +8832,8 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>A liability statement about the dataset
-                    </li>
-                  </ul>
+                  A liability statement about the dataset
+
                 </td>
               </tr>
             </tbody>
@@ -8918,10 +8869,8 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>The purpose of the dataset
-                    </li>
-                  </ul>
+                  The purpose of the dataset
+
                 </td>
               </tr>
             </tbody>
@@ -8958,10 +8907,8 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>This property refers to an agent contributing to the Dataset.
-                    </li>
-                  </ul>
+                  This property refers to an agent contributing to the Dataset.
+
                 </td>
               </tr>
             </tbody>
@@ -9337,10 +9284,8 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>Contact information that can be used for sending comments about the Dataset Series.
-                    </li>
-                  </ul>
+                  Contact information that can be used for sending comments about the Dataset Series.
+
                 </td>
               </tr>
             </tbody>
@@ -9378,11 +9323,8 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>The first resource in an ordered collection or series of resources, to which the current
-                      resource
-                      belongs.</li>
-                  </ul>
+                  The first resource in an ordered collection or series of resources, to which the current
+                  resource belongs.
                 </td>
               </tr>
             </tbody>
@@ -9480,9 +9422,7 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>The last resource in an ordered collection or series of resources</li>
-                  </ul>
+                  The last resource in an ordered collection or series of resources
                 </td>
               </tr>
             </tbody>
@@ -9623,9 +9563,7 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>A member of the Dataset Series.</li>
-                  </ul>
+                  A member of the Dataset Series.
                 </td>
               </tr>
             </tbody>
@@ -10320,11 +10258,9 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>This property indicates how long it is planned to keep the Distribution of the Dataset
-                      available.
-                    </li>
-                  </ul>
+                  This property indicates how long it is planned to keep the Distribution of the Dataset
+                  available.
+
                 </td>
               </tr>
             </tbody>
@@ -10457,10 +10393,8 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>This property refers to a statement that specifies rights associated with the Distribution.
-                    </li>
-                  </ul>
+                  This property refers to a statement that specifies rights associated with the Distribution.
+
                 </td>
               </tr>
             </tbody>
@@ -10498,10 +10432,8 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>This property refers to a statement that specifies access restriction associated with the
-                      Distribution.</li>
-                  </ul>
+                  >This property refers to a statement that specifies access restriction associated with the
+                  Distribution.
                 </td>
               </tr>
             </tbody>
@@ -10540,10 +10472,8 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>This property refers to a statement that specifies use restriction associated with the
-                      Distribution.</li>
-                  </ul>
+                  This property refers to a statement that specifies use restriction associated with the
+                  Distribution.
                 </td>
               </tr>
             </tbody>
@@ -10582,10 +10512,8 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>This property refers to a statement that specifies cui restriction associated with the
-                      Distribution.</li>
-                  </ul>
+                  This property refers to a statement that specifies cui restriction associated with the
+                  Distribution.
                 </td>
               </tr>
             </tbody>
@@ -10677,10 +10605,10 @@
               </tr>
               <tr>
                 <th>Usage Note</th>
-                <ul>
-                  <li>This property contains the most recent date on which the Distribution was changed or modified.
-                  </li>
-                </ul>
+                <td>
+                  This property contains the most recent date on which the Distribution was changed or modified.
+
+                </td>
               </tr>
             </tbody>
           </table>
@@ -10720,14 +10648,10 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>This property MAY be used to provide more information about the format in which an
-                      Distribution
-                      is released. This is
-                      different from the file format as, for example, a ZIP file (file format) could contain an XML
-                      schema (representation
-                      technique).</li>
-                  </ul>
+                  This property MAY be used to provide more information about the format in which an
+                  Distribution is released. This is different from the file format as, for example, a ZIP file (file
+                  format) could contain an XML
+                  schema (representation technique).
                 </td>
               </tr>
             </tbody>
@@ -10766,11 +10690,9 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>This property refers to the maturity of the Distribution. It MUST take one of the values
-                      Completed, Deprecated, Under
-                      Development, Withdrawn from the ADMS status [[VOCAB-ADMS-SKOS] vocabulary.</li>
-                  </ul>
+                  This property refers to the maturity of the Distribution. It MUST take one of the values
+                  Completed, Deprecated, Under Development, Withdrawn from the ADMS status [[VOCAB-ADMS-SKOS]
+                  vocabulary.
                 </td>
               </tr>
             </tbody>
@@ -10809,12 +10731,8 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>This property SHOULD be used to specify the character encoding of the Distribution, by using
-                      as
-                      value the character set
-                      names in the IANA register [[IANA-CHARSETS]].</li>
-                  </ul>
+                  This property SHOULD be used to specify the character encoding of the Distribution, by using
+                  as value the character set names in the IANA register [[IANA-CHARSETS]].
                 </td>
               </tr>
             </tbody>
@@ -10854,14 +10772,10 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>This property refers to the format of the file in which the data is contained in a
-                      compressed
-                      form, e.g., to reduce the
-                      size of the downloadable file. It SHOULD be expressed using a media type as defined in the
-                      official register of media
-                      types managed by IANA [[IANA-MEDIA-TYPES]].</li>
-                  </ul>
+                  This property refers to the format of the file in which the data is contained in a
+                  compressed form, e.g., to reduce the
+                  size of the downloadable file. It SHOULD be expressed using a media type as defined in the
+                  official register of media types managed by IANA [[IANA-MEDIA-TYPES]].
                 </td>
               </tr>
             </tbody>
@@ -10902,9 +10816,7 @@
                 <td>
                   <ul>
                     <li>This property refers to the minimum spatial separation resolvable in a Distribution,
-                      measured
-                      in
-                      meters.</li>
+                      measured in meters.</li>
                   </ul>
                 </td>
               </tr>
@@ -10984,10 +10896,8 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>This property refers to a data service that gives access to the distribution of the Dataset
-                    </li>
-                  </ul>
+                  This property refers to a data service that gives access to the distribution of the Dataset
+
                 </td>
               </tr>
             </tbody>
@@ -11028,11 +10938,9 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>This property contains the size of a Distribution in bytes.
-                      If the precise size is not known, an approximate size can be indicated.
-                    </li>
-                  </ul>
+                  This property contains the size of a Distribution in bytes.
+                  If the precise size is not known, an approximate size can be indicated.
+
                 </td>
               </tr>
             </tbody>
@@ -11168,10 +11076,8 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>This property refers to a page or document about this Distribution.
-                    </li>
-                  </ul>
+                  This property refers to a page or document about this Distribution.
+
                 </td>
               </tr>
             </tbody>
@@ -11211,14 +11117,12 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>
-                      In case of a downloadable file, it is good practice to repeat the mandatory accessURL
-                      in this more specific property, to indicate to the data user that the distribution has this
-                      extra characteristic of being downloadable. The downloadURLs MAY thus be the same as the
-                      accessURLs but they MAY also differ.
-                    </li>
-                  </ul>
+
+                  In case of a downloadable file, it is good practice to repeat the mandatory accessURL
+                  in this more specific property, to indicate to the data user that the distribution has this
+                  extra characteristic of being downloadable. The downloadURLs MAY thus be the same as the
+                  accessURLs but they MAY also differ.
+
                 </td>
               </tr>
             </tbody>
@@ -11259,11 +11163,9 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>An identifier for the distribution, that identifies it as a
-                      resource mainly for the organisation publishing the data.
-                    </li>
-                  </ul>
+                  An identifier for the distribution, that identifies it as a
+                  resource mainly for the organisation publishing the data.
+
                 </td>
               </tr>
             </tbody>
@@ -11395,9 +11297,7 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>This property refers to a page or document about this Data Service.</li>
-                  </ul>
+                  This property refers to a page or document about this Data Service.
                 </td>
               </tr>
             </tbody>
@@ -11584,9 +11484,7 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>This property refers to the minimum time period resolvable in the Dataset distribution.</li>
-                  </ul>
+                  This property refers to the minimum time period resolvable in the Dataset distribution.
                 </td>
               </tr>
             </tbody>
@@ -11942,8 +11840,7 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                  </ul>
+
                 </td>
               </tr>
             </tbody>
@@ -11981,8 +11878,7 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                  </ul>
+
                 </td>
               </tr>
             </tbody>
@@ -12024,8 +11920,7 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                  </ul>
+
                 </td>
               </tr>
             </tbody>
@@ -12063,8 +11958,7 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                  </ul>
+
                 </td>
               </tr>
             </tbody>
@@ -12102,8 +11996,7 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                  </ul>
+
                 </td>
               </tr>
             </tbody>
@@ -12141,8 +12034,7 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                  </ul>
+
                 </td>
               </tr>
             </tbody>
@@ -12184,8 +12076,7 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                  </ul>
+
                 </td>
               </tr>
             </tbody>
@@ -12223,8 +12114,7 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                  </ul>
+
                 </td>
               </tr>
             </tbody>
@@ -12262,8 +12152,7 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                  </ul>
+
                 </td>
               </tr>
             </tbody>
@@ -12301,8 +12190,8 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>An implementing rule or other specification.
-                  </ul>
+                  An implementing rule or other specification.
+
                 </td>
               </tr>
             </tbody>
@@ -12341,8 +12230,8 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>An implementing rule or other specification.
-                  </ul>
+                  An implementing rule or other specification.
+
                 </td>
               </tr>
             </tbody>
@@ -13230,11 +13119,9 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>This property contains a preferred label of the Location. This property can be repeated for
-                      parallel
-                      language versions of the label.</li>
-                  </ul>
+                  This property contains a preferred label of the Location. This property can be repeated for
+                  parallel
+                  language versions of the label.
                 </td>
               </tr>
             </tbody>
@@ -13387,12 +13274,8 @@
               <tr>
                 <th>Usage Note</th>
                 <td>
-                  <ul>
-                    <li>This property contains the geographic identifier for the Location, e.g., the URI or other
-                      unique
-                      identifier in the
-                      context of the relevant gazetteer.</li>
-                  </ul>
+                  This property contains the geographic identifier for the Location, e.g., the URI or other
+                  unique identifier in the context of the relevant gazetteer.
                 </td>
               </tr>
             </tbody>
@@ -13482,9 +13365,7 @@
               <tr>
                 <th>Usage Notes:</th>
                 <td>
-                  <ul>
-                    <li>This property MAY be used to specify the gazetteer to which the Location belongs.</li>
-                  </ul>
+                  This property MAY be used to specify the gazetteer to which the Location belongs.
                 </td>
               </tr>
             </tbody>
