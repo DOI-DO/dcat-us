@@ -490,7 +490,7 @@
           </tr>
           <tr>
             <td>
-              <p>+<a href="#properties-for-activity">Activity</a></p>
+              <p><a href="#properties-for-activity">Activity</a></p>
             </td>
             <td>
               <p>An activity carried out by an Agent over an entity, according to a plan, and generating another
@@ -505,7 +505,7 @@
 
           <tr>
             <td>
-              <p>+<a href="#properties-for-address-location">Address (Location)</a></p>
+              <p><a href="#properties-for-address-location">Address (Location)</a></p>
             </td>
             <td>
               <p>A postal address for a Location.</p>
@@ -518,7 +518,7 @@
 
           <tr>
             <td>
-              <p>+<a href="#properties-for-address-contact_point">Address (Contact Point)</a></p>
+              <p><a href="#properties-for-address-contact_point">Address (Contact Point)</a></p>
             </td>
             <td>
               <p>A postal address for Contact Point.</p>
@@ -546,7 +546,7 @@
 
           <tr>
             <td>
-              <p>+<a href="#properties-for-attribution">Attribution</a></p>
+              <p><a href="#properties-for-attribution">Attribution</a></p>
             </td>
             <td>
               <p>A responsibility of an Agent for a resource.</p>
@@ -669,6 +669,18 @@
           </tr>
           <tr>
             <td>
+              <p><a href="#properties-for-investment">Investment</a></p>
+            </td>
+            <td>
+              <p>This new class specific to DCAT-US represents U.S. government-funded initiatives, allowing datasets to be linked with unique government identifiers, promoting transparency and effective resource management.
+              </p>
+            <td>
+              <p><a href="#properties-for-investment"><code>dcat-us:Investment</code></a></p>
+            </td>
+            <td><span style="color: red;">New!</span></td>
+          </tr>
+          <tr>
+            <td>
               <a href="#properties-for-liability_statement">LiabilityStatement</a>
             </td>
             <td>
@@ -736,7 +748,7 @@
 
           <tr>
             <td>
-              <p>+<a href="#properties-for-metric">Metric</a></p>
+              <p><a href="#properties-for-metric">Metric</a></p>
             </td>
             <td>
               <p>Represents a standard to measure a quality dimension. An observation (instance of
@@ -791,6 +803,21 @@
           </tr>
           <tr>
             <td>
+              <p><a href="#properties-for-program">Program</a></p>
+            </td>
+            <td>
+              <p>This new class specific to DCAT-US represents the primary federal program associated with a specific
+                data asset, sourced from the Federal Program Inventory. This association helps establish the relevance
+                and context of the data asset, potentially aiding in compliance with the U.S. Evidence Act.
+              </p>
+
+            <td>
+              <p><a href="#properties-for-program"><code>dcat-us:Program</code></a></p>
+            </td>
+            <td><span style="color: red;">New!</span></td>
+          </tr>
+          <tr>
+            <td>
               <a href="#properties-for-provenance-statement">Provenance Statement</a>
             </td>
             <td>
@@ -809,7 +836,7 @@
 
           <tr>
             <td>
-              <p>+<a href="#properties-for-quality-measurement">Quality Measurement</a></p>
+              <p><a href="#properties-for-quality-measurement">Quality Measurement</a></p>
             </td>
             <td>
               <p>Represents the evaluation of a given resource (as a Data Service, Dataset, or Distribution) against a
@@ -1797,11 +1824,13 @@
               <li>A Web-based data catalog is typically represented as a single instance of this class.</li>
               <li>Populate metadata within the dcat:Catalog to facilitate resource discovery, including title,
                 description, classifiers and other relevant information. </li>
-              <li>Specify the resources hosted within the catalog by linking them as <a data-cite="VOCAB-DCAT-3#Property:catalog_dataset"><code>dcat:dataset</code></a> or <a data-cite="VOCAB-DCAT-3#Property:catalog_service"><code>dcat:service</code></a>.</li>    
+              <li>Specify the resources hosted within the catalog by linking them as <a
+                  data-cite="VOCAB-DCAT-3#Property:catalog_dataset"><code>dcat:dataset</code></a> or <a
+                  data-cite="VOCAB-DCAT-3#Property:catalog_service"><code>dcat:service</code></a>.</li>
 
 
 
-             
+
             </ul>
           </td>
         </tr>
@@ -12914,6 +12943,14 @@
       </section>
     </section>
 
+
+    <section id="properties-for-investment">
+      <h2>Class: Investment</h2>
+
+      <aside class="note">New class (DCAT-US profile specific)</aside>
+      <aside class="note">TODO</aside>
+    </section>
+
     <!-- dcat-us:LiabilityStatement-->
 
     <section id="properties-for-liability_statement">
@@ -14560,6 +14597,14 @@
           <!--           <pre data-include-format="text" data-include="./examples/dataset/person.ttl"></pre> -->
         </aside>
       </section>
+    </section>
+
+
+    <section id="properties-for-program">
+      <h2>Class: Program</h2>
+
+      <aside class="note">New class (DCAT-US profile specific)</aside>
+      <aside class="note">TODO</aside>
     </section>
 
     <!-- dct:ProvenanceStatement-->
