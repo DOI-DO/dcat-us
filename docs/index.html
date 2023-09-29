@@ -4842,8 +4842,10 @@
         <tr>
           <th class="prop">Rationale:</th>
           <td>
-            Introducing  <a href="VOCAB-DCAT-3#Class:Data_Service"><code>dcat:DataService</code></a> is essential as it clarifies the representation of data services, addressing
-            the confusion caused by using  <a href="VOCAB-DCAT-3#Class:Distribution"><code>dcat:Distribution</code></a> to describe services in DCAT 1. This addition promotes clear
+            Introducing <a href="VOCAB-DCAT-3#Class:Data_Service"><code>dcat:DataService</code></a> is essential as it
+            clarifies the representation of data services, addressing
+            the confusion caused by using <a href="VOCAB-DCAT-3#Class:Distribution"><code>dcat:Distribution</code></a>
+            to describe services in DCAT 1. This addition promotes clear
             communication of service-related information, improving discoverability, and facilitating seamless
             integration and usage by data consumers and applications.
           </td>
@@ -6459,6 +6461,14 @@
                 dataset.</li>
             </ul>
           </td>
+        </tr>
+        <tr>
+          <th>Rationale:</th>
+          <td>The update of <a data-cite="VOCAB-DCAT-3#Class:Dataset"><code>dcat:Dataset</code></a> is crucial as it
+            aligns the DCAT profile with international standards,
+            offering a standardized and widely recognized way to describe datasets. This alignment enhances data
+            interoperability and discoverability, enabling data publishers to provide structured metadata, improving
+            data sharing, and facilitating seamless integration for users and applications.</td>
         </tr>
 
       </table>
@@ -9025,12 +9035,21 @@
               <li>Dataset series can be also soft-typed via property dcterms:type as in the approach used in
                 [[GeoDCAT-AP]]</li>
               <li>Common scenarios for dataset series include: time series composed of periodically released
-                subsets;
-                map-series composed of items of the same type or theme but with differing spatial footprints.</li>
+                subsets; map-series composed of items of the same type or theme but with differing spatial footprints.
+              </li>
             </ul>
           </td>
         </tr>
-
+        <tr>
+          <th>Rationale:</th>
+          <td>Incorporating <a data-cite="VOCAB-DCAT-3#Class:Dataset_Series"><code>dcat:DatasetSeries</code></a> is
+            essential to enable the structured grouping and presentation of
+            related datasets, ensuring that data publishers can convey meaningful collections of data. This
+            facilitates
+            efficient data organization and discovery for users, aligning the DCAT profile with international
+            standards
+            for dataset series representation.</td>
+        </tr>
       </table>
       <table class="simple">
         <thead>
@@ -9741,29 +9760,34 @@
     <section id="properties-for-distribution">
       <h2>Class: Distribution</h2>
       <aside class="note">Class updated in DCAT-US 3.0 (DCAT 2/3)</aside>
-      <p>A metadata entry of this class describes a distribution of the data, which is a specific representation
-        of a Dataset. A Dataset might be available in multiple serializations that may differ in various ways,
-        including natural language, media-type or format, schematic organization, temporal and spatial resolution,
-        level of detail or profiles (which might specify any or all of the above).
+      <p>In the context of the DCAT-US profile, a metadata entry of this class serves to characterize a distribution of
+        data, which constitutes a specific representation of a Dataset. Datasets within this profile may offer multiple
+        serializations, each potentially differing in various aspects, including natural language, media type or format,
+        schematic organization, temporal and spatial resolution, level of detail, or profiles that specify any
+        combination of these attributes.</p>
+
+      <p>A distribution may encompass the entirety of the Dataset's data or only a subset thereof. For example, it could
+        encompass all data related to the population in the United States or focus exclusively on a specific year, such
+        as 2020. Alternatively, it might provide the data in an alternate format, such as a graphical representation
+        covering the years 2010 through 2020.</p>
+
+      <p>Within the DCAT-US profile, various relationships between Datasets and their distributions are represented. The
+        most straightforward relationship involves aggregating different physical representations of data, referred to
+        as "Distributions," into a single Dataset. An example of such a Dataset is a time series, where each
+        distribution corresponds to one year of data, and the Dataset spans multiple years.</p>
+
+
+      <p>In the DCAT vocabulary, <code>dcat:Distribution</code> is employed to characterize the diverse representations
+        and formats in which a dataset is disseminated, facilitating the description of different versions or media
+        types of the same data, and often includes properties like <code>dcat:downloadURL</code> for direct download
+        links. On the other hand, <code>dcat:DataService</code> serves the purpose of detailing data access services,
+        such as APIs and endpoints, enabling programmatic or interactive data retrieval, with key properties like
+        <code>dcat:endpointURL</code> specifying service endpoints and <code>dcat:serviceType</code> indicating the type
+        of service, thus distinguishing between the description of data formats and the specification of data access
+        services within the DCAT framework.
       </p>
-      <p>The distribution can contain all the data of the Dataset or it can contain just a part of the data.
-        For example: it can contain all data about the population in Switzerland or it can contain just one year of
-        this data, say the year 2018. It can also contain the data in an alternative data format, for example a
-        graphical presentation of the data for the years 1990 up to 2010.
-      </p>
-      <p>DCAT-AP allows the representation of various relationships within Dataset or between Datasets: The simplest
-        relationship is the aggregation of various physical representations of data (“Distributions”) into a
-        Dataset.
-        One possible such Dataset would be a time series where each distribution covers one year of the data and the
-        Dataset spans several years.
-      </p>
-      <p>A distribution represents a general availability of a Dataset. It implies
-        no information about the actual access method of the data, i.e. whether by direct download or
-        through a Web page. The use of dcat:downloadURL property indicates directly downloadable distributions.
-      </p>
-      <p>DCAT 3 provides guidelines about the usage of Data services and Distribution in relation to Dataset:
-        [[VOCAB-DCAT-3]].
-      </p>
+
+
 
       <table class="def">
         <tr>
@@ -9794,7 +9818,14 @@
             </ul>
           </td>
         </tr>
-
+        <tr>
+          <th>Rationale:</th>
+          <td>The update to DCAT 3 <a data-cite="VOCAB-DCAT-3#Class:Distribution"><code>dcat:Distribution</code></a> is
+            of paramount significance as it greatly enhances data accessibility. It introduces a more comprehensive and
+            structured approach to describing data distributions, ensuring that data consumers can easily understand and
+            access the data in the format that best suits their needs, ultimately fostering greater data utilization and
+            dissemination.</td>
+        </tr>
       </table>
 
       <table class="simple">
@@ -11528,6 +11559,15 @@
             be fully described, or simply denoted by its URI.</td>
         </tr>
         <tr>
+          <th>Rationale:</th>
+          <td>The introduction of <a href="http://xmlns.com/foaf/0.1/#term_Document"><code>foaf:Document</code></a>
+            significantly improves the representation of documents within the DCAT-US profile. It ensures that metadata
+            about documents, such as title, format, language, and access options, are clearly defined and standardized.
+            This
+            alignment with global data standards fosters interoperability and eases document integration into various
+            data ecosystems, benefiting both publishers and consumers.</td>
+        </tr>
+        <tr>
           <th>Reference</th>
           <td>
             <p><a class="sec-ref" href="http://xmlns.com/foaf/spec#term_Document">§&nbsp;Class: foaf:Document</a>
@@ -12519,6 +12559,15 @@
                   title="Asset Description Metadata Schema (ADMS)">ADMS</a></cite>]</p>
           </td>
         </tr>
+        <tr>
+          <th class="prop">Rationale</th>
+          <td>
+            Incorporating <a href="http://www.w3.org/ns/adms#Identifier"><code>adms:Identifier</code></a> in the DCAT-US
+            profile fosters a culture of data governance and trust by transparently documenting the authority behind
+            each identifier. This enhances data reliability and credibility, boosting confidence for DCAT-US users.
+            Additionally, it enables versatile data access using multiple identifiers, enhancing overall data
+            accessibility and usability for diverse stakeholders. </td>
+        </tr>
       </table>
       <p><strong>Properties Summary</strong></p>
       <table class="simple">
@@ -12786,6 +12835,13 @@
             </ul>
           </td>
         </tr>
+        <tr>
+          <th class="prop">Rationale</th>
+          <td>Introducing <a href="http://TBD#LiabilityStatement"><code>dcat-us:LiabilityStatement</code></a> in DCAT-US
+            clarifies data provider responsibilities and limitations, reducing legal risks by defining acceptable uses
+            and disclaiming warranties. This ensures transparency and legal compliance in data sharing within the United
+            States.</td>
+        </tr>
       </table>
       <p><strong>Properties Summary</strong></p>
       <table class="simple">
@@ -12885,9 +12941,19 @@
           <th class="prop">Usage note:</th>
           <td>
             Licence document SHOULD be specified only with URIs from an endorsed Data.gov registry.
-            Property <code>rdfs:label<code> MAY only be used to specify license information in legacy metadata records, not compliant with
-            standard license from an endorsed Data.Gov registry.   
+            Property <a href="http://spdx.org/rdf/terms#licenseText"><code>spdx:licenseText</code> MAY only be used to
+              specify license information in legacy metadata records, not compliant with
+              standard license from an endorsed Data.Gov registry.
           </td>
+        </tr>
+        <tr>
+          <th>Rationale:</th>
+          <td>The introduction of <a
+              href="http://purl.org/dc/terms/LicenseDocument"><code>dcterms:LicenseDocument</code></a> in
+            the DCAT profile enables the customization of license text. This flexibility empowers data publishers to
+            tailor license terms to specific dataset requirements, facilitating clear communication of licensing
+            conditions and promoting responsible data sharing and usage while adhering to established international
+            standards.</td>
         </tr>
         <tr>
           <th>Reference</th>
@@ -12914,12 +12980,12 @@
           <tr>
             <td><a href="#license-document-license-text">license text</a></td>
             <td><a href="http://spdx.org/rdf/terms#licenseText"><code>spdx:licenseText</code></a>
-          </td>
-          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
-          </td>
-          <td><strong>O</strong></td>
-          <td>0..n</td>
-        </tr>
+            </td>
+            <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+            </td>
+            <td><strong>O</strong></td>
+            <td>0..n</td>
+          </tr>
 
         </tbody>
       </table>
@@ -12985,8 +13051,7 @@
       <table class="def">
         <tr>
           <th>RDF Class:</th>
-          <td><a href="http://purl.org/dc/terms/Location"><code
-                title="http://purl.org/dc/terms/Location">dcterms:Location</code></a></td>
+          <td><a href="http://purl.org/dc/terms/Location"><code>dcterms:Location</code></a></td>
         </tr>
         <tr>
           <th class="prop">Definition:</th>
@@ -13021,6 +13086,18 @@
                 SHOULD be used.
               </li>
             </ul>
+          </td>
+        </tr>
+        <tr>
+          <th>Rationale:</th>
+          <!-- TODO  Add references to standard-->
+          <td>The introduction of <a href="http://purl.org/dc/terms/Location"><code>dcterms:Location</code></a> in
+            DCAT-US 3.0 is driven by the need to restore compatibility with the
+            DCAT standard. DCAT-US 1.1 had deviated from the standard by using strings for location in
+            <code>dct:spatial</code> property, which was
+            incompatible. This addition aligns DCAT-US with recognized geospatial standards (e.g., Geosparql, WKT,
+            GeoJSON, W3C Location) for representing geometries, addresses, and location names, ensuring data
+            compatibility, discoverability, and integration while adhering to international data management practices.
           </td>
         </tr>
       </table>
@@ -13403,6 +13480,27 @@
           </td>
         </tr> -->
         <tr>
+          <th>Usage Note:</th>
+
+          <td>Data publishers should consider using well-established IANA [[IANA-MEDIA-TYPES]] URLs for media types
+            whenever possible to
+            enhance compatibility and interoperability. However, the ability to create custom media types using labels
+            provides flexibility for unique data requirements. When creating custom media types, it's advisable to
+            provide clear and concise definitions to ensure transparency and understanding for data consumers. Striking
+            a balance between standardized and custom media types optimizes data sharing within the DCAT-US framework.
+          </td>
+        </tr>
+        <tr>
+          <th>Rationale:</th>
+          <td>Incorporating <a href="http://purl.org/dc/terms/MediaType"><code>dcterms:MediaType</code></a> in DCAT-US
+            combines the use of established IANA [[IANA-MEDIA-TYPES]] URLs for standardized media types with the
+            flexibility to create custom
+            types using labels. This dual approach ensures compatibility with recognized media types while allowing
+            adaptability to specific needs, promoting both data interoperability and flexibility in data sharing and
+            dissemination.
+          </td>
+        </tr>
+        <tr>
           <th>Reference</th>
           <td>
             <p><a href="http://purl.org/dc/terms/MediaType">§&nbsp;Term name: MediaType</a>
@@ -13492,6 +13590,15 @@
             allows for the comparison and evaluation of data quality
             across different resources and enables the development of consistent quality assessment frameworks and
             methodologies.</td>
+        </tr>
+        <tr>
+          <th>Rationale:</th>
+          <td>Introducing <a data-cite="VOCAB-DQV#Metric"><code>dqv:Metric</code></a> in the DCAT-US profile enhances
+            dataset quality assessment and management by aligning with international data quality standards. It allows
+            data publishers to systematically define and communicate dataset quality characteristics, promoting
+            transparency and informed data utilization, fostering trust, and supporting responsible data sharing within
+            the DCAT-US ecosystem.
+          </td>
         </tr>
         <tr>
           <th>Reference</th>
@@ -13672,8 +13779,7 @@
       <table class="def">
         <tr>
           <th>RDF Class:</th>
-          <td><a href="http://www.w3c.org/ns/org#Organization"><code
-                title="http://www.w3c.org/ns/org#Organization">org:Organization</code></a>
+          <td><a href="http://www.w3c.org/ns/org#Organization"><code>org:Organization</code></a>
           </td>
         </tr>
         <tr>
@@ -13692,9 +13798,26 @@
         <tr>
           <th class="prop">Usage note:</th>
           <td>
-            <ul>
-
-            </ul>
+            When utilizing the <a href="http://www.w3c.org/ns/org#Organization"><code>org:Organization</code></a> class
+            in DCAT-US 3.0, data publishers are encouraged to provide the preferred label (<a
+              data-cite="SKOS-REFERENCE#prefLabel"><code>skos:prefLabel</code></a>) for the organization, along with any
+            relevant alternative labels (<a data-cite="SKOS-REFERENCE#altLabel"><code>skos:altLabel</code>) and
+              abbreviations <a data-cite="SKOS-REFERENCE#notation"><code>skos:notation</code></a>. This usage is
+              consistent with the W3C Organization Recommendation standard [[VOCAB-ORG]].This practice ensures
+              comprehensive and flexible organization identification, improving data discoverability and search
+              accuracy. Data publishers should strive to maintain consistency in naming conventions while considering
+              variations and common aliases used to refer to organizations. By providing a well-rounded representation
+              of organizations, DCAT-US 3.0 enhances data usability and transparency, facilitating efficient data search
+              and retrieval. </td>
+        </tr>
+        <tr>
+          <th>Rationale:</th>
+          <td>Improving the <a href="http://www.w3c.org/ns/org#Organization"><code>org:Organization</code></a> class in
+            DCAT-US 3.0 by supporting prefLabel, alternative labels, and abbreviations is essential to enhance
+            organization representation. This enhancement accommodates variations in organization naming, promotes data
+            interoperability, and improves discoverability within datasets. By incorporating these features, DCAT-US 3.0
+            aligns with best practices in data representation, enhances data search and transparency, and optimizes the
+            overall usability of data resources.
           </td>
         </tr>
       </table>
@@ -13960,8 +14083,7 @@
       <table class="def">
         <tr>
           <th>RDF Class:</th>
-          <td><a href="http://purl.org/dc/terms/PeriodOfTime"><code
-                title="http://purl.org/dc/terms/PeriodOfTime">dct:PeriodOfTime</code></a></td>
+          <td><a href="http://purl.org/dc/terms/PeriodOfTime"><code>dct:PeriodOfTime</code></a></td>
         </tr>
         <tr>
           <th class="prop">Definition:</th>
@@ -13970,16 +14092,28 @@
         <tr>
           <th class="prop">Usage note:</th>
           <td>
-            <ul>
-              <li>The start and end of the interval SHOULD be given by using properties <a
-                  data-cite="DCAT-US#Property:period_start-date"><code>dcat:startDate</code></a>, and <a
-                  data-cite="DCAT-US#Property:period_end-date"><code>dcat:endDate</code></a>, respectively. The
-                interval
-                can also be open - i.e., it can have just a start or just an end.</li>
-            </ul>
+            The start and end of the interval SHOULD be given by using properties <a
+              data-cite="DCAT-US#Property:period_start-date"><code>dcat:startDate</code></a>, and <a
+              data-cite="DCAT-US#Property:period_end-date"><code>dcat:endDate</code></a>, respectively. The
+            interval
+            can also be open - i.e., it can have just a start or just an end.
           </td>
         </tr>
-
+        <tr>
+          <th>Rationale:</th>
+          <td>The introduction of <a href="http://purl.org/dc/terms/PeriodOfTime"><code>dct:PeriodOfTime</code></a> in
+            DCAT-US 3.0 is pivotal for harmonizing with international
+            standards and rectifying the inconsistency with DCAT 1. In DCAT-US 1.1, [[ISO8601-1]] was used for interval
+            representation in <code>dct:temporal</code>, diverging from DCAT 1's requirement of dct:PeriodOfTime. This
+            alignment with DCAT 3
+            standards in DCAT-US 3.0 not only resolves discrepancies but also streamlines data processing, simplifying
+            parsing and indexing of time intervals. By adopting <a
+              href="http://purl.org/dc/terms/PeriodOfTime"><code>dct:PeriodOfTime</code></a>, DCAT-US 3.0 promotes ease
+            of
+            implementation, ensuring uniformity, flexibility, accuracy, and enhanced interoperability in handling
+            time-related data, ultimately benefiting data usability and exchange.
+          </td>
+        </tr>
       </table>
       <table class="simple">
         <thead>
@@ -14101,8 +14235,7 @@
       <table class="def">
         <tr>
           <th>RDF Class:</th>
-          <td><a href="http://xmlns.com/foaf/0.1/#term_Person"><code
-                title="http://xmlns.com/foaf/0.1/#term_Person">foaf:Person</code></a></td>
+          <td><a href="http://xmlns.com/foaf/0.1/#term_Person"><code>foaf:Person</code></a></td>
         </tr>
         <tr>
           <th class="prop">Definition:</th>
@@ -14117,9 +14250,19 @@
         <tr>
           <th class="prop">Usage note:</th>
           <td>
-            <ul>
 
-            </ul>
+          </td>
+        </tr>
+        <tr>
+          <th>Rationale:</th>
+          <td>The rationale for enhancing the <a
+              href="http://xmlns.com/foaf/0.1/#term_Person"><code>foaf:Person</code></a> class in DCAT-US 3.0 is to
+            provide a more comprehensive and standardized representation of individuals within datasets. In earlier
+            versions, like DCAT 1.1, only a single "name" property was available for describing persons, limiting the
+            richness of personal data representation. By introducing properties like "firstName," "givenName," and
+            "affiliation," DCAT-US 3.0 aligns with best practices in data representation, allowing data publishers to
+            provide more detailed information about individuals and their affiliations with organizations. This
+            enhancement enhances data usability and transparency.
           </td>
         </tr>
 
@@ -14320,8 +14463,16 @@
         </tr>
         <tr>
           <th class="prop">Usage note:</th>
-          <td>A statement of any changes in ownership and custody of a resource since its creation that
-            are significant for its authenticity, integrity, and interpretation</td>
+          <td>The <a data-cite="DCTerms#terms_Provenance Statement"><code>dcterms:ProvenanceStatement</code></a> in
+            DCAT-US 3.0 offers flexibility in how it can be referenced. It can either be referred to by a URL or
+            included in-line by using a label. This versatility allows data publishers to choose the most suitable
+            method for providing information about significant changes in ownership and custody, enhancing the
+            accessibility and usability of provenance details within datasets. </td>
+        </tr>
+        <tr>
+          <th>Rationale:</th>
+          <td>Introducing <a data-cite="DCTerms#terms_Provenance Statement"><code>dcterms:ProvenanceStatement</code></a> in DCAT-US 3.0 enhances dataset transparency and trustworthiness. It allows data publishers to provide structured information about significant changes in ownership and custody, aligning with international data quality and provenance standards. This flexibility ensures greater confidence in dataset authenticity and interpretation, promoting responsible data usage within DCAT-US.
+          </td>
         </tr>
         <tr>
           <th>Reference</th>
