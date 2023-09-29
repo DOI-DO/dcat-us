@@ -1229,8 +1229,7 @@
       <table class="def">
         <tr>
           <th>RDF Class:</th>
-          <td><a href="http://xmlns.com/foaf/0.1/#term_Agent"><code
-                title="http://xmlns.com/foaf/0.1/#term_Agent">foaf:Agent</code></a></td>
+          <td><a href="http://xmlns.com/foaf/0.1/#term_Agent"><code>foaf:Agent</code></a></td>
         </tr>
         <tr>
           <th class="prop">Definition:</th>
@@ -1240,12 +1239,28 @@
           <th class="prop">Usage note:</th>
           <td>
             <ul>
-              <li>An entity (e.g., an individual or an organisation) that is associated with Catalogues, Catalogue
+              <li>Use this class when refering to a software agent that is associated with Catalogues, Catalogue
                 Records, Data Services, or Datasets.</li>
-              <li>If the Agent is an organisation, the use of the Organization Ontology [VOCAB-ORG] is recommended.
-              </li>
-              <li>If the Agent is a person, the use of Person if FOAF Ontology [VOCAB-FOAF] is recommended</li>
+              <li>If the Agent is an organisation, the use of the <a
+                  href="http://www.w3c.org/ns/org#Organization"><code>org:Organization</code></a> is recommended. </li>
+              <li>If the Agent is a person, the use of <a
+                  href="http://xmlns.com/foaf/0.1/#term_Person"><code>foaf:Person</code></a> is recommended</li>
             </ul>
+          </td>
+        </tr>
+        <tr>
+          <th>Rationale:</th>
+          <td>The addition of the <a href="http://xmlns.com/foaf/0.1/#term_Agent"><code>foaf:Agent</code></a> class in
+            DCAT-US 3.0 serves a dual purpose. Firstly, it allows for the representation of software agents, aligning
+            with modern data automation needs. Secondly, it acts as an abstract class for both <a
+              href="http://xmlns.com/foaf/0.1/#term_Person"><code>foaf:Person</code></a> and <a
+              href="http://www.w3c.org/ns/org#Organization"><code>org:Organization</code></a>, promoting consistency and
+            interoperability while simplifying resource descriptions within the dataset catalog.
+
+
+
+
+
           </td>
         </tr>
       </table>
@@ -3273,6 +3288,18 @@
 
           </td>
         </tr>
+        <tr>
+          <th class="prop">Rationale</th>
+          <td>
+            While its use is not mandatory, the incorporation of <a
+              data-cite="VOCAB-DCAT-3#Class:Catalog_Record"><code>dcat:CatalogRecord</code></a> into DCAT-US 3.0 holds
+            significant value. It enables catalogs to distinguish between metadata describing datasets or services and
+            the actual catalog entries. This differentiation proves especially advantageous for ensuring adherence to
+            application profiles that demand specific metadata for catalog records. Furthermore, it streamlines resource
+            lifecycle management, empowering catalogs to monitor alterations and revisions to their entries, ultimately
+            bolstering data governance and quality assurance protocols.
+          </td>
+        </tr>
       </table>
 
       <p><strong>Properties Summary</strong></p>
@@ -3735,6 +3762,7 @@
             </ul>
           </td>
         </tr>
+
       </table>
 
       <p><strong>Properties Summary</strong></p>
@@ -3867,6 +3895,27 @@
             <ul>Following FAIR Vocabulary principles, Concept URI should be made resolvable and accessible using SKOS
               encoding and provided in Linked Data format (RDF/XML,TTL, JSON-LD, NTriples)
             </ul>
+            <ul>Ensure FAIR Resolvability: Make Concept URIs resolvable using FAIR principles, allowing them to be
+              Findable, Accessible, Interoperable, and Reusable. This ensures that <a
+                href="SKOS-REFERENCE#Class:Concept"><code>skos:Concept</code></a> instances can be easily discovered,
+              accessed, integrated with other resources, and reused across the DCAT-US ecosystem, promoting data
+              interoperability and accessibility.</ul>
+            <ul>To enhance data interoperability and consistency, it is advisable to reuse established controlled
+              vocabularies such as GCMD, Agrovoc, and NAICS for data description.</ul>
+          </td>
+        </tr>
+        <tr>
+          <th class="prop">Rationale:</th>
+          <td>
+            The inclusion of <a href="SKOS-REFERENCE#Class:Concept"><code>skos:Concept</code></a> in DCAT-US 3.0
+            enhances semantic search in catalogs, enabling more accurate discovery of Catalogs, Datasets, and Data
+            Services. It improves user experience, promotes data discoverability, and supports better resource
+            utilization. Additionally, it aligns with international standards like SKOS, ensuring compatibility and
+            adherence to recognized controlled vocabulary practices.
+
+
+
+
           </td>
         </tr>
       </table>
@@ -4137,12 +4186,19 @@
           <th class="prop">Usage note:</th>
           <td>
             <ul>Following FAIR Vocabulary principles, Concept Scheme URI should be made resolvable and accessible
-              using
-              SKOS encoding and provided in Linked Data format (RDF/XML,TTL, JSON-LD, NTriples)
+              using SKOS encoding and provided in Linked Data format (RDF/XML,TTL, JSON-LD, NTriples)
             </ul>
+            <ul>To enhance data interoperability and consistency, it is advisable to reuse established controlled
+              vocabularies such as GCMD, Agrovoc, and NAICS for data description.</ul>
           </td>
         </tr>
-
+        <tr>
+          <th>Rationale:</th>
+          <td>The introduction of <a href="SKOS-REFERENCE#Class:ConceptScheme"><code>skos:ConceptScheme</code></a> in
+            DCAT-US 3.0 enhances data resource organization, categorization,
+            and accessibility. It provides a structured framework for controlled vocabularies, aligning with FAIR
+            Vocabulary principles for improved data interoperability and discoverability.</td>
+        </tr>
       </table>
       <p><strong>Properties</strong></p>
       <table class="simple">
@@ -4486,12 +4542,18 @@
         <tr>
           <th class="prop">Usage note:</th>
           <td>
-            <ul>
 
-            </ul>
           </td>
         </tr>
-
+        <tr>
+          <th class="prop">Rationale:</th>
+          <td>
+            The introduction of <a href="VCARD-RDF#d4e1508"><code>vcard:Contact</code></a> in DCAT-US 3.0 is driven by
+            the need for standardized, reliable, and
+            interoperable Point of Contact information, ultimately improving the accessibility and usability of data
+            resources within the DCAT-US ecosystem.
+          </td>
+        </tr>
       </table>
       <p><strong>Properties Summary</strong></p>
       <table class="simple">
@@ -4614,19 +4676,36 @@
       <table class="def">
         <tr>
           <th>RDF Class:</th>
-          <td><a href="http://TBD#CuiRestriction"><code
-                title="http://TBD#CuiRestriction">dcat-us:CuiRestriction</code></a></td>
+          <td><a href="http://TBD#CuiRestriction"><code>dcat-us:CuiRestriction</code></a></td>
         </tr>
         <tr>
           <th class="prop">Definition:</th>
-          <td></td>
+          <td>Represents Controlled Unclassified Information (CUI), which is information that requires safeguarding or
+            dissemination controls in accordance with applicable laws, regulations, and government-wide policies but is
+            not classified as confidential.</td>
         </tr>
         <tr>
           <th class="prop">Usage note:</th>
           <td>
             <ul>
-
+              <li>The CUI Restriction class is designed to capture information related to Controlled Unclassified
+                Information (CUI) in accordance with NARA guidelines.</li>
+              <li>Users of this class must provide the mandatory properties, i.e the CUI banner marking and
+                designation indicator, to accurately describe the CUI status of a resource.</li>
+              <li>The optional property, "required indicator per authority," allows for additional information or
+                context about CUI restrictions, providing flexibility for specific use cases.</li>
             </ul>
+          </td>
+        </tr>
+        <tr>
+          <th class="prop">Rationale:</th>
+          <td>
+
+            The introduction of the <a href="http://TBD#CuiRestriction"><code>dcat-us:CuiRestriction</code></a> class in
+            DCAT-US 3.0 is driven by the need for compliance with National Archives and Records Administration (NARA)
+            guidelines regarding Controlled Unclassified Information (CUI). This addition ensures that DCAT-US aligns
+            with NARA's standards, promotes transparency, facilitates compliance audits, and supports efficient resource
+            management. Ultimately, it enhances data interoperability and security within the government data ecosystem.
           </td>
         </tr>
 
@@ -4676,7 +4755,7 @@
         </tbody>
       </table>
       <aside class="example" id="ex-cui-restriction"
-        title="dcat-us:CUIRestriction with mandatory and optional properties">
+        title="dcat-us:CuiRestriction with mandatory and optional properties">
         <pre data-include-format="text" data-include="./examples/restriction/cuiRestriction.ttl"></pre>
       </aside>
       <section id="cui_restriction-mandatory-props">
@@ -14471,7 +14550,11 @@
         </tr>
         <tr>
           <th>Rationale:</th>
-          <td>Introducing <a data-cite="DCTerms#terms_Provenance Statement"><code>dcterms:ProvenanceStatement</code></a> in DCAT-US 3.0 enhances dataset transparency and trustworthiness. It allows data publishers to provide structured information about significant changes in ownership and custody, aligning with international data quality and provenance standards. This flexibility ensures greater confidence in dataset authenticity and interpretation, promoting responsible data usage within DCAT-US.
+          <td>Introducing <a data-cite="DCTerms#terms_Provenance Statement"><code>dcterms:ProvenanceStatement</code></a>
+            in DCAT-US 3.0 enhances dataset transparency and trustworthiness. It allows data publishers to provide
+            structured information about significant changes in ownership and custody, aligning with international data
+            quality and provenance standards. This flexibility ensures greater confidence in dataset authenticity and
+            interpretation, promoting responsible data usage within DCAT-US.
           </td>
         </tr>
         <tr>
@@ -14574,10 +14657,20 @@
             metric.
           </td>
         </tr>
+
+
         <tr>
           <th class="prop">Usage note:</th>
           <td>Represents the evaluation of a given resource (as a Data Service, Dataset, or Distribution) against a
             specific quality metric, such as spatial resolution in scale, angle or metric.</td>
+        </tr>
+        <tr>
+          <th>Rationale:</th>
+          <td>The inclusion of <a data-cite="VOCAB-DQV#QualityMeasurement"><code>dqv:QualityMeasurement</code></a> in
+            DCAT-US assists end-users in better evaluating the fitness of use of resources. This optional class enhances
+            data quality assessment, aligns with international standards (DQV), and enables more precise evaluation
+            against specific quality metrics, ultimately improving data usability and adherence to recognized quality
+            assessment practices. </td>
         </tr>
         <tr>
           <th>Reference</th>
@@ -14794,6 +14887,17 @@
             <a data-cite="PROV-O#specializationOf"><code>prov:specializationOf</code></a>)
           </td>
         </tr>
+        <tr>
+          <th>Rationale:</th>
+          <td>The introduction of <a data-cite="VOCAB-DCAT-3#Class:Relationship"><code>dcat:Relationship</code></a>in
+            DCAT-US serves to enhance the representation and description of relationships between datasets and other
+            resources. This class allows for the attachment of additional information to relationships that are not
+            adequately characterized by standard properties, promoting a more comprehensive understanding of dataset
+            connections. By accommodating nuanced relationship types beyond existing standards like [[DCTERMS]] and
+            [[PROV-O]] properties, DCAT-US ensures greater flexibility and precision in documenting dataset
+            relationships,
+            facilitating more informed data discovery and utilization.</td>
+        </tr>
       </table>
 
       <p><strong>Properties Summary</strong></p>
@@ -14942,6 +15046,16 @@
           </td>
         </tr>
         <tr>
+          <th>Rationale:</th>
+          <td>The introduction of <a
+              href="http://purl.org/dc/terms/RightsStatement"><code>dcterms:RightsStatement</code></a>
+            in DCAT-US is vital for standardizing the conveyance of intellectual property rights (IPR) and access
+            permissions. This optional class accommodates URL references and custom rights statements via attribution
+            text, promoting transparency and compliance. By encouraging consistent rights information at the
+            Distribution and optional Dataset levels, DCAT-US enhances data sharing while reducing legal conflict risks.
+          </td>
+        </tr>
+        <tr>
           <th>Reference</th>
           <td>
             <p><a href="http://purl.org/dc/terms/RightsStatement">§&nbsp;Term name: RightsStatement</a>
@@ -15084,6 +15198,12 @@
           <td>A standard or other specification to which a Catalog, Catalog Record, Data Service, Dataset, or
             Distribution conforms</td>
 
+        </tr>
+        <tr>
+          <th>Rationale:</th>
+          <td>The inclusion of <a data-cite="DCTerms#terms_Standard"><code>dct:Standard</code></a> in DCAT-US
+            accommodates standard references through URLs or custom, detailed descriptions when specific standards are
+            not available, promoting flexibility and completeness in resource metadata.</td>
         </tr>
         <tr>
           <th>Reference</th>
@@ -15502,8 +15622,7 @@
       <table class="def">
         <tr>
           <th>RDF Class:</th>
-          <td><a href="http://TBD#UseRestriction"><code
-                title="http://TBD#UseRestriction">dcat-us:UseRestriction</code></a></td>
+          <td><a href="http://TBD#UseRestriction"><code>dcat-us:UseRestriction</code></a></td>
         </tr>
         <tr>
           <th class="prop">Definition:</th>
@@ -15515,12 +15634,25 @@
         <tr>
           <th class="prop">Usage note:</th>
           <td>
-            <ul>
-
-            </ul>
+            When utilizing the <a href="http://TBD#UseRestriction"><code>dcat-us:UseRestriction</code></a> class, data
+            publishers are encouraged to provide comprehensive and precise details regarding the specific use
+            restrictions applied to a resource. This may include information on access limitations, distribution rules,
+            reproduction guidelines, modification constraints, and any other pertinent restrictions. Adherence to NARA
+            guidelines and standards should be a priority when defining use restrictions, ensuring that data resources
+            align with archival and preservation practices. By offering clear and concise use restriction information,
+            data consumers can make informed decisions about the utilization of these resources while complying with
+            NARA's requirements.
           </td>
         </tr>
-
+        <tr>
+          <th>Rationale:</th>
+          <td>The introduction of <a href="http://TBD#UseRestriction"><code>dcat-us:UseRestriction</code></a> in DCAT-US
+            3.0, aligned with NARA (National Archives and
+            Records Administration) guidelines, enhances compliance and interoperability with NARA-specific use
+            restriction standards. This enables organizations to accurately convey NARA-specific restrictions on data
+            resources, ensuring adherence to archival and data preservation requirements, and promoting consistent data
+            management practices within the DCAT-US framework.</td>
+        </tr>
       </table>
 
       <p><strong>Properties Summary</strong></p>
