@@ -1775,6 +1775,48 @@
       </p>
       <p>
         DCAT-US allows Catalogs of only Datasets, but also Catalogs of only Data Services</p>
+
+      <table class="def">
+        <tr>
+          <th>RDF Class:</th>
+          <td><a data-cite="VOCAB-DCAT-3#Class:Catalog"><code>dcat:Catalog</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th class="prop">Definition:</th>
+          <td>A curated collection of metadata about resources (e.g., datasets and data services in the context of a
+            data catalog)</td>
+        </tr>
+        <tr>
+          <th class="prop">Sub-class of:</th>
+          <td><a data-cite="VOCAB-DCAT-3#Class:Dataset"><code>dcat:Dataset</code></a>
+        <tr>
+          <th class="prop">Usage note:</th>
+          <td>
+            <ul>
+              <li>A Web-based data catalog is typically represented as a single instance of this class.</li>
+              <li>Populate metadata within the dcat:Catalog to facilitate resource discovery, including title,
+                description, classifiers and other relevant information. </li>
+              <li>Specify the resources hosted within the catalog by linking them as <a data-cite="VOCAB-DCAT-3#Property:catalog_dataset"><code>dcat:dataset</code></a> or <a data-cite="VOCAB-DCAT-3#Property:catalog_service"><code>dcat:service</code></a>.</li>    
+
+
+
+             
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <th class="prop">Rationale</th>
+          <td>
+            The update of the <a data-cite="VOCAB-DCAT-3#Class:Catalog"><code>dcat:Catalog</code></a> class aligns
+            with the generalization of catalog scope in DCAT-US 3.0, accommodating catalogs of datasets, data services,
+            or a mixture of both. It reflects the evolving landscape of data publication and discovery, allowing data
+            publishers to describe and share their resources effectively. Additionally, by making Catalog a subclass of
+            Dataset, DCAT-US promotes consistency in metadata representation and enables catalogs to be composed of
+            other catalogs, promoting modularity and extensibility in the data catalog ecosystem.
+          </td>
+        </tr>
+      </table>
       <table class="simple">
         <thead>
           <tr>
