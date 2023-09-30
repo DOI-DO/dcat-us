@@ -15355,7 +15355,7 @@
               <tr>
                 <th>URI</th>
                 <td><a href="http://purl.org/dc/terms/title"><code>dcterms:title</code></a></td>
-              
+
               </tr>
               <tr>
                 <th>Range</th>
@@ -15389,7 +15389,7 @@
               <tr>
                 <th>URI</th>
                 <td><a href="http://purl.org/dc/terms/description"><code>dcterms:description</code></a></td>
-               
+
               </tr>
               <tr>
                 <th>Range</th>
@@ -15399,7 +15399,7 @@
                 <th>Definition</th>
                 <td>This property contains a free-text account of the Standard. This property can be repeated for
                   parallel language versions of the description - see <a href="#multilingualism">Multilinguism</a>
-              
+
                 </td>
               </tr>
             </tbody>
@@ -15424,7 +15424,7 @@
               <tr>
                 <th>URI</th>
                 <td><a href="http://purl.org/dc/terms/identifier"><code>dcterms:identifier</code></a></td>
-               
+
               </tr>
               <tr>
                 <th>Range</th>
@@ -15460,7 +15460,7 @@
               <tr>
                 <th>URI</th>
                 <td><a href="http://purl.org/dc/terms/issued"><code>dcterms:issued</code></a></td>
-             
+
               </tr>
               <tr>
                 <th>Range</th>
@@ -15492,7 +15492,7 @@
               <tr>
                 <th>URI</th>
                 <td><a href="http://purl.org/dc/terms/type"><code>dcterms:type</code></a></td>
-           
+
               </tr>
               <tr>
                 <th>Range</th>
@@ -15596,7 +15596,7 @@
               <tr>
                 <th>URI</th>
                 <td><a href="http://purl.org/dc/terms/created"><code>dcterms:created</code></a></td>
-               
+
               </tr>
               <tr>
                 <th>Range</th>
@@ -15628,7 +15628,7 @@
               <tr>
                 <th>URI</th>
                 <td><a href="http://purl.org/dc/terms/modified"><code>dcterms:modified</code></a></td>
-              
+
               </tr>
               <tr>
                 <th>Range</th>
@@ -15847,7 +15847,7 @@
       </section>
     </section>
   </section>
-  
+
 
 
   <section id="usage_guideline">
@@ -15893,7 +15893,7 @@
           unique identifier (such as a UUID or hash code).</li>
       </ul>
 
-      
+
       <h4>Identifier Resolution</h4>
 
       <p>URI resolution is a fundamental process that involves directing requests to the appropriate identified
@@ -16024,19 +16024,22 @@
           multiple languages by adding so called language encoded strings: these add the language as an
           [[ISO 639-1]] two letter code after the string in the way that is shown in the example below:
         </li>
-        <aside class="example" title="Example for localizing an rdfs:Literal">
-          <pre data-include-format="text" data-include="./examples/multiple-languages/title.ttl"></pre>
-        </aside>
+      </ul>
+      <aside class="example" title="Example for localizing an rdfs:Literal">
+        <pre data-include-format="text" data-include="./examples/multiple-languages/title.ttl"></pre>
+      </aside>
+      <ul>
         <li><strong>Content negotiation</strong>: Properties of Range rdfs:Resource SHOULD be URIs.
           It is important to use URIs that are language independent. Then the data publisher
           in the process of dispatching these URIs can use content negotiation.
         </li>
+      </ul>
         <aside class="example" title="Example for a rdfs:Resource that is language independent. The host of that landing
                 page can redirect a request coming in for 'https://uscensus.gov/1234/about' to a page that matches
                 with the language of the user">
           <pre data-include-format="text" data-include="./examples/multiple-languages/landing-page.ttl"></pre>
         </aside>
-      </ul>
+     
       <p>The table lists multilingual properties of DCAT-US and the translation strategies that apply to them:</p>
       <table class="simple">
         <thead>
@@ -17249,7 +17252,7 @@
             meaningful analysis and comparison of data from various sources.</li>
 
         </ul>
-      
+
       </section>
       <section id="requirements-for-controlled-vocabularies">
 
