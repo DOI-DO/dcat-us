@@ -16703,7 +16703,23 @@
     <section id="citation-metadata">
 
       <h3>Citation Metadata</h3>
-      <aside class="note">TODO</aside>
+      <p>Citations play a pivotal role in ensuring the traceability and credibility of datasets within a data catalog.
+        In the DCAT-US 3.0 profile, various mechanisms have been introduced to describe
+        citations, ensuring that data consumers can reference and validate the datasets effectively. This section
+        elucidates the different mechanisms to manage and describe citations in the DCAT-US profile.</p>
+
+      <h4>Source citation</h4>
+      <p>Source citation is paramount in maintaining the integrity, traceability, and credibility of datasets within a
+        data catalog. In the DCAT-US profile, which aligns with the DCAT-3 standard, various mechanisms are established
+        to articulate citations, ensuring that users and data consumers can accurately reference and validate datasets.
+      </p>
+      <p><a data-cite="DCTERMS#http://purl.org/dc/terms/source"><code>dct:source</code></a>: Utilize this property to
+        denote the original source dataset from which the current dataset is
+        derived. It ensures a clear lineage and acknowledgment of the original data source, providing a pathway for
+        users to explore the foundational data.</p>
+
+      
+      <aside class="note">TO COMPLETE</aside>
     </section>
 
     <!-- Legal Information  -->
@@ -16723,6 +16739,11 @@
         legal experts to ensure the provision of suitable guidelines.
 
       </p>
+      <p>DCAT-US employs a strategy to express legal information only at the most specific level of sharing, such as
+        Distribution or Data Service, to avoid potential conflicts. If legal information are provided at both the
+        Dataset and Distribution levels, discrepancies might arise without clear precedence. This approach eliminates
+        the need to resolve conflicts between legal information at the Dataset (or Dataset Series) level and its related
+        Distributions or Data Services.</p>
       <p>
         This specification distinguishes the following main situations:
         one where a statement is associated with a resource that is explicitly declared as a 'license';
@@ -16731,6 +16752,7 @@
         rights(e.g., copyright statements).
 
       </p>
+      <aside class="note">TO COMPLETE</aside>
 
       <aside class="note">
         <p>
@@ -16742,6 +16764,99 @@
       </aside>
     </section>
 
+    <!-- Provenance -->
+    <section id="provenance-metadata">
+      <h3>Provenance Metadata</h3>
+      <aside class="note">TO COMPLETE</aside>
+      <p>Provenance and data lineage are crucial aspects of data management and transparency, ensuring that data
+        consumers understand the origins, transformations, and utility of the data. In DCAT-US, leveraging [[DCTerms]]
+        (Dublin Core Terms) and [[PROV-O]] (W3C PROV Ontology) properties can effectively represent these aspects. This
+        section outlines best practices for utilizing these properties to detail the provenance and data lineage within
+        DCAT datasets.</p>
+      <h4>Basic Provenance Metadata</h4>
+
+      <p>Within DCAT-US, the Dublin Core Terms [[DCTerms]] vocabulary offers properties that allow data publishers to
+        articulate basic provenance information effectively. Particularly, <a
+          data-cite="DCTERMS#http://purl.org/dc/terms/source"><code>dct:source</code></a> and <a
+          data-cite="DCTERMS#http://purl.org/dc/terms/provenance"><code>dct:provenance</code></a> are
+        pivotal in this context.</p>
+
+      <h5>dct:source</h5>
+      <p>The <a data-cite="DCTERMS#http://purl.org/dc/terms/source"><code>dct:source</code></a> property is utilized to
+        denote the original source from which the current dataset is
+        derived. It can be a URI directly pointing to the original dataset or, in the absence of a URI, a descriptive
+        reference that sufficiently identifies the original source. It's imperative to ensure that the source referenced
+        is the most immediate or direct source from which the data was derived and to utilize persistent URIs when
+        available to ensure stable and long-term linkage to the source.</p>
+
+      <h5>dct:provenance</h5>
+      <p>On the other hand, <a data-cite="DCTERMS#http://purl.org/dc/terms/provenance"><code>dct:provenance</code></a>
+        provides a mechanism to describe the history or lineage of the dataset.
+        This property allows publishers to detail the dataset's historical context and sequence of events or processes
+        that have influenced its formation or transformation. The provenance statement should be concise yet
+        comprehensive, providing a clear and adequate understanding of the dataset's history and lineage. Employing
+        standardized nomenclature and terminologies ensures clarity and consistency across provenance statements.</p>
+
+      <p>In the context of data cataloging and transparency, embedding provenance information is vital to elucidate the
+        origin and historical context of a dataset. The <a
+          data-cite="DCTerms#terms_Provenance Statement"><code>dcterms:ProvenanceStatement</code></a> from the Dublin
+        Core Terms (DCTerms)
+        vocabulary provides a structured way to incorporate this information within the DCAT-US framework.</p>
+
+      <p>The <a data-cite="DCTerms#terms_Provenance Statement"><code>dcterms:ProvenanceStatement</code></a> is designed
+        to convey a human-readable explanation or record of the history or
+        lineage of a dataset. It can be utilized to describe the dataset's origins, transformations, ownership, and any
+        other changes it might have undergone, thereby providing a clear and comprehensive historical record.</p>
+
+      <p>This property can be expressed in two primary ways within DCAT-US:</p>
+
+      <ul>
+        <li><strong>By URI:</strong> A Uniform Resource Identifier (URI) can be used to refer to a
+          <a data-cite="DCTerms#terms_Provenance Statement"><code>dcterms:ProvenanceStatement</code></a> that is hosted
+          externally. This method is beneficial when the provenance
+          information is extensive or when it is standardized and used across multiple datasets.
+        </li>
+
+        <li><strong>Using Free Text with <a
+              href="http://spdx.org/rdf/terms#licenseText"><code>rdfs:label</code></a>:</strong> Alternatively, a <a
+            data-cite="DCTerms#terms_Provenance Statement"><code>dcterms:ProvenanceStatement</code></a> can be
+          expressed as free text using the <a href="http://spdx.org/rdf/terms#licenseText"><code>rdfs:label</code></a>
+          property. This approach is suitable for providing concise,
+          readable provenance information directly within the dataset's metadata.</li>
+      </ul>
+      <h4>Detailed Data Lineage</h4>
+      <p>Data lineage, which traces the discrete steps involving data as it moves through the various stages of a
+        workflow, is crucial for understanding data's origins and transformations. The W3C PROV Ontology [[PROV-O]]
+        provides a rich set of properties to describe detailed data lineage in a standardized manner, ensuring
+        interoperability and clarity in data documentation.</p>
+
+      <p>Key PROV-O properties include:</p>
+      <ul>
+        <li><a data-cite="PROV-O#wasDerivedFrom"><code>prov:wasDerivedFrom</code></a>: Establishes a derivation relationship between two entities.</li>
+        <li><a data-cite="PROV#Property:prov_used"><code>prov:used</code></a>: Indicates that an activity used a particular entity.</li>
+        <li><a data-cite="PROV#Property:prov_wasGeneratedBy"><code>prov:wasGeneratedBy</code></a>: Links an entity to the activity that generated it.</li>
+        <li><a data-cite="PROV#Property:prov_wasInfluencedBy"><code>prov:wasInfluencedBy</code></a>: Expresses a generic influence of one entity over an activity.</li>
+        <li><a data-cite="PROV#Property:prov_wasAttributedTo"><code>prov:wasAttributedTo</code></a>: Signifies the relationship between a dataset and an agent responsible
+          for its creation.</li>
+      </ul>
+
+      <p>The <a data-cite="PROV#Class:prov_Activity"><code>prov:Activity</code></a> class in the PROV-O ontology plays a pivotal role in representing processes or actions taken
+        upon or with entities, thereby providing a structured framework to document the transformations, analyses, or
+        other actions that data undergoes. An instance of <a data-cite="PROV#Class:prov_Activity"><code>prov:Activity</code></a> is utilized to describe a particular occurrence
+        of an action or process, which can involve the consumption, production, or transformation of entities. By
+        associating activities with entities through properties such as prov:used and prov:wasGeneratedBy, a detailed
+        account of the data’s journey, from its origin through various transformations to its current state, can be
+        articulated. This not only enhances the transparency of the data but also provides a robust mechanism to trace
+        back through the steps involved in data creation and processing, thereby contributing to verifiable and
+        trustworthy data lineage. Furthermore, <a data-cite="PROV#Class:prov_Activity"><code>prov:Activity</code></a> can be associated with prov:Agent through properties like
+        prov:wasAssociatedWith, offering insights into the roles of different agents (e.g., organizations, people, or
+        software) in data processing activities, thereby enriching the data provenance and lineage documentation.</p>
+      
+      <p>By adhering to these practices and effectively utilizing PROV-O properties, data publishers can enhance
+        transparency and facilitate informed data usage among consumers by providing a clear view of data sourcing,
+        processing, and transformation.</p>
+
+    </section>
     <!-- Resource Restrictions -->
     <section id="restriction-metadata">
 
