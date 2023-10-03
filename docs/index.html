@@ -642,7 +642,7 @@
 
           <tr>
             <td>
-              <p><a href="#properties-for-geographic-bbox">Geographic Bounding Box</a></p>
+              <p><a href="#properties-for-geographic_bbox">Geographic Bounding Box</a></p>
             </td>
             <td>
               <p>GeographicBoundingBox describes the spatial extent of domain of application of an resource and is
@@ -650,7 +650,7 @@
               </p>
 
             <td>
-              <p><a href="properties-for-geographic-bbox"><code>dcat-us:GeographicBoundingBox</code></a></p>
+              <p><a href="properties-for-geographic_bbox"><code>dcat-us:GeographicBoundingBox</code></a></p>
             </td>
             <td><span style="color: red;">New!</span></td>
           </tr>
@@ -3829,7 +3829,8 @@
         </tr>
         <tr>
           <th class="prop">Rationale:</th>
-          <td>Introducing the <a href="http://spdx.org/rdf/terms#Checksum"><code>spdx:Checksum</code></a> class in DCAT-US bolsters data integrity and trust by ensuring datasets remain
+          <td>Introducing the <a href="http://spdx.org/rdf/terms#Checksum"><code>spdx:Checksum</code></a> class in
+            DCAT-US bolsters data integrity and trust by ensuring datasets remain
             unaltered during transfers. This standardized approach promotes consistency across catalogs, facilitates
             error detection, and adapts to evolving cryptographic needs, enhancing the utility of automated tools.</td>
         </tr>
@@ -6728,7 +6729,7 @@
             <td><span style="color: black;">No Change</span></td>
           </tr>
           <tr>
-            <td><a href="#dataset-geographic-extent">geographic bounding box</a></td>
+            <td><a href="#dataset-geographic_bounding_box">geographic bounding box</a></td>
             <td><a data-cite="DCAT-US##http://TBD/geographicBoundingBox"><code>dcat-us:geographicBoundingBox</code></a>
             </td>
             <td><a data-cite="DCAT-US#http://TBD/GeographicBoundingBox"><code>dcat-us:GeographicBoundingBox</code></a>
@@ -7588,7 +7589,7 @@
             <pre data-include-format="text" data-include="./examples/dataset/publisher.ttl"></pre>
           </aside>
         </section>
-        <section id="dataset-geographic-extent">
+        <section id="dataset-geographic_bounding_box">
           <h4>Property: geographic bounding box</h4>
           <table class="def">
             <tbody>
@@ -12406,7 +12407,7 @@
     </section>
     <!-- dcat-us:GeographicBoundingBox-->
 
-    <section id="properties-for-geographic-bbox">
+    <section id="properties-for-geographic_bbox">
       <h2>Class: Geographic Bounding Box</h2>
       <aside class="note"><span style="color: red;">New! DCAT-US 3.0 specific class</span> </aside>
       <p>GeographicBoundingBox describes the spatial extent of domain of application of an resource and is
@@ -12417,8 +12418,7 @@
       <table class="def">
         <tr>
           <th>RDF Class:</th>
-          <td><a href="http://purl.org/dc/terms/Location"><code
-                title="http://purl.org/dc/terms/Location">dcat-us:GeographicBoundingBox</code></a></td>
+          <td><a href="http://TBD/GeographicBoundingBox"><code>dcat-us:GeographicBoundingBox</code></a></td>
         </tr>
         <tr>
           <th class="prop">Definition:</th>
@@ -13222,7 +13222,7 @@
           <td>The introduction of <a href="http://purl.org/dc/terms/Location"><code>dcterms:Location</code></a> in
             DCAT-US 3.0 is driven by the need to restore compatibility with the
             DCAT standard. DCAT-US 1.1 had deviated from the standard by using strings for location in
-            <code>dct:spatial</code> property, which was
+            <a data-cite="DCTERMS#http://purl.org/dc/terms/spatial"><code>dct:spatial</code></a> property, which was
             incompatible. This addition aligns DCAT-US with recognized geospatial standards (e.g., Geosparql, WKT,
             GeoJSON, W3C Location) for representing geometries, addresses, and location names, ensuring data
             compatibility, discoverability, and integration while adhering to international data management practices.
@@ -16352,24 +16352,33 @@
         datasets, enabling informed decision-making based on data credibility. Spatial metadata support efficient data
         discovery, retrieval, and sharing, reducing duplication and promoting collaboration. They also promote
         interoperability by adhering to standardized metadata schemas and facilitate compliance with legal and
-        regulatory
-        requirements, ensuring accountable data stewardship. Spatial metadata are essential for maximizing the value and
-        effective utilization of geospatial data within the US Government.</p>
+        regulatory requirements, ensuring accountable data stewardship. Spatial metadata are essential for maximizing
+        the value and effective utilization of geospatial data within the US Government.</p>
 
       <p>The Data Catalog Vocabulary (DCAT) specification provides a standardized way to represent metadata about
         datasets and services, including information about their spatial properties. In the context of DCAT-US, which is
-        a
-        profile tailored specifically for the United States, several spatial properties are relevant for describing
+        a profile tailored specifically for the United States, several spatial properties are relevant for describing
         resources. This wiki page aims to provide an overview of these spatial properties and their usage within the
         DCAT-US framework.</p>
 
       <h4>Geographic Bounding Box</h4>
 
       <p>A bounding box represents the minimum and maximum coordinates that enclose a specific geographic area. In
-        DCAT-US, the dcat-us:geographicBoundingBox property and the class dcat-us:GeographicBoundingBox are introduced
+        DCAT-US, the <a
+          data-cite="DCAT-US#dataset-geographic_bounding_box"><code>dcat-us:geographicBoundingBox</code></a> property
+        and the class <a
+          data-cite="DCAT-US#dataset-geographic_bounding_box"><code>dcat-us:geographicBoundingBox</code></a> are
+        introduced
         and utilized to define the spatial extent of a resource. This class consists of four numerical properties: the
-        west (dcat-us:westBoundLongitude) and east longitude (dcat-us:eastBoundLongitude), followed by the north
-        (dcat-us:northBoundLatitude) and south latitude (dcat-us:southBoundLatitude), which are based on the WGS84
+        west (<a
+          data-cite="DCAT-US#geographic_bbox-west-bounding-longitude"><code>dcat-us:westBoundingLongitude</code></a>)
+        and east longitude (<a
+          data-cite="DCAT-US#geographic_bbox-east-bounding-longitude"><code>dcat-us:eastBoundingLongitude</code></a>),
+        followed by the north
+        (<a data-cite="DCAT-US#geographic_bbox-north-bounding-latitude"><code>dcat-us:northBoundingLatitude</code></a>)
+        and south latitude (<a
+          data-cite="DCAT-US#geographic_bbox-south-bounding-latitude"><code>dcat-us:southBoundingLatitude</code></a>),
+        which are based on the WGS84
         coordinate system.</p>
 
       <aside class="example" id="ex-data-geographicBoundingBox2"
@@ -16392,10 +16401,16 @@
         to challenges in interoperability and data integration. A common reference system ensures that data from diverse
         sources can be accurately aligned and combined, enabling effective analysis, visualization, and decision-making.
       </p>
-      <p>The introduction of the dcat-us:geographicBoundingBox property in DCAT-US profile addresses this challenge by
+      <p>The introduction of the <a
+          data-cite="DCAT-US#dataset-geographic_bounding_box"><code>dcat-us:geographicBoundingBox</code></a> property in
+        DCAT-US profile addresses this challenge by
         providing a standardized way to express the spatial extent of a resource. Unlike using a Polygon, which requires
-        explicit geometric coordinates, the dcat-us:GeographicBoundingBox offers a simpler and more interoperable
-        approach. Here are a few reasons why the dcat-us:GeographicBoundingBox is advantageous:
+        explicit geometric coordinates, the <a
+          data-cite="DCAT-US#dataset-geographic_bounding_box"><code>dcat-us:geographicBoundingBox</code></a> offers a
+        simpler and more interoperable
+        approach. Here are a few reasons why the <a
+          data-cite="DCAT-US#dataset-geographic_bounding_box"><code>dcat-us:geographicBoundingBox</code></a> is
+        advantageous:
       <ul>
         <li><b>Consistent Spatial Representation</b>: Geospatial datasets can be represented in various coordinate
           systems, projections, and datums. Without a common reference system, it becomes difficult to align and compare
@@ -16456,30 +16471,36 @@
         applications and domains. </p>
 
       <h4>Spatial Coverage</h4>
-      <p>In DCAT 3, the use of the dct:spatial property is intended to provide information about the spatial coverage
+      <p>In DCAT 3, the use of the <a data-cite="DCTERMS#http://purl.org/dc/terms/spatial"><code>dct:spatial</code></a>
+        property is intended to provide information about the spatial coverage
         or location of a resource. This property allows for the description of the spatial aspect of a dataset, dataset
         distribution, or data service in a standardized manner.</p>
-      <p>The dct:spatial property can be used to represent spatial coverage using various spatial reference systems,
-        such
-        as coordinates, polygons, or place names. This flexibility allows data publishers to express the spatial extent
-        of
-        their resources in a way that is most appropriate for the given context.</p>
-      <p>For example, the dct:spatial property can be used to indicate the geographic bounding box that represents the
+      <p>The <a data-cite="DCTERMS#http://purl.org/dc/terms/spatial"><code>dct:spatial</code></a> property can be used
+        to represent spatial coverage using various spatial reference systems,
+        such as coordinates, polygons, or place names. This flexibility allows data publishers to express the spatial
+        extent of their resources in a way that is most appropriate for the given context.</p>
+      <p>For example, the <a data-cite="DCTERMS#http://purl.org/dc/terms/spatial"><code>dct:spatial</code></a> property
+        can be used to indicate the geographic bounding box that represents the
         extent of a dataset. This can be expressed using minimum and maximum latitude and longitude values, providing a
         rectangular approximation of the resource’s coverage area. Alternatively, a more precise polygon can be used to
         describe complex or irregularly shaped spatial extents.</p>
-      <p>By including the dct:spatial property in DCAT 3, datasets can provide explicit information about their
+      <p>By including the <a data-cite="DCTERMS#http://purl.org/dc/terms/spatial"><code>dct:spatial</code></a> property
+        in DCAT 3, datasets can provide explicit information about their
         spatial coverage. This enables data consumers and applications to understand the geographic scope of a resource
         and determine its relevance for their specific use cases. It supports efficient searching, discovery, and
         integration of geospatial datasets across different platforms and systems.</p>
-      <p>Furthermore, the use of standardized properties like dct:spatial enhances interoperability and data exchange
+      <p>Furthermore, the use of standardized properties like <a
+          data-cite="DCTERMS#http://purl.org/dc/terms/spatial"><code>dct:spatial</code></a> enhances interoperability
+        and data exchange
         among different data catalogs and applications. By conforming to the DCAT 3 specification, data publishers
         ensure
         that spatial information is consistently represented and interpreted, facilitating seamless data integration and
         interoperability within the geospatial community. </p>
       <h4>Spatial Resolution</h4>
       <p>Spatial resolution is a characteristic of geospatial datasets that describes the level of detail or
-        granularity in the spatial representation. In DCAT 3.0, the dcat:spatialResolutionInMeters property is used to
+        granularity in the spatial representation. In DCAT 3.0, the <a
+          data-cite="VOCAB-DCAT-3#Property:dataset_spatial_resolution"><code>dcat:spatialResolutionInMeters</code></a>
+        property is used to
         specify the spatial resolution of a resource, measured in meters. This property helps users understand the level
         of detail provided by the dataset and assess its suitability for their specific needs. Applications benefit from
         this property in various ways. For instance, in remote sensing and satellite imagery, users can determine if the
@@ -16487,9 +16508,11 @@
         influences the clarity and accuracy of displayed features. Environmental modeling relies on appropriate
         resolution
         for accurate simulations, and emergency management requires datasets that support informed decision-making. The
-        dcat:spatialResolutionInMeters property supports data integration, ensuring compatibility between datasets with
+        <a data-cite="VOCAB-DCAT-3#Property:dataset_spatial_resolution"><code>dcat:spatialResolutionInMeters</code></a>
+        property supports data integration, ensuring compatibility between datasets with
         different resolutions. Overall, this property enhances the usability and effectiveness of geospatial datasets
-        across diverse domains.</p>
+        across diverse domains.
+      </p>
     </section>
 
     <!-- Temporal Metadata -->
