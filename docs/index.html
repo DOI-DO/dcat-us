@@ -17213,6 +17213,18 @@
         pivotal in this context.</p>
 
       <h5>dct:source</h5>
+
+      <p><a data-cite="DCTERMS#http://purl.org/dc/terms/source"><code>dct:source</code></a> is used into the following context:</p>
+      <ul>
+        <li>Property source metadata (<a data-cite="DCTERMS#http://purl.org/dc/terms/source"><code>dct:source</code></a>), optional, non-repeatable property for Catalogue Record, that refers
+          to the original metadata that was used in creating metadata for the Dataset. 
+        <li>Property source (<a data-cite="DCTERMS#http://purl.org/dc/terms/source"><code>dct:source</code></a>), optional, repeatable property for Dataset, that refers to a related Dataset
+          from which the described Dataset is derived.
+        </li>
+      </ul>
+
+
+
       <p>The <a data-cite="DCTERMS#http://purl.org/dc/terms/source"><code>dct:source</code></a> property is utilized to
         denote the original source from which the current dataset is
         derived. It can be a URI directly pointing to the original dataset or, in the absence of a URI, a descriptive
@@ -17238,6 +17250,8 @@
         to convey a human-readable explanation or record of the history or
         lineage of a dataset. It can be utilized to describe the dataset's origins, transformations, ownership, and any
         other changes it might have undergone, thereby providing a clear and comprehensive historical record.</p>
+      <p>Property provenance (dct:provenance), optional, repeatable property for Dataset, that contains a statement
+        about the lineage of a Dataset.</p>
 
       <p>This property can be expressed in two primary ways within DCAT-US:</p>
 
@@ -17279,9 +17293,7 @@
       <p>The <a data-cite="PROV#Class:prov_Activity"><code>prov:Activity</code></a> class in the PROV-O ontology plays a
         pivotal role in representing processes or actions taken
         upon or with entities, thereby providing a structured framework to document the transformations, analyses, or
-        other actions that data undergoes. An instance of <a
-          data-cite="PROV#Class:prov_Activity"><code>prov:Activity</code></a>
-        is utilized to describe a particular
+        other actions that data undergoes. An instance of <a data-cite="PROV#Class:prov_Activity"><code>prov:Activity</code></a> is utilized to describe a particular
         occurrence
         of an action or process, which can involve the consumption, production, or transformation of entities. By
         associating activities with entities through properties such as prov:used and prov:wasGeneratedBy, a detailed
