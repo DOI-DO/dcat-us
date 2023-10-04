@@ -1694,7 +1694,7 @@
       </section>
     </section>
 
-  </section>
+
   <section id="properties-for-address-location">
     <h2>Class: Address (Location)</h2>
     <aside class="note">Aligned with DCAT</aside>
@@ -16562,9 +16562,23 @@
       <section id="agent">
         <h4>Agent</h4>
 
-        <p>An agent represents an entity involved in producing or managing datasets. It can be either a
-          person,
-          organization, software, or service.</p>
+
+        <p>The <a
+          data-cite="FOAF#term_Agent"><code>foaf:Agent</code></a> class in the Friend of a Friend [[FOAF]] ontology serves a dual-purpose role,
+          particularly in the context of data cataloging and management. Firstly, it acts as an abstract class for both
+          <a href="https://www.w3.org/TR/vocab-org/#org:Organization"><code>org:Organization</code></a> and <a
+          data-cite="FOAF#term_Person"><code>foaf:Person</code></a>, providing a generalized representation that encompasses
+          various entities involved in dataset production and management. This abstraction facilitates the encapsulation
+          of common properties and behaviors, enabling a unified approach to handling different entity types in data
+          documentation and interoperability. Secondly, <a
+          data-cite="FOAF#term_Agent"><code>foaf:Agent</code></a>  is utilized as a class to represent
+          autonomous software agents, which are self-operating software entities capable of performing tasks and making
+          decisions without direct human intervention. This dual functionality of <a
+          data-cite="FOAF#term_Agent"><code>foaf:Agent</code></a>  not only
+          streamlines the representation of human and non-human actors in data management processes but also provides a
+          flexible and semantically rich framework to describe and interlink various entities within the DCAT-US schema,
+          thereby enhancing data discoverability and usability.</p>
+
       </section>
       <section id="person">
 
@@ -17214,11 +17228,15 @@
 
       <h5>dct:source</h5>
 
-      <p><a data-cite="DCTERMS#http://purl.org/dc/terms/source"><code>dct:source</code></a> is used into the following context:</p>
+      <p><a data-cite="DCTERMS#http://purl.org/dc/terms/source"><code>dct:source</code></a> is used into the following
+        context:</p>
       <ul>
-        <li>Property source metadata (<a data-cite="DCTERMS#http://purl.org/dc/terms/source"><code>dct:source</code></a>), optional, non-repeatable property for Catalogue Record, that refers
-          to the original metadata that was used in creating metadata for the Dataset. 
-        <li>Property source (<a data-cite="DCTERMS#http://purl.org/dc/terms/source"><code>dct:source</code></a>), optional, repeatable property for Dataset, that refers to a related Dataset
+        <li>Property source metadata (<a
+            data-cite="DCTERMS#http://purl.org/dc/terms/source"><code>dct:source</code></a>), optional, non-repeatable
+          property for Catalogue Record, that refers
+          to the original metadata that was used in creating metadata for the Dataset.
+        <li>Property source (<a data-cite="DCTERMS#http://purl.org/dc/terms/source"><code>dct:source</code></a>),
+          optional, repeatable property for Dataset, that refers to a related Dataset
           from which the described Dataset is derived.
         </li>
       </ul>
@@ -17293,7 +17311,8 @@
       <p>The <a data-cite="PROV#Class:prov_Activity"><code>prov:Activity</code></a> class in the PROV-O ontology plays a
         pivotal role in representing processes or actions taken
         upon or with entities, thereby providing a structured framework to document the transformations, analyses, or
-        other actions that data undergoes. An instance of <a data-cite="PROV#Class:prov_Activity"><code>prov:Activity</code></a> is utilized to describe a particular
+        other actions that data undergoes. An instance of <a
+          data-cite="PROV#Class:prov_Activity"><code>prov:Activity</code></a> is utilized to describe a particular
         occurrence
         of an action or process, which can involve the consumption, production, or transformation of entities. By
         associating activities with entities through properties such as prov:used and prov:wasGeneratedBy, a detailed
