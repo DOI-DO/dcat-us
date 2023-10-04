@@ -1391,10 +1391,15 @@
         <!--TODO -->
       </section>
     </section>
-
-
+   
     <section id="properties-for-address-contact_point">
       <h2>Class: Address (Contact Point)</h2>
+      <aside class="note">Aligned with DCAT</aside>
+      <aside class="note">TODO</aside>
+    </section>
+
+    <section id="properties-for-address-location">
+      <h2>Class: Address (Location)</h2>
       <aside class="note">Aligned with GeoDCAT-AP 2.0.0</aside>
       <table class="def">
         <tr>
@@ -1403,7 +1408,7 @@
         </tr>
         <tr>
           <th class="prop">Definition:</th>
-          <td>A postal address of the Contact Point/Agent.</td>
+          <td>The address of a location.</td>
         </tr>
         <!-- TODO: Determine whether a rationale is needed to be added for Address (Contact Point) -->
       </table>
@@ -1422,7 +1427,7 @@
         </thead>
         <tbody>
           <tr>
-            <td><a href="#address-contact-adminUnitL2">administrative area</a></td>
+            <td><a href="#address-location-adminUnitL2">administrative area</a></td>
             <td><a href="http://www.w3.org/ns/locn#locn:adminUnitL2"><code>locn:adminUnitL2</code></a>
             </td>
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
@@ -1431,7 +1436,7 @@
             <td>0..1</td>
           </tr>
           <tr>
-            <td><a href="#address-contact-postName">city</a></td>
+            <td><a href="#address-location-postName">city</a></td>
             <td><a href="http://www.w3.org/ns/locn#locn:postName"><code>locn:postName</code></a>
             </td>
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
@@ -1440,7 +1445,7 @@
             <td>0..1</td>
           </tr>
           <tr>
-            <td><a href="#address-contact-adminUnitL1">country</a></td>
+            <td><a href="#address-location-adminUnitL1">country</a></td>
             <td><a href="http://www.w3.org/ns/locn#locn:adminUnitL1"><code>locn:adminUnitL1</code></a>
             </td>
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
@@ -1449,7 +1454,7 @@
             <td>0..1</td>
           </tr>
           <tr>
-            <td><a href="#address-contact-postCode">postal code</a></td>
+            <td><a href="#address-location-postCode">postal code</a></td>
             <td><a href="http://www.w3.org/ns/locn#locn:pospostCode"><code>locn:postCode</code></a>
             </td>
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
@@ -1458,7 +1463,7 @@
             <td>0..1</td>
           </tr>
           <tr>
-            <td><a href="#address-contact-thoroughfare">street address</a></td>
+            <td><a href="#address-location-thoroughfare">street address</a></td>
             <td><a href="http://www.w3.org/ns/locn#locn:thoroughfare"><code>locn:thoroughfare</code></a>
             </td>
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
@@ -1469,9 +1474,9 @@
         </tbody>
       </table>
 
-      <section id="address-contact-recommended-props">
+      <section id="address-location-recommended-props">
         <h4>Recommended Properties</h4>
-        <section id="address-contact-adminUnitL2">
+        <section id="address-location-adminUnitL2">
           <!-- TODO: Double check this note -->
           <aside class="note">New in DCAT-US 3.0 (defined in GeoDCAT 2.0.0)</aside>
           <h4>Property: administrative area</h4>
@@ -1508,7 +1513,7 @@
             </tbody>
           </table>
         </section>
-        <section id="address-contact-postName">
+        <section id="address-location-postName">
           <!-- TODO: Double check this note -->
           <aside class="note">New in DCAT-US 3.0 (defined in GeoDCAT 2.0.0)</aside>
           <h4>Property: city</h4>
@@ -1543,7 +1548,7 @@
             </tbody>
           </table>
         </section>
-        <section id="address-contact-adminUnitL1">
+        <section id="address-location-adminUnitL1">
           <!-- TODO: Double check this note -->
           <aside class="note">New in DCAT-US 3.0 (defined in GeoDCAT 2.0.0)</aside>
           <h4>Property: country</h4>
@@ -1578,7 +1583,7 @@
             </tbody>
           </table>
         </section>
-        <section id="address-contact-postCode">
+        <section id="address-location-postCode">
           <!-- TODO: Double check this note -->
           <aside class="note">New in DCAT-US 3.0 (defined in GeoDCAT 2.0.0)</aside>
           <h4>Property: postal code</h4>
@@ -1613,7 +1618,7 @@
             </tbody>
           </table>
         </section>
-        <section id="address-contact-thoroughfare">
+        <section id="address-location-thoroughfare">
           <!-- TODO: Double check this note -->
           <aside class="note">New in DCAT-US 3.0 (defined in GeoDCAT 2.0.0)</aside>
           <h4>Property: street address</h4>
@@ -1650,7 +1655,7 @@
         </section>
       </section>
 
-      <section id="address-contact-example">
+      <section id="address-location-example">
         <h4>Example</h4>
         <!--TODO -->
       </section>
