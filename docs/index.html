@@ -1252,11 +1252,24 @@
         <tr>
           <th class="prop">Usage note:</th>
           <td>
-
+            The activity associated with generation of a dataset will typically be an initiative, project, mission,
+            survey, on-going activity ("business as usual"). mission or survey etc. Multiple <a
+              data-cite="PROV#Property:prov_wasGeneratedBy"><code>prov:wasGeneratedBy</code></a> properties can be used
+            to indicate the dataset production context at various levels of granularity.
+            Details about how to describe the activity that generated a dataset are out of scope for this applicition
+            profile. <a data-cite="PROV#Activity"><code>prov:Activity</code></a> provides for minimum basic properties
+            for labeling and classification of activities.
           </td>
         </tr>
         <th class="prop">Rationale:</th>
         <td>
+          <p>Integrating <code>prov:Activity</code> into the DCAT-US schema offers a streamlined, generic class to
+            represent a myriad of operations, such as initiatives, projects, and ongoing activities, without the
+            complexity of managing numerous specialized classes. This inclusion not only simplifies the representation
+            of varied activities under a unified semantic framework but also enhances data provenance tracking and
+            interoperability across diverse systems and domains. Consequently, it provides a flexible, future-proof
+            approach to accommodate evolving types of activities without necessitating continual schema modifications.
+          </p>
 
         </td>
         <!-- TODO: Determine whether a rationale is needed to be added for Activity -->
@@ -17065,8 +17078,6 @@
       <ul>
         <li><a data-cite="PROV-O#wasDerivedFrom"><code>prov:wasDerivedFrom</code></a>: Establishes a derivation
           relationship between two entities.</li>
-        <li><a data-cite="PROV#Property:prov_used"><code>prov:used</code></a>: Indicates that an activity used a
-          particular entity.</li>
         <li><a data-cite="PROV#Property:prov_wasGeneratedBy"><code>prov:wasGeneratedBy</code></a>: Links an entity to
           the activity that generated it.</li>
         <li><a data-cite="PROV#Property:prov_wasInfluencedBy"><code>prov:wasInfluencedBy</code></a>: Expresses a generic
@@ -17083,8 +17094,9 @@
           data-cite="PROV#Class:prov_Activity"><code>prov:Activity</code></a> is utilized to describe a particular
         occurrence
         of an action or process, which can involve the consumption, production, or transformation of entities. By
-        associating activities with entities through properties such as prov:used and prov:wasGeneratedBy, a detailed
-        account of the data’s journey, from its origin through various transformations to its current state, can be
+        associating activities with entities through properties such as <a
+          data-cite="PROV#Property:prov_wasGeneratedBy"><code>prov:wasGeneratedBy</code></a>, a detailed
+        account of the data's journey, from its origin through various transformations to its current state, can be
         articulated. This not only enhances the transparency of the data but also provides a robust mechanism to trace
         back through the steps involved in data creation and processing, thereby contributing to verifiable and
         trustworthy data lineage. Furthermore, <a data-cite="PROV#Class:prov_Activity"><code>prov:Activity</code></a>
