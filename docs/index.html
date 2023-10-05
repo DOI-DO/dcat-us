@@ -935,8 +935,10 @@
   </section>
   <section id="properties-per-class">
     <h2>Properties per Class</h2>
-    <section id="requirement-levels">
-      <h3>Requirement levels</h3>
+    <section id="properties-per-class-overview">
+      <h3>Overview</h3>
+    <section class="notoc"  id="requirement-levels">
+      <h4>Requirement levels</h4>
       <p>DCAT-US defines four requirement levels for data receivers and senders:</p>
       <ul>
         <li><strong>Mandatory property</strong>: a receiver MUST be able to process the information for that property;
@@ -962,8 +964,8 @@
         services finally do with the data (parse, convert, store, make searchable, display to users, etc.).
       </p>
     </section>
-    <section id="notation">
-      <h3>Notation</h3>
+    <section class="notoc"  id="notation">
+      <h4>Notations</h4>
       <ul>
         <li><strong>Property</strong>: denotes the Property that the class or property is given in DCAT-US . </li>
         <li><strong>URI</strong>: denotes the property URI.</li>
@@ -979,8 +981,8 @@
         <li><strong>CV</strong> (“Controlled Vocabulary”): defines which controlled vocabulary SHOULD be used.</li>
       </ul>
     </section>
-    <section id="property_evolution">
-      <h3>Property Evolution in DCAT-US 3.0.</h3>
+    <section class="notoc" id="property_evolution">
+      <h4>Property Evolution in DCAT-US 3.0.</h4>
       <p>The following table provides an overview of the various types of changes and updates within the DCAT-US
         specifications, shedding light on the evolution and adaptation of the data catalog standard. Each change type
         is categorized, and its significance is explained, ranging from the introduction of new properties to updates
@@ -1018,7 +1020,7 @@
         </tbody>
       </table>
     </section>
-
+  </section>
     <section id="properties-for-access_restriction">
       <h2>AccessRestriction</h2>
       <aside class="note"><span style="color: red;">New! DCAT-US 3.0 specific class</span> </aside>
@@ -16746,29 +16748,7 @@
           extent, reducing the need to process unnecessary data. This improves search performance and query efficiency,
           particularly when dealing with large-scale geospatial data collections.</li>
         <li><b>Compatibility with Existing Tools and Standards:</b> The adoption of the dcat-us:geographicBoundingBox
-          property aligns with established practices and existing geospatial tools and standards. Many geospatial
-          software
-          applications and systems already support bounding box queries, making it easier for data consumers to
-          integrate
-          DCAT resources into their existing workflows and applications without major modifications or customizations.
-        </li>
-        <li><b>Standardization and Metadata Exchange:</b> The use of the dcat-us:geographicBoundingBox property promotes
-          standardization and consistency in metadata exchange and better alignment with well-established geospatial
-          metadata standards such as ISO 19115 and FGDC CSDGM. Data publishers can provide a concise and well-defined
-          spatial description of their resources using a common reference system, facilitating the sharing and discovery
-          of geospatial datasets across different platforms and domains. Standardized metadata enhances data
-          discoverability and usability, supporting the reuse of geospatial data in diverse applications and contexts.
-        </li>
-      </ul>
-
-      <p>By utilizing multiple geographic bounding boxes, geospatial search results within the United States can be
-        significantly enhanced in terms of relevance. The use of multiple bounding boxes allows for a more precise
-        definition of the spatial extent of search criteria, ensuring that the retrieved results align closely with
-        the desired geographic areas of interest. This level of specificity helps filter out irrelevant data points that
-        fall outside the defined bounding boxes, resulting in more targeted and pertinent search outcomes. For instance,
-        when searching for national parks within the United States, using multiple bounding boxes for each park ensures
-        that the search results only include relevant parks within their respective geographic boundaries. Similarly,
-        when searching for metropolitan statistical areas, employing multiple bounding boxes for each area helps
+          property aligns wiofficetropolitan statistical areas, employing multiple bounding boxes for each area helps
         retrieve data specific to each metropolitan region, ensuring more accurate and focused results. Furthermore,
         non-contiguous states like Alaska and Hawaii require separate bounding boxes to accurately capture their unique
         spatial coverage. The inclusion of multiple bounding boxes in geospatial searches improves the accuracy and
@@ -16827,56 +16807,7 @@
       <p>Temporal metadata provides the time-related context of datasets. It informs about the time period data covers,
         the frequency of updates, and other temporal nuances.
         Properly documented temporal metadata ensures data is discoverable, understandable, and relevant for time-based
-        analyses.</p>
-      <section id="temporal-references">
-        <h4>Temporal References</h4>
-        <p>Temporal reference encompasses into two categories:</p>
-        <ul>
-          <li>Temporal interval (or the duration of time it covers).</li>
-          <li>Dates indicating when something was published, revised, or first created.</li>
-        </ul>
-
-        <p>The temporal span aligns with the term <a data-cite="DCTERMS#temporal"><code>dct:temporal</code></a>, which
-          has
-          a
-          scope of
-          <a href="#properties-for-period-of-time"><code>dct:PeriodOfTime</code></a>. The exact moment or time frame is
-          denoted using <a href="#period_start-date"><code>dcat:startDate</code></a> for the start and <a
-            href="#period_end-date"><code>dcat:endDate</code></a> for the end.
-        </p>
-
-        <p>On the other hand, the dates for publishing, revising, and initiating are correspondingly linked to <a
-            data-cite="DCTERMS#issued"><code>dct:issued</code></a>, <a
-            data-cite="DCTERMS#modified"><code>dct:modified</code></a>, and <a
-            data-cite="DCTERMS#created"><code>dct:created</code></a>.
-        </p>
-
-        <p>The ISO 19115 metadata component labeled as <em>metadata date</em> is defined as:</p>
-        <blockquote>
-          The date marking the creation or latest update of the metadata record.
-        </blockquote>
-
-        <p>Given this vagueness, the mapped property for this component is identified as <a
-            data-cite="DCTERMS#modified"><code>dct:modified</code></a>.</p>
-      </section>
-      <section id="temporal-resolution">
-        <h4>Temporal Resolution</h4>
-      </section>
-      <section id="maintenance-information">
-        <h4>Maintenance information</h4>
-
-        <p>In [[ISO-19115]], element “Maintenance information” is meant mainly to describe how frequently a resource is
-          updated.</p>
-
-        <p>In DCAT-US, the update frequency is expressed through <code>dct:accrualPeriodicity</code>, with the frequency
-          codes defined in the Dublin Core Collection Description Frequency Vocabulary [[CLD-FREQ]],
-          which can be partially mapped to the ones used in [[ISO-19115]] and [[ISO8601-1]], as shown in the following
-          table. The Collection
-          Description Frequency Vocabulary is based on the set of codes used for publication frequency in the MARC 21
-          Concise Format for Holdings Data.</p>
-
-        <table class="simple">
-          <thead>
+        analyses.</p>office
             <tr>
               <th>ISO 19115 - MD_MaintenanceFrequencyCode</th>
               <th>ISO-8601</th>
