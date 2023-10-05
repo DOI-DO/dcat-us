@@ -2,6 +2,7 @@ var respecConfig = {
   specStatus: "base",
   latestVersion: "https://doi-do.github.io/dcat-us/",
   logos: [],
+  maxTocLevel: 2,
   editors: [
 
     {
