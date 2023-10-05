@@ -1415,7 +1415,8 @@
 
         <tr>
           <th class="prop">Usage note:</th>
-          <td>When incorporating [[VCARD-RDF]] <a data-cite="VCARD-RDF#d4e1292"><code>vcard:Address</code></a> within DCAT-US, ensure
+          <td>When incorporating [[VCARD-RDF]] <a data-cite="VCARD-RDF#d4e1292"><code>vcard:Address</code></a> within
+            DCAT-US, ensure
             to utilize its properties, such as <a data-cite="VCARD-RDF#d4e1218"><code>vcard:street-address</code></a>,
             <a data-cite="VCARD-RDF#d4e999"><code>vcard:locality</code></a>, and <a
               data-cite="VCARD-RDF#d4e844"><code>vcard:country-name</code></a>, to provide comprehensive and accurate
@@ -1426,7 +1427,8 @@
         </tr>
         <tr>
           <th>Rationale:</th>
-          <td>Integrating [[VCARD-RDF]]'s contact point address into DCAT-US ensures a standardized, interoperable format for
+          <td>Integrating [[VCARD-RDF]]'s contact point address into DCAT-US ensures a standardized, interoperable
+            format for
             presenting address data</td>
         </tr>
       </table>
@@ -1692,7 +1694,8 @@
         </tr>
         <tr>
           <th>Rationale:</th>
-          <td>Incorporating <a data-cite="LOCN#Address"><code>locn:Address</code></a> from the W3C Location ontology [[LOCN]] into DCAT-US provides a standardized,
+          <td>Incorporating <a data-cite="LOCN#Address"><code>locn:Address</code></a> from the W3C Location ontology
+            [[LOCN]] into DCAT-US provides a standardized,
             structured, and extensible format to represent physical addresses, facilitating consistent, interoperable,
             and precise sharing of location information across various datasets and digital platforms.</td>
         </tr>
@@ -16465,143 +16468,153 @@
         into
         ensuring data is not only uniquely identifiable but also consistently accessible in an ever-evolving digital
         landscape.</p>
+      <section class="notoc" id="generating-resolvable-urls">
+        <h4>Generating Resolvable URLs</h4>
+        <p>In the context of FAIR data, resources on the web must have unique, persistent, and resolvable identifiers.
+          In
+          order to achieve the capability of persistence, it is necessary for the resource identifiers to comply to the
+          RFC
+          3986 IETF standard for URIs (and IRIs, which are URI extended to cope with unicode). This means that it must
+          comprise the following components:</p>
+        <ul>
+          <li><b>scheme:</b>http or https</li>
+          <li><b>an authority:</b> www.example.com</li>
+          <li><b>optionally a path:</b> /dataset-name/</li>
+          <li><b>a local identifier</b> (such as database accession number, such as P12133 from uniprot) or a globally
+            unique identifier (such as a UUID or hash code).</li>
+        </ul>
+      </section>
+      <section class="notoc" id="identifier-resolution">
+        <h4>Identifier Resolution</h4>
 
-      <h4>Generating Resolvable URLs</h4>
-      <p>In the context of FAIR data, resources on the web must have unique, persistent, and resolvable identifiers.
-        In
-        order to achieve the capability of persistence, it is necessary for the resource identifiers to comply to the
-        RFC
-        3986 IETF standard for URIs (and IRIs, which are URI extended to cope with unicode). This means that it must
-        comprise the following components:
-      <ul>
-        <li><b>scheme:</b>http or https</li>
-        <li><b>an authority:</b> www.example.com</li>
-        <li><b>optionally a path:</b> /dataset-name/</li>
-        <li><b>a local identifier</b> (such as database accession number, such as P12133 from uniprot) or a globally
-          unique identifier (such as a UUID or hash code).</li>
-      </ul>
+        <p>URI resolution is a fundamental process that involves directing requests to the appropriate identified
+          entity. The standard approach typically entails resolving an HTTP GET request through content negotiation,
+          enabling the selection of different representations of the desired resource.</p>
 
+        <p> A PURL, or persistent URL, serves as a permanent address for accessing web resources. To grasp the concept
+          of PURLs, it's essential to first understand the concept of URL indirection (also known as URL redirect or URL
+          forwarding). This practice involves providing a stable and fixed web address/URL that is configured to point
+          to different content, which might undergo periodic modifications.</p>
 
-      <h4>Identifier Resolution</h4>
+        <p> When a user accesses a PURL, they are automatically redirected to the current location of the resource. This
+          means that when an author decides to relocate a page, they can easily update the PURL to direct it to the new
+          location.</p>
 
-      <p>URI resolution is a fundamental process that involves directing requests to the appropriate identified
-        entity. The standard approach typically entails resolving an HTTP GET request through content negotiation,
-        enabling the selection of different representations of the desired resource.</p>
+        <p> The practice of indirection proves beneficial as it ensures a consistent URL address for resources that are
+          prone to change, such as due to version updates or ownership changes.</p>
 
-      <p> A PURL, or persistent URL, serves as a permanent address for accessing web resources. To grasp the concept
-        of PURLs, it's essential to first understand the concept of URL indirection (also known as URL redirect or URL
-        forwarding). This practice involves providing a stable and fixed web address/URL that is configured to point
-        to different content, which might undergo periodic modifications.</p>
+        <p>A concrete example of this practice can be observed in the utilization of purl.org URLs for identifying OBO
+          Foundry resources. For instance, the URL <a
+            href="http://purl.obolibrary.org/obo/stato.owl">http://purl.obolibrary.org/obo/stato.owl</a> redirects to
+          the
+          latest release of the file, which can be found at <a
+            href="https://raw.githubusercontent.com/ISA-tools/stato/dev/releases/latest_release/stato.owl">https://raw.githubusercontent.com/ISA-tools/stato/dev/releases/latest_release/stato.owl</a>.
+        </p>
 
-      <p> When a user accesses a PURL, they are automatically redirected to the current location of the resource. This
-        means that when an author decides to relocate a page, they can easily update the PURL to direct it to the new
-        location.</p>
+        <p>PURLs sharing a common prefix are organized into <b>domains</b>, each managed by a single maintainer. The
+          maintainer has the authority to add new PURLs to the domain and make modifications to existing PURLs within
+          that
+          domain.</p>
+        <p>According to FAIR Principle A1, it is essential for (meta)data to be retrievable using its identifier. When
+          the
+          identifier itself is not a resolvable URL, <b>Identifier Resolution Services</b> are required. These services
+          possess the capability to map an Internationalized Resource Identifier (IRI) to a specific location where the
+          corresponding data can be accessed.</p>
+      </section>
+      <section class="notoc" id="identifier-resolution-services">
+        <h4>Identifier Resolution services</h4>
+        <p>In the digital realm, ensuring consistent and persistent access to resources is paramount. <b>Identifier
+            Resolution Services</b> play a crucial role in achieving this by providing unique and persistent identifiers
+          for various digital objects and entities. This section delves into several prominent services, detailing their
+          functions and significance in the broader digital ecosystem.</p>
+        <dl>
+          <dt><a href="https://archive.org/services/purl/">purl.org</a></dt>
+          <dd>The PURL system is a service of the Internet Archive, which provides an interface to administer domain.
+            For more information about the service, visit <a
+              href="https://archive.org/services/purl/help">https://archive.org/services/purl/help</a></dd>
 
-      <p> The practice of indirection proves beneficial as it ensures a consistent URL address for resources that are
-        prone to change, such as due to version updates or ownership changes.</p>
+          <dt><a href="https://w3id.org/">w3ids</a></dt>
+          <dd>
+            <p>W3IDs.org provides persistent identifiers for Linked Data resources. These identifiers can be used in
+              DCAT
+              to
+              uniquely identify datasets and data services. This can help to improve the discoverability and
+              interoperability of
+              datasets and data services. W3IDs.org is an important part of the Linked Data ecosystem and plays a key
+              role
+              in
+              making data more discoverable and interoperable.</p>
+            <p>Send a request to add a redirect to the <a
+                href="mailto:public-perma-id%40w3.org">public-perma-id@w3.org</a>
+              mailing list. Make sure to include the URL that you want on <a href="http://w3id.org/">w3id.org</a>, the
+              URL that you want to redirect to, and the HTTP code that you want to use when redirecting. An
+              administrator
+              will then create the redirect for you.</p>
+          </dd>
 
-      <p>A concrete example of this practice can be observed in the utilization of purl.org URLs for identifying OBO
-        Foundry resources. For instance, the URL <a
-          href="http://purl.obolibrary.org/obo/stato.owl">http://purl.obolibrary.org/obo/stato.owl</a> redirects to
-        the
-        latest release of the file, which can be found at <a
-          href="https://raw.githubusercontent.com/ISA-tools/stato/dev/releases/latest_release/stato.owl">https://raw.githubusercontent.com/ISA-tools/stato/dev/releases/latest_release/stato.owl</a>.
-      </p>
+          <dt><a href="https://doi.org/">doi.org</a></dt>
+          <dd>DOI.org is a digital identifier system that assigns unique and persistent identifiers to digital objects.
+            These identifiers can be used to cite, share, and track digital objects across different platforms and
+            systems. DOI.org identifiers can be used in DCAT to uniquely identify datasets and data services. This can
+            help to improve the discoverability and interoperability of datasets and data services.</dd>
 
-      <p>PURLs sharing a common prefix are organized into <b>domains</b>, each managed by a single maintainer. The
-        maintainer has the authority to add new PURLs to the domain and make modifications to existing PURLs within
-        that
-        domain.</p>
-      <p>According to FAIR Principle A1, it is essential for (meta)data to be retrievable using its identifier. When
-        the
-        identifier itself is not a resolvable URL, <b>Identifier Resolution Services</b> are required. These services
-        possess the capability to map an Internationalized Resource Identifier (IRI) to a specific location where the
-        corresponding data can be accessed.</p>
+          <dt><a href="https://orcid.org">orcid.org</a></dt>
+          <dd>ORCID (Open Researcher and Contributor ID) is a global, non-profit organization that provides a unique and
+            persistent identifier for researchers. ORCID IDs are used to link researchers to their professional
+            activities, such as publications, grants, and affiliations. This helps to ensure that researchers are
+            properly
+            credited for their work and that their work is more easily discoverable. ORCID is a valuable tool for
+            researchers, and it is becoming increasingly important as the research landscape becomes more complex.</dd>
 
-      <h4>Identifier Resolution services</h4>
-      <p>In the digital realm, ensuring consistent and persistent access to resources is paramount. <b>Identifier
-          Resolution Services</b> play a crucial role in achieving this by providing unique and persistent identifiers
-        for various digital objects and entities. This section delves into several prominent services, detailing their
-        functions and significance in the broader digital ecosystem.</p>
-      <dl>
-        <dt><a href="https://archive.org/services/purl/">purl.org</a></dt>
-        <dd>The PURL system is a service of the Internet Archive, which provides an interface to administer domain.
-          For more information about the service, visit <a
-            href="https://archive.org/services/purl/help">https://archive.org/services/purl/help</a></dd>
+          <dt><a href="https://info.arxiv.org/help/arxiv_identifier.html">arxiv.org</a></dt>
+          <dd>ArXiv identifiers are globally unique identifiers (GUIDs) assigned to scholarly articles submitted to the
+            arXiv preprint server. These identifiers can be used in DCAT (Data Catalog Vocabulary) to uniquely identify
+            authors and their publications. This can help to improve the discoverability and interoperability of
+            research
+            data.</dd>
 
-        <dt><a href="https://w3id.org/">w3ids</a></dt>
-        <dd>
-          <p>W3IDs.org provides persistent identifiers for Linked Data resources. These identifiers can be used in
-            DCAT
-            to
-            uniquely identify datasets and data services. This can help to improve the discoverability and
-            interoperability of
-            datasets and data services. W3IDs.org is an important part of the Linked Data ecosystem and plays a key
-            role
-            in
-            making data more discoverable and interoperable.</p>
-          <p>Send a request to add a redirect to the <a
-              href="mailto:public-perma-id%40w3.org">public-perma-id@w3.org</a>
-            mailing list. Make sure to include the URL that you want on <a href="http://w3id.org/">w3id.org</a>, the
-            URL that you want to redirect to, and the HTTP code that you want to use when redirecting. An administrator
-            will then create the redirect for you.</p>
-        </dd>
+          <dt><a href="https://identifiers.org">Identifiers.org</a></dt>
+          <dd>The Identifiers.org Resolution Service provides consistent access to life science data using Compact
+            Identifiers. Compact Identifiers consist of an assigned unique prefix and a local provider designated
+            accession number (prefix:accession). The resolving location of Compact Identifiers is determined using
+            information that is stored in the Identifiers.org <a href="https://registry.identifiers.org/">Registry</a>.
+          </dd>
+        </dl>
+      </section>
+      <section class="notoc" id="alternate-identifiers">
+        <h4>Alternate identifiers</h4>
 
-        <dt><a href="https://doi.org/">doi.org</a></dt>
-        <dd>DOI.org is a digital identifier system that assigns unique and persistent identifiers to digital objects.
-          These identifiers can be used to cite, share, and track digital objects across different platforms and
-          systems. DOI.org identifiers can be used in DCAT to uniquely identify datasets and data services. This can
-          help to improve the discoverability and interoperability of datasets and data services.</dd>
-
-        <dt><a href="https://orcid.org">orcid.org</a></dt>
-        <dd>ORCID (Open Researcher and Contributor ID) is a global, non-profit organization that provides a unique and
-          persistent identifier for researchers. ORCID IDs are used to link researchers to their professional
-          activities, such as publications, grants, and affiliations. This helps to ensure that researchers are properly
-          credited for their work and that their work is more easily discoverable. ORCID is a valuable tool for
-          researchers, and it is becoming increasingly important as the research landscape becomes more complex.</dd>
-
-        <dt><a href="https://info.arxiv.org/help/arxiv_identifier.html">arxiv.org</a></dt>
-        <dd>ArXiv identifiers are globally unique identifiers (GUIDs) assigned to scholarly articles submitted to the
-          arXiv preprint server. These identifiers can be used in DCAT (Data Catalog Vocabulary) to uniquely identify
-          authors and their publications. This can help to improve the discoverability and interoperability of research
-          data.</dd>
-
-        <dt><a href="https://identifiers.org">Identifiers.org</a></dt>
-        <dd>The Identifiers.org Resolution Service provides consistent access to life science data using Compact
-          Identifiers. Compact Identifiers consist of an assigned unique prefix and a local provider designated
-          accession number (prefix:accession). The resolving location of Compact Identifiers is determined using
-          information that is stored in the Identifiers.org <a href="https://registry.identifiers.org/">Registry</a>.
-        </dd>
-      </dl>
-      <h4>Alternate identifiers</h4>
-
-      <p>In the realm of data cataloging, identifiers play a pivotal role in ensuring the uniqueness, traceability,
-        and interoperability of resources. Different namespaces and vocabularies offer distinct properties to denote
-        identifiers. Here, we discuss three such properties: <code>dcterms:identifier</code>,
-        <code>adms:hasIdentifier</code>, and <code>skos:notation</code>, shedding light on their distinct usages and
-        nuances.
-      </p>
-      <h5>dcterms:identifier</h5>
-      <p>Originating from the Dublin Core Metadata Terms (DCTERMS), <code>dcterms:identifier</code> is a broad and
-        general property used to denote a unique reference for a resource. It does not impose any constraint on the
-        format or nature of the identifier. In essence, it's a flexible property that can be employed across various
-        domains and for diverse types of resources, be they digital documents, physical artifacts, or abstract concepts.
-      </p>
-      <h5>adms:hasIdentifier</h5>
-      <p>The Asset Description Metadata Schema ([[VOCAB-ADMS]]) introduces <code>adms:hasIdentifier</code>. Unlike the
-        more generic <code>dcterms:identifier</code>, this property is more structured. It's designed to link a
-        resource to its identifier, which is itself described using further properties. This allows for a richer
-        description of the identifier, such as specifying its type (e.g., ISBN, DOI), its status, and its version. It's
-        particularly useful in contexts where there's a need to provide additional metadata about the identifier itself,
-        beyond just its value.</p>
-      <h5>skos:notation</h5>
-      <p><code>skos:notation</code> is a property from the Simple Knowledge Organization System ([[SKOS-REFERENCE]])
-        vocabulary. It's used to provide a symbolic string notation for a concept. While it can function similarly to
-        an identifier, its primary intention is to give a machine-readable, often standardized, symbolic name to a
-        concept, especially when such a notation exists in a legacy or external system. For example, in a controlled
-        vocabulary, each concept might have a notation that denotes its code in a classification scheme.</p>
-      <!-- TODO -->
-      <aside class="note">TODO Add examples</aside>
+        <p>In the realm of data cataloging, identifiers play a pivotal role in ensuring the uniqueness, traceability,
+          and interoperability of resources. Different namespaces and vocabularies offer distinct properties to denote
+          identifiers. Here, we discuss three such properties: <code>dcterms:identifier</code>,
+          <code>adms:hasIdentifier</code>, and <code>skos:notation</code>, shedding light on their distinct usages and
+          nuances.
+        </p>
+        <h5>dcterms:identifier</h5>
+        <p>Originating from the Dublin Core Metadata Terms (DCTERMS), <code>dcterms:identifier</code> is a broad and
+          general property used to denote a unique reference for a resource. It does not impose any constraint on the
+          format or nature of the identifier. In essence, it's a flexible property that can be employed across various
+          domains and for diverse types of resources, be they digital documents, physical artifacts, or abstract
+          concepts.
+        </p>
+        <h5>adms:hasIdentifier</h5>
+        <p>The Asset Description Metadata Schema ([[VOCAB-ADMS]]) introduces <code>adms:hasIdentifier</code>. Unlike the
+          more generic <code>dcterms:identifier</code>, this property is more structured. It's designed to link a
+          resource to its identifier, which is itself described using further properties. This allows for a richer
+          description of the identifier, such as specifying its type (e.g., ISBN, DOI), its status, and its version.
+          It's
+          particularly useful in contexts where there's a need to provide additional metadata about the identifier
+          itself,
+          beyond just its value.</p>
+        <h5>skos:notation</h5>
+        <p><code>skos:notation</code> is a property from the Simple Knowledge Organization System ([[SKOS-REFERENCE]])
+          vocabulary. It's used to provide a symbolic string notation for a concept. While it can function similarly to
+          an identifier, its primary intention is to give a machine-readable, often standardized, symbolic name to a
+          concept, especially when such a notation exists in a legacy or external system. For example, in a controlled
+          vocabulary, each concept might have a notation that denotes its code in a classification scheme.</p>
+        <!-- TODO -->
+        <aside class="note">TODO Add examples</aside>
+      </section>
     </section>
 
     <section id="multilingualism">
@@ -16698,8 +16711,8 @@
     </section>
 
     <!-- Agents -->
-    <section id="agents">
-      <h3>Agent Representations</h3>
+    <section id="stakeholders">
+      <h3>Stakeholders</h3>
 
       <p>In the realm of data cataloging and management, understanding the entities involved in the creation, curation,
         and maintenance of datasets is paramount. This section delves into the intricate details
@@ -16725,124 +16738,124 @@
         research and data utilization environments. More details about identifiers are provided in <a
           href="#deferenceable-identifiers">Deferenceable identifiers</a> section.
       </p>
-      <section id="agent">
-        <h4>Agent</h4>
+      <section class="notoc" id="agent">
+        <section id="agent">
+          <h4>Agent</h4>
 
 
-        <p>The <a data-cite="FOAF#term_Agent"><code>foaf:Agent</code></a> class in the Friend of a Friend [[FOAF]]
-          ontology serves a dual-purpose role,
-          particularly in the context of data cataloging and management. </p>
+          <p>The <a data-cite="FOAF#term_Agent"><code>foaf:Agent</code></a> class in the Friend of a Friend [[FOAF]]
+            ontology serves a dual-purpose role,
+            particularly in the context of data cataloging and management. </p>
 
-        <p>Firstly, it acts as an abstract class for both <a
-            href="https://www.w3.org/TR/vocab-org/#org:Organization"><code>org:Organization</code></a> and <a
-            data-cite="FOAF#term_Person"><code>foaf:Person</code></a>, providing a generalized representation that
-          encompasses various entities involved in dataset production and management. This abstraction facilitates the
-          encapsulation of common properties and behaviors, enabling a unified approach to handling different entity
-          types in data documentation and interoperability. </p>
+          <p>Firstly, it acts as an abstract class for both <a
+              href="https://www.w3.org/TR/vocab-org/#org:Organization"><code>org:Organization</code></a> and <a
+              data-cite="FOAF#term_Person"><code>foaf:Person</code></a>, providing a generalized representation that
+            encompasses various entities involved in dataset production and management. This abstraction facilitates the
+            encapsulation of common properties and behaviors, enabling a unified approach to handling different entity
+            types in data documentation and interoperability. </p>
 
-        <p>Secondly, <a data-cite="FOAF#term_Agent"><code>foaf:Agent</code></a> is utilized as a class to represent
-          autonomous software agents, which are self-operating software entities capable of performing tasks and making
-          decisions without direct human intervention. </p>
+          <p>Secondly, <a data-cite="FOAF#term_Agent"><code>foaf:Agent</code></a> is utilized as a class to represent
+            autonomous software agents, which are self-operating software entities capable of performing tasks and
+            making
+            decisions without direct human intervention. </p>
 
-        <p>This dual functionality of <a data-cite="FOAF#term_Agent"><code>foaf:Agent</code></a> not only streamlines
-          the representation of human and non-human actors in data management processes but also provides a flexible and
-          semantically rich framework to describe and interlink various entities within the DCAT-US schema, thereby
-          enhancing data discoverability and usability. </p>
-        <aside class="example" title="Example of Autonomous Agent">
-          <pre data-include-format="text" data-include="./examples/agent/eodataservice.ttl"></pre>
-        </aside>
+          <p>This dual functionality of <a data-cite="FOAF#term_Agent"><code>foaf:Agent</code></a> not only streamlines
+            the representation of human and non-human actors in data management processes but also provides a flexible
+            and
+            semantically rich framework to describe and interlink various entities within the DCAT-US schema, thereby
+            enhancing data discoverability and usability. </p>
+          <aside class="example" title="Example of Autonomous Agent">
+            <pre data-include-format="text" data-include="./examples/agent/eodataservice.ttl"></pre>
+          </aside>
 
+        </section>
       </section>
-      <section id="person">
+      <section class="notoc" id="person">
+        <section id="person">
 
-        <h4>Person</h4>
-        <p>A person agent represents an individual involved in producing or managing datasets. It provides
-          information about the person and their associated contact details.</p>
-        <p>
-          In the context of a DCAT-US 3.0, the <a data-cite="FOAF#term_Person"><code>foaf:Person</code></a> class plays
-          a
-          crucial role. It is used to represent individuals who are associated with or responsible for the datasets or
-          resources described within the DCAT profile.
-        </p>
-        <p>
-          Let's break down the specific properties associated with <a
-            data-cite="FOAF#term_Person"><code>foaf:Person</code></a> and their significance within this context:
-        </p>
-        <ul>
-          <li>
-            <a data-cite="FOAF#term_name"><code>foaf:name:</code></a> This property represents the full name of a
-            person. It can be used to specify the full name of individuals associated with datasets. For example, if a
-            person's full name is "John Smith," you can use this property to provide their complete name. This property
-            is the only property mandatory for describing a person and is typically used for display.
-          </li>
-          <li>
-            <a data-cite="FOAF#term_firstName"><code>foaf:firstName:</code></a> This optional property represents the
-            first name of a person. It is used to provide the first name of individuals associated with or responsible
-            for resources in the DCAT-US profile. It can be used to provide structured information about an individual's
-            first name.
-          </li>
-          <li>
-            <a data-cite="FOAF#term_givenName"><code>foaf:givenName:</code></a> This optional property represents the
-            given name of a person. It can be used to provide structured information about an individual's name.
-          </li>
-          <li>
-            <a data-cite="VOCAB-ORG#property-memberof"><code>org:memberOf</code></a> While not a FOAF property,this
-            property is typically used to indicate the organization or group to which a person is affiliated to. In the
-            context of a DCAT-US profile, it can be used to specify the organization or entity with which an individual
-            is affiliated in relation to the described resources. For instance, if a person is a member of an
-            organization of Department of Interior, you can use this property to link them to that organization
-            identified by <code>http://www.doi.gov</code>.
-          </li>
-        </ul>
-        <aside class="example" title="Examples of Person instance">
-          <pre data-include-format="text" data-include="./examples/person.ttl"></pre>
-        </aside>
-
+          <h4>Person</h4>
+          <p>A person agent represents an individual involved in producing or managing datasets. It provides
+            information about the person and their associated contact details.</p>
+          <p>
+            In the context of a DCAT-US 3.0, the <a data-cite="FOAF#term_Person"><code>foaf:Person</code></a> class
+            plays a crucial role. It is used to represent individuals who are associated with or responsible for the
+            datasets or resources described within the DCAT profile. </p>
+          <p>
+            Let's break down the specific properties associated with <a
+              data-cite="FOAF#term_Person"><code>foaf:Person</code></a> and their significance within this context:
+          </p>
+          <ul>
+            <li>
+              <a data-cite="FOAF#term_name"><code>foaf:name:</code></a> This property represents the full name of a
+              person. It can be used to specify the full name of individuals associated with datasets. For example, if a
+              person's full name is "John Smith," you can use this property to provide their complete name. This
+              property is the only property mandatory for describing a person and is typically used for display.
+            </li>
+            <li>
+              <a data-cite="FOAF#term_firstName"><code>foaf:firstName:</code></a> This optional property represents the
+              first name of a person. It is used to provide the first name of individuals associated with or responsible
+              for resources in the DCAT-US profile. It can be used to provide structured information about an
+              individual's first name.
+            </li>
+            <li>
+              <a data-cite="FOAF#term_givenName"><code>foaf:givenName:</code></a> This optional property represents the
+              given name of a person. It can be used to provide structured information about an individual's name.
+            </li>
+            <li>
+              <a data-cite="VOCAB-ORG#property-memberof"><code>org:memberOf</code></a> While not a FOAF property,this
+              property is typically used to indicate the organization or group to which a person is affiliated to. In
+              the context of a DCAT-US profile, it can be used to specify the organization or entity with which an
+              individual is affiliated in relation to the described resources. For instance, if a person is a member of
+              an organization of Department of Interior, you can use this property to link them to that organization
+              identified by <code>http://www.doi.gov</code>.
+            </li>
+          </ul>
+          <aside class="example" title="Examples of Person instance">
+            <pre data-include-format="text" data-include="./examples/person.ttl"></pre>
+          </aside>
+        </section>
       </section>
-      <section id="organization">
+      <section class="notoc" id="organization">
+        <section id="organization">
 
-        <h4>Organization</h4>
-        <p>An organization agent represents an organization or institution involved in producing or managing
-          a resource. It provides information about the organization responsible for the resource and its associated
-          contact details. This class is adept at acting as an Agent and can be hierarchically decomposed into
-          sub-organizations.</p>
+          <h4>Organization</h4>
+          <p>An organization agent represents an organization or institution involved in producing or managing
+            a resource. It provides information about the organization responsible for the resource and its associated
+            contact details. This class is adept at acting as an Agent and can be hierarchically decomposed into
+            sub-organizations.</p>
 
-        <p> When employing <a href="https://www.w3.org/TR/vocab-org/#org:Organization"><code>org:Organization</code></a>
-          within DCAT-US 3.0, it is imperative to:</p>
-        <ul>
-          <li><strong>Ensure Consistency:</strong> Utilize <a data-cite="FOAF#term_name"><code>foaf:name:</code></a> to
-            provide a consistent, recognizable name for the organization.
-          </li>
-          <li><strong>Enhance Discoverability:</strong> Leverage <a
-              data-cite="SKOS-REFERENCE#prefLabel"><code>skos:prefLabel</code></a> to specify the preferred label,
-            ensuring that the
-            organization is easily discoverable and identifiable.
-          </li>
-          <li><strong>Accommodate Variations:</strong> Utilize <a
-              data-cite="SKOS-REFERENCE#altLabel"><code>skos:altLabel</code></a> to include alternative names, acronyms,
-            or aliases,
-            enhancing searchability and user-friendliness.
-          </li>
-          <li><strong>Provide Abbreviations:</strong> Use <a
-              data-cite="SKOS-REFERENCE#notation"><code>skos:notation</code></a> to document any abbreviations or short
-            forms commonly associated
-            with the organization.
-          </li>
-          <li>
-            <strong>Represent Hierarchy:</strong> Optionally, use <a
-              href="https://www.w3.org/TR/vocab-org/#org:subOrganizationOf"><code>org:subOrganizationOf</code></a> to
-            depict hierarchical
-            relationships, providing a
-            structured view of organizational layers.
-          </li>
-        </ul>
-
+          <p> When employing <a
+              href="https://www.w3.org/TR/vocab-org/#org:Organization"><code>org:Organization</code></a>
+            within DCAT-US 3.0, it is imperative to:</p>
+          <ul>
+            <li><strong>Ensure Consistency:</strong> Utilize <a data-cite="FOAF#term_name"><code>foaf:name:</code></a>
+              to provide a consistent, recognizable name for the organization. </li>
+            <li><strong>Enhance Discoverability:</strong> Leverage <a
+                data-cite="SKOS-REFERENCE#prefLabel"><code>skos:prefLabel</code></a> to specify the preferred label,
+              ensuring that the organization is easily discoverable and identifiable.
+            </li>
+            <li><strong>Accommodate Variations:</strong> Utilize <a
+                data-cite="SKOS-REFERENCE#altLabel"><code>skos:altLabel</code></a> to include alternative names,
+              acronyms, or aliases, enhancing searchability and user-friendliness.
+            </li>
+            <li><strong>Provide Abbreviations:</strong> Use <a
+                data-cite="SKOS-REFERENCE#notation"><code>skos:notation</code></a> to document any abbreviations or
+              short forms commonly associated with the organization.
+            </li>
+            <li>
+              <strong>Represent Hierarchy:</strong> Optionally, use <a
+                href="https://www.w3.org/TR/vocab-org/#org:subOrganizationOf"><code>org:subOrganizationOf</code></a> to
+              depict hierarchical relationships, providing a structured view of organizational layers.
+            </li>
+          </ul>
+        </section>
       </section>
+      <section class="notoc" id="point-of-contact">
+        <section id="point-of-contact">
 
-      <section id="point-of-contact">
+          <h3>Contact Point</h3>
 
-        <h3>Contact Point</h3>
-
+        </section>
       </section>
     </section>
     <!-- Attributions -->
@@ -16877,65 +16890,73 @@
           can reach out to the attributed agent for clarification or resolution, thus ensuring data reliability and
           integrity.</li>
       </ol>
+      <section class="notoc" id="well-known-attributions">
+        <h4>Attributions with well-known roles</h4>
+        <p>
 
-      <h4>Attributions with well-known roles</h4>
-      <p>
+          The [[DCTERMS]] standard properties <a data-cite="DCTERMS#creator"><code>dcterms:creator</code></a>,
+          <a data-cite="DCTERMS#contributor"><code>dcterms:contributor</code></a>,
+          <a data-cite="DCTERMS#rightsHolder"><code>dcterms:rightsHolder</code></a>,
+          and <a data-cite="DCTERMS#publisher"><code>dcterms:publisher</code></a>,
+          and the generic <a data-cite="PROV#wasAttributedTo"><code>prov:wasAttributedTo</code></a> from
+          [[!PROV-O]], support basic associations of responsible agents with a cataloged resource.
 
-        The [[DCTERMS]] standard properties <a data-cite="DCTERMS#creator"><code>dcterms:creator</code></a>,
-        <a data-cite="DCTERMS#contributor"><code>dcterms:contributor</code></a>,
-        <a data-cite="DCTERMS#rightsHolder"><code>dcterms:rightsHolder</code></a>,
-        and <a data-cite="DCTERMS#publisher"><code>dcterms:publisher</code></a>,
-        and the generic <a data-cite="PROV#wasAttributedTo"><code>prov:wasAttributedTo</code></a> from
-        [[!PROV-O]], support basic associations of responsible agents with a cataloged resource.
+        </p>
+      </section>
 
-      </p>
-      <h4>Attribution with other roles</h4>
+      <section class="notoc" id="attributions-with-other-roles">
+        <h4>Attribution with other roles</h4>
 
-      <p>There are many other roles of importance in relation to datasets and services - e.g.,
-        funder, distributor, custodian, editor. Some of these roles are enumerated in the
-        <a
-          href="https://standards.iso.org/iso/19115/resources/Codelists/gml/CI_RoleCode.xml"><code>CI_RoleCode</code></a>
-        values from [[ISO-19115-1]], in the [[DataCite]] metadata schema, and included within the
-        <a href="https://id.loc.gov/vocabulary/relators">MARC relators</a>.
-      </p>
-      <p> A general method for assigning an agent to a resource with a specified role is provided by using the
-        qualified form <a data-cite="PROV-O#qualifiedAttribution"><code>prov:qualifiedAttribution</code></a> from
-        [[PROV-O]]. It is used to link to an Agent where the nature of the relationship is known but does
-        not match one of the standard attribution property roles (
-        <a data-cite="DCTERMS#creator"><code>dcterms:creator</code></a>,
-        <a data-cite="DCTERMS#contributor"><code>dcterms:contributor</code></a>,
-        <a data-cite="DCTERMS#rightsHolder"><code>dcterms:rightsHolder</code></a>,
-        and <a data-cite="DCTERMS#publisher"><code>dcterms:publisher</code></a>).
-      </p>
-      <p> The range of <a data-cite="PROV-O#qualifiedAttribution"><code>prov:qualifiedAttribution</code></a> is
-        <a data-cite="PROV-O#Attribution"><code>prov:Attribution</code></a>.
-        Use <a data-cite="VOCAB-DCAT-3#Property:relationship_hadRole"><code>dcat:hadRole</code></a> on
-        the <a data-cite="PROV-O#Attribution"><code>prov:Attribution</code></a> to capture the
-        responsibility of the Agent with respect to the Resource. More precisely, the relevant Agent is
-        specified via property <a data-cite="PROV-O#agent"><code>prov:agent</code></a>, whereas the role is specified
-        with property <a data-cite="VOCAB-DCAT-3#Property:relationship_hadRole"><code>dcat:hadRole</code></a>, which
-        takes as value a <a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a>
-        describing that role - as those included in the relevant code list operated a US Government-controlled Registry.
-      </p>
+        <p>There are many other roles of importance in relation to datasets and services - e.g.,
+          funder, distributor, custodian, editor. Some of these roles are enumerated in the
+          <a
+            href="https://standards.iso.org/iso/19115/resources/Codelists/gml/CI_RoleCode.xml"><code>CI_RoleCode</code></a>
+          values from [[ISO-19115-1]], in the [[DataCite]] metadata schema, and included within the
+          <a href="https://id.loc.gov/vocabulary/relators">MARC relators</a>.
+        </p>
+        <p> A general method for assigning an agent to a resource with a specified role is provided by using the
+          qualified form <a data-cite="PROV-O#qualifiedAttribution"><code>prov:qualifiedAttribution</code></a> from
+          [[PROV-O]]. It is used to link to an Agent where the nature of the relationship is known but does
+          not match one of the standard attribution property roles (
+          <a data-cite="DCTERMS#creator"><code>dcterms:creator</code></a>,
+          <a data-cite="DCTERMS#contributor"><code>dcterms:contributor</code></a>,
+          <a data-cite="DCTERMS#rightsHolder"><code>dcterms:rightsHolder</code></a>,
+          and <a data-cite="DCTERMS#publisher"><code>dcterms:publisher</code></a>).
+        </p>
+        <p> The range of <a data-cite="PROV-O#qualifiedAttribution"><code>prov:qualifiedAttribution</code></a> is
+          <a data-cite="PROV-O#Attribution"><code>prov:Attribution</code></a>.
+          Use <a data-cite="VOCAB-DCAT-3#Property:relationship_hadRole"><code>dcat:hadRole</code></a> on
+          the <a data-cite="PROV-O#Attribution"><code>prov:Attribution</code></a> to capture the
+          responsibility of the Agent with respect to the Resource. More precisely, the relevant Agent is
+          specified via property <a data-cite="PROV-O#agent"><code>prov:agent</code></a>, whereas the role is specified
+          with property <a data-cite="VOCAB-DCAT-3#Property:relationship_hadRole"><code>dcat:hadRole</code></a>, which
+          takes as value a <a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a>
+          describing that role - as those included in the relevant code list operated a US Government-controlled
+          Registry.
+        </p>
 
-      <p>The <a data-cite="PROV-O#qualifiedAttribution"><code>prov:qualifiedAttribution</code></a> property
-        is used to provide more detailed and structured information about the attribution of a resource. It allows for
-        specifying additional attributes, such as the role or position of the attributed entity, the date of
-        attribution, or other relevant details. The [PROV-O]-based approach is meant to
-        give data providers an extension mechanism to specify, in a harmonised way, any kind of role, and,
-        possibly,to attach additional information to the role and the associated Agent. As such, it MAY be used in
-        combination with or to complement the property-based approach, but it MUST NOT replace it. For instance, it can
-        be used to specify roles not covered by the agent role properties used in DCAT-US, and/or to specify additional
-        information that cannot be expressed via a property (as the period during which an Agent covered a given role).
-      </p>
+        <p>The <a data-cite="PROV-O#qualifiedAttribution"><code>prov:qualifiedAttribution</code></a> property
+          is used to provide more detailed and structured information about the attribution of a resource. It allows for
+          specifying additional attributes, such as the role or position of the attributed entity, the date of
+          attribution, or other relevant details. The [PROV-O]-based approach is meant to
+          give data providers an extension mechanism to specify, in a harmonised way, any kind of role, and,
+          possibly,to attach additional information to the role and the associated Agent. As such, it MAY be used in
+          combination with or to complement the property-based approach, but it MUST NOT replace it. For instance, it
+          can
+          be used to specify roles not covered by the agent role properties used in DCAT-US, and/or to specify
+          additional
+          information that cannot be expressed via a property (as the period during which an Agent covered a given
+          role).
+        </p>
 
-      <p><a href="#ex-attributions"></a> provides an illustration of the usage of attribution properties:
-      </p>
+        <p><a href="#ex-attributions"></a> provides an illustration of the usage of attribution properties:
+        </p>
 
-      <aside id="ex-attributions" class="example" title="Usage of attribution properties for dcat:Dataset">
-        <pre class="nohighlight turtle" data-include-format="text"
-          data-include="./examples/dataset/attributions.ttl"></pre>
-      </aside>
+        <aside id="ex-attributions" class="example" title="Usage of attribution properties for dcat:Dataset">
+          <pre class="nohighlight turtle" data-include-format="text"
+            data-include="./examples/dataset/attributions.ttl"></pre>
+        </aside>
+      </section>
     </section>
 
     <!-- Resource classification Metadata -->
@@ -16958,43 +16979,49 @@
       </p>
       <p>The DCAT US profile uses a range of properties from the DCAT 3 framework to classify and categorize resources,
         helping users and systems understand and navigate resources.</p>
-
-      <h4>Resource types</h4>
-      <p>
-        The <code>dct:type</code> property specifies the nature or genre of content and is applicable to
-        <strong>dcat:Dataset, dcat:DataService</strong>, and <strong>dcat:DatasetSeries</strong>. For instance, types
-        might include "Geospatial Dataset", "Image", "Statistical Dataset", or "Map". The <a
-          data-cite="DCMI-TYPES#section-7"><code>Dublin Core Type Vocabulary</code></a>
-        is for example a popular vocabulary used to categorize datasets.
-      </p>
-
-      <h4>Keywords</h4>
-      <p>
-        Relevant for <strong>dcat:Dataset, dcat:DataService, dcat:Catalog, and dcat:DatasetSeries</strong>, the
-        <code>dcat:keyword</code> property allows datasets to be tagged with pertinent terms represented as literals.
-        Using keywords from <strong>AGROVOC</strong>, <strong>GCMD</strong>, or the <strong>North American Industry
-          Classification System (NAICS)</strong> can enhance consistency in the US context.
-      </p>
-
-      <h4>Thematic Classification</h4>
-      <p>
-        Applicable to <strong>dcat:Dataset</strong> and <strong>dcat:DatasetSeries</strong>, the <code>dcat:theme</code>
-        property offers thematic categorization. The <strong>Data Theme Taxonomy from Data.gov</strong> (TBD) and the
-        <strong>Federal Geographic Data Committee (FGDC) Controlled Vocabularies</strong> such as ISO 19115 Topic
-        CodeList
-        and
-        Geoplatform NSDI Themes are widely used in the US to ensure a unified theming approach.
-      </p>
-
-      <h4>Subject Classification</h4>
-      <p>
-        Suitable for <strong>dcat:Dataset</strong> and <strong>dcat:DatasetSeries</strong>, the <code>dct:subject</code>
-        property provides deeper insight into a dataset's primary subject. Adopting vocabularies like the
-        <strong>Global Change Master Directory (GCMD)</strong> <strong>FAO Agrovoc</strong>, the <strong>Integrated
-          Taxonomic Information System (ITIS)</strong>, the <strong>North American Industry Classification System
-          (NAICS)</strong> or <strong>Library of Congress Subject Headings (LCSH)</strong>, can optimize clarity and
-        searchability in US Governement datasets.
-      </p>
+      <section class="notoc" id="resource-types">
+        <h4>Resource types</h4>
+        <p>
+          The <code>dct:type</code> property specifies the nature or genre of content and is applicable to
+          <strong>dcat:Dataset, dcat:DataService</strong>, and <strong>dcat:DatasetSeries</strong>. For instance, types
+          might include "Geospatial Dataset", "Image", "Statistical Dataset", or "Map". The <a
+            data-cite="DCMI-TYPES#section-7"><code>Dublin Core Type Vocabulary</code></a>
+          is for example a popular vocabulary used to categorize datasets.
+        </p>
+      </section>
+      <section class="notoc" id="keywords">
+        <h4>Keywords</h4>
+        <p>
+          Relevant for <strong>dcat:Dataset, dcat:DataService, dcat:Catalog, and dcat:DatasetSeries</strong>, the
+          <code>dcat:keyword</code> property allows datasets to be tagged with pertinent terms represented as literals.
+          Using keywords from <strong>AGROVOC</strong>, <strong>GCMD</strong>, or the <strong>North American Industry
+            Classification System (NAICS)</strong> can enhance consistency in the US context.
+        </p>
+      </section>
+      <section class="notoc" id="thematic-classification">
+        <h4>Thematic Classification</h4>
+        <p>
+          Applicable to <strong>dcat:Dataset</strong> and <strong>dcat:DatasetSeries</strong>, the
+          <code>dcat:theme</code>
+          property offers thematic categorization. The <strong>Data Theme Taxonomy from Data.gov</strong> (TBD) and the
+          <strong>Federal Geographic Data Committee (FGDC) Controlled Vocabularies</strong> such as ISO 19115 Topic
+          CodeList
+          and
+          Geoplatform NSDI Themes are widely used in the US to ensure a unified theming approach.
+        </p>
+      </section>
+      <section class="notoc" id="subject-classification">
+        <h4>Subject Classification</h4>
+        <p>
+          Suitable for <strong>dcat:Dataset</strong> and <strong>dcat:DatasetSeries</strong>, the
+          <code>dct:subject</code>
+          property provides deeper insight into a dataset's primary subject. Adopting vocabularies like the
+          <strong>Global Change Master Directory (GCMD)</strong> <strong>FAO Agrovoc</strong>, the <strong>Integrated
+            Taxonomic Information System (ITIS)</strong>, the <strong>North American Industry Classification System
+            (NAICS)</strong> or <strong>Library of Congress Subject Headings (LCSH)</strong>, can optimize clarity and
+          searchability in US Governement datasets.
+        </p>
+      </section>
     </section>
     <!-- Spatial Metadata -->
     <section id="spatial-metadata">
@@ -17013,156 +17040,164 @@
         a profile tailored specifically for the United States, several spatial properties are relevant for describing
         resources. This wiki page aims to provide an overview of these spatial properties and their usage within the
         DCAT-US framework.</p>
+      <section class="notoc" id="geographic-bounding-box">
+        <h4>Geographic Bounding Box</h4>
 
-      <h4>Geographic Bounding Box</h4>
+        <p>A bounding box represents the minimum and maximum coordinates that enclose a specific geographic area. In
+          DCAT-US, the <a
+            data-cite="DCAT-US#dataset-geographic_bounding_box"><code>dcat-us:geographicBoundingBox</code></a> property
+          and the class <a
+            data-cite="DCAT-US#dataset-geographic_bounding_box"><code>dcat-us:geographicBoundingBox</code></a> are
+          introduced
+          and utilized to define the spatial extent of a resource. This class consists of four numerical properties: the
+          west (<a
+            data-cite="DCAT-US#geographic_bbox-west-bounding-longitude"><code>dcat-us:westBoundingLongitude</code></a>)
+          and east longitude (<a
+            data-cite="DCAT-US#geographic_bbox-east-bounding-longitude"><code>dcat-us:eastBoundingLongitude</code></a>),
+          followed by the north
+          (<a
+            data-cite="DCAT-US#geographic_bbox-north-bounding-latitude"><code>dcat-us:northBoundingLatitude</code></a>)
+          and south latitude (<a
+            data-cite="DCAT-US#geographic_bbox-south-bounding-latitude"><code>dcat-us:southBoundingLatitude</code></a>),
+          which are based on the WGS84
+          coordinate system.</p>
 
-      <p>A bounding box represents the minimum and maximum coordinates that enclose a specific geographic area. In
-        DCAT-US, the <a
-          data-cite="DCAT-US#dataset-geographic_bounding_box"><code>dcat-us:geographicBoundingBox</code></a> property
-        and the class <a
-          data-cite="DCAT-US#dataset-geographic_bounding_box"><code>dcat-us:geographicBoundingBox</code></a> are
-        introduced
-        and utilized to define the spatial extent of a resource. This class consists of four numerical properties: the
-        west (<a
-          data-cite="DCAT-US#geographic_bbox-west-bounding-longitude"><code>dcat-us:westBoundingLongitude</code></a>)
-        and east longitude (<a
-          data-cite="DCAT-US#geographic_bbox-east-bounding-longitude"><code>dcat-us:eastBoundingLongitude</code></a>),
-        followed by the north
-        (<a data-cite="DCAT-US#geographic_bbox-north-bounding-latitude"><code>dcat-us:northBoundingLatitude</code></a>)
-        and south latitude (<a
-          data-cite="DCAT-US#geographic_bbox-south-bounding-latitude"><code>dcat-us:southBoundingLatitude</code></a>),
-        which are based on the WGS84
-        coordinate system.</p>
+        <aside class="example" id="ex-data-geographicBoundingBox2"
+          title="Example for dcat-us:geographicBoundingBox on dcat:Dataset">
+          <pre data-include-format="text" data-include="./examples/dataset/geographicbbox.ttl"></pre>
+        </aside>
+        <p>By specifying a bounding box, datasets can be associated with a particular geographic region. <b>If the west
+            bound longitude is greater than the east bound longitude, then the box spans the anti-meridian</b></p>
 
-      <aside class="example" id="ex-data-geographicBoundingBox2"
-        title="Example for dcat-us:geographicBoundingBox on dcat:Dataset">
-        <pre data-include-format="text" data-include="./examples/dataset/geographicbbox.ttl"></pre>
-      </aside>
-      <p>By specifying a bounding box, datasets can be associated with a particular geographic region. <b>If the west
-          bound longitude is greater than the east bound longitude, then the box spans the anti-meridian</b></p>
-
-      <figure id="figure">
-        <img src="images/AntimeridianCrossing.png" alt="Antimeridian crossing" />
-        <figcaption>Geographic Bounding Box crossing antimeridian</figcaption>
-      </figure>
-      <aside class="example" id="ex-data-antimeridian-geographicBoundingBox"
-        title="Example for dcat-us:geographicBoundingBox on dcat:Dataset crossing antimeridian">
-        <pre data-include-format="text" data-include="./examples/antimeridian-bbox.ttl"></pre>
-      </aside>
-      <p>Defining a common reference system is of utmost importance when searching for geospatial data. Geospatial
-        datasets are typically represented using different coordinate systems, projections, and datums, which can lead
-        to challenges in interoperability and data integration. A common reference system ensures that data from diverse
-        sources can be accurately aligned and combined, enabling effective analysis, visualization, and decision-making.
-      </p>
-      <p>The introduction of the <a
-          data-cite="DCAT-US#dataset-geographic_bounding_box"><code>dcat-us:geographicBoundingBox</code></a> property in
-        DCAT-US profile addresses this challenge by
-        providing a standardized way to express the spatial extent of a resource. Unlike using a Polygon, which requires
-        explicit geometric coordinates, the <a
-          data-cite="DCAT-US#dataset-geographic_bounding_box"><code>dcat-us:geographicBoundingBox</code></a> offers a
-        simpler and more interoperable
-        approach. Here are a few reasons why the <a
-          data-cite="DCAT-US#dataset-geographic_bounding_box"><code>dcat-us:geographicBoundingBox</code></a> is
-        advantageous:
-      <ul>
-        <li><b>Consistent Spatial Representation</b>: Geospatial datasets can be represented in various coordinate
-          systems, projections, and datums. Without a common reference system, it becomes difficult to align and compare
-          datasets accurately. By establishing a common reference system, data publishers and consumers can ensure
-          consistent spatial representation, enabling seamless integration and analysis of geospatial data from
-          different
-          sources. </li>
-        <li><b>Interoperability and Integration</b>: The use of a common reference system enhances interoperability
-          among
-          geospatial datasets and systems. It enables data from diverse sources to be combined and used together
-          seamlessly, facilitating cross-domain analysis and decision-making. With a common reference system, data
-          publishers can provide metadata that adheres to a standard, making it easier for data consumers to understand
-          and utilize the data.</li>
-        <li><b>Simplified Search and Discovery:</b> The <code>>dcat-us:geographicBoundingBox</code> property
-          simplifies the search and discovery process for geospatial data. Instead of relying on complex geometric
-          representations like polygons, users can specify a bounding box by defining the minimum and maximum values of
-          latitude and longitude. Filtering geospatial data using a bounding box involves numeric comparisons, where the
-          latitude and longitude values of data points are compared to the minimum and maximum values of the bounding
-          box.
-          This approach efficiently eliminates data points outside the specified spatial extent by performing simple
-          numeric operations. It leverages the inherent numerical properties of latitude and longitude values, making it
-          computationally efficient and compatible with spatial indexing and query optimization techniques. By using
-          numeric comparison, geospatial data can be filtered and retrieved faster, optimizing the search process in
-          various geospatial applications. This makes it easier for users to define their area of interest and retrieve
-          relevant datasets that intersect with that spatial extent.</li>
-        <li><b>Query Efficiency and Performance:</b> The use of dcat-us:GeographicBoundingBox enables efficient
-          spatial querying of datasets. Data consumers can quickly filter and retrieve resources based on their spatial
-          extent, reducing the need to process unnecessary data. This improves search performance and query efficiency,
-          particularly when dealing with large-scale geospatial data collections.</li>
-        <li><b>Compatibility with Existing Tools and Standards:</b> The adoption of the dcat-us:geographicBoundingBox
-          property aligns wiofficetropolitan statistical areas, employing multiple bounding boxes for each area helps
-          retrieve data specific to each metropolitan region, ensuring more accurate and focused results. Furthermore,
-          non-contiguous states like Alaska and Hawaii require separate bounding boxes to accurately capture their
-          unique
-          spatial coverage. The inclusion of multiple bounding boxes in geospatial searches improves the accuracy and
-          relevance of the retrieved datasets, facilitating more effective decision-making and analysis in various
-          applications and domains. </p>
-
-          <h4>Spatial Coverage</h4>
-          <p>In DCAT 3, the use of the <a
-              data-cite="DCTERMS#http://purl.org/dc/terms/spatial"><code>dct:spatial</code></a>
-            property is intended to provide information about the spatial coverage
-            or location of a resource. This property allows for the description of the spatial aspect of a dataset,
-            dataset
-            distribution, or data service in a standardized manner.</p>
-          <p>The <a data-cite="DCTERMS#http://purl.org/dc/terms/spatial"><code>dct:spatial</code></a> property can be
-            used
-            to represent spatial coverage using various spatial reference systems,
-            such as coordinates, polygons, or place names. This flexibility allows data publishers to express the
-            spatial
-            extent of their resources in a way that is most appropriate for the given context.</p>
-          <p>For example, the <a data-cite="DCTERMS#http://purl.org/dc/terms/spatial"><code>dct:spatial</code></a>
-            property
-            can be used to indicate the geographic bounding box that represents the
-            extent of a dataset. This can be expressed using minimum and maximum latitude and longitude values,
-            providing a
-            rectangular approximation of the resource’s coverage area. Alternatively, a more precise polygon can be used
-            to
-            describe complex or irregularly shaped spatial extents.</p>
-          <p>By including the <a data-cite="DCTERMS#http://purl.org/dc/terms/spatial"><code>dct:spatial</code></a>
-            property
-            in DCAT 3, datasets can provide explicit information about their
-            spatial coverage. This enables data consumers and applications to understand the geographic scope of a
-            resource
-            and determine its relevance for their specific use cases. It supports efficient searching, discovery, and
-            integration of geospatial datasets across different platforms and systems.</p>
-          <p>Furthermore, the use of standardized properties like <a
-              data-cite="DCTERMS#http://purl.org/dc/terms/spatial"><code>dct:spatial</code></a> enhances
-            interoperability
-            and data exchange
-            among different data catalogs and applications. By conforming to the DCAT 3 specification, data publishers
-            ensure
-            that spatial information is consistently represented and interpreted, facilitating seamless data integration
-            and
-            interoperability within the geospatial community. </p>
-          <h4>Spatial Resolution</h4>
-          <p>Spatial resolution is a characteristic of geospatial datasets that describes the level of detail or
-            granularity in the spatial representation. In DCAT 3.0, the <a
-              data-cite="VOCAB-DCAT-3#Property:dataset_spatial_resolution"><code>dcat:spatialResolutionInMeters</code></a>
-            property is used to
-            specify the spatial resolution of a resource, measured in meters. This property helps users understand the
-            level
-            of detail provided by the dataset and assess its suitability for their specific needs. Applications benefit
-            from
-            this property in various ways. For instance, in remote sensing and satellite imagery, users can determine if
+        <figure id="figure">
+          <img src="images/AntimeridianCrossing.png" alt="Antimeridian crossing" />
+          <figcaption>Geographic Bounding Box crossing antimeridian</figcaption>
+        </figure>
+        <aside class="example" id="ex-data-antimeridian-geographicBoundingBox"
+          title="Example for dcat-us:geographicBoundingBox on dcat:Dataset crossing antimeridian">
+          <pre data-include-format="text" data-include="./examples/antimeridian-bbox.ttl"></pre>
+        </aside>
+        <p>Defining a common reference system is of utmost importance when searching for geospatial data. Geospatial
+          datasets are typically represented using different coordinate systems, projections, and datums, which can lead
+          to challenges in interoperability and data integration. A common reference system ensures that data from
+          diverse
+          sources can be accurately aligned and combined, enabling effective analysis, visualization, and
+          decision-making.
+        </p>
+        <p>The introduction of the <a
+            data-cite="DCAT-US#dataset-geographic_bounding_box"><code>dcat-us:geographicBoundingBox</code></a> property
+          in
+          DCAT-US profile addresses this challenge by
+          providing a standardized way to express the spatial extent of a resource. Unlike using a Polygon, which
+          requires
+          explicit geometric coordinates, the <a
+            data-cite="DCAT-US#dataset-geographic_bounding_box"><code>dcat-us:geographicBoundingBox</code></a> offers a
+          simpler and more interoperable
+          approach. Here are a few reasons why the <a
+            data-cite="DCAT-US#dataset-geographic_bounding_box"><code>dcat-us:geographicBoundingBox</code></a> is
+          advantageous:
+        <ul>
+          <li><b>Consistent Spatial Representation</b>: Geospatial datasets can be represented in various coordinate
+            systems, projections, and datums. Without a common reference system, it becomes difficult to align and
+            compare
+            datasets accurately. By establishing a common reference system, data publishers and consumers can ensure
+            consistent spatial representation, enabling seamless integration and analysis of geospatial data from
+            different
+            sources. </li>
+          <li><b>Interoperability and Integration</b>: The use of a common reference system enhances interoperability
+            among
+            geospatial datasets and systems. It enables data from diverse sources to be combined and used together
+            seamlessly, facilitating cross-domain analysis and decision-making. With a common reference system, data
+            publishers can provide metadata that adheres to a standard, making it easier for data consumers to
+            understand
+            and utilize the data.</li>
+          <li><b>Simplified Search and Discovery:</b> The <code>>dcat-us:geographicBoundingBox</code> property
+            simplifies the search and discovery process for geospatial data. Instead of relying on complex geometric
+            representations like polygons, users can specify a bounding box by defining the minimum and maximum values
+            of
+            latitude and longitude. Filtering geospatial data using a bounding box involves numeric comparisons, where
             the
-            dataset captures the required level of detail for their analysis. In cartography and mapping, spatial
-            resolution
-            influences the clarity and accuracy of displayed features. Environmental modeling relies on appropriate
-            resolution
-            for accurate simulations, and emergency management requires datasets that support informed decision-making.
-            The
-            <a
-              data-cite="VOCAB-DCAT-3#Property:dataset_spatial_resolution"><code>dcat:spatialResolutionInMeters</code></a>
-            property supports data integration, ensuring compatibility between datasets with
-            different resolutions. Overall, this property enhances the usability and effectiveness of geospatial
-            datasets
-            across diverse domains.
-          </p>
+            latitude and longitude values of data points are compared to the minimum and maximum values of the bounding
+            box.
+            This approach efficiently eliminates data points outside the specified spatial extent by performing simple
+            numeric operations. It leverages the inherent numerical properties of latitude and longitude values, making
+            it
+            computationally efficient and compatible with spatial indexing and query optimization techniques. By using
+            numeric comparison, geospatial data can be filtered and retrieved faster, optimizing the search process in
+            various geospatial applications. This makes it easier for users to define their area of interest and
+            retrieve
+            relevant datasets that intersect with that spatial extent.</li>
+          <li><b>Query Efficiency and Performance:</b> The use of dcat-us:GeographicBoundingBox enables efficient
+            spatial querying of datasets. Data consumers can quickly filter and retrieve resources based on their
+            spatial
+            extent, reducing the need to process unnecessary data. This improves search performance and query
+            efficiency,
+            particularly when dealing with large-scale geospatial data collections.</li>
+          <li><b>Compatibility with Existing Tools and Standards:</b> The adoption of the dcat-us:geographicBoundingBox
+            property aligns wiofficetropolitan statistical areas, employing multiple bounding boxes for each area helps
+            retrieve data specific to each metropolitan region, ensuring more accurate and focused results. Furthermore,
+            non-contiguous states like Alaska and Hawaii require separate bounding boxes to accurately capture their
+            unique
+            spatial coverage. The inclusion of multiple bounding boxes in geospatial searches improves the accuracy and
+            relevance of the retrieved datasets, facilitating more effective decision-making and analysis in various
+            applications and domains. </p>
+      </section>
+      <section class="notoc" id="spatial-coverage">
+        <h4>Spatial Coverage</h4>
+        <p>In DCAT 3, the use of the <a
+            data-cite="DCTERMS#http://purl.org/dc/terms/spatial"><code>dct:spatial</code></a>
+          property is intended to provide information about the spatial coverage
+          or location of a resource. This property allows for the description of the spatial aspect of a dataset,
+          dataset
+          distribution, or data service in a standardized manner.</p>
+        <p>The <a data-cite="DCTERMS#http://purl.org/dc/terms/spatial"><code>dct:spatial</code></a> property can be
+          used
+          to represent spatial coverage using various spatial reference systems,
+          such as coordinates, polygons, or place names. This flexibility allows data publishers to express the
+          spatial
+          extent of their resources in a way that is most appropriate for the given context.</p>
+        <p>For example, the <a data-cite="DCTERMS#http://purl.org/dc/terms/spatial"><code>dct:spatial</code></a>
+          property
+          can be used to indicate the geographic bounding box that represents the
+          extent of a dataset. This can be expressed using minimum and maximum latitude and longitude values,
+          providing a
+          rectangular approximation of the resource’s coverage area. Alternatively, a more precise polygon can be used
+          to
+          describe complex or irregularly shaped spatial extents.</p>
+        <p>By including the <a data-cite="DCTERMS#http://purl.org/dc/terms/spatial"><code>dct:spatial</code></a>
+          property
+          in DCAT 3, datasets can provide explicit information about their
+          spatial coverage. This enables data consumers and applications to understand the geographic scope of a
+          resource
+          and determine its relevance for their specific use cases. It supports efficient searching, discovery, and
+          integration of geospatial datasets across different platforms and systems.</p>
+        <p>Furthermore, the use of standardized properties like <a
+            data-cite="DCTERMS#http://purl.org/dc/terms/spatial"><code>dct:spatial</code></a> enhances
+          interoperability
+          and data exchange
+          among different data catalogs and applications. By conforming to the DCAT 3 specification, data publishers
+          ensure
+          that spatial information is consistently represented and interpreted, facilitating seamless data integration
+          and
+          interoperability within the geospatial community. </p>
+      </section>
+      <section class="notoc" id="spatial-resolution">
+        <h4>Spatial Resolution</h4>
+        <p>Spatial resolution is a characteristic of geospatial datasets that describes the level of detail or
+          granularity in the spatial representation. In DCAT 3.0, the <a
+            data-cite="VOCAB-DCAT-3#Property:dataset_spatial_resolution"><code>dcat:spatialResolutionInMeters</code></a>
+          property is used to specify the spatial resolution of a resource, measured in meters. This property helps
+          users understand the level of detail provided by the dataset and assess its suitability for their specific
+          needs. Applications benefit from this property in various ways. For instance, in remote sensing and satellite
+          imagery, users can determine if the dataset captures the required level of detail for their analysis. In
+          cartography and mapping, spatial resolution influences the clarity and accuracy of displayed features.
+          Environmental modeling relies on appropriate resolution for accurate simulations, and emergency management
+          requires datasets that support informed decision-making. The <a
+            data-cite="VOCAB-DCAT-3#Property:dataset_spatial_resolution"><code>dcat:spatialResolutionInMeters</code></a>
+          property supports data integration, ensuring compatibility between datasets with different resolutions.
+          Overall, this property enhances the usability and effectiveness of geospatial datasets across diverse domains.
+        </p>
+      </section>
     </section>
 
     <!-- Temporal Metadata -->
@@ -17283,895 +17318,913 @@
 
       </tbody>
       </table>
-   
-
-    <aside class="note">
-      In DCAT-US version 1.1, <code>dct:accrualPeriodicity</code> is modeled as a string based on [[ISO8601-1]]. This
-      approach contrasts with the expected range for <code>dct:accrualPeriodicity</code>, which should be a resource
-      from the <code>dct:Frequency</code> class. The use of [[ISO8601-1]] values can be challenging for end-users to
-      understand. To address this, DCAT-US 3.0 has adopted the [[CLD-FREQ]] vocabularies and expects a URL. For ease
-      of
-      use in JSON-LD context, a shortcut has been defined, allowing the usage of only the local name of the URI. This
-      accomplished by
-      predefining the [[CLD-FREQ]] namespace for <code>dct:accrualPeriodicity</code> in the DCAT-US 3.0 JSON-LD
-      context.
-    </aside>
-
-    <aside class="note">TODO</aside>
-  </section>
-
-  <!-- Citations -->
-  <section id="citation-metadata">
-
-    <h3>Citation Metadata</h3>
-    <p>Citations play a pivotal role in ensuring the traceability and credibility of datasets within a data catalog.
-      In the DCAT-US 3.0 profile, various mechanisms have been introduced to describe
-      citations, ensuring that data consumers can reference and validate the datasets effectively. This section
-      elucidates the different mechanisms to manage and describe citations in the DCAT-US profile.</p>
-
-    <h4>Source citation</h4>
-    <p>Source citation is paramount in maintaining the integrity, traceability, and credibility of datasets within a
-      data catalog. In the DCAT-US profile, which aligns with the DCAT-3 standard, various mechanisms are established
-      to articulate citations, ensuring that users and data consumers can accurately reference and validate datasets.
-    </p>
-    <p><a data-cite="DCTERMS#http://purl.org/dc/terms/source"><code>dct:source</code></a>: Utilize this property to
-      denote the original source dataset from which the current dataset is
-      derived. It ensures a clear lineage and acknowledgment of the original data source, providing a pathway for
-      users to explore the foundational data.</p>
 
 
-    <aside class="note">TO COMPLETE</aside>
-  </section>
-
-  <!-- Legal Information  -->
-  <section id="legal-metadata" class="informative">
-
-    <h3>Legal Information</h3>
-    <aside class="note">TODO</aside>
-    <p>
-      Supplying accurate and adequate legal information holds significance in establishing trust among those who wish
-      to reuse candidate data. The absence of clear legal details poses a risk to data reuse, as individuals are left
-      unaware of permissible actions. While prior regulations and initiatives, like the Findable, Accessible,
-      Interoperable, and Reusable (FAIR) data principles, underline this importance, contemporary laws have become
-      more
-      rigorous by stipulating a baseline level of reuse standards. Selecting the right way to express conditions for
-      access to and re-use of resources can be complex. In essence, it is advisable for data publishers to engage
-      their
-      legal experts to ensure the provision of suitable guidelines.
-
-    </p>
-    <p>DCAT-US employs a strategy to express legal information only at the most specific level of sharing, such as
-      Distribution or Data Service, to avoid potential conflicts. If legal information are provided at both the
-      Dataset and Distribution levels, discrepancies might arise without clear precedence. This approach eliminates
-      the need to resolve conflicts between legal information at the Dataset (or Dataset Series) level and its related
-      Distributions or Data Services.</p>
-    <p>
-      This specification distinguishes the following main situations:
-      one where a statement is associated with a resource that is explicitly declared as a 'license';
-      a second, where the statement is associated with a resource denoting only access rights;
-      a third, covering all the other cases - i.e., statements not concerning licensing conditions and/or access
-      rights(e.g., copyright statements).
-
-    </p>
-    <aside class="note">TO COMPLETE</aside>
-
-    <aside class="note">
-      <p>
-        The provision of licensing conditions and access rights complies with the Best Practices 4 ("<a
-          data-cite="DWBP#licenses">Provide data license information</a>") and 22 ("<a
-          data-cite="DWBP#DataUnavailabilityReference">Provide an explanation for data that is not available</a>"),
-        respectively, from [[DWBP]].
-      </p>
-    </aside>
-  </section>
-
-  <!-- Provenance -->
-  <section id="provenance-metadata">
-    <h3>Provenance Metadata</h3>
-    <aside class="note">TO COMPLETE</aside>
-    <p>Provenance and data lineage are crucial aspects of data management and transparency, ensuring that data
-      consumers understand the origins, transformations, and utility of the data. In DCAT-US, leveraging [[DCTerms]]
-      (Dublin Core Terms) and [[PROV-O]] (W3C PROV Ontology) properties can effectively represent these aspects. This
-      section outlines best practices for utilizing these properties to detail the provenance and data lineage within
-      DCAT datasets.</p>
-    <h4>Basic Provenance Metadata</h4>
-
-    <p>Within DCAT-US, the Dublin Core Terms [[DCTerms]] vocabulary offers properties that allow data publishers to
-      articulate basic provenance information effectively. Particularly, <a
-        data-cite="DCTERMS#http://purl.org/dc/terms/source"><code>dct:source</code></a> and <a
-        data-cite="DCTERMS#http://purl.org/dc/terms/provenance"><code>dct:provenance</code></a> are
-      pivotal in this context.</p>
-
-    <h5>dct:source</h5>
-
-    <p><a data-cite="DCTERMS#http://purl.org/dc/terms/source"><code>dct:source</code></a> is used into the following
-      context:</p>
-    <ul>
-      <li>Property source metadata (<a data-cite="DCTERMS#http://purl.org/dc/terms/source"><code>dct:source</code></a>),
-        optional, non-repeatable
-        property for Catalogue Record, that refers
-        to the original metadata that was used in creating metadata for the Dataset.
-      <li>Property source (<a data-cite="DCTERMS#http://purl.org/dc/terms/source"><code>dct:source</code></a>),
-        optional, repeatable property for Dataset, that refers to a related Dataset
-        from which the described Dataset is derived.
-      </li>
-    </ul>
-
-
-
-    <p>The <a data-cite="DCTERMS#http://purl.org/dc/terms/source"><code>dct:source</code></a> property is utilized to
-      denote the original source from which the current dataset is
-      derived. It can be a URI directly pointing to the original dataset or, in the absence of a URI, a descriptive
-      reference that sufficiently identifies the original source. It's imperative to ensure that the source referenced
-      is the most immediate or direct source from which the data was derived and to utilize persistent URIs when
-      available to ensure stable and long-term linkage to the source.</p>
-
-    <h5>dct:provenance</h5>
-    <p>On the other hand, <a data-cite="DCTERMS#http://purl.org/dc/terms/provenance"><code>dct:provenance</code></a>
-      provides a mechanism to describe the history or lineage of the dataset.
-      This property allows publishers to detail the dataset's historical context and sequence of events or processes
-      that have influenced its formation or transformation. The provenance statement should be concise yet
-      comprehensive, providing a clear and adequate understanding of the dataset's history and lineage. Employing
-      standardized nomenclature and terminologies ensures clarity and consistency across provenance statements.</p>
-
-    <p>In the context of data cataloging and transparency, embedding provenance information is vital to elucidate the
-      origin and historical context of a dataset. The <a
-        data-cite="DCTerms#terms_Provenance Statement"><code>dcterms:ProvenanceStatement</code></a> from the Dublin
-      Core Terms (DCTerms)
-      vocabulary provides a structured way to incorporate this information within the DCAT-US framework.</p>
-
-    <p>The <a data-cite="DCTerms#terms_Provenance Statement"><code>dcterms:ProvenanceStatement</code></a> is designed
-      to convey a human-readable explanation or record of the history or
-      lineage of a dataset. It can be utilized to describe the dataset's origins, transformations, ownership, and any
-      other changes it might have undergone, thereby providing a clear and comprehensive historical record.</p>
-    <p>Property provenance (dct:provenance), optional, repeatable property for Dataset, that contains a statement
-      about the lineage of a Dataset.</p>
-
-    <p>This property can be expressed in two primary ways within DCAT-US:</p>
-
-    <ul>
-      <li><strong>By URI:</strong> A Uniform Resource Identifier (URI) can be used to refer to a
-        <a data-cite="DCTerms#terms_Provenance Statement"><code>dcterms:ProvenanceStatement</code></a> that is hosted
-        externally. This method is beneficial when the provenance
-        information is extensive or when it is standardized and used across multiple datasets.
-      </li>
-
-      <li><strong>Using Free Text with <a
-            href="http://spdx.org/rdf/terms#licenseText"><code>rdfs:label</code></a>:</strong> Alternatively, a <a
-          data-cite="DCTerms#terms_Provenance Statement"><code>dcterms:ProvenanceStatement</code></a> can be
-        expressed as free text using the <a href="http://spdx.org/rdf/terms#licenseText"><code>rdfs:label</code></a>
-        property. This approach is suitable for providing concise,
-        readable provenance information directly within the dataset's metadata.</li>
-    </ul>
-    <h4>Detailed Data Lineage</h4>
-    <p>Data lineage, which traces the discrete steps involving data as it moves through the various stages of a
-      workflow, is crucial for understanding data's origins and transformations. The W3C PROV Ontology [[PROV-O]]
-      provides a rich set of properties to describe detailed data lineage in a standardized manner, ensuring
-      interoperability and clarity in data documentation.</p>
-
-    <p>Key PROV-O properties include:</p>
-    <ul>
-      <li><a data-cite="PROV-O#wasDerivedFrom"><code>prov:wasDerivedFrom</code></a>: Establishes a derivation
-        relationship between two entities.</li>
-      <li><a data-cite="PROV#Property:prov_wasGeneratedBy"><code>prov:wasGeneratedBy</code></a>: Links an entity to
-        the activity that generated it.</li>
-      <li><a data-cite="PROV#Property:prov_wasInfluencedBy"><code>prov:wasInfluencedBy</code></a>: Expresses a generic
-        influence of one entity over an activity.</li>
-      <li><a data-cite="PROV#Property:prov_wasAttributedTo"><code>prov:wasAttributedTo</code></a>: Signifies the
-        relationship between a dataset and an agent responsible
-        for its creation.</li>
-    </ul>
-
-    <p>The <a data-cite="PROV#Class:prov_Activity"><code>prov:Activity</code></a> class in the PROV-O ontology plays a
-      pivotal role in representing processes or actions taken
-      upon or with entities, thereby providing a structured framework to document the transformations, analyses, or
-      other actions that data undergoes. An instance of <a
-        data-cite="PROV#Class:prov_Activity"><code>prov:Activity</code></a> is utilized to describe a particular
-      occurrence
-      of an action or process, which can involve the consumption, production, or transformation of entities. By
-      associating activities with entities through properties such as <a
-        data-cite="PROV#Property:prov_wasGeneratedBy"><code>prov:wasGeneratedBy</code></a>, a detailed
-      account of the data's journey, from its origin through various transformations to its current state, can be
-      articulated. This not only enhances the transparency of the data but also provides a robust mechanism to trace
-      back through the steps involved in data creation and processing, thereby contributing to verifiable and
-      trustworthy data lineage. Furthermore, <a data-cite="PROV#Class:prov_Activity"><code>prov:Activity</code></a>
-      can be associated with prov:Agent through properties like
-      prov:wasAssociatedWith, offering insights into the roles of different agents (e.g., organizations, people, or
-      software) in data processing activities, thereby enriching the data provenance and lineage documentation.</p>
-
-    <p>By adhering to these practices and effectively utilizing PROV-O properties, data publishers can enhance
-      transparency and facilitate informed data usage among consumers by providing a clear view of data sourcing,
-      processing, and transformation.</p>
-
-  </section>
-  <!-- Resource Restrictions -->
-  <section id="restriction-metadata">
-
-    <h3>Resource Restrictions</h3>
-
-    <aside class="note">TODO</aside>
-
-    <p>DCAT-US profile makes use of a code list to specify access restrictions.</p>
-
-    <p>In the following table, the URIs of code list values are abbreviated for space constraints, specifying only the
-      local part. For all of them, the base URI is <code>http://data.gov/vocab/access-rights/</code></p>
-
-    <table class="simple">
-      <thead>
-        <tr>
-          <th>URI (abbr.)</th>
-          <th>Label</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><code title="http://data.gov/vocab/access-rights/no-limitations">no-limitations</code></td>
-          <td>No limitations</td>
-          <td>Anybody can directly and anonymously access the data, without being required to register or
-            authenticate.
-          </td>
-        </tr>
-        <tr>
-          <td><code title="http://data.gov/vocab/access-rights/registration-required">registration-required</code>
-          </td>
-          <td>Registration required</td>
-          <td>Anybody can access the data, but they have to register first.</td>
-        </tr>
-        <tr>
-          <td><code title="http://data.gov/vocab/access-rights/authorisation-required">authorisation-required</code>
-          </td>
-          <td>Authorisation required</td>
-          <td>Only some users can access the resource.</td>
-        </tr>
-        <tr>
-          <td><code title="http://data.gov/vocab/access-rights/unknown">unknown</code></td>
-          <td>Unknown</td>
-          <td>Access restrictions are unknown.</td>
-        </tr>
-      </tbody>
-    </table>
-
-  </section>
-
-  <!-- Content Description -->
-  <section id="distribution-guideline">
-
-    <h3>Distribution Description</h3>
-
-
-    <h4>Format and Representation</h4>
-
-    <p>This category of properties deals with how data is encoded, structured, packaged, and presented, as well as the
-      media type and language it's available in. Properly understanding and managing these aspects is essential for
-      data
-      interoperability, accessibility, discoverability, and usability. A set standardized property values ensure
-      cross-platform interoperability, enabling datasets to be seamlessly processed and integrated. They offer clear
-      semantics about a dataset's nature, ensuring users and systems have a precise understanding. Furthermore, by
-      promoting consistent descriptions, they enhance dataset discoverability, making it easier for users to find and
-      access relevant data.
-    </p>
-
-    <section id="format">
-
-      <h4>Distribution Format</h4>
-
-
-      <p>Within [[VOCAB-DCAT-3]], format details are specifically tied to the distribution of a
-        dataset rather than the dataset itself. This distinction ensures that datasets, which can have multiple
-        distributions, can cater to varied format requirements while keeping the dataset definition consistent.</p>
-
-      <p>When defining the format of a distribution, consider the following properties:</p>
-      <ul>
-        <li><strong>dcat:mediaType</strong>: Ideal for scenarios where the format aligns with media types registered
-          by
-          IANA [[IANA-MEDIA-TYPES]].</li>
-
-        <li><strong>dct:format</strong>: Suitable for other cases, especially when associating with file form
-          registers
-          managed by a central authority such as Data.gov (TDB).</li>
-
-        <li><strong>dcat:compressFormat</strong>: This property defines when distribution files are compressed, such
-          as
-          in ZIP format. If possible, leverage media types from IANA [[IANA-MEDIA-TYPES]] to express the
-          format.</li>
-
-        <li><strong>dcat:packageFormat</strong>: Use this property to detail the packaging of distributions that
-          bundle
-          multiple data files. This can be crucial for scenarios where related files need collective downloads, like
-          TAR, ZIP, Frictionless Data Package, or Bagit files. Again, if an associated media type from
-          IANA [[IANA-MEDIA-TYPES]] exists, it's recommended to use it.</li>
-
-        <li><strong>adms:representationTechnique</strong>: This property can be used to specify the technique or
-          method
-          by which the data is represented in the distribution. This is different from the file format as, for
-          example,
-          a ZIP file (file format) could contain an XML schema (representation technique). It can help users
-          understand
-          the underlying structure or visualization method of the dataset.</li>
-      </ul>
-
-      <p>Utilizing these properties effectively can enhance data discoverability, interoperability, and the overall
-        user
-        experience when accessing and working with datasets.</p>
-
-      <aside class="example" title="Example of distribution of zipped CSV files packaged in tar format">
-        <pre data-include-format="text" data-include="./examples/distribution/packaging-format.ttl"></pre>
+      <aside class="note">
+        In DCAT-US version 1.1, <code>dct:accrualPeriodicity</code> is modeled as a string based on [[ISO8601-1]]. This
+        approach contrasts with the expected range for <code>dct:accrualPeriodicity</code>, which should be a resource
+        from the <code>dct:Frequency</code> class. The use of [[ISO8601-1]] values can be challenging for end-users to
+        understand. To address this, DCAT-US 3.0 has adopted the [[CLD-FREQ]] vocabularies and expects a URL. For ease
+        of
+        use in JSON-LD context, a shortcut has been defined, allowing the usage of only the local name of the URI. This
+        accomplished by
+        predefining the [[CLD-FREQ]] namespace for <code>dct:accrualPeriodicity</code> in the DCAT-US 3.0 JSON-LD
+        context.
       </aside>
 
+      <aside class="note">TODO</aside>
     </section>
-    <section id="character_encoding">
 
-      <h4>Character encoding</h4>
+    <!-- Citations -->
+    <section id="citation-metadata">
 
-      <p>In [[VOCAB-DCAT-3]], the specification of the character encoding of a dataset and the character encoding of a
-        metadata record is not explicitly supported. </p>
-      <p>According to [[RFC4288]], the character set can be part of the
-        media type specification, but only for type “text”. By contrast, in DCAT-US 3.0 application profile the
-        character set can be specified also for other media types.</p>
+      <h3>Citation Metadata</h3>
+      <p>Citations play a pivotal role in ensuring the traceability and credibility of datasets within a data catalog.
+        In the DCAT-US 3.0 profile, various mechanisms have been introduced to describe
+        citations, ensuring that data consumers can reference and validate the datasets effectively. This section
+        elucidates the different mechanisms to manage and describe citations in the DCAT-US profile.</p>
+      <section class="notoc" id="source-citation">
+        <h4>Source citation</h4>
+        <p>Source citation is paramount in maintaining the integrity, traceability, and credibility of datasets within a
+          data catalog. In the DCAT-US profile, which aligns with the DCAT-3 standard, various mechanisms are
+          established
+          to articulate citations, ensuring that users and data consumers can accurately reference and validate
+          datasets.
+        </p>
+        <p><a data-cite="DCTERMS#http://purl.org/dc/terms/source"><code>dct:source</code></a>: Utilize this property to
+          denote the original source dataset from which the current dataset is
+          derived. It ensures a clear lineage and acknowledgment of the original data source, providing a pathway for
+          users to explore the foundational data.</p>
+      </section>
 
-      <p>The W3C Content vocabulary [[Content-in-RDF10]] provides a suitable candidate, namely, property
-        <a data-cite="Content-in-RDF10#characterEncodingProperty"><code>cnt:characterEncoding</code></a>, taking as
-        value the character set names in the IANA register [[IANA-CHARSETS]]. DCAT-US uses this property.
+      <aside class="note">TO COMPLETE</aside>
+    </section>
+
+    <!-- Legal Information  -->
+    <section id="legal-metadata" class="informative">
+
+      <h3>Legal Information</h3>
+      <aside class="note">TODO</aside>
+      <p>
+        Supplying accurate and adequate legal information holds significance in establishing trust among those who wish
+        to reuse candidate data. The absence of clear legal details poses a risk to data reuse, as individuals are left
+        unaware of permissible actions. While prior regulations and initiatives, like the Findable, Accessible,
+        Interoperable, and Reusable (FAIR) data principles, underline this importance, contemporary laws have become
+        more
+        rigorous by stipulating a baseline level of reuse standards. Selecting the right way to express conditions for
+        access to and re-use of resources can be complex. In essence, it is advisable for data publishers to engage
+        their
+        legal experts to ensure the provision of suitable guidelines.
+
       </p>
+      <p>DCAT-US employs a strategy to express legal information only at the most specific level of sharing, such as
+        Distribution or Data Service, to avoid potential conflicts. If legal information are provided at both the
+        Dataset and Distribution levels, discrepancies might arise without clear precedence. This approach eliminates
+        the need to resolve conflicts between legal information at the Dataset (or Dataset Series) level and its related
+        Distributions or Data Services.</p>
+      <p>
+        This specification distinguishes the following main situations:
+        one where a statement is associated with a resource that is explicitly declared as a 'license';
+        a second, where the statement is associated with a resource denoting only access rights;
+        a third, covering all the other cases - i.e., statements not concerning licensing conditions and/or access
+        rights(e.g., copyright statements).
 
-      <p>Character encoding in [[ISO-19115]] metadata is specified with a code list that
-        can be mapped to the corresponding codes in [[IANA-CHARSETS]], as shown in the following table
-        (entries with 1-to-many mappings are in italic).</p>
+      </p>
+      <aside class="note">TO COMPLETE</aside>
+
+      <aside class="note">
+        <p>
+          The provision of licensing conditions and access rights complies with the Best Practices 4 ("<a
+            data-cite="DWBP#licenses">Provide data license information</a>") and 22 ("<a
+            data-cite="DWBP#DataUnavailabilityReference">Provide an explanation for data that is not available</a>"),
+          respectively, from [[DWBP]].
+        </p>
+      </aside>
+    </section>
+
+    <!-- Provenance -->
+    <section id="provenance-metadata">
+      <h3>Provenance Metadata</h3>
+      <aside class="note">TO COMPLETE</aside>
+      <p>Provenance and data lineage are crucial aspects of data management and transparency, ensuring that data
+        consumers understand the origins, transformations, and utility of the data. In DCAT-US, leveraging [[DCTerms]]
+        (Dublin Core Terms) and [[PROV-O]] (W3C PROV Ontology) properties can effectively represent these aspects. This
+        section outlines best practices for utilizing these properties to detail the provenance and data lineage within
+        DCAT datasets.</p>
+      <section class="notoc" id="basic-provenance">
+        <h4>Basic Provenance Metadata</h4>
+
+        <p>Within DCAT-US, the Dublin Core Terms [[DCTerms]] vocabulary offers properties that allow data publishers to
+          articulate basic provenance information effectively. Particularly, <a
+            data-cite="DCTERMS#http://purl.org/dc/terms/source"><code>dct:source</code></a> and <a
+            data-cite="DCTERMS#http://purl.org/dc/terms/provenance"><code>dct:provenance</code></a> are
+          pivotal in this context.</p>
+
+        <h5>dct:source</h5>
+
+        <p><a data-cite="DCTERMS#http://purl.org/dc/terms/source"><code>dct:source</code></a> is used into the following
+          context:</p>
+        <ul>
+          <li>Property source metadata (<a
+              data-cite="DCTERMS#http://purl.org/dc/terms/source"><code>dct:source</code></a>),
+            optional, non-repeatable
+            property for Catalogue Record, that refers
+            to the original metadata that was used in creating metadata for the Dataset.
+          <li>Property source (<a data-cite="DCTERMS#http://purl.org/dc/terms/source"><code>dct:source</code></a>),
+            optional, repeatable property for Dataset, that refers to a related Dataset
+            from which the described Dataset is derived.
+          </li>
+        </ul>
+
+
+
+        <p>The <a data-cite="DCTERMS#http://purl.org/dc/terms/source"><code>dct:source</code></a> property is utilized
+          to
+          denote the original source from which the current dataset is
+          derived. It can be a URI directly pointing to the original dataset or, in the absence of a URI, a descriptive
+          reference that sufficiently identifies the original source. It's imperative to ensure that the source
+          referenced
+          is the most immediate or direct source from which the data was derived and to utilize persistent URIs when
+          available to ensure stable and long-term linkage to the source.</p>
+
+        <h5>dct:provenance</h5>
+        <p>On the other hand, <a data-cite="DCTERMS#http://purl.org/dc/terms/provenance"><code>dct:provenance</code></a>
+          provides a mechanism to describe the history or lineage of the dataset.
+          This property allows publishers to detail the dataset's historical context and sequence of events or processes
+          that have influenced its formation or transformation. The provenance statement should be concise yet
+          comprehensive, providing a clear and adequate understanding of the dataset's history and lineage. Employing
+          standardized nomenclature and terminologies ensures clarity and consistency across provenance statements.</p>
+
+        <p>In the context of data cataloging and transparency, embedding provenance information is vital to elucidate
+          the
+          origin and historical context of a dataset. The <a
+            data-cite="DCTerms#terms_Provenance Statement"><code>dcterms:ProvenanceStatement</code></a> from the Dublin
+          Core Terms (DCTerms)
+          vocabulary provides a structured way to incorporate this information within the DCAT-US framework.</p>
+
+        <p>The <a data-cite="DCTerms#terms_Provenance Statement"><code>dcterms:ProvenanceStatement</code></a> is
+          designed
+          to convey a human-readable explanation or record of the history or
+          lineage of a dataset. It can be utilized to describe the dataset's origins, transformations, ownership, and
+          any
+          other changes it might have undergone, thereby providing a clear and comprehensive historical record.</p>
+        <p>Property provenance (dct:provenance), optional, repeatable property for Dataset, that contains a statement
+          about the lineage of a Dataset.</p>
+
+        <p>This property can be expressed in two primary ways within DCAT-US:</p>
+
+        <ul>
+          <li><strong>By URI:</strong> A Uniform Resource Identifier (URI) can be used to refer to a
+            <a data-cite="DCTerms#terms_Provenance Statement"><code>dcterms:ProvenanceStatement</code></a> that is
+            hosted
+            externally. This method is beneficial when the provenance
+            information is extensive or when it is standardized and used across multiple datasets.
+          </li>
+
+          <li><strong>Using Free Text with <a
+                href="http://spdx.org/rdf/terms#licenseText"><code>rdfs:label</code></a>:</strong> Alternatively, a <a
+              data-cite="DCTerms#terms_Provenance Statement"><code>dcterms:ProvenanceStatement</code></a> can be
+            expressed as free text using the <a href="http://spdx.org/rdf/terms#licenseText"><code>rdfs:label</code></a>
+            property. This approach is suitable for providing concise,
+            readable provenance information directly within the dataset's metadata.</li>
+        </ul>
+      </section>
+
+      <section class="notoc" id="detailed-data-lineage">
+        <h4>Detailed Data Lineage</h4>
+        <p>Data lineage, which traces the discrete steps involving data as it moves through the various stages of a
+          workflow, is crucial for understanding data's origins and transformations. The W3C PROV Ontology [[PROV-O]]
+          provides a rich set of properties to describe detailed data lineage in a standardized manner, ensuring
+          interoperability and clarity in data documentation.</p>
+
+        <p>Key PROV-O properties include:</p>
+        <ul>
+          <li><a data-cite="PROV-O#wasDerivedFrom"><code>prov:wasDerivedFrom</code></a>: Establishes a derivation
+            relationship between two entities.</li>
+          <li><a data-cite="PROV#Property:prov_wasGeneratedBy"><code>prov:wasGeneratedBy</code></a>: Links an entity to
+            the activity that generated it.</li>
+          <li><a data-cite="PROV#Property:prov_wasInfluencedBy"><code>prov:wasInfluencedBy</code></a>: Expresses a
+            generic
+            influence of one entity over an activity.</li>
+          <li><a data-cite="PROV#Property:prov_wasAttributedTo"><code>prov:wasAttributedTo</code></a>: Signifies the
+            relationship between a dataset and an agent responsible
+            for its creation.</li>
+        </ul>
+
+        <p>The <a data-cite="PROV#Class:prov_Activity"><code>prov:Activity</code></a> class in the PROV-O ontology plays
+          a
+          pivotal role in representing processes or actions taken
+          upon or with entities, thereby providing a structured framework to document the transformations, analyses, or
+          other actions that data undergoes. An instance of <a
+            data-cite="PROV#Class:prov_Activity"><code>prov:Activity</code></a> is utilized to describe a particular
+          occurrence
+          of an action or process, which can involve the consumption, production, or transformation of entities. By
+          associating activities with entities through properties such as <a
+            data-cite="PROV#Property:prov_wasGeneratedBy"><code>prov:wasGeneratedBy</code></a>, a detailed
+          account of the data's journey, from its origin through various transformations to its current state, can be
+          articulated. This not only enhances the transparency of the data but also provides a robust mechanism to trace
+          back through the steps involved in data creation and processing, thereby contributing to verifiable and
+          trustworthy data lineage. Furthermore, <a data-cite="PROV#Class:prov_Activity"><code>prov:Activity</code></a>
+          can be associated with prov:Agent through properties like
+          prov:wasAssociatedWith, offering insights into the roles of different agents (e.g., organizations, people, or
+          software) in data processing activities, thereby enriching the data provenance and lineage documentation.</p>
+
+        <p>By adhering to these practices and effectively utilizing PROV-O properties, data publishers can enhance
+          transparency and facilitate informed data usage among consumers by providing a clear view of data sourcing,
+          processing, and transformation.</p>
+      </section>
+    </section>
+    <!-- Resource Restrictions -->
+    <section id="restriction-metadata">
+
+      <h3>Resource Restrictions</h3>
+
+      <aside class="note">TODO</aside>
+
+      <p>DCAT-US profile makes use of a code list to specify access restrictions.</p>
+
+      <p>In the following table, the URIs of code list values are abbreviated for space constraints, specifying only the
+        local part. For all of them, the base URI is <code>http://data.gov/vocab/access-rights/</code></p>
 
       <table class="simple">
         <thead>
           <tr>
-            <th>ISO 19115 - MD_CharacterSetCode</th>
+            <th>URI (abbr.)</th>
+            <th>Label</th>
             <th>Description</th>
-            <th>IANA</th>
           </tr>
         </thead>
         <tbody>
-
           <tr>
-            <td>ucs2</td>
-            <td>16-bit fixed size Universal Character Set, based on ISO/<abbr
-                title="International Electrotechnical Commission">IEC</abbr> 10646</td>
-            <td>ISO-10646-<abbr title="Universal Character Set">UCS</abbr>-2</td>
+            <td><code title="http://data.gov/vocab/access-rights/no-limitations">no-limitations</code></td>
+            <td>No limitations</td>
+            <td>Anybody can directly and anonymously access the data, without being required to register or
+              authenticate.
+            </td>
           </tr>
-
           <tr>
-            <td>ucs4</td>
-            <td>32-bit fixed size Universal Character Set, based on ISO/<abbr
-                title="International Electrotechnical Commission">IEC</abbr> 10646</td>
-            <td>ISO-10646-<abbr title="Universal Character Set">UCS</abbr>-4</td>
+            <td><code title="http://data.gov/vocab/access-rights/registration-required">registration-required</code>
+            </td>
+            <td>Registration required</td>
+            <td>Anybody can access the data, but they have to register first.</td>
           </tr>
-
           <tr>
-            <td>utf7</td>
-            <td>7-bit variable size <abbr title="Universal Character Set">UCS</abbr> Transfer Format, based on
-              ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 10646</td>
-            <td><abbr title="UCS Transfer Format">UTF</abbr>-7</td>
+            <td><code title="http://data.gov/vocab/access-rights/authorisation-required">authorisation-required</code>
+            </td>
+            <td>Authorisation required</td>
+            <td>Only some users can access the resource.</td>
           </tr>
-
           <tr>
-            <td>utf8</td>
-            <td>8-bit variable size <abbr title="Universal Character Set">UCS</abbr> Transfer Format, based on
-              ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 10646</td>
-            <td><abbr title="UCS Transfer Format">UTF</abbr>-8</td>
+            <td><code title="http://data.gov/vocab/access-rights/unknown">unknown</code></td>
+            <td>Unknown</td>
+            <td>Access restrictions are unknown.</td>
           </tr>
-
-          <tr>
-            <td>utf16</td>
-            <td>16-bit variable size <abbr title="Universal Character Set">UCS</abbr> Transfer Format, based on
-              ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 10646</td>
-            <td><abbr title="UCS Transfer Format">UTF</abbr>-16</td>
-          </tr>
-
-          <tr>
-            <td>8859part1</td>
-            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-1, Information technology
-              -
-              8-bit single byte coded graphic character sets - Part 1 : Latin alphabet No.1</td>
-            <td>ISO-8859-1</td>
-          </tr>
-
-          <tr>
-            <td>8859part2</td>
-            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-2, Information technology
-              -
-              8-bit single byte coded graphic character sets - Part 2 : Latin alphabet No.2</td>
-            <td>ISO-8859-2</td>
-          </tr>
-
-          <tr>
-            <td>8859part3</td>
-            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-3, Information technology
-              -
-              8-bit single byte coded graphic character sets - Part 3 : Latin alphabet No.3</td>
-            <td>ISO-8859-3</td>
-          </tr>
-
-          <tr>
-            <td>8859part4</td>
-            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-4, Information technology
-              -
-              8-bit single byte coded graphic character sets - Part 4 : Latin alphabet No.4</td>
-            <td>ISO-8859-4</td>
-          </tr>
-
-          <tr>
-            <td>8859part5</td>
-            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-5, Information technology
-              -
-              8-bit single byte coded graphic character sets - Part 5 : Latin/Cyrillic alphabet</td>
-            <td>ISO-8859-5</td>
-          </tr>
-
-          <tr>
-            <td>8859part6</td>
-            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-6, Information technology
-              -
-              8-bit single byte coded graphic character sets - Part 6 : Latin/Arabic alphabet</td>
-            <td>ISO-8859-6</td>
-          </tr>
-
-          <tr>
-            <td>8859part7</td>
-            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-7, Information technology
-              -
-              8-bit single byte coded graphic character sets - Part 7 : Latin/Greek alphabet</td>
-            <td>ISO-8859-7</td>
-          </tr>
-
-          <tr>
-            <td>8859part8</td>
-            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-8, Information technology
-              -
-              8-bit single byte coded graphic character sets - Part 8 : Latin/Hebrew alphabet</td>
-            <td>ISO-8859-8</td>
-          </tr>
-
-          <tr>
-            <td>8859part9</td>
-            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-9, Information technology
-              -
-              8-bit single byte coded graphic character sets - Part 9 : Latin alphabet No.5</td>
-            <td>ISO-8859-9</td>
-          </tr>
-
-          <tr>
-            <td>8859part10</td>
-            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-10, Information technology
-              -
-              8-bit single byte coded graphic character sets - Part 10 : Latin alphabet No.6</td>
-            <td>ISO-8859-10</td>
-          </tr>
-
-          <tr>
-            <td>8859part11</td>
-            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-11, Information technology
-              -
-              8-bit single byte coded graphic character sets - Part 11 : Latin/Thai alphabet</td>
-            <td>ISO-8859-11</td>
-          </tr>
-
-          <tr>
-            <td>8859part13</td>
-            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-13, Information technology
-              -
-              8-bit single byte coded graphic character sets - Part 13 : Latin alphabet No.7</td>
-            <td>ISO-8859-13</td>
-          </tr>
-
-          <tr>
-            <td>8859part14</td>
-            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-14, Information technology
-              -
-              8-bit single byte coded graphic character sets - Part 14 : Latin alphabet No.8 (Celtic)</td>
-            <td>ISO-8859-14</td>
-          </tr>
-
-          <tr>
-            <td>8859part15</td>
-            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-15, Information technology
-              -
-              8-bit single byte coded graphic character sets - Part 15 : Latin alphabet No.9</td>
-            <td>ISO-8859-15</td>
-          </tr>
-
-          <tr>
-            <td>8859part16</td>
-            <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-16, Information technology
-              -
-              8-bit single byte coded graphic character sets - Part 16 : Latin alphabet No.10</td>
-            <td>ISO-8859-16</td>
-          </tr>
-
-          <tr>
-            <td><em>jis</em></td>
-            <td><em>japanese code set used for electronic transmission</em></td>
-            <td><em>JIS_Encoding</em></td>
-          </tr>
-
-          <tr>
-            <td>shiftJIS</td>
-            <td>japanese code set used on MS-DOS machines</td>
-            <td>Shift_JIS</td>
-          </tr>
-
-          <tr>
-            <td>eucJP</td>
-            <td>japanese code set used on UNIX based machines</td>
-            <td>EUC-JP</td>
-          </tr>
-
-          <tr>
-            <td>usAscii</td>
-            <td>United States ASCII code set (ISO 646 US)</td>
-            <td>US-ASCII</td>
-          </tr>
-
-          <tr>
-            <td><em>ebcdic</em></td>
-            <td><em>IBM mainframe code set</em></td>
-            <td><em>IBM037</em></td>
-          </tr>
-
-          <tr>
-            <td>eucKR</td>
-            <td>Korean code set</td>
-            <td>EUC-KR</td>
-          </tr>
-
-          <tr>
-            <td>big5</td>
-            <td>traditional Chinese code set used in Taiwan, Hong Kong of China and other areas</td>
-            <td>Big5</td>
-          </tr>
-
-          <tr>
-            <td>GB2312</td>
-            <td>simplified Chinese code set</td>
-            <td>GB2312</td>
-          </tr>
-
         </tbody>
       </table>
 
+    </section>
+
+    <!-- Content Description -->
+    <section id="distribution-guideline">
+
+      <h3>Distribution Description</h3>
+
+      <section class="notoc" id="format-and-representation">
+        <h4>Format and Representation</h4>
+
+        <p>This category of properties deals with how data is encoded, structured, packaged, and presented, as well as
+          the
+          media type and language it's available in. Properly understanding and managing these aspects is essential for
+          data
+          interoperability, accessibility, discoverability, and usability. A set standardized property values ensure
+          cross-platform interoperability, enabling datasets to be seamlessly processed and integrated. They offer clear
+          semantics about a dataset's nature, ensuring users and systems have a precise understanding. Furthermore, by
+          promoting consistent descriptions, they enhance dataset discoverability, making it easier for users to find
+          and
+          access relevant data.
+        </p>
+      </section>
+      <section class="notoc" id="format">
+
+        <h4>Distribution Format</h4>
+
+
+        <p>Within [[VOCAB-DCAT-3]], format details are specifically tied to the distribution of a
+          dataset rather than the dataset itself. This distinction ensures that datasets, which can have multiple
+          distributions, can cater to varied format requirements while keeping the dataset definition consistent.</p>
+
+        <p>When defining the format of a distribution, consider the following properties:</p>
+        <ul>
+          <li><strong>dcat:mediaType</strong>: Ideal for scenarios where the format aligns with media types registered
+            by
+            IANA [[IANA-MEDIA-TYPES]].</li>
+
+          <li><strong>dct:format</strong>: Suitable for other cases, especially when associating with file form
+            registers
+            managed by a central authority such as Data.gov (TDB).</li>
+
+          <li><strong>dcat:compressFormat</strong>: This property defines when distribution files are compressed, such
+            as
+            in ZIP format. If possible, leverage media types from IANA [[IANA-MEDIA-TYPES]] to express the
+            format.</li>
+
+          <li><strong>dcat:packageFormat</strong>: Use this property to detail the packaging of distributions that
+            bundle
+            multiple data files. This can be crucial for scenarios where related files need collective downloads, like
+            TAR, ZIP, Frictionless Data Package, or Bagit files. Again, if an associated media type from
+            IANA [[IANA-MEDIA-TYPES]] exists, it's recommended to use it.</li>
+
+          <li><strong>adms:representationTechnique</strong>: This property can be used to specify the technique or
+            method
+            by which the data is represented in the distribution. This is different from the file format as, for
+            example,
+            a ZIP file (file format) could contain an XML schema (representation technique). It can help users
+            understand
+            the underlying structure or visualization method of the dataset.</li>
+        </ul>
+
+        <p>Utilizing these properties effectively can enhance data discoverability, interoperability, and the overall
+          user
+          experience when accessing and working with datasets.</p>
+
+        <aside class="example" title="Example of distribution of zipped CSV files packaged in tar format">
+          <pre data-include-format="text" data-include="./examples/distribution/packaging-format.ttl"></pre>
+        </aside>
+
+      </section>
+      <section class="notoc" id="character_encoding">
+
+        <h4>Character encoding</h4>
+
+        <p>In [[VOCAB-DCAT-3]], the specification of the character encoding of a dataset and the character encoding of a
+          metadata record is not explicitly supported. </p>
+        <p>According to [[RFC4288]], the character set can be part of the
+          media type specification, but only for type “text”. By contrast, in DCAT-US 3.0 application profile the
+          character set can be specified also for other media types.</p>
+
+        <p>The W3C Content vocabulary [[Content-in-RDF10]] provides a suitable candidate, namely, property
+          <a data-cite="Content-in-RDF10#characterEncodingProperty"><code>cnt:characterEncoding</code></a>, taking as
+          value the character set names in the IANA register [[IANA-CHARSETS]]. DCAT-US uses this property.
+        </p>
+
+        <p>Character encoding in [[ISO-19115]] metadata is specified with a code list that
+          can be mapped to the corresponding codes in [[IANA-CHARSETS]], as shown in the following table
+          (entries with 1-to-many mappings are in italic).</p>
+
+        <table class="simple">
+          <thead>
+            <tr>
+              <th>ISO 19115 - MD_CharacterSetCode</th>
+              <th>Description</th>
+              <th>IANA</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr>
+              <td>ucs2</td>
+              <td>16-bit fixed size Universal Character Set, based on ISO/<abbr
+                  title="International Electrotechnical Commission">IEC</abbr> 10646</td>
+              <td>ISO-10646-<abbr title="Universal Character Set">UCS</abbr>-2</td>
+            </tr>
+
+            <tr>
+              <td>ucs4</td>
+              <td>32-bit fixed size Universal Character Set, based on ISO/<abbr
+                  title="International Electrotechnical Commission">IEC</abbr> 10646</td>
+              <td>ISO-10646-<abbr title="Universal Character Set">UCS</abbr>-4</td>
+            </tr>
+
+            <tr>
+              <td>utf7</td>
+              <td>7-bit variable size <abbr title="Universal Character Set">UCS</abbr> Transfer Format, based on
+                ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 10646</td>
+              <td><abbr title="UCS Transfer Format">UTF</abbr>-7</td>
+            </tr>
+
+            <tr>
+              <td>utf8</td>
+              <td>8-bit variable size <abbr title="Universal Character Set">UCS</abbr> Transfer Format, based on
+                ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 10646</td>
+              <td><abbr title="UCS Transfer Format">UTF</abbr>-8</td>
+            </tr>
+
+            <tr>
+              <td>utf16</td>
+              <td>16-bit variable size <abbr title="Universal Character Set">UCS</abbr> Transfer Format, based on
+                ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 10646</td>
+              <td><abbr title="UCS Transfer Format">UTF</abbr>-16</td>
+            </tr>
+
+            <tr>
+              <td>8859part1</td>
+              <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-1, Information technology
+                -
+                8-bit single byte coded graphic character sets - Part 1 : Latin alphabet No.1</td>
+              <td>ISO-8859-1</td>
+            </tr>
+
+            <tr>
+              <td>8859part2</td>
+              <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-2, Information technology
+                -
+                8-bit single byte coded graphic character sets - Part 2 : Latin alphabet No.2</td>
+              <td>ISO-8859-2</td>
+            </tr>
+
+            <tr>
+              <td>8859part3</td>
+              <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-3, Information technology
+                -
+                8-bit single byte coded graphic character sets - Part 3 : Latin alphabet No.3</td>
+              <td>ISO-8859-3</td>
+            </tr>
+
+            <tr>
+              <td>8859part4</td>
+              <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-4, Information technology
+                -
+                8-bit single byte coded graphic character sets - Part 4 : Latin alphabet No.4</td>
+              <td>ISO-8859-4</td>
+            </tr>
+
+            <tr>
+              <td>8859part5</td>
+              <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-5, Information technology
+                -
+                8-bit single byte coded graphic character sets - Part 5 : Latin/Cyrillic alphabet</td>
+              <td>ISO-8859-5</td>
+            </tr>
+
+            <tr>
+              <td>8859part6</td>
+              <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-6, Information technology
+                -
+                8-bit single byte coded graphic character sets - Part 6 : Latin/Arabic alphabet</td>
+              <td>ISO-8859-6</td>
+            </tr>
+
+            <tr>
+              <td>8859part7</td>
+              <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-7, Information technology
+                -
+                8-bit single byte coded graphic character sets - Part 7 : Latin/Greek alphabet</td>
+              <td>ISO-8859-7</td>
+            </tr>
+
+            <tr>
+              <td>8859part8</td>
+              <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-8, Information technology
+                -
+                8-bit single byte coded graphic character sets - Part 8 : Latin/Hebrew alphabet</td>
+              <td>ISO-8859-8</td>
+            </tr>
+
+            <tr>
+              <td>8859part9</td>
+              <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-9, Information technology
+                -
+                8-bit single byte coded graphic character sets - Part 9 : Latin alphabet No.5</td>
+              <td>ISO-8859-9</td>
+            </tr>
+
+            <tr>
+              <td>8859part10</td>
+              <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-10, Information technology
+                -
+                8-bit single byte coded graphic character sets - Part 10 : Latin alphabet No.6</td>
+              <td>ISO-8859-10</td>
+            </tr>
+
+            <tr>
+              <td>8859part11</td>
+              <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-11, Information technology
+                -
+                8-bit single byte coded graphic character sets - Part 11 : Latin/Thai alphabet</td>
+              <td>ISO-8859-11</td>
+            </tr>
+
+            <tr>
+              <td>8859part13</td>
+              <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-13, Information technology
+                -
+                8-bit single byte coded graphic character sets - Part 13 : Latin alphabet No.7</td>
+              <td>ISO-8859-13</td>
+            </tr>
+
+            <tr>
+              <td>8859part14</td>
+              <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-14, Information technology
+                -
+                8-bit single byte coded graphic character sets - Part 14 : Latin alphabet No.8 (Celtic)</td>
+              <td>ISO-8859-14</td>
+            </tr>
+
+            <tr>
+              <td>8859part15</td>
+              <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-15, Information technology
+                -
+                8-bit single byte coded graphic character sets - Part 15 : Latin alphabet No.9</td>
+              <td>ISO-8859-15</td>
+            </tr>
+
+            <tr>
+              <td>8859part16</td>
+              <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-16, Information technology
+                -
+                8-bit single byte coded graphic character sets - Part 16 : Latin alphabet No.10</td>
+              <td>ISO-8859-16</td>
+            </tr>
+
+            <tr>
+              <td><em>jis</em></td>
+              <td><em>japanese code set used for electronic transmission</em></td>
+              <td><em>JIS_Encoding</em></td>
+            </tr>
+
+            <tr>
+              <td>shiftJIS</td>
+              <td>japanese code set used on MS-DOS machines</td>
+              <td>Shift_JIS</td>
+            </tr>
+
+            <tr>
+              <td>eucJP</td>
+              <td>japanese code set used on UNIX based machines</td>
+              <td>EUC-JP</td>
+            </tr>
+
+            <tr>
+              <td>usAscii</td>
+              <td>United States ASCII code set (ISO 646 US)</td>
+              <td>US-ASCII</td>
+            </tr>
+
+            <tr>
+              <td><em>ebcdic</em></td>
+              <td><em>IBM mainframe code set</em></td>
+              <td><em>IBM037</em></td>
+            </tr>
+
+            <tr>
+              <td>eucKR</td>
+              <td>Korean code set</td>
+              <td>EUC-KR</td>
+            </tr>
+
+            <tr>
+              <td>big5</td>
+              <td>traditional Chinese code set used in Taiwan, Hong Kong of China and other areas</td>
+              <td>Big5</td>
+            </tr>
+
+            <tr>
+              <td>GB2312</td>
+              <td>simplified Chinese code set</td>
+              <td>GB2312</td>
+            </tr>
+
+          </tbody>
+        </table>
+
+        <aside class="note">TO COMPLETE</aside>
+
+        <aside class="example" title="Example for character encoding">
+          <pre data-include-format="text" data-include="./examples/character-encoding.ttl"></pre>
+        </aside>
+
+      </section>
+    </section>
+    <section id="data-quality">
+      <h3>Data Quality</h3>
+
+      <p>The quality of a dataset plays a pivotal role in shaping trust, reusability, and the overall performance of
+        applications that rely on it. As a result, it is imperative to integrate data quality information seamlessly
+        into
+        both the data publishing and consumption processes. This inclusion allows for a thorough evaluation of a
+        dataset's
+        quality, thereby determining its suitability for a particular application.</p>
+
+      <p>Thorough documentation of data quality significantly streamlines the dataset selection process, enhancing the
+        likelihood of reuse. Regardless of domain-specific nuances, documenting data quality and explicitly stating
+        known
+        quality issues in metadata are fundamental practices. Typically, assessing quality involves multiple dimensions,
+        each encapsulating characteristics of importance to both data publishers and consumers.</p>
+
+      <p>The Data Quality Vocabulary defines machine-readable concepts such as measurements and criteria to assess
+        quality
+        across various dimensions [[VOCAB-DQV]]. Tailored heuristics designed for specific assessment scenarios rely on
+        quality indicators, which encompass data content, metadata, and human ratings. These indicators offer valuable
+        insights into the dataset's suitability for its intended purpose.</p>
+
       <aside class="note">TO COMPLETE</aside>
 
-      <aside class="example" title="Example for character encoding">
-        <pre data-include-format="text" data-include="./examples/character-encoding.ttl"></pre>
-      </aside>
 
     </section>
-  </section>
-  <section id="data-quality">
-    <h3>Data Quality</h3>
+    <!-- Versioning -->
 
-    <p>The quality of a dataset plays a pivotal role in shaping trust, reusability, and the overall performance of
-      applications that rely on it. As a result, it is imperative to integrate data quality information seamlessly
-      into
-      both the data publishing and consumption processes. This inclusion allows for a thorough evaluation of a
-      dataset's
-      quality, thereby determining its suitability for a particular application.</p>
+    <section id="versioning">
+      <h3>Versioning</h3>
 
-    <p>Thorough documentation of data quality significantly streamlines the dataset selection process, enhancing the
-      likelihood of reuse. Regardless of domain-specific nuances, documenting data quality and explicitly stating
-      known
-      quality issues in metadata are fundamental practices. Typically, assessing quality involves multiple dimensions,
-      each encapsulating characteristics of importance to both data publishers and consumers.</p>
+      <p>Versioning is a concept used to describe the relationship between an original resource and its variations,
+        updates, or translations. In this section, we explore how DCAT (Data Catalog Vocabulary) is employed to document
+        versions resulting from updates or modifications throughout a resource's lifecycle.</p>
 
-    <p>The Data Quality Vocabulary defines machine-readable concepts such as measurements and criteria to assess
-      quality
-      across various dimensions [[VOCAB-DQV]]. Tailored heuristics designed for specific assessment scenarios rely on
-      quality indicators, which encompass data content, metadata, and human ratings. These indicators offer valuable
-      insights into the dataset's suitability for its intended purpose.</p>
+      <p>DCAT relies on established vocabularies, including the versioning section of the PAV ontology and terms from
+        [[PAV]], [[DCTERMS]], [[OWL2-OVERVIEW]], and [[VOCAB-ADMS]].</p>
 
-    <aside class="note">TO COMPLETE</aside>
+      <p>It's important to note that versioning applies to all primary DCAT-US resources, including Catalogs, Catalog
+        Records, Datasets, Dataset Series, and Distributions.</p>
 
-
-  </section>
-  <!-- Versioning -->
-
-  <section id="versioning">
-    <h3>Versioning</h3>
-
-    <p>Versioning is a concept used to describe the relationship between an original resource and its variations,
-      updates, or translations. In this section, we explore how DCAT (Data Catalog Vocabulary) is employed to document
-      versions resulting from updates or modifications throughout a resource's lifecycle.</p>
-
-    <p>DCAT relies on established vocabularies, including the versioning section of the PAV ontology and terms from
-      [[PAV]], [[DCTERMS]], [[OWL2-OVERVIEW]], and [[VOCAB-ADMS]].</p>
-
-    <p>It's important to note that versioning applies to all primary DCAT-US resources, including Catalogs, Catalog
-      Records, Datasets, Dataset Series, and Distributions.</p>
-
-    <p>The versioning approach within DCAT is designed to complement existing methods specific to certain resources
-      (such as versioning properties for ontologies in [[OWL2-OVERVIEW]]) and those prevalent in particular domains. A
-      detailed comparison with other vocabularies can be found in section 11.4: Complementary Approaches to
-      Versioning.
-    </p>
-
-    <p>Versioning is closely linked to community conventions, data management strategies, and existing processes. Data
-      providers bear the responsibility of determining when and why a new version should be released.</p>
-
-    <p><strong>Handling Dataset Changes </strong></p>
-    <p>Datasets published on the Web are subject to change over time. Some datasets are updated on a regular schedule,
-      while others evolve as improvements in data collection methods make updates necessary. To manage these changes
-      effectively, new versions of a dataset may be created. However, there isn't a unanimous consensus on when
-      changes
-      to a dataset should categorize it as an entirely new dataset or simply a new version. Below, we outline
-      scenarios
-      where most publishers would agree that a revision warrants consideration as a new version:</p>
-
-    <p><strong>Scenarios:</strong></p>
-    <ol>
-      <li>
-        <strong>Scenario 1:</strong> Creation of a new bus stop that needs to be added to the dataset.
-      </li>
-      <li>
-        <strong>Scenario 2:</strong> Removal of an existing bus stop, necessitating its deletion from the dataset.
-      </li>
-      <li>
-        <strong>Scenario 3:</strong> Identification and correction of an error in one of the existing bus stops stored
-        in the dataset.
-      </li>
-    </ol>
-
-    <p>In general, when dealing with datasets that represent time series or spatial series, such as data for different
-      regions or years, these are not typically regarded as multiple versions of the same dataset. Instead, each
-      dataset
-      covers a distinct set of observations about the world and should be treated as a new dataset. This principle
-      also
-      applies to datasets collecting data about weekly weather forecasts for a specific city, where a new dataset is
-      created each week to store data for that particular week.</p>
-
-    <p>Scenario 1 and 2 may trigger major version updates, while Scenario 3 is likely to trigger only a minor version
-      update. However, the distinction between minor and major versions is less critical than ensuring that any
-      changes
-      are clearly indicated by incrementing the version number. Even for minor changes, maintaining a record of
-      different dataset versions is essential for ensuring the dataset's reliability. Publishers should be mindful
-      that
-      a dataset may be in use by one or more data consumers, and they should take reasonable steps to inform those
-      consumers when a new version is released. For real-time data, an automated timestamp can serve as a version
-      identifier. It's crucial for publishers to adopt a consistent and informative approach to versioning for each
-      dataset, ensuring that data consumers can effectively understand and work with evolving data.</p>
-
-
-    <aside class="note">TO COMPLETE</aside>
-  </section>
-
-
-  <!-- Dataset Series  -->
-  <section id="dataset-series-guidance">
-    <h3>Dataset Series</h3>
-    <p>A Dataset Series is a way for publishers to convey that a dataset is evolving across specific dimensions and is
-      available as a set of related datasets. However, choosing to group datasets this way depends on the use case.
-      Since it demands extra metadata management from the publisher, it's optional. For instance, a dataset updated
-      frequently via an API may not require individual records for each yearly snapshot unless the publisher wishes to
-      share each snapshot's lifecycle.</p>
-
-    <p><strong>Guidelines for Using Dataset Series:</strong></p>
-    <ul>
-      <li>Only create a Dataset Series if planning to manage multiple datasets. Avoid having only one dataset in a
-        series. </li>
-      <li>If a series has no datasets, ensure its metadata is current. If all datasets in a series are removed,
-        consider
-        retracting the series too, especially if using persistent identifiers.</li>
-      <li>Conceptually, a Dataset Series doesn't have distributions. If one views a Dataset Series as a singular
-        Dataset, its associated Distributions should represent the combined data of all its datasets. However, this
-        can
-        cause confusion, so it's best not to associate distributions with a Dataset Series.</li>
-      <li>Describe members of a Dataset Series so they make sense even outside the series context. Membership in a
-        series shouldn't be the sole reason for a dataset's existence.</li>
-      <li>Dataset Series are special types of Datasets. Maintain the same metadata quality for both. However, specific
-        guidelines for Dataset Series take precedence over general dataset guidelines.</li>
-      <li>Members of a Dataset Series should have a strong connection, but there's no set criteria for this
-        connection.
-        It could be based on shared attributes, like a topic or time frame, and the same publisher. But other factors
-        can also define a Dataset Series.</li>
-    </ul>
-    <p><strong>Expressing Connection in Dataset Series</strong></p>
-    <p>If datasets within a Dataset Series are tightly interconnected or generated through an automated process, it's
-      intuitive to use versioning to describe their relationship. For guidance on incorporating versioning in DCAT-US,
-      refer to the DCAT versioning guidelines. However, since versioning might not always be the best descriptor, DCAT
-      offers properties (like next, previous, inSeries, last, and others) to articulate the links between the Dataset
-      Series and its datasets. It's advised to consistently use these properties with Dataset Series, and apply
-      versioning where it fits.</p>
-
-    <p><strong>Membership Influence on Metadata</strong></p>
-    <p>Being part of a Dataset Series can affect a dataset's metadata to emphasize its uniqueness compared to others
-      in
-      the collection. For example, a common adjustment is appending the release date to the dataset's title.</p>
-
-    <aside class="note">TO COMPLETE</aside>
-  </section>
-
-  <!-- Controlled vocabularies -->
-
-  <section id="controlled-vocabularies">
-
-    <h3>Controlled Vocabularies</h3>
-
-    <section id="importance-of-controlled-vocabularies">
-      <h3>Importance of Controlled Vocabularies</h3>
-      <p>Controlled vocabularies are predetermined sets of terms that have been carefully curated to
-        ensure consistency, accuracy, and standardized representation of concepts within a specific domain. In the
-        context of DCAT-US, controlled vocabularies are used to define and constrain the values of specific metadata
-        elements. These vocabularies enable the creation of a common language for describing datasets, facilitating
-        data
-        integration and harmonization across different repositories.
-
-      <p>The use of controlled vocabularies in DCAT-US offers several key benefits:
-
-      <ul>
-        <li><strong>Consistency</strong>: By providing a predefined list of terms, controlled vocabularies
-          ensure
-          consistent representation and labeling of metadata elements. This consistency promotes data
-          interoperability
-          and simplifies data integration efforts, as different datasets can be mapped to a shared set of
-          controlled
-          terms. </li>
-
-        <li><strong>Enhanced search and discovery</strong>: Controlled vocabularies enable more effective
-          search and
-          discovery of datasets. By aligning metadata elements with standardized terms, users can easily
-          navigate and
-          explore datasets based on their specific domain knowledge. Furthermore, controlled vocabularies
-          facilitate the
-          development of advanced search capabilities, such as faceted search, which allows users to
-          refine search
-          results based on predefined categories or facets.</li>
-
-        <li><strong>Data harmonization</strong>: In a diverse data landscape where multiple agencies and
-          organizations
-          produce and manage datasets, controlled vocabularies help in harmonizing the data
-          representation. By agreeing
-          on a set of controlled terms, data publishers can ensure that similar concepts are represented
-          consistently
-          across different datasets. This harmonization promotes data integration and interoperability,
-          enabling
-          meaningful analysis and comparison of data from various sources.</li>
-
-      </ul>
-
-    </section>
-    <section id="requirements-for-controlled-vocabularies">
-
-      <h4>Requirements for controlled vocabularies</h4>
-
-      <p>The following is a list of requirements that were identified for the controlled vocabularies to
-        be recommended
-        in this Application Profile.</p>
-
-      <p>Controlled vocabularies SHOULD:</p>
-
-      <ul>
-        <li>Be published under an open license.</li>
-        <li>Be operated and/or maintained by an agency of the US Government, by a recognised standards
-          organisation or another trusted organisation.</li>
-        <li>Be properly documented.</li>
-        <li>Have labels in english, and optionally in Spanish</li>
-        <li>Contain a relatively small number of terms (e.g. 10-25) that are general enough to enable a
-          wide range of
-          resources to be classified.</li>
-        <li>Have terms that are identified by URIs with each URI resolving to documentation about the
-          term.</li>
-        <li>Have associated persistence and versioning policies.</li>
-      </ul>
-
-      <p>These criteria do not intend to define a set of requirements for controlled vocabularies in
-        general; they are
-        only intended to be used for the selection of the controlled vocabularies that are proposed for
-        this Application
-        Profile.</p>
-
-    </section>
-    <section id="controlled-vocabularies-to-be-used">
-
-      <h4>Controlled vocabularies to be used</h4>
-
-      <p>In the table below, a number of properties are listed with controlled vocabularies that MUST be
-        used for the
-        listed properties. The declaration of the following controlled vocabularies as mandatory ensures a
-        minimum level
-        of interoperability.</p>
-
-      <p>Compared with [[DCAT-AP-20200608]], DCAT-US makes use of additional controlled vocabularies
-        mandated by
-        [[DATA-GOV-REG]], and operated by the Data.gov Registry - with the only exceptions of the
-        coordinate reference
-        systems register maintained by OGC [[OGC-EPSG]].</p>
-
-      <p>For two of these controlled vocabularies, namely the NGDA spatial data themes [[NGDA-THEMES]] and
-        the ISO
-        topic categories [[ISO-19115-1]], the DCAT-US Working Group has defined a set of harmonised mappings to
-        the Data.gov Vocabularies Data Themes [[DATA-GOV-THEME]], in order to facilitate the identification of the
-        relevant theme in [[DATA-GOV-THEME]] for geospatial/statistical metadata.</p>
-
-      <div data-include-format="html" data-include-replace="true"
-        data-include="./tables/controlled-vocabularies-to-be-used.html"></div>
-
-    </section>
-
-    <section id="other-controlled-vocabularies">
-
-      <h4>Other controlled vocabularies</h4>
-
-      <p>In addition to the proposed common vocabularies in <a class="no-sectionRef"
-          href="#controlled-vocabularies-to-be-used"></a>, which are mandatory to ensure minimal
-        interoperability,
-        implementers are encouraged to publish and to use further region or domain-specific vocabularies
-        that are
-        available online. While those may not be recognised by general implementations of the Application
-        Profile, they
-        may serve to increase interoperability across applications in the same region or domain. Examples
-        are the full
-        set of concepts in GCMD [[GCMD]],and numerous other schemes.</p>
-
-      <p>For geospatial metadata, the working group has identified the following additional vocabularies:
+      <p>The versioning approach within DCAT is designed to complement existing methods specific to certain resources
+        (such as versioning properties for ontologies in [[OWL2-OVERVIEW]]) and those prevalent in particular domains. A
+        detailed comparison with other vocabularies can be found in section 11.4: Complementary Approaches to
+        Versioning.
       </p>
 
+      <p>Versioning is closely linked to community conventions, data management strategies, and existing processes. Data
+        providers bear the responsibility of determining when and why a new version should be released.</p>
+
+      <p><strong>Handling Dataset Changes </strong></p>
+      <p>Datasets published on the Web are subject to change over time. Some datasets are updated on a regular schedule,
+        while others evolve as improvements in data collection methods make updates necessary. To manage these changes
+        effectively, new versions of a dataset may be created. However, there isn't a unanimous consensus on when
+        changes
+        to a dataset should categorize it as an entirely new dataset or simply a new version. Below, we outline
+        scenarios
+        where most publishers would agree that a revision warrants consideration as a new version:</p>
+
+      <p><strong>Scenarios:</strong></p>
+      <ol>
+        <li>
+          <strong>Scenario 1:</strong> Creation of a new bus stop that needs to be added to the dataset.
+        </li>
+        <li>
+          <strong>Scenario 2:</strong> Removal of an existing bus stop, necessitating its deletion from the dataset.
+        </li>
+        <li>
+          <strong>Scenario 3:</strong> Identification and correction of an error in one of the existing bus stops stored
+          in the dataset.
+        </li>
+      </ol>
+
+      <p>In general, when dealing with datasets that represent time series or spatial series, such as data for different
+        regions or years, these are not typically regarded as multiple versions of the same dataset. Instead, each
+        dataset
+        covers a distinct set of observations about the world and should be treated as a new dataset. This principle
+        also
+        applies to datasets collecting data about weekly weather forecasts for a specific city, where a new dataset is
+        created each week to store data for that particular week.</p>
+
+      <p>Scenario 1 and 2 may trigger major version updates, while Scenario 3 is likely to trigger only a minor version
+        update. However, the distinction between minor and major versions is less critical than ensuring that any
+        changes
+        are clearly indicated by incrementing the version number. Even for minor changes, maintaining a record of
+        different dataset versions is essential for ensuring the dataset's reliability. Publishers should be mindful
+        that
+        a dataset may be in use by one or more data consumers, and they should take reasonable steps to inform those
+        consumers when a new version is released. For real-time data, an automated timestamp can serve as a version
+        identifier. It's crucial for publishers to adopt a consistent and informative approach to versioning for each
+        dataset, ensuring that data consumers can effectively understand and work with evolving data.</p>
+
+
+      <aside class="note">TO COMPLETE</aside>
+    </section>
+
+
+    <!-- Dataset Series  -->
+    <section id="dataset-series-guidance">
+      <h3>Dataset Series</h3>
+      <p>A Dataset Series is a way for publishers to convey that a dataset is evolving across specific dimensions and is
+        available as a set of related datasets. However, choosing to group datasets this way depends on the use case.
+        Since it demands extra metadata management from the publisher, it's optional. For instance, a dataset updated
+        frequently via an API may not require individual records for each yearly snapshot unless the publisher wishes to
+        share each snapshot's lifecycle.</p>
+
+      <p><strong>Guidelines for Using Dataset Series:</strong></p>
       <ul>
-        <li>
-          <p><strong>Geographic identifiers</strong>:</p>
-          <ul>
-            <li>
-              <p><strong>For marine regions: </strong></p>
-              <ul>
-                <li>
-                  <p>Marine Regions <a href="http://www.marineregions.org/">http://www.marineregions.org/</a></p>
-                </li>
-                <li>
-                  <p>SeaVoX salt and fresh water body gazetteer - <a
-                      href="https://www.bodc.ac.uk/data/codes_and_formats/seavox/">https://www.bodc.ac.uk/data/codes_and_formats/seavox/</a>
-                  </p>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <p><strong>General:</strong></p>
-              <ul>
-                <li>
-                  <p>DBpedia for Geographic Placenames - <a href="http://dbpedia.org/about">http://dbpedia.org/about</a>
-                  </p>
-                </li>
-                <li>
-                  <p>National gazetteer vocabularies where feasible</p>
-                </li>
-                <li>
-                  <p>SeaVoX salt and fresh water body gazetteer for ‘marine geonames’ - <a
-                      href="https://www.bodc.ac.uk/data/codes_and_formats/seavox/">https://www.bodc.ac.uk/data/codes_and_formats/seavox/</a>
-                  </p>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <p><strong>Keywords (with controlled vocabularies):</strong></p>
-
-        </li>
+        <li>Only create a Dataset Series if planning to manage multiple datasets. Avoid having only one dataset in a
+          series. </li>
+        <li>If a series has no datasets, ensure its metadata is current. If all datasets in a series are removed,
+          consider
+          retracting the series too, especially if using persistent identifiers.</li>
+        <li>Conceptually, a Dataset Series doesn't have distributions. If one views a Dataset Series as a singular
+          Dataset, its associated Distributions should represent the combined data of all its datasets. However, this
+          can
+          cause confusion, so it's best not to associate distributions with a Dataset Series.</li>
+        <li>Describe members of a Dataset Series so they make sense even outside the series context. Membership in a
+          series shouldn't be the sole reason for a dataset's existence.</li>
+        <li>Dataset Series are special types of Datasets. Maintain the same metadata quality for both. However, specific
+          guidelines for Dataset Series take precedence over general dataset guidelines.</li>
+        <li>Members of a Dataset Series should have a strong connection, but there's no set criteria for this
+          connection.
+          It could be based on shared attributes, like a topic or time frame, and the same publisher. But other factors
+          can also define a Dataset Series.</li>
       </ul>
+      <p><strong>Expressing Connection in Dataset Series</strong></p>
+      <p>If datasets within a Dataset Series are tightly interconnected or generated through an automated process, it's
+        intuitive to use versioning to describe their relationship. For guidance on incorporating versioning in DCAT-US,
+        refer to the DCAT versioning guidelines. However, since versioning might not always be the best descriptor, DCAT
+        offers properties (like next, previous, inSeries, last, and others) to articulate the links between the Dataset
+        Series and its datasets. It's advised to consistently use these properties with Dataset Series, and apply
+        versioning where it fits.</p>
 
-    </section>
-    <section id="license-vocabularies">
+      <p><strong>Membership Influence on Metadata</strong></p>
+      <p>Being part of a Dataset Series can affect a dataset's metadata to emphasize its uniqueness compared to others
+        in
+        the collection. For example, a common adjustment is appending the release date to the dataset's title.</p>
 
-      <h3>Licence vocabularies</h3>
-
-      <p>Concerning license vocabularies, implementers are encouraged to use widely recognised licenses
-        such as Creative Commons licenses [[?CC]], and in particular the CC Zero Public Domain Dedication [[?CC0]] or
-        CC-BY Attribution 4.0 International [[?CC-BY]], or the Open Data Commons Public Domain Dedication and License
-        (PDDL) [[?PDDL]]. Often there is applicable legislation or a licency policy in place which determine the set
-        of
-        licenses to be used.
-      </p>
-
-      <p>Further activities in this area are undertaken by the Open Data Institute (ODI) with the Open
-        Data Rights Statement Vocabulary [[ODRS]] and by the Open Digital Rights Language (ODRL) Initiative
-        [[VOCAB-ODRL]].</p>
-
+      <aside class="note">TO COMPLETE</aside>
     </section>
 
-  </section>
+    <!-- Controlled vocabularies -->
+
+    <section id="controlled-vocabularies">
+
+      <h3>Controlled Vocabularies</h3>
+
+      <section class="notoc" id="importance-of-controlled-vocabularies">
+        <h4>Importance of Controlled Vocabularies</h4>
+        <p>Controlled vocabularies are predetermined sets of terms that have been carefully curated to
+          ensure consistency, accuracy, and standardized representation of concepts within a specific domain. In the
+          context of DCAT-US, controlled vocabularies are used to define and constrain the values of specific metadata
+          elements. These vocabularies enable the creation of a common language for describing datasets, facilitating
+          data
+          integration and harmonization across different repositories.
+
+        <p>The use of controlled vocabularies in DCAT-US offers several key benefits:
+
+        <ul>
+          <li><strong>Consistency</strong>: By providing a predefined list of terms, controlled vocabularies
+            ensure
+            consistent representation and labeling of metadata elements. This consistency promotes data
+            interoperability
+            and simplifies data integration efforts, as different datasets can be mapped to a shared set of
+            controlled
+            terms. </li>
+
+          <li><strong>Enhanced search and discovery</strong>: Controlled vocabularies enable more effective
+            search and
+            discovery of datasets. By aligning metadata elements with standardized terms, users can easily
+            navigate and
+            explore datasets based on their specific domain knowledge. Furthermore, controlled vocabularies
+            facilitate the
+            development of advanced search capabilities, such as faceted search, which allows users to
+            refine search
+            results based on predefined categories or facets.</li>
+
+          <li><strong>Data harmonization</strong>: In a diverse data landscape where multiple agencies and
+            organizations
+            produce and manage datasets, controlled vocabularies help in harmonizing the data
+            representation. By agreeing
+            on a set of controlled terms, data publishers can ensure that similar concepts are represented
+            consistently
+            across different datasets. This harmonization promotes data integration and interoperability,
+            enabling
+            meaningful analysis and comparison of data from various sources.</li>
+
+        </ul>
+
+      </section>
+      <section class="notoc" id="requirements-for-controlled-vocabularies">
+
+        <h4>Requirements for controlled vocabularies</h4>
+
+        <p>The following is a list of requirements that were identified for the controlled vocabularies to
+          be recommended
+          in this Application Profile.</p>
+
+        <p>Controlled vocabularies SHOULD:</p>
+
+        <ul>
+          <li>Be published under an open license.</li>
+          <li>Be operated and/or maintained by an agency of the US Government, by a recognised standards
+            organisation or another trusted organisation.</li>
+          <li>Be properly documented.</li>
+          <li>Have labels in english, and optionally in Spanish</li>
+          <li>Contain a relatively small number of terms (e.g. 10-25) that are general enough to enable a
+            wide range of
+            resources to be classified.</li>
+          <li>Have terms that are identified by URIs with each URI resolving to documentation about the
+            term.</li>
+          <li>Have associated persistence and versioning policies.</li>
+        </ul>
+
+        <p>These criteria do not intend to define a set of requirements for controlled vocabularies in
+          general; they are
+          only intended to be used for the selection of the controlled vocabularies that are proposed for
+          this Application
+          Profile.</p>
+
+      </section>
+      <section class="notoc" id="controlled-vocabularies-to-be-used">
+
+        <h4>Controlled vocabularies to be used</h4>
+
+        <p>In the table below, a number of properties are listed with controlled vocabularies that MUST be
+          used for the
+          listed properties. The declaration of the following controlled vocabularies as mandatory ensures a
+          minimum level
+          of interoperability.</p>
+
+        <p>Compared with [[DCAT-AP-20200608]], DCAT-US makes use of additional controlled vocabularies
+          mandated by
+          [[DATA-GOV-REG]], and operated by the Data.gov Registry - with the only exceptions of the
+          coordinate reference
+          systems register maintained by OGC [[OGC-EPSG]].</p>
+
+        <p>For two of these controlled vocabularies, namely the NGDA spatial data themes [[NGDA-THEMES]] and
+          the ISO
+          topic categories [[ISO-19115-1]], the DCAT-US Working Group has defined a set of harmonised mappings to
+          the Data.gov Vocabularies Data Themes [[DATA-GOV-THEME]], in order to facilitate the identification of the
+          relevant theme in [[DATA-GOV-THEME]] for geospatial/statistical metadata.</p>
+
+        <div data-include-format="html" data-include-replace="true"
+          data-include="./tables/controlled-vocabularies-to-be-used.html"></div>
+
+      </section>
+
+      <section class="notoc" id="other-controlled-vocabularies">
+
+        <h4>Other controlled vocabularies</h4>
+
+        <p>In addition to the proposed common vocabularies in <a class="no-sectionRef"
+            href="#controlled-vocabularies-to-be-used"></a>, which are mandatory to ensure minimal
+          interoperability,
+          implementers are encouraged to publish and to use further region or domain-specific vocabularies
+          that are
+          available online. While those may not be recognised by general implementations of the Application
+          Profile, they
+          may serve to increase interoperability across applications in the same region or domain. Examples
+          are the full
+          set of concepts in GCMD [[GCMD]],and numerous other schemes.</p>
+
+        <p>For geospatial metadata, the working group has identified the following additional vocabularies:
+        </p>
+
+        <ul>
+          <li>
+            <p><strong>Geographic identifiers</strong>:</p>
+            <ul>
+              <li>
+                <p><strong>For marine regions: </strong></p>
+                <ul>
+                  <li>
+                    <p>Marine Regions <a href="http://www.marineregions.org/">http://www.marineregions.org/</a></p>
+                  </li>
+                  <li>
+                    <p>SeaVoX salt and fresh water body gazetteer - <a
+                        href="https://www.bodc.ac.uk/data/codes_and_formats/seavox/">https://www.bodc.ac.uk/data/codes_and_formats/seavox/</a>
+                    </p>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p><strong>General:</strong></p>
+                <ul>
+                  <li>
+                    <p>DBpedia for Geographic Placenames - <a
+                        href="http://dbpedia.org/about">http://dbpedia.org/about</a>
+                    </p>
+                  </li>
+                  <li>
+                    <p>National gazetteer vocabularies where feasible</p>
+                  </li>
+                  <li>
+                    <p>SeaVoX salt and fresh water body gazetteer for ‘marine geonames’ - <a
+                        href="https://www.bodc.ac.uk/data/codes_and_formats/seavox/">https://www.bodc.ac.uk/data/codes_and_formats/seavox/</a>
+                    </p>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>Keywords (with controlled vocabularies):</strong></p>
+
+          </li>
+        </ul>
+
+      </section>
+      <section class="notoc" id="license-vocabularies">
+
+        <h3>Licence vocabularies</h3>
+
+        <p>Concerning license vocabularies, implementers are encouraged to use widely recognised licenses
+          such as Creative Commons licenses [[?CC]], and in particular the CC Zero Public Domain Dedication [[?CC0]] or
+          CC-BY Attribution 4.0 International [[?CC-BY]], or the Open Data Commons Public Domain Dedication and License
+          (PDDL) [[?PDDL]]. Often there is applicable legislation or a licency policy in place which determine the set
+          of
+          licenses to be used.
+        </p>
+
+        <p>Further activities in this area are undertaken by the Open Data Institute (ODI) with the Open
+          Data Rights Statement Vocabulary [[ODRS]] and by the Open Digital Rights Language (ODRL) Initiative
+          [[VOCAB-ODRL]].</p>
+
+      </section>
+
+    </section>
 
   </section>
 
