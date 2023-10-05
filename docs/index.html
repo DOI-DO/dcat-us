@@ -1429,7 +1429,258 @@
             presenting address data</td>
         </tr>
       </table>
+
+       <p><strong>Properties Summary</strong></p>
+
+    <table class="simple">
+      <thead>
+        <tr>
+          <th>Property</th>
+          <th>URI</th>
+          <th>Range</th>
+          <th>ReqLevel</th>
+          <th>Card</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="#address-contact-region">administrative area</a></td>
+          <td><a data-cite="VCARD-RDF#d4e1157"><code>vcard:region</code></a>
+          </td>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+          </td>
+          <td><strong>R</strong></td>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <td><a href="#address-contact-locality">city</a></td>
+          <td><a data-cite="VCARD-RDF#d4e999"><code>vcard:locality</code></a>
+          </td>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+          </td>
+          <td><strong>R</strong></td>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <td><a href="#address-contact-country-name">country name</a></td>
+          <td><a data-cite="VCARD-RDF#d4e844"><code>vcard:country-name</code></a>
+          </td>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+          </td>
+          <td><strong>R</strong></td>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <td><a href="#address-contact-postal-code">postal code</a></td>
+          <td><a data-cite="VCARD-RDF#d4e1126"><code>vcard:postal-code</code></a>
+          </td>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+          </td>
+          <td><strong>R</strong></td>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <td><a href="#address-contact-street-address">street address</a></td>
+          <td><a data-cite="VCARD-RDF#d4e1218"><code>vcard:street-address</code></a>
+          </td>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+          </td>
+          <td><strong>R</strong></td>
+          <td>0..1</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <section id="address-contact-recommended-props">
+      <h4>Recommended Properties</h4>
+      <section id="address-contact-region">
+        <!-- TODO: Double check this note -->
+        <aside class="note">New in DCAT-US 3.0 (defined in GeoDCAT 2.0.0)</aside>
+        <h4>Property: administrative area</h4>
+        <table class="def">
+          <tbody>
+            <tr>
+              <th>Property</th>
+              <td>administrative area</td>
+            </tr>
+            <tr>
+              <th>Requirement level</th>
+              <td>Recommended</td>
+            </tr>
+            <tr>
+              <th>Cardinality</th>
+              <td>0..1</td>
+            </tr>
+            <tr>
+              <th>URI</th>
+              <td><a data-cite="VCARD-RDF#d4e1157"><code>vcard:region</code></a>
+              </td>
+            </tr>
+            <tr>
+              <th>Range</th>
+              <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+              </td>
+            </tr>
+            <tr>
+              <th>Usage note</th>
+              <td>The administrative area of an Address of the Kind. Depending on the country, this corresponds to a
+                province, a county, a
+                region, or a state.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section id="address-contact-locality">
+        <!-- TODO: Double check this note -->
+        <aside class="note">New in DCAT-US 3.0 (defined in GeoDCAT 2.0.0)</aside>
+        <h4>Property: city</h4>
+        <table class="def">
+          <tbody>
+            <tr>
+              <th>Property</th>
+              <td>city</td>
+            </tr>
+            <tr>
+              <th>Requirement level</th>
+              <td>Recommended</td>
+            </tr>
+            <tr>
+              <th>Cardinality</th>
+              <td>0..1</td>
+            </tr>
+            <tr>
+              <th>URI</th>
+              <td><a data-cite="VCARD-RDF#d4e1157"><code>vcard:region</code></a>
+              </td>
+            </tr>
+            <tr>
+              <th>Range</th>
+              <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+              </td>
+            </tr>
+            <tr>
+              <th>Usage note</th>
+              <td>The administrative area of an Address of the Kind. Depending on the country, this corresponds to a
+                province, a county, a
+                region, or a state.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section id="address-contact-region">
+        <!-- TODO: Double check this note -->
+        <aside class="note">New in DCAT-US 3.0 (defined in GeoDCAT 2.0.0)</aside>
+        <h4>Property: administrative area</h4>
+        <table class="def">
+          <tbody>
+            <tr>
+              <th>Property</th>
+              <td>administrative area</td>
+            </tr>
+            <tr>
+              <th>Requirement level</th>
+              <td>Recommended</td>
+            </tr>
+            <tr>
+              <th>Cardinality</th>
+              <td>0..1</td>
+            </tr>
+            <tr>
+              <th>URI</th>
+              <td><a data-cite="VCARD-RDF#d4e1157"><code>vcard:region</code></a>
+              </td>
+            </tr>
+            <tr>
+              <th>Range</th>
+              <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+              </td>
+            </tr>
+            <tr>
+              <th>Usage note</th>
+              <td>The administrative area of an Address of the Kind. Depending on the country, this corresponds to a
+                province, a county, a
+                region, or a state.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section id="address-contact-region">
+        <!-- TODO: Double check this note -->
+        <aside class="note">New in DCAT-US 3.0 (defined in GeoDCAT 2.0.0)</aside>
+        <h4>Property: administrative area</h4>
+        <table class="def">
+          <tbody>
+            <tr>
+              <th>Property</th>
+              <td>administrative area</td>
+            </tr>
+            <tr>
+              <th>Requirement level</th>
+              <td>Recommended</td>
+            </tr>
+            <tr>
+              <th>Cardinality</th>
+              <td>0..1</td>
+            </tr>
+            <tr>
+              <th>URI</th>
+              <td><a data-cite="VCARD-RDF#d4e1157"><code>vcard:region</code></a>
+              </td>
+            </tr>
+            <tr>
+              <th>Range</th>
+              <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+              </td>
+            </tr>
+            <tr>
+              <th>Usage note</th>
+              <td>The administrative area of an Address of the Kind. Depending on the country, this corresponds to a
+                province, a county, a
+                region, or a state.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section id="address-contact-region">
+        <!-- TODO: Double check this note -->
+        <aside class="note">New in DCAT-US 3.0 (defined in GeoDCAT 2.0.0)</aside>
+        <h4>Property: administrative area</h4>
+        <table class="def">
+          <tbody>
+            <tr>
+              <th>Property</th>
+              <td>administrative area</td>
+            </tr>
+            <tr>
+              <th>Requirement level</th>
+              <td>Recommended</td>
+            </tr>
+            <tr>
+              <th>Cardinality</th>
+              <td>0..1</td>
+            </tr>
+            <tr>
+              <th>URI</th>
+              <td><a data-cite="VCARD-RDF#d4e1157"><code>vcard:region</code></a>
+              </td>
+            </tr>
+            <tr>
+              <th>Range</th>
+              <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+              </td>
+            </tr>
+            <tr>
+              <th>Usage note</th>
+              <td>The administrative area of an Address of the Kind. Depending on the country, this corresponds to a
+                province, a county, a
+                region, or a state.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
     </section>
+  </section>
+</section>
 
     <section id="properties-for-address-location">
       <h2>Address (Location)</h2>
