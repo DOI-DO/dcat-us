@@ -1112,7 +1112,7 @@
           </tr>
         </tbody>
       </table>
-      <section  class="notoc" id="access_restriction-mandatory-props">
+      <section class="notoc" id="access_restriction-mandatory-props">
         <h3>Mandatory Properties</h3>
         <section id="access_restriction-restriction_status">
 
@@ -1151,7 +1151,7 @@
         </section>
       </section>
 
-      <section  class="notoc" id="access_restriction-recommended-props">
+      <section class="notoc" id="access_restriction-recommended-props">
         <h3>Recommended Properties</h3>
         <section id="access_restriction-authority">
 
@@ -1190,7 +1190,7 @@
         </section>
       </section>
 
-      <section  class="notoc" id="access_restriction-optional-props">
+      <section class="notoc" id="access_restriction-optional-props">
         <h3>Optional Properties</h3>
         <section id="access_restriction-restriction_note">
           <h4>Property: restriction note</h4>
@@ -1226,7 +1226,7 @@
           </table>
         </section>
       </section>
-      <section  class="notoc" id="access_restriction-example">
+      <section class="notoc" id="access_restriction-example">
         <h3>Example</h3>
         <aside class="example" title="dcat-us:AccessRestriction examples">
           <!-- TODO  <pre data-include-format="text" data-include="./examples/attribution.ttl"></pre> -->
@@ -1346,7 +1346,7 @@
           </table>
         </section>
       </section>
-      <section  class="notoc" id="activity-optional-props">
+      <section class="notoc" id="activity-optional-props">
         <h4>Optional Properties</h4>
         <section id="activity-type">
 
@@ -1386,12 +1386,12 @@
 
       </section>
 
-      <section  class="notoc" id="activity-example">
+      <section class="notoc" id="activity-example">
         <h4>Example</h4>
         <!--TODO -->
       </section>
     </section>
-   
+
     <section id="properties-for-address-contact_point">
       <h2>Address (Contact Point)</h2>
       <aside class="note">Aligned with DCAT</aside>
@@ -1657,7 +1657,7 @@
 
       <section class="notoc" id="address-location-example">
         <h3>Example</h4>
-        <!--TODO -->
+          <!--TODO -->
       </section>
     </section>
 
@@ -1737,7 +1737,7 @@
           </tr>
         </tbody>
       </table>
-      <section  class="notoc" id="agent-mandatory-props">
+      <section class="notoc" id="agent-mandatory-props">
         <h3>Mandatory Properties</h3>
         <section id="agent-name">
           <h4>Property: name</h4>
@@ -1773,7 +1773,7 @@
           </table>
         </section>
       </section>
-      <section  class="notoc" id="agent-recommended-props">
+      <section class="notoc" id="agent-recommended-props">
         <h3>Recommended Properties</h3>
         <section id="agent-type">
           <h4>Property: type</h4>
@@ -1893,7 +1893,7 @@
         </tbody>
       </table>
 
-      <section  class="notoc" id="attribution-mandatory-props">
+      <section class="notoc" id="attribution-mandatory-props">
         <h4>Mandatory Properties</h4>
         <section id="attribution-agent">
           <aside class="note">New in DCAT-US 3.0 (defined in DCAT 2)</aside>
@@ -2303,7 +2303,7 @@
         </tbody>
       </table>
 
-      <section  class="notoc" id="catalog-mandatory-props">
+      <section class="notoc" id="catalog-mandatory-props">
         <h4>Mandatory Properties</h4>
 
         <section id="catalog-title">
@@ -5657,7 +5657,7 @@
           </aside>
         </section>
       </section>
-      <section class="notoc"  id="data-service-recommended-props">
+      <section class="notoc" id="data-service-recommended-props">
 
         <h4>Recommended Properties</h4>
         <section id="data-service-endpoint-description">
@@ -14467,7 +14467,7 @@
         </tbody>
       </table>
 
-      <section class="notoc"  id="period-recommended-props">
+      <section class="notoc" id="period-recommended-props">
         <h4>Recommended Properties</h4>
         <section id="period_start-date">
           <h4>Property: start date</h4>
@@ -14536,7 +14536,7 @@
           </table>
         </section>
       </section>
-      <section class="notoc"  id="period-example">
+      <section class="notoc" id="period-example">
         <h4>Example</h4>
         <aside class="example" title="dct:PeriodOfTime example">
           <pre data-include-format="text" data-include="./examples/dataset/temporal.ttl"></pre>
@@ -15449,7 +15449,7 @@
         </section>
 
       </section>
-      <section class="notoc"  id="rights-statement-example">
+      <section class="notoc" id="rights-statement-example">
         <h4>Example</h4>
         <aside class="example" title="Usage of dct:RightsStatement">
           <pre data-include-format="text" data-include="./examples/rights-statement.ttl"></pre>
@@ -16354,29 +16354,55 @@
 
     <!-- Agents -->
     <section id="agents">
-      <aside class="note">TODO</aside>
-      <h3>Agents</h3>
+      <h3>Agent Representations</h3>
+
+      <p>In the realm of data cataloging and management, understanding the entities involved in the creation, curation,
+        and maintenance of datasets is paramount. This section delves into the intricate details
+        of these entities, categorizing them into distinct classes such as "Agent," "Person," and "Organization." Each
+        class provides a structured framework to represent various stakeholders, from individuals to software agents and
+        organizations, ensuring that data provenance is transparent and traceable. As we navigate through this section,
+        we'll gain insights into the properties, roles, and significance of these agent representations within the
+        DCAT-US 3.0 context, highlighting their pivotal role in enhancing data discoverability, interoperability, and
+        usability.</p>
+
+      <p>
+        Embracing globally unique, resolvable URLs and Persistent Identifiers (PIDs) stands paramount in fortifying the
+        integrity and usability of data ecosystems, especially in identifying diverse agents. This practice not only
+        ensures a crystal-clear, unambiguous identification, thereby averting potential duplications and inconsistencies
+        from multiple URIs but also significantly enhances data discoverability and accessibility. By employing a
+        singular, steadfast identifier per agent, data practitioners safeguard against data misinterpretation and ensure
+        a coherent, traceable data lineage, bolstering data provenance and trust across various platforms and datasets.
+        Furthermore, adherence to standardized identification practices, utilizing reference registries like <a href="https://orcid.org">ORCID</a> or
+        <a href="https://ror.org/">Research Organization Registry (ROR)</a> , not only aligns with global data management standards but also propels collaborative research and data
+        sharing, ensuring a streamlined, reliable, and impactful data management and collaboration across diverse
+        research and data utilization environments. More details about identifiers are provided in <a href="#deferenceable-identifiers">Deferenceable identifiers</a> section.
+        </p>
       <section id="agent">
         <h4>Agent</h4>
 
 
         <p>The <a data-cite="FOAF#term_Agent"><code>foaf:Agent</code></a> class in the Friend of a Friend [[FOAF]]
           ontology serves a dual-purpose role,
-          particularly in the context of data cataloging and management. Firstly, it acts as an abstract class for both
-          <a href="https://www.w3.org/TR/vocab-org/#org:Organization"><code>org:Organization</code></a> and <a
+          particularly in the context of data cataloging and management. </p>
+
+        <p>Firstly, it acts as an abstract class for both <a
+            href="https://www.w3.org/TR/vocab-org/#org:Organization"><code>org:Organization</code></a> and <a
             data-cite="FOAF#term_Person"><code>foaf:Person</code></a>, providing a generalized representation that
-          encompasses
-          various entities involved in dataset production and management. This abstraction facilitates the encapsulation
-          of common properties and behaviors, enabling a unified approach to handling different entity types in data
-          documentation and interoperability. Secondly, <a data-cite="FOAF#term_Agent"><code>foaf:Agent</code></a> is
-          utilized as a class to represent
+          encompasses various entities involved in dataset production and management. This abstraction facilitates the
+          encapsulation of common properties and behaviors, enabling a unified approach to handling different entity
+          types in data documentation and interoperability. </p>
+
+        <p>Secondly, <a data-cite="FOAF#term_Agent"><code>foaf:Agent</code></a> is utilized as a class to represent
           autonomous software agents, which are self-operating software entities capable of performing tasks and making
-          decisions without direct human intervention. This dual functionality of <a
-            data-cite="FOAF#term_Agent"><code>foaf:Agent</code></a> not only
-          streamlines the representation of human and non-human actors in data management processes but also provides a
-          flexible and semantically rich framework to describe and interlink various entities within the DCAT-US schema,
-          thereby enhancing data discoverability and usability.
-        </p>
+          decisions without direct human intervention. </p>
+
+        <p>This dual functionality of <a data-cite="FOAF#term_Agent"><code>foaf:Agent</code></a> not only streamlines
+          the representation of human and non-human actors in data management processes but also provides a flexible and
+          semantically rich framework to describe and interlink various entities within the DCAT-US schema, thereby
+          enhancing data discoverability and usability. </p>
+        <aside class="example" title="Example of Autonomous Agent">
+          <pre data-include-format="text" data-include="./examples/agent/eodataservice.ttl"></pre>
+        </aside>
 
       </section>
       <section id="person">
@@ -16420,6 +16446,9 @@
             identified by <code>http://www.doi.gov</code>.
           </li>
         </ul>
+        <aside class="example" title="Examples of Person instance">
+          <pre data-include-format="text" data-include="./examples/person.ttl"></pre>
+        </aside>
 
       </section>
       <section id="organization">
@@ -16453,7 +16482,8 @@
           </li>
           <li>
             <strong>Represent Hierarchy:</strong> Optionally, use <a
-            href="https://www.w3.org/TR/vocab-org/#org:subOrganizationOf"><code>org:subOrganizationOf</code></a> to depict hierarchical
+              href="https://www.w3.org/TR/vocab-org/#org:subOrganizationOf"><code>org:subOrganizationOf</code></a> to
+            depict hierarchical
             relationships, providing a
             structured view of organizational layers.
           </li>
