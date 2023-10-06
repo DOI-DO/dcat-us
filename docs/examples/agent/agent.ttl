@@ -1,6 +1,10 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ex: <http://example.org/> .
 
-<https://uscensus.gov>
-  a foaf:Organization ;
-  foaf:name "uscensus.gov Landesamt für Topographie" .
-
+# Define ArcGISPro as software agent used to generated a dcat:Dataset.
+ex:ArcGISPro a foaf:Agent ;
+    foaf:name "ArcGIS Pro" ;
+    dct:type ex:GISSoftware.
