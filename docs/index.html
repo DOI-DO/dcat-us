@@ -5131,6 +5131,24 @@
             <td><strong>M</strong></td>
             <td>1</td>
           </tr>
+          <tr>
+            <td><a href="#contact-tel">email</a></td>
+            <td><a data-cite="VCARD-RDF#d4e57"><code>vcard:tel</code></a>
+            </td>
+            <td><a data-cite="RDF-SCHEMA#ch_resource"><code>rdfs:Resource</code></a>
+            </td>
+            <td><strong>O</strong></td>
+            <td>0..1</td>
+          </tr>
+          <tr>
+            <td><a href="#contact-adress">address</a></td>
+            <td><a data-cite="VCARD-RDF#d4e26"><code>vcard:address</code></a>
+            </td>
+            <td><a data-cite="VCARD-RDF#d4e1292"><code>vcard:Address</code></a>
+            </td>
+            <td><strong>0</strong></td>
+            <td>0..n</td>
+          </tr>
         </tbody>
       </table>
 
@@ -13693,9 +13711,8 @@
       </section>
       <section id="license-document-example">
         <h4>Example</h4>
-        <aside class="example" title="License example">
-          <!--TODO-->
-          <!--           <pre data-include-format="text" data-include="./examples/license.ttl"></pre> -->
+        <aside class="example" title="License examples">
+          <pre data-include-format="text" data-include="./examples/license-document.ttl"></pre> 
         </aside>
       </section>
     </section>

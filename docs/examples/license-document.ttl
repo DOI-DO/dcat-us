@@ -1,0 +1,41 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix ex: <http://example.org/> .
+@prefix spdx: <http://spdx.org/rdf/terms#> .
+
+# First example shows the usage of well-known licence 
+# https://creativecommons.org/licenses/by/4.0/
+
+ex:Dataset1
+    a dcat:Dataset ;
+    dct:title "Example Dataset 1" ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/>
+.
+
+# This declaration is optional as it can be made accessible from
+# a authoritative registry
+ <https://creativecommons.org/licenses/by/4.0/>   
+    a dct:LicenseDocument ;
+    dct:title "CC BY 4.0" ;
+    dct:description "Creative Commons Attribution 4.0 International" ;
+ .   
+
+
+# The following example shows a customized license
+ex:Dataset2
+    a dcat:Dataset ;
+    dct:title "Example Dataset 2" ;
+    dct:license ex:License2 .
+
+# Customized license
+ex:License2
+    a dct:LicenseDocument ;
+    spdx:licenseText "Permission is hereby granted, free of charge, to any person 
+        obtaining a copy of this dataset and associated documentation files 
+        (the 'Dataset'), to deal in the Dataset without restriction, including without 
+        limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, 
+        and/or sell copies of the Dataset, and to permit persons to whom the Dataset 
+        is furnished to do so, subject to the following conditions: 
+        The above copyright notice and this permission notice shall 
+        be included in all copies or substantial portions of the Dataset." .
