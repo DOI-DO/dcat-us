@@ -1674,6 +1674,12 @@
           </table>
         </section>
       </section>
+      <section id="address-contact_point-example">
+        <h3>Example</h3>
+        <aside class="example" title="Contact point address example">
+          <pre data-include-format="text" data-include="./examples/address-contact.ttl"></pre>
+        </aside>
+      </section>
     </section>
 
     <section id="properties-for-address-location">
@@ -2100,7 +2106,7 @@
         </aside>
       </section>
     </section>
-   
+
 
     <section id="properties-for-attribution">
       <h2>Attribution</h2>
@@ -5132,7 +5138,7 @@
             <td>1</td>
           </tr>
           <tr>
-            <td><a href="#contact-tel">email</a></td>
+            <td><a href="#contact-tel">telephone</a></td>
             <td><a data-cite="VCARD-RDF#d4e57"><code>vcard:tel</code></a>
             </td>
             <td><a data-cite="RDF-SCHEMA#ch_resource"><code>rdfs:Resource</code></a>
@@ -5141,12 +5147,48 @@
             <td>0..1</td>
           </tr>
           <tr>
-            <td><a href="#contact-adress">address</a></td>
+            <td><a href="#contact-organization_name">organization name</a></td>
+            <td><a data-cite="VCARD-RDF#d4e1077"><code>vcard:organization-name</code></a>
+            </td>
+            <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a> </td>
+            </td>
+            <td><strong>O</strong></td>
+            <td>0..1</td>
+          </tr>
+          <tr>
+            <td><a href="#contact-family_name">family name</a></td>
+            <td><a data-cite="VCARD-RDF#d4e876"><code>vcard:family-name</code></a>
+            </td>
+            <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a> </td>
+            </td>
+            <td><strong>O</strong></td>
+            <td>0..1</td>
+          </tr>
+          <tr>
+            <td><a href="#contact-given_name">given name</a></td>
+            <td><a data-cite="VCARD-RDF#d4e907"><code>vcard:given-name</code></a>
+            </td>
+            <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a> </td>
+            </td>
+            <td><strong>O</strong></td>
+            <td>0..1</td>
+          </tr>
+          <tr>
+            <td><a href="#contact-title">position title</a></td>
+            <td><a data-cite="VCARD-RDF#d4e1234"><code>vcard:title</code></a>
+            </td>
+            <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a> </td>
+            </td>
+            <td><strong>O</strong></td>
+            <td>0..1</td>
+          </tr>
+          <tr>
+            <td><a href="#contact-address">address</a></td>
             <td><a data-cite="VCARD-RDF#d4e26"><code>vcard:address</code></a>
             </td>
             <td><a data-cite="VCARD-RDF#d4e1292"><code>vcard:Address</code></a>
             </td>
-            <td><strong>0</strong></td>
+            <td><strong>O</strong></td>
             <td>0..n</td>
           </tr>
         </tbody>
@@ -5221,6 +5263,209 @@
             </tbody>
           </table>
         </section>
+
+        <section id="contact-tel">
+          <h4>Property: telephone</h4>
+          <table class="def">
+            <tbody>
+              <tr>
+                <th>Property</th>
+                <td>telephone</td>
+              </tr>
+              <tr>
+                <th>Requirement level</th>
+                <td>Optional</td>
+              </tr>
+              <tr>
+                <th>Cardinality</th>
+                <td>0..1/td>
+              </tr>
+              <tr>
+                <th>URI</th>
+                <td><a data-cite="VCARD-RDF#d4e57"><code>vcard:tel</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Range</th>
+                <td><a data-cite="RDF-SCHEMA#ch_resource"><code>rdfs:Resource</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Definition</th>
+                <td>This property specifies the telephone number for telephony communication with the person or organization</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="contact-organization_name">
+          <h4>Property: organization name</h4>
+          <table class="def">
+            <tbody>
+              <tr>
+                <th>Property</th>
+                <td>organization name<</td>
+              </tr>
+              <tr>
+                <th>Requirement level</th>
+                <td>Mandatory</td>
+              </tr>
+              <tr>
+                <th>Cardinality</th>
+                <td>1</td>
+              </tr>
+              <tr>
+                <th>URI</th>
+                <td><a data-cite="VCARD-RDF#d4e1077"><code>vcard:organization-name</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Range</th>
+                <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Definition</th>
+                <td>This property specifies the name of the organization to contact</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="contact-family_name">
+          <h4>Property: family name</h4>
+          <table class="def">
+            <tbody>
+              <tr>
+                <th>Property</th>
+                <td>family name</td>
+              </tr>
+              <tr>
+                <th>Requirement level</th>
+                <td>Optional</td>
+              </tr>
+              <tr>
+                <th>Cardinality</th>
+                <td>0..1</td>
+              </tr>
+              <tr>
+                <th>URI</th>
+                <td><a data-cite="VCARD-RDF#d4e876"><code>vcard:family-name</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Range</th>
+                <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Definition</th>
+                <td>This property specifies the family name of the person to contact</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="contact-given_name">
+          <h4>Property: given name</h4>
+          <table class="def">
+            <tbody>
+              <tr>
+                <th>Property</th>
+                <td>given name</td>
+              </tr>
+              <tr>
+                <th>Requirement level</th>
+                <td>Optional</td>
+              </tr>
+              <tr>
+                <th>Cardinality</th>
+                <td>0..1</td>
+              </tr>
+              <tr>
+                <th>URI</th>
+                <td><a data-cite="VCARD-RDF#d4e907"><code>vcard:given-name</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Range</th>
+                <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Definition</th>
+                <td>This property specifies the given name of the person to contact</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="contact-title">
+          <h4>Property: position title</h4>
+          <table class="def">
+            <tbody>
+              <tr>
+                <th>Property</th>
+                <td>title</td>
+              </tr>
+              <tr>
+                <th>Requirement level</th>
+                <td>Optional</td>
+              </tr>
+              <tr>
+                <th>Cardinality</th>
+                <td>0..1</td>
+              </tr>
+              <tr>
+                <th>URI</th>
+                <td><a data-cite="VCARD-RDF#d4e1234"><code>vcard:title</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Range</th>
+                <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Definition</th>
+                <td>This property specifies the position role of the person to contact</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section id="contact-address">
+          <h4>Property: address</h4>
+          <table class="def">
+            <tbody>
+              <tr>
+                <th>Property</th>
+                <td>address</td>
+              </tr>
+              <tr>
+                <th>Requirement level</th>
+                <td>Optional</td>
+              </tr>
+              <tr>
+                <th>Cardinality</th>
+                <td>0..n/td>
+              </tr>
+              <tr>
+                <th>URI</th>
+                <td><a data-cite="VCARD-RDF#d4e26"><code>vcard:address</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Range</th>
+                <td><a data-cite="VCARD-RDF#d4e1292"><code>vcard:Address</code></a>             </td>
+              </tr>
+              <tr>
+                <th>Definition</th>
+                <td>This property specifies the address of the contact</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
       </section>
       <section id="contact-example">
         <h4>Example</h4>
@@ -13712,7 +13957,7 @@
       <section id="license-document-example">
         <h4>Example</h4>
         <aside class="example" title="License examples">
-          <pre data-include-format="text" data-include="./examples/license-document.ttl"></pre> 
+          <pre data-include-format="text" data-include="./examples/license-document.ttl"></pre>
         </aside>
       </section>
     </section>
@@ -14964,15 +15209,6 @@
             <td>1..1</td>
           </tr>
           <tr>
-            <td><a href="#person-type">type</a></td>
-            <td><a href="DCTERMS#http://purl.org/dc/terms/type"><code>dcterms:type</code></a>
-            </td>
-            <td><a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a>
-            </td>
-            <td><strong>R</strong></td>
-            <td>0..1</td>
-          </tr>
-          <tr>
             <td><a href="#person-given_name">given name</a></td>
             <td><a href="http://xmlns.com/foaf/0.1/#term_givenName"><code>foaf:givenName</code></a>
             </td>
@@ -15040,7 +15276,7 @@
 
       <section id="person-recommended-props">
         <h3>Recommended Properties</h3>
-        <section id="person-givenname">
+        <section id="person-given_name">
           <h4>Property: given name</h4>
           <table class="def">
             <tbody>
@@ -15073,7 +15309,7 @@
             </tbody>
           </table>
         </section>
-        <section id="person-firstname">
+        <section id="person-first_name">
           <h4>Property: first name</h4>
           <table class="def">
             <tbody>

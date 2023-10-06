@@ -5,11 +5,14 @@
     vcard:fn "John Doe" ;   # Full name
     vcard:email <mailto:john.doe@example.com> ;  # Email address
     vcard:tel <tel:+123456789> ;  # Phone number
+    vcard:family-name "Doe"; 
+    vcard:given-name "John";
+    vcard:title "Data Manager";
+    vcard:hasAddress :address456;
+.    
 
 # Define a vcard:Address associated with the vcard:Contact
-:vcard123 vcard:hasAddress :address456 .
 
-# Define the vcard:Address
 :address456 a vcard:Address ;
     vcard:street-address "123 Main Street" ;
     vcard:locality "Anytown" ;

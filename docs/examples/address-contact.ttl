@@ -1,0 +1,10 @@
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+
+# Define a vcard:Address associated with a contact
+:address456 a vcard:Address ;
+    vcard:street-address "123 Main Street" ;
+    vcard:locality "Anytown" ;
+    vcard:region "CA" ;
+    vcard:postal-code "12345" ;
+    vcard:country-name "USA" .
+
