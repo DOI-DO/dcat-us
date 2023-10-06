@@ -16703,7 +16703,7 @@
         <p>In the realm of data cataloging, identifiers play a pivotal role in ensuring the uniqueness, traceability,
           and interoperability of resources. Different namespaces and vocabularies offer distinct properties to denote
           identifiers. Here, we discuss three such properties: <code>dcterms:identifier</code>,
-          <code>adms:hasIdentifier</code>, and <code>skos:notation</code>, shedding light on their distinct usages and
+          <code>adms:identifier</code>, and <code>skos:notation</code>, shedding light on their distinct usages and
           nuances.
         </p>
         <h5>dcterms:identifier</h5>
@@ -16713,15 +16713,13 @@
           domains and for diverse types of resources, be they digital documents, physical artifacts, or abstract
           concepts.
         </p>
-        <h5>adms:hasIdentifier</h5>
-        <p>The Asset Description Metadata Schema ([[VOCAB-ADMS]]) introduces <code>adms:hasIdentifier</code>. Unlike the
+        <h5>adms:identifier</h5>
+        <p>The Asset Description Metadata Schema ([[VOCAB-ADMS]]) introduces <code>adms:identifier</code>. Unlike the
           more generic <code>dcterms:identifier</code>, this property is more structured. It's designed to link a
           resource to its identifier, which is itself described using further properties. This allows for a richer
           description of the identifier, such as specifying its type (e.g., ISBN, DOI), its status, and its version.
-          It's
-          particularly useful in contexts where there's a need to provide additional metadata about the identifier
-          itself,
-          beyond just its value.</p>
+          It's particularly useful in contexts where there's a need to provide additional metadata about the identifier
+          itself, beyond just its value.</p>
         <h5>skos:notation</h5>
         <p><code>skos:notation</code> is a property from the Simple Knowledge Organization System ([[SKOS-REFERENCE]])
           vocabulary. It's used to provide a symbolic string notation for a concept. While it can function similarly to
