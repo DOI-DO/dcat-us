@@ -1,0 +1,9 @@
+ex:UseRestriction1  a dcat-us:AccessRestriction;
+  dcat-us:status us-status:RestrictedPossibly;
+  dcat-us:restrictionNote "Some or all of the images in this series may be subject to copyright or other intellectual property restrictions.";
+  dcat-us:requiredIndicatorPerAuthority "Copyrihght";
+.
+
+ex:UnrestrictedUseRestriction a dcat-us:UseRestriction;
+    dcat-us:status usr-status:Unrestricted;
+.    
