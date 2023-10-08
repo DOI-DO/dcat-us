@@ -1,0 +1,25 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix ex: <http://example.org/>
+@prefix prov: <http://www.w3.org/ns/prov#>
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+@prefix dct: <http://purl.org/dc/terms/>
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>
+
+
+# Activity
+ex:NationalCensus a prov:Activity ;
+    rdfs:label "National Census" ;
+    dct:type ex:CensusActivity ;
+.    
+
+# Activity Type
+ex:CensusActivity a skos:Concept ;
+    rdfs:label "Census Activity" ;
+    skos:definition "An activity type representing the conducting of a census in 2020." .
+
+# Dataset resulting from the census activity
+ex:Census2020Dataset a dcat:Dataset ;
+    rdfs:label "Census Dataset" ;
+    prov:value "A dataset containing data collected from the national census in 2020." ;
+    prov:wasGeneratedBy ex:NationalCensus .

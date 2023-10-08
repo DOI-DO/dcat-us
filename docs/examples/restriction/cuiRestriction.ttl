@@ -10,5 +10,7 @@
          CUI Category(ies): NNPI
          Distribution/Limited Dissemination Control: NOFORN
          POC: John Brown, 703-555-0123 ";
-        dcat-us:requiredIndicatorPerAuthority " "
+        dcat-us:requiredIndicatorPerAuthority "OUSD(I&S): Handle with care, store in a secure location.
+         CL&S INFOSEC: Ensure encryption during electronic transmission."
     ]
+.

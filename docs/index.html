@@ -1230,8 +1230,8 @@
       </section>
       <section id="access_restriction-example">
         <h3>Example</h3>
-        <aside class="example" title="dcat-us:AccessRestriction examples">
-          <!-- TODO  <pre data-include-format="text" data-include="./examples/attribution.ttl"></pre> -->
+        <aside class="example" title="AccessRestriction examples">
+          <pre data-include-format="text" data-include="./examples/restriction/access-restriction.ttl"></pre>
         </aside>
       </section>
 
@@ -1307,6 +1307,7 @@
             <td><strong>O</strong></td>
             <td>0..1</td>
           </tr>
+         
         </tbody>
       </table>
 
@@ -1389,8 +1390,10 @@
       </section>
 
       <section id="activity-example">
-        <h4>Example</h4>
-        <!--TODO -->
+        <h3>Example</h3>
+        <aside class="example" title="AccessRestriction examples">
+          <pre data-include-format="text" data-include="./examples/activity.ttl"></pre>
+        </aside>
       </section>
     </section>
 
@@ -3829,7 +3832,7 @@
             publication date of the <i>catalog record</i> is the date when the dataset was added to the catalog. In
             cases where both dates differ, or where only the latter is known, the <em>publication date</em> SHOULD only
             be specified for the catalog record. Notice that the <abbr title="World Wide Web Consortium">W3C</abbr> PROV
-            Ontology [[?PROV-O]] allows describing further provenance information such as the details of the process and
+            Ontology [[PROV-O]] allows describing further provenance information such as the details of the process and
             the agent involved in a particular change to a dataset or its registration. </td>
         </tr>
         <tr>
@@ -5292,7 +5295,8 @@
               </tr>
               <tr>
                 <th>Definition</th>
-                <td>This property specifies the telephone number for telephony communication with the person or organization</td>
+                <td>This property specifies the telephone number for telephony communication with the person or
+                  organization</td>
               </tr>
             </tbody>
           </table>
@@ -5304,7 +5308,7 @@
             <tbody>
               <tr>
                 <th>Property</th>
-                <td>organization name<</td>
+                <td>organization name<< /td>
               </tr>
               <tr>
                 <th>Requirement level</th>
@@ -5456,7 +5460,7 @@
               </tr>
               <tr>
                 <th>Range</th>
-                <td><a data-cite="VCARD-RDF#d4e1292"><code>vcard:Address</code></a>             </td>
+                <td><a data-cite="VCARD-RDF#d4e1292"><code>vcard:Address</code></a> </td>
               </tr>
               <tr>
                 <th>Definition</th>
@@ -5563,10 +5567,7 @@
           </tr>
         </tbody>
       </table>
-      <aside class="example" id="ex-cui-restriction"
-        title="dcat-us:CuiRestriction with mandatory and optional properties">
-        <pre data-include-format="text" data-include="./examples/restriction/cuiRestriction.ttl"></pre>
-      </aside>
+
       <section id="cui_restriction-mandatory-props">
         <h3>Mandatory Properties</h3>
         <section id="cui_restriction-cui_banner_marking">
@@ -5677,6 +5678,13 @@
             </tbody>
           </table>
         </section>
+      </section>
+      <section id="cui_restriction-example">
+        <h3>Example</h3>
+        <aside class="example" id="ex-cui-restriction"
+          title="dcat-us:CuiRestriction with mandatory and optional properties">
+          <pre data-include-format="text" data-include="./examples/restriction/cuiRestriction.ttl"></pre>
+        </aside>
       </section>
     </section>
     <!-- dcat:DataService-->
@@ -8740,7 +8748,7 @@
             <tr>
               <th class="prop">Sub-property of:</th>
               <td>
-                <a data-cite="?PROV-O#generalizationOf"><code
+                <a data-cite="PROV-O#generalizationOf"><code
                     title="http://www.w3.org/ns/prov#generalizationOf">prov:generalizationOf</code></a>
               </td>
             </tr>
@@ -8873,7 +8881,7 @@
               </tr>
             </tbody>
           </table>
-   
+
           <aside class="example" title="Usage of adms:identifier for dcat:Dataset">
             <pre data-include-format="text" data-include="./examples/dataset/other-identifier.ttl"></pre>
           </aside>
@@ -9503,6 +9511,12 @@
               </tr>
             </tbody>
           </table>
+          <section id="activity-example">
+            <h5>Example</h5>
+            <aside class="example" title="wasGeneratedBy example">
+              <pre data-include-format="text" data-include="./examples/dataset/was-generated-by.ttl"></pre>
+            </aside>
+          </section>
         </section>
         <section id="dataset-program">
           <h4>Property: program</h4>
@@ -15057,7 +15071,12 @@
             <td><a href="#period_start-date">start date</a></td>
             <td><a data-cite="DCAT-US#Property:period_start-date"><code>dcat:startDate</code></a>
             </td>
-            <td><a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>
+            <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+              (typed
+              as <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>,
+              <a data-cite="XMLSCHEMA11-2#dateTime"><code>xsd:dateTime</code></a>,
+              <a data-cite="XMLSCHEMA11-2##gYear"><code>xsd:gYear</code></a>
+              or <a data-cite="XMLSCHEMA11-2#gYearMonth"><code>xsd:gYearMonth</code></a>)
             </td>
             <td><strong>R</strong></td>
             <td>0..1</td>
@@ -15066,7 +15085,12 @@
             <td><a href="#period_end-date">end date</a></td>
             <td><a data-cite="DCAT-US#Property:period_end-date"><code>dcat:endDate</code></a>
             </td>
-            <td><a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>
+            <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+              (typed
+              as <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>,
+              <a data-cite="XMLSCHEMA11-2#dateTime"><code>xsd:dateTime</code></a>,
+              <a data-cite="XMLSCHEMA11-2##gYear"><code>xsd:gYear</code></a>
+              or <a data-cite="XMLSCHEMA11-2#gYearMonth"><code>xsd:gYearMonth</code></a>)
             </td>
             <td><strong>R</strong></td>
             <td>0..1</td>
@@ -15099,7 +15123,12 @@
               </tr>
               <tr>
                 <th>Range</th>
-                <td><a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>
+                <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+                  (typed
+                  as <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>,
+                  <a data-cite="XMLSCHEMA11-2#dateTime"><code>xsd:dateTime</code></a>,
+                  <a data-cite="XMLSCHEMA11-2##gYear"><code>xsd:gYear</code></a>
+                  or <a data-cite="XMLSCHEMA11-2#gYearMonth"><code>xsd:gYearMonth</code></a>)
                 </td>
               </tr>
               <tr>
@@ -15132,7 +15161,12 @@
               </tr>
               <tr>
                 <th>Range</th>
-                <td><a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>
+                <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+                  (typed
+                  as <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>,
+                  <a data-cite="XMLSCHEMA11-2#dateTime"><code>xsd:dateTime</code></a>,
+                  <a data-cite="XMLSCHEMA11-2##gYear"><code>xsd:gYear</code></a>
+                  or <a data-cite="XMLSCHEMA11-2#gYearMonth"><code>xsd:gYearMonth</code></a>)
                 </td>
               </tr>
               <tr>
@@ -15388,9 +15422,8 @@
       </section>
       <section id="person-example">
         <h4>Example</h4>
-        <aside class="example" title="foaf:Person example">
-          <!--TODO-->
-          <!--           <pre data-include-format="text" data-include="./examples/dataset/person.ttl"></pre> -->
+        <aside class="example" title="Examples of Person instance">
+          <pre data-include-format="text" data-include="./examples/person.ttl"></pre>
         </aside>
       </section>
     </section>
@@ -15888,7 +15921,7 @@
             <a href="http://purl.org/dc/terms/isReferencedBy"><code>dcterms:isReferencedBy</code></a>,
             <a href="http://purl.org/dc/terms/requires"><code>dcterms:requires</code></a>,
             <a href="http://purl.org/dc/terms/isRequiredBy"><code>dcterms:isRequiredBy</code></a>)
-            or [[?PROV-O]] properties
+            or [[PROV-O]] properties
             (<a data-cite="PROV-O#wasDerivedFrom"><code>prov:wasDerivedFrom</code></a>,
             <a data-cite="PROV-O#wasInfluencedBy"><code>prov:wasInfluencedBy</code></a>,
             <a data-cite="PROV-O#wasQuotedFrom"><code>prov:wasQuotedFrom</code></a>,
@@ -16433,7 +16466,12 @@
               </tr>
               <tr>
                 <th>Range</th>
-                <td><a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a></td>
+                <a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+                (typed
+                as <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>,
+                <a data-cite="XMLSCHEMA11-2#dateTime"><code>xsd:dateTime</code></a>,
+                <a data-cite="XMLSCHEMA11-2##gYear"><code>xsd:gYear</code></a>
+                or <a data-cite="XMLSCHEMA11-2#gYearMonth"><code>xsd:gYearMonth</code></a>)
               </tr>
               <tr>
                 <th>Definition</th>
@@ -17114,121 +17152,120 @@
         research and data utilization environments. More details about identifiers are provided in <a
           href="#deferenceable-identifiers">Deferenceable identifiers</a> section.
       </p>
-        <section id="agent">
-          <h4>Agent</h4>
+      <section id="agent">
+        <h4>Agent</h4>
 
 
-          <p>The <a data-cite="FOAF#term_Agent"><code>foaf:Agent</code></a> class in the Friend of a Friend [[FOAF]]
-            ontology serves a dual-purpose role,
-            particularly in the context of data cataloging and management. </p>
+        <p>The <a data-cite="FOAF#term_Agent"><code>foaf:Agent</code></a> class in the Friend of a Friend [[FOAF]]
+          ontology serves a dual-purpose role,
+          particularly in the context of data cataloging and management. </p>
 
-          <p>Firstly, it acts as an abstract class for both <a
-              href="https://www.w3.org/TR/vocab-org/#org:Organization"><code>org:Organization</code></a> and <a
-              data-cite="FOAF#term_Person"><code>foaf:Person</code></a>, providing a generalized representation that
-            encompasses various entities involved in dataset production and management. This abstraction facilitates the
-            encapsulation of common properties and behaviors, enabling a unified approach to handling different entity
-            types in data documentation and interoperability. </p>
+        <p>Firstly, it acts as an abstract class for both <a
+            href="https://www.w3.org/TR/vocab-org/#org:Organization"><code>org:Organization</code></a> and <a
+            data-cite="FOAF#term_Person"><code>foaf:Person</code></a>, providing a generalized representation that
+          encompasses various entities involved in dataset production and management. This abstraction facilitates the
+          encapsulation of common properties and behaviors, enabling a unified approach to handling different entity
+          types in data documentation and interoperability. </p>
 
-          <p>Secondly, <a data-cite="FOAF#term_Agent"><code>foaf:Agent</code></a> is utilized as a class to represent
-            autonomous software agents, which are self-operating software entities capable of performing tasks and
-            making
-            decisions without direct human intervention. </p>
+        <p>Secondly, <a data-cite="FOAF#term_Agent"><code>foaf:Agent</code></a> is utilized as a class to represent
+          autonomous software agents, which are self-operating software entities capable of performing tasks and
+          making
+          decisions without direct human intervention. </p>
 
-          <p>This dual functionality of <a data-cite="FOAF#term_Agent"><code>foaf:Agent</code></a> not only streamlines
-            the representation of human and non-human actors in data management processes but also provides a flexible
-            and
-            semantically rich framework to describe and interlink various entities within the DCAT-US schema, thereby
-            enhancing data discoverability and usability. </p>
-          <aside class="example" title="Example of Autonomous Agent">
-            <pre data-include-format="text" data-include="./examples/agent/eodataservice.ttl"></pre>
-          </aside>
+        <p>This dual functionality of <a data-cite="FOAF#term_Agent"><code>foaf:Agent</code></a> not only streamlines
+          the representation of human and non-human actors in data management processes but also provides a flexible
+          and
+          semantically rich framework to describe and interlink various entities within the DCAT-US schema, thereby
+          enhancing data discoverability and usability. </p>
+        <aside class="example" title="Example of Autonomous Agent">
+          <pre data-include-format="text" data-include="./examples/agent/eodataservice.ttl"></pre>
+        </aside>
 
-        </section>
-
-        <section id="person">
-
-          <h4>Person</h4>
-          <p>A person agent represents an individual involved in producing or managing datasets. It provides
-            information about the person and their associated contact details.</p>
-          <p>
-            In the context of a DCAT-US 3.0, the <a data-cite="FOAF#term_Person"><code>foaf:Person</code></a> class
-            plays a crucial role. It is used to represent individuals who are associated with or responsible for the
-            datasets or resources described within the DCAT profile. </p>
-          <p>
-            Let's break down the specific properties associated with <a
-              data-cite="FOAF#term_Person"><code>foaf:Person</code></a> and their significance within this context:
-          </p>
-          <ul>
-            <li>
-              <a data-cite="FOAF#term_name"><code>foaf:name:</code></a> This property represents the full name of a
-              person. It can be used to specify the full name of individuals associated with datasets. For example, if a
-              person's full name is "John Smith," you can use this property to provide their complete name. This
-              property is the only property mandatory for describing a person and is typically used for display.
-            </li>
-            <li>
-              <a data-cite="FOAF#term_firstName"><code>foaf:firstName:</code></a> This optional property represents the
-              first name of a person. It is used to provide the first name of individuals associated with or responsible
-              for resources in the DCAT-US profile. It can be used to provide structured information about an
-              individual's first name.
-            </li>
-            <li>
-              <a data-cite="FOAF#term_givenName"><code>foaf:givenName:</code></a> This optional property represents the
-              given name of a person. It can be used to provide structured information about an individual's name.
-            </li>
-            <li>
-              <a data-cite="VOCAB-ORG#property-memberof"><code>org:memberOf</code></a> While not a FOAF property,this
-              property is typically used to indicate the organization or group to which a person is affiliated to. In
-              the context of a DCAT-US profile, it can be used to specify the organization or entity with which an
-              individual is affiliated in relation to the described resources. For instance, if a person is a member of
-              an organization of Department of Interior, you can use this property to link them to that organization
-              identified by <code>http://www.doi.gov</code>.
-            </li>
-          </ul>
-          <aside class="example" title="Examples of Person instance">
-            <pre data-include-format="text" data-include="./examples/person.ttl"></pre>
-          </aside>
-        </section>
- 
-        <section id="organization">
-
-          <h4>Organization</h4>
-          <p>An organization agent represents an organization or institution involved in producing or managing
-            a resource. It provides information about the organization responsible for the resource and its associated
-            contact details. This class is adept at acting as an Agent and can be hierarchically decomposed into
-            sub-organizations.</p>
-
-          <p> When employing <a
-              href="https://www.w3.org/TR/vocab-org/#org:Organization"><code>org:Organization</code></a>
-            within DCAT-US 3.0, it is imperative to:</p>
-          <ul>
-            <li><strong>Ensure Consistency:</strong> Utilize <a data-cite="FOAF#term_name"><code>foaf:name:</code></a>
-              to provide a consistent, recognizable name for the organization. </li>
-            <li><strong>Enhance Discoverability:</strong> Leverage <a
-                data-cite="SKOS-REFERENCE#prefLabel"><code>skos:prefLabel</code></a> to specify the preferred label,
-              ensuring that the organization is easily discoverable and identifiable.
-            </li>
-            <li><strong>Accommodate Variations:</strong> Utilize <a
-                data-cite="SKOS-REFERENCE#altLabel"><code>skos:altLabel</code></a> to include alternative names,
-              acronyms, or aliases, enhancing searchability and user-friendliness.
-            </li>
-            <li><strong>Provide Abbreviations:</strong> Use <a
-                data-cite="SKOS-REFERENCE#notation"><code>skos:notation</code></a> to document any abbreviations or
-              short forms commonly associated with the organization.
-            </li>
-            <li>
-              <strong>Represent Hierarchy:</strong> Optionally, use <a
-                href="https://www.w3.org/TR/vocab-org/#org:subOrganizationOf"><code>org:subOrganizationOf</code></a> to
-              depict hierarchical relationships, providing a structured view of organizational layers.
-            </li>
-          </ul>
-        </section>
-        <section id="point-of-contact">
-
-          <h3>Contact Point</h3>
-
-        </section>
       </section>
-    
+
+      <section id="person">
+
+        <h4>Person</h4>
+        <p>A person agent represents an individual involved in producing or managing datasets. It provides
+          information about the person and their associated contact details.</p>
+        <p>
+          In the context of a DCAT-US 3.0, the <a data-cite="FOAF#term_Person"><code>foaf:Person</code></a> class
+          plays a crucial role. It is used to represent individuals who are associated with or responsible for the
+          datasets or resources described within the DCAT profile. </p>
+        <p>
+          Let's break down the specific properties associated with <a
+            data-cite="FOAF#term_Person"><code>foaf:Person</code></a> and their significance within this context:
+        </p>
+        <ul>
+          <li>
+            <a data-cite="FOAF#term_name"><code>foaf:name:</code></a> This property represents the full name of a
+            person. It can be used to specify the full name of individuals associated with datasets. For example, if a
+            person's full name is "John Smith," you can use this property to provide their complete name. This
+            property is the only property mandatory for describing a person and is typically used for display.
+          </li>
+          <li>
+            <a data-cite="FOAF#term_firstName"><code>foaf:firstName:</code></a> This optional property represents the
+            first name of a person. It is used to provide the first name of individuals associated with or responsible
+            for resources in the DCAT-US profile. It can be used to provide structured information about an
+            individual's first name.
+          </li>
+          <li>
+            <a data-cite="FOAF#term_givenName"><code>foaf:givenName:</code></a> This optional property represents the
+            given name of a person. It can be used to provide structured information about an individual's name.
+          </li>
+          <li>
+            <a data-cite="VOCAB-ORG#property-memberof"><code>org:memberOf</code></a> While not a FOAF property,this
+            property is typically used to indicate the organization or group to which a person is affiliated to. In
+            the context of a DCAT-US profile, it can be used to specify the organization or entity with which an
+            individual is affiliated in relation to the described resources. For instance, if a person is a member of
+            an organization of Department of Interior, you can use this property to link them to that organization
+            identified by <code>http://www.doi.gov</code>.
+          </li>
+        </ul>
+        <aside class="example" title="Examples of Person instance">
+          <pre data-include-format="text" data-include="./examples/person.ttl"></pre>
+        </aside>
+      </section>
+
+      <section id="organization">
+
+        <h4>Organization</h4>
+        <p>An organization agent represents an organization or institution involved in producing or managing
+          a resource. It provides information about the organization responsible for the resource and its associated
+          contact details. This class is adept at acting as an Agent and can be hierarchically decomposed into
+          sub-organizations.</p>
+
+        <p> When employing <a href="https://www.w3.org/TR/vocab-org/#org:Organization"><code>org:Organization</code></a>
+          within DCAT-US 3.0, it is imperative to:</p>
+        <ul>
+          <li><strong>Ensure Consistency:</strong> Utilize <a data-cite="FOAF#term_name"><code>foaf:name:</code></a>
+            to provide a consistent, recognizable name for the organization. </li>
+          <li><strong>Enhance Discoverability:</strong> Leverage <a
+              data-cite="SKOS-REFERENCE#prefLabel"><code>skos:prefLabel</code></a> to specify the preferred label,
+            ensuring that the organization is easily discoverable and identifiable.
+          </li>
+          <li><strong>Accommodate Variations:</strong> Utilize <a
+              data-cite="SKOS-REFERENCE#altLabel"><code>skos:altLabel</code></a> to include alternative names,
+            acronyms, or aliases, enhancing searchability and user-friendliness.
+          </li>
+          <li><strong>Provide Abbreviations:</strong> Use <a
+              data-cite="SKOS-REFERENCE#notation"><code>skos:notation</code></a> to document any abbreviations or
+            short forms commonly associated with the organization.
+          </li>
+          <li>
+            <strong>Represent Hierarchy:</strong> Optionally, use <a
+              href="https://www.w3.org/TR/vocab-org/#org:subOrganizationOf"><code>org:subOrganizationOf</code></a> to
+            depict hierarchical relationships, providing a structured view of organizational layers.
+          </li>
+        </ul>
+      </section>
+      <section id="point-of-contact">
+
+        <h3>Contact Point</h3>
+
+      </section>
+    </section>
+
     <!-- Attributions -->
     <section id="resource-attributions">
 
@@ -17309,7 +17346,7 @@
         <p>The <a data-cite="PROV-O#qualifiedAttribution"><code>prov:qualifiedAttribution</code></a> property
           is used to provide more detailed and structured information about the attribution of a resource. It allows for
           specifying additional attributes, such as the role or position of the attributed entity, the date of
-          attribution, or other relevant details. The [PROV-O]-based approach is meant to
+          attribution, or other relevant details. The [[PROV-O]]-based approach is meant to
           give data providers an extension mechanism to specify, in a harmonised way, any kind of role, and,
           possibly,to attach additional information to the role and the associated Agent. As such, it MAY be used in
           combination with or to complement the property-based approach, but it MUST NOT replace it. For instance, it
@@ -17872,35 +17909,35 @@
         <ul>
           <li><a data-cite="PROV-O#wasDerivedFrom"><code>prov:wasDerivedFrom</code></a>: Establishes a derivation
             relationship between two entities.</li>
-          <li><a data-cite="PROV#Property:prov_wasGeneratedBy"><code>prov:wasGeneratedBy</code></a>: Links an entity to
+          <li><a data-cite="PROV-O#Property:prov_wasGeneratedBy"><code>prov:wasGeneratedBy</code></a>: Links an entity to
             the activity that generated it.</li>
-          <li><a data-cite="PROV#Property:prov_wasInfluencedBy"><code>prov:wasInfluencedBy</code></a>: Expresses a
+          <li><a data-cite="PROV-O#Property:prov_wasInfluencedBy"><code>prov:wasInfluencedBy</code></a>: Expresses a
             generic
             influence of one entity over an activity.</li>
-          <li><a data-cite="PROV#Property:prov_wasAttributedTo"><code>prov:wasAttributedTo</code></a>: Signifies the
+          <li><a data-cite="PROV-O#Property:prov_wasAttributedTo"><code>prov:wasAttributedTo</code></a>: Signifies the
             relationship between a dataset and an agent responsible
             for its creation.</li>
         </ul>
 
-        <p>The <a data-cite="PROV#Class:prov_Activity"><code>prov:Activity</code></a> class in the PROV-O ontology plays
+        <p>The <a data-cite="PROV-O#Class:prov_Activity"><code>prov:Activity</code></a> class in the PROV-O ontology plays
           a
           pivotal role in representing processes or actions taken
           upon or with entities, thereby providing a structured framework to document the transformations, analyses, or
           other actions that data undergoes. An instance of <a
-            data-cite="PROV#Class:prov_Activity"><code>prov:Activity</code></a> is utilized to describe a particular
+            data-cite="PROV-O#Class:prov_Activity"><code>prov:Activity</code></a> is utilized to describe a particular
           occurrence
           of an action or process, which can involve the consumption, production, or transformation of entities. By
           associating activities with entities through properties such as <a
-            data-cite="PROV#Property:prov_wasGeneratedBy"><code>prov:wasGeneratedBy</code></a>, a detailed
+            data-cite="PROV-O#Property:prov_wasGeneratedBy"><code>prov:wasGeneratedBy</code></a>, a detailed
           account of the data's journey, from its origin through various transformations to its current state, can be
           articulated. This not only enhances the transparency of the data but also provides a robust mechanism to trace
           back through the steps involved in data creation and processing, thereby contributing to verifiable and
-          trustworthy data lineage. Furthermore, <a data-cite="PROV#Class:prov_Activity"><code>prov:Activity</code></a>
+          trustworthy data lineage. Furthermore, <a data-cite="PROV-O#Class:prov_Activity"><code>prov:Activity</code></a>
           can be associated with prov:Agent through properties like
           prov:wasAssociatedWith, offering insights into the roles of different agents (e.g., organizations, people, or
           software) in data processing activities, thereby enriching the data provenance and lineage documentation.</p>
 
-        <p>By adhering to these practices and effectively utilizing PROV-O properties, data publishers can enhance
+        <p>By adhering to these practices and effectively utilizing [[PROV-O]] properties, data publishers can enhance
           transparency and facilitate informed data usage among consumers by providing a clear view of data sourcing,
           processing, and transformation.</p>
       </section>
