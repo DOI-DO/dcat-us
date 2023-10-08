@@ -1,0 +1,32 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>
+
+ex:WashingtonDCGeometry a geo:Geometry ;
+    gsp:asWKT """POLYGON ((
+        -77.119759 38.791645, 
+        -76.909393 38.791645, 
+        -76.909393 38.99538, 
+        -77.119759 38.99538, 
+        -77.119759 38.791645
+    ))"""^^gsp:wktLiteral .
+
+
+ex:WashingtonDCCentroid    a dct:Location ;
+    dcat:centroid "POINT(-77.0369 38.9072)"^^gsp:wktLiteral
+    .
+    
+ex:WashingtonBBOX a dct:Location ;
+    dcat:bbox """POLYGON((
+          -77.0500 38.8900 , -77.0200 38.8900 ,
+          -77.0200 38.9200 , -77.0500 38.9200 ,
+          -77.0500 38.8900
+        ))"""^^gsp:wktLiteral
+    .
+
+<http://sws.geonames.org/4140963/> a dct:Location;
+    rdfs:label "Washington D.C";
+    skos:prefLabel "Washington D.C";
+    skos:altLabel "DC", "Federal Capital", "District of Columbia"
+
