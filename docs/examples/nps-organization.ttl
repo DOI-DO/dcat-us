@@ -1,0 +1,28 @@
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+
+# Define the National Park Service
+<https://www.nps.gov>
+    a org:Organization ;
+    foaf:name "National Park Service" ;
+    skos:prefLabel "National Park Service" ;
+    skos:altLabel "NPS", "National Parks", "U.S. National Park Service" ;
+    skos:notation "NPS" ;
+    org:subOrganizationOf <https://www.doi.gov> .
+
+# Define the Department of the Interior
+<https://www.doi.gov>
+    a org:Organization ;
+    foaf:name "Department of the Interior" ;
+    skos:prefLabel "Department of the Interior" ;
+    skos:altLabel "DOI", "U.S. Department of the Interior", "Interior Department" ;
+    skos:notation "DOI" .
+
+# Example of a dataset managed by the National Park Service
+<http://data.example.org/dataset/park-visitor-data>
+    a dcat:Dataset ;
+    dcat:publisher <https://www.nps.gov> ;
+    dcat:title "National Park Visitor Statistics" ;
+    dcat:description "This dataset contains statistics about visitors to national parks managed by the NPS." .
