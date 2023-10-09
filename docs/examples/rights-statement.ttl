@@ -3,8 +3,8 @@
 @prefix rdfs:<http://www.w3.org/2000/01/rdf-schema#>.
 @prefix ex: <http://www.example.com#>.
 
-ex:distribution4242  a dcat:Distribution ;
-    dcterms:rights [ a dcterms:RightsStatement ;
+ex:distribution1  a dcat:Distribution ;
+    dct:rights [ a dct:RightsStatement ;
         rdfs:label "© 20023 ACME Inc."@en
     ] 
 .

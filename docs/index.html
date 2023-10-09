@@ -1307,7 +1307,7 @@
             <td><strong>O</strong></td>
             <td>0..1</td>
           </tr>
-         
+
         </tbody>
       </table>
 
@@ -6027,9 +6027,7 @@
           </tr>
         </tbody>
       </table>
-      <aside class="example" id="ex-data-service" title="dcat:DataService with mandatory and recommended properties">
-        <pre data-include-format="text" data-include="./examples/service/service.ttl"></pre>
-      </aside>
+      
       <section id="data-service-mandatory-props">
         <h4>Mandatory Properties</h4>
 
@@ -7299,17 +7297,12 @@
               </tr>
             </tbody>
           </table>
-          <aside class="example" id="ex-data-service-geographicBoundingBox"
-            title="Example for dcat-us:geographicBoundingBox on dcat:DataService">
-            <!-- TODO -->
-            <!--   <pre data-include-format="text" data-include="./examples/service/geographicBoundingBox.ttl"> -->
-          </aside>
         </section>
       </section>
       <section id="dataservice-example">
         <h4>Example</h4>
-        <aside class="example" title="Usage of dcat:endpointDescription for dcat:DataService">
-          <pre data-include-format="text" data-include="./examples/service/endpoint-description.ttl"></pre>
+        <aside class="example" id="ex-data-service" title="dcat:DataService example">
+          <pre data-include-format="text" data-include="./examples/service/service.ttl"></pre>
         </aside>
       </section>
     </section>
@@ -7468,6 +7461,7 @@
             <td>0..1</td>
             <td><span style="color: black;">No Change</span></td>
           </tr>
+         
           <tr>
             <td><a href="#dataset-publisher">publisher</a></td>
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/publisher"><code>dct:publisher</code></a>
@@ -7585,12 +7579,32 @@
             <td><span style="color: green;">Fixed</span></td>
           </tr>
           <tr>
+            <td><a href="#dataset-next">next</a></td>
+            <td><a data-cite="VOCAB-DCAT-3#Property:resource_next"><code>dcat:next</code></a>
+            </td>
+            <td><a data-cite="VOCAB-DCAT-3#Class:Dataset"><code>dcat:Dataset</code></a>
+            </td>
+            <td>O</td>
+            <td>0..1</td>
+            <td><span style="color: green;">Aligned</span></td>
+          </tr>
+          <tr>
             <td><a href="#dataset-otherIdentifier">other identifier</a></td>
             <td><a data-cite="VOCAB-ADMS#identifier"><code>adms:identifier</code></a></td>
             <td><a href="http://www.w3.org/ns/adms#Identifier"><code>adms:Identifier</code></a></td>
             <td>O</td>
             <td>0..n</td>
             <td><span style="color: red;">New!</span></td>
+          </tr>
+          <tr>
+            <td><a href="#dataset-previous">previous</a></td>
+            <td><a data-cite="VOCAB-DCAT-3#Property:resource_previous"><code>dcat:previous</code></a>
+            </td>
+            <td><a data-cite="VOCAB-DCAT-3#Class:Dataset"><code>dcat:Dataset</code></a>
+            </td>
+            <td>O</td>
+            <td>0..1</td>
+            <td><span style="color: green;">Aligned</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-provenance">provenance</a></td>
@@ -10462,11 +10476,7 @@
               </tr>
             </tbody>
           </table>
-          <aside class="example" id="ex-dataset-series-seriesMember"
-            title="Usage of dcat:seriesMember for dcat:DatasetSeries">
-            <!--TODO-->
-            <!--        <pre data-include-format="text" data-include="./examples/dataset-series/seriesMember.ttl"></pre> -->
-          </aside>
+        
         </section>
         <section id="dataset-series-temporal-coverage">
           <h4>Property: temporal coverage</h4>
@@ -10616,18 +10626,17 @@
               </tr>
             </tbody>
           </table>
-          <aside class="example" title="Usage of dct:issued for dcat:DatasetSeries">
-            <!--TODO-->
-            <!--            <pre data-include-format="text" data-include="./examples/dataset-series/issued.ttl"></pre> -->
-          </aside>
         </section>
       </section>
 
       <section id="dataset-series-example">
         <h4>Example</h4>
-        <aside class="example" id="ex-dataset-series" title="DatasetSeries">
-          <!-- TODO -->
-          <!-- <pre data-include-format="text" data-include="./examples/dataset-series/dataset-series.ttl"></pre> -->
+        <p>In this example, <code>ex:populationCensus</code> represents a series of datasets related to the US Population Census Data,
+          which is issued every 10 years (decennial). Individual datasets for specific years (e.g.,
+          <code>ex:populationCensus-1950</code>) are also defined, each pointing to the next dataset in the series using <code>dcat:next</code>.
+        </p>
+        <aside class="example" id="ex-dataset-series" title="DatasetSeries example">
+          <pre data-include-format="text" data-include="./examples/dataset-series.ttl"></pre>
         </aside>
       </section>
     </section>
@@ -12644,9 +12653,6 @@
               </tr>
             </tbody>
           </table>
-          <aside class="example" title="Usage of dc:creator for foaf:Document">
-            <!-- <pre data-include-format="text" data-include="./examples/document/creator-as-literal.ttl"></pre> -->
-          </aside>
         </section>
         <section id="document-publisher-as-literal">
           <h4>Property: publisher(s) as literal</h4>
@@ -12683,9 +12689,6 @@
               </tr>
             </tbody>
           </table>
-          <aside class="example" title="Usage of dc:publisher for foaf:Document">
-            <!-- <pre data-include-format="text" data-include="./examples/document/publisher-as-literal.ttl"></pre> -->
-          </aside>
         </section>
         <section id="document-issued">
           <h4>Property: publication date</h4>
@@ -12722,9 +12725,6 @@
               </tr>
             </tbody>
           </table>
-          <aside class="example" title="Usage of dcterms:issued for foaf:Document">
-            <!-- <pre data-include-format="text" data-include="./examples/document/issued.ttl"></pre> -->
-          </aside>
         </section>
         <section id="document-publisher">
           <h4>Property: publisher organization</h4>
@@ -12760,9 +12760,6 @@
               </tr>
             </tbody>
           </table>
-          <aside class="example" title="Usage of dcterms:publisher for foaf:Document">
-            <!-- <pre data-include-format="text" data-include="./examples/document/publisher.ttl"></pre> -->
-          </aside>
         </section>
         <section id="document-title">
           <h4>Property: title</h4>
@@ -12798,9 +12795,6 @@
               </tr>
             </tbody>
           </table>
-          <aside class="example" title="Usage of dcterms:title for foaf:Document">
-            <!-- <pre data-include-format="text" data-include="./examples/document/title.ttl"></pre> -->
-          </aside>
         </section>
       </section>
       <section id="recommended-document-props">
@@ -12840,9 +12834,6 @@
               </tr>
             </tbody>
           </table>
-          <aside class="example" title="Usage of dcterms:bibliographicCitation for foaf:Document">
-            <!-- <pre data-include-format="text" data-include="./examples/document/bibliographicCitation.ttl"></pre> -->
-          </aside>
         </section>
         <section id="document-description">
           <h4>Property: description</h4>
@@ -12878,9 +12869,6 @@
               </tr>
             </tbody>
           </table>
-          <aside class="example" title="Usage of dcterms:description for foaf:Document">
-            <!-- <pre data-include-format="text" data-include="./examples/document/description.ttl"></pre> -->
-          </aside>
         </section>
         <section id="document-identifier">
           <h4>Property: identifier</h4>
@@ -12916,9 +12904,6 @@
               </tr>
             </tbody>
           </table>
-          <aside class="example" title="Usage of dcterms:identifier for foaf:Document">
-            <!-- <pre data-include-format="text" data-include="./examples/document/identifier.ttl"></pre> -->
-          </aside>
         </section>
         <section id="document-type">
           <h4>Property: document type</h4>
@@ -12954,9 +12939,6 @@
               </tr>
             </tbody>
           </table>
-          <aside class="example" title="Usage of dcterms:type for foaf:Document">
-            <!-- <pre data-include-format="text" data-include="./examples/document/type.ttl"></pre> -->
-          </aside>
         </section>
 
       </section>
@@ -12996,9 +12978,6 @@
               </tr>
             </tbody>
           </table>
-          <aside class="example" title="Usage of dcterms:abstract for foaf:Document">
-            <!-- <pre data-include-format="text" data-include="./examples/document/abstract.ttl"></pre> -->
-          </aside>
         </section>
         <section id="document-individual-creator">
           <h4>Property: individual author</h4>
@@ -13034,9 +13013,6 @@
               </tr>
             </tbody>
           </table>
-          <aside class="example" title="Usage of dct:creator for foaf:Document">
-            <!-- <pre data-include-format="text" data-include="./examples/document/creator.ttl"></pre> -->
-          </aside>
         </section>
         <section id="document-corporate-creator">
           <h4>Property: corporate author</h4>
@@ -13072,9 +13048,6 @@
               </tr>
             </tbody>
           </table>
-          <aside class="example" title="Usage of dct:creator for foaf:Document">
-            <!-- <pre data-include-format="text" data-include="./examples/document/creator.ttl"></pre> -->
-          </aside>
         </section>
         <section id="document-conformsTo">
           <h4>Property: conforms to</h4>
@@ -13111,10 +13084,6 @@
               </tr>
             </tbody>
           </table>
-          <!-- TODO: Finish dcterms:conformsTo example for foaf:Document -->
-          <aside class="example" title="Usage of dcterms:conformsTo for foaf:Document">
-            <!-- <pre data-include-format="text" data-include="./examples/document/identifier.ttl"></pre> -->
-          </aside>
         </section>
         <section id="document-mediaType">
           <h4>Property: media type</h4>
@@ -13151,13 +13120,14 @@
               </tr>
             </tbody>
           </table>
-          <!-- TODO: Finish dcterms:conformsTo example for foaf:Document -->
-          <aside class="example" title="Usage of dcterms:conformsTo for foaf:Document">
-            <!-- <pre data-include-format="text" data-include="./examples/document/identifier.ttl"></pre> -->
-          </aside>
         </section>
       </section>
-
+      <section id="document-example">
+        <h4>Example</h4>
+        <aside class="example" title="foaf:Document example ">
+          <pre data-include-format="text" data-include="./examples/document.ttl"></pre>
+        </aside>
+      </section>
 
     </section>
     <!-- dcat-us:GeographicBoundingBox-->
@@ -15017,8 +14987,8 @@
       <section id="organization-example">
         <h4>Example</h4>
         <aside class="example" title="org:Organization example">
-          <!--TODO-->
-          <!--          <pre data-include-format="text" data-include="./examples/dataset/organization.ttl"></pre> -->
+
+          <pre data-include-format="text" data-include="./examples/organization.ttl"></pre>
         </aside>
       </section>
 
@@ -16871,7 +16841,7 @@
         </aside>
       </section>
     </section>
-    
+
   </section>
 
 
@@ -17928,7 +17898,8 @@
         <ul>
           <li><a data-cite="PROV-O#wasDerivedFrom"><code>prov:wasDerivedFrom</code></a>: Establishes a derivation
             relationship between two entities.</li>
-          <li><a data-cite="PROV-O#Property:prov_wasGeneratedBy"><code>prov:wasGeneratedBy</code></a>: Links an entity to
+          <li><a data-cite="PROV-O#Property:prov_wasGeneratedBy"><code>prov:wasGeneratedBy</code></a>: Links an entity
+            to
             the activity that generated it.</li>
           <li><a data-cite="PROV-O#Property:prov_wasInfluencedBy"><code>prov:wasInfluencedBy</code></a>: Expresses a
             generic
@@ -17938,7 +17909,8 @@
             for its creation.</li>
         </ul>
 
-        <p>The <a data-cite="PROV-O#Class:prov_Activity"><code>prov:Activity</code></a> class in the PROV-O ontology plays
+        <p>The <a data-cite="PROV-O#Class:prov_Activity"><code>prov:Activity</code></a> class in the PROV-O ontology
+          plays
           a
           pivotal role in representing processes or actions taken
           upon or with entities, thereby providing a structured framework to document the transformations, analyses, or
@@ -17951,7 +17923,8 @@
           account of the data's journey, from its origin through various transformations to its current state, can be
           articulated. This not only enhances the transparency of the data but also provides a robust mechanism to trace
           back through the steps involved in data creation and processing, thereby contributing to verifiable and
-          trustworthy data lineage. Furthermore, <a data-cite="PROV-O#Class:prov_Activity"><code>prov:Activity</code></a>
+          trustworthy data lineage. Furthermore, <a
+            data-cite="PROV-O#Class:prov_Activity"><code>prov:Activity</code></a>
           can be associated with prov:Agent through properties like
           prov:wasAssociatedWith, offering insights into the roles of different agents (e.g., organizations, people, or
           software) in data processing activities, thereby enriching the data provenance and lineage documentation.</p>

@@ -5,39 +5,47 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # ---------- class DataService ----------------------------------------------
-<https://uscensus.gov/api>
+<https://data.census.gov/>
   a dcat:DataService ;
-
+  
   # mandatory properties
-
-  dct:title "US Census Data service"@en ;
-  dcat:endpointURL <https://uscensus.gov/api> ;
+  dct:title "US Census Data Service"@en ;
+  dcat:endpointURL <https://data.census.gov/> ;
   dcat:contactPoint [
-    a vcard:Organization ;
-    vcard:fn "US Census" ;
-    vcard:hasEmail <mailto:info@uscensus.gov> .
+    a vcard:Contact ;
+    vcard:fn "US Census Bureau" ;
+    vcard:hasEmail <mailto:info@census.gov>  
   ], [
     a vcard:Individual ;
-    vcard:fn "Secretary" ;
-    vcard:hasEmail <mailto:secretary@uscensus.gov> .
+    vcard:fn "Data Service Coordinator" ;  
+    vcard:hasEmail <mailto:coordinator@census.gov>  
   ] ;
-  dct:publisher <https://uscensus.gov/> ;
-
+  dct:publisher <https://www.census.gov> ;
+  
   # recommended properties
-
-  dcat:endpointDescription <https://uscensus.gov/api/docu> ;
-  dct:license <http://data.gov/vocabulary/licenses/terms_open> ;
-  dcat:servesDataset <https://uscensus.gov/dataset/123> ,
-                     <https://uscensus.gov/dataset/456> .
+  dcat:endpointDescription <https://data.census.gov/about.html> ;  # Example URL, adjust as per actual details
+  dct:license <http://www.usa.gov/publicdomain/label/1.0/> ;  # Example URL, adjust as per actual details
+  dcat:servesDataset <https://data.census.gov/dataset/1> ,  # Example URL, adjust as per actual details
+                     <https://data.census.gov/dataset/2> .  # Example URL, adjust as per actual details
 
 # ---------- class Publisher ------------------------------------------------
-<https://uscensus.gov>
+<https://www.census.gov/>
   a foaf:Organization ;
-  foaf:name: "US Census"@en .
+  foaf:name "US Census Bureau"@en .
 
 # ---------- class Dataset --------------------------------------------------
-<https://uscensus.gov/dataset/123>
-  a dcat:DataService .
+<https://data.census.gov/dataset/1>
+  a dcat:Dataset ;
+  dct:title "Example Dataset 1"@en ;
+  dct:description "This is an example dataset from the US Census Bureau"@en ;
+  dct:publisher <https://www.census.gov/> ;
+  dct:issued "2020-01-01"^^xsd:date ;
+  dct:modified "2022-01-01"^^xsd:date .
 
-<https://uscensus.gov/dataset/456>
-  a dcat:DataService .
+<https://data.census.gov/dataset/2>
+  a dcat:Dataset ;
+  dct:title "Example Dataset 2"@en ;
+  dct:description "This is another example dataset from the US Census Bureau"@en ;
+  dct:publisher <https://www.census.gov/> ;
+  dct:issued "2020-01-01"^^xsd:date ;
+  dct:modified "2022-01-01"^^xsd:date .
