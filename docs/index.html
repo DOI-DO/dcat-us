@@ -6027,7 +6027,7 @@
           </tr>
         </tbody>
       </table>
-      
+
       <section id="data-service-mandatory-props">
         <h4>Mandatory Properties</h4>
 
@@ -7461,7 +7461,7 @@
             <td>0..1</td>
             <td><span style="color: black;">No Change</span></td>
           </tr>
-         
+
           <tr>
             <td><a href="#dataset-publisher">publisher</a></td>
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/publisher"><code>dct:publisher</code></a>
@@ -8864,6 +8864,40 @@
             <pre data-include-format="text" data-include="./examples/dataset/language.ttl"></pre>
           </aside>
         </section>
+        <section id="dataset-next">
+          <h4>Property: next</h4>
+          <table class="def">
+            <tbody>
+              <tr>
+                <th>Property</th>
+                <td>next</td>
+              </tr>
+              <tr>
+                <th>Requirement level</th>
+                <td>Optional</td>
+              </tr>
+              <tr>
+                <td>Optional</td>
+                <td>0..1</td>
+              </tr>
+              <tr>
+                <th>URI</th>
+                <td><a data-cite="VOCAB-DCAT-3#Property:resource_next"><code>dcat:next</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Range</th>
+                <td><a data-cite="VOCAB-DCAT-3#Class:Dataset"><code>dcat:Dataset</code></a>
+              </tr>
+              <tr>
+                <th>Definition</th>
+                <td>The following resource (after the current one) in an ordered collection or series of resources.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+        </section>
         <section id="dataset-otherIdentifier">
           <h4>Property: other identifier</h4>
           <table class="def">
@@ -8904,6 +8938,43 @@
           <aside class="example" title="Usage of adms:identifier for dcat:Dataset">
             <pre data-include-format="text" data-include="./examples/dataset/other-identifier.ttl"></pre>
           </aside>
+        </section>
+        <section id="dataset-previous">
+          <h4>Property: previous</h4>
+          <table class="def">
+            <tbody>
+              <tr>
+                <th>Property</th>
+                <td>previous</td>
+              </tr>
+              <tr>
+                <th>Requirement level</th>
+                <td>Optional</td>
+              </tr>
+              <tr>
+                <td>Optional</td>
+                <td>0..1</td>
+              </tr>
+              <tr>
+                <th>URI</th>
+                <td><a data-cite="VOCAB-DCAT-3#Property:resource_previous"><code>dcat:previous</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Range</th>
+                <td><a data-cite="VOCAB-DCAT-3#Class:Dataset"><code>dcat:Dataset</code></a>
+              </tr>
+              <tr>
+                <th>Usage Note</th>
+                <td>Unless the dataset is the last in the chain a dataset in a collection must have a previous one.
+                </td>
+              </tr>
+              <tr>
+                <th>Definition</th>
+                <td>The previous resource (before the current one) in an ordered collection or series of resources.</td>
+              </tr>
+            </tbody>
+          </table>
         </section>
         <section id="dataset-provenance">
           <h4>Property: provenance</h4>
@@ -10476,7 +10547,7 @@
               </tr>
             </tbody>
           </table>
-        
+
         </section>
         <section id="dataset-series-temporal-coverage">
           <h4>Property: temporal coverage</h4>
@@ -10631,9 +10702,11 @@
 
       <section id="dataset-series-example">
         <h4>Example</h4>
-        <p>In this example, <code>ex:populationCensus</code> represents a series of datasets related to the US Population Census Data,
+        <p>In this example, <code>ex:populationCensus</code> represents a series of datasets related to the US
+          Population Census Data,
           which is issued every 10 years (decennial). Individual datasets for specific years (e.g.,
-          <code>ex:populationCensus-1950</code>) are also defined, each pointing to the next dataset in the series using <code>dcat:next</code>.
+          <code>ex:populationCensus-1950</code>) are also defined, each pointing to the next dataset in the series using
+          <code>dcat:next</code>.
         </p>
         <aside class="example" id="ex-dataset-series" title="DatasetSeries example">
           <pre data-include-format="text" data-include="./examples/dataset-series.ttl"></pre>

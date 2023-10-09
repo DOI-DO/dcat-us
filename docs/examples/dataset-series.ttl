@@ -3,63 +3,6 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix ex: <http://example.org/ns#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-
-# Define the DatasetSeries
-ex:populationCensus a dcat:DatasetSeries ;
-  dct:title "US Population Census Data"@en ;
-  dct:issued "1950-01-01"^^xsd:date ;
-  dct:modified "2020-01-01"^^xsd:date ;
-  dct:accrualPeriodicity <http://purl.org/cld/freq/decennial> ;
-  dcat:temporalResolution "P10Y"^^xsd:duration ;
-  dct:temporal [ a dct:PeriodOfTime ;
-    dcat:startDate "1950-01-01"^^xsd:date ;
-    dcat:endDate   "2020-12-31"^^xsd:date ;
-  ] ;  
-  dct:spatial ex:USA ;
-  .
-
-# Define individual datasets within the series
-ex:populationCensus-1950 a dcat:Dataset ;
-  dct:title "US Population Census Data for year 1950"@en ;
-  dcat:inSeries ex:populationCensus ;
-  dct:issued "1951-01-01"^^xsd:date ;
-  dcat:next ex:populationCensus-1960 ;
-  dct:accrualPeriodicity <http://purl.org/cld/freq/decennial> ;
-  dcat:temporalResolution "P10Y"^^xsd:duration ;
-  dct:temporal [ a dct:PeriodOfTime ;
-    dcat:startDate "1950-01-01"^^xsd:date ;
-    dcat:endDate   "1950-12-31"^^xsd:date ;
-  ] ;  
-  dct:spatial ex:USA ;
-  .
-
-# ... Additional datasets for other years can be defined similarly ...
-
-# Define the spatial entity
-ex:USA a dct:Location ;
-  dct:title "United States of America"@en ;
-  .
-
-# Note: You may need to adjust URIs for controlled vocabularies and spatial entities to match your use case.
-In this example, ex:populationCensus represents a series of datasets related to the US Population Census Data, which is issued every 10 years (decennial). Individual datasets for specific years (e.g., ex:populationCensus-1950) are also defined, each pointing to the next dataset in the series using dcat:next.
-
-Ensure to adjust URIs, dates, and other specifics to match the actual data and metadata of the datasets you are describing. This is a simplified example and you might need to add more details depending on the specific requirements and available metadata for your datasets.
-
-
-
-
-User
-Add more dataset in the example. Use geonames uri for USA
-ChatGPT
-Certainly! Below is the extended Turtle (TTL) example with additional datasets and using a GeoNames URI for the USA:
-
-ttl
-Copy code
-@prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix dct: <http://purl.org/dc/terms/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix ex: <http://example.org/ns#> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix geonames: <http://www.geonames.org/ontology#> .
 
 # Define the DatasetSeries
