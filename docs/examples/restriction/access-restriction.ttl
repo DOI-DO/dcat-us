@@ -1,10 +1,10 @@
 
 
 ex:AccessRestriction1  a dcat-us:AccessRestriction;
-  dcat-us:status ar-status:RestrictedPossibly;
+  dcat-us:restrictionStatus ar-status:RestrictedPossibly;
   dcat-us:restrictionNote "The records may be restricted due to privacy concerns. 
     Register numbers 1 through 900 have been screened and are open for research.";
-  dcat-us:requiredIndicatorPerAuthority "Privacy Office: Ensure all personal data is 
+  dcat-us:authority "Privacy Office: Ensure all personal data is 
     redacted from registers 901 and above before release. 
     Legal Department: Verify compliance with privacy laws for any data access requests."
 .
