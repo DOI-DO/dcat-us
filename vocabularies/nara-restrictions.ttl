@@ -1,0 +1,377 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix : <https://data.resources.gov/vocab/nara/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+: a owl:Ontology ;
+    rdfs:comment "An ontology representing various authority lists from the National Archives and Records Administration (NARA). This ontology encompasses various concepts and schemes related to specific access, use, and restriction of archival materials."@en ;
+    rdfs:label "NARA Authority Lists Ontology"@en ;
+    owl:versionInfo "1.0" ;
+    dcterms:creator "National Archives and Records Administration" ;
+    dcterms:created "2023-10-10"^^xsd:date ; 
+    dcterms:modified "2023-10-10"^^xsd:date . 
+
+
+:AccessRestrictionStatusAuthorityList a skos:ConceptScheme ;
+    skos:prefLabel "Access Restriction Status Authority List"@en;
+    dcterms:source <https://www.archives.gov/research/catalog/lcdrg/authority_lists/accesslist.html> .
+
+<AccessRestrictionStatusAuthorityList/RestrictedFully>  a skos:Concept ;
+    skos:prefLabel "Restricted - Fully"@en ;
+    skos:scopeNote "Use if all the archival materials are restricted."@en ;
+    skos:inScheme :AccessRestrictionStatusAuthorityList .
+
+<AccessRestrictionStatusAuthorityList/RestrictedPartly>  a skos:Concept ;
+    skos:prefLabel "Restricted - Partly"@en ;
+    skos:scopeNote "Use if some of the archival materials are restricted."@en ;
+    skos:inScheme :AccessRestrictionStatusAuthorityList .
+
+<AccessRestrictionStatusAuthorityList/RestrictedPossibly>   a skos:Concept ;
+    skos:prefLabel "Restricted - Possibly"@en ;
+    skos:scopeNote "Use if the archival materials may be restricted. Use if the archival materials have been reviewed or partially reviewed and found to contain restricted material, but the restrictions have not been recorded, identified and/or verified at the file unit or item level."@en ;
+    skos:inScheme :AccessRestrictionStatusAuthorityList .
+
+<AccessRestrictionStatusAuthorityList/Undetermined>  a skos:Concept ;
+    skos:prefLabel "Undetermined"@en ;
+    skos:scopeNote "Use when it is unknown if the archival materials are restricted."@en ;
+    skos:inScheme :AccessRestrictionStatusAuthorityList .
+
+<AccessRestrictionStatusAuthorityList/Unrestricted> a skos:Concept ;
+    skos:prefLabel "Unrestricted"@en ;
+    skos:scopeNote "Use if there are no access restrictions on the archival materials."@en ;
+    skos:inScheme :AccessRestrictionStatusAuthorityList .
+
+
+:SpecificAccessRestrictionAuthorityList  a skos:ConceptScheme ;
+    skos:prefLabel "Specific Access Restriction Authority List"@en ;
+    skos:hasTopConcept <SpecificAccessRestrictionAuthorityList/DonatedSecurityClassified>, <SpecificAccessRestrictionAuthorityList/DonatedStatute>, <SpecificAccessRestrictionAuthorityList/DonorRestricted>, <SpecificAccessRestrictionAuthorityList/ExecutivePrivilege>, <SpecificAccessRestrictionAuthorityList/FOIA>, <SpecificAccessRestrictionAuthorityList/HouseRule>, <SpecificAccessRestrictionAuthorityList/PresidentialRecordsAct>, <SpecificAccessRestrictionAuthorityList/Other>;
+    dcterms:source <https://www.archives.gov/research/catalog/lcdrg/authority_lists/specificaccesslist.html> .
+
+<SpecificAccessRestrictionAuthorityList/DonatedSecurityClassified>  a skos:Concept ;
+    skos:prefLabel "Donated - Security Classified"@en ;
+    skos:scopeNote "Use for donated archival materials with national security restrictions. Indicate the level of classification in Security Classification."@en ;
+    skos:inScheme :SpecificAccessRestrictionAuthorityList .
+
+<SpecificAccessRestrictionAuthorityList/DonatedStatute>  a skos:Concept ;
+    skos:prefLabel "Donated - Statute"@en ;
+    skos:scopeNote "Use for donated archival materials with statutory restrictions. Explain the statutory restriction further in the Access Restriction Note."@en ;
+    skos:inScheme :SpecificAccessRestrictionAuthorityList .
+
+<SpecificAccessRestrictionAuthorityList/DonorRestricted>  a skos:Concept ;
+    skos:prefLabel "Donor Restricted"@en ;
+    skos:scopeNote "Use for archival materials on which the donor has placed access restrictions. Explain the donor restriction further in the Access Restriction Note."@en ;
+    skos:inScheme :SpecificAccessRestrictionAuthorityList .
+
+<SpecificAccessRestrictionAuthorityList/ExecutivePrivilege>  a skos:Concept ;
+    skos:prefLabel "Executive Privilege"@en ;
+    skos:scopeNote "Use for presidential or vice presidential records for which a claim of Executive Privilege has been invoked by the incumbent President or a former President or Vice President."@en ;
+    skos:inScheme :SpecificAccessRestrictionAuthorityList .
+
+<SpecificAccessRestrictionAuthorityList/FOIA>  a skos:Concept ;
+    skos:prefLabel "Freedom of Information Act (FOIA)"@en ;
+    skos:scopeNote "Use when the specific FOIA restriction is unknown."@en ;
+    skos:inScheme :SpecificAccessRestrictionAuthorityList ;
+    skos:narrower <SpecificAccessRestrictionAuthorityList/FOIAb1>, <SpecificAccessRestrictionAuthorityList/FOIAb2>, <SpecificAccessRestrictionAuthorityList/FOIAb3>, <SpecificAccessRestrictionAuthorityList/FOIAb4>, <SpecificAccessRestrictionAuthorityList/FOIAb5>, <SpecificAccessRestrictionAuthorityList/FOIAb6>, <SpecificAccessRestrictionAuthorityList/FOIAb7>, <SpecificAccessRestrictionAuthorityList/FOIAb8>, <SpecificAccessRestrictionAuthorityList/FOIAb9> .
+
+<SpecificAccessRestrictionAuthorityList/FOIAb1>  a skos:Concept ;
+    skos:prefLabel "FOIA (b)(1) National Security"@en ;
+    skos:scopeNote "Use for archival materials with national security restrictions: Confidential, Secret, and Top Secret. Indicate the level of classification in Security Classification."@en ;
+    skos:inScheme :SpecificAccessRestrictionAuthorityList ;
+    skos:broader <SpecificAccessRestrictionAuthorityList/FOIA> .
+
+<FOIAb2>  a skos:Concept ;
+    skos:prefLabel "FOIA (b)(2) Internal Personnel Rules and Practices"@en ;
+    skos:inScheme :SpecificAccessRestrictionAuthorityList ;
+    skos:broader <SpecificAccessRestrictionAuthorityList/FOIA> .
+
+<SpecificAccessRestrictionAuthorityList/FOIAb3>  a skos:Concept ;
+    skos:prefLabel "FOIA (b)(3) Statute"@en ;
+    skos:scopeNote "Use for archival materials with statutory restrictions. Explain the statutory restriction further in the Access Restriction Note."@en ;
+    skos:inScheme :SpecificAccessRestrictionAuthorityList ;
+    skos:broader <SpecificAccessRestrictionAuthorityList/FOIA> .
+
+<SpecificAccessRestrictionAuthorityList/FOIAb4>  a skos:Concept ;
+    skos:prefLabel "FOIA (b)(4) Trade Secrets and Commercial or Financial Information"@en ;
+    skos:scopeNote "Use for archival materials with trade secret and commercial or financial information that must remain closed."@en ;
+    skos:inScheme :SpecificAccessRestrictionAuthorityList ;
+    skos:broader <SpecificAccessRestrictionAuthorityList/FOIA> .
+
+<SpecificAccessRestrictionAuthorityList/FOIAb5>  a skos:Concept ;
+    skos:prefLabel "FOIA (b)(5) Inter-agency or Intra-agency Memorandums or Letters Not Available by Law"@en ;
+    skos:inScheme :SpecificAccessRestrictionAuthorityList ;
+    skos:broader <SpecificAccessRestrictionAuthorityList/FOIA> .
+
+<SpecificAccessRestrictionAuthorityList/FOIAb6>  a skos:Concept ;
+    skos:prefLabel "FOIA (b)(6) Personal Information"@en ;
+    skos:scopeNote "Use for archival materials with personal information that invades the privacy of living individuals."@en ;
+    skos:inScheme :SpecificAccessRestrictionAuthorityList ;
+    skos:broader <SpecificAccessRestrictionAuthorityList/FOIA> .
+
+<SpecificAccessRestrictionAuthorityList/FOIAb7>  a skos:Concept ;
+    skos:prefLabel "FOIA (b)(7) Law Enforcement"@en ;
+    skos:scopeNote "Use for archival materials with law enforcement information."@en ;
+    skos:inScheme :SpecificAccessRestrictionAuthorityList ;
+    skos:broader <SpecificAccessRestrictionAuthorityList/FOIA> ;
+    skos:narrower <SpecificAccessRestrictionAuthorityList/FOIAb7a>, <SpecificAccessRestrictionAuthorityList/FOIAb7b>, <SpecificAccessRestrictionAuthorityList/FOIAb7c>, <SpecificAccessRestrictionAuthorityList/FOIAb7d>, <SpecificAccessRestrictionAuthorityList/FOIAb7e>, <SpecificAccessRestrictionAuthorityList/FOIAb7f> .
+
+<SpecificAccessRestrictionAuthorityList/FOIAb7a>  a skos:Concept ;
+    skos:prefLabel "FOIA (b)(7a) Law Enforcement"@en ;
+    skos:scopeNote "Use for archival materials with law enforcement information that could reasonably be expected to interfere with enforcement proceedings."@en ;
+    skos:inScheme :SpecificAccessRestrictionAuthorityList ;
+    skos:broader <SpecificAccessRestrictionAuthorityList/FOIAb7> .
+
+<SpecificAccessRestrictionAuthorityList/FOIAb7b>  a skos:Concept ;
+    skos:prefLabel "FOIA (b)(7b) Law Enforcement"@en ;
+    skos:scopeNote "Use for archival materials with law enforcement information that would deprive a person of a right to a fair trial or an impartial adjudication."@en ;
+    skos:inScheme :SpecificAccessRestrictionAuthorityList ;
+    skos:broader <SpecificAccessRestrictionAuthorityList/FOIAb7> .
+
+<SpecificAccessRestrictionAuthorityList/FOIAb7c>  a skos:Concept ;
+    skos:prefLabel "FOIA (b)(7c) Law Enforcement"@en ;
+    skos:scopeNote "Use for archival materials with law enforcement information that could reasonably be expected to constitute an unwarranted invasion of personal privacy."@en ;
+    skos:inScheme :SpecificAccessRestrictionAuthorityList ;
+    skos:broader <SpecificAccessRestrictionAuthorityList/FOIAb7> .
+
+<SpecificAccessRestrictionAuthorityList/FOIAb7d>  a skos:Concept ;
+    skos:prefLabel "FOIA (b)(7d) Law Enforcement"@en ;
+    skos:scopeNote "Use for archival materials with law enforcement information that could reasonably be expected to disclose the identity of confidential source, including a state, local, or foreign agency or authority or any private institution that furnished information on a confidential basis, and, in the case of a record or information compiled by a criminal law enforcement authority in the course of a criminal investigation or by an agency conducting a lawful national security intelligence investigation, information furnished by a confidential source."@en ;
+    skos:inScheme :SpecificAccessRestrictionAuthorityList ;
+    skos:broader <SpecificAccessRestrictionAuthorityList/FOIAb7> .
+
+<SpecificAccessRestrictionAuthorityList/FOIAb7e>  a skos:Concept ;
+    skos:prefLabel "FOIA (b)(7e) Law Enforcement"@en ;
+    skos:scopeNote "Use for archival materials with law enforcement information that would disclose techniques and procedures for law enforcement investigations or prosecutions or would disclose guidelines for law enforcement investigations or prosecutions if such disclosure could reasonably be expected to risk circumvention of the law."@en ;
+    skos:inScheme :SpecificAccessRestrictionAuthorityList ;
+    skos:broader <SpecificAccessRestrictionAuthorityList/FOIAb7> .
+
+<SpecificAccessRestrictionAuthorityList/FOIAb7f>  a skos:Concept ;
+    skos:prefLabel "FOIA (b)(7f) Law Enforcement"@en ;
+    skos:scopeNote "Use for archival materials with law enforcement information that could reasonably be expected to endanger the life or physical safety or any individual."@en ;
+    skos:inScheme :SpecificAccessRestrictionAuthorityList ;
+    skos:broader <SpecificAccessRestrictionAuthorityList/FOIAb7> .
+
+<SpecificAccessRestrictionAuthorityList/FOIAb8>  a skos:Concept ;
+    skos:prefLabel "FOIA (b)(8) Regulation or Supervision of Financial Institutions"@en ;
+    skos:inScheme :SpecificAccessRestrictionAuthorityList ;
+    skos:broader <SpecificAccessRestrictionAuthorityList/FOIA> .
+
+<SpecificAccessRestrictionAuthorityList/FOIAb9>  a skos:Concept ;
+    skos:prefLabel "FOIA (b)(9) Geological or Geophysical Information and Data"@en ;
+    skos:inScheme :SpecificAccessRestrictionAuthorityList ;
+    skos:broader <SpecificAccessRestrictionAuthorityList/FOIA> .
+
+<SpecificAccessRestrictionAuthorityList/HouseRule>  a skos:Concept ;
+    skos:prefLabel "House Rule"@en ;
+    skos:scopeNote "Use for archival materials from the House of Representatives that are subject to restrictions imposed by the House of Representatives. Explain the restrictions and specific closure periods in the Access Restriction Note."@en ;
+    skos:inScheme :SpecificAccessRestrictionAuthorityList .
+
+<SpecificAccessRestrictionAuthorityList/JFKAssassinationRecordsAct>  a skos:Concept ;
+    skos:prefLabel "John F. Kennedy Assassination Records Collection Act"@en ;
+    skos:inScheme :SpecificAccessRestrictionAuthorityList .
+
+<SpecificAccessRestrictionAuthorityList/PresidentialRecordsAct>  a skos:Concept ;
+    skos:prefLabel "Presidential Records Act (PRA)"@en ;
+    skos:scopeNote "Use for Presidential records during the 5 year period of initial closure specified by the PRA or when the specific PRA restriction is unknown."@en ;
+    skos:inScheme :SpecificAccessRestrictionAuthorityList ;
+    skos:narrower <SpecificAccessRestrictionAuthorityList/PRAp1>, <SpecificAccessRestrictionAuthorityList/PRAp2>, <SpecificAccessRestrictionAuthorityList/PRAp3>, <SpecificAccessRestrictionAuthorityList/PRAp4>, <SpecificAccessRestrictionAuthorityList/PRAp5>, <SpecificAccessRestrictionAuthorityList/PRAp6>.
+
+<SpecificAccessRestrictionAuthorityList/PRAp1>  a skos:Concept ;
+    skos:prefLabel "Presidential Records Act (p)(1) National Security Classified"@en ;
+    skos:scopeNote "Use for Presidential records with national security restrictions. Indicate the level of classification in Security Classification."@en ;
+    skos:inScheme :SpecificAccessRestrictionAuthorityList ;
+    skos:broader <SpecificAccessRestrictionAuthorityList/PresidentialRecordsAct> .
+
+<SpecificAccessRestrictionAuthorityList/PRAp2>  a skos:Concept ;
+    skos:prefLabel "Presidential Records Act (p)(2) Appointments to Federal Office"@en ;
+    skos:scopeNote "Use for Presidential records relating to appointments to Federal office."@en ;
+    skos:inScheme :SpecificAccessRestrictionAuthorityList ;
+    skos:broader <SpecificAccessRestrictionAuthorityList/PresidentialRecordsAct> .
+
+<SpecificAccessRestrictionAuthorityList/PRAp3>  a skos:Concept ;
+    skos:prefLabel "Presidential Records Act (p)(3) Statute"@en ;
+    skos:scopeNote "Use for Presidential records with statutory restrictions. Explain the statutory restriction further in the Access Restriction Note."@en ;
+    skos:inScheme :SpecificAccessRestrictionAuthorityList ;
+    skos:broader <SpecificAccessRestrictionAuthorityList/PresidentialRecordsAct> .
+
+<SpecificAccessRestrictionAuthorityList/PRAp4>  a skos:Concept ;
+    skos:prefLabel "Presidential Records Act (p)(4) Trade Secrets and Commercial or Financial Information"@en ;
+    skos:scopeNote "Use for Presidential records with trade secret and commercial or financial information that must remain closed."@en ;
+    skos:inScheme :SpecificAccessRestrictionAuthorityList ;
+    skos:broader <SpecificAccessRestrictionAuthorityList/PresidentialRecordsAct> .
+
+<SpecificAccessRestrictionAuthorityList/PRAp5>  a skos:Concept ;
+    skos:prefLabel "Presidential Records Act (p)(5) Confidential Communications"@en ;
+    skos:scopeNote "Use for Presidential records with confidential communications requesting or submitting advice among the President and his advisers"@en ;
+    skos:inScheme :SpecificAccessRestrictionAuthorityList ;
+    skos:broader <SpecificAccessRestrictionAuthorityList/PresidentialRecordsAct> .
+
+<SpecificAccessRestrictionAuthorityList/PRAp6>  a skos:Concept ;
+    skos:prefLabel "Presidential Records Act (p)(6) Personal Privacy"@en ;
+    skos:scopeNote "Use for Presidential records with personal information that invades the privacy of living individuals."@en ;
+    skos:inScheme :SpecificAccessRestrictionAuthorityList ;
+    skos:broader <SpecificAccessRestrictionAuthorityList/PresidentialRecordsAct> .
+
+<SpecificAccessRestrictionAuthorityList/PRM>  a skos:Concept ;
+    skos:prefLabel "PRM - Personal Record Misfile"@en ;
+    skos:scopeNote "Use for PRA withdrawal sheets for textual records that are withheld from public access.  This indicates the legal status of the record, in that these personal materials were misfiled in a PRA records series and can not be released under PRA or FOIA, only later under a subsequent deed of gift."@en ;
+    skos:inScheme :SpecificAccessRestrictionAuthorityList .
+
+<SpecificAccessRestrictionAuthorityList/PRMPA>  a skos:Concept ;
+    skos:prefLabel "Presidential Recordings and Materials Preservation Act of 1974 (PRMPA)"@en ;
+    skos:scopeNote "Use when the specific PRMPA restriction is unknown."@en ;
+    skos:inScheme :SpecificAccessRestrictionAuthorityList ;
+    skos:narrower <SpecificAccessRestrictionAuthorityList/PRMPAIndividualRightsPendingC>, <SpecificAccessRestrictionAuthorityList/PRMPAInvestigatoryInformationF>, <SpecificAccessRestrictionAuthorityList/PRMPANationalSecurityClassifiedB>, <SpecificAccessRestrictionAuthorityList/PRMPANonHistoricalInformationH>, <SpecificAccessRestrictionAuthorityList/PRMPAPersonalInformationG>, <SpecificAccessRestrictionAuthorityList/PRMPAPersonalPrivacyD>, <SpecificAccessRestrictionAuthorityList/PRMPAStatuteA>, <SpecificAccessRestrictionAuthorityList/PRMPATradeSecretsE> .
+
+<SpecificAccessRestrictionAuthorityList/PRMPAIndividualRightsPendingC>  a skos:Concept ;
+    skos:prefLabel "PRMPA - Individual Rights Pending (C)"@en ;
+    skos:scopeNote "Use for archival materials from the Nixon Presidential Materials with a pending or approved claim whose release would violate an individual's rights."@en ;
+    skos:inScheme :SpecificAccessRestrictionAuthorityList ;
+    skos:broader <SpecificAccessRestrictionAuthorityList/PRMPA> .
+
+<SpecificAccessRestrictionAuthorityList/PRMPAInvestigatoryInformationF>  a skos:Concept ;
+    skos:prefLabel "PRMPA - Investigatory Information (F)"@en ;
+    skos:scopeNote "Use for archival materials from the Nixon Presidential Materials whose release would disclose investigatory information compiled for law enforcement purposes."@en ;
+    skos:inScheme :SpecificAccessRestrictionAuthorityList ;
+    skos:broader <SpecificAccessRestrictionAuthorityList/PRMPA> .
+
+<SpecificAccessRestrictionAuthorityList/PRMPANationalSecurityClassifiedB>  a skos:Concept ;
+    skos:prefLabel "PRMPA - National Security Classified (B)"@en ;
+    skos:scopeNote "Use for archival materials from the Nixon Presidential Materials with national security restrictions. Indicate the level of classification in Security Classification."@en ;
+    skos:inScheme :SpecificAccessRestrictionAuthorityList ;
+    skos:broader <SpecificAccessRestrictionAuthorityList/PRMPA> .
+
+<SpecificAccessRestrictionAuthorityList/PRMPANonHistoricalInformationH>  a skos:Concept ;
+    skos:prefLabel "PRMPA - Non-Historical Information (H)"@en ;
+    skos:scopeNote "Use for archival materials from the Nixon Presidential Materials whose release would disclose non-historical material."@en ;
+    skos:inScheme :SpecificAccessRestrictionAuthorityList ;
+    skos:broader <SpecificAccessRestrictionAuthorityList/PRMPA>.
+
+<SpecificAccessRestrictionAuthorityList/PRMPAPersonalInformationG>  a skos:Concept ;
+    skos:prefLabel "PRMPA - Personal Information (G)"@en ;
+    skos:scopeNote "Use for archival materials from the Nixon Presidential Materials whose release would disclose private or personal material."@en ;
+    skos:inScheme :SpecificAccessRestrictionAuthorityList ;
+    skos:broader <SpecificAccessRestrictionAuthorityList/PRMPA> .
+
+<SpecificAccessRestrictionAuthorityList/PRMPAPersonalPrivacyD>  a skos:Concept ;
+    skos:prefLabel "PRMPA - Personal Privacy (D)"@en ;
+    skos:scopeNote "Use for archival materials from the Nixon Presidential Materials whose release would constitute a clearly unwarranted invasion of privacy or libel of a living person."@en ;
+    skos:inScheme :SpecificAccessRestrictionAuthorityList ;
+    skos:broader <SpecificAccessRestrictionAuthorityList/PRMPA> .
+
+<SpecificAccessRestrictionAuthorityList/PRMPAStatuteA>  a skos:Concept ;
+    skos:prefLabel "PRMPA - Statute (A)"@en ;
+    skos:scopeNote "Use for archival materials from the Nixon Presidential Materials whose release would violate a Federal Statute or agency policy."@en ;
+    skos:inScheme :SpecificAccessRestrictionAuthorityList ;
+    skos:broader <SpecificAccessRestrictionAuthorityList/PRMPA> .
+
+<SpecificAccessRestrictionAuthorityList/PRMPATradeSecretsE>  a skos:Concept ;
+    skos:prefLabel "PRMPA - Trade Secrets and Commercial or Financial Information (E)"@en ;
+    skos:scopeNote "Use for archival materials from the Nixon Presidential Materials whose release would disclose trade secrets or confidential commercial or financial information."@en ;
+    skos:inScheme :SpecificAccessRestrictionAuthorityList ;
+    skos:broader <SpecificAccessRestrictionAuthorityList/PRMPA> .
+
+<SpecificAccessRestrictionAuthorityList/Senate>  a skos:Concept ;
+    skos:prefLabel "Senate"@en ;
+    skos:scopeNote "Use for archival materials from the Senate that are subject to restrictions imposed by the Senate. Explain the restrictions and specific closure periods in the Access Restriction Note."@en ;
+    skos:inScheme :SpecificAccessRestrictionAuthorityList .
+
+<SpecificAccessRestrictionAuthorityList/Other>  a skos:Concept ;
+    skos:prefLabel "Other"@en ;
+    skos:scopeNote "Use for archival materials whose specific access restriction is not included in this list. Explain the access restriction further in the Access Restriction Note."@en ;
+    skos:inScheme :SpecificAccessRestrictionAuthorityList   .
+
+:SecurityClassificationAuthorityList  a skos:ConceptScheme ;
+    skos:prefLabel "Security Classification Authority List"@en ;
+    dcterms:source <https://www.archives.gov/research/catalog/lcdrg/authority_lists/securitylist.html> .  
+
+<SecurityClassificationAuthorityList/Confidential>  a skos:Concept ;
+    skos:prefLabel "Confidential"@en ;
+    skos:scopeNote "Use for archival materials that contain Confidential information."@en ;
+    skos:inScheme :SecurityClassificationAuthorityList .
+
+<SecurityClassificationAuthorityList/RestrictedDataFormerlyRestrictedData>  a skos:Concept ;
+    skos:prefLabel "Restricted Data/Formerly Restricted Data"@en ;
+    skos:scopeNote "Use for archival materials that contain Restricted Data or Formerly Restricted Data information."@en ;
+    skos:inScheme :SecurityClassificationAuthorityList .
+
+<SecurityClassificationAuthorityList/Secret>  a skos:Concept ;
+    skos:prefLabel "Secret"@en ;
+    skos:scopeNote "Use for archival materials that contain Secret information."@en ;
+    skos:inScheme :SecurityClassificationAuthorityList .
+
+<SecurityClassificationAuthorityList/TopSecret>  a skos:Concept ;
+    skos:prefLabel "Top Secret"@en ;
+    skos:scopeNote "Use for archival materials that contain Top Secret information."@en ;
+    skos:inScheme :SecurityClassificationAuthorityList .
+
+<SecurityClassificationAuthorityList/Unmarked>  a skos:Concept ;
+    skos:prefLabel "Unmarked"@en ;
+    skos:scopeNote "Use for archival materials that contain security classified information, but have no markings indicating the level of classification."@en ;
+    skos:inScheme :SecurityClassificationAuthorityList .
+
+
+:UseRestrictionStatusAuthorityList a skos:ConceptScheme ;
+    skos:prefLabel "Use Restriction Status Authority List"@en ;
+    dcterms:source <https://www.archives.gov/research/catalog/lcdrg/authority_lists/uselist.html> .
+
+<UseRestrictionStatusAuthorityList/RestrictedFully>  a skos:Concept ;
+    skos:prefLabel "Restricted - Fully"@en ;
+    skos:scopeNote "Use if all the archival materials have either a copyright, donor, or other use restriction."@en ;
+    skos:inScheme :UseRestrictionStatusAuthorityList .
+
+<UseRestrictionStatusAuthorityList/RestrictedPartly>  a skos:Concept ;
+    skos:prefLabel "Restricted - Partly"@en ;
+    skos:scopeNote "Use if some of the archival materials have a use restriction."@en ;
+    skos:inScheme :UseRestrictionStatusAuthorityList .
+
+<UseRestrictionStatusAuthorityList/RestrictedPossibly>  a skos:Concept ;
+    skos:prefLabel "Restricted - Possibly"@en ;
+    skos:scopeNote "Use if the archival materials may have a use restriction."@en ;
+    skos:inScheme :UseRestrictionStatusAuthorityList .
+
+<UseRestrictionStatusAuthorityList/Undetermined>  a skos:Concept ;
+    skos:prefLabel "Undetermined"@en ;
+    skos:scopeNote "Use when it is unknown if the archival materials have a use restriction."@en ;
+    skos:inScheme :UseRestrictionStatusAuthorityList .
+
+<UseRestrictionStatusAuthorityList/Unrestricted>  a skos:Concept ;
+    skos:prefLabel "Unrestricted"@en ;
+    skos:scopeNote "Use if there are no copyright, donor, or other use restrictions on the archival materials."@en ;
+    skos:inScheme :UseRestrictionStatusAuthorityList .
+
+:SpecificUseRestrictionAuthorityList  a skos:ConceptScheme ;
+    skos:prefLabel "Specific Use Restriction Authority List"@en ;
+    dcterms:source <https://www.archives.gov/research/catalog/lcdrg/authority_lists/specificuselist.html> .  
+
+<SpecificUseRestrictionAuthorityList/Copyright>  a skos:Concept ;
+    skos:prefLabel "Copyright"@en ;
+    skos:scopeNote "Use if the archival materials have a copyright restriction regarding their use. If necessary, explain the copyright restriction further in Use Restriction Note."@en ;
+    skos:inScheme :SpecificUseRestrictionAuthorityList .
+
+<SpecificUseRestrictionAuthorityList/DonorRestrictions>  a skos:Concept ;
+    skos:prefLabel "Donor Restrictions"@en ;
+    skos:scopeNote "Use if the archival materials have a donor restriction regarding their use. Explain the donor restriction further in Use Restriction Note."@en ;
+    skos:inScheme :SpecificUseRestrictionAuthorityList .
+
+<SpecificUseRestrictionAuthorityList/PublicLaw101_246>  a skos:Concept ;
+    skos:prefLabel "Public Law 101-246"@en ;
+    skos:scopeNote "Issued February 16, 1990, this law provides for the domestic release and distribution of U.S. Information Agency motion pictures, films, videotapes, and other materials 12 years after initial dissemination overseas, or, if not disseminated, 12 years from the preparation of the material."@en ;
+    skos:inScheme :SpecificUseRestrictionAuthorityList .
+
+<SpecificUseRestrictionAuthorityList/ServiceMark>  a skos:Concept ;
+    skos:prefLabel "Service Mark"@en ;
+    skos:scopeNote "Use if the archival materials have a service mark restriction regarding their use. If necessary, explain the service mark restriction further in Use Restriction Note."@en ;
+    skos:inScheme :SpecificUseRestrictionAuthorityList .
+
+<SpecificUseRestrictionAuthorityList/Trademark>  a skos:Concept ;
+    skos:prefLabel "Trademark"@en ;
+    skos:scopeNote "Use if the archival materials have a trademark restriction regarding their use. If necessary, explain the trademark restriction further in Use Restriction Note."@en ;
+    skos:inScheme :SpecificUseRestrictionAuthorityList .
+
+<SpecificUseRestrictionAuthorityList/Other>  a skos:Concept ;
+    skos:prefLabel "Other"@en ;
+    skos:scopeNote "Use for archival materials whose use restriction is not included in this list. Explain the specific use restriction further in Use Restriction Note."@en ;
+    skos:inScheme :SpecificUseRestrictionAuthorityList .

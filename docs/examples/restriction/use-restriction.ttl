@@ -1,9 +1,31 @@
+@prefix ex: <http://example.org/> .
+@prefix dcat-us: <https://data.resources.gov/ontology/dcat-us#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
 ex:UseRestriction1  a dcat-us:AccessRestriction;
-  dcat-us:status us-status:RestrictedPossibly;
+  dcat-us:restrictionStatus  <https://data.resources.gov/vocab/nara/UseRestrictionStatusAuthorityList/RestrictedPossibly>;
   dcat-us:restrictionNote "Some or all of the images in this series may be subject to copyright or other intellectual property restrictions.";
-  dcat-us:authority "Copyright";
+  dcat-us:specificRestriction <https://data.resources.gov/vocab/nara/SpecificUseRestrictionAuthorityList/Copyright> ;
 .
 
 ex:UnrestrictedUseRestriction a dcat-us:UseRestriction;
-    dcat-us:status usr-status:Unrestricted;
-.    
+    dcat-us:restrictionStatus <https://data.resources.gov/vocab/nara/UseRestrictionStatusAuthorityList/Unrestricted>;
+.  
+
+# The following concepts are typically accessible though a central registry. Added for convenience
+
+<https://data.resources.gov/vocab/nara/UseRestrictionStatusAuthorityList/RestrictedPossibly>  a skos:Concept ;
+    skos:prefLabel "Restricted - Possibly"@en ;
+    skos:scopeNote "Use if the archival materials may have a use restriction."@en ;
+    skos:inScheme <https://data.resources.gov/vocab/nara/UseRestrictionStatusAuthorityList> .
+
+<https://data.resources.gov/vocab/nara/UseRestrictionStatusAuthorityList/Unrestricted>  a skos:Concept ;
+    skos:prefLabel "Unrestricted"@en ;
+    skos:scopeNote "Use if there are no copyright, donor, or other use restrictions on the archival materials."@en ;
+    skos:inScheme <https://data.resources.gov/vocab/nara/UseRestrictionStatusAuthorityList> .
+
+<https://data.resources.gov/vocab/nara/SpecificUseRestrictionAuthorityList/Copyright>  a skos:Concept ;
+    skos:prefLabel "Copyright"@en ;
+    skos:scopeNote "Use if the archival materials have a copyright restriction regarding their use. If necessary, explain the copyright restriction further in Use Restriction Note."@en ;
+    skos:inScheme <https://data.resources.gov/vocab/nara/SpecificUseRestrictionAuthorityList> .
+ 
