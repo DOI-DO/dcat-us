@@ -1037,8 +1037,8 @@
       <table class="def">
         <tr>
           <th>RDF Class:</th>
-          <td><a href="http://TBD#AccessRestriction"><code
-                title="http://TBD#AccessRestriction">dcat-us:AccessRestriction</code></a></td>
+          <td><a href="http://data.resources.gov/ontology/dcat-us#AccessRestriction"><code
+                title="http://data.resources.gov/ontology/dcat-us#AccessRestriction">dcat-us:AccessRestriction</code></a></td>
         </tr>
         <tr>
           <th class="prop">Definition:</th>
@@ -1089,7 +1089,7 @@
         <tbody>
           <tr>
             <td><a href="#access_restriction-restriction_status">restriction status</a></td>
-            <td><a href="http://TBD#restrictionStatus"><code>dcat-us:restrictionStatus</code></a>
+            <td><a href="http://data.resources.gov/ontology/dcat-us#restrictionStatus"><code>dcat-us:restrictionStatus</code></a>
             </td>
             <td><a data-cite="XMLSCHEMA11-2#string"><code>skos:Concept</code></a>
             </td>
@@ -1097,16 +1097,16 @@
             <td>1..1</td>
           </tr>
           <tr>
-            <td><a href="#access_restriction-authority">restriction authority</a></td>
-            <td><a href="http://TBD#authority"><code>dcat-us:authority</code></a>
+            <td><a href="#access_restriction-specific_restriction">specific restriction</a></td>
+            <td><a href="http://data.resources.gov/ontology/dcat-us#specificRestriction"><code>dcat-us:specificRestriction</code></a>
             </td>
-            <td><a href="https://www.w3.org/TR/vocab-org/#org:Organization"><code>org:Organization</code></a>
+            <td><td><a data-cite="SKOS-REFERENCE#concepts"><code>skos:Concept</code></a>
             <td><strong>R</strong></td>
             <td>0..1</td>
           </tr>
           <tr>
             <td><a href="#access_restriction-restriction_note">restriction note</a></td>
-            <td><a href="http://TBD#restrictionNote"><code>dcat-us:restrictionNote</code></a>
+            <td><a href="http://data.resources.gov/ontology/dcat-us#restrictionNote"><code>dcat-us:restrictionNote</code></a>
             </td>
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
             <td><strong>O</strong></td>
@@ -1136,7 +1136,7 @@
               </tr>
               <tr>
                 <th>URI</th>
-                <td><a href="http://TBD#restrictionStatus"><code>dcat-us:restrictionStatus</code></a>
+                <td><a href="http://data.resources.gov/ontology/dcat-us#restrictionStatus"><code>dcat-us:restrictionStatus</code></a>
                 </td>
               </tr>
               <tr>
@@ -1155,15 +1155,15 @@
 
       <section id="access_restriction-recommended-props">
         <h3>Recommended Properties</h3>
-        <section id="access_restriction-authority">
+        <section id="access_restriction-specific_restriction">
 
-          <h4>Property: restriction authority</h4>
+          <h4>Property: specific restriction</h4>
           <aside class="note">Property added in DCAT-US 3.0</aside>
           <table class="def">
             <tbody>
               <tr>
                 <th>Property</th>
-                <td>restriction authority</td>
+                <td>specific restriction</td>
               </tr>
               <tr>
                 <th>Requirement level</th>
@@ -1175,12 +1175,12 @@
               </tr>
               <tr>
                 <th>URI</th>
-                <td><a href="http://TBD#authority"><code>dcat-us:authority</code></a>
+                <td><a href="http://data.resources.gov/ontology/dcat-us#specificRestriction"><code>dcat-us:specificRestriction</code></a>
                 </td>
               </tr>
               <tr>
                 <th>Range</th>
-                <td><a href="https://www.w3.org/TR/vocab-org/#org:Organization"><code>org:Organization</code></a>
+                <td><a data-cite="SKOS-REFERENCE#concepts"><code>skos:Concept</code></a>
                 </td>
               </tr>
               <tr>
@@ -1213,7 +1213,7 @@
               </tr>
               <tr>
                 <th>URI</th>
-                <td><a href="http://TBD#restrictionNote"><code>dcat-us:restrictionNote</code></a>
+                <td><a href="http://data.resources.gov/ontology/dcat-us#restrictionNote"><code>dcat-us:restrictionNote</code></a>
                 </td>
               </tr>
               <tr>
@@ -5516,7 +5516,7 @@
     <table class="def">
       <tr>
         <th>RDF Class:</th>
-        <td><a href="http://TBD#CuiRestriction"><code>dcat-us:CuiRestriction</code></a></td>
+        <td><a href="http://data.resources.gov/ontology/dcat-us#CuiRestriction"><code>dcat-us:CuiRestriction</code></a></td>
       </tr>
       <tr>
         <th class="prop">Definition:</th>
@@ -5541,7 +5541,7 @@
         <th class="prop">Rationale:</th>
         <td>
 
-          The introduction of the <a href="http://TBD#CuiRestriction"><code>dcat-us:CuiRestriction</code></a> class in
+          The introduction of the <a href="http://data.resources.gov/ontology/dcat-us#CuiRestriction"><code>dcat-us:CuiRestriction</code></a> class in
           DCAT-US 3.0 is driven by the need for compliance with National Archives and Records Administration (NARA)
           guidelines regarding Controlled Unclassified Information (CUI). This addition ensures that DCAT-US aligns
           with NARA's standards, promotes transparency, facilitates compliance audits, and supports efficient resource
@@ -5566,7 +5566,7 @@
       <tbody>
         <tr>
           <td><a href="#cui_restriction-cui_banner_marking">cui banner marking</a></td>
-          <td><a href="http://TBD#cuiBannerMarking"><code>dcat-us:cuiBannerMarking</code></a>
+          <td><a href="http://data.resources.gov/ontology/dcat-us#cuiBannerMarking"><code>dcat-us:cuiBannerMarking</code></a>
           </td>
           <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a>
           </td>
@@ -5575,7 +5575,7 @@
         </tr>
         <tr>
           <td><a href="#cui_restriction-designation_indicator">cui designation indicator</a></td>
-          <td><a href="http://TBD#designationIndicator"><code>dcat-us:designationIndicator</code></a>
+          <td><a href="http://data.resources.gov/ontology/dcat-us#designationIndicator"><code>dcat-us:designationIndicator</code></a>
           </td>
           <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a>
           </td>
@@ -5584,7 +5584,7 @@
         </tr>
         <tr>
           <td><a href="#cui_restriction-required_indicator_per_authority">required indicator per authority</a></td>
-          <td><a href="http://TBD#requiredIndicatorPerAuthority"><code>dcat-us:requiredIndicatorPerAuthority</code></a>
+          <td><a href="http://data.resources.gov/ontology/dcat-us#requiredIndicatorPerAuthority"><code>dcat-us:requiredIndicatorPerAuthority</code></a>
           </td>
           <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a>
           </td>
@@ -5614,7 +5614,7 @@
             </tr>
             <tr>
               <th>URI</th>
-              <td><a href="http://TBD#cuiBannerMarking"><code>dcat-us:cuiBannerMarking</code></a>
+              <td><a href="http://data.resources.gov/ontology/dcat-us#cuiBannerMarking"><code>dcat-us:cuiBannerMarking</code></a>
               </td>
             </tr>
             <tr>
@@ -5648,7 +5648,7 @@
             </tr>
             <tr>
               <th>URI</th>
-              <td><a href="http://TBD#designationIndicator"><code>dcat-us:designationIndicator</code></a>
+              <td><a href="http://data.resources.gov/ontology/dcat-us#designationIndicator"><code>dcat-us:designationIndicator</code></a>
               </td>
             </tr>
             <tr>
@@ -5689,7 +5689,7 @@
             <tr>
               <th>URI</th>
               <td><a
-                  href="http://TBD#requiredIndicatorPerAuthority"><code>dcat-us:requiredIndicatorPerAuthority</code></a>
+                  href="http://data.resources.gov/ontology/dcat-us#requiredIndicatorPerAuthority"><code>dcat-us:requiredIndicatorPerAuthority</code></a>
               </td>
             </tr>
             <tr>
@@ -7789,10 +7789,10 @@
               </tr> -->
         <tr>
           <td><a href="#dataset-program">program</a></td>
-          <td><a href="http://TBD#program">
+          <td><a href="http://data.resources.gov/ontology/dcat-us#program">
               <code>dcat-us:program</code></a>
           </td>
-          <td><a href="http://TBD#Program">
+          <td><a href="http://data.resources.gov/ontology/dcat-us#Program">
               <code>dcat-us:Program</code></a>
           </td>
           <td>O</td>
@@ -7801,10 +7801,10 @@
         </tr>
         <tr>
           <td><a href="#dataset-investment">investment</a></td>
-          <td><a href="http://TBD#investment">
+          <td><a href="http://data.resources.gov/ontology/dcat-us#investment">
               <code>dcat-us:investment</code></a>
           </td>
-          <td><a href="http://TBD#Investment">
+          <td><a href="http://data.resources.gov/ontology/dcat-us#Investment">
               <code>dcat-us:Investment</code></a>
           </td>
           <td>O</td>
@@ -7813,10 +7813,10 @@
         </tr>
         <tr>
           <td><a href="#dataset-applicableLegislation">application legislation</a></td>
-          <td><a href="http://TBD#applicableLegislation">
+          <td><a href="http://data.resources.gov/ontology/dcat-us#applicableLegislation">
               <code>dcat-us:applicableLegislation</code></a>
           </td>
-          <td><a href="http://TBD#Legislation">
+          <td><a href="http://data.resources.gov/ontology/dcat-us#Legislation">
               <code>dcat-us:Legislation</code></a>
           </td>
           <td>O</td>
@@ -7835,7 +7835,7 @@
         </tr>
         <tr>
           <td><a href="#dataset-metadataDistribution">metadata distribution</a></td>
-          <td><a href="http://TBD#metadataDistribution">
+          <td><a href="http://data.resources.gov/ontology/dcat-us#metadataDistribution">
               <code>dcat-us:metadataDistribution</code></a>
           </td>
           <td><a data-cite="VOCAB-DCAT-3#Class:Distribution"><code>dcat:Distribution</code></a>
@@ -7848,7 +7848,7 @@
           <td><a href="#dataset-liability_statement">liability statement</a></td>
           <td><a href="#dataset-liability_statement"><code>dcat-us:liabilityStatement</code></a>
           </td>
-          <td><a href="http://TBD#LiabilityStatement">
+          <td><a href="http://data.resources.gov/ontology/dcat-us#LiabilityStatement">
               <code>dcat-us:LiabilityStatement</code></a>
           </td>
           <td>O</td>
@@ -7857,7 +7857,7 @@
         </tr>
         <tr>
           <td><a href="#dataset-purpose">purpose</a></td>
-          <td><a href="http://TBD#purpose">
+          <td><a href="http://data.resources.gov/ontology/dcat-us#purpose">
               <code>dcat-us:purpose</code></a>
           </td>
           <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
@@ -9639,13 +9639,13 @@
             </tr>
             <tr>
               <th>URI</th>
-              <td><a href="http://TBD#program">
+              <td><a href="http://data.resources.gov/ontology/dcat-us#program">
                   <code>dcat-us:program</code></a>
               </td>
             </tr>
             <tr>
               <th>Range</th>
-              <td><a href="http://TBD#Pgraom">
+              <td><a href="http://data.resources.gov/ontology/dcat-us#Pgraom">
                   <code>dcat-us:Program</code></a>
               </td>
             </tr>
@@ -9680,14 +9680,14 @@
             </tr>
             <tr>
               <th>URI</th>
-              <td><a href="http://TBD#investment">
+              <td><a href="http://data.resources.gov/ontology/dcat-us#investment">
                   <code>dcat-us:investment</code></a>
               </td>
 
             </tr>
             <tr>
               <th>Range</th>
-              <td><a href="http://TBD#Investment">
+              <td><a href="http://data.resources.gov/ontology/dcat-us#Investment">
                   <code>dcat-us:Investment</code></a>
               </td>
             </tr>
@@ -9722,14 +9722,14 @@
             </tr>
             <tr>
               <th>URI</th>
-              <td><a href="http://TBD#applicableLegislation">
+              <td><a href="http://data.resources.gov/ontology/dcat-us#applicableLegislation">
                   <code>dcat-us:applicableLegislation</code></a>
               </td>
 
             </tr>
             <tr>
               <th>Range</th>
-              <td><a href="http://TBD#Legislation">
+              <td><a href="http://data.resources.gov/ontology/dcat-us#Legislation">
                   <code>dcat-us:Legislation</code></a>
               </td>
             </tr>
@@ -9804,7 +9804,7 @@
             </tr>
             <tr>
               <th>URI</th>
-              <td><a href="http://TBD#metadataDistribution">
+              <td><a href="http://data.resources.gov/ontology/dcat-us#metadataDistribution">
                   <code>dcat-us:metadataDistribution</code></a>
               </td>
 
@@ -9848,7 +9848,7 @@
             </tr>
             <tr>
               <th>Range</th>
-              <td><a href="http://TBD#LiabilityStatement">
+              <td><a href="http://data.resources.gov/ontology/dcat-us#LiabilityStatement">
                   <code>dcat-us:LiabilityStatement</code></a>
               </td>
             </tr>
@@ -9880,7 +9880,7 @@
             </tr>
             <tr>
               <th>URI</th>
-              <td><a href="http://TBD#purpose">
+              <td><a href="http://data.resources.gov/ontology/dcat-us#purpose">
                   <code>dcat-us:purpose</code></a>
               </td>
             </tr>
@@ -10873,10 +10873,10 @@
         </tr>
         <tr>
           <td><a href="#distribution-access_restriction">access Restriction</a></td>
-          <td><a href="http://TBD#accessRestriction">
+          <td><a href="http://data.resources.gov/ontology/dcat-us#accessRestriction">
               <code>dcat-us:accessRestriction</code></a>
           </td>
-          <td><a href="http://TBD#AccessRestriction">
+          <td><a href="http://data.resources.gov/ontology/dcat-us#AccessRestriction">
               <code>dcat-us:AccessRestriction</code></a>
           </td>
           <td>R</td>
@@ -10885,10 +10885,10 @@
         </tr>
         <tr>
           <td><a href="#distribution-use_restriction">usage restriction</a></td>
-          <td><a href="http://TBD#useRestriction">
+          <td><a href="http://data.resources.gov/ontology/dcat-us#useRestriction">
               <code>dcat-us:useRestriction</code></a>
           </td>
-          <td><a href="http://TBD#UseRestriction">
+          <td><a href="http://data.resources.gov/ontology/dcat-us#UseRestriction">
               <code>dcat-us:UseRestriction</code></a>
           </td>
           <td>R</td>
@@ -10897,10 +10897,10 @@
         </tr>
         <tr>
           <td><a href="#distribution-cui_restriction">cui Restriction</a></td>
-          <td><a href="http://TBD#cuiRestriction">
+          <td><a href="http://data.resources.gov/ontology/dcat-us#cuiRestriction">
               <code>dcat-us:cuiRestriction</code></a>
           </td>
-          <td><a href="http://TBD#CuiRestriction">
+          <td><a href="http://data.resources.gov/ontology/dcat-us#CuiRestriction">
               <code>dcat-us:CuiRestriction</code></a>
           </td>
           <td>R</td>
@@ -11419,11 +11419,11 @@
             </tr>
             <tr>
               <th>URI</th>
-              <td><a href="http://TBD#accessRestriction"><code>dcat-us:accessRestriction</code></a></td>
+              <td><a href="http://data.resources.gov/ontology/dcat-us#accessRestriction"><code>dcat-us:accessRestriction</code></a></td>
             </tr>
             <tr>
               <th>Range</th>
-              <td><a href="http://TBD#AccessRestriction">
+              <td><a href="http://data.resources.gov/ontology/dcat-us#AccessRestriction">
                   <code>dcat-us:AccessRestriction</code></a>
               </td>
             </tr>
@@ -11459,11 +11459,11 @@
             </tr>
             <tr>
               <th>URI</th>
-              <td><a href="http://TBD#useRestriction"><code>dcat-us:useRestriction</code></a></td>
+              <td><a href="http://data.resources.gov/ontology/dcat-us#useRestriction"><code>dcat-us:useRestriction</code></a></td>
             </tr>
             <tr>
               <th>Range</th>
-              <td><a href="http://TBD#UseRestriction">
+              <td><a href="http://data.resources.gov/ontology/dcat-us#UseRestriction">
                   <code>dcat-us:UseRestriction</code></a>
               </td>
             </tr>
@@ -11499,11 +11499,11 @@
             </tr>
             <tr>
               <th>URI</th>
-              <td><a href="http://TBD#cuiRestriction"><code>dcat-us:cuiRestriction</code></a></td>
+              <td><a href="http://data.resources.gov/ontology/dcat-us#cuiRestriction"><code>dcat-us:cuiRestriction</code></a></td>
             </tr>
             <tr>
               <th>Range</th>
-              <td><a href="http://TBD#CUIRestriction">
+              <td><a href="http://data.resources.gov/ontology/dcat-us#CUIRestriction">
                   <code>dcat-us:CUIRestriction</code></a>
               </td>
             </tr>
@@ -13798,7 +13798,7 @@
     <table class="def" id="table-class-liability_statement">
       <tr>
         <th>RDF Class:</th>
-        <td><a href="http://TBD#LiabilityStatement"><code>dcat-us:LiabilityStatement</code></a></td>
+        <td><a href="http://data.resources.gov/ontology/dcat-us#LiabilityStatement"><code>dcat-us:LiabilityStatement</code></a></td>
       </tr>
       <tr>
         <th class="prop">Definition:</th>
@@ -13834,7 +13834,7 @@
       </tr>
       <tr>
         <th class="prop">Rationale</th>
-        <td>Introducing <a href="http://TBD#LiabilityStatement"><code>dcat-us:LiabilityStatement</code></a> in DCAT-US
+        <td>Introducing <a href="http://data.resources.gov/ontology/dcat-us#LiabilityStatement"><code>dcat-us:LiabilityStatement</code></a> in DCAT-US
           clarifies data provider responsibilities and limitations, reducing legal risks by defining acceptable uses
           and disclaiming warranties. This ensures transparency and legal compliance in data sharing within the United
           States.</td>
@@ -15499,7 +15499,7 @@
     <table class="def" id="table-class-program">
       <tr>
         <th>RDF Class:</th>
-        <td><a data-cite="http://TBD#Program"><code>dcat-us:Program</code></a></td>
+        <td><a data-cite="http://data.resources.gov/ontology/dcat-us#Program"><code>dcat-us:Program</code></a></td>
       </tr>
       <tr>
         <th>Obligation</th>
@@ -15522,7 +15522,7 @@
           it was constrained by its inability to host additional metadata, such as the program's description,
           applicable legislation, or other pertinent details. This limitation hindered the comprehensive
           representation and discoverability of program-related data. The introduction of a <a
-            data-cite="http://TBD#Program"><code>dcat-us:Program</code></a> class in DCAT-US seeks to overcome this by
+            data-cite="http://data.resources.gov/ontology/dcat-us#Program"><code>dcat-us:Program</code></a> class in DCAT-US seeks to overcome this by
           providing an extensible mechanism that not only accommodates detailed metadata about a program but also
           strategically positions the schema for future extensions and adaptations. This means that as the
           requirements for data representation evolve, the "Program" class can be seamlessly expanded to incorporate
@@ -16731,7 +16731,7 @@
     <table class="def">
       <tr>
         <th>RDF Class:</th>
-        <td><a href="http://TBD#UseRestriction"><code>dcat-us:UseRestriction</code></a></td>
+        <td><a href="http://data.resources.gov/ontology/dcat-us#UseRestriction"><code>dcat-us:UseRestriction</code></a></td>
       </tr>
       <tr>
         <th class="prop">Definition:</th>
@@ -16743,7 +16743,7 @@
       <tr>
         <th class="prop">Usage note:</th>
         <td>
-          When utilizing the <a href="http://TBD#UseRestriction"><code>dcat-us:UseRestriction</code></a> class, data
+          When utilizing the <a href="http://data.resources.gov/ontology/dcat-us#UseRestriction"><code>dcat-us:UseRestriction</code></a> class, data
           publishers are encouraged to provide comprehensive and precise details regarding the specific use
           restrictions applied to a resource. This may include information on access limitations, distribution rules,
           reproduction guidelines, modification constraints, and any other pertinent restrictions. Adherence to NARA
@@ -16755,7 +16755,7 @@
       </tr>
       <tr>
         <th>Rationale:</th>
-        <td>The introduction of <a href="http://TBD#UseRestriction"><code>dcat-us:UseRestriction</code></a> in DCAT-US
+        <td>The introduction of <a href="http://data.resources.gov/ontology/dcat-us#UseRestriction"><code>dcat-us:UseRestriction</code></a> in DCAT-US
           3.0, aligned with NARA (National Archives and
           Records Administration) guidelines, enhances compliance and interoperability with NARA-specific use
           restriction standards. This enables organizations to accurately convey NARA-specific restrictions on data
@@ -16779,7 +16779,7 @@
       <tbody>
         <tr>
           <td><a href="#use_restriction-restriction_status">restriction status</a></td>
-          <td><a href="http://TBD#restrictionStatus"><code>dcat-us:restrictionStatus</code></a>
+          <td><a href="http://data.resources.gov/ontology/dcat-us#restrictionStatus"><code>dcat-us:restrictionStatus</code></a>
           </td>
           <td><a data-cite="SKOS-REFERENCE#concepts"><code>skos:Concept</code></a>
           </td>
@@ -16787,16 +16787,16 @@
           <td>1..1</td>
         </tr>
         <tr>
-          <td><a href="#use_restriction-authority">restriction authority</a></td>
-          <td><a href="http://TBD#authority"><code>dcat-us:authority</code></a>
+          <td><a href="#use_restriction-authority">specific restriction</a></td>
+          <td><a href="http://data.resources.gov/ontology/dcat-us#specificRestriction"><code>dcat-us:specificRestriction</code></a>
           </td>
-          <td><a href="https://www.w3.org/TR/vocab-org/#org:Organization"><code>org:Organization</code></a>
+          <td><a data-cite="SKOS-REFERENCE#concepts"><code>skos:Concept</code></a>
           <td><strong>R</strong></td>
           <td>0..1</td>
         </tr>
         <tr>
           <td><a href="#use_restriction-restriction_note">restriction note</a></td>
-          <td><a href="http://TBD#restrictionNote"><code>dcat-us:restrictionNote</code></a>
+          <td><a href="http://data.resources.gov/ontology/dcat-us#restrictionNote"><code>dcat-us:restrictionNote</code></a>
           </td>
           <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
           <td><strong>O</strong></td>
@@ -16824,7 +16824,7 @@
             </tr>
             <tr>
               <th>URI</th>
-              <td><a href="http://TBD#restrictionStatus"><code>dcat-us:restrictionStatus</code></a>
+              <td><a href="http://data.resources.gov/ontology/dcat-us#restrictionStatus"><code>dcat-us:restrictionStatus</code></a>
               </td>
             </tr>
             <tr>
@@ -16861,12 +16861,12 @@
             </tr>
             <tr>
               <th>URI</th>
-              <td><a href="http://TBD#authority"><code>dcat-us:authority</code></a>
+              <td><a href="http://data.resources.gov/ontology/dcat-us#specificRestriction"><code>dcat-us:specificRestriction</code></a>
               </td>
             </tr>
             <tr>
               <th>Range</th>
-              <td><a href="https://www.w3.org/TR/vocab-org/#org:Organization"><code>org:Organization</code></a>
+              <td><a data-cite="SKOS-REFERENCE#concepts"><code>skos:Concept</code></a>
               </td>
             </tr>
             <tr>
@@ -16898,7 +16898,7 @@
             </tr>
             <tr>
               <th>URI</th>
-              <td><a href="http://TBD#restrictionNote"><code>dcat-us:restrictionNote</code></a>
+              <td><a href="http://data.resources.gov/ontology/dcat-us#restrictionNote"><code>dcat-us:restrictionNote</code></a>
               </td>
             </tr>
             <tr>

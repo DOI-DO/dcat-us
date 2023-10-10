@@ -1,3 +1,8 @@
+body {
+    width: 100%; /* Change to your desired width */
+    /* other styles */
+}
+
 /* for mermaid diagrams */
 
 g.classGroup text {
