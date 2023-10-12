@@ -1,11 +1,11 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 
 <https://doi.org/10.7265/N5K072F8>
   a dcat:Dataset ;
 
   # mandatory property 
-  dct:description """The <a href="/data/seaice_index/">Sea Ice Index</a> provides 
+  dcterms:description """The <a href="/data/seaice_index/">Sea Ice Index</a> provides 
   a quick look at Arctic- and Antarctic-wide changes in sea ice. It is a source for 
   consistent, up-to-date sea ice extent and concentration images, in PNG format, 
   and data values, in GeoTIFF and ASCII text files, from November 1978 to the present. 

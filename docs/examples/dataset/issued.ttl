@@ -1,7 +1,7 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://canton.zh/opendata/catalog/treedataset>
   a dcat:Dataset ;
-  dct:issued "2021-04-26"^^xsd:date .
+  dcterms:issued "2021-04-26"^^xsd:date .

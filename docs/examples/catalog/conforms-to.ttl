@@ -3,5 +3,5 @@
 
 <https://uscensus.gov/Catalog1>
   a dcat:Catalog ;
-  dct:conformsTo <http://resource.data.gov/profile/dcat-us#> ;
+  dcterms:conformsTo <http://resource.data.gov/profile/dcat-us#> ;
 .

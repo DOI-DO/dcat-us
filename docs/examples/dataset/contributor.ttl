@@ -7,7 +7,7 @@
 <https://doi.org/10.7265/N5K072F8>
   a dcat:Dataset ;
   # contributor of the resource          
-  dct:contributor <https://orcid.org/0000-0002-0693-466X>.
+  dcterms:contributor <https://orcid.org/0000-0002-0693-466X>.
 
 
 <https://orcid.org/0000-0002-0693-466X> a foaf:Person.

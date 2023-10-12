@@ -7,5 +7,5 @@
 
     
 [] a dcat:Distribution ;
-  dct:format [ a dct:MediaType ;
+  dcterms:format [ a dcterms:MediaType ;
       rdfs:label "Geopackage" ] .

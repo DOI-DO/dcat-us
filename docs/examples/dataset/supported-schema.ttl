@@ -1,25 +1,25 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix adms: <http://www.w3.org/ns/adms#> .
 @prefix ex: <http://example.org/ns#> .
 
 # Define the ISO 19139 dataset
 ex:ISO19139Dataset a dcat:Dataset ;
-    dct:title "Geographic Dataset following ISO 19139" ;
-    dct:description "This dataset contains geographic metadata and is compliant with the ISO 19139 standard." ;
+    dcterms:title "Geographic Dataset following ISO 19139" ;
+    dcterms:description "This dataset contains geographic metadata and is compliant with the ISO 19139 standard." ;
     dcat:distribution ex:ISO19139DataDistribution ;
     adms:supportedSchema ex:ISO19139Schema .
 
 # Define the distribution of the dataset
 ex:ISO19139DataDistribution a dcat:Distribution ;
     dcat:accessURL <http://example.org/data/iso19139-dataset.xml> ;
-    dct:format <https://www.iana.org/assignments/media-types/application/xml> ;
-    dct:conformsTo <http://www.isotc211.org/2005/gmd> .
+    dcterms:format <https://www.iana.org/assignments/media-types/application/xml> ;
+    dcterms:conformsTo <http://www.isotc211.org/2005/gmd> .
 
 # Define the supported ISO 19139 schema
 ex:ISO19139Schema a dcat:Dataset ;
-    dct:title "ISO 19139:2007 - Geographic Information Metadata XML Schema Implementation" ;
-    dct:description "This is the XML Schema implementation of ISO 19139:2007 standard for geographic information metadata." ;
-    dct:identifier "ISO 19139" ;
-    dct:type <http://data.gov/vocab/resource-type/Schema> 
-    dct:conformsTo <http://www.isotc211.org/2005/gmd> .
+    dcterms:title "ISO 19139:2007 - Geographic Information Metadata XML Schema Implementation" ;
+    dcterms:description "This is the XML Schema implementation of ISO 19139:2007 standard for geographic information metadata." ;
+    dcterms:identifier "ISO 19139" ;
+    dcterms:type <http://data.gov/vocab/resource-type/Schema> 
+    dcterms:conformsTo <http://www.isotc211.org/2005/gmd> .

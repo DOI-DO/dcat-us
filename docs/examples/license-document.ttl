@@ -1,5 +1,5 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix cc: <http://creativecommons.org/ns#> .
 @prefix ex: <http://example.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#> .
@@ -9,28 +9,28 @@
 
 ex:Dataset1
     a dcat:Dataset ;
-    dct:title "Example Dataset 1" ;
-    dct:license <https://creativecommons.org/licenses/by/4.0/>
+    dcterms:title "Example Dataset 1" ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/>
 .
 
 # This declaration is optional as it can be made accessible from
 # a authoritative registry
  <https://creativecommons.org/licenses/by/4.0/>   
-    a dct:LicenseDocument ;
-    dct:title "CC BY 4.0" ;
-    dct:description "Creative Commons Attribution 4.0 International" ;
+    a dcterms:LicenseDocument ;
+    dcterms:title "CC BY 4.0" ;
+    dcterms:description "Creative Commons Attribution 4.0 International" ;
  .   
 
 
 # The following example shows a customized license
 ex:Dataset2
     a dcat:Dataset ;
-    dct:title "Example Dataset 2" ;
-    dct:license ex:License2 .
+    dcterms:title "Example Dataset 2" ;
+    dcterms:license ex:License2 .
 
 # Customized license
 ex:License2
-    a dct:LicenseDocument ;
+    a dcterms:LicenseDocument ;
     spdx:licenseText "Permission is hereby granted, free of charge, to any person 
         obtaining a copy of this dataset and associated documentation files 
         (the 'Dataset'), to deal in the Dataset without restriction, including without 

@@ -3,4 +3,4 @@
 
 <https://uscensus.gov/1234>
   a dcat:Dataset ;
-  dct:conformsTo <http://resource.geosciml.org/ontology/timescale/gts> ;
+  dcterms:conformsTo <http://resource.geosciml.org/ontology/timescale/gts> ;

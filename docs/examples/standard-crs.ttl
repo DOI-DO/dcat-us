@@ -1,16 +1,16 @@
-@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://www.opengis.net/def/crs/OGC/1.3/CRS84> a dct:Standard ;
-  dct:identifier "urn:ogc:def:crs:OGC:1.3:CRS84"^^xsd:anyURI ;
-  dct:title "CRS84"@en ;
-  dct:type <http://data.gov/resource/glossary/SpatialReferenceSystem> ;
+<http://www.opengis.net/def/crs/OGC/1.3/CRS84> a dcterms:Standard ;
+  dcterms:identifier "urn:ogc:def:crs:OGC:1.3:CRS84"^^xsd:anyURI ;
+  dcterms:title "CRS84"@en ;
+  dcterms:type <http://data.gov/resource/glossary/SpatialReferenceSystem> ;
   skos:inScheme <http://www.opengis.net/def/crs/OGC> ;
   skos:prefLabel "CRS84"@en .
 
 <http://www.opengis.net/def/crs/OGC> a skos:ConceptScheme ;
-  dct:title "OGC Coordinate Reference Systems"@en .
+  dcterms:title "OGC Coordinate Reference Systems"@en .

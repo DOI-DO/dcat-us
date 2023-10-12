@@ -1,6 +1,6 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 
 <https://uscensus.gov/opendata/dataservice/1234>
   a dcat:DataService ;
-  dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> .
+  dcterms:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> .

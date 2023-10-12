@@ -6,13 +6,13 @@
 
 <https://doi.org/10.7265/N5K072F8>
   a dcat:Dataset ;
-  dct:title "Sea Ice Index"@en,   
+  dcterms:title "Sea Ice Index"@en,   
             "Índice de hielo marino"@es. 
   # creator of the resource          
-  dct:creator <https://orcid.org/0000-0002-0693-466X>;
-  dct:contributor <https://orcid.org/0000-0002-8881-2550>
-  dct:publisher <https://www.uscensus.gov>;
-  dct:rightsHolder <https://www.uscensus.gov>;
+  dcterms:creator <https://orcid.org/0000-0002-0693-466X>;
+  dcterms:contributor <https://orcid.org/0000-0002-8881-2550>
+  dcterms:publisher <https://www.uscensus.gov>;
+  dcterms:rightsHolder <https://www.uscensus.gov>;
   prov:qualifiedAttribution [
     a prov:Attribution ;
     prov:agent <https://orcid.org/0000-0002-8881-2550> ;

@@ -1,11 +1,11 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix ex: <http://www.example.com#> .
 
 ex:budget2018 a dcat:Dataset;  
-	     dct:title "Budget for 2018";
-	     dct:temporal [ a dct:PeriodOfTime ;
+	     dcterms:title "Budget for 2018";
+	     dcterms:temporal [ a dcterms:PeriodOfTime ;
 		    dcat:startDate "2018-01-01"^^xsd:date ;
 		    dcat:endDate   "2018-12-31"^^xsd:date ;
 		  ] .

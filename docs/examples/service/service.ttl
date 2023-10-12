@@ -1,5 +1,5 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -9,7 +9,7 @@
   a dcat:DataService ;
   
   # mandatory properties
-  dct:title "US Census Data Service"@en ;
+  dcterms:title "US Census Data Service"@en ;
   dcat:endpointURL <https://data.census.gov/> ;
   dcat:contactPoint [
     a vcard:Contact ;
@@ -20,11 +20,11 @@
     vcard:fn "Data Service Coordinator" ;  
     vcard:hasEmail <mailto:coordinator@census.gov>  
   ] ;
-  dct:publisher <https://www.census.gov> ;
+  dcterms:publisher <https://www.census.gov> ;
   
   # recommended properties
   dcat:endpointDescription <https://data.census.gov/about.html> ;  # Example URL, adjust as per actual details
-  dct:license <http://www.usa.gov/publicdomain/label/1.0/> ;  # Example URL, adjust as per actual details
+  dcterms:license <http://www.usa.gov/publicdomain/label/1.0/> ;  # Example URL, adjust as per actual details
   dcat:servesDataset <https://data.census.gov/dataset/1> ,  # Example URL, adjust as per actual details
                      <https://data.census.gov/dataset/2> .  # Example URL, adjust as per actual details
 
@@ -36,16 +36,16 @@
 # ---------- class Dataset --------------------------------------------------
 <https://data.census.gov/dataset/1>
   a dcat:Dataset ;
-  dct:title "Example Dataset 1"@en ;
-  dct:description "This is an example dataset from the US Census Bureau"@en ;
-  dct:publisher <https://www.census.gov/> ;
-  dct:issued "2020-01-01"^^xsd:date ;
-  dct:modified "2022-01-01"^^xsd:date .
+  dcterms:title "Example Dataset 1"@en ;
+  dcterms:description "This is an example dataset from the US Census Bureau"@en ;
+  dcterms:publisher <https://www.census.gov/> ;
+  dcterms:issued "2020-01-01"^^xsd:date ;
+  dcterms:modified "2022-01-01"^^xsd:date .
 
 <https://data.census.gov/dataset/2>
   a dcat:Dataset ;
-  dct:title "Example Dataset 2"@en ;
-  dct:description "This is another example dataset from the US Census Bureau"@en ;
-  dct:publisher <https://www.census.gov/> ;
-  dct:issued "2020-01-01"^^xsd:date ;
-  dct:modified "2022-01-01"^^xsd:date .
+  dcterms:title "Example Dataset 2"@en ;
+  dcterms:description "This is another example dataset from the US Census Bureau"@en ;
+  dcterms:publisher <https://www.census.gov/> ;
+  dcterms:issued "2020-01-01"^^xsd:date ;
+  dcterms:modified "2022-01-01"^^xsd:date .

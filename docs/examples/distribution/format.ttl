@@ -1,11 +1,11 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix ex: <http://example.org/ns#> .
 
 ex:Distribution1  a dcat:Distribution ;
-  dct:format <https://www.iana.org/assignments/media-types/text/csv> ;
+  dcterms:format <https://www.iana.org/assignments/media-types/text/csv> ;
   .
 
 ex:Distribution2 a dcat:Distribution ;
-  dct:format [ a dct:MediaType ;
+  dcterms:format [ a dcterms:MediaType ;
       rdfs:label "Geopackage" ] .

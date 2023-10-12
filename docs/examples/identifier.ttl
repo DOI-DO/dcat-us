@@ -2,7 +2,7 @@
 @prefix adms: <http://www.w3.org/ns/adms#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 ex:Identifier1
@@ -10,4 +10,4 @@ ex:Identifier1
   adms:schemaAgency <http://www.doi.org/> ;
   skos:notation "10.12345/ex.doi.67890";
   dcat:version "1.0" ;
-  dct:issued "2023-02-30"^^xsd:gYear.
+  dcterms:issued "2023-02-30"^^xsd:gYear.

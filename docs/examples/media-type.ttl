@@ -1,5 +1,5 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 
 
 ex:dataset-001-csv
@@ -7,11 +7,11 @@ ex:dataset-001-csv
   dcat:mediaType <http://www.iana.org/assignments/media-types/text/csv> ;      
 
 # Use IANA registry URI for well-known media types
-<http://www.iana.org/assignments/media-types/text/csv>  a dct:MediaType;
+<http://www.iana.org/assignments/media-types/text/csv>  a dcterms:MediaType;
 
 # Example of custom media type that does not exist in IANA
 
 [] a dcat:Distribution ;
-  dct:format [ a dct:MediaType ;
+  dcterms:format [ a dcterms:MediaType ;
       rdfs:label "Geopackage" ] .
 

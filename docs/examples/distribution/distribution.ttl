@@ -1,5 +1,5 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix odrs: <http://schema.theodi.org/odrs#> .
 
@@ -9,17 +9,17 @@
 
   # mandatory properties
 
-  dct:accessURL <https://uscensus.gov/data/1234/access> ;
-  dct:license <http://data.gov/vocabulary/licenses/cc-by/4.0> ;
+  dcterms:accessURL <https://uscensus.gov/data/1234/access> ;
+  dcterms:license <http://data.gov/vocabulary/licenses/cc-by/4.0> ;
 
   # recommended properties
 
-  dct:availability <http://data.gov/resource/authority/planned-availability/STABLE> ;
-  dct:description "some description of the data"@en
-  dct:format dcat:format <http://data.gov/resource/authority/file-type/CSV> ;
-  dct:rights :uscensus.gov-rights-statement ;
-  dct:title "some title of the distribution"@en ;
-  dct:modified "2019-04-26"^^xsd:date .
+  dcterms:availability <http://data.gov/resource/authority/planned-availability/STABLE> ;
+  dcterms:description "some description of the data"@en
+  dcterms:format dcat:format <http://data.gov/resource/authority/file-type/CSV> ;
+  dcterms:rights :uscensus.gov-rights-statement ;
+  dcterms:title "some title of the distribution"@en ;
+  dcterms:modified "2019-04-26"^^xsd:date .
 
 # ---------- class RightsStatement ------------------------------------------
 :uscensus.gov-rights-statement

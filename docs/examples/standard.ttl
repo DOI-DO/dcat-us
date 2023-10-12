@@ -1,5 +1,5 @@
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -9,23 +9,23 @@
 
 <http://www.isotc211.org/2005/gmd>
     skos:inScheme <http://data.gov/vocab/metadata-schema> ;
-    a dct:Standard;
+    a dcterms:Standard;
     dc:identifier "iso-19139" ;
     skos:prefLabel "ISO/TS 19139:2007 - Geographic MetaData extensible markup language (GMD)"@en ;
-    dct:title "ISO/TS 19139:2007 - Geographic MetaData extensible markup language (GMD)"@en ;
+    dcterms:title "ISO/TS 19139:2007 - Geographic MetaData extensible markup language (GMD)"@en ;
     skos:altLabel "ISO 19139"@en ;
     rdfs:isDefinedBy <https://www.iso.org/standard/32557.html> .
 
 <https://sdmx.org/>
     skos:inScheme <http://data.gov/vocab/metadata-schema> ;
-    a dct:Standard ;
+    a dcterms:Standard ;
     dc:identifier "sdmx" ;
     skos:prefLabel "Statistical Data and Metadata eXchange"@en ;
-    dct:title "Statistical Data and Metadata eXchange"@en ;
+    dcterms:title "Statistical Data and Metadata eXchange"@en ;
     skos:altLabel "SDMX"@en ;
     rdfs:isDefinedBy <https://sdmx.org/> .
 
 <http://data.gov/vocab/metadata-schema>
     a skos:ConceptScheme ;
-    dct:title "Metadata schemas"@en ;
+    dcterms:title "Metadata schemas"@en ;
     rdfs:label "Metadata schemas"@en .

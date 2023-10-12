@@ -1,12 +1,12 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix locn: <http://www.w3.org/ns/locn#> .
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 
 <https://data.census.gov/catalog>
   a dcat:Catalog;
-  dct:spatial [
-    a dct:Location ;
+  dcterms:spatial [
+    a dcterms:Location ;
     locn:geometry """POLYGON ((
           4.8842353 52.375108 , 4.884276 52.375153 ,
           4.8842567 52.375159 , 4.883981 52.375254 ,
@@ -18,10 +18,10 @@
           4.8842353 52.375108
         ))"""^^gsp:wktLiteral
   ], [
-    a dct:Location ;
+    a dcterms:Location ;
     dcat:centroid "POINT(4.88412 52.37509)"^^gsp:wktLiteral
   ], [
-    a dct:Location ;
+    a dcterms:Location ;
     dcat:bbox """POLYGON((
           3.053 47.975 , 7.24  47.975 ,
           7.24  53.504 , 3.053 53.504 ,

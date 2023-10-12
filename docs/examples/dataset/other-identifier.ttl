@@ -1,5 +1,5 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix ex: <http://example.org/ns#> .
 @prefix adms: <http://www.w3.org/ns/adms#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -8,8 +8,8 @@
 ex:Dataset1
   a dcat:Dataset ;
   adms:identifier ex:Identifier1 ;
-  dct:title "Example Dataset with DOI" ;
-  dct:description "This dataset provides an example of how to use a DOI as an identifier." .
+  dcterms:title "Example Dataset with DOI" ;
+  dcterms:description "This dataset provides an example of how to use a DOI as an identifier." .
 
 ex:Identifier1
   a adms:Identifier ;
