@@ -13,7 +13,7 @@ ex:ISO19139Dataset a dcat:Dataset ;
 # Define the distribution of the dataset
 ex:ISO19139DataDistribution a dcat:Distribution ;
     dcat:accessURL <http://example.org/data/iso19139-dataset.xml> ;
-    dct:format "application/xml" ;
+    dct:format <https://www.iana.org/assignments/media-types/application/xml> ;
     dct:conformsTo <http://www.isotc211.org/2005/gmd> .
 
 # Define the supported ISO 19139 schema
