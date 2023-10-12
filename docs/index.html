@@ -16261,6 +16261,252 @@
         </td>
       </tr>
     </table>
+
+    <p><strong>Properties Summary</strong></p>
+    
+    <table class="simple">
+      <thead>
+        <tr>
+          <th>Property</th>
+          <th>URI</th>
+          <th>Range</th>
+          <th>ReqLevel</th>
+          <th>Card</th>
+        </tr>
+      </thead>
+      <tbody>
+    
+        <tr>
+          <td><a href="#role-altLabel">alternate label</a></td>
+          <td><a data-cite="SKOS-REFERENCE#altLabel"><code>skos:altLabel</code></a>
+          </td>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
+    
+          <td><strong>O</strong></td>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <td><a href="#role-definition">definition</a></td>
+          <td><a data-cite="SKOS-REFERENCE#definition"><code>skos:definition</code></a>
+          </td>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
+    
+          <td><strong>R</strong></td>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <td><a href="#role-in-scheme">in scheme</a></td>
+          <td><a data-cite="SKOS-REFERENCE#inScheme"><code>skos:inScheme</code></a>
+          </td>
+          <td><a data-cite="SKOS-REFERENCE#ConceptScheme"><code>skos:ConceptScheme</code></a>
+          </td>
+          <td><strong>M</strong></td>
+          <td>1..1</td>
+        </tr>
+        <tr>
+          <td><a href="#role-notation">notation</a></td>
+          <td><a data-cite="SKOS-REFERENCE#notation"><code>skos:notation</code></a>
+          </td>
+          <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a>
+          </td>
+          <td><strong>O</strong></td>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <td><a href="#role-prefLabel">preferred label</a></td>
+          <td><a data-cite="SKOS-REFERENCE#prefLabel"><code>skos:prefLabel</code></a>
+          </td>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
+    
+          <td><strong>M</strong></td>
+          <td>1.n</td>
+        </tr>
+    
+      </tbody>
+    </table>
+    <section id="role-mandatory-props">
+      <h3>Mandatory Properties</h3>
+      <section id="role-prefLabel">
+        <h4>Property: preferred label</h4>
+        <table class="def">
+          <tbody>
+            <tr>
+              <th>Property</th>
+              <td>preferred label</td>
+            </tr>
+            <tr>
+              <th>Requirement level</th>
+              <td>Mandatory</td>
+            </tr>
+            <tr>
+              <th>Cardinality</th>
+              <td>0..n</td>
+            </tr>
+            <tr>
+              <th>URI</th>
+              <td><a data-cite="SKOS-REFERENCE#prefLabel"><code>skos:prefLabel</code></a>
+              </td>
+            </tr>
+            <tr>
+              <th>Range</th>
+    
+    
+              <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
+    
+            </tr>
+            <tr>
+              <th>Definition</th>
+              <td>Preferred label for the controlled vocabulary term (one per</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section id="role-in-scheme">
+        <h4>Property: concept scheme</h4>
+        <table class="def">
+          <tbody>
+            <tr>
+              <th>Property</th>
+              <td>in scheme</td>
+            </tr>
+            <tr>
+              <th>Requirement level</th>
+              <td>Mandatory</td>
+            </tr>
+            <tr>
+              <th>Cardinality</th>
+              <td>1</td>
+            </tr>
+            <tr>
+              <th>URI</th>
+              <td><a data-cite="SKOS-REFERENCE#inScheme"><code>skos:inScheme</code></a>
+              </td>
+            </tr>
+            <tr>
+              <th>Range</th>
+              <td><a data-cite="SKOS-REFERENCE#ConceptScheme"><code>skos:ConceptScheme</code></a>
+              </td>
+            </tr>
+            <tr>
+              <th>Definition</th>
+              <td>Concept scheme defining the role</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </section>
+    <section id="role-recommended-props">
+      <h3>Recommended Properties</h3>
+      <section id="role-definition">
+        <h4>Property: definition</h4>
+        <table class="def">
+          <tbody>
+            <tr>
+              <th>Property</th>
+              <td>definition</td>
+            </tr>
+            <tr>
+              <th>Requirement level</th>
+              <td>Recommended</td>
+            </tr>
+            <tr>
+              <th>Cardinality</th>
+              <td>0..n</td>
+            </tr>
+            <tr>
+              <th>URI</th>
+              <td><a data-cite="SKOS-REFERENCE#definition"><code>skos:definition</code></a>
+              </td>
+            </tr>
+            <tr>
+              <th>Range</th>
+              <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
+    
+            </tr>
+            <tr>
+              <th>Definition</th>
+              <td>definition of the controlled vocabulary</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </section>
+    <section id="role-optional-props">
+      <h3>Optional Properties</h3>
+      <section id="role-altLabel">
+        <h4>Property: alternate label</h4>
+        <table class="def">
+          <tbody>
+            <tr>
+              <th>Property</th>
+              <td>alternate label</td>
+            </tr>
+            <tr>
+              <th>Requirement level</th>
+              <td>Optional</td>
+            </tr>
+            <tr>
+              <th>Cardinality</th>
+              <td>0..n</td>
+            </tr>
+            <tr>
+              <th>URI</th>
+              <td><a data-cite="SKOS-REFERENCE#altLabel"><code>skos:altLabel</code></a>
+              </td>
+            </tr>
+            <tr>
+              <th>Range</th>
+              <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
+    
+            </tr>
+            <tr>
+              <th>Definition</th>
+              <td>alternative labels for a role</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section id="role-notation">
+        <h4>Property: notation</h4>
+        <table class="def">
+          <tbody>
+            <tr>
+              <th>Property</th>
+              <td>notation</td>
+            </tr>
+            <tr>
+              <th>Requirement level</th>
+              <td>Optional</td>
+            </tr>
+            <tr>
+              <th>Cardinality</th>
+              <td>0..n</td>
+            </tr>
+            <tr>
+              <th>URI</th>
+              <td><a data-cite="SKOS-REFERENCE#notation"><code>skos:notation</code></a>
+              </td>
+            </tr>
+            <tr>
+              <th>Range</th>
+              <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a>
+              </td>
+            </tr>
+            <tr>
+              <th>Definition</th>
+              <td>abbreviations or codes from code lists for an organization</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </section>
+    <!-- TODO: come up with an example for role-->
+    <!-- <section id="role-example">
+      <h3>Example</h3>
+      <aside class="example" title="Role example">
+        <pre data-include-format="text" data-include="./examples/role.ttl"></pre>
+      </aside>
+    </section> -->
   </section>
   <!-- dqv:QualityMeasurement-->
 
