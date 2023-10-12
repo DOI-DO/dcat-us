@@ -13,11 +13,11 @@ ex:MyDataset a dcat:Dataset ;
 # Define the distribution of the dataset
 ex:MyDistribution a dcat:Distribution ;
     dcat:accessURL <http://example.org/data/mydataset.csv> ;
-    dct:format "text/csv" .
+    dct:format <https://www.iana.org/assignments/media-types/text/csv>.
 
 # Define the sample of the dataset modeled also as a distribution
 ex:MySample a dcat:Distribution ;
     dct:title "Sample of My Dataset" ;
     dct:description "This is a sample from My Dataset." ;
     dcat:downloadURL <http://example.org/data/mysample.csv> ;
-    dct:format "text/csv" .
+    dct:format <https://www.iana.org/assignments/media-types/text/csv>.

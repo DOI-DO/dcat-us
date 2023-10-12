@@ -9,4 +9,3 @@ ex:Distribution1  a dcat:Distribution ;
 ex:Distribution2 a dcat:Distribution ;
   dct:format [ a dct:MediaType ;
       rdfs:label "Geopackage" ] .
-
