@@ -1296,11 +1296,11 @@
             <td><a href="#activity-label">label</a></td>
             <td><a data-cite="RDF-SCHEMA#ch_label"><code>rdfs:label</code></a></td>
             <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a></td>
-            <td><strong>R</strong></td>
+            <td><strong>M</strong></td>
             <td>1..n</td>
           </tr>
           <tr>
-            <td><a href="#activity-type">type</a></td>
+            <td><a href="#activity-type">category</a></td>
             <td><a href="http://purl.org/dc/terms/type"><code>dct:type</code></a>
             </td>
             <td><a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a>
@@ -1322,7 +1322,7 @@
             <tbody>
               <tr>
                 <th>Property</th>
-                <td>generated</td>
+                <td>label</td>
               </tr>
               <tr>
                 <th>Requirement level</th>
@@ -18749,14 +18749,14 @@
       <h3>Provenance Metadata</h3>
       <aside class="note">TO COMPLETE</aside>
       <p>Provenance and data lineage are crucial aspects of data management and transparency, ensuring that data
-        consumers understand the origins, transformations, and utility of the data. In DCAT-US, leveraging [[DCTerms]]
+        consumers understand the origins, transformations, and utility of the data. In DCAT-US, leveraging [[DCTERMS]]
         (Dublin Core Terms) and [[PROV-O]] (W3C PROV Ontology) properties can effectively represent these aspects. This
         section outlines best practices for utilizing these properties to detail the provenance and data lineage within
         DCAT datasets.</p>
       <section id="basic-provenance">
         <h4>Basic Provenance Metadata</h4>
 
-        <p>Within DCAT-US, the Dublin Core Terms [[DCTerms]] vocabulary offers properties that allow data publishers to
+        <p>Within DCAT-US, the Dublin Core Terms [[DCTERMS]] vocabulary offers properties that allow data publishers to
           articulate basic provenance information effectively. Particularly, <a
             data-cite="DCTERMS#http://purl.org/dc/terms/source"><code>dct:source</code></a> and <a
             data-cite="DCTERMS#http://purl.org/dc/terms/provenance"><code>dct:provenance</code></a> are
@@ -19653,6 +19653,11 @@
           <td>[[DCTERMS]]</td>
         </tr>
         <tr>
+          <td><code>dqv</code></td>
+          <td><code>https://www.w3.org/TR/vocab-dqv/</code></td>
+          <td>[[DQV]]</td>
+        </tr>
+        <tr>
           <td><code>foaf</code></td>
           <td><code>http://xmlns.com/foaf/0.1/</code></td>
           <td>[[FOAF]]</td>
@@ -19666,6 +19671,11 @@
           <td><code>locn</code></td>
           <td><code>http://www.w3.org/ns/locn#</code></td>
           <td>[[LOCN]]</td>
+        </tr>
+        <tr>
+          <td><code>odrs</code></td>
+          <td><code>https://schema.theodi.org/odrs/</code></td>
+          <td>[[ODRS]]</td>
         </tr>
         <tr>
           <td><code>prov</code></td>
@@ -19686,6 +19696,11 @@
           <td><code>schema</code></td>
           <td><code>http://schema.org/</code></td>
           <td>[[schema-org]]</td>
+        </tr>
+        <tr>
+          <td><code>sdmx-attribute</code></td>
+          <td><code>http://purl.org/linked-data/sdmx/2009/attribute#</code></td>
+          <td>[[SDMX-ATTRIBUTE]]</td>
         </tr>
         <tr>
           <td><code>skos</code></td>
