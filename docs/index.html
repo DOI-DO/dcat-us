@@ -13727,13 +13727,33 @@
     <h2>Investment</h2>
 
     <aside class="note">New! DCAT-US 3.0 specific class</aside>
-    <aside class="note">TODO</aside>
-
-
-
+    <table class="def" id="table-class-investment">
+      <tr>
+        <th>RDF Class:</th>
+        <td><a data-cite="http://data.resources.gov/ontology/dcat-us#Investment"><code>dcat-us:Investment</code></a></td>
+      </tr>
+      <tr>
+        <th>Obligation</th>
+        <td>Optional</td>
+      </tr>
+      <tr>
+        <th class="prop">Definition: </th>
+        <td>
+        </td>
+      </tr>
+    
+      <!-- TODO: Add Definition, usage note, and rationale for Investment-->
+      <tr>
+        <th class="prop">Usage note:</th>
+        <td></td>
+      </tr>
+      <tr>
+        <th>Rationale:</th>
+        <td></td>
+      </tr>
+    </table>
 
     <p><strong>Properties Summary</strong></p>
-
     <table class="simple">
       <thead>
         <tr>
@@ -13750,16 +13770,15 @@
           <td><a data-cite="DCTERMS#http://purl.org/dc/terms/title"><code>dct:title</code></a></td>
           <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
           <td><strong>M</strong></td>
-          <td>0..n</td>
+          <td>1..n</td>
         </tr>
         <tr>
-          <td><a href="#investment-title">description</a></td>
+          <td><a href="#investment-description">description</a></td>
           <td><a data-cite="DCTERMS#http://purl.org/dc/terms/description"><code>dct:description</code></a></td>
           <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
           <td><strong>R</strong></td>
           <td>0..n</td>
         </tr>
-
         <tr>
           <td><a href="#investment-type">category</a></td>
           <td><a href="http://purl.org/dc/terms/type"><code>dct:type</code></a> </td>
@@ -13774,7 +13793,6 @@
           <td><strong>O</strong></td>
           <td>0..n</td>
         </tr>
-
         <tr>
           <td><a href="#investment-otherIdentifier">other identifier</a></td>
           <td><a data-cite="VOCAB-ADMS#identifier"><code>adms:identifier</code></a></td>
@@ -13782,9 +13800,259 @@
           <td>O</td>
           <td>0..n</td>
         </tr>
-
+        <tr>
+          <td><a href="#investment-agency">agency</a></td>
+          <td><a data-cite="VOCAB-ADMS#identifier"><code>dcat-us:agency</code></a></td>
+          <td><a href="https://www.w3.org/TR/vocab-org/#org:Organization"><code>org:Organization</code></a></td>
+          <td>O</td>
+          <td>0..1</td>
+        </tr>
       </tbody>
     </table>
+    <section id="investment-mandatory-props">
+      <h3>Mandatory Properties</h3>
+      <section id="investment-title">
+        <h4>Property: title</h4>
+        <table class="def">
+          <tbody>
+            <tr>
+              <th>Property</th>
+              <td>title</td>
+            </tr>
+            <tr>
+              <th>Requirement level</th>
+              <td><strong>Mandatory</strong></td>
+            </tr>
+            <tr>
+              <th>Cardinality</th>
+              <td>1..n</td>
+            </tr>
+            <tr>
+              <th>URI</th>
+              <td><a data-cite="DCTERMS#http://purl.org/dc/terms/title"><code>dcterms:title</code></a></td>
+            </tr>
+            <tr>
+              <th>Range</th>
+              <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+              </td>
+            </tr>
+            <tr>
+              <th>Usage Note</th>
+              <td>
+                <ul>
+                  <li>The title of the Investment in the indicated language</li>
+                  <li>This property can be repeated for parallel language versions of the
+                    description (see <a class="no-sectionRef" href="#multilingualism"></a>)
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    
+    </section>
+    
+    <section id="investment-recommended-props">
+      <h3>Recommended Properties</h3>
+      <section id="investment-description">
+        <h4>Property: description</h4>
+        <table class="def">
+          <tbody>
+            <tr>
+              <th>Property</th>
+              <td>description</td>
+            </tr>
+            <tr>
+              <th>Requirement level</th>
+              <td>Recommended</td>
+            </tr>
+            <tr>
+              <th>Cardinality</th>
+              <td>0..n</td>
+            </tr>
+            <tr>
+              <th>URI</th>
+              <td><a data-cite="DCTERMS#http://purl.org/dc/terms/description"><code>dct:description</code></a>
+              </td>
+            </tr>
+            <tr>
+              <th>Range</th>
+              <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+              </td>
+            </tr>
+            <tr>
+              <th>Usage Note</th>
+              <td>
+                <ul>
+                  <li>This property contains a free-text account of the Investment.</li>
+                  <li>
+                    This property can be repeated for parallel language versions of the
+                    description (see <a class="no-sectionRef" href="#multilingualism"></a>). On the user interface
+                    of data portals, the content of the element whose language corresponds to the
+                    display language selected by the user is displayed.
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    
+    </section>
+    
+    <section id="investment-optional-props">
+      <h3>Optional Properties</h3>
+      <section id="investment-type">
+        <h4>Property: type</h4>
+        <table class="def">
+          <tbody>
+            <tr>
+              <th>Property</th>
+              <td>type</td>
+            </tr>
+            <tr>
+              <th>Requirement level</th>
+              <td>Optional</td>
+            </tr>
+            <tr>
+              <th>Cardinality</th>
+              <td>0..n</td>
+            </tr>
+            <tr>
+              <th>URI</th>
+              <td><a href="http://purl.org/dc/terms/type"><code>dct:type</code></a>
+              </td>
+            </tr>
+            <tr>
+              <th>Range</th>
+              <td><a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a>
+              </td>
+            </tr>
+            <!-- TODO: write a usage note for dct:type for Investment-->
+            <!-- <tr>
+              <th>Usage Note</th>
+              <td>
+                <ul>
+                </ul>
+              </td>
+            </tr> -->
+          </tbody>
+        </table>
+      </section>
+      <section id="investment-identifier">
+        <h4>Property: identifier</h4>
+        <table class="def">
+          <tbody>
+            <tr>
+              <th>Property</th>
+              <td>identifier</td>
+            </tr>
+            <tr>
+              <th>Requirement level</th>
+              <td><strong>Optional</strong></td>
+            </tr>
+            <tr>
+              <th>Cardinality</th>
+              <td>0..n</td>
+            </tr>
+            <tr>
+              <th>URI</th>
+              <td><a data-cite="DCTERMS#http://purl.org/dc/terms/identifier"><code>dct:identifier</code></a>
+              </td>
+            </tr>
+            <tr>
+              <th>Range</th>
+              <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+              </td>
+            </tr>
+            <tr>
+              <th>Usage Note</th>
+              <td>
+                <ul>
+                  <li>This property contains the unique identifier for the Investment.
+                  </li>
+                  <li>
+                    The identifier may be used as part of the URI of the Investment.
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section id="investment-otherIdentifier">
+        <h4>Property: other identifier</h4>
+        <table class="def">
+          <tbody>
+            <tr>
+              <th>Property</th>
+              <td>other identifier</td>
+            </tr>
+            <tr>
+              <th>Requirement level</th>
+              <td>Optional</td>
+            </tr>
+            <tr>
+              <td>Optional</td>
+              <td>0..n</td>
+            </tr>
+            <tr>
+              <th>URI</th>
+              <td><a data-cite="VOCAB-ADMS#identifier"><code>adms:identifier</code></a>
+              </td>
+            </tr>
+            <tr>
+              <th>Range</th>
+              <td><a href="http://www.w3.org/ns/adms#Identifier"><code>adms:Identifier</code></a>
+              </td>
+            </tr>
+            <tr>
+              <th>Usage Note</th>
+              <td>
+                A secondary identifier of the Investment.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section id="investment-agency">
+        <h4>Property: agency</h4>
+        <table class="def">
+          <tbody>
+            <tr>
+              <th>Property</th>
+              <td>agency</td>
+            </tr>
+            <tr>
+              <th>Requirement level</th>
+              <td>Optional</td>
+            </tr>
+            <tr>
+              <th>Cardinality</th>
+              <td>0..1</td>
+            </tr>
+            <tr>
+              <th>URI</th>
+              <td><a data-cite="DCAT-US##http://TBD/agency"><code>dcat-us:agency</code></a>
+              </td>
+            </tr>
+            <tr>
+              <th>Range</th>
+              <td><a href="https://www.w3.org/TR/vocab-org/#org:Organization"><code>org:Organization</code></a>
+              </td>
+            </tr>
+            <!-- TODO: Specify a usage note for dcat-us:agency-->
+            <!-- <tr>
+                    <th>Usage Note</th>
+                    <td>
+            
+                    </td>
+                  </tr> -->
+          </tbody>
+        </table>
+      </section>
+    </section>
   </section>
 
   <!-- dcat-us:LiabilityStatement-->
