@@ -1098,9 +1098,10 @@
           </tr>
           <tr>
             <td><a href="#access_restriction-specific_restriction">specific restriction</a></td>
-            <td><a href="http://data.resources.gov/ontology/dcat-us#specificRestriction"><code>dcat-us:specificRestriction</code></a>
+            <td><a
+                href="http://data.resources.gov/ontology/dcat-us#specificRestriction"><code>dcat-us:specificRestriction</code></a>
             </td>
-            <td><td><a data-cite="SKOS-REFERENCE#concepts"><code>skos:Concept</code></a>
+            <td><a data-cite="SKOS-REFERENCE#concepts"><code>skos:Concept</code></a></td>
             <td><strong>R</strong></td>
             <td>0..1</td>
           </tr>
@@ -1263,19 +1264,19 @@
             for labeling and classification of activities.
           </td>
         </tr>
-        <th class="prop">Rationale:</th>
-        <td>
-          <p>Integrating <a data-cite="PROV#Activity"><code>prov:Activity</code></a> into the DCAT-US schema offers a
-            streamlined, generic class to
-            represent a myriad of operations, such as initiatives, projects, and ongoing activities, without the
-            complexity of managing numerous specialized classes. This inclusion not only simplifies the representation
-            of varied activities under a unified semantic framework but also enhances data provenance tracking and
-            interoperability across diverse systems and domains. Consequently, it provides a flexible, future-proof
-            approach to accommodate evolving types of activities without necessitating continual schema modifications.
-          </p>
-
-        </td>
-
+        <tr>
+          <th class="prop">Rationale:</th>
+          <td>
+            <p>Integrating <a data-cite="PROV#Activity"><code>prov:Activity</code></a> into the DCAT-US schema offers a
+              streamlined, generic class to
+              represent a myriad of operations, such as initiatives, projects, and ongoing activities, without the
+              complexity of managing numerous specialized classes. This inclusion not only simplifies the representation
+              of varied activities under a unified semantic framework but also enhances data provenance tracking and
+              interoperability across diverse systems and domains. Consequently, it provides a flexible, future-proof
+              approach to accommodate evolving types of activities without necessitating continual schema modifications.
+            </p>
+          </td>
+        </tr>
       </table>
 
       <p><strong>Properties Summary</strong></p>
@@ -5158,8 +5159,7 @@
             <td><a href="#contact-organization_name">organization name</a></td>
             <td><a data-cite="VCARD-RDF#d4e1077"><code>vcard:organization-name</code></a>
             </td>
-            <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a> </td>
-            </td>
+            <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a></td>
             <td><strong>O</strong></td>
             <td>0..1</td>
           </tr>
@@ -5167,8 +5167,7 @@
             <td><a href="#contact-family_name">family name</a></td>
             <td><a data-cite="VCARD-RDF#d4e876"><code>vcard:family-name</code></a>
             </td>
-            <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a> </td>
-            </td>
+            <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a></td>
             <td><strong>O</strong></td>
             <td>0..1</td>
           </tr>
@@ -5176,8 +5175,7 @@
             <td><a href="#contact-given_name">given name</a></td>
             <td><a data-cite="VCARD-RDF#d4e907"><code>vcard:given-name</code></a>
             </td>
-            <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a> </td>
-            </td>
+            <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a></td>
             <td><strong>O</strong></td>
             <td>0..1</td>
           </tr>
@@ -5185,8 +5183,7 @@
             <td><a href="#contact-title">position title</a></td>
             <td><a data-cite="VCARD-RDF#d4e1234"><code>vcard:title</code></a>
             </td>
-            <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a> </td>
-            </td>
+            <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a></td>
             <td><strong>O</strong></td>
             <td>0..1</td>
           </tr>
@@ -15550,10 +15547,10 @@
           <td><a data-cite="DCTERMS#http://purl.org/dc/terms/title"><code>dct:title</code></a></td>
           <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
           <td><strong>M</strong></td>
-          <td>0..n</td>
+          <td>1..n</td>
         </tr>
         <tr>
-          <td><a href="#program-title">description</a></td>
+          <td><a href="#program-description">description</a></td>
           <td><a data-cite="DCTERMS#http://purl.org/dc/terms/description"><code>dct:description</code></a></td>
           <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
           <td><strong>R</strong></td>
@@ -15576,15 +15573,268 @@
         </tr>
 
         <tr>
-          <td><a href="#dataset-otherIdentifier">other identifier</a></td>
+          <td><a href="#program-otherIdentifier">other identifier</a></td>
           <td><a data-cite="VOCAB-ADMS#identifier"><code>adms:identifier</code></a></td>
           <td><a href="http://www.w3.org/ns/adms#Identifier"><code>adms:Identifier</code></a></td>
           <td>O</td>
           <td>0..n</td>
         </tr>
 
-      </tbody>
-    </table>
+        <tr>
+          <td><a href="#program-agency">agency</a></td>
+          <td><a data-cite="VOCAB-ADMS#identifier"><code>dcat-us:agency</code></a></td>
+          <td><a href="https://www.w3.org/TR/vocab-org/#org:Organization"><code>org:Organization</code></a></td>
+          <td>O</td>
+          <td>0..1</td>
+        </tr>
+        </tbody>
+        </table>
+        
+        <section id="program-mandatory-props">
+          <h3>Mandatory Properties</h3>
+          <section id="program-title">
+            <h4>Property: title</h4>
+            <table class="def">
+              <tbody>
+                <tr>
+                  <th>Property</th>
+                  <td>title</td>
+                </tr>
+                <tr>
+                  <th>Requirement level</th>
+                  <td><strong>Mandatory</strong></td>
+                </tr>
+                <tr>
+                  <th>Cardinality</th>
+                  <td>1..n</td>
+                </tr>
+                <tr>
+                  <th>URI</th>
+                  <td><a data-cite="DCTERMS#http://purl.org/dc/terms/title"><code>dcterms:title</code></a></td>
+                </tr>
+                <tr>
+                  <th>Range</th>
+                  <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Usage Note</th>
+                  <td>
+                    <ul>
+                      <li>The title of the Program in the indicated language</li>
+                      <li>This property can be repeated for parallel language versions of the
+                        description (see <a class="no-sectionRef" href="#multilingualism"></a>)
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        
+        </section>
+        
+        <section id="program-recommended-props">
+          <h3>Recommended Properties</h3>
+          <section id="program-description">
+            <h4>Property: description</h4>
+            <table class="def">
+              <tbody>
+                <tr>
+                  <th>Property</th>
+                  <td>description</td>
+                </tr>
+                <tr>
+                  <th>Requirement level</th>
+                  <td>Recommended</td>
+                </tr>
+                <tr>
+                  <th>Cardinality</th>
+                  <td>0..n</td>
+                </tr>
+                <tr>
+                  <th>URI</th>
+                  <td><a data-cite="DCTERMS#http://purl.org/dc/terms/description"><code>dct:description</code></a>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Range</th>
+                  <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Usage Note</th>
+                  <td>
+                    <ul>
+                      <li>This property contains a free-text account of the Program.</li>
+                      <li>
+                        This property can be repeated for parallel language versions of the
+                        description (see <a class="no-sectionRef" href="#multilingualism"></a>). On the user interface
+                        of data portals, the content of the element whose language corresponds to the
+                        display language selected by the user is displayed.
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+          </tbody>
+          </table>
+      </section>
+      
+      </section>
+      
+      <section id="program-optional-props">
+        <h3>Optional Properties</h3>
+        <section id="program-type">
+          <h4>Property: type</h4>
+          <table class="def">
+            <tbody>
+              <tr>
+                <th>Property</th>
+                <td>type</td>
+              </tr>
+              <tr>
+                <th>Requirement level</th>
+                <td>Optional</td>
+              </tr>
+              <tr>
+                <th>Cardinality</th>
+                <td>0..n</td>
+              </tr>
+              <tr>
+                <th>URI</th>
+                <td><a href="http://purl.org/dc/terms/type"><code>dct:type</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Range</th>
+                <td><a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a>
+                </td>
+              </tr>
+              <!-- TODO: write a usage note for dct:type for Program-->
+              <!-- <tr>
+                          <th>Usage Note</th>
+                          <td>
+                            <ul>
+                            </ul>
+                          </td>
+                        </tr> -->
+            </tbody>
+          </table>
+        </section>
+        <section id="program-identifier">
+          <h4>Property: identifier</h4>
+          <table class="def">
+            <tbody>
+              <tr>
+                <th>Property</th>
+                <td>identifier</td>
+              </tr>
+              <tr>
+                <th>Requirement level</th>
+                <td><strong>Optional</strong></td>
+              </tr>
+              <tr>
+                <th>Cardinality</th>
+                <td>0..n</td>
+              </tr>
+              <tr>
+                <th>URI</th>
+                <td><a data-cite="DCTERMS#http://purl.org/dc/terms/identifier"><code>dct:identifier</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Range</th>
+                <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Usage Note</th>
+                <td>
+                  <ul>
+                    <li>This property contains the unique identifier for the Program.
+                    </li>
+                    <li>
+                      The identifier may be used as part of the URI of the Program.
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section id="program-otherIdentifier">
+          <h4>Property: other identifier</h4>
+          <table class="def">
+            <tbody>
+              <tr>
+                <th>Property</th>
+                <td>other identifier</td>
+              </tr>
+              <tr>
+                <th>Requirement level</th>
+                <td>Optional</td>
+              </tr>
+              <tr>
+                <td>Optional</td>
+                <td>0..n</td>
+              </tr>
+              <tr>
+                <th>URI</th>
+                <td><a data-cite="VOCAB-ADMS#identifier"><code>adms:identifier</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Range</th>
+                <td><a href="http://www.w3.org/ns/adms#Identifier"><code>adms:Identifier</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Usage Note</th>
+                <td>
+                  A secondary identifier of the Program.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section id="program-agency">
+          <h4>Property: agency</h4>
+          <table class="def">
+            <tbody>
+              <tr>
+                <th>Property</th>
+                <td>agency</td>
+              </tr>
+              <tr>
+                <th>Requirement level</th>
+                <td>Optional</td>
+              </tr>
+              <tr>
+                <th>Cardinality</th>
+                <td>0..1</td>
+              </tr>
+              <tr>
+                <th>URI</th>
+                <td><a data-cite="DCAT-US##http://TBD/agency"><code>dcat-us:agency</code></a>
+                </td>
+              </tr>
+                    <tr>
+                <th>Range</th>
+                <td><a href="https://www.w3.org/TR/vocab-org/#org:Organization"><code>org:Organization</code></a>
+                </td>
+              </tr>
+              <!-- TODO: Specify a usage note for dcat-us:agency-->
+              <!-- <tr>
+                <th>Usage Note</th>
+                <td>
+        
+                </td>
+              </tr> -->
+            </tbody>
+          </table>
+        </section>
+      </section>
+
     <section id="program-example">
       <h4>Example</h4>
       <aside class="example" title="Program example">
