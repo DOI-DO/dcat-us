@@ -1,0 +1,102 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Concept",
+    "type": "object",
+    "properties": {
+        "@id": {
+            "type": "string",
+            "format": "iri"
+        },
+        "@type": {
+            "type": "string",
+            "default": "Concept"
+        },
+        "altLabel": {
+            "$id": "http://www.w3.org/2004/02/skos/core#altLabel",
+            "title": "alternate label",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "altLabelMap": {
+            "$id": "http://www.w3.org/2004/02/skos/core#altLabel_lang_map",
+            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+            "type": [
+                "null",
+                "object"
+            ]
+        },
+        "definition": {
+            "$id": "http://www.w3.org/2004/02/skos/core#definition",
+            "title": "definition",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "definitionMap": {
+            "$id": "http://www.w3.org/2004/02/skos/core#definition_lang_map",
+            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+            "type": [
+                "null",
+                "object"
+            ]
+        },
+        "inScheme": {
+            "$id": "http://www.w3.org/2004/02/skos/core#inScheme",
+            "title": "in scheme",
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/ConceptScheme",
+                    "description": "inline description of ConceptScheme"
+                },
+                {
+                    "type": "string",
+                    "description": "reference iri of ConceptScheme",
+                    "format": "iri"
+                }
+            ]
+        },
+        "notation": {
+            "$id": "http://www.w3.org/2004/02/skos/core#notation",
+            "title": "notation",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            ]
+        },
+        "prefLabel": {
+            "$id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+            "title": "preferred label",
+            "type": "string"
+        },
+        "prefLabelMap": {
+            "$id": "http://www.w3.org/2004/02/skos/core#prefLabel_lang_map",
+            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+            "type": [
+                "null",
+                "object"
+            ]
+        }
+    },
+    "required": [
+        "inScheme",
+        "prefLabel"
+    ]
+}

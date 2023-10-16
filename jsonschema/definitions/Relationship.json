@@ -1,0 +1,51 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Relationship",
+    "type": "object",
+    "properties": {
+        "@id": {
+            "type": "string",
+            "format": "iri"
+        },
+        "@type": {
+            "type": "string",
+            "default": "Relationship"
+        },
+        "hadRole": {
+            "$id": "http://www.w3.org/ns/dcat#hadRole",
+            "title": "role",
+            "description": "The function of an entity or agent with respect to another entity or resource.",
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/Role",
+                    "description": "inline description of Role"
+                },
+                {
+                    "type": "string",
+                    "description": "reference iri of Role",
+                    "format": "iri"
+                }
+            ]
+        },
+        "relation": {
+            "$id": "http://purl.org/dc/terms/relation",
+            "title": "relation",
+            "description": "The resource related to the source resource.",
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/Resource",
+                    "description": "inline description of Resource"
+                },
+                {
+                    "type": "string",
+                    "description": "reference iri of Resource",
+                    "format": "iri"
+                }
+            ]
+        }
+    },
+    "required": [
+        "hadRole",
+        "relation"
+    ]
+}

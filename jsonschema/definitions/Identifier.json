@@ -1,0 +1,104 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Identifier",
+    "type": "object",
+    "properties": {
+        "@id": {
+            "type": "string",
+            "format": "iri"
+        },
+        "@type": {
+            "type": "string",
+            "default": "Identifier"
+        },
+        "schemaAgency": {
+            "$id": "http://www.w3.org/ns/adms#schemaAgency",
+            "title": "schema agency",
+            "description": "The name of the agency that issued the identifier.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "creator": {
+            "$id": "http://purl.org/dc/terms/creator",
+            "title": "creator",
+            "description": "the agency that manages the identifier scheme",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/Organization",
+                            "description": "inline description of Organization"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of Organization",
+                            "format": "iri"
+                        }
+                    ]
+                }
+            ]
+        },
+        "issued": {
+            "$id": "http://purl.org/dc/terms/issued",
+            "title": "issued",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string",
+                    "oneOf": [
+                        {
+                            "format": "date-time"
+                        },
+                        {
+                            "format": "date"
+                        },
+                        {
+                            "pattern": "^[0-9]{4}$",
+                            "description": "A year in YYYY format"
+                        },
+                        {
+                            "pattern": "^[0-9]{4}-[0-9]{2}$",
+                            "description": "A year and month in YYYY-MM format"
+                        }
+                    ]
+                }
+            ]
+        },
+        "version": {
+            "$id": "http://purl.org/dc/terms/version",
+            "title": "version",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "notation": {
+            "$id": "http://www.w3.org/2004/02/skos/core#notation",
+            "title": "notation",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        }
+    },
+    "required": []
+}

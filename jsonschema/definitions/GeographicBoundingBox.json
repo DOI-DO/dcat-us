@@ -1,0 +1,41 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "GeographicBoundingBox",
+    "type": "object",
+    "properties": {
+        "@id": {
+            "type": "string",
+            "format": "iri"
+        },
+        "@type": {
+            "type": "string",
+            "default": "GeographicBoundingBox"
+        },
+        "eastBoundingLongitude": {
+            "$id": "http://github.com/DOI-DO/dcat-us/eastBoundingLongitude",
+            "title": "east bounding longitude",
+            "type": "string"
+        },
+        "northBoundingLatitude": {
+            "$id": "http://github.com/DOI-DO/dcat-us/northBoundingLatitude",
+            "title": "north bounding latitude",
+            "type": "string"
+        },
+        "southBoundingLatitude": {
+            "$id": "http://github.com/DOI-DO/dcat-us/southBoundingLatitude",
+            "title": "south bouding latitude",
+            "type": "string"
+        },
+        "westBoundingLongitude": {
+            "$id": "http://github.com/DOI-DO/dcat-us/westBoundingLongitude",
+            "title": "west bounding longitude",
+            "type": "string"
+        }
+    },
+    "required": [
+        "eastBoundingLongitude",
+        "northBoundingLatitude",
+        "southBoundingLatitude",
+        "westBoundingLongitude"
+    ]
+}

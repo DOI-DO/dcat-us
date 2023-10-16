@@ -1,0 +1,51 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Metric",
+    "type": "object",
+    "properties": {
+        "@id": {
+            "type": "string",
+            "format": "iri"
+        },
+        "@type": {
+            "type": "string",
+            "default": "Metric"
+        },
+        "expectedDataType": {
+            "$id": "http://www.w3.org/ns/dqv#expectedDataType",
+            "title": "expected datatype",
+            "description": "Represents the expected data type for the metric's observed value (e.g., xsd:boolean, xsd:double etc...)",
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/anySimpleType",
+                    "description": "inline description of anySimpleType"
+                },
+                {
+                    "type": "string",
+                    "description": "reference iri of anySimpleType",
+                    "format": "iri"
+                }
+            ]
+        },
+        "inDimension": {
+            "$id": "http://www.w3.org/ns/dqv#inDimension",
+            "title": "in dimension",
+            "description": "Represents the dimensions a quality metric, certificate and annotation allow a measurement of.",
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/Dimension",
+                    "description": "inline description of Dimension"
+                },
+                {
+                    "type": "string",
+                    "description": "reference iri of Dimension",
+                    "format": "iri"
+                }
+            ]
+        }
+    },
+    "required": [
+        "expectedDataType",
+        "inDimension"
+    ]
+}

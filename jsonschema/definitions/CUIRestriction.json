@@ -1,0 +1,46 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "CUIRestriction",
+    "type": "object",
+    "properties": {
+        "@id": {
+            "type": "string",
+            "format": "iri"
+        },
+        "@type": {
+            "type": "string",
+            "default": "CUIRestriction"
+        },
+        "cuiBannerMarking": {
+            "$id": "http://github.com/DOI-DO/dcat-us/cuiBannerMarking",
+            "title": "cuiBannerMarking",
+            "description": "CUI (Controlled Unclassified Information) banner marking is required for any unclassified information that is deemed sensitive and requires protection.",
+            "type": "string"
+        },
+        "designationIndicator": {
+            "$id": "http://github.com/DOI-DO/dcat-us/designationIndicator",
+            "title": "designation indicator",
+            "description": "Designation Indicators show which agency made the document CUI",
+            "type": "string"
+        },
+        "requiredIndicatorPerAuthority": {
+            "$id": "http://github.com/DOI-DO/dcat-us/requiredIndicatorPerAuthority",
+            "title": "required indicator per authority",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            ]
+        }
+    },
+    "required": [
+        "cuiBannerMarking",
+        "designationIndicator"
+    ]
+}

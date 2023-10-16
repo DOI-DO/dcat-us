@@ -1,0 +1,89 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Contact",
+    "type": "object",
+    "properties": {
+        "@id": {
+            "type": "string",
+            "format": "iri"
+        },
+        "@type": {
+            "type": "string",
+            "default": "Contact"
+        },
+        "address": {
+            "$id": "http://www.w3.org/2006/vcard/address",
+            "title": "address",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Address",
+                                "description": "inline description of Address"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Address",
+                                "format": "iri"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "email": {
+            "$id": "http://www.w3.org/2006/vcard/email",
+            "title": "email",
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/Resource",
+                    "description": "inline description of Resource"
+                },
+                {
+                    "type": "string",
+                    "description": "reference iri of Resource",
+                    "format": "iri"
+                }
+            ]
+        },
+        "fn": {
+            "$id": "http://www.w3.org/2006/vcard/fn",
+            "title": "formatted name",
+            "type": "string"
+        },
+        "tel": {
+            "$id": "http://www.w3.org/2006/vcard/tel",
+            "title": "telephone",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Resource",
+                                "description": "inline description of Resource"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Resource",
+                                "format": "iri"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    },
+    "required": [
+        "email",
+        "fn"
+    ]
+}

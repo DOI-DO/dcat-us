@@ -1,0 +1,75 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "UseRestriction",
+    "type": "object",
+    "properties": {
+        "@id": {
+            "type": "string",
+            "format": "iri"
+        },
+        "@type": {
+            "type": "string",
+            "default": "UseRestriction"
+        },
+        "restrictionNote": {
+            "$id": "http://github.com/DOI-DO/dcat-us/restrictionNote",
+            "title": "restriction note",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "restrictionNoteMap": {
+            "$id": "http://github.com/DOI-DO/dcat-us/restrictionNote_lang_map",
+            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+            "type": [
+                "null",
+                "object"
+            ]
+        },
+        "restrictionStatus": {
+            "$id": "http://github.com/DOI-DO/dcat-us/restrictionStatus",
+            "title": "restriction status",
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/Concept",
+                    "description": "inline description of Concept"
+                },
+                {
+                    "type": "string",
+                    "description": "reference iri of Concept",
+                    "format": "iri"
+                }
+            ]
+        },
+        "specificRestriction": {
+            "$id": "http://github.com/DOI-DO/dcat-us/specificRestriction",
+            "title": "specific restriction",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/Concept",
+                            "description": "inline description of Concept"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of Concept",
+                            "format": "iri"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "required": [
+        "restrictionStatus"
+    ]
+}

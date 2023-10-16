@@ -1,0 +1,51 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Attribution",
+    "type": "object",
+    "properties": {
+        "@id": {
+            "type": "string",
+            "format": "iri"
+        },
+        "@type": {
+            "type": "string",
+            "default": "Attribution"
+        },
+        "hadRole": {
+            "$id": "http://www.w3.org/ns/dcat#hadRole",
+            "title": "role",
+            "description": "The function of an entity or agent with respect to another entity or resource.",
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/Role",
+                    "description": "inline description of Role"
+                },
+                {
+                    "type": "string",
+                    "description": "reference iri of Role",
+                    "format": "iri"
+                }
+            ]
+        },
+        "agent": {
+            "$id": "http://www.w3.org/ns/prov#agent",
+            "title": "agent",
+            "description": "The agent property references an Agent that plays a role in the resource",
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/Agent",
+                    "description": "inline description of Agent"
+                },
+                {
+                    "type": "string",
+                    "description": "reference iri of Agent",
+                    "format": "iri"
+                }
+            ]
+        }
+    },
+    "required": [
+        "hadRole",
+        "agent"
+    ]
+}

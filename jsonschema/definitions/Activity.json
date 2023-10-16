@@ -1,0 +1,60 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Activity",
+    "type": "object",
+    "properties": {
+        "@id": {
+            "type": "string",
+            "format": "iri"
+        },
+        "@type": {
+            "type": "string",
+            "default": "Activity"
+        },
+        "category": {
+            "$id": "http://purl.org/dc/terms/type",
+            "title": "category",
+            "description": "The category of the Catalog ",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/Concept",
+                            "description": "inline description of Concept"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of Concept",
+                            "format": "iri"
+                        }
+                    ]
+                }
+            ]
+        },
+        "label": {
+            "$id": "http://www.w3.org/2000/01/rdf-schema#label",
+            "title": "label",
+            "description": "This property is used to give a human-readable label for the activity.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "labelMap": {
+            "$id": "http://www.w3.org/2000/01/rdf-schema#label_lang_map",
+            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+            "type": [
+                "null",
+                "object"
+            ]
+        }
+    },
+    "required": []
+}

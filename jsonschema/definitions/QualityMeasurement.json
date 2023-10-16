@@ -1,0 +1,64 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "QualityMeasurement",
+    "type": "object",
+    "properties": {
+        "@id": {
+            "type": "string",
+            "format": "iri"
+        },
+        "@type": {
+            "type": "string",
+            "default": "QualityMeasurement"
+        },
+        "isMeasurementOf": {
+            "$id": "http://www.w3.org/ns/dqv#isMeasurementOf",
+            "title": "is measurement of",
+            "description": "Indicates the metric being observed.",
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/Metric",
+                    "description": "inline description of Metric"
+                },
+                {
+                    "type": "string",
+                    "description": "reference iri of Metric",
+                    "format": "iri"
+                }
+            ]
+        },
+        "value": {
+            "$id": "http://www.w3.org/ns/dqv#value",
+            "title": "value",
+            "description": "Refers to values computed by metric.",
+            "type": "string"
+        },
+        "unitMeasure": {
+            "$id": "http://purl.org/linked-data/sdmx/2009/attribute#unitMeasure",
+            "title": "unit of measure",
+            "description": "Unit of measure associated with the value",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/Resource",
+                            "description": "inline description of Resource"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of Resource",
+                            "format": "iri"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "required": [
+        "isMeasurementOf",
+        "value"
+    ]
+}

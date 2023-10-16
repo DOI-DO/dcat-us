@@ -1,0 +1,47 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Agent",
+    "type": "object",
+    "properties": {
+        "@id": {
+            "type": "string",
+            "format": "iri"
+        },
+        "@type": {
+            "type": "string",
+            "default": "Agent"
+        },
+        "category": {
+            "$id": "http://purl.org/dc/terms/type",
+            "title": "category",
+            "description": "This property refers to a type of the Agent that makes the Catalog, Catalog Record, Data Service, or Dataset available",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/Concept",
+                            "description": "inline description of Concept"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of Concept",
+                            "format": "iri"
+                        }
+                    ]
+                }
+            ]
+        },
+        "name": {
+            "$id": "http://xmlns.com/foaf/0.1/name",
+            "title": "name",
+            "description": "The name of the software agent",
+            "type": "string"
+        }
+    },
+    "required": [
+        "name"
+    ]
+}

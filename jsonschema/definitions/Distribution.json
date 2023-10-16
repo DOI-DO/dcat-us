@@ -1,0 +1,713 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Distribution",
+    "type": "object",
+    "properties": {
+        "@id": {
+            "type": "string",
+            "format": "iri"
+        },
+        "@type": {
+            "type": "string",
+            "default": "Distribution"
+        },
+        "representationTechnique": {
+            "$id": "http://www.w3.org/ns/adms#representationTechnique",
+            "title": "representation technique",
+            "description": "This property MAY be used to provide more information about the format in which an Distribution is released. This is different from the file format as, for example, a ZIP file (file format) could contain an XML schema (representation technique). In DCAT-US profile,  this property SHOULD be used to express the spatial representation type (grid, vector, tin), by using the URIs of the corresponding code list operated by an approved registry. ",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/Concept",
+                            "description": "inline description of Concept"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of Concept",
+                            "format": "iri"
+                        }
+                    ]
+                }
+            ]
+        },
+        "status": {
+            "$id": "http://www.w3.org/ns/adms#status",
+            "title": "lifecycle status",
+            "description": "The status of the distribution in the context of maturity lifecycle.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/Concept",
+                            "description": "inline description of Concept"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of Concept",
+                            "format": "iri"
+                        }
+                    ]
+                }
+            ]
+        },
+        "characterEncoding": {
+            "$id": "http://www.w3.org/2011/content#characterEncoding",
+            "title": "character encoding",
+            "description": "This property SHOULD be used to specify the character encoding of the Distribution, by using as value the character set names in the IANA register ",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            ]
+        },
+        "accessService": {
+            "$id": "http://www.w3.org/ns/dcat#accessService",
+            "title": "access service",
+            "description": "A data service that gives access to the distribution of the dataset.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/DataService",
+                                "description": "inline description of DataService"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of DataService",
+                                "format": "iri"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "accessURL": {
+            "$id": "http://www.w3.org/ns/dcat#accessURL",
+            "title": "access URL",
+            "description": "A URL that gives access to a Distribution of the Dataset.",
+            "type": "array",
+            "items": {
+                "oneOf": [
+                    {
+                        "$ref": "#/definitions/Resource",
+                        "description": "inline description of Resource"
+                    },
+                    {
+                        "type": "string",
+                        "description": "reference iri of Resource",
+                        "format": "iri"
+                    }
+                ]
+            }
+        },
+        "byteSize": {
+            "$id": "http://www.w3.org/ns/dcat#byteSize",
+            "title": "byte size",
+            "description": "The size of a Distribution in bytes.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "compressFormat": {
+            "$id": "http://www.w3.org/ns/dcat#compressFormat",
+            "title": "compression format",
+            "description": "The format of the file in which the data is contained in a compressed form, e.g. to reduce the size of the downloadable file",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/MediaType",
+                            "description": "inline description of MediaType"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of MediaType",
+                            "format": "iri"
+                        }
+                    ]
+                }
+            ]
+        },
+        "downloadURL": {
+            "$id": "http://www.w3.org/ns/dcat#downloadURL",
+            "title": "download URL",
+            "description": "A URL that is a direct link to a downloadable file in a given format.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/Resource",
+                            "description": "inline description of Resource"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of Resource",
+                            "format": "iri"
+                        }
+                    ]
+                }
+            ]
+        },
+        "mediaType": {
+            "$id": "http://www.w3.org/ns/dcat#mediaType",
+            "title": "media type",
+            "description": "The media type of the Distribution as defined in the official register of media types managed by IANA.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/MediaType",
+                            "description": "inline description of MediaType"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of MediaType",
+                            "format": "iri"
+                        }
+                    ]
+                }
+            ]
+        },
+        "packageFormat": {
+            "$id": "http://www.w3.org/ns/dcat#packageFormat",
+            "title": "packaging format",
+            "description": "The format of the file in which one or more data files are grouped together, e.g. to enable a set of related files to be downloaded together.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/MediaType",
+                            "description": "inline description of MediaType"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of MediaType",
+                            "format": "iri"
+                        }
+                    ]
+                }
+            ]
+        },
+        "spatialResolutionInMeters": {
+            "$id": "http://www.w3.org/ns/dcat#spatialResolutionInMeters",
+            "title": "Spatial resolution (meters)",
+            "description": "The minimum spatial separation resolvable in a dataset distribution, measured in meters.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "temporalResolution": {
+            "$id": "http://www.w3.org/ns/dcat#temporalResolution",
+            "title": "termporal resolution",
+            "description": "The minimum time period resolvable in the dataset distribution.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "availability": {
+            "$id": "http://data.europa.eu/r5r/availability",
+            "title": "availability",
+            "description": "An indication how long it is planned to keep the Distribution of the Dataset available.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/Concept",
+                            "description": "inline description of Concept"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of Concept",
+                            "format": "iri"
+                        }
+                    ]
+                }
+            ]
+        },
+        "accessRestriction": {
+            "$id": "http://github.com/DOI-DO/dcat-us/accessRestriction",
+            "title": "access restriction",
+            "description": "Access restriction related to the distribution",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/AccessRestriction",
+                                "description": "inline description of AccessRestriction"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of AccessRestriction",
+                                "format": "iri"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "cuiRestriction": {
+            "$id": "http://github.com/DOI-DO/dcat-us/cuiRestriction",
+            "title": "CUI restriction",
+            "description": "Controlled Unclassified Information restriction related to the distribution",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/CUIRestriction",
+                            "description": "inline description of CUIRestriction"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of CUIRestriction",
+                            "format": "iri"
+                        }
+                    ]
+                }
+            ]
+        },
+        "useRestriction": {
+            "$id": "http://github.com/DOI-DO/dcat-us/useRestriction",
+            "title": "use restriction",
+            "description": "Use restriction related to the distribution",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/UseRestriction",
+                                "description": "inline description of UseRestriction"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of UseRestriction",
+                                "format": "iri"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "accessRights": {
+            "$id": "http://purl.org/dc/terms/accessRights",
+            "title": "access rights",
+            "description": "This property MAY include information regarding access or restrictions based on privacy, security, or other policies.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/RightsStatement",
+                            "description": "inline description of RightsStatement"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of RightsStatement",
+                            "format": "iri"
+                        }
+                    ]
+                }
+            ]
+        },
+        "conformsTo": {
+            "$id": "http://purl.org/dc/terms/conformsTo",
+            "title": "linked schemas",
+            "description": "This property refers to an established schema or reference systems which the described Distribution conforms.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Standard",
+                                "description": "inline description of Standard"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Standard",
+                                "format": "iri"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "description": {
+            "$id": "http://purl.org/dc/terms/description",
+            "title": "description",
+            "description": "A free-text account of the Distribution.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "descriptionMap": {
+            "$id": "http://purl.org/dc/terms/description_lang_map",
+            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+            "type": [
+                "null",
+                "object"
+            ]
+        },
+        "format": {
+            "$id": "http://purl.org/dc/terms/format",
+            "title": "format",
+            "description": "The file format of the Distribution.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/MediaType",
+                            "description": "inline description of MediaType"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of MediaType",
+                            "format": "iri"
+                        }
+                    ]
+                }
+            ]
+        },
+        "issued": {
+            "$id": "http://purl.org/dc/terms/issued",
+            "title": "release date",
+            "description": "The date of formal issuance (e.g., publication) of the Distribution.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string",
+                    "oneOf": [
+                        {
+                            "format": "date-time"
+                        },
+                        {
+                            "format": "date"
+                        },
+                        {
+                            "pattern": "^[0-9]{4}$",
+                            "description": "A year in YYYY format"
+                        },
+                        {
+                            "pattern": "^[0-9]{4}-[0-9]{2}$",
+                            "description": "A year and month in YYYY-MM format"
+                        }
+                    ]
+                }
+            ]
+        },
+        "language": {
+            "$id": "http://purl.org/dc/terms/language",
+            "title": "language",
+            "description": "A language used in the Distribution.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/LinguisticSystem",
+                                "description": "inline description of LinguisticSystem"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of LinguisticSystem",
+                                "format": "iri"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "license": {
+            "$id": "http://purl.org/dc/terms/license",
+            "title": "license",
+            "description": "A licence under which the Distribution is made available.",
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/LicenseDocument",
+                    "description": "inline description of LicenseDocument"
+                },
+                {
+                    "type": "string",
+                    "description": "reference iri of LicenseDocument",
+                    "format": "iri"
+                }
+            ]
+        },
+        "modified": {
+            "$id": "http://purl.org/dc/terms/modified",
+            "title": "last modified",
+            "description": "The most recent date on which the Distribution was changed or modified.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string",
+                    "oneOf": [
+                        {
+                            "format": "date-time"
+                        },
+                        {
+                            "format": "date"
+                        },
+                        {
+                            "pattern": "^[0-9]{4}$",
+                            "description": "A year in YYYY format"
+                        },
+                        {
+                            "pattern": "^[0-9]{4}-[0-9]{2}$",
+                            "description": "A year and month in YYYY-MM format"
+                        }
+                    ]
+                }
+            ]
+        },
+        "rights": {
+            "$id": "http://purl.org/dc/terms/rights",
+            "title": "rights",
+            "description": "A statement that specifies rights associated with the Distribution.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/RightsStatement",
+                            "description": "inline description of RightsStatement"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of RightsStatement",
+                            "format": "iri"
+                        }
+                    ]
+                }
+            ]
+        },
+        "title": {
+            "$id": "http://purl.org/dc/terms/title",
+            "title": "title",
+            "description": "A name given to the Distribution.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "titleMap": {
+            "$id": "http://purl.org/dc/terms/title_lang_map",
+            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+            "type": [
+                "null",
+                "object"
+            ]
+        },
+        "hasQualityMeasurement": {
+            "$id": "http://www.w3.org/ns/dqv#hasQualityMeasurement",
+            "title": "quality measurement",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/QualityMeasurement",
+                                "description": "inline description of QualityMeasurement"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of QualityMeasurement",
+                                "format": "iri"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "page": {
+            "$id": "http://xmlns.com/foaf/0.1/page",
+            "title": "documentation",
+            "description": "A page or document about this Distribution.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/Document",
+                            "description": "inline description of Document"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of Document",
+                            "format": "iri"
+                        }
+                    ]
+                }
+            ]
+        },
+        "hasPolicy": {
+            "$id": "http://www.w3.org/ns/odrl/2/hasPolicy",
+            "title": "policy",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Policy",
+                                "description": "inline description of Policy"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Policy",
+                                "format": "iri"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "image": {
+            "$id": "https://schema.org/image",
+            "title": "image",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Resource",
+                                "description": "inline description of Resource"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Resource",
+                                "format": "iri"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "checksum": {
+            "$id": "http://spdx.org/rdf/terms#checksum",
+            "title": "checksum",
+            "description": "A mechanism that can be used to verify that the contents of a distribution have not changed.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/Checksum",
+                            "description": "inline description of Checksum"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of Checksum",
+                            "format": "iri"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "required": [
+        "accessURL",
+        "license"
+    ]
+}

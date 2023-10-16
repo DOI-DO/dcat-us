@@ -1,0 +1,207 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Standard",
+    "type": "object",
+    "properties": {
+        "@id": {
+            "type": "string",
+            "format": "iri"
+        },
+        "@type": {
+            "type": "string",
+            "default": "Standard"
+        },
+        "created": {
+            "$id": "http://purl.org/dc/terms/created",
+            "title": "creation date",
+            "description": "This property contains the date on which the Standard has been first created.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string",
+                    "oneOf": [
+                        {
+                            "format": "date-time"
+                        },
+                        {
+                            "format": "date"
+                        },
+                        {
+                            "pattern": "^[0-9]{4}$",
+                            "description": "A year in YYYY format"
+                        },
+                        {
+                            "pattern": "^[0-9]{4}-[0-9]{2}$",
+                            "description": "A year and month in YYYY-MM format"
+                        }
+                    ]
+                }
+            ]
+        },
+        "description": {
+            "$id": "http://purl.org/dc/terms/description",
+            "title": "description",
+            "description": "This property contains a free-text account of the Standard. This property can be repeated for parallel language versions of the description",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "descriptionMap": {
+            "$id": "http://purl.org/dc/terms/description_lang_map",
+            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+            "type": [
+                "null",
+                "object"
+            ]
+        },
+        "identifier": {
+            "$id": "http://purl.org/dc/terms/identifier",
+            "title": "identifier",
+            "description": "This property contains the main identifier for the Standard, e.g. the URI or other unique identifier in the context of the Catalogue, or of a reference register",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            ]
+        },
+        "issued": {
+            "$id": "http://purl.org/dc/terms/issued",
+            "title": "issued",
+            "description": "This property contains the date of formal issuance (e.g., publication) of the Standard.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string",
+                    "oneOf": [
+                        {
+                            "format": "date-time"
+                        },
+                        {
+                            "format": "date"
+                        },
+                        {
+                            "pattern": "^[0-9]{4}$",
+                            "description": "A year in YYYY format"
+                        },
+                        {
+                            "pattern": "^[0-9]{4}-[0-9]{2}$",
+                            "description": "A year and month in YYYY-MM format"
+                        }
+                    ]
+                }
+            ]
+        },
+        "modified": {
+            "$id": "http://purl.org/dc/terms/modified",
+            "title": "last modified",
+            "description": "This property contains the most recent date on which the Standard was changed or modified.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string",
+                    "oneOf": [
+                        {
+                            "format": "date-time"
+                        },
+                        {
+                            "format": "date"
+                        },
+                        {
+                            "pattern": "^[0-9]{4}$",
+                            "description": "A year in YYYY format"
+                        },
+                        {
+                            "pattern": "^[0-9]{4}-[0-9]{2}$",
+                            "description": "A year and month in YYYY-MM format"
+                        }
+                    ]
+                }
+            ]
+        },
+        "title": {
+            "$id": "http://purl.org/dc/terms/title",
+            "title": "title",
+            "description": "This property contains a name given to the Standard. This property can be repeated for parallel language versions of the name",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "titleMap": {
+            "$id": "http://purl.org/dc/terms/title_lang_map",
+            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+            "type": [
+                "null",
+                "object"
+            ]
+        },
+        "category": {
+            "$id": "http://purl.org/dc/terms/type",
+            "title": "category",
+            "description": "This property refers to the type of the Standard. A controlled vocabulary for the values has not been established.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/Concept",
+                            "description": "inline description of Concept"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of Concept",
+                            "format": "iri"
+                        }
+                    ]
+                }
+            ]
+        },
+        "inScheme": {
+            "$id": "http://www.w3.org/2004/02/skos/core#inScheme",
+            "title": "in scheme",
+            "description": "This property MAY be used to specify the reference register to which the Standard belongs.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/ConceptScheme",
+                            "description": "inline description of ConceptScheme"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of ConceptScheme",
+                            "format": "iri"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "required": []
+}

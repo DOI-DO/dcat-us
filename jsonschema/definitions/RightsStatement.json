@@ -1,0 +1,36 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "RightsStatement",
+    "type": "object",
+    "properties": {
+        "@id": {
+            "type": "string",
+            "format": "iri"
+        },
+        "@type": {
+            "type": "string",
+            "default": "RightsStatement"
+        },
+        "attributionText": {
+            "$id": "http://schema.theodi.org/odrs#attributionText",
+            "title": "attribution text",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "attributionTextMap": {
+            "$id": "http://schema.theodi.org/odrs#attributionText_lang_map",
+            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+            "type": [
+                "null",
+                "object"
+            ]
+        }
+    },
+    "required": []
+}

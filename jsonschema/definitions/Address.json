@@ -1,0 +1,81 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Address",
+    "type": "object",
+    "properties": {
+        "@id": {
+            "type": "string",
+            "format": "iri"
+        },
+        "@type": {
+            "type": "string",
+            "default": "Address"
+        },
+        "locality": {
+            "$id": "http://www.w3.org/2006/vcard/locality",
+            "title": "locality",
+            "description": "The city of an Address of the Kind.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "region": {
+            "$id": "http://www.w3.org/2006/vcard/region",
+            "title": "administrative area",
+            "description": "The administrative area of an Address of the Kind. Depending on the country, this corresponds to a province, a county, a region, or a state.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "country-name": {
+            "$id": "http://www.w3.org/2006/vcard/country-name",
+            "title": "country",
+            "description": "The country of an Address of the Kind.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "postal-code": {
+            "$id": "http://www.w3.org/2006/vcard/postal-code",
+            "title": "postal code",
+            "description": "The postal code of an Address of the Kind.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "street-address": {
+            "$id": "http://www.w3.org/2006/vcard/street-address",
+            "title": "street address",
+            "description": "The street name and civic number of an Address of the Kind.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        }
+    },
+    "required": []
+}

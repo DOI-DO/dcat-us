@@ -1,0 +1,119 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Location",
+    "type": "object",
+    "properties": {
+        "@id": {
+            "type": "string",
+            "format": "iri"
+        },
+        "@type": {
+            "type": "string",
+            "default": "Location"
+        },
+        "bbox": {
+            "$id": "http://www.w3.org/ns/dcat#bbox",
+            "title": "bounding box",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "type": "string",
+                            "format": "iri",
+                            "description": "This can be one of the following: "
+                        }
+                    ]
+                }
+            ]
+        },
+        "centroid": {
+            "$id": "http://www.w3.org/ns/dcat#centroid",
+            "title": "centroid",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "type": "string",
+                            "format": "iri",
+                            "description": "This can be one of the following: "
+                        }
+                    ]
+                }
+            ]
+        },
+        "identifier": {
+            "$id": "http://purl.org/dc/terms/identifier",
+            "title": "identifier",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "geometry": {
+            "$id": "http://www.w3.org/ns/locn#geometry",
+            "title": "geometry",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "type": "string",
+                            "format": "iri",
+                            "description": "This can be one of the following: "
+                        }
+                    ]
+                }
+            ]
+        },
+        "inScheme": {
+            "$id": "http://www.w3.org/2004/02/skos/core#inScheme",
+            "title": "gazetteer",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/ConceptScheme",
+                            "description": "inline description of ConceptScheme"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of ConceptScheme",
+                            "format": "iri"
+                        }
+                    ]
+                }
+            ]
+        },
+        "prefLabel": {
+            "$id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+            "title": "geographic name",
+            "type": "string"
+        },
+        "prefLabelMap": {
+            "$id": "http://www.w3.org/2004/02/skos/core#prefLabel_lang_map",
+            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+            "type": [
+                "null",
+                "object"
+            ]
+        }
+    },
+    "required": [
+        "prefLabel"
+    ]
+}
