@@ -3141,6 +3141,7 @@
                 <td>
                   <ul>
                     <li>This property contains the most recent date on which the Catalog was modified.</li>
+                    <li>The value of this property indicates a change to the actual resource, not a change to the catalog record. An absent value MAY indicate that the resource has never changed after its initial publication, or that the date of last modification is not known, or that the resource is continuously updated.</li>
                   </ul>
                 </td>
               </tr>
@@ -3227,20 +3228,24 @@
                 </td>
               </tr>
               <tr>
+                <th class="prop">Definition:</th>
+                <td>The entity responsible for producing the resource.</td>
+              </tr>
+              <tr>
                 <th>Usage Note</th>
                 <td>
                   <ul>
-                    <li>This property refers to the license under which the Catalog can be used or reused.
+                    <li>Resources of type foaf:Agent are recommended as values for this property.
                     </li>
-                    <li>CV to be used: [[DATA-GOV-LICENSE]]</li>
                   </ul>
                 </td>
               </tr>
             </tbody>
           </table>
-          <aside class="example" title="Usage of dcterms:license for dcat:Catalog">
-            <pre data-include-format="text" data-include="./examples/catalog/license.ttl"></pre>
-          </aside>
+          <!-- TODO: Determine whether an example for dcterms:creator is needed; if not, please delete. -->
+          <!-- <aside class="example" title="Usage of dcterms:creator for dcat:Catalog">
+            <pre data-include-format="text" data-include="./examples/catalog/creator.ttl"></pre>
+          </aside> -->
         </section>
         <section id="catalog-access-rights">
           <h4>Property: access rights</h4>
