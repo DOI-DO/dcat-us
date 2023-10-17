@@ -534,8 +534,8 @@
               <a href="#properties-for-agent">Agent</a>
             </td>
             <td>
-              <p>An entity (e.g., an individual or an organisation) that is associated with Catalogs, Catalog
-                Records, Data Services, or Datasets. If the Agent is an organisation, the use of the Organization
+              <p>An entity (e.g., an individual or an organization) that is associated with Catalogs, Catalog
+                Records, Data Services, or Datasets. If the Agent is an organization, the use of the Organization
                 Ontology [[VOCAB-ORG]] is recommended.</p>
             </td>
             <td>
@@ -1974,9 +1974,9 @@
           <th class="prop">Usage note:</th>
           <td>
             <ul>
-              <li>Use this class when refering to a software agent that is associated with Catalogues, Catalogue
+              <li>Use this class when refering to a software agent that is associated with Catalogs, Catalog
                 Records, Data Services, or Datasets.</li>
-              <li>If the Agent is an organisation, the use of the <a
+              <li>If the Agent is an organization, the use of the <a
                   href="http://www.w3c.org/ns/org#Organization"><code>org:Organization</code></a> is recommended. </li>
               <li>If the Agent is a person, the use of <a
                   href="http://xmlns.com/foaf/0.1/#term_Person"><code>foaf:Person</code></a> is recommended</li>
@@ -2590,6 +2590,14 @@
             <td>0..n</td>
             <td><span style="color: green;">Aligned</span></td>
           </tr>
+          <tr>
+            <td><a href="#catalog-type">category</a></td>
+            <td><a href="http://purl.org/dc/terms/type"><code>dcterms:type</code></a></td>
+            <td><a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a></td>
+            <td>O</td>
+            <td>0..1</td>
+            <td><span style="color: red;">New!</span></td>
+          </tr>
         </tbody>
       </table>
 
@@ -2725,7 +2733,7 @@
                 <th>Usage Note</th>
                 <td>
                   <ul>
-                    <li>This property refers to an entity (organisation) responsible for making the Catalog available.
+                    <li>This property refers to an entity (organization) responsible for making the Catalog available.
                     </li>
                   </ul>
                 </td>
@@ -3414,10 +3422,10 @@
               </tr>
             </tbody>
           </table>
-          <aside class="example" title="Usage of dcat:keyword for dcat:Catalog">
-            <!-- TODO: uncomment below and add a dcat:keyword example for dcat:Catalog-->
-            <!-- <pre data-include-format="text" data-include="./examples/catalog/keyword.ttl"></pre> -->
-          </aside>
+          <!-- TODO: uncomment below and add a dcat:keyword example for dcat:Catalog-->
+          <!-- <aside class="example" title="Usage of dcat:keyword for dcat:Catalog">
+            <pre data-include-format="text" data-include="./examples/catalog/keyword.ttl"></pre>
+          </aside> -->
         </section>
         <section id="catalog-hasPart">
           <h4>Property: has part</h4>
@@ -3455,10 +3463,10 @@
               </tr>
             </tbody>
           </table>
-          <aside class="example" title="Usage of dcterms:hasPart for dcat:Catalog">
-            <!-- TODO: uncomment below and add a dcterms:hasPart example for dcat:Catalog-->
-            <!-- <pre data-include-format="text" data-include="./examples/catalog/hasPart.ttl"></pre> -->
-          </aside>
+          <!-- TODO: uncomment below and add a dcterms:hasPart example for dcat:Catalog-->
+          <!-- <aside class="example" title="Usage of dcterms:hasPart for dcat:Catalog">
+            <pre data-include-format="text" data-include="./examples/catalog/hasPart.ttl"></pre>
+          </aside> -->
         </section>
         <section id="catalog-catalog-record">
           <aside class="note">New in DCAT-US 3.0 (defined in DCAT 1)</aside>
@@ -3491,19 +3499,19 @@
                 <th>Range</th>
                 <td><a data-cite="VOCAB-DCAT-3#Class:Catalog_Record"><code>dcat:CatalogRecord</code></a></td>
               </tr>
-              <tr>
+              <!-- <tr>
                 <th>Usage Note</th>
                 <td>
                   <ul>
                   </ul>
                 </td>
-              </tr>
+              </tr> -->
             </tbody>
           </table>
-          <aside class="example" title="Usage of dcat:record for dcat:Catalog">
-            <!-- TODO: uncomment below and add a dcdat:record example for dcat:Catalog-->
-            <!-- <pre data-include-format="text" data-include="./examples/catalog/catalogRecord.ttl"></pre> -->
-          </aside>
+          <!-- TODO: uncomment below and add a dcdat:record example for dcat:Catalog-->
+          <!-- <aside class="example" title="Usage of dcat:record for dcat:Catalog">
+            <pre data-include-format="text" data-include="./examples/catalog/catalogRecord.ttl"></pre>
+          </aside> -->
         </section>
         <section id="catalog-service">
           <h4>Property: service</h4>
@@ -3589,9 +3597,10 @@
               </tr>
             </tbody>
           </table>
-          <aside class="example" title="Example for dcat:theme for dcat:Catalog.">
+          <!-- TODO: Update or remove-->
+          <!-- <aside class="example" title="Example for dcat:theme for dcat:Catalog.">
             <pre data-include-format="text" data-include="./examples/catalog/theme.ttl"></pre>
-          </aside>
+          </aside> -->
         </section>
         <section id="catalog-identifier">
           <h4>Property: identifier</h4>
@@ -3632,9 +3641,10 @@
               </tr>
             </tbody>
           </table>
-          <aside class="example" title="Example for dcterms:identifier for dcat:Catalog.">
-            <!-- <pre data-include-format="text" data-include="./examples/catalog/identifier.ttl"></pre> -->
-          </aside>
+          <!-- TODO: Update or Remove -->
+          <!-- <aside class="example" title="Example for dcterms:identifier for dcat:Catalog.">
+            <pre data-include-format="text" data-include="./examples/catalog/identifier.ttl"></pre>
+          </aside> -->
         </section>
 
         <section id="catalog-rightsHolder">
@@ -3667,17 +3677,17 @@
                 <th>Usage Note</th>
                 <td>
                   <ul>
-                    <li>This property refers to an organisation holding rights on the Catalog.
+                    <li>This property refers to an organization holding rights on the Catalog.
                     </li>
                   </ul>
                 </td>
               </tr>
             </tbody>
           </table>
-          <aside class="example" title="Usage of dcterms:rightsHolder for dcat:Catalog">
-            <!-- TODO: uncomment below and add a dcterms:rightsHolder example for dcat:Catalog-->
-            <!-- <pre data-include-format="text" data-include="./examples/catalog/rightsHolder.ttl"></pre> -->
-          </aside>
+          <!-- TODO: uncomment below and add a dcterms:rightsHolder example for dcat:Catalog-->
+          <!-- <aside class="example" title="Usage of dcterms:rightsHolder for dcat:Catalog">  
+            <pre data-include-format="text" data-include="./examples/catalog/rightsHolder.ttl"></pre>
+          </aside> -->
         </section>
         <section id="catalog-subject">
           <h4>Property: subject</h4>
@@ -3704,19 +3714,19 @@
                 <th>Range</th>
                 <td><a href="SKOS-REFERENCE#Class:Concept"><code>skos:Concept</code></a></td>
               </tr>
-              <tr>
+              <!-- <tr>
                 <th>Usage Note</th>
                 <td>
                   <ul>
                   </ul>
                 </td>
-              </tr>
+              </tr> -->
             </tbody>
           </table>
-          <aside class="example" title="Usage of dcterms:subject for dcat:Catalog">
-            <!-- TODO: uncomment below and add a dcterms:subject example for dcat:Catalog-->
-            <!-- <pre data-include-format="text" data-include="./examples/catalog/subject.ttl"></pre> -->
-          </aside>
+          <!-- TODO: uncomment below and add a dcterms:subject example for dcat:Catalog-->
+          <!-- <aside class="example" title="Usage of dcterms:subject for dcat:Catalog"> 
+            <pre data-include-format="text" data-include="./examples/catalog/subject.ttl"></pre>
+          </aside> -->
         </section>
         <section id="catalog-temporal">
           <h4>Property: temporal coverage</h4>
@@ -3754,11 +3764,11 @@
               </tr>
             </tbody>
           </table>
-          <aside class="example" title="Usage of dcterms:temporal for dcat:Catalog">
-            <!-- TODO: uncomment below and add a dcterms:temporal example for dcat:Catalog-->
-            <!-- <pre data-include-format="text" data-include="./examples/catalog/temporal.ttl"></pre> -->
-          </aside>
-        </section>
+          <!-- TODO: uncomment below and add a dcterms:temporal example for dcat:Catalog-->
+          <!-- <aside class="example" title="Usage of dcterms:temporal for dcat:Catalog">  
+            <pre data-include-format="text" data-include="./examples/catalog/temporal.ttl"></pre>
+          </aside> -->
+        </section> 
         <section id="catalog-qualifiedAttribution">
           <h4>Property: qualified attribution</h4>
           <aside class="note">New in DCAT-US 3.0 (defined in DCAT 2)</aside>
@@ -3795,10 +3805,47 @@
               </tr>
             </tbody>
           </table>
-          <aside class="example" title="Usage of prov:qualifiedAttribution for dcat:Catalog">
-            <!-- TODO: uncomment below and add a prov:qualifiedAttribution example for dcat:Catalog-->
-            <!-- <pre data-include-format="text" data-include="./examples/catalog/qualifiedAttribution.ttl"></pre> -->
-          </aside>
+          <!-- TODO: uncomment below and add a prov:qualifiedAttribution example for dcat:Catalog-->
+          <!-- <aside class="example" title="Usage of prov:qualifiedAttribution for dcat:Catalog">
+            <pre data-include-format="text" data-include="./examples/catalog/qualifiedAttribution.ttl"></pre>
+          </aside> -->
+        </section>
+        <section id="catalog-type">
+          <h4>Property: category</h4>
+          <table class="def">
+            <tbody>
+              <tr>
+                <th>Property</th>
+                <td>category</td>
+              </tr>
+              <tr>
+                <th>Requirement level</th>
+                <td>Optional</td>
+              </tr>
+              <tr>
+                <th>Cardinality</th>
+                <td>0..1</td>
+              </tr>
+              <tr>
+                <th>URI</th>
+                <td><a href="http://purl.org/dc/terms/type"><code>dcterms:type</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Range</th>
+                <td><a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Usage Note</th>
+                <td>
+                  <ul>
+                    <li>The category of the Catalog</li>
+                  </ul>
+                </td>
+                </tr>
+            </tbody>
+          </table>
         </section>
       </section>
 
@@ -4202,7 +4249,7 @@
               </tr>
               <tr>
                 <th>Definition</th>
-                <td>The date on which the description of the Dataset was included in the Catalogue.</td>
+                <td>The date on which the description of the Dataset was included in the Catalog.</td>
               </tr>
             </tbody>
           </table>
@@ -6172,14 +6219,14 @@
             </tr>
             <tr>
               <th>Definition</th>
-              <td>This property refers to an entity (organisation) responsible for making the Data Service
+              <td>This property refers to an entity (organization) responsible for making the Data Service
                 available.
               </td>
             </tr>
             <tr>
               <th>Usage Note</th>
               <td>
-                This property refers to an entity (organisation) responsible for making the Catalog available.
+                This property refers to an entity (organization) responsible for making the Catalog available.
 
               </td>
             </tr>
@@ -6966,7 +7013,7 @@
             <tr>
               <th>Usage Note</th>
               <td>
-                This property refers to an Agent (organisation) holding rights on the Data Service.
+                This property refers to an Agent (organization) holding rights on the Data Service.
 
               </td>
             </tr>
@@ -12161,7 +12208,7 @@
               <th>Usage Note</th>
               <td>
                 An identifier for the distribution, that identifies it as a
-                resource mainly for the organisation publishing the data.
+                resource mainly for the organization publishing the data.
 
               </td>
             </tr>
@@ -18075,7 +18122,7 @@
           <li><strong>Use Recognized URL Identifiers:</strong> It is strongly recommended to utilize well-known URL
             identifiers for organizations that are centrally managed by a government registry. This practice ensures the
             unambiguous identification of organizations and fosters consistency and reliability in organizational
-            referencing across catalogued resources.</li>
+            referencing across cataloged resources.</li>
           <li><strong>Ensure Consistency:</strong> Employ <a data-cite="FOAF#term_name"><code>foaf:name</code></a> to
             furnish a consistent and recognizable name for the organization, thereby maintaining a uniform identity
             across various platforms.</li>
@@ -18273,7 +18320,7 @@
 
       <section id="extended-attributions">
         <h4>Extended Attributions and Diverse Roles</h4>
-        <p>While there are numerous roles of significance in relation to catalogued resources, such as funder,
+        <p>While there are numerous roles of significance in relation to cataloged resources, such as funder,
           distributor, custodian, and editor, some of these roles are enumerated in the <a
             href="https://standards.iso.org/iso/19115/resources/Codelists/gml/CI_RoleCode.xml"><code>CI_RoleCode</code></a>
           values from [[ISO-19115-1]], in the [[DataCite]] metadata schema, and included within the <a
@@ -18774,7 +18821,7 @@
           <li>Property source metadata (<a
               data-cite="DCTERMS#http://purl.org/dc/terms/source"><code>dcterms:source</code></a>),
             optional, non-repeatable
-            property for Catalogue Record, that refers
+            property for Catalog Record, that refers
             to the original metadata that was used in creating metadata for the Dataset.
           <li>Property source (<a data-cite="DCTERMS#http://purl.org/dc/terms/source"><code>dcterms:source</code></a>),
             optional, repeatable property for Dataset, that refers to a related Dataset
@@ -19448,7 +19495,7 @@
         <ul>
           <li>Be published under an open license.</li>
           <li>Be operated and/or maintained by an agency of the US Government, by a recognised standards
-            organisation or another trusted organisation.</li>
+            organization or another trusted organization.</li>
           <li>Be properly documented.</li>
           <li>Have labels in english, and optionally in Spanish</li>
           <li>Contain a relatively small number of terms (e.g. 10-25) that are general enough to enable a
