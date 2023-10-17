@@ -15,7 +15,12 @@
                 },
                 "issued": {
                     "@id": "http://purl.org/dc/terms/issued",
-                    "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+                    "@type": [
+                        "http://www.w3.org/2001/XMLSchema#date",
+                        "http://www.w3.org/2001/XMLSchema#dateTime",
+                        "http://www.w3.org/2001/XMLSchema#gYear",
+                        "http://www.w3.org/2001/XMLSchema#gYearMonth"
+                    ]
                 },
                 "version": {
                     "@id": "http://purl.org/dc/terms/version",
@@ -266,7 +271,12 @@
                 },
                 "issued": {
                     "@id": "http://purl.org/dc/terms/issued",
-                    "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+                    "@type": [
+                        "http://www.w3.org/2001/XMLSchema#date",
+                        "http://www.w3.org/2001/XMLSchema#dateTime",
+                        "http://www.w3.org/2001/XMLSchema#gYear",
+                        "http://www.w3.org/2001/XMLSchema#gYearMonth"
+                    ]
                 },
                 "language": {
                     "@id": "http://purl.org/dc/terms/language",
@@ -278,7 +288,12 @@
                 },
                 "modified": {
                     "@id": "http://purl.org/dc/terms/modified",
-                    "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+                    "@type": [
+                        "http://www.w3.org/2001/XMLSchema#date",
+                        "http://www.w3.org/2001/XMLSchema#dateTime",
+                        "http://www.w3.org/2001/XMLSchema#gYear",
+                        "http://www.w3.org/2001/XMLSchema#gYearMonth"
+                    ]
                 },
                 "publisher": {
                     "@id": "http://purl.org/dc/terms/publisher",
@@ -389,7 +404,12 @@
                 },
                 "created": {
                     "@id": "http://purl.org/dc/terms/created",
-                    "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+                    "@type": [
+                        "http://www.w3.org/2001/XMLSchema#date",
+                        "http://www.w3.org/2001/XMLSchema#dateTime",
+                        "http://www.w3.org/2001/XMLSchema#gYear",
+                        "http://www.w3.org/2001/XMLSchema#gYearMonth"
+                    ]
                 },
                 "creator": {
                     "@id": "http://purl.org/dc/terms/creator",
@@ -417,7 +437,12 @@
                 },
                 "modified": {
                     "@id": "http://purl.org/dc/terms/modified",
-                    "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+                    "@type": [
+                        "http://www.w3.org/2001/XMLSchema#date",
+                        "http://www.w3.org/2001/XMLSchema#dateTime",
+                        "http://www.w3.org/2001/XMLSchema#gYear",
+                        "http://www.w3.org/2001/XMLSchema#gYearMonth"
+                    ]
                 },
                 "publisher": {
                     "@id": "http://purl.org/dc/terms/publisher",
@@ -609,7 +634,12 @@
                 },
                 "created": {
                     "@id": "http://purl.org/dc/terms/created",
-                    "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+                    "@type": [
+                        "http://www.w3.org/2001/XMLSchema#date",
+                        "http://www.w3.org/2001/XMLSchema#dateTime",
+                        "http://www.w3.org/2001/XMLSchema#gYear",
+                        "http://www.w3.org/2001/XMLSchema#gYearMonth"
+                    ]
                 },
                 "creator": {
                     "@id": "http://purl.org/dc/terms/creator",
@@ -638,7 +668,12 @@
                 },
                 "issued": {
                     "@id": "http://purl.org/dc/terms/issued",
-                    "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+                    "@type": [
+                        "http://www.w3.org/2001/XMLSchema#date",
+                        "http://www.w3.org/2001/XMLSchema#dateTime",
+                        "http://www.w3.org/2001/XMLSchema#gYear",
+                        "http://www.w3.org/2001/XMLSchema#gYearMonth"
+                    ]
                 },
                 "language": {
                     "@id": "http://purl.org/dc/terms/language",
@@ -650,7 +685,12 @@
                 },
                 "modified": {
                     "@id": "http://purl.org/dc/terms/modified",
-                    "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+                    "@type": [
+                        "http://www.w3.org/2001/XMLSchema#date",
+                        "http://www.w3.org/2001/XMLSchema#dateTime",
+                        "http://www.w3.org/2001/XMLSchema#gYear",
+                        "http://www.w3.org/2001/XMLSchema#gYearMonth"
+                    ]
                 },
                 "provenance": {
                     "@id": "http://purl.org/dc/terms/provenance",
@@ -844,7 +884,12 @@
                 },
                 "issued": {
                     "@id": "http://purl.org/dc/terms/issued",
-                    "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+                    "@type": [
+                        "http://www.w3.org/2001/XMLSchema#date",
+                        "http://www.w3.org/2001/XMLSchema#dateTime",
+                        "http://www.w3.org/2001/XMLSchema#gYear",
+                        "http://www.w3.org/2001/XMLSchema#gYearMonth"
+                    ]
                 },
                 "language": {
                     "@id": "http://purl.org/dc/terms/language",
@@ -857,7 +902,12 @@
                 },
                 "modified": {
                     "@id": "http://purl.org/dc/terms/modified",
-                    "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+                    "@type": [
+                        "http://www.w3.org/2001/XMLSchema#date",
+                        "http://www.w3.org/2001/XMLSchema#dateTime",
+                        "http://www.w3.org/2001/XMLSchema#gYear",
+                        "http://www.w3.org/2001/XMLSchema#gYearMonth"
+                    ]
                 },
                 "rights": {
                     "@id": "http://purl.org/dc/terms/rights",
@@ -924,11 +974,19 @@
             "@context": {
                 "bbox": {
                     "@id": "http://www.w3.org/ns/dcat#bbox",
-                    "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+                    "@type": [
+                        "http://www.opengis.net/ont/geosparql#wktLiteral",
+                        "http://www.opengis.net/ont/geosparql#gmlLiteral",
+                        "http://www.opengis.net/ont/geosparql#geoJSONLiteral"
+                    ]
                 },
                 "centroid": {
                     "@id": "http://www.w3.org/ns/dcat#centroid",
-                    "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+                    "@type": [
+                        "http://www.opengis.net/ont/geosparql#wktLiteral",
+                        "http://www.opengis.net/ont/geosparql#gmlLiteral",
+                        "http://www.opengis.net/ont/geosparql#geoJSONLiteral"
+                    ]
                 },
                 "identifier": {
                     "@id": "http://purl.org/dc/terms/identifier",
@@ -936,7 +994,11 @@
                 },
                 "geometry": {
                     "@id": "http://www.w3.org/ns/locn#geometry",
-                    "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+                    "@type": [
+                        "http://www.opengis.net/ont/geosparql#wktLiteral",
+                        "http://www.opengis.net/ont/geosparql#gmlLiteral",
+                        "http://www.opengis.net/ont/geosparql#geoJSONLiteral"
+                    ]
                 },
                 "inScheme": {
                     "@id": "http://www.w3.org/2004/02/skos/core#inScheme",
@@ -970,11 +1032,21 @@
             "@context": {
                 "endDate": {
                     "@id": "http://www.w3.org/ns/dcat#endDate",
-                    "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+                    "@type": [
+                        "http://www.w3.org/2001/XMLSchema#date",
+                        "http://www.w3.org/2001/XMLSchema#dateTime",
+                        "http://www.w3.org/2001/XMLSchema#gYear",
+                        "http://www.w3.org/2001/XMLSchema#gYearMonth"
+                    ]
                 },
                 "startDate": {
                     "@id": "http://www.w3.org/ns/dcat#startDate",
-                    "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+                    "@type": [
+                        "http://www.w3.org/2001/XMLSchema#date",
+                        "http://www.w3.org/2001/XMLSchema#dateTime",
+                        "http://www.w3.org/2001/XMLSchema#gYear",
+                        "http://www.w3.org/2001/XMLSchema#gYearMonth"
+                    ]
                 }
             }
         },
@@ -1011,7 +1083,12 @@
             "@context": {
                 "created": {
                     "@id": "http://purl.org/dc/terms/created",
-                    "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+                    "@type": [
+                        "http://www.w3.org/2001/XMLSchema#date",
+                        "http://www.w3.org/2001/XMLSchema#dateTime",
+                        "http://www.w3.org/2001/XMLSchema#gYear",
+                        "http://www.w3.org/2001/XMLSchema#gYearMonth"
+                    ]
                 },
                 "descriptionMap": {
                     "@id": "http://purl.org/dc/terms/description",
@@ -1029,11 +1106,21 @@
                 },
                 "issued": {
                     "@id": "http://purl.org/dc/terms/issued",
-                    "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+                    "@type": [
+                        "http://www.w3.org/2001/XMLSchema#date",
+                        "http://www.w3.org/2001/XMLSchema#dateTime",
+                        "http://www.w3.org/2001/XMLSchema#gYear",
+                        "http://www.w3.org/2001/XMLSchema#gYearMonth"
+                    ]
                 },
                 "modified": {
                     "@id": "http://purl.org/dc/terms/modified",
-                    "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+                    "@type": [
+                        "http://www.w3.org/2001/XMLSchema#date",
+                        "http://www.w3.org/2001/XMLSchema#dateTime",
+                        "http://www.w3.org/2001/XMLSchema#gYear",
+                        "http://www.w3.org/2001/XMLSchema#gYearMonth"
+                    ]
                 },
                 "titleMap": {
                     "@id": "http://purl.org/dc/terms/title",
@@ -1141,7 +1228,12 @@
                 },
                 "issued": {
                     "@id": "http://purl.org/dc/terms/issued",
-                    "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+                    "@type": [
+                        "http://www.w3.org/2001/XMLSchema#date",
+                        "http://www.w3.org/2001/XMLSchema#dateTime",
+                        "http://www.w3.org/2001/XMLSchema#gYear",
+                        "http://www.w3.org/2001/XMLSchema#gYearMonth"
+                    ]
                 },
                 "titleMap": {
                     "@id": "http://purl.org/dc/terms/title",
@@ -1308,7 +1400,12 @@
                 },
                 "created": {
                     "@id": "http://purl.org/dc/terms/created",
-                    "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+                    "@type": [
+                        "http://www.w3.org/2001/XMLSchema#date",
+                        "http://www.w3.org/2001/XMLSchema#dateTime",
+                        "http://www.w3.org/2001/XMLSchema#gYear",
+                        "http://www.w3.org/2001/XMLSchema#gYearMonth"
+                    ]
                 },
                 "descriptionMap": {
                     "@id": "http://purl.org/dc/terms/description",
@@ -1320,11 +1417,21 @@
                 },
                 "issued": {
                     "@id": "http://purl.org/dc/terms/issued",
-                    "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+                    "@type": [
+                        "http://www.w3.org/2001/XMLSchema#date",
+                        "http://www.w3.org/2001/XMLSchema#dateTime",
+                        "http://www.w3.org/2001/XMLSchema#gYear",
+                        "http://www.w3.org/2001/XMLSchema#gYearMonth"
+                    ]
                 },
                 "modified": {
                     "@id": "http://purl.org/dc/terms/modified",
-                    "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+                    "@type": [
+                        "http://www.w3.org/2001/XMLSchema#date",
+                        "http://www.w3.org/2001/XMLSchema#dateTime",
+                        "http://www.w3.org/2001/XMLSchema#gYear",
+                        "http://www.w3.org/2001/XMLSchema#gYearMonth"
+                    ]
                 },
                 "titleMap": {
                     "@id": "http://purl.org/dc/terms/title",
