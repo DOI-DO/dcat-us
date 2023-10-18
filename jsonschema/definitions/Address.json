@@ -12,7 +12,7 @@
             "default": "Address"
         },
         "locality": {
-            "$id": "http://www.w3.org/2006/vcard/locality",
+            "$id": "http://www.w3.org/2006/vcard/ns#locality",
             "title": "locality",
             "description": "The city of an Address of the Kind.",
             "oneOf": [
@@ -25,7 +25,7 @@
             ]
         },
         "region": {
-            "$id": "http://www.w3.org/2006/vcard/region",
+            "$id": "http://www.w3.org/2006/vcard/ns#region",
             "title": "administrative area",
             "description": "The administrative area of an Address of the Kind. Depending on the country, this corresponds to a province, a county, a region, or a state.",
             "oneOf": [
@@ -38,7 +38,7 @@
             ]
         },
         "country-name": {
-            "$id": "http://www.w3.org/2006/vcard/country-name",
+            "$id": "http://www.w3.org/2006/vcard/ns#country-name",
             "title": "country",
             "description": "The country of an Address of the Kind.",
             "oneOf": [
@@ -51,7 +51,7 @@
             ]
         },
         "postal-code": {
-            "$id": "http://www.w3.org/2006/vcard/postal-code",
+            "$id": "http://www.w3.org/2006/vcard/ns#postal-code",
             "title": "postal code",
             "description": "The postal code of an Address of the Kind.",
             "oneOf": [
@@ -64,7 +64,7 @@
             ]
         },
         "street-address": {
-            "$id": "http://www.w3.org/2006/vcard/street-address",
+            "$id": "http://www.w3.org/2006/vcard/ns#street-address",
             "title": "street address",
             "description": "The street name and civic number of an Address of the Kind.",
             "oneOf": [

@@ -20,7 +20,17 @@
                     "type": "null"
                 },
                 {
-                    "type": "string"
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/Organization",
+                            "description": "inline description of Organization"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of Organization",
+                            "format": "iri"
+                        }
+                    ]
                 }
             ]
         },

@@ -12,7 +12,7 @@
             "default": "UseRestriction"
         },
         "restrictionNote": {
-            "$id": "http://github.com/DOI-DO/dcat-us/restrictionNote",
+            "$id": "http://data.resources.gov/ontology/dcat-us#restrictionNote",
             "title": "restriction note",
             "oneOf": [
                 {
@@ -24,7 +24,7 @@
             ]
         },
         "restrictionNoteMap": {
-            "$id": "http://github.com/DOI-DO/dcat-us/restrictionNote_lang_map",
+            "$id": "http://data.resources.gov/ontology/dcat-us#restrictionNote_lang_map",
             "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
             "type": [
                 "null",
@@ -32,7 +32,7 @@
             ]
         },
         "restrictionStatus": {
-            "$id": "http://github.com/DOI-DO/dcat-us/restrictionStatus",
+            "$id": "http://data.resources.gov/ontology/dcat-us#restrictionStatus",
             "title": "restriction status",
             "oneOf": [
                 {
@@ -47,7 +47,7 @@
             ]
         },
         "specificRestriction": {
-            "$id": "http://github.com/DOI-DO/dcat-us/specificRestriction",
+            "$id": "http://data.resources.gov/ontology/dcat-us#specificRestriction",
             "title": "specific restriction",
             "oneOf": [
                 {

@@ -11,13 +11,13 @@
   # mandatory properties
 
   dcat:contactPoint [
-    a vcard:Organization ;
+    a vcard:Contact ;
     vcard:fn "US Census" ;
-    vcard:hasEmail <mailto:noise@uscensus.gov> .
+    vcard:hasEmail <mailto:noise@uscensus.gov> 
   ], [
-    a vcard:Individual ;
+    a vcard:Contact ;
     vcard:fn "John Smith" ;
-    vcard:hasEmail <mailto:johnsmith@uscensus.gov> .
+    vcard:hasEmail <mailto:johnsmith@uscensus.gov> 
   ] ;
   dcterms:description 
                  """This dataset contains information regarding the
@@ -30,22 +30,22 @@
   dcat:distribution <https://uscensus.gov/data/123> ,
                     <https://uscensus.gov/data/456> ;
   dcat:keyword "loudoun"@en,
-               "census"@en,
+               "census"@en;
             
   dcat:landingPage <https://opendata.uscensus.gov/1234/about> ;
   dcterms:issued "2021-04-26"^^xsd:date ;
   dcterms:spatial <http://publications.europa.eu/resource/authority/country/CHE> ;
-  dcterms:temporal: [ a dcterms:PeriodOfTime ;
+  dcterms:temporal [ a dcterms:PeriodOfTime ;
             dcat:endDate "2021-06-22T00:00:00"^^xsd:dateTime ;
             dcat:startDate "2020-01-01T00:00:00"^^xsd:dateTime ] ;
-  dcat:theme <http://publications.europa.eu/resource/authority/data-theme/GOVE> ;
+  dcat:theme <http://publications.europa.eu/resource/authority/data-theme/GOVE> ,
              <http://publications.europa.eu/resource/authority/data-theme/SOCI> ;
   dcterms:modified "2021-04-26"^^xsd:date .
 
 # ---------- class Publisher ------------------------------------------------
 <https://uscensus.gov>
   a foaf:Organization ;
-  foaf:name: "US Census"@en .
+  foaf:name "US Census"@en .
 
 # ---------- class Distribution ----------------------------------------------
 <https://uscensus.gov/data/123>

@@ -12,7 +12,7 @@
             "default": "AccessRestriction"
         },
         "restrictionNote": {
-            "$id": "http://github.com/DOI-DO/dcat-us/restrictionNote",
+            "$id": "http://data.resources.gov/ontology/dcat-us#restrictionNote",
             "title": "restriction note",
             "description": "A note related to the access restriction",
             "oneOf": [
@@ -25,7 +25,7 @@
             ]
         },
         "restrictionNoteMap": {
-            "$id": "http://github.com/DOI-DO/dcat-us/restrictionNote_lang_map",
+            "$id": "http://data.resources.gov/ontology/dcat-us#restrictionNote_lang_map",
             "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
             "type": [
                 "null",
@@ -33,7 +33,7 @@
             ]
         },
         "restrictionStatus": {
-            "$id": "http://github.com/DOI-DO/dcat-us/restrictionStatus",
+            "$id": "http://data.resources.gov/ontology/dcat-us#restrictionStatus",
             "title": "restriction status",
             "description": "The indication of whether or not there are access restrictions on the data.",
             "oneOf": [
@@ -49,7 +49,7 @@
             ]
         },
         "specificRestriction": {
-            "$id": "http://github.com/DOI-DO/dcat-us/specificRestriction",
+            "$id": "http://data.resources.gov/ontology/dcat-us#specificRestriction",
             "title": "specific restriction",
             "description": "The authority of the restriction",
             "oneOf": [

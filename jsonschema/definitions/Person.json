@@ -11,12 +11,6 @@
             "type": "string",
             "default": "Person"
         },
-        "name": {
-            "$id": "http://xmlns.com/foaf/0.1/name",
-            "title": "name",
-            "description": "The full name of the Person",
-            "type": "string"
-        },
         "firstname": {
             "$id": "http://xmlns.com/foaf/0.1/firstname",
             "title": "first name",
@@ -42,6 +36,12 @@
                     "type": "string"
                 }
             ]
+        },
+        "name": {
+            "$id": "http://xmlns.com/foaf/0.1/name",
+            "title": "name",
+            "description": "The full name of the Person",
+            "type": "string"
         },
         "memberOf": {
             "$id": "http://www.w3.org/ns/org#memberOf",
@@ -71,7 +71,6 @@
         }
     },
     "required": [
-        "name",
         "name"
     ]
 }

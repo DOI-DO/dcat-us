@@ -164,7 +164,7 @@
             ]
         },
         "geographicBoundingBox": {
-            "$id": "http://github.com/DOI-DO/dcat-us/geographicBoundingBox",
+            "$id": "http://data.resources.gov/ontology/dcat-us#geographicBoundingBox",
             "title": "geographic bounding box",
             "oneOf": [
                 {
@@ -218,17 +218,20 @@
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Standard",
-                            "description": "inline description of Standard"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Standard",
-                            "format": "iri"
-                        }
-                    ]
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Standard",
+                                "description": "inline description of Standard"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Standard",
+                                "format": "iri"
+                            }
+                        ]
+                    }
                 }
             ]
         },
@@ -268,17 +271,20 @@
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Agent",
-                            "description": "inline description of Agent"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Agent",
-                            "format": "iri"
-                        }
-                    ]
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Agent",
+                                "description": "inline description of Agent"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Agent",
+                                "format": "iri"
+                            }
+                        ]
+                    }
                 }
             ]
         },
@@ -310,7 +316,10 @@
                     "type": "null"
                 },
                 {
-                    "type": "string"
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 }
             ]
         },
@@ -322,17 +331,20 @@
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/LinguisticSystem",
-                            "description": "inline description of LinguisticSystem"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of LinguisticSystem",
-                            "format": "iri"
-                        }
-                    ]
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/LinguisticSystem",
+                                "description": "inline description of LinguisticSystem"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of LinguisticSystem",
+                                "format": "iri"
+                            }
+                        ]
+                    }
                 }
             ]
         },
@@ -416,17 +428,20 @@
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/RightStatement",
-                            "description": "inline description of RightStatement"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of RightStatement",
-                            "format": "iri"
-                        }
-                    ]
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/RightStatement",
+                                "description": "inline description of RightStatement"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of RightStatement",
+                                "format": "iri"
+                            }
+                        ]
+                    }
                 }
             ]
         },
@@ -438,17 +453,20 @@
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Organization",
-                            "description": "inline description of Organization"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Organization",
-                            "format": "iri"
-                        }
-                    ]
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Organization",
+                                "description": "inline description of Organization"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Organization",
+                                "format": "iri"
+                            }
+                        ]
+                    }
                 }
             ]
         },
@@ -460,17 +478,20 @@
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Location",
-                            "description": "inline description of Location"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Location",
-                            "format": "iri"
-                        }
-                    ]
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Location",
+                                "description": "inline description of Location"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Location",
+                                "format": "iri"
+                            }
+                        ]
+                    }
                 }
             ]
         },
@@ -543,17 +564,20 @@
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/QualityMeasurement",
-                            "description": "inline description of QualityMeasurement"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of QualityMeasurement",
-                            "format": "iri"
-                        }
-                    ]
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/QualityMeasurement",
+                                "description": "inline description of QualityMeasurement"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of QualityMeasurement",
+                                "format": "iri"
+                            }
+                        ]
+                    }
                 }
             ]
         },
@@ -616,17 +640,20 @@
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Activity",
-                            "description": "inline description of Activity"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Activity",
-                            "format": "iri"
-                        }
-                    ]
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Activity",
+                                "description": "inline description of Activity"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Activity",
+                                "format": "iri"
+                            }
+                        ]
+                    }
                 }
             ]
         }

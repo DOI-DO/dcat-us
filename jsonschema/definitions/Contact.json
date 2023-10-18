@@ -12,7 +12,7 @@
             "default": "Contact"
         },
         "address": {
-            "$id": "http://www.w3.org/2006/vcard/address",
+            "$id": "http://www.w3.org/2006/vcard/ns#address",
             "title": "address",
             "oneOf": [
                 {
@@ -37,7 +37,7 @@
             ]
         },
         "email": {
-            "$id": "http://www.w3.org/2006/vcard/email",
+            "$id": "http://www.w3.org/2006/vcard/ns#email",
             "title": "email",
             "oneOf": [
                 {
@@ -52,12 +52,12 @@
             ]
         },
         "fn": {
-            "$id": "http://www.w3.org/2006/vcard/fn",
+            "$id": "http://www.w3.org/2006/vcard/ns#fn",
             "title": "formatted name",
             "type": "string"
         },
         "tel": {
-            "$id": "http://www.w3.org/2006/vcard/tel",
+            "$id": "http://www.w3.org/2006/vcard/ns#tel",
             "title": "telephone",
             "oneOf": [
                 {

@@ -12,22 +12,22 @@
             "default": "GeographicBoundingBox"
         },
         "eastBoundingLongitude": {
-            "$id": "http://github.com/DOI-DO/dcat-us/eastBoundingLongitude",
+            "$id": "http://data.resources.gov/ontology/dcat-us#eastBoundingLongitude",
             "title": "east bounding longitude",
             "type": "string"
         },
         "northBoundingLatitude": {
-            "$id": "http://github.com/DOI-DO/dcat-us/northBoundingLatitude",
+            "$id": "http://data.resources.gov/ontology/dcat-us#northBoundingLatitude",
             "title": "north bounding latitude",
             "type": "string"
         },
         "southBoundingLatitude": {
-            "$id": "http://github.com/DOI-DO/dcat-us/southBoundingLatitude",
+            "$id": "http://data.resources.gov/ontology/dcat-us#southBoundingLatitude",
             "title": "south bouding latitude",
             "type": "string"
         },
         "westBoundingLongitude": {
-            "$id": "http://github.com/DOI-DO/dcat-us/westBoundingLongitude",
+            "$id": "http://data.resources.gov/ontology/dcat-us#westBoundingLongitude",
             "title": "west bounding longitude",
             "type": "string"
         }

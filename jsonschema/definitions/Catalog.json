@@ -14,7 +14,7 @@
         "catalog": {
             "$id": "http://www.w3.org/ns/dcat#catalog",
             "title": "catalog",
-            "description": "A catalog that is listed in the catalog.",
+            "description": "This property refers to a catalog whose contents are of interest in the context of this catalog.",
             "oneOf": [
                 {
                     "type": "null"
@@ -85,7 +85,7 @@
         "keyword": {
             "$id": "http://www.w3.org/ns/dcat#keyword",
             "title": "keyword/tag",
-            "description": "This property contains a keyword or tag describing the Catalogue.",
+            "description": "A keyword or tag describing the resource.",
             "oneOf": [
                 {
                     "type": "null"
@@ -132,7 +132,7 @@
         "service": {
             "$id": "http://www.w3.org/ns/dcat#service",
             "title": "service",
-            "description": "A service that is listed in the catalog.",
+            "description": "This property refers to a site or end-point (Data Service) that is listed in the Catalog.",
             "oneOf": [
                 {
                     "type": "null"
@@ -157,8 +157,8 @@
         },
         "theme": {
             "$id": "http://www.w3.org/ns/dcat#theme",
-            "title": "theme",
-            "description": "A main category of the catalog. A catalog can have multiple themes.",
+            "title": "theme/category",
+            "description": "This property refers to a category of the Catalog. A Catalog may be associated with multiple themes.",
             "oneOf": [
                 {
                     "type": "null"
@@ -210,7 +210,7 @@
         "accessRights": {
             "$id": "http://purl.org/dc/terms/accessRights",
             "title": "access rights",
-            "description": "Information about who can access the resource or an indication of its security status.",
+            "description": "This property refers to information that indicates whether the Catalog is open data, has access restrictions or is not public.",
             "oneOf": [
                 {
                     "type": "null"
@@ -232,8 +232,8 @@
         },
         "conformsTo": {
             "$id": "http://purl.org/dc/terms/conformsTo",
-            "title": "conforms to",
-            "description": "This property SHOULD be used to indicate the model, schema, ontology, view or profile that the cataloged resource content conforms to.",
+            "title": "schema version",
+            "description": "An established standard to which the described catalog conforms.",
             "oneOf": [
                 {
                     "type": "null"
@@ -300,7 +300,7 @@
         "hasPart": {
             "$id": "http://purl.org/dc/terms/hasPart",
             "title": "has part",
-            "description": "This property refers to a related Catalogue that is part of the described Catalogue.",
+            "description": "This property refers to a related catalog that is part of the described catalog.",
             "oneOf": [
                 {
                     "type": "null"
@@ -326,7 +326,7 @@
         "identifier": {
             "$id": "http://purl.org/dc/terms/identifier",
             "title": "identifier",
-            "description": "This property contains the main identifier for the Catalogue, e.g. the URI or other unique identifier.",
+            "description": "This property contains the main identifier for the Catalog, e.g. the URI or other unique identifier.",
             "oneOf": [
                 {
                     "type": "null"
@@ -377,17 +377,20 @@
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/LinguisticSystem",
-                            "description": "inline description of LinguisticSystem"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of LinguisticSystem",
-                            "format": "iri"
-                        }
-                    ]
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/LinguisticSystem",
+                                "description": "inline description of LinguisticSystem"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of LinguisticSystem",
+                                "format": "iri"
+                            }
+                        ]
+                    }
                 }
             ]
         },
@@ -485,7 +488,7 @@
         "rightsHolder": {
             "$id": "http://purl.org/dc/terms/rightsHolder",
             "title": "rights holder",
-            "description": "This property refers to an organisation holding rights on the Catalogue.",
+            "description": "This property refers to an organization holding rights on the Catalog.",
             "oneOf": [
                 {
                     "type": "null"
@@ -495,12 +498,12 @@
                     "items": {
                         "oneOf": [
                             {
-                                "$ref": "#/definitions/Organization",
-                                "description": "inline description of Organization"
+                                "$ref": "#/definitions/Organizatin",
+                                "description": "inline description of Organizatin"
                             },
                             {
                                 "type": "string",
-                                "description": "reference iri of Organization",
+                                "description": "reference iri of Organizatin",
                                 "format": "iri"
                             }
                         ]
@@ -510,7 +513,7 @@
         },
         "spatial": {
             "$id": "http://purl.org/dc/terms/spatial",
-            "title": "spatial/geographical coverage",
+            "title": "spatial/geographic coverage",
             "description": "The geographical area covered by the catalog.",
             "oneOf": [
                 {
@@ -562,7 +565,7 @@
         "temporal": {
             "$id": "http://purl.org/dc/terms/temporal",
             "title": "temporal coverage",
-            "description": "This property refers to a temporal period that the Catalogue covers.",
+            "description": "This property refers to a temporal period that the Catalog covers.",
             "oneOf": [
                 {
                     "type": "null"
@@ -625,7 +628,7 @@
         "qualifiedAttribution": {
             "$id": "http://www.w3.org/ns/prov#qualifiedAttribution",
             "title": "qualified attribution",
-            "description": "This property refers to a link to an Agent having some form of responsibility for the Catalogue.",
+            "description": "This property refers to a link to an Agent having some form of responsibility for the Catalog.",
             "oneOf": [
                 {
                     "type": "null"

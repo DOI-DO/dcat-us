@@ -163,17 +163,20 @@
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Resource",
-                            "description": "inline description of Resource"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Resource",
-                            "format": "iri"
-                        }
-                    ]
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Resource",
+                                "description": "inline description of Resource"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Resource",
+                                "format": "iri"
+                            }
+                        ]
+                    }
                 }
             ]
         },
@@ -273,7 +276,7 @@
             ]
         },
         "accessRestriction": {
-            "$id": "http://github.com/DOI-DO/dcat-us/accessRestriction",
+            "$id": "http://data.resources.gov/ontology/dcat-us#accessRestriction",
             "title": "access restriction",
             "description": "Access restriction related to the distribution",
             "oneOf": [
@@ -299,7 +302,7 @@
             ]
         },
         "cuiRestriction": {
-            "$id": "http://github.com/DOI-DO/dcat-us/cuiRestriction",
+            "$id": "http://data.resources.gov/ontology/dcat-us#cuiRestriction",
             "title": "CUI restriction",
             "description": "Controlled Unclassified Information restriction related to the distribution",
             "oneOf": [
@@ -322,7 +325,7 @@
             ]
         },
         "useRestriction": {
-            "$id": "http://github.com/DOI-DO/dcat-us/useRestriction",
+            "$id": "http://data.resources.gov/ontology/dcat-us#useRestriction",
             "title": "use restriction",
             "description": "Use restriction related to the distribution",
             "oneOf": [
@@ -618,17 +621,20 @@
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Document",
-                            "description": "inline description of Document"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Document",
-                            "format": "iri"
-                        }
-                    ]
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Document",
+                                "description": "inline description of Document"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Document",
+                                "format": "iri"
+                            }
+                        ]
+                    }
                 }
             ]
         },

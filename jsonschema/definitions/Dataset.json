@@ -126,17 +126,20 @@
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Contact",
-                            "description": "inline description of Contact"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Contact",
-                            "format": "iri"
-                        }
-                    ]
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Contact",
+                                "description": "inline description of Contact"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Contact",
+                                "format": "iri"
+                            }
+                        ]
+                    }
                 }
             ]
         },
@@ -148,17 +151,20 @@
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Distribution",
-                            "description": "inline description of Distribution"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Distribution",
-                            "format": "iri"
-                        }
-                    ]
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Distribution",
+                                "description": "inline description of Distribution"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Distribution",
+                                "format": "iri"
+                            }
+                        ]
+                    }
                 }
             ]
         },
@@ -215,17 +221,20 @@
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Dataset",
-                            "description": "inline description of Dataset"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Dataset",
-                            "format": "iri"
-                        }
-                    ]
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Dataset",
+                                "description": "inline description of Dataset"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Dataset",
+                                "format": "iri"
+                            }
+                        ]
+                    }
                 }
             ]
         },
@@ -237,17 +246,20 @@
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/DatasetSeries",
-                            "description": "inline description of DatasetSeries"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of DatasetSeries",
-                            "format": "iri"
-                        }
-                    ]
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/DatasetSeries",
+                                "description": "inline description of DatasetSeries"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of DatasetSeries",
+                                "format": "iri"
+                            }
+                        ]
+                    }
                 }
             ]
         },
@@ -324,17 +336,20 @@
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Relationship",
-                            "description": "inline description of Relationship"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Relationship",
-                            "format": "iri"
-                        }
-                    ]
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Relationship",
+                                "description": "inline description of Relationship"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Relationship",
+                                "format": "iri"
+                            }
+                        ]
+                    }
                 }
             ]
         },
@@ -404,7 +419,7 @@
             ]
         },
         "applicableLegislation": {
-            "$id": "http://github.com/DOI-DO/dcat-us/applicableLegislation",
+            "$id": "http://data.resources.gov/ontology/dcat-us#applicableLegislation",
             "title": "applicable legislation",
             "oneOf": [
                 {
@@ -429,7 +444,7 @@
             ]
         },
         "geographicBoundingBox": {
-            "$id": "http://github.com/DOI-DO/dcat-us/geographicBoundingBox",
+            "$id": "http://data.resources.gov/ontology/dcat-us#geographicBoundingBox",
             "title": "geographic bounding box",
             "oneOf": [
                 {
@@ -454,7 +469,7 @@
             ]
         },
         "investment": {
-            "$id": "http://github.com/DOI-DO/dcat-us/investment",
+            "$id": "http://data.resources.gov/ontology/dcat-us#investment",
             "title": "investment",
             "oneOf": [
                 {
@@ -479,7 +494,7 @@
             ]
         },
         "liabilityStatement": {
-            "$id": "http://github.com/DOI-DO/dcat-us/liabilityStatement",
+            "$id": "http://data.resources.gov/ontology/dcat-us#liabilityStatement",
             "title": "liability statement",
             "description": "A liability statement about the dataset",
             "oneOf": [
@@ -502,7 +517,7 @@
             ]
         },
         "metadataDistribution": {
-            "$id": "http://github.com/DOI-DO/dcat-us/metadataDistribution",
+            "$id": "http://data.resources.gov/ontology/dcat-us#metadataDistribution",
             "title": "metadata distribution",
             "description": "Distribution to \"original\" metadata document",
             "oneOf": [
@@ -528,7 +543,7 @@
             ]
         },
         "program": {
-            "$id": "http://github.com/DOI-DO/dcat-us/program",
+            "$id": "http://data.resources.gov/ontology/dcat-us#program",
             "title": "program",
             "oneOf": [
                 {
@@ -553,7 +568,7 @@
             ]
         },
         "purpose": {
-            "$id": "http://github.com/DOI-DO/dcat-us/purpose",
+            "$id": "http://data.resources.gov/ontology/dcat-us#purpose",
             "title": "purpose",
             "description": "The purpose of the dataset",
             "oneOf": [
@@ -566,7 +581,7 @@
             ]
         },
         "purposeMap": {
-            "$id": "http://github.com/DOI-DO/dcat-us/purpose_lang_map",
+            "$id": "http://data.resources.gov/ontology/dcat-us#purpose_lang_map",
             "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
             "type": [
                 "null",
@@ -649,17 +664,20 @@
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Agent",
-                            "description": "inline description of Agent"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Agent",
-                            "format": "iri"
-                        }
-                    ]
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Agent",
+                                "description": "inline description of Agent"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Agent",
+                                "format": "iri"
+                            }
+                        ]
+                    }
                 }
             ]
         },
@@ -736,24 +754,30 @@
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Dataset",
-                            "description": "inline description of Dataset"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Dataset",
-                            "format": "iri"
-                        }
-                    ]
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Dataset",
+                                "description": "inline description of Dataset"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Dataset",
+                                "format": "iri"
+                            }
+                        ]
+                    }
                 }
             ]
         },
         "identifier": {
             "$id": "http://purl.org/dc/terms/identifier",
             "title": "identifier",
-            "type": "string"
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
         },
         "isReferencedBy": {
             "$id": "http://purl.org/dc/terms/isReferencedBy",
@@ -763,17 +787,20 @@
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Resource",
-                            "description": "inline description of Resource"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Resource",
-                            "format": "iri"
-                        }
-                    ]
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Resource",
+                                "description": "inline description of Resource"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Resource",
+                                "format": "iri"
+                            }
+                        ]
+                    }
                 }
             ]
         },
@@ -813,17 +840,20 @@
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/LinguisticSystem",
-                            "description": "inline description of LinguisticSystem"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of LinguisticSystem",
-                            "format": "iri"
-                        }
-                    ]
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/LinguisticSystem",
+                                "description": "inline description of LinguisticSystem"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of LinguisticSystem",
+                                "format": "iri"
+                            }
+                        ]
+                    }
                 }
             ]
         },
@@ -928,17 +958,20 @@
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Resource",
-                            "description": "inline description of Resource"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Resource",
-                            "format": "iri"
-                        }
-                    ]
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Resource",
+                                "description": "inline description of Resource"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Resource",
+                                "format": "iri"
+                            }
+                        ]
+                    }
                 }
             ]
         },
@@ -950,17 +983,20 @@
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Dataset",
-                            "description": "inline description of Dataset"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Dataset",
-                            "format": "iri"
-                        }
-                    ]
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Dataset",
+                                "description": "inline description of Dataset"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Dataset",
+                                "format": "iri"
+                            }
+                        ]
+                    }
                 }
             ]
         },
@@ -994,17 +1030,20 @@
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Organization",
-                            "description": "inline description of Organization"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Organization",
-                            "format": "iri"
-                        }
-                    ]
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Organization",
+                                "description": "inline description of Organization"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Organization",
+                                "format": "iri"
+                            }
+                        ]
+                    }
                 }
             ]
         },
@@ -1016,17 +1055,20 @@
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Resource",
-                            "description": "inline description of Resource"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Resource",
-                            "format": "iri"
-                        }
-                    ]
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Resource",
+                                "description": "inline description of Resource"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Resource",
+                                "format": "iri"
+                            }
+                        ]
+                    }
                 }
             ]
         },
@@ -1038,17 +1080,20 @@
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Location",
-                            "description": "inline description of Location"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Location",
-                            "format": "iri"
-                        }
-                    ]
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Location",
+                                "description": "inline description of Location"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Location",
+                                "format": "iri"
+                            }
+                        ]
+                    }
                 }
             ]
         },
@@ -1060,17 +1105,20 @@
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Concept",
-                            "description": "inline description of Concept"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Concept",
-                            "format": "iri"
-                        }
-                    ]
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Concept",
+                                "description": "inline description of Concept"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Concept",
+                                "format": "iri"
+                            }
+                        ]
+                    }
                 }
             ]
         },
@@ -1083,17 +1131,20 @@
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/PeriodOfTime",
-                            "description": "inline description of PeriodOfTime"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of PeriodOfTime",
-                            "format": "iri"
-                        }
-                    ]
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/PeriodOfTime",
+                                "description": "inline description of PeriodOfTime"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of PeriodOfTime",
+                                "format": "iri"
+                            }
+                        ]
+                    }
                 }
             ]
         },
@@ -1144,17 +1195,20 @@
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/QualityMeasurement",
-                            "description": "inline description of QualityMeasurement"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of QualityMeasurement",
-                            "format": "iri"
-                        }
-                    ]
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/QualityMeasurement",
+                                "description": "inline description of QualityMeasurement"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of QualityMeasurement",
+                                "format": "iri"
+                            }
+                        ]
+                    }
                 }
             ]
         },
@@ -1166,17 +1220,20 @@
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/QualityMeasurement",
-                            "description": "inline description of QualityMeasurement"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of QualityMeasurement",
-                            "format": "iri"
-                        }
-                    ]
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/QualityMeasurement",
+                                "description": "inline description of QualityMeasurement"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of QualityMeasurement",
+                                "format": "iri"
+                            }
+                        ]
+                    }
                 }
             ]
         },
@@ -1262,17 +1319,20 @@
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Agent",
-                            "description": "inline description of Agent"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Agent",
-                            "format": "iri"
-                        }
-                    ]
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Agent",
+                                "description": "inline description of Agent"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Agent",
+                                "format": "iri"
+                            }
+                        ]
+                    }
                 }
             ]
         },
@@ -1285,17 +1345,20 @@
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Activity",
-                            "description": "inline description of Activity"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Activity",
-                            "format": "iri"
-                        }
-                    ]
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Activity",
+                                "description": "inline description of Activity"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Activity",
+                                "format": "iri"
+                            }
+                        ]
+                    }
                 }
             ]
         },
@@ -1307,17 +1370,20 @@
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Activity",
-                            "description": "inline description of Activity"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Activity",
-                            "format": "iri"
-                        }
-                    ]
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Activity",
+                                "description": "inline description of Activity"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Activity",
+                                "format": "iri"
+                            }
+                        ]
+                    }
                 }
             ]
         },
