@@ -5147,7 +5147,6 @@
     </section>
 
     <!-- Contact-->
-
     <section id="properties-for-contact">
       <h2>Contact</h2>
       <aside class="note">Aligned with DCAT</aside>
@@ -5162,12 +5161,12 @@
           <th class="prop">Definition:</th>
           <td>Point of Contact information</td>
         </tr>
-        <tr>
-          <th class="prop">Usage note</th>
-          <td>
-
-          </td>
-        </tr>
+        <!-- TODO: Add a usage note or delete this section for Contact -->
+        <!-- <tr>
+              <th class="prop">Usage note</th>
+              <td>
+              </td>
+            </tr> -->
         <tr>
           <th class="prop">Rationale:</th>
           <td>
@@ -5260,7 +5259,7 @@
           </tr>
         </tbody>
       </table>
-
+    
       <section id="contact-mandatory-props">
         <h4>Mandatory Properties</h4>
         <section id="contact-fn">
@@ -5296,7 +5295,6 @@
             </tbody>
           </table>
         </section>
-
         <section id="contact-email">
           <h4>Property: email</h4>
           <table class="def">
@@ -5325,12 +5323,18 @@
               </tr>
               <tr>
                 <th>Definition</th>
-                <td></td>
+                <td>The email address of the contact.</td>
+              </tr>
+              <tr>
+                <th>Usage note</th>
+                <td>Use email with function name instead of individual name (e.g. support).</td>
               </tr>
             </tbody>
           </table>
         </section>
-
+      </section>
+      <section id="contact-optional-props">
+        <h4>Optional Properties</h4>
         <section id="contact-tel">
           <h4>Property: telephone</h4>
           <table class="def">
@@ -5359,13 +5363,11 @@
               </tr>
               <tr>
                 <th>Definition</th>
-                <td>This property specifies the telephone number for telephony communication with the person or
-                  organization</td>
+                <td>This property specifies the telephone number for telephony communication with the person or organization.</td>
               </tr>
             </tbody>
           </table>
         </section>
-
         <section id="contact-organization_name">
           <h4>Property: organization name</h4>
           <table class="def">
@@ -5376,11 +5378,11 @@
               </tr>
               <tr>
                 <th>Requirement level</th>
-                <td>Mandatory</td>
+                <td>Optional</td>
               </tr>
               <tr>
                 <th>Cardinality</th>
-                <td>1</td>
+                <td>0..1</td>
               </tr>
               <tr>
                 <th>URI</th>
@@ -5399,7 +5401,6 @@
             </tbody>
           </table>
         </section>
-
         <section id="contact-family_name">
           <h4>Property: family name</h4>
           <table class="def">
@@ -5419,151 +5420,126 @@
               <tr>
                 <th>URI</th>
                 <td><a data-cite="VCARD-RDF#d4e876"><code>vcard:family-name</code></a>
-                  </ <section id="associating-contact">
-                  <h3>3.3 Associating the Contact with the Dataset</h3>
-                  <p>
-                    The <code>dcat:contactPoint</code> property is utilized to associate the defined contact point with
-                    the dataset.
-                  </p>
-                  <pre class="example">
-        @prefix dcat: &lt;http://www.w3.org/ns/dcat#&gt; .
-        
-        :MyDataset a dcat:Dataset ;
-            dcat:title "My Example Dataset" ;
-            dcat:description "This dataset includes example data for demonstration purposes." ;
-            dcat:contactPoint :vcard123 ;
-        .
-                    </pre>
-                  <p>
-                    <strong>Explanation:</strong>
-                  <ul>
-                    <li><code>dcat:contactPoint</code>: A property that links the dataset to the defined contact point.
-                    </li>
-                  </ul>
-                  </p>
+                </td>
+              </tr>
+              <tr>
+                <th>Range</th>
+                <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Definition</th>
+                <td>This property specifies the family name of the person to contact</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section id="contact-given_name">
+          <h4>Property: given name</h4>
+          <table class="def">
+            <tbody>
+              <tr>
+                <th>Property</th>
+                <td>given name</td>
+              </tr>
+              <tr>
+                <th>Requirement level</th>
+                <td>Optional</td>
+              </tr>
+              <tr>
+                <th>Cardinality</th>
+                <td>0..1</td>
+              </tr>
+              <tr>
+                <th>URI</th>
+                <td><a data-cite="VCARD-RDF#d4e907"><code>vcard:given-name</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Range</th>
+                <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Definition</th>
+                <td>This property specifies the given name of the person to contact</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section id="contact-title">
+          <h4>Property: position title</h4>
+          <table class="def">
+            <tbody>
+              <tr>
+                <th>Property</th>
+                <td>title</td>
+              </tr>
+              <tr>
+                <th>Requirement level</th>
+                <td>Optional</td>
+              </tr>
+              <tr>
+                <th>Cardinality</th>
+                <td>0..1</td>
+              </tr>
+              <tr>
+                <th>URI</th>
+                <td><a data-cite="VCARD-RDF#d4e1234"><code>vcard:title</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Range</th>
+                <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Definition</th>
+                <td>This property specifies the position role of the person to contact</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section id="contact-address">
+          <h4>Property: address</h4>
+          <table class="def">
+            <tbody>
+              <tr>
+                <th>Property</th>
+                <td>address</td>
+              </tr>
+              <tr>
+                <th>Requirement level</th>
+                <td>Optional</td>
+              </tr>
+              <tr>
+                <th>Cardinality</th>
+                <td>0..n</td>
+              </tr>
+              <tr>
+                <th>URI</th>
+                <td><a data-cite="VCARD-RDF#d4e26"><code>vcard:address</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Range</th>
+                <td><a data-cite="VCARD-RDF#d4e1292"><code>vcard:Address</code></a> </td>
+              </tr>
+              <tr>
+                <th>Definition</th>
+                <td>This property specifies the address of the contact</td>
+              </tr>
+            </tbody>
+          </table>
         </section>
       </section>
-      <tr>
-        <th>Range</th>
-        <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a>
-        </td>
-      </tr>
-      <tr>
-        <th>Definition</th>
-        <td>This property specifies the family name of the person to contact</td>
-      </tr>
-      </tbody>
-      </table>
+      <section id="contact-example">
+        <h4>Example</h4>
+        <aside class="example" title="vcard:Contact example">
+          <pre data-include-format="text" data-include="./examples/contact-point.ttl"></pre>
+        </aside>
+      </section>
     </section>
-
-    <section id="contact-given_name">
-      <h4>Property: given name</h4>
-      <table class="def">
-        <tbody>
-          <tr>
-            <th>Property</th>
-            <td>given name</td>
-          </tr>
-          <tr>
-            <th>Requirement level</th>
-            <td>Optional</td>
-          </tr>
-          <tr>
-            <th>Cardinality</th>
-            <td>0..1</td>
-          </tr>
-          <tr>
-            <th>URI</th>
-            <td><a data-cite="VCARD-RDF#d4e907"><code>vcard:given-name</code></a>
-            </td>
-          </tr>
-          <tr>
-            <th>Range</th>
-            <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a>
-            </td>
-          </tr>
-          <tr>
-            <th>Definition</th>
-            <td>This property specifies the given name of the person to contact</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section id="contact-title">
-      <h4>Property: position title</h4>
-      <table class="def">
-        <tbody>
-          <tr>
-            <th>Property</th>
-            <td>title</td>
-          </tr>
-          <tr>
-            <th>Requirement level</th>
-            <td>Optional</td>
-          </tr>
-          <tr>
-            <th>Cardinality</th>
-            <td>0..1</td>
-          </tr>
-          <tr>
-            <th>URI</th>
-            <td><a data-cite="VCARD-RDF#d4e1234"><code>vcard:title</code></a>
-            </td>
-          </tr>
-          <tr>
-            <th>Range</th>
-            <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a>
-            </td>
-          </tr>
-          <tr>
-            <th>Definition</th>
-            <td>This property specifies the position role of the person to contact</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-    <section id="contact-address">
-      <h4>Property: address</h4>
-      <table class="def">
-        <tbody>
-          <tr>
-            <th>Property</th>
-            <td>address</td>
-          </tr>
-          <tr>
-            <th>Requirement level</th>
-            <td>Optional</td>
-          </tr>
-          <tr>
-            <th>Cardinality</th>
-            <td>0..n</td>
-          </tr>
-          <tr>
-            <th>URI</th>
-            <td><a data-cite="VCARD-RDF#d4e26"><code>vcard:address</code></a>
-            </td>
-          </tr>
-          <tr>
-            <th>Range</th>
-            <td><a data-cite="VCARD-RDF#d4e1292"><code>vcard:Address</code></a> </td>
-          </tr>
-          <tr>
-            <th>Definition</th>
-            <td>This property specifies the address of the contact</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-  </section>
-  <section id="contact-example">
-    <h4>Example</h4>
-    <aside class="example" title="vcard:Contact example">
-      <pre data-include-format="text" data-include="./examples/contact-point.ttl"></pre>
-    </aside>
-  </section>
-  </section>
 
   <!-- CUI Restriction -->
   <section id="properties-for-cui_restriction">
@@ -17354,12 +17330,14 @@
             </tr>
             <tr>
               <th>Range</th>
-              <a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
-              (typed
-              as <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>,
-              <a data-cite="XMLSCHEMA11-2#dateTime"><code>xsd:dateTime</code></a>,
-              <a data-cite="XMLSCHEMA11-2##gYear"><code>xsd:gYear</code></a>
-              or <a data-cite="XMLSCHEMA11-2#gYearMonth"><code>xsd:gYearMonth</code></a>)
+              <td>
+                <a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+                (typed
+                as <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>,
+                <a data-cite="XMLSCHEMA11-2#dateTime"><code>xsd:dateTime</code></a>,
+                <a data-cite="XMLSCHEMA11-2##gYear"><code>xsd:gYear</code></a>
+                or <a data-cite="XMLSCHEMA11-2#gYearMonth"><code>xsd:gYearMonth</code></a>)
+              </td>
             </tr>
             <tr>
               <th>Definition</th>
