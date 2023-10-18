@@ -46,6 +46,7 @@
                 "designationIndicator": "http://data.resources.gov/ontology/dcat-us#designationIndicator",
                 "requiredIndicatorPerAuthority": {
                     "@id": "http://data.resources.gov/ontology/dcat-us#requiredIndicatorPerAuthority",
+                    "@type": "http://www.w3.org/2001/XMLSchema#string",
                     "@container": "@set"
                 }
             }
@@ -282,6 +283,47 @@
                 "qualifiedAttribution": {
                     "@id": "http://www.w3.org/ns/prov#qualifiedAttribution",
                     "@type": "@id",
+                    "@container": "@set"
+                }
+            }
+        },
+        "CatalogRecord": {
+            "@id": "http://www.w3.org/ns/dcat#CatalogRecord",
+            "@context": {
+                "conformsTo": {
+                    "@id": "http://purl.org/dc/terms/conformsTo",
+                    "@type": "@id"
+                },
+                "status": {
+                    "@id": "http://www.w3.org/ns/adms#status",
+                    "@type": "@id"
+                },
+                "description": {
+                    "@id": "http://purl.org/dc/terms/description",
+                    "@container": "@set"
+                },
+                "language": {
+                    "@id": "http://purl.org/dc/terms/language",
+                    "@type": "@id",
+                    "@container": "@set"
+                },
+                "issued": {
+                    "@id": "http://purl.org/dc/terms/issued",
+                    "@container": "@set"
+                },
+                "modified": {
+                    "@id": "http://purl.org/dc/terms/modified"
+                },
+                "primaryTopic": {
+                    "@id": "http://xmlns.com/foaf/0.1/primaryTopic",
+                    "@type": "@id"
+                },
+                "source": {
+                    "@id": "http://purl.org/dc/terms/source",
+                    "@type": "@id"
+                },
+                "title": {
+                    "@id": "http://purl.org/dc/terms/title",
                     "@container": "@set"
                 }
             }
@@ -593,10 +635,6 @@
                     "@type": "@id",
                     "@container": "@set"
                 },
-                "license": {
-                    "@id": "http://purl.org/dc/terms/license",
-                    "@type": "@id"
-                },
                 "modified": {
                     "@id": "http://purl.org/dc/terms/modified"
                 },
@@ -655,11 +693,6 @@
                 "title": "http://purl.org/dc/terms/title",
                 "category": {
                     "@id": "http://purl.org/dc/terms/type",
-                    "@type": "@id",
-                    "@container": "@set"
-                },
-                "hasQualityAnnotation": {
-                    "@id": "http://www.w3.org/ns/dqv#hasQualityAnnotation",
                     "@type": "@id",
                     "@container": "@set"
                 },
@@ -1006,10 +1039,7 @@
                     "@id": "http://purl.org/dc/terms/type",
                     "@type": "@id"
                 },
-                "name": {
-                    "@id": "http://xmlns.com/foaf/0.1/name",
-                    "@type": "http://www.w3.org/2001/XMLSchema#string"
-                }
+                "name": "http://xmlns.com/foaf/0.1/name"
             }
         },
         "Document": {
@@ -1063,18 +1093,9 @@
         "Person": {
             "@id": "http://xmlns.com/foaf/0.1/Person",
             "@context": {
-                "firstname": {
-                    "@id": "http://xmlns.com/foaf/0.1/firstname",
-                    "@type": "http://www.w3.org/2001/XMLSchema#string"
-                },
-                "givenName": {
-                    "@id": "http://xmlns.com/foaf/0.1/givenName",
-                    "@type": "http://www.w3.org/2001/XMLSchema#string"
-                },
-                "name": {
-                    "@id": "http://xmlns.com/foaf/0.1/name",
-                    "@type": "http://www.w3.org/2001/XMLSchema#string"
-                },
+                "firstname": "http://xmlns.com/foaf/0.1/firstname",
+                "givenName": "http://xmlns.com/foaf/0.1/givenName",
+                "name": "http://xmlns.com/foaf/0.1/name",
                 "memberOf": {
                     "@id": "http://www.w3.org/ns/org#memberOf",
                     "@type": "@id",
@@ -1095,10 +1116,7 @@
         "Organization": {
             "@id": "http://www.w3.org/ns/org#Organization",
             "@context": {
-                "name": {
-                    "@id": "http://xmlns.com/foaf/0.1/name",
-                    "@type": "http://www.w3.org/2001/XMLSchema#string"
-                },
+                "name": "http://xmlns.com/foaf/0.1/name",
                 "subOrganizationOf": {
                     "@id": "http://www.w3.org/ns/org#subOrganizationOf",
                     "@type": "@id",
@@ -1200,6 +1218,19 @@
                 "title": "http://purl.org/dc/terms/title"
             }
         },
+        "Checksum": {
+            "@id": "http://spdx.org/rdf/terms#Checksum",
+            "@context": {
+                "algorithm": {
+                    "@id": "http://spdx.org/rdf/terms#algorithm",
+                    "@type": "@id"
+                },
+                "checksumValue": {
+                    "@id": "http://spdx.org/rdf/terms#checksumValue",
+                    "@type": "http://www.w3.org/2001/XMLSchema#hexBinary"
+                }
+            }
+        },
         "Contact": {
             "@id": "http://www.w3.org/2006/vcard/ns#Contact",
             "@context": {
@@ -1213,10 +1244,13 @@
                     "@type": "@id"
                 },
                 "fn": "http://www.w3.org/2006/vcard/ns#fn",
+                "organization-name": "http://www.w3.org/2006/vcard/ns#organization-name",
+                "family-name": "http://www.w3.org/2006/vcard/ns#family-name",
+                "given-name": "http://www.w3.org/2006/vcard/ns#given-name",
+                "title": "http://www.w3.org/2006/vcard/ns#title",
                 "tel": {
                     "@id": "http://www.w3.org/2006/vcard/ns#tel",
-                    "@type": "@id",
-                    "@container": "@set"
+                    "@type": "@id"
                 }
             }
         }
