@@ -1,4 +1,5 @@
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix : <http://example.org/ns#> .
 
 # Define a vcard:Address associated with a contact
 :address456 a vcard:Address ;

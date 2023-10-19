@@ -1,6 +1,7 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 
 <https://uscensus.gov/reforestation-data/1234>
   a dcat:Distribution ;
   dcterms:conformsTo <http://resource.geosciml.org/ontology/timescale/gts> ;
+.

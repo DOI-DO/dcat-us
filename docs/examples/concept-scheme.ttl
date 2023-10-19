@@ -11,12 +11,12 @@
     
     # recommended properties
     
-    dcterms:description "The Earth Science Keywords have a six-level keyword structure 
+    dcterms:description """The Earth Science Keywords have a six-level keyword structure 
     with the option for a seventh uncontrolled field. Category and Topic levels 
     define how the keywords are organized and the associated Earth science discipline 
     within the hierarchy. The Term and Variables levels define the subject area, 
     measured variables/parameters, and the hierarchical-type relationship for the 
-    subject area.";
+    subject area.""";
     
     # optional properties
     

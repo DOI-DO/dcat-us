@@ -12,4 +12,4 @@ ex:JohnSmith a foaf:Person ;
 # Define the Organization (Department of Interior)
 <http://www.doi.gov>  a org:Organization ;
     foaf:name "Department of Interior" ;
-
+.

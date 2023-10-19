@@ -5,5 +5,8 @@
   a dcat:Dataset ;
 
   # mandatory property 
-  dcterms:title "Sea Ice Index"@en,   #english version
-            "Índice de hielo marino"@es. #spanish version
+  dcterms:title "Sea Ice Index", # default title in English
+            "Sea Ice Index"@en,   # English version
+            "Índice de hielo marino"@es, # Spanish version
+            "Indice de glace de mer"@fr, # French version
+            "Índice de gelo marinho"@pt . # Portuguese version

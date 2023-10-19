@@ -1,7 +1,11 @@
+@prefix dcat-us: <http://data.resources.gov/ontology/dcat-us#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+
 <https://example.com/dataset1>
   a dcat:Dataset ;
   dcat-us:geographicBoundingBox [
-      dcat-us:westBoundingLongitude 176
+      a dcat-us:GeographicBoundingBox ;
+      dcat-us:westBoundingLongitude 176;
       dcat-us:eastBoundingLongitude -65;
       dcat-us:northBoundingLatitude 49;
       dcat-us:southBoundingLatitude 11;

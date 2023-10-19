@@ -1,12 +1,14 @@
-@prefix dcat: <http://www.w3.org/ns/dcat#> 
-@prefix cnt: <http://www.w3.org/2011/content#>
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix cnt: <http://www.w3.org/2011/content#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+prefix : <http://example.com/ns#>
 
-[] dcat:Dataset ;
+:Dataset1 a dcat:Dataset ;
    dcat:distribution [ 
         a dcat:Distribution ;
         cnt:characterEncoding "UTF-8"^^xsd:string 
    ] .
 
 # Metadata on metadata 
-[] a dcat:CatalogRecord ;
+:CatalogRecord1 a dcat:CatalogRecord ;
   cnt:characterEncoding "UTF-8"^^xsd:string .

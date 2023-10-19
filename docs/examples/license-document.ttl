@@ -31,11 +31,11 @@ ex:Dataset2
 # Customized license
 ex:License2
     a dcterms:LicenseDocument ;
-    spdx:licenseText "Permission is hereby granted, free of charge, to any person 
+    spdx:licenseText """Permission is hereby granted, free of charge, to any person 
         obtaining a copy of this dataset and associated documentation files 
         (the 'Dataset'), to deal in the Dataset without restriction, including without 
         limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, 
         and/or sell copies of the Dataset, and to permit persons to whom the Dataset 
         is furnished to do so, subject to the following conditions: 
         The above copyright notice and this permission notice shall 
-        be included in all copies or substantial portions of the Dataset." .
+        be included in all copies or substantial portions of the Dataset.""" .

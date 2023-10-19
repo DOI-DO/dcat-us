@@ -11,14 +11,14 @@
     
     # recommended properties
     
-    dcterms:description "AGROVOC thesaurus contains more than 41 000 concepts in 42 
+    dcterms:description """AGROVOC thesaurus contains more than 41 000 concepts in 42 
     languages  covers all areas of interest to FAO, such as food, nutrition, 
     agriculture, forestry, fisheries, names of animals and plants, environment, biological 
     notions, techniques of plant cultivation, etc. The thesaurus is hierarchically organized 
-    under 25 top concepts.";
+    under 25 top concepts.""";
     
     # optional properties
-    dcterms:created "01-01-1981"^^xsd:date
+    dcterms:created "01-01-1981"^^xsd:date;
     dcterms:modified "2023-07-04T08:24:42Z"^^xsd:dateTime;
     dcterms:issued "2023-07"^^xsd:gYearMonth;
     dcterms:version "2023-07";

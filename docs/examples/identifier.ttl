@@ -4,10 +4,11 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 ex:Identifier1
   a adms:Identifier ;
   adms:schemaAgency <http://www.doi.org/> ;
   skos:notation "10.12345/ex.doi.67890";
   dcat:version "1.0" ;
-  dcterms:issued "2023-02-30"^^xsd:gYear.
+  dcterms:issued "2023"^^xsd:gYear.

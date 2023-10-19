@@ -1,11 +1,16 @@
-[] a prov:Attribution ;
+
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ex:<http://example.org/ns#> .
+
+ex:Attribution1 a prov:Attribution ;
    dcat:hadRole <http://resources.data.gov/vocab/isotc211/CI_RoleCode/ResponsiblePartyRole/custodian> ;
-   prov:agent [ 
-        a prov:Agent , foaf:Organization ;
-        foaf:mbox <mailto:custodian@doi.gov> ;
-        foaf:name "Custodian" ]  ;
+   prov:agent <http://www.doi.gov> .
 
 
-[] a prov:Attribution ;
+ex:Attribution2 a prov:Attribution ;
     prov:agent <https://orcid.org/0000-0002-8881-2550> ;
-    dcat:hadRole <http://resources.data.gov/vocab/isotc211/CI_RoleCode/principalInvestigator>        
+    dcat:hadRole <http://resources.data.gov/vocab/isotc211/CI_RoleCode/principalInvestigator> .       

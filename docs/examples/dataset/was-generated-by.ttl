@@ -1,14 +1,13 @@
-@prefix ex: <http://example.org/>
-@prefix prov: <http://www.w3.org/ns/prov#>
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-@prefix dcterms: <http://purl.org/dc/terms/>
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+@prefix ex: <http://example.org/>.
+@prefix prov: <http://www.w3.org/ns/prov#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 
 # Dataset resulting from the census activity
 ex:Census2020Dataset a dcat:Dataset ;
-    rdfs:label "Census Dataset" ;
-    prov:value "A dataset containing data collected from the national census in 2020." ;
+    dcterms:title "Census Dataset" ;
     prov:wasGeneratedBy ex:NationalCensus .
 
 # Activity

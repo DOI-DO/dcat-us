@@ -2,13 +2,18 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix odrs: <http://schema.theodi.org/odrs#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ex: <http://example.org/ns#> .
 
-<https://tierstatistik/data/fig-equids-size>
+ex:Distribution1
   a dcat:Distribution ;
-  dcat:accessURL <https://tierstatistik/data/fig-equids-size> ;
-  dcterms:license <http://opendatacommons.org/licenses/odbl/1.0/> ;
-  dcterms:rights :identitas-rights-statement .
+  dcat:accessURL ex:accessURL1 ;
+  dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ; # Indicative of a common public domain-equivalent license
+  dcterms:rights ex:usgs-rights-statement .
 
-:identitas-rights-statement
-    a odrs:RightsStatement;
-    odrs:attributionText "The Identitas organization" .
+ex:usgs-rights-statement
+    a dcterms:RightsStatement ;
+    odrs:attributionText """
+    This dataset is provided by the United States Geological Survey (USGS). While most USGS information is in the public domain, when using, sharing, or creating derivative works, users are requested to provide appropriate acknowledgment of the USGS as the source of the information. 
+    Suggested citation: 'Source: United States Geological Survey (USGS). Dataset accessed [date] at [URL/DOI].'
+    Acknowledging the USGS preserves the integrity and context of the scientific data while recognizing the intellectual and material investment made by the agency and its partners.
+    """ .

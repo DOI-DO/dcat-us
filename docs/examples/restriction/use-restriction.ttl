@@ -1,5 +1,5 @@
 @prefix ex: <http://example.org/> .
-@prefix dcat-us: <https://data.resources.gov/ontology/dcat-us#> .
+@prefix dcat-us: <http://data.resources.gov/ontology/dcat-us#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 ex:UseRestriction1  a dcat-us:AccessRestriction;

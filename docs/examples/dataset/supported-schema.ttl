@@ -21,5 +21,5 @@ ex:ISO19139Schema a dcat:Dataset ;
     dcterms:title "ISO 19139:2007 - Geographic Information Metadata XML Schema Implementation" ;
     dcterms:description "This is the XML Schema implementation of ISO 19139:2007 standard for geographic information metadata." ;
     dcterms:identifier "ISO 19139" ;
-    dcterms:type <http://data.gov/vocab/resource-type/Schema> 
+    dcterms:type <http://data.gov/vocab/resource-type/Schema> ;
     dcterms:conformsTo <http://www.isotc211.org/2005/gmd> .

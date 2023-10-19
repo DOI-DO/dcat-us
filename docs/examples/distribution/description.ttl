@@ -3,4 +3,4 @@
 
 <https://canton.zh/opendata/catalog/treecount>
   a dcat:Distribution ;
-  dcterms:description """Some description for the distribution"@en
+  dcterms:description "Some description for the distribution".

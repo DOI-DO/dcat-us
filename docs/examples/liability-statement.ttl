@@ -1,6 +1,7 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix dcat-us: <http://TBD/dcat-us#> .
-@prefix ex: <http://example.org/vocab#> .
+@prefix dcat-us: <http://data.resources.gov/ontology/dcat-us#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ex: <http://example.org/ns#> .
 
 <http://example.org/datasets/1>
     a dcat:Dataset ;

@@ -1,6 +1,6 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
-
+@prefix ex:<http://example.org/> .
 
 
 ex:Dataset1

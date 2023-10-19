@@ -4,6 +4,7 @@
 @prefix ex: <http://example.org/ns#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix geonames: <http://www.geonames.org/ontology#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 # Define the DatasetSeries
 ex:populationCensus a dcat:DatasetSeries ;
@@ -47,7 +48,6 @@ ex:populationCensus-1960 a dcat:Dataset ;
   ] ;  
   dcterms:spatial <http://sws.geonames.org/6252001/> ;
   .
-....
 
  <http://sws.geonames.org/6252001/> a dcterms:Location;
     rdfs:label "United States";

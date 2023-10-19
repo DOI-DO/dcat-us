@@ -2,15 +2,15 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix org: <http://www.w3.org/ns/org#> .
-
+@prefix dcterms: <http://purl.org/dc/terms/> .
 
 <https://doi.org/10.7265/N5K072F8>
   a dcat:Dataset ;
   dcterms:title "Sea Ice Index"@en,   
-            "Índice de hielo marino"@es. 
+            "Índice de hielo marino"@es; 
   # creator of the resource          
   dcterms:creator <https://orcid.org/0000-0002-0693-466X>;
-  dcterms:contributor <https://orcid.org/0000-0002-8881-2550>
+  dcterms:contributor <https://orcid.org/0000-0002-8881-2550>;
   dcterms:publisher <https://www.uscensus.gov>;
   dcterms:rightsHolder <https://www.uscensus.gov>;
   prov:qualifiedAttribution [

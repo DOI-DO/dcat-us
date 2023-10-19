@@ -6,4 +6,5 @@
 ex:LandsatImage-001
   a dcat:Dataset ;
   dcterms:title "Landsat Image"@en ;
-  dcat:spatialResolutionInMeters "30.0"^^xsd:decimal ;
+  dcat:spatialResolutionInMeters "30.0"^^xsd:decimal;
+  .

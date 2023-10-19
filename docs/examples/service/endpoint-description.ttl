@@ -1,8 +1,15 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://bafu/service>
+<https://geomag.usgs.gov/ws/data/>
   a dcat:DataService ;
-  dcat:endpointDescription <https://bafu/api/doku> .
+  dcterms:title "Web Service for Geomagnetism Data" ;
+  dcat:endpointDescription <https://geomag.usgs.gov/ws/openapi.json> .
 
-<https://bafu/api/doku>
-  a rdfs:Resource .
+<https://geomag.usgs.gov/ws/openapi.json>
+  a foaf:Document ;
+  dcterms:title "OpenAPI description of the USGS Geomagnetism Program API" ;
+  dcterms:issued "2019-01-01"^^xsd:date ;
+  dcterms:conformsTo <https://swagger.io/specification/> .

@@ -4,7 +4,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix ex:  <http://example.com#>
+@prefix ex:  <http://example.com/ns#>.
 
 <https://www2.census.gov/geo/pdfs/maps-data/data/tiger/tgrshp2015/TGRSHP2015_TechDoc.pdf>
     a foaf:Document ;
@@ -12,16 +12,16 @@
     dcterms:title "TIGER/Line® Shapefiles 2015 Technical Documentation";
     dcterms:creator <http://www.census.gov>;
 
-    dcterms:abstract "The document provides technical documentation for TIGER/Line® Shapefiles 2015. 
+    dcterms:abstract """The document provides technical documentation for TIGER/Line® Shapefiles 2015. 
     It includes details about the structure, format, and use of the shapefiles, as well as information 
     about the various geographic entities and features that they describe. The document also provides 
     details about the relationship files and address ranges associated with the shapefiles, 
-    and it includes various tables and figures to illustrate the concepts discussed.";
+    and it includes various tables and figures to illustrate the concepts discussed.""";
 
     dcterms:issued "2015-08"^^xsd:gYearMonth ;
     dcterms:mediaType <http://www.iana.org/assignments/media-types/application/pdf>  ;
-    dcterms:bibliographicCitation "2015 TIGER/Line Shapefiles (machinereadable data files) / prepared by the
-    U.S. Census Bureau, 2015".
+    dcterms:bibliographicCitation """2015 TIGER/Line Shapefiles (machinereadable data files) / prepared by the
+    U.S. Census Bureau, 2015""".
 
 ex:TechnicalDocumentation a skos:Concept;
     skos:prefLabel "Technical Documentation";

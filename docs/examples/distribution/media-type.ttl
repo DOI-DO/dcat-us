@@ -1,11 +1,17 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ex: <http://example.org/ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-<https://eth-bibliothek/1234>
+ex:Distribution1
   a dcat:Distribution ;
-    dcat:downloadURL <https://commons.wikimedia.org/wiki/file> ;
-    dcat:mediaType <https://www.iana.org/assignments/media-types/text/csv> ; .
+  dcat:downloadURL <https://commons.wikimedia.org/wiki/file> ;
+  dcat:mediaType <https://www.iana.org/assignments/media-types/text/csv> ; 
+  .
 
     
-[] a dcat:Distribution ;
-  dcterms:format [ a dcterms:MediaType ;
-      rdfs:label "Geopackage" ] .
+ex:Distribution2 a dcat:Distribution ;
+  dcterms:format [ 
+      a dcterms:MediaType ;
+      rdfs:label "Geopackage" 
+    ] .
