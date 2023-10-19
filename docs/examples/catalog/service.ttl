@@ -1,10 +1,11 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 
 # ---------- class Catalog --------------------------------------------------
 <https://data.census.gov/catalog>
   a dcat:Catalog ;
-
  # recommended property
 
   dcat:service <https://data.census.gov/service/123>, 
@@ -31,4 +32,4 @@
 
 # ---------- class Agent -----------------------------------------------------
 <https://census.gov>
-  a foaf:Organizatin .
+  a org:Organization .

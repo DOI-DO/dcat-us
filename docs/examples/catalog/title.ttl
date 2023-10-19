@@ -8,5 +8,5 @@
   a dcat:Catalog ;
 
   # mandatory properties
-  dcterms:title "US Census Open Data Catalog"@en,
+  dcterms:title "US Census Open Data Catalog",
             "Catálogo de Datos Abiertos del Censo de EE. UU."@es  .

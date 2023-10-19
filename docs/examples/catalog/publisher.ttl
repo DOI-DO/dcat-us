@@ -2,6 +2,7 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix org: <http://www.w3.org/ns/org#> .
 
 # ---------- class Catalog --------------------------------------------------
 <https://data.census.gov/catalog>
@@ -9,8 +10,9 @@
 
   # mandatory properties
   dcterms:publisher  <https://census.gov> ;
-
+.
 # ---------- class Agent -----------------------------------------------------
 <https://census.gov>
-  a foaf:Organization;
-  foaf:name "US Census Bureau".
+  a org:Organization;
+  foaf:name "US Census Bureau";
+.
