@@ -13,8 +13,8 @@ ex:LandsatDataService a foaf:Agent ;
 
 # Define the category (EarthObservationService) with a human-readable label
 ex:EarthObservationService a skos:Concept;
-    rdfs:label "Earth Observation Service" .
+    skos:prefLabel "Earth Observation Service" .
 
 # Define the category (ImageryService) with a human-readable label
 ex:ImageryService a skos:Concept;
-    rdfs:label "Imagery Service" .    
+    skos:prefLabel "Imagery Service" .    

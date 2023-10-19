@@ -1,11 +1,12 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix org: <http://www.w3.org/ns/org#> .
 
 <https://uscensus.gov/123>
   a dcat:Dataset ;
   dcterms:publisher <https://uscensus.gov> .
 
 <https://uscensus.gov>
-  a foaf:Organization ;
-  foaf:name: "Federal Office of Topography"@en .
+  a org:Organization ;
+  foaf:name: "Federal Office of Topography".

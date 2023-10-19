@@ -1,0 +1,216 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "CatalogRecord",
+    "type": "object",
+    "properties": {
+        "@id": {
+            "type": "string",
+            "format": "iri"
+        },
+        "@type": {
+            "type": "string",
+            "default": "CatalogRecord"
+        },
+        "modified": {
+            "$id": "http://purl.org/dc/terms/modified",
+            "title": "update/modification date",
+            "description": "The most recent date on which the Catalog Record's entry was changed or modified.",
+            "type": "string",
+            "oneOf": [
+                {
+                    "format": "date-time"
+                },
+                {
+                    "format": "date"
+                },
+                {
+                    "pattern": "^[0-9]{4}$",
+                    "description": "A year in YYYY format"
+                },
+                {
+                    "pattern": "^[0-9]{4}-[0-9]{2}$",
+                    "description": "A year and month in YYYY-MM format"
+                }
+            ]
+        },
+        "primaryTopic": {
+            "$id": "http://xmlns.com/foaf/0.1/primaryTopic",
+            "title": "primary topic",
+            "description": "A link to the Dataset, Data service or Catalog described in the Catalog Record.",
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/Resource",
+                    "description": "inline description of Resource"
+                },
+                {
+                    "type": "string",
+                    "description": "reference iri of Resource",
+                    "format": "iri"
+                }
+            ]
+        },
+        "description": {
+            "$id": "http://purl.org/dc/terms/description",
+            "title": "description",
+            "description": "A free-text account of the Catalog Record. This property can be repeated for parallel language versions of the description.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            ]
+        },
+        "issued": {
+            "$id": "http://purl.org/dc/terms/issued",
+            "title": "listing date",
+            "description": "The date on which the description of the Dataset was included in the Catalog.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "oneOf": [
+                            {
+                                "format": "date-time"
+                            },
+                            {
+                                "format": "date"
+                            },
+                            {
+                                "pattern": "^[0-9]{4}$",
+                                "description": "A year in YYYY format"
+                            },
+                            {
+                                "pattern": "^[0-9]{4}-[0-9]{2}$",
+                                "description": "A year and month in YYYY-MM format"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "language": {
+            "$id": "http://purl.org/dc/terms/language",
+            "title": "language",
+            "description": "A language used in the textual metadata describing titles, descriptions, etc. of the Catalog Record.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/LinguisticSystem",
+                                "description": "inline description of LinguisticSystem"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of LinguisticSystem",
+                                "format": "iri"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "source": {
+            "$id": "http://purl.org/dc/terms/source",
+            "title": "source metadata",
+            "description": "The original metadata that was used in creating metadata for the datasets, data services, or catalogs in the Catalog Record.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/Resource",
+                            "description": "inline description of Resource"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of Resource",
+                            "format": "iri"
+                        }
+                    ]
+                }
+            ]
+        },
+        "title": {
+            "$id": "http://purl.org/dc/terms/title",
+            "title": "title",
+            "description": "A name given to the Catalog Record.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            ]
+        },
+        "status": {
+            "$id": "http://www.w3.org/ns/adms#status",
+            "title": "change type",
+            "description": "The status of the catalog record in the context of editorial flow of the dataset and data service descriptions.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/Concept",
+                            "description": "inline description of Concept"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of Concept",
+                            "format": "iri"
+                        }
+                    ]
+                }
+            ]
+        },
+        "conformsTo": {
+            "$id": "http://purl.org/dc/terms/conformsTo",
+            "title": "application profile",
+            "description": "An Application Profile that the Catalog Record's metadata conforms to.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/Standard",
+                            "description": "inline description of Standard"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of Standard",
+                            "format": "iri"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "required": [
+        "modified",
+        "primaryTopic"
+    ]
+}

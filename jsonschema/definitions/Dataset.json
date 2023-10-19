@@ -11,10 +11,63 @@
             "type": "string",
             "default": "Dataset"
         },
+        "description": {
+            "$id": "http://purl.org/dc/terms/description",
+            "title": "description",
+            "description": "This property contains a free-text account of the Dataset.  ",
+            "type": "string"
+        },
+        "descriptionMap": {
+            "$id": "http://purl.org/dc/terms/description_lang_map",
+            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+            "type": [
+                "null",
+                "object"
+            ]
+        },
+        "identifier": {
+            "$id": "http://purl.org/dc/terms/identifier",
+            "title": "identifier",
+            "description": "This property contains the unique identifier for the Dataset, e.g. the URI or other unique identifier in the context of the Catalog.",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "publisher": {
+            "$id": "http://purl.org/dc/terms/publisher",
+            "title": "publisher",
+            "description": "This property refers to an organisation responsible for making the Dataset available.",
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/Organization",
+                    "description": "inline description of Organization"
+                },
+                {
+                    "type": "string",
+                    "description": "reference iri of Organization",
+                    "format": "iri"
+                }
+            ]
+        },
+        "title": {
+            "$id": "http://purl.org/dc/terms/title",
+            "title": "title",
+            "description": "This property contains a name given to the Dataset. This property can be repeated for parallel language versions of the name",
+            "type": "string"
+        },
+        "titleMap": {
+            "$id": "http://purl.org/dc/terms/title_lang_map",
+            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+            "type": [
+                "null",
+                "object"
+            ]
+        },
         "otherIdentifier": {
             "$id": "http://www.w3.org/ns/adms#identifier",
             "title": "other identifier",
-            "description": "This property refers to a secondary identifier of the Dataset, such as MAST/ADS [MAST-ADS], [DataCite], [DOI], [EZID] or [W3ID].",
+            "description": "reference to a structure identifier.",
             "oneOf": [
                 {
                     "type": "null"
@@ -40,6 +93,7 @@
         "sample": {
             "$id": "http://www.w3.org/ns/adms#sample",
             "title": "sample",
+            "description": "Links to a sample of an Dataset, which is a dcat:Distribution.",
             "oneOf": [
                 {
                     "type": "null"
@@ -62,31 +116,10 @@
                 }
             ]
         },
-        "status": {
-            "$id": "http://www.w3.org/ns/adms#status",
-            "title": "lifecycle status",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Concept",
-                            "description": "inline description of Concept"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Concept",
-                            "format": "iri"
-                        }
-                    ]
-                }
-            ]
-        },
         "supportedSchema": {
             "$id": "http://www.w3.org/ns/adms#supportedSchema",
             "title": "supported schema",
+            "description": "supported schema for this dataset",
             "oneOf": [
                 {
                     "type": "null"
@@ -109,6 +142,7 @@
         "versionNotes": {
             "$id": "http://www.w3.org/ns/adms#versionNotes",
             "title": "version notes",
+            "description": "version notes for this dataset",
             "oneOf": [
                 {
                     "type": "null"
@@ -118,59 +152,10 @@
                 }
             ]
         },
-        "contactPoint": {
-            "$id": "http://www.w3.org/ns/dcat#contactPoint",
-            "title": "contact point",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "oneOf": [
-                            {
-                                "$ref": "#/definitions/Contact",
-                                "description": "inline description of Contact"
-                            },
-                            {
-                                "type": "string",
-                                "description": "reference iri of Contact",
-                                "format": "iri"
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
-        "distribution": {
-            "$id": "http://www.w3.org/ns/dcat#distribution",
-            "title": "distribution",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "oneOf": [
-                            {
-                                "$ref": "#/definitions/Distribution",
-                                "description": "inline description of Distribution"
-                            },
-                            {
-                                "type": "string",
-                                "description": "reference iri of Distribution",
-                                "format": "iri"
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
         "first": {
             "$id": "http://www.w3.org/ns/dcat#first",
             "title": "first",
+            "description": "the first item of the sequence the dataset belongs to",
             "oneOf": [
                 {
                     "type": "null"
@@ -193,6 +178,7 @@
         "hasCurrentVersion": {
             "$id": "http://www.w3.org/ns/dcat#hasCurrentVersion",
             "title": "current version",
+            "description": "reference to the current (latest) version of a dataset",
             "oneOf": [
                 {
                     "type": "null"
@@ -241,6 +227,7 @@
         "inSeries": {
             "$id": "http://www.w3.org/ns/dcat#inSeries",
             "title": "in series",
+            "description": "Dataset Series this dataset belong to",
             "oneOf": [
                 {
                     "type": "null"
@@ -263,52 +250,10 @@
                 }
             ]
         },
-        "keyword": {
-            "$id": "http://www.w3.org/ns/dcat#keyword",
-            "title": "keyword/tag",
-            "description": "This property contains a keyword or tag describing the Dataset.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
-            ]
-        },
-        "keywordMap": {
-            "$id": "http://www.w3.org/ns/dcat#keyword_lang_map",
-            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-            "type": [
-                "null",
-                "object"
-            ]
-        },
-        "landingPage": {
-            "$id": "http://www.w3.org/ns/dcat#landingPage",
-            "title": "landing page",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Document",
-                            "description": "inline description of Document"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Document",
-                            "format": "iri"
-                        }
-                    ]
-                }
-            ]
-        },
         "previousVersion": {
             "$id": "http://www.w3.org/ns/dcat#previousVersion",
             "title": "previous version",
+            "description": "previous dataset version ",
             "oneOf": [
                 {
                     "type": "null"
@@ -331,6 +276,7 @@
         "qualifiedRelation": {
             "$id": "http://www.w3.org/ns/dcat#qualifiedRelation",
             "title": "qualified relation",
+            "description": "Qualified relationship with role of the dataset with another resource",
             "oneOf": [
                 {
                     "type": "null"
@@ -379,32 +325,6 @@
                 }
             ]
         },
-        "theme": {
-            "$id": "http://www.w3.org/ns/dcat#theme",
-            "title": "theme/category",
-            "description": "A category of the dataset",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "oneOf": [
-                            {
-                                "$ref": "#/definitions/Concept",
-                                "description": "inline description of Concept"
-                            },
-                            {
-                                "type": "string",
-                                "description": "reference iri of Concept",
-                                "format": "iri"
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
         "version": {
             "$id": "http://www.w3.org/ns/dcat#version",
             "title": "version",
@@ -421,6 +341,7 @@
         "applicableLegislation": {
             "$id": "http://data.resources.gov/ontology/dcat-us#applicableLegislation",
             "title": "applicable legislation",
+            "description": "applicable legislation for this dataset",
             "oneOf": [
                 {
                     "type": "null"
@@ -443,34 +364,10 @@
                 }
             ]
         },
-        "geographicBoundingBox": {
-            "$id": "http://data.resources.gov/ontology/dcat-us#geographicBoundingBox",
-            "title": "geographic bounding box",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "oneOf": [
-                            {
-                                "$ref": "#/definitions/GeographicBoundingBox",
-                                "description": "inline description of GeographicBoundingBox"
-                            },
-                            {
-                                "type": "string",
-                                "description": "reference iri of GeographicBoundingBox",
-                                "format": "iri"
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
         "investment": {
             "$id": "http://data.resources.gov/ontology/dcat-us#investment",
             "title": "investment",
+            "description": "federal investment used to produce a dataset",
             "oneOf": [
                 {
                     "type": "null"
@@ -545,6 +442,7 @@
         "program": {
             "$id": "http://data.resources.gov/ontology/dcat-us#program",
             "title": "program",
+            "description": "federal program used to produce a dataset",
             "oneOf": [
                 {
                     "type": "null"
@@ -637,6 +535,7 @@
         "conformsTo": {
             "$id": "http://purl.org/dc/terms/conformsTo",
             "title": "conforms to",
+            "description": "This property refers to an standard which the described Dataset conforms.",
             "oneOf": [
                 {
                     "type": "null"
@@ -659,6 +558,7 @@
         "contributor": {
             "$id": "http://purl.org/dc/terms/contributor",
             "title": "contributor",
+            "description": "This property refers to an agent contributing to the Dataset.",
             "oneOf": [
                 {
                     "type": "null"
@@ -684,6 +584,7 @@
         "created": {
             "$id": "http://purl.org/dc/terms/created",
             "title": "creation date",
+            "description": "This property contains the date on which the Dataset has been first created.",
             "oneOf": [
                 {
                     "type": "null"
@@ -712,7 +613,7 @@
         "creator": {
             "$id": "http://purl.org/dc/terms/creator",
             "title": "creator",
-            "description": "An agent responsible for producing the dataset",
+            "description": "This property refers to an entity responsible for producing the dataset.",
             "oneOf": [
                 {
                     "type": "null"
@@ -732,23 +633,10 @@
                 }
             ]
         },
-        "description": {
-            "$id": "http://purl.org/dc/terms/description",
-            "title": "description",
-            "description": "This property contains a free-text account of the Dataset. This property can be repeated for parallel language versions of the description ",
-            "type": "string"
-        },
-        "descriptionMap": {
-            "$id": "http://purl.org/dc/terms/description_lang_map",
-            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-            "type": [
-                "null",
-                "object"
-            ]
-        },
         "hasPart": {
             "$id": "http://purl.org/dc/terms/hasPart",
             "title": "has part",
+            "description": "This property refers to a related dataset that is part of the described dataset.",
             "oneOf": [
                 {
                     "type": "null"
@@ -771,17 +659,10 @@
                 }
             ]
         },
-        "identifier": {
-            "$id": "http://purl.org/dc/terms/identifier",
-            "title": "identifier",
-            "type": "array",
-            "items": {
-                "type": "string"
-            }
-        },
         "isReferencedBy": {
             "$id": "http://purl.org/dc/terms/isReferencedBy",
             "title": "is referenced by",
+            "description": "This property is about a related resource, such as a publication, that references, cites, or otherwise points to the Dataset.",
             "oneOf": [
                 {
                     "type": "null"
@@ -804,37 +685,10 @@
                 }
             ]
         },
-        "issued": {
-            "$id": "http://purl.org/dc/terms/issued",
-            "title": "release date",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string",
-                    "oneOf": [
-                        {
-                            "format": "date-time"
-                        },
-                        {
-                            "format": "date"
-                        },
-                        {
-                            "pattern": "^[0-9]{4}$",
-                            "description": "A year in YYYY format"
-                        },
-                        {
-                            "pattern": "^[0-9]{4}-[0-9]{2}$",
-                            "description": "A year and month in YYYY-MM format"
-                        }
-                    ]
-                }
-            ]
-        },
         "language": {
             "$id": "http://purl.org/dc/terms/language",
             "title": "language",
+            "description": "A language used in the Dataset.",
             "oneOf": [
                 {
                     "type": "null"
@@ -854,57 +708,6 @@
                             }
                         ]
                     }
-                }
-            ]
-        },
-        "license": {
-            "$id": "http://purl.org/dc/terms/license",
-            "title": "license",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/LicenseDocument",
-                            "description": "inline description of LicenseDocument"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of LicenseDocument",
-                            "format": "iri"
-                        }
-                    ]
-                }
-            ]
-        },
-        "modified": {
-            "$id": "http://purl.org/dc/terms/modified",
-            "title": "last modified",
-            "description": "The most recent date on which the Dataset was changed or modified.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string",
-                    "oneOf": [
-                        {
-                            "format": "date-time"
-                        },
-                        {
-                            "format": "date"
-                        },
-                        {
-                            "pattern": "^[0-9]{4}$",
-                            "description": "A year in YYYY format"
-                        },
-                        {
-                            "pattern": "^[0-9]{4}-[0-9]{2}$",
-                            "description": "A year and month in YYYY-MM format"
-                        }
-                    ]
                 }
             ]
         },
@@ -934,25 +737,10 @@
                 }
             ]
         },
-        "publisher": {
-            "$id": "http://purl.org/dc/terms/publisher",
-            "title": "publisher",
-            "description": "This property refers to an organisation responsible for making the Dataset available.",
-            "oneOf": [
-                {
-                    "$ref": "#/definitions/Organization",
-                    "description": "inline description of Organization"
-                },
-                {
-                    "type": "string",
-                    "description": "reference iri of Organization",
-                    "format": "iri"
-                }
-            ]
-        },
         "relation": {
             "$id": "http://purl.org/dc/terms/relation",
             "title": "related resource",
+            "description": "Reference to a related source",
             "oneOf": [
                 {
                     "type": "null"
@@ -978,6 +766,7 @@
         "replaces": {
             "$id": "http://purl.org/dc/terms/replaces",
             "title": "replaces",
+            "description": "Reference to the replaced Dataset",
             "oneOf": [
                 {
                     "type": "null"
@@ -1003,6 +792,7 @@
         "rights": {
             "$id": "http://purl.org/dc/terms/rights",
             "title": "rights",
+            "description": "A statement that concerns all rights for the Dataset not addressed with dcterms:license or dcterms:accessRights, such as copyright statements.",
             "oneOf": [
                 {
                     "type": "null"
@@ -1025,6 +815,7 @@
         "rightsHolder": {
             "$id": "http://purl.org/dc/terms/rightsHolder",
             "title": "rights holder",
+            "description": "This property refers to an Agent (organization) holding rights on the Dataset.",
             "oneOf": [
                 {
                     "type": "null"
@@ -1049,7 +840,8 @@
         },
         "source": {
             "$id": "http://purl.org/dc/terms/source",
-            "title": "spatial/geographical coverage",
+            "title": "data source",
+            "description": "Reference to the source of the dataset",
             "oneOf": [
                 {
                     "type": "null"
@@ -1072,34 +864,10 @@
                 }
             ]
         },
-        "spatial": {
-            "$id": "http://purl.org/dc/terms/spatial",
-            "title": "spatial/geographical coverage",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "oneOf": [
-                            {
-                                "$ref": "#/definitions/Location",
-                                "description": "inline description of Location"
-                            },
-                            {
-                                "type": "string",
-                                "description": "reference iri of Location",
-                                "format": "iri"
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
         "subject": {
             "$id": "http://purl.org/dc/terms/subject",
             "title": "subject",
+            "description": "Primary subject of the dataset",
             "oneOf": [
                 {
                     "type": "null"
@@ -1120,51 +888,12 @@
                         ]
                     }
                 }
-            ]
-        },
-        "temporal": {
-            "$id": "http://purl.org/dc/terms/temporal",
-            "title": "temporal coverage",
-            "description": "This property refers to a temporal period that the dataset  covers.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "oneOf": [
-                            {
-                                "$ref": "#/definitions/PeriodOfTime",
-                                "description": "inline description of PeriodOfTime"
-                            },
-                            {
-                                "type": "string",
-                                "description": "reference iri of PeriodOfTime",
-                                "format": "iri"
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
-        "title": {
-            "$id": "http://purl.org/dc/terms/title",
-            "title": "title",
-            "description": "This property contains a name given to the Dataset. This property can be repeated for parallel language versions of the name",
-            "type": "string"
-        },
-        "titleMap": {
-            "$id": "http://purl.org/dc/terms/title_lang_map",
-            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-            "type": [
-                "null",
-                "object"
             ]
         },
         "category": {
             "$id": "http://purl.org/dc/terms/type",
             "title": "category",
+            "description": "Category of the dataset",
             "oneOf": [
                 {
                     "type": "null"
@@ -1180,31 +909,6 @@
                             {
                                 "type": "string",
                                 "description": "reference iri of Concept",
-                                "format": "iri"
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
-        "hasQualityAnnotation": {
-            "$id": "http://www.w3.org/ns/dqv#hasQualityAnnotation",
-            "title": "quality annotation",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "oneOf": [
-                            {
-                                "$ref": "#/definitions/QualityMeasurement",
-                                "description": "inline description of QualityMeasurement"
-                            },
-                            {
-                                "type": "string",
-                                "description": "reference iri of QualityMeasurement",
                                 "format": "iri"
                             }
                         ]
@@ -1215,6 +919,7 @@
         "hasQualityMeasurement": {
             "$id": "http://www.w3.org/ns/dqv#hasQualityMeasurement",
             "title": "quality measurement",
+            "description": "property referring to a quality measurement for the dataset",
             "oneOf": [
                 {
                     "type": "null"
@@ -1263,6 +968,7 @@
         "hasPolicy": {
             "$id": "http://www.w3.org/ns/odrl/2/hasPolicy",
             "title": "policy",
+            "description": "An ODRL conformant policy expressing the rights associated with the Dataset",
             "oneOf": [
                 {
                     "type": "null"
@@ -1314,6 +1020,7 @@
         "wasAttributedTo": {
             "$id": "http://www.w3.org/ns/prov#wasAttributedTo",
             "title": "attribution",
+            "description": "Agent attributed to this dataset",
             "oneOf": [
                 {
                     "type": "null"
@@ -1365,6 +1072,7 @@
         "wasUsedBy": {
             "$id": "http://www.w3.org/ns/prov#wasUsedBy",
             "title": "used by",
+            "description": "This property refers to an Activity that used the Dataset",
             "oneOf": [
                 {
                     "type": "null"
@@ -1390,6 +1098,7 @@
         "image": {
             "$id": "https://schema.org/image",
             "title": "image",
+            "description": "A thumbnail picture illustrating the content of the dataset.",
             "oneOf": [
                 {
                     "type": "null"
@@ -1415,6 +1124,7 @@
         "usageNote": {
             "$id": "http://purl.org/vocab/vann/usageNote",
             "title": "usage note",
+            "description": "usage note for the dataset",
             "oneOf": [
                 {
                     "type": "null"
@@ -1430,6 +1140,287 @@
             "type": [
                 "null",
                 "object"
+            ]
+        },
+        "contactPoint": {
+            "$id": "http://www.w3.org/ns/dcat#contactPoint",
+            "title": "contact point",
+            "description": "This property contains contact information that can be used for sending comments about the Dataset.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Contact",
+                                "description": "inline description of Contact"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Contact",
+                                "format": "iri"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "distribution": {
+            "$id": "http://www.w3.org/ns/dcat#distribution",
+            "title": "distribution",
+            "description": "This property links the Dataset to an available Distribution.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Distribution",
+                                "description": "inline description of Distribution"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Distribution",
+                                "format": "iri"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "keyword": {
+            "$id": "http://www.w3.org/ns/dcat#keyword",
+            "title": "keyword/tag",
+            "description": "This property contains a keyword or tag describing the Dataset.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "keywordMap": {
+            "$id": "http://www.w3.org/ns/dcat#keyword_lang_map",
+            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+            "type": [
+                "null",
+                "object"
+            ]
+        },
+        "landingPage": {
+            "$id": "http://www.w3.org/ns/dcat#landingPage",
+            "title": "landing page",
+            "description": "This property refers to a web page that provides access to the Dataset, its Distributions and/or additional information.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/Document",
+                            "description": "inline description of Document"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of Document",
+                            "format": "iri"
+                        }
+                    ]
+                }
+            ]
+        },
+        "theme": {
+            "$id": "http://www.w3.org/ns/dcat#theme",
+            "title": "theme/category",
+            "description": "A theme of the dataset",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Concept",
+                                "description": "inline description of Concept"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Concept",
+                                "format": "iri"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "geographicBoundingBox": {
+            "$id": "http://data.resources.gov/ontology/dcat-us#geographicBoundingBox",
+            "title": "geographic bounding box",
+            "description": "WGS84 Geographic Bounding Box for this dataset",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/GeographicBoundingBox",
+                                "description": "inline description of GeographicBoundingBox"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of GeographicBoundingBox",
+                                "format": "iri"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "issued": {
+            "$id": "http://purl.org/dc/terms/issued",
+            "title": "release date",
+            "description": "Date of formal issuance (e.g., publication) of the dataset.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string",
+                    "oneOf": [
+                        {
+                            "format": "date-time"
+                        },
+                        {
+                            "format": "date"
+                        },
+                        {
+                            "pattern": "^[0-9]{4}$",
+                            "description": "A year in YYYY format"
+                        },
+                        {
+                            "pattern": "^[0-9]{4}-[0-9]{2}$",
+                            "description": "A year and month in YYYY-MM format"
+                        }
+                    ]
+                }
+            ]
+        },
+        "modified": {
+            "$id": "http://purl.org/dc/terms/modified",
+            "title": "last modified",
+            "description": "The most recent date on which the Dataset was changed or modified.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string",
+                    "oneOf": [
+                        {
+                            "format": "date-time"
+                        },
+                        {
+                            "format": "date"
+                        },
+                        {
+                            "pattern": "^[0-9]{4}$",
+                            "description": "A year in YYYY format"
+                        },
+                        {
+                            "pattern": "^[0-9]{4}-[0-9]{2}$",
+                            "description": "A year and month in YYYY-MM format"
+                        }
+                    ]
+                }
+            ]
+        },
+        "spatial": {
+            "$id": "http://purl.org/dc/terms/spatial",
+            "title": "spatial/geographical coverage",
+            "description": "This property refers to the spatial coverage of the dataset",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Location",
+                                "description": "inline description of Location"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Location",
+                                "format": "iri"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "temporal": {
+            "$id": "http://purl.org/dc/terms/temporal",
+            "title": "temporal coverage",
+            "description": "This property refers to a temporal period that the dataset  covers.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/PeriodOfTime",
+                                "description": "inline description of PeriodOfTime"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of PeriodOfTime",
+                                "format": "iri"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "status": {
+            "$id": "http://www.w3.org/ns/adms#status",
+            "title": "lifecycle status",
+            "description": "The status of the dataset  in the context of maturity lifecycle.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/Concept",
+                            "description": "inline description of Concept"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of Concept",
+                            "format": "iri"
+                        }
+                    ]
+                }
             ]
         }
     },

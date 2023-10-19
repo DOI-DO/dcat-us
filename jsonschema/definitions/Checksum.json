@@ -1,0 +1,41 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Checksum",
+    "type": "object",
+    "properties": {
+        "@id": {
+            "type": "string",
+            "format": "iri"
+        },
+        "@type": {
+            "type": "string",
+            "default": "Checksum"
+        },
+        "algorithm": {
+            "$id": "http://spdx.org/rdf/terms#algorithm",
+            "title": "algorithm",
+            "description": "The algorithm used to produce the subject Checksum.",
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/ChecksumAlgorithm",
+                    "description": "inline description of ChecksumAlgorithm"
+                },
+                {
+                    "type": "string",
+                    "description": "reference iri of ChecksumAlgorithm",
+                    "format": "iri"
+                }
+            ]
+        },
+        "checksumValue": {
+            "$id": "http://spdx.org/rdf/terms#checksumValue",
+            "title": "checksum value",
+            "description": "A lower case hexadecimal encoded digest value produced using a specific algorithm.",
+            "type": "string"
+        }
+    },
+    "required": [
+        "algorithm",
+        "checksumValue"
+    ]
+}

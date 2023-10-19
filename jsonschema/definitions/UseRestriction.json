@@ -11,9 +11,26 @@
             "type": "string",
             "default": "UseRestriction"
         },
+        "restrictionStatus": {
+            "$id": "http://data.resources.gov/ontology/dcat-us#restrictionStatus",
+            "title": "restriction status",
+            "description": "Indication of whether or not there are use restrictions on the archival materials",
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/Concept",
+                    "description": "inline description of Concept"
+                },
+                {
+                    "type": "string",
+                    "description": "reference iri of Concept",
+                    "format": "iri"
+                }
+            ]
+        },
         "restrictionNote": {
             "$id": "http://data.resources.gov/ontology/dcat-us#restrictionNote",
             "title": "restriction note",
+            "description": "Significant information pertaining to the use or reproduction of the data.",
             "oneOf": [
                 {
                     "type": "null"
@@ -31,24 +48,10 @@
                 "object"
             ]
         },
-        "restrictionStatus": {
-            "$id": "http://data.resources.gov/ontology/dcat-us#restrictionStatus",
-            "title": "restriction status",
-            "oneOf": [
-                {
-                    "$ref": "#/definitions/Concept",
-                    "description": "inline description of Concept"
-                },
-                {
-                    "type": "string",
-                    "description": "reference iri of Concept",
-                    "format": "iri"
-                }
-            ]
-        },
         "specificRestriction": {
             "$id": "http://data.resources.gov/ontology/dcat-us#specificRestriction",
             "title": "specific restriction",
+            "description": "The specific NARA restriction associated with the use restriction",
             "oneOf": [
                 {
                     "type": "null"

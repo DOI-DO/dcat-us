@@ -11,32 +11,6 @@
             "type": "string",
             "default": "Person"
         },
-        "firstname": {
-            "$id": "http://xmlns.com/foaf/0.1/firstname",
-            "title": "first name",
-            "description": "The first name of the Person",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
-            ]
-        },
-        "givenName": {
-            "$id": "http://xmlns.com/foaf/0.1/givenName",
-            "title": "given name",
-            "description": "The given name of the Person",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
-            ]
-        },
         "name": {
             "$id": "http://xmlns.com/foaf/0.1/name",
             "title": "name",
@@ -66,6 +40,32 @@
                             }
                         ]
                     }
+                }
+            ]
+        },
+        "firstname": {
+            "$id": "http://xmlns.com/foaf/0.1/firstname",
+            "title": "first name",
+            "description": "The first name of the Person",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "givenName": {
+            "$id": "http://xmlns.com/foaf/0.1/givenName",
+            "title": "given name",
+            "description": "The given name of the Person",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string"
                 }
             ]
         }

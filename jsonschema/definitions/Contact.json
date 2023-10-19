@@ -11,9 +11,32 @@
             "type": "string",
             "default": "Contact"
         },
+        "email": {
+            "$id": "http://www.w3.org/2006/vcard/ns#email",
+            "title": "email",
+            "description": "The email address of the contact",
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/Resource",
+                    "description": "inline description of Resource"
+                },
+                {
+                    "type": "string",
+                    "description": "reference iri of Resource",
+                    "format": "iri"
+                }
+            ]
+        },
+        "fn": {
+            "$id": "http://www.w3.org/2006/vcard/ns#fn",
+            "title": "formatted name",
+            "description": "The formatted text corresponding to the name of the contact",
+            "type": "string"
+        },
         "address": {
             "$id": "http://www.w3.org/2006/vcard/ns#address",
             "title": "address",
+            "description": "This property specifies the address of the contact",
             "oneOf": [
                 {
                     "type": "null"
@@ -36,48 +59,78 @@
                 }
             ]
         },
-        "email": {
-            "$id": "http://www.w3.org/2006/vcard/ns#email",
-            "title": "email",
-            "oneOf": [
-                {
-                    "$ref": "#/definitions/Resource",
-                    "description": "inline description of Resource"
-                },
-                {
-                    "type": "string",
-                    "description": "reference iri of Resource",
-                    "format": "iri"
-                }
-            ]
-        },
-        "fn": {
-            "$id": "http://www.w3.org/2006/vcard/ns#fn",
-            "title": "formatted name",
-            "type": "string"
-        },
-        "tel": {
-            "$id": "http://www.w3.org/2006/vcard/ns#tel",
-            "title": "telephone",
+        "family-name": {
+            "$id": "http://www.w3.org/2006/vcard/ns#family-name",
+            "title": "family name",
+            "description": "This property specifies the family name of the person to contact",
             "oneOf": [
                 {
                     "type": "null"
                 },
                 {
-                    "type": "array",
-                    "items": {
-                        "oneOf": [
-                            {
-                                "$ref": "#/definitions/Resource",
-                                "description": "inline description of Resource"
-                            },
-                            {
-                                "type": "string",
-                                "description": "reference iri of Resource",
-                                "format": "iri"
-                            }
-                        ]
-                    }
+                    "type": "string"
+                }
+            ]
+        },
+        "given-name": {
+            "$id": "http://www.w3.org/2006/vcard/ns#given-name",
+            "title": "given name",
+            "description": "This property specifies the given name of the person to contact",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "organization-name": {
+            "$id": "http://www.w3.org/2006/vcard/ns#organization-name",
+            "title": "organization name",
+            "description": "This property specifies the name of the organization to contact",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "tel": {
+            "$id": "http://www.w3.org/2006/vcard/ns#tel",
+            "title": "telephone",
+            "description": "This property specifies the telephone number for telephony communication with the person or organization.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/Resource",
+                            "description": "inline description of Resource"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of Resource",
+                            "format": "iri"
+                        }
+                    ]
+                }
+            ]
+        },
+        "title": {
+            "$id": "http://www.w3.org/2006/vcard/ns#title",
+            "title": "position title",
+            "description": "This property specifies the position role of the person to contact",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string"
                 }
             ]
         }

@@ -1,0 +1,107 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "definitions": {
+        "Identifier": {
+            "$ref": "definitions/Identifier.json"
+        },
+        "AccessRestriction": {
+            "$ref": "definitions/AccessRestriction.json"
+        },
+        "CUIRestriction": {
+            "$ref": "definitions/CUIRestriction.json"
+        },
+        "GeographicBoundingBox": {
+            "$ref": "definitions/GeographicBoundingBox.json"
+        },
+        "Investment": {
+            "$ref": "definitions/Investment.json"
+        },
+        "LiabilityStatement": {
+            "$ref": "definitions/LiabilityStatement.json"
+        },
+        "Program": {
+            "$ref": "definitions/Program.json"
+        },
+        "UseRestriction": {
+            "$ref": "definitions/UseRestriction.json"
+        },
+        "Catalog": {
+            "$ref": "definitions/Catalog.json"
+        },
+        "CatalogRecord": {
+            "$ref": "definitions/CatalogRecord.json"
+        },
+        "DataService": {
+            "$ref": "definitions/DataService.json"
+        },
+        "Dataset": {
+            "$ref": "definitions/Dataset.json"
+        },
+        "Distribution": {
+            "$ref": "definitions/Distribution.json"
+        },
+        "Relationship": {
+            "$ref": "definitions/Relationship.json"
+        },
+        "LicenseDocument": {
+            "$ref": "definitions/LicenseDocument.json"
+        },
+        "Location": {
+            "$ref": "definitions/Location.json"
+        },
+        "MediaType": {
+            "$ref": "definitions/MediaType.json"
+        },
+        "PeriodOfTime": {
+            "$ref": "definitions/PeriodOfTime.json"
+        },
+        "ProvenanceStatement": {
+            "$ref": "definitions/ProvenanceStatement.json"
+        },
+        "RightsStatement": {
+            "$ref": "definitions/RightsStatement.json"
+        },
+        "Standard": {
+            "$ref": "definitions/Standard.json"
+        },
+        "Metric": {
+            "$ref": "definitions/Metric.json"
+        },
+        "QualityMeasurement": {
+            "$ref": "definitions/QualityMeasurement.json"
+        },
+        "Agent": {
+            "$ref": "definitions/Agent.json"
+        },
+        "Document": {
+            "$ref": "definitions/Document.json"
+        },
+        "Person": {
+            "$ref": "definitions/Person.json"
+        },
+        "Address": {
+            "$ref": "definitions/Address.json"
+        },
+        "Organization": {
+            "$ref": "definitions/Organization.json"
+        },
+        "Activity": {
+            "$ref": "definitions/Activity.json"
+        },
+        "Attribution": {
+            "$ref": "definitions/Attribution.json"
+        },
+        "Concept": {
+            "$ref": "definitions/Concept.json"
+        },
+        "ConceptScheme": {
+            "$ref": "definitions/ConceptScheme.json"
+        },
+        "Checksum": {
+            "$ref": "definitions/Checksum.json"
+        },
+        "Contact": {
+            "$ref": "definitions/Contact.json"
+        }
+    }
+}

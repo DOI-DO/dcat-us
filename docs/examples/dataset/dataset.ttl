@@ -13,11 +13,11 @@
   dcat:contactPoint [
     a vcard:Contact ;
     vcard:fn "US Census" ;
-    vcard:hasEmail <mailto:noise@uscensus.gov> 
+    vcard:email <mailto:noise@uscensus.gov> 
   ], [
     a vcard:Contact ;
     vcard:fn "John Smith" ;
-    vcard:hasEmail <mailto:johnsmith@uscensus.gov> 
+    vcard:email <mailto:johnsmith@uscensus.gov> 
   ] ;
   dcterms:description 
                  """This dataset contains information regarding the

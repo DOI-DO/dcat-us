@@ -11,9 +11,24 @@
             "type": "string",
             "default": "ConceptScheme"
         },
+        "title": {
+            "$id": "http://purl.org/dc/terms/title",
+            "title": "title",
+            "description": "The title of the concept scheme in the indicated language.",
+            "type": "string"
+        },
+        "titleMap": {
+            "$id": "http://purl.org/dc/terms/title_lang_map",
+            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+            "type": [
+                "null",
+                "object"
+            ]
+        },
         "version": {
             "$id": "http://www.w3.org/ns/dcat#version",
             "title": "version info",
+            "description": "This property contains a version number or other version designation of the Concept Scheme.",
             "oneOf": [
                 {
                     "type": "null"
@@ -26,6 +41,65 @@
         "created": {
             "$id": "http://purl.org/dc/terms/created",
             "title": "creation date",
+            "description": "This property contains the date on which the Concept Scheme has been first created.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string",
+                    "oneOf": [
+                        {
+                            "format": "date-time"
+                        },
+                        {
+                            "format": "date"
+                        },
+                        {
+                            "pattern": "^[0-9]{4}$",
+                            "description": "A year in YYYY format"
+                        },
+                        {
+                            "pattern": "^[0-9]{4}-[0-9]{2}$",
+                            "description": "A year and month in YYYY-MM format"
+                        }
+                    ]
+                }
+            ]
+        },
+        "issued": {
+            "$id": "http://purl.org/dc/terms/issued",
+            "title": "publication date",
+            "description": "This property contains the date of formal issuance (e.g., publication) of the Concept Scheme.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string",
+                    "oneOf": [
+                        {
+                            "format": "date-time"
+                        },
+                        {
+                            "format": "date"
+                        },
+                        {
+                            "pattern": "^[0-9]{4}$",
+                            "description": "A year in YYYY format"
+                        },
+                        {
+                            "pattern": "^[0-9]{4}-[0-9]{2}$",
+                            "description": "A year and month in YYYY-MM format"
+                        }
+                    ]
+                }
+            ]
+        },
+        "modified": {
+            "$id": "http://purl.org/dc/terms/modified",
+            "title": "update/modification date",
+            "description": "This property contains the most recent date at which the Concept Scheme was changed or modified.",
             "oneOf": [
                 {
                     "type": "null"
@@ -54,6 +128,7 @@
         "description": {
             "$id": "http://purl.org/dc/terms/description",
             "title": "description",
+            "description": "This property contains a description of the Concept Scheme. ",
             "oneOf": [
                 {
                     "type": "null"
@@ -65,75 +140,6 @@
         },
         "descriptionMap": {
             "$id": "http://purl.org/dc/terms/description_lang_map",
-            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-            "type": [
-                "null",
-                "object"
-            ]
-        },
-        "issued": {
-            "$id": "http://purl.org/dc/terms/issued",
-            "title": "publication date",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string",
-                    "oneOf": [
-                        {
-                            "format": "date-time"
-                        },
-                        {
-                            "format": "date"
-                        },
-                        {
-                            "pattern": "^[0-9]{4}$",
-                            "description": "A year in YYYY format"
-                        },
-                        {
-                            "pattern": "^[0-9]{4}-[0-9]{2}$",
-                            "description": "A year and month in YYYY-MM format"
-                        }
-                    ]
-                }
-            ]
-        },
-        "modified": {
-            "$id": "http://purl.org/dc/terms/modified",
-            "title": "last modified",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string",
-                    "oneOf": [
-                        {
-                            "format": "date-time"
-                        },
-                        {
-                            "format": "date"
-                        },
-                        {
-                            "pattern": "^[0-9]{4}$",
-                            "description": "A year in YYYY format"
-                        },
-                        {
-                            "pattern": "^[0-9]{4}-[0-9]{2}$",
-                            "description": "A year and month in YYYY-MM format"
-                        }
-                    ]
-                }
-            ]
-        },
-        "title": {
-            "$id": "http://purl.org/dc/terms/title",
-            "title": "title",
-            "type": "string"
-        },
-        "titleMap": {
-            "$id": "http://purl.org/dc/terms/title_lang_map",
             "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
             "type": [
                 "null",

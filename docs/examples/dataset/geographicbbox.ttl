@@ -1,5 +1,5 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix dcat-us: <http://TBD/dcat-us#> .
+@prefix dcat-us: <http://data.resources.gov/ontology/dcat-us#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix locn: <http://www.w3.org/ns/locn#> .
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
@@ -7,6 +7,7 @@
 <https://example.com/dataset1>
   a dcat:Dataset ;
   dcat-us:geographicBoundingBox [
+      a dcat-us:GeographicBoundingBox ;
       dcat-us:westBoundingLongitude 22.3;
       dcat-us:eastBoundingLongitude 10.3;
       dcat-us:northBoundingLatitude 50.2;

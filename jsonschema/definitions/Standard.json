@@ -40,6 +40,35 @@
                 }
             ]
         },
+        "modified": {
+            "$id": "http://purl.org/dc/terms/modified",
+            "title": "last modified",
+            "description": "This property contains the most recent date on which the Standard was changed or modified.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string",
+                    "oneOf": [
+                        {
+                            "format": "date-time"
+                        },
+                        {
+                            "format": "date"
+                        },
+                        {
+                            "pattern": "^[0-9]{4}$",
+                            "description": "A year in YYYY format"
+                        },
+                        {
+                            "pattern": "^[0-9]{4}-[0-9]{2}$",
+                            "description": "A year and month in YYYY-MM format"
+                        }
+                    ]
+                }
+            ]
+        },
         "description": {
             "$id": "http://purl.org/dc/terms/description",
             "title": "description",
@@ -81,35 +110,6 @@
             "$id": "http://purl.org/dc/terms/issued",
             "title": "issued",
             "description": "This property contains the date of formal issuance (e.g., publication) of the Standard.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string",
-                    "oneOf": [
-                        {
-                            "format": "date-time"
-                        },
-                        {
-                            "format": "date"
-                        },
-                        {
-                            "pattern": "^[0-9]{4}$",
-                            "description": "A year in YYYY format"
-                        },
-                        {
-                            "pattern": "^[0-9]{4}-[0-9]{2}$",
-                            "description": "A year and month in YYYY-MM format"
-                        }
-                    ]
-                }
-            ]
-        },
-        "modified": {
-            "$id": "http://purl.org/dc/terms/modified",
-            "title": "last modified",
-            "description": "This property contains the most recent date on which the Standard was changed or modified.",
             "oneOf": [
                 {
                     "type": "null"

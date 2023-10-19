@@ -11,6 +11,22 @@
             "type": "string",
             "default": "AccessRestriction"
         },
+        "restrictionStatus": {
+            "$id": "http://data.resources.gov/ontology/dcat-us#restrictionStatus",
+            "title": "restriction status",
+            "description": "The indication of whether or not there are access restrictions on the data.",
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/Concept",
+                    "description": "inline description of Concept"
+                },
+                {
+                    "type": "string",
+                    "description": "reference iri of Concept",
+                    "format": "iri"
+                }
+            ]
+        },
         "restrictionNote": {
             "$id": "http://data.resources.gov/ontology/dcat-us#restrictionNote",
             "title": "restriction note",
@@ -32,26 +48,10 @@
                 "object"
             ]
         },
-        "restrictionStatus": {
-            "$id": "http://data.resources.gov/ontology/dcat-us#restrictionStatus",
-            "title": "restriction status",
-            "description": "The indication of whether or not there are access restrictions on the data.",
-            "oneOf": [
-                {
-                    "$ref": "#/definitions/Concept",
-                    "description": "inline description of Concept"
-                },
-                {
-                    "type": "string",
-                    "description": "reference iri of Concept",
-                    "format": "iri"
-                }
-            ]
-        },
         "specificRestriction": {
             "$id": "http://data.resources.gov/ontology/dcat-us#specificRestriction",
             "title": "specific restriction",
-            "description": "The authority of the restriction",
+            "description": "The specific NARA restriction associated with the access restriction",
             "oneOf": [
                 {
                     "type": "null"

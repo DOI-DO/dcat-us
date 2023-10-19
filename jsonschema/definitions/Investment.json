@@ -11,6 +11,20 @@
             "type": "string",
             "default": "Investment"
         },
+        "title": {
+            "$id": "http://purl.org/dc/terms/title",
+            "title": "title",
+            "description": "This property contains a name given to the Standard. This property can be repeated for parallel language versions of the name",
+            "type": "string"
+        },
+        "titleMap": {
+            "$id": "http://purl.org/dc/terms/title_lang_map",
+            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+            "type": [
+                "null",
+                "object"
+            ]
+        },
         "otherIdentifier": {
             "$id": "http://www.w3.org/ns/adms#identifier",
             "title": "other identifier",
@@ -37,27 +51,6 @@
                 }
             ]
         },
-        "description": {
-            "$id": "http://purl.org/dc/terms/description",
-            "title": "description",
-            "description": "This property contains a free-text account of the Standard. This property can be repeated for parallel language versions of the description",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
-            ]
-        },
-        "descriptionMap": {
-            "$id": "http://purl.org/dc/terms/description_lang_map",
-            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-            "type": [
-                "null",
-                "object"
-            ]
-        },
         "identifier": {
             "$id": "http://purl.org/dc/terms/identifier",
             "title": "identifier",
@@ -72,20 +65,6 @@
                         "type": "string"
                     }
                 }
-            ]
-        },
-        "title": {
-            "$id": "http://purl.org/dc/terms/title",
-            "title": "title",
-            "description": "This property contains a name given to the Standard. This property can be repeated for parallel language versions of the name",
-            "type": "string"
-        },
-        "titleMap": {
-            "$id": "http://purl.org/dc/terms/title_lang_map",
-            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-            "type": [
-                "null",
-                "object"
             ]
         },
         "category": {
@@ -112,6 +91,27 @@
                         ]
                     }
                 }
+            ]
+        },
+        "description": {
+            "$id": "http://purl.org/dc/terms/description",
+            "title": "description",
+            "description": "This property contains a free-text account of the Standard. This property can be repeated for parallel language versions of the description",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "descriptionMap": {
+            "$id": "http://purl.org/dc/terms/description_lang_map",
+            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+            "type": [
+                "null",
+                "object"
             ]
         }
     },

@@ -16,7 +16,7 @@
   products are available. However, monthly products are better to use for long-term 
   trend analysis because errors in the daily product tend to be averaged out in 
   the monthly product and because day-to-day variations are often the result of 
-  short-term weather."""@en,  # english description
+  short-term weather.""",  # english description (default)
 
   """El <a href="/data/seaice_index/">Índice de Hielo Marino</a> proporciona una 
   visión rápida de los cambios en el hielo marino en el Ártico y la Antártida. 

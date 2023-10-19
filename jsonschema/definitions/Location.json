@@ -11,27 +11,24 @@
             "type": "string",
             "default": "Location"
         },
-        "bbox": {
-            "$id": "http://www.w3.org/ns/dcat#bbox",
-            "title": "bounding box",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "oneOf": [
-                        {
-                            "type": "string",
-                            "format": "iri",
-                            "description": "This can be one of the following: "
-                        }
-                    ]
-                }
+        "prefLabel": {
+            "$id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+            "title": "geographic name",
+            "description": "This property contains a preferred label of the Location.",
+            "type": "string"
+        },
+        "prefLabelMap": {
+            "$id": "http://www.w3.org/2004/02/skos/core#prefLabel_lang_map",
+            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+            "type": [
+                "null",
+                "object"
             ]
         },
         "centroid": {
             "$id": "http://www.w3.org/ns/dcat#centroid",
             "title": "centroid",
+            "description": "The geographic center (centroid) of a spatial thing",
             "oneOf": [
                 {
                     "type": "null"
@@ -50,6 +47,7 @@
         "identifier": {
             "$id": "http://purl.org/dc/terms/identifier",
             "title": "identifier",
+            "description": "This property contains the geographic identifier for the Location, e.g., the URI or other unique identifier in the context of the relevant gazetteer.",
             "oneOf": [
                 {
                     "type": "null"
@@ -65,6 +63,7 @@
         "geometry": {
             "$id": "http://www.w3.org/ns/locn#geometry",
             "title": "geometry",
+            "description": "Associates a location with a corresponding geometry.",
             "oneOf": [
                 {
                     "type": "null"
@@ -83,6 +82,7 @@
         "inScheme": {
             "$id": "http://www.w3.org/2004/02/skos/core#inScheme",
             "title": "gazetteer",
+            "description": "This property MAY be used to specify the gazetteer to which the Location belongs.",
             "oneOf": [
                 {
                     "type": "null"
@@ -102,17 +102,23 @@
                 }
             ]
         },
-        "prefLabel": {
-            "$id": "http://www.w3.org/2004/02/skos/core#prefLabel",
-            "title": "geographic name",
-            "type": "string"
-        },
-        "prefLabelMap": {
-            "$id": "http://www.w3.org/2004/02/skos/core#prefLabel_lang_map",
-            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-            "type": [
-                "null",
-                "object"
+        "bbox": {
+            "$id": "http://www.w3.org/ns/dcat#bbox",
+            "title": "bounding box",
+            "description": "bounding box associated location (in any coordinate system)",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "type": "string",
+                            "format": "iri",
+                            "description": "This can be one of the following: "
+                        }
+                    ]
+                }
             ]
         }
     },

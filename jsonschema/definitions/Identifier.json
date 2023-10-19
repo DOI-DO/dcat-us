@@ -60,6 +60,7 @@
         "issued": {
             "$id": "http://purl.org/dc/terms/issued",
             "title": "issued",
+            "description": "The date of formal issuance (e.g., publication) of the Identiifer.",
             "oneOf": [
                 {
                     "type": "null"
@@ -88,6 +89,7 @@
         "version": {
             "$id": "http://purl.org/dc/terms/version",
             "title": "version",
+            "description": "version of the identifier scheme",
             "oneOf": [
                 {
                     "type": "null"
@@ -100,6 +102,7 @@
         "notation": {
             "$id": "http://www.w3.org/2004/02/skos/core#notation",
             "title": "notation",
+            "description": "abbreviations or codes from code lists for an identifier",
             "oneOf": [
                 {
                     "type": "null"

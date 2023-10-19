@@ -11,9 +11,40 @@
             "type": "string",
             "default": "Concept"
         },
+        "inScheme": {
+            "$id": "http://www.w3.org/2004/02/skos/core#inScheme",
+            "title": "in scheme",
+            "description": "\nConcept scheme defining the concept.",
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/ConceptScheme",
+                    "description": "inline description of ConceptScheme"
+                },
+                {
+                    "type": "string",
+                    "description": "reference iri of ConceptScheme",
+                    "format": "iri"
+                }
+            ]
+        },
+        "prefLabel": {
+            "$id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+            "title": "preferred label",
+            "description": "Preferred label for the controlled vocabulary term (one per language).",
+            "type": "string"
+        },
+        "prefLabelMap": {
+            "$id": "http://www.w3.org/2004/02/skos/core#prefLabel_lang_map",
+            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+            "type": [
+                "null",
+                "object"
+            ]
+        },
         "altLabel": {
             "$id": "http://www.w3.org/2004/02/skos/core#altLabel",
             "title": "alternate label",
+            "description": "Alternative labels for a concept.",
             "oneOf": [
                 {
                     "type": "null"
@@ -31,44 +62,10 @@
                 "object"
             ]
         },
-        "definition": {
-            "$id": "http://www.w3.org/2004/02/skos/core#definition",
-            "title": "definition",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
-            ]
-        },
-        "definitionMap": {
-            "$id": "http://www.w3.org/2004/02/skos/core#definition_lang_map",
-            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-            "type": [
-                "null",
-                "object"
-            ]
-        },
-        "inScheme": {
-            "$id": "http://www.w3.org/2004/02/skos/core#inScheme",
-            "title": "in scheme",
-            "oneOf": [
-                {
-                    "$ref": "#/definitions/ConceptScheme",
-                    "description": "inline description of ConceptScheme"
-                },
-                {
-                    "type": "string",
-                    "description": "reference iri of ConceptScheme",
-                    "format": "iri"
-                }
-            ]
-        },
         "notation": {
             "$id": "http://www.w3.org/2004/02/skos/core#notation",
             "title": "notation",
+            "description": "abbreviations or codes from code lists for an organization.",
             "oneOf": [
                 {
                     "type": "null"
@@ -81,13 +78,21 @@
                 }
             ]
         },
-        "prefLabel": {
-            "$id": "http://www.w3.org/2004/02/skos/core#prefLabel",
-            "title": "preferred label",
-            "type": "string"
+        "definition": {
+            "$id": "http://www.w3.org/2004/02/skos/core#definition",
+            "title": "definition",
+            "description": "Definition of the controlled vocabulary term.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string"
+                }
+            ]
         },
-        "prefLabelMap": {
-            "$id": "http://www.w3.org/2004/02/skos/core#prefLabel_lang_map",
+        "definitionMap": {
+            "$id": "http://www.w3.org/2004/02/skos/core#definition_lang_map",
             "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
             "type": [
                 "null",

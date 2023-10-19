@@ -11,6 +11,27 @@
             "type": "string",
             "default": "Activity"
         },
+        "label": {
+            "$id": "http://www.w3.org/2000/01/rdf-schema#label",
+            "title": "label",
+            "description": "This property is used to give a human-readable label for the activity.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "labelMap": {
+            "$id": "http://www.w3.org/2000/01/rdf-schema#label_lang_map",
+            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+            "type": [
+                "null",
+                "object"
+            ]
+        },
         "category": {
             "$id": "http://purl.org/dc/terms/type",
             "title": "category",
@@ -32,27 +53,6 @@
                         }
                     ]
                 }
-            ]
-        },
-        "label": {
-            "$id": "http://www.w3.org/2000/01/rdf-schema#label",
-            "title": "label",
-            "description": "This property is used to give a human-readable label for the activity.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
-            ]
-        },
-        "labelMap": {
-            "$id": "http://www.w3.org/2000/01/rdf-schema#label_lang_map",
-            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-            "type": [
-                "null",
-                "object"
             ]
         }
     },

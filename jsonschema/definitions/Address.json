@@ -11,32 +11,6 @@
             "type": "string",
             "default": "Address"
         },
-        "locality": {
-            "$id": "http://www.w3.org/2006/vcard/ns#locality",
-            "title": "locality",
-            "description": "The city of an Address of the Kind.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
-            ]
-        },
-        "region": {
-            "$id": "http://www.w3.org/2006/vcard/ns#region",
-            "title": "administrative area",
-            "description": "The administrative area of an Address of the Kind. Depending on the country, this corresponds to a province, a county, a region, or a state.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
-            ]
-        },
         "country-name": {
             "$id": "http://www.w3.org/2006/vcard/ns#country-name",
             "title": "country",
@@ -50,10 +24,36 @@
                 }
             ]
         },
+        "locality": {
+            "$id": "http://www.w3.org/2006/vcard/ns#locality",
+            "title": "locality",
+            "description": "The city of an Address of the Kind.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
         "postal-code": {
             "$id": "http://www.w3.org/2006/vcard/ns#postal-code",
             "title": "postal code",
             "description": "The postal code of an Address of the Kind.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "region": {
+            "$id": "http://www.w3.org/2006/vcard/ns#region",
+            "title": "administrative area",
+            "description": "The administrative area of an Address of the Kind. Depending on the country, this corresponds to a province, a county, a region, or a state.",
             "oneOf": [
                 {
                     "type": "null"
