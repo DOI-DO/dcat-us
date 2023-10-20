@@ -1,0 +1,25 @@
+{
+  "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
+  "@graph": [
+    {
+      "@id": "https://uscensus.gov/123",
+      "@type": "Dataset",
+      "contactPoint": [
+        "_:n92529f37966640b392a22b9336641753b1",
+        "_:n92529f37966640b392a22b9336641753b2"
+      ]
+    },
+    {
+      "@id": "_:n92529f37966640b392a22b9336641753b1",
+      "@type": "Contact",
+      "email": "mailto:noise@bafu.admin.ch",
+      "fn": "Abteilung L\u00e4rm BAFU"
+    },
+    {
+      "@id": "_:n92529f37966640b392a22b9336641753b2",
+      "@type": "Contact",
+      "email": "mailto:sekretariat@bafu.admin.ch",
+      "fn": "Sekretariat BAFU"
+    }
+  ]
+}

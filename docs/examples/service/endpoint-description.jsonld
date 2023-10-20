@@ -1,0 +1,27 @@
+{
+  "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
+  "@graph": [
+    {
+      "@id": "https://geomag.usgs.gov/ws/openapi.json",
+      "@type": "Document",
+      "conformsTo": [
+        "https://swagger.io/specification/"
+      ],
+      "issued": {
+        "@type": "xsd:date",
+        "@value": "2019-01-01"
+      },
+      "title": "OpenAPI description of the USGS Geomagnetism Program API"
+    },
+    {
+      "@id": "https://geomag.usgs.gov/ws/data/",
+      "@type": "DataService",
+      "title": "Web Service for Geomagnetism Data",
+      "endpointDescription": [
+        {
+          "@id": "https://geomag.usgs.gov/ws/openapi.json"
+        }
+      ]
+    }
+  ]
+}

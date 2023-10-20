@@ -1,0 +1,23 @@
+{
+  "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
+  "@graph": [
+    {
+      "@id": "http://example.org/ns#Distribution2",
+      "@type": "Distribution",
+      "format": "_:n786bc89ef7034ad797be760ff36e867cb1"
+    },
+    {
+      "@id": "_:n786bc89ef7034ad797be760ff36e867cb1",
+      "@type": "MediaType",
+      "label": "Geopackage"
+    },
+    {
+      "@id": "http://example.org/ns#Distribution1",
+      "@type": "Distribution",
+      "downloadURL": [
+        "https://commons.wikimedia.org/wiki/file"
+      ],
+      "mediaType": "https://www.iana.org/assignments/media-types/text/csv"
+    }
+  ]
+}

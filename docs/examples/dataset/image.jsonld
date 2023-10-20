@@ -1,0 +1,25 @@
+{
+  "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
+  "@graph": [
+    {
+      "@id": "http://example.org/ns#WeatherDataset",
+      "@type": "Dataset",
+      "description": "This dataset contains weather information including temperature, humidity, and wind speed.",
+      "title": "Weather Information",
+      "http://schema.org/image": {
+        "@id": "http://example.org/ns#WeatherThumbnail"
+      },
+      "distribution": [
+        "http://example.org/ns#WeatherDataDistribution"
+      ]
+    },
+    {
+      "@id": "http://example.org/ns#WeatherThumbnail",
+      "@type": "http://schema.org/ImageObject",
+      "http://schema.org/caption": "Thumbnail image representing the Weather Information dataset",
+      "http://schema.org/contentURL": {
+        "@id": "http://example.org/images/weather-thumbnail.jpg"
+      }
+    }
+  ]
+}

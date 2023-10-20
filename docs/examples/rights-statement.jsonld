@@ -1,0 +1,15 @@
+{
+  "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
+  "@graph": [
+    {
+      "@id": "http://www.example.com#distribution1",
+      "@type": "Distribution",
+      "rights": "_:n8e62d011bd9241b9ac2dc1c8dbb3e5b9b1"
+    },
+    {
+      "@id": "_:n8e62d011bd9241b9ac2dc1c8dbb3e5b9b1",
+      "@type": "RightsStatement",
+      "attributionText": "\u00a9 20023 ACME Inc."
+    }
+  ]
+}

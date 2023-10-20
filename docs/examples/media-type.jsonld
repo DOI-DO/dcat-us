@@ -1,0 +1,24 @@
+{
+  "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
+  "@graph": [
+    {
+      "@id": "http://example.org/ns#GeopackageDistribution",
+      "@type": "Distribution",
+      "format": "_:nd952facbe633489fa349e0b14de909deb1"
+    },
+    {
+      "@id": "_:nd952facbe633489fa349e0b14de909deb1",
+      "@type": "MediaType",
+      "label": "Geopackage"
+    },
+    {
+      "@id": "http://example.org/ns#dataset-001-csv",
+      "@type": "Distribution",
+      "mediaType": "http://www.iana.org/assignments/media-types/text/csv"
+    },
+    {
+      "@id": "http://www.iana.org/assignments/media-types/text/csv",
+      "@type": "MediaType"
+    }
+  ]
+}

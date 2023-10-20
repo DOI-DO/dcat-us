@@ -1,0 +1,21 @@
+{
+  "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
+  "@graph": [
+    {
+      "@id": "http://example.org/datasets/climate-temperature-data",
+      "@type": "Dataset",
+      "description": "This dataset contains historical temperature measurements used for global climate analysis.",
+      "provenance": [
+        "_:n3ef609341bab4bcba99f91474d3f19a2b1"
+      ],
+      "title": "Climate Temperature Data: Global Temperature Trends"
+    },
+    {
+      "@id": "_:n3ef609341bab4bcba99f91474d3f19a2b1",
+      "@type": "ProvenanceStatement",
+      "labelMap": {
+        "en": "The temperature measurements were collected from weather stations worldwide over the past century."
+      }
+    }
+  ]
+}

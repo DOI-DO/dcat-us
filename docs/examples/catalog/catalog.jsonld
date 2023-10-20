@@ -1,0 +1,57 @@
+{
+  "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
+  "@graph": [
+    {
+      "@id": "https://data.census.gov/service/123",
+      "@type": "DataService"
+    },
+    {
+      "@id": "https://data.census.gov/service/345",
+      "@type": "DataService"
+    },
+    {
+      "@id": "https://census.gov",
+      "@type": "http://xmlns.com/foaf/0.1/Organization"
+    },
+    {
+      "@id": "https://data.census.gov/data/123",
+      "@type": "Dataset"
+    },
+    {
+      "@id": "https://data.census.gov/catalog",
+      "@type": "Catalog",
+      "description": "US Census Data Catalog",
+      "issued": {
+        "@type": "xsd:date",
+        "@value": "2020-05-25"
+      },
+      "language": [
+        "http://id.loc.gov/vocabulary/iso639-1/en"
+      ],
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "modified": {
+        "@type": "xsd:date",
+        "@value": "2020-05-25"
+      },
+      "publisher": "https://census.gov",
+      "title": "US Census Open Data Catalog",
+      "dataset": [
+        "https://data.census.gov/data/123",
+        "https://data.census.gov/data/345"
+      ],
+      "service": [
+        "https://data.census.gov/service/123",
+        "https://data.census.gov/service/345"
+      ],
+      "homepage": "https://census.gov/catalog.html"
+    },
+    {
+      "@id": "https://data.census.gov/index.html",
+      "@type": "Document"
+    },
+    {
+      "@id": "https://data.census.gov/data/345",
+      "@type": "Dataset"
+    }
+  ]
+}

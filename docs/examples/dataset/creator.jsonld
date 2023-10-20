@@ -1,0 +1,14 @@
+{
+  "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
+  "@graph": [
+    {
+      "@id": "https://orcid.org/0000-0002-0693-466X",
+      "@type": "Person"
+    },
+    {
+      "@id": "https://doi.org/10.7265/N5K072F8",
+      "@type": "Dataset",
+      "creator": "https://orcid.org/0000-0002-0693-466X"
+    }
+  ]
+}

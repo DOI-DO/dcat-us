@@ -1,0 +1,8 @@
+{
+  "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
+  "@id": "https://uscensus.gov/opendata/1234",
+  "@type": "Distribution",
+  "titleMap": {
+    "en": "Some title of the distribution"
+  }
+}

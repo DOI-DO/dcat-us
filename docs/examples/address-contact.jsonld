@@ -1,0 +1,10 @@
+{
+  "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
+  "@id": "http://example.org/ns#address456",
+  "@type": "Address",
+  "country-name": "USA",
+  "locality": "Anytown",
+  "postal-code": "12345",
+  "region": "CA",
+  "street-address": "123 Main Street"
+}

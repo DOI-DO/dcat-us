@@ -1,0 +1,6 @@
+{
+  "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
+  "@id": "https://uscensus.gov/opendata/123",
+  "@type": "Distribution",
+  "temporalResolution": "P1D"
+}

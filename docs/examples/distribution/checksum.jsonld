@@ -1,0 +1,19 @@
+{
+  "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
+  "@graph": [
+    {
+      "@id": "http://example.com#Distribution1",
+      "@type": "Distribution",
+      "checksum": "http://example.com#checksum001",
+      "downloadURL": [
+        "https://data.ct.gov/api/views/5mzw-sjtu/rows.rdf?accessType=DOWNLOAD"
+      ]
+    },
+    {
+      "@id": "http://example.com#checksum001",
+      "@type": "Checksum",
+      "algorithm": "https://spdx.org/rdf/terms/#checksumAlgorithm_sha256",
+      "http://spdx.org/rdf/terms#checksumValue": "5bcc814127be171c75595d419f371c74c9cf041419c45d6e8d2c789e5c303b47"
+    }
+  ]
+}

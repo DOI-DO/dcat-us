@@ -1,0 +1,20 @@
+{
+  "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
+  "@graph": [
+    {
+      "@id": "http://www.doi.gov",
+      "@type": "Organization",
+      "name": "Department of Interior"
+    },
+    {
+      "@id": "http://example.org/JohnSmith",
+      "@type": "Person",
+      "memberOf": [
+        "http://www.doi.gov"
+      ],
+      "http://xmlns.com/foaf/0.1/firstName": "John",
+      "givenName": "Smith",
+      "name": "John Smith"
+    }
+  ]
+}

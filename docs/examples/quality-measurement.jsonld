@@ -1,0 +1,25 @@
+{
+  "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
+  "@graph": [
+    {
+      "@id": "http://example.com/ns#/myDatasetPrecisionAS",
+      "@type": "QualityMeasurement",
+      "unitMeasure": "http://qudt.org/vocab/unit/DEG",
+      "isMeasurementOf": "http://example.com/ns#/spatialResolutionAsAngularDistance",
+      "value": {
+        "@type": "xsd:decimal",
+        "@value": "3.5"
+      }
+    },
+    {
+      "@id": "http://example.com/ns#/spatialResolutionAsAngularDistance",
+      "@type": "Metric",
+      "http://www.w3.org/2004/02/skos/core#definition": {
+        "@language": "en",
+        "@value": "Spatial resolution of a dataset expressed as angular distance"
+      },
+      "expectedDataType": "xsd:decimal",
+      "inDimension": "http://www.w3.org/ns/dqv#precision"
+    }
+  ]
+}

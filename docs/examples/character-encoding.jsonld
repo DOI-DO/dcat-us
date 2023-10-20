@@ -1,0 +1,24 @@
+{
+  "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
+  "@graph": [
+    {
+      "@id": "http://example.com/ns#Dataset1",
+      "@type": "Dataset",
+      "distribution": [
+        "_:n5debfa163c4241bea30e40ee0c0ca95eb1"
+      ]
+    },
+    {
+      "@id": "_:n5debfa163c4241bea30e40ee0c0ca95eb1",
+      "@type": "Distribution",
+      "characterEncoding": [
+        "UTF-8"
+      ]
+    },
+    {
+      "@id": "http://example.com/ns#CatalogRecord1",
+      "@type": "CatalogRecord",
+      "http://www.w3.org/2011/content#characterEncoding": "UTF-8"
+    }
+  ]
+}

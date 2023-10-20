@@ -1,0 +1,18 @@
+{
+  "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
+  "@graph": [
+    {
+      "@id": "http://example.org/ns#Test543L",
+      "@type": "Dataset",
+      "qualifiedRelation": [
+        "_:nc9b8f0c0352d4a75af7ce26e384a54ebb1"
+      ]
+    },
+    {
+      "@id": "_:nc9b8f0c0352d4a75af7ce26e384a54ebb1",
+      "@type": "Relationship",
+      "relation": "http://example.org/Test543R",
+      "hadRole": "http://registry.it.csiro.au/def/isotc211/DS_AssociationTypeCode/stereoMate"
+    }
+  ]
+}

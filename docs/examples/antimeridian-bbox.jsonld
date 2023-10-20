@@ -1,0 +1,20 @@
+{
+  "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
+  "@graph": [
+    {
+      "@id": "https://example.com/dataset1",
+      "@type": "Dataset",
+      "geographicBoundingBox": [
+        "_:n060b04f514ae40b6a5ced430ba0880c4b1"
+      ]
+    },
+    {
+      "@id": "_:n060b04f514ae40b6a5ced430ba0880c4b1",
+      "@type": "GeographicBoundingBox",
+      "http://data.resources.gov/ontology/dcat-us#eastBoundingLongitude": -65,
+      "http://data.resources.gov/ontology/dcat-us#northBoundingLatitude": 49,
+      "http://data.resources.gov/ontology/dcat-us#southBoundingLatitude": 11,
+      "http://data.resources.gov/ontology/dcat-us#westBoundingLongitude": 176
+    }
+  ]
+}

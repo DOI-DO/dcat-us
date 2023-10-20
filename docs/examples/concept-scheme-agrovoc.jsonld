@@ -1,0 +1,20 @@
+{
+  "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
+  "@id": "http://aims.fao.org/aos/agrovoc",
+  "@type": "ConceptScheme",
+  "created": {
+    "@type": "xsd:date",
+    "@value": "0101-01-01"
+  },
+  "description": "AGROVOC thesaurus contains more than 41 000 concepts in 42 \n    languages  covers all areas of interest to FAO, such as food, nutrition, \n    agriculture, forestry, fisheries, names of animals and plants, environment, biological \n    notions, techniques of plant cultivation, etc. The thesaurus is hierarchically organized \n    under 25 top concepts.",
+  "issued": {
+    "@type": "xsd:gYearMonth",
+    "@value": "2023-07"
+  },
+  "modified": {
+    "@type": "xsd:dateTime",
+    "@value": "2023-07-04T08:24:42+00:00"
+  },
+  "title": "AGROVOC",
+  "http://purl.org/dc/terms/version": "2023-07"
+}

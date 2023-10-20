@@ -1,0 +1,25 @@
+{
+  "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
+  "@graph": [
+    {
+      "@id": "http://www.example.com#budget2018",
+      "@type": "Dataset",
+      "temporal": [
+        "_:n8502dbd5cf074d58b560e236263564c7b1"
+      ],
+      "title": "Budget for 2018"
+    },
+    {
+      "@id": "_:n8502dbd5cf074d58b560e236263564c7b1",
+      "@type": "PeriodOfTime",
+      "endDate": {
+        "@type": "xsd:date",
+        "@value": "2018-12-31"
+      },
+      "startDate": {
+        "@type": "xsd:date",
+        "@value": "2018-01-01"
+      }
+    }
+  ]
+}

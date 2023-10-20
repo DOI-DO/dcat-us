@@ -1,0 +1,25 @@
+{
+  "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
+  "@graph": [
+    {
+      "@id": "http://example.org/Dataset1",
+      "@type": "Dataset",
+      "qualifiedAttribution": [
+        "_:n9fe68a40380646df8477873defdff27ab1",
+        "_:n9fe68a40380646df8477873defdff27ab2"
+      ]
+    },
+    {
+      "@id": "_:n9fe68a40380646df8477873defdff27ab1",
+      "@type": "Attribution",
+      "hadRole": "http://resources.data.gov/vocab/isotc211/CI_RoleCode/distributor",
+      "agent": "https://www.uscensus.gov"
+    },
+    {
+      "@id": "_:n9fe68a40380646df8477873defdff27ab2",
+      "@type": "Attribution",
+      "hadRole": "http://resources.data.gov/vocab/isotc211/CI_RoleCode/funder",
+      "agent": "https://www.doi.gov"
+    }
+  ]
+}

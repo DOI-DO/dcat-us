@@ -1,0 +1,17 @@
+{
+  "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
+  "@graph": [
+    {
+      "@id": "http://example.org/ns#distribution1",
+      "@type": "Distribution",
+      "cuiRestriction": "_:n3ec4eeb7936e46b49300d2c13d2a1e1eb1"
+    },
+    {
+      "@id": "_:n3ec4eeb7936e46b49300d2c13d2a1e1eb1",
+      "@type": "CUIRestriction",
+      "cuiBannerMarking": "CUI//NNPI//NOFORN ",
+      "designationIndicator": "Controlled by: OUSD(I&S)\n         Controlled by: CL&S INFOSEC\n         CUI Category(ies): NNPI\n         Distribution/Limited Dissemination Control: NOFORN\n         POC: John Brown, 703-555-0123 ",
+      "http://data.resources.gov/ontology/dcat-us#requiredIndicatorPerAuthority": "OUSD(I&S): Handle with care, store in a secure location.\n         CL&S INFOSEC: Ensure encryption during electronic transmission."
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
+  "@graph": [
+    {
+      "@id": "http://example.org/Distribution1",
+      "@type": "Distribution",
+      "http://purl.org/dc/terms/accessURL": {
+        "@id": "https://uscensus.gov/data/1234/access"
+      },
+      "http://purl.org/dc/terms/availability": {
+        "@id": "http://data.gov/resource/authority/planned-availability/STABLE"
+      },
+      "description": "some description of the data",
+      "format": "http://data.gov/resource/authority/file-type/CSV",
+      "license": "http://data.gov/vocabulary/licenses/cc-by/4.0",
+      "modified": {
+        "@type": "xsd:date",
+        "@value": "2019-04-26"
+      },
+      "rights": "http://example.org/uscensus.gov-rights-statement",
+      "title": "some title of the distribution"
+    },
+    {
+      "@id": "http://example.org/uscensus.gov-rights-statement",
+      "@type": "http://schema.theodi.org/odrs#RightsStatement",
+      "http://schema.theodi.org/odrs#attributionText": "Some uscensus.gov organization rights statement"
+    }
+  ]
+}

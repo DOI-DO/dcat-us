@@ -1,0 +1,23 @@
+{
+  "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
+  "@graph": [
+    {
+      "@id": "http://example.org/catalog",
+      "http://www.w3.org/ns/dcat#record": {
+        "@id": "http://example.org/record-001"
+      }
+    },
+    {
+      "@id": "http://example.org/record-001",
+      "@type": "CatalogRecord",
+      "conformsTo": "https://www.data.gov/ontology/dcat-us#",
+      "issued": [
+        {
+          "@type": "xsd:date",
+          "@value": "2022-12-11"
+        }
+      ],
+      "primaryTopic": "http://example.org/dataset-001"
+    }
+  ]
+}

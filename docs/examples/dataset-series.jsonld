@@ -1,0 +1,125 @@
+{
+  "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
+  "@graph": [
+    {
+      "@id": "http://example.org/ns#populationCensus-1950",
+      "@type": "Dataset",
+      "accrualPeriodicity": "http://purl.org/cld/freq/decennial",
+      "issued": {
+        "@type": "xsd:gYear",
+        "@value": "1950"
+      },
+      "spatial": [
+        "http://sws.geonames.org/6252001/"
+      ],
+      "temporal": [
+        "_:n4988418ad7484a08a2291c954a19100fb2"
+      ],
+      "titleMap": {
+        "en": "US Population Census Data for year 1950"
+      },
+      "inSeries": [
+        "http://example.org/ns#populationCensus"
+      ],
+      "http://www.w3.org/ns/dcat#next": {
+        "@id": "http://example.org/ns#populationCensus-1960"
+      },
+      "temporalResolution": "P10Y"
+    },
+    {
+      "@id": "_:n4988418ad7484a08a2291c954a19100fb2",
+      "@type": "PeriodOfTime",
+      "endDate": {
+        "@type": "xsd:date",
+        "@value": "1950-12-31"
+      },
+      "startDate": {
+        "@type": "xsd:date",
+        "@value": "1950-01-01"
+      }
+    },
+    {
+      "@id": "http://sws.geonames.org/6252001/",
+      "@type": "Location",
+      "http://www.w3.org/2000/01/rdf-schema#label": "United States"
+    },
+    {
+      "@id": "http://example.org/ns#populationCensus-1960",
+      "@type": "Dataset",
+      "accrualPeriodicity": "http://purl.org/cld/freq/decennial",
+      "issued": {
+        "@type": "xsd:gYear",
+        "@value": "1960"
+      },
+      "spatial": [
+        "http://sws.geonames.org/6252001/"
+      ],
+      "temporal": [
+        "_:n4988418ad7484a08a2291c954a19100fb3"
+      ],
+      "titleMap": {
+        "en": "US Population Census Data for year 1960"
+      },
+      "inSeries": [
+        "http://example.org/ns#populationCensus"
+      ],
+      "http://www.w3.org/ns/dcat#next": {
+        "@id": "http://example.org/ns#populationCensus-1970"
+      },
+      "temporalResolution": "P10Y"
+    },
+    {
+      "@id": "_:n4988418ad7484a08a2291c954a19100fb3",
+      "@type": "PeriodOfTime",
+      "endDate": {
+        "@type": "xsd:date",
+        "@value": "1960-12-31"
+      },
+      "startDate": {
+        "@type": "xsd:date",
+        "@value": "1960-01-01"
+      }
+    },
+    {
+      "@id": "http://example.org/ns#populationCensus",
+      "@type": "http://www.w3.org/ns/dcat#DatasetSeries",
+      "http://purl.org/dc/terms/accrualPeriodicity": {
+        "@id": "http://purl.org/cld/freq/decennial"
+      },
+      "http://purl.org/dc/terms/issued": {
+        "@type": "xsd:gYear",
+        "@value": "1950"
+      },
+      "http://purl.org/dc/terms/modified": {
+        "@type": "xsd:gYear",
+        "@value": "2020"
+      },
+      "http://purl.org/dc/terms/spatial": {
+        "@id": "http://sws.geonames.org/6252001/"
+      },
+      "http://purl.org/dc/terms/temporal": {
+        "@id": "_:n4988418ad7484a08a2291c954a19100fb1"
+      },
+      "http://purl.org/dc/terms/title": {
+        "@language": "en",
+        "@value": "US Population Census Data"
+      },
+      "http://www.w3.org/ns/dcat#temporalResolution": {
+        "@type": "xsd:duration",
+        "@value": "P10Y"
+      }
+    },
+    {
+      "@id": "_:n4988418ad7484a08a2291c954a19100fb1",
+      "@type": "PeriodOfTime",
+      "endDate": {
+        "@type": "xsd:date",
+        "@value": "2020-12-31"
+      },
+      "startDate": {
+        "@type": "xsd:date",
+        "@value": "1950-01-01"
+      }
+    }
+  ]
+}

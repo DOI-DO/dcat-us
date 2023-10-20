@@ -1,0 +1,90 @@
+{
+  "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
+  "@graph": [
+    {
+      "@id": "https://uscensus.gov/dataset1",
+      "@type": "Dataset",
+      "descriptionMap": {
+        "en": "This dataset contains information regarding the\n                 census in County of Loudoun"
+      },
+      "issued": {
+        "@type": "xsd:date",
+        "@value": "2021-04-26"
+      },
+      "modified": {
+        "@type": "xsd:date",
+        "@value": "2021-04-26"
+      },
+      "publisher": "https://uscensus.gov/",
+      "spatial": [
+        "http://publications.europa.eu/resource/authority/country/CHE"
+      ],
+      "temporal": [
+        "_:n179b981356394274a99b93cddaf99e6eb3"
+      ],
+      "titleMap": {
+        "en": "Loudoun County",
+        "es": "Condado de Loudoun"
+      },
+      "contactPoint": [
+        "_:n179b981356394274a99b93cddaf99e6eb1",
+        "_:n179b981356394274a99b93cddaf99e6eb2"
+      ],
+      "distribution": [
+        "https://uscensus.gov/data/123",
+        "https://uscensus.gov/data/456"
+      ],
+      "keywordMap": {
+        "en": [
+          "loudoun",
+          "census"
+        ]
+      },
+      "landingPage": "https://opendata.uscensus.gov/1234/about",
+      "theme": [
+        "http://publications.europa.eu/resource/authority/data-theme/GOVE",
+        "http://publications.europa.eu/resource/authority/data-theme/SOCI"
+      ]
+    },
+    {
+      "@id": "_:n179b981356394274a99b93cddaf99e6eb1",
+      "@type": "Contact",
+      "email": "mailto:noise@uscensus.gov",
+      "fn": "US Census"
+    },
+    {
+      "@id": "_:n179b981356394274a99b93cddaf99e6eb2",
+      "@type": "Contact",
+      "email": "mailto:johnsmith@uscensus.gov",
+      "fn": "John Smith"
+    },
+    {
+      "@id": "_:n179b981356394274a99b93cddaf99e6eb3",
+      "@type": "PeriodOfTime",
+      "endDate": {
+        "@type": "xsd:dateTime",
+        "@value": "2021-06-22T00:00:00"
+      },
+      "startDate": {
+        "@type": "xsd:dateTime",
+        "@value": "2020-01-01T00:00:00"
+      }
+    },
+    {
+      "@id": "https://uscensus.gov/data/456",
+      "@type": "Distribution"
+    },
+    {
+      "@id": "https://uscensus.gov",
+      "@type": "http://xmlns.com/foaf/0.1/Organization",
+      "http://xmlns.com/foaf/0.1/name": {
+        "@language": "en",
+        "@value": "US Census"
+      }
+    },
+    {
+      "@id": "https://uscensus.gov/data/123",
+      "@type": "Distribution"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
+  "@graph": [
+    {
+      "@id": "https://orcid.org/0000-0002-0693-466X",
+      "@type": "Person"
+    },
+    {
+      "@id": "https://www.uscensus.gov",
+      "@type": "Organization"
+    },
+    {
+      "@id": "https://doi.org/10.7265/N5K072F8",
+      "@type": "Dataset",
+      "contributor": [
+        "https://orcid.org/0000-0002-8881-2550"
+      ],
+      "creator": "https://orcid.org/0000-0002-0693-466X",
+      "publisher": "https://www.uscensus.gov",
+      "rightsHolder": [
+        "https://www.uscensus.gov"
+      ],
+      "titleMap": {
+        "en": "Sea Ice Index",
+        "es": "\u00cdndice de hielo marino"
+      },
+      "qualifiedAttribution": [
+        "_:n13baf3d4136244159ba5385eb4b449adb1",
+        "_:n13baf3d4136244159ba5385eb4b449adb2",
+        "_:n13baf3d4136244159ba5385eb4b449adb3"
+      ]
+    },
+    {
+      "@id": "_:n13baf3d4136244159ba5385eb4b449adb1",
+      "@type": "Attribution",
+      "hadRole": "http://resources.data.gov/vocab/isotc211/CI_RoleCode/principalInvestigator",
+      "agent": "https://orcid.org/0000-0002-8881-2550"
+    },
+    {
+      "@id": "_:n13baf3d4136244159ba5385eb4b449adb2",
+      "@type": "Attribution",
+      "hadRole": "http://resources.data.gov/vocab/isotc211/CI_RoleCode/distributor",
+      "agent": "https://www.uscensus.gov"
+    },
+    {
+      "@id": "_:n13baf3d4136244159ba5385eb4b449adb3",
+      "@type": "Attribution",
+      "hadRole": "http://resources.data.gov/vocab/isotc211/CI_RoleCode/funder",
+      "agent": "https://www.doi.gov"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-8881-2550",
+      "@type": "Person"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
+  "@graph": [
+    {
+      "@id": "https://www2.census.gov/geo/pdfs/maps-data/data/tiger/tgrshp2015/TGRSHP2015_TechDoc.pdf",
+      "@type": "Document",
+      "abstract": "The document provides technical documentation for TIGER/Line\u00ae Shapefiles 2015. \n    It includes details about the structure, format, and use of the shapefiles, as well as information \n    about the various geographic entities and features that they describe. The document also provides \n    details about the relationship files and address ranges associated with the shapefiles, \n    and it includes various tables and figures to illustrate the concepts discussed.",
+      "bibliographicCitation": "2015 TIGER/Line Shapefiles (machinereadable data files) / prepared by the\n    U.S. Census Bureau, 2015",
+      "creator": [
+        "http://www.census.gov"
+      ],
+      "issued": {
+        "@type": "xsd:gYearMonth",
+        "@value": "2015-08"
+      },
+      "http://purl.org/dc/terms/mediaType": {
+        "@id": "http://www.iana.org/assignments/media-types/application/pdf"
+      },
+      "title": "TIGER/Line\u00ae Shapefiles 2015 Technical Documentation",
+      "category": "http://example.com/ns#TechnicalDocumentation"
+    },
+    {
+      "@id": "http://example.com/ns#TechnicalDocumentation",
+      "@type": "Concept",
+      "inScheme": "http://example.com/ns#DocumentTypeScheme",
+      "prefLabel": "Technical Documentation"
+    }
+  ]
+}

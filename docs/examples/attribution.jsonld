@@ -1,0 +1,17 @@
+{
+  "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
+  "@graph": [
+    {
+      "@id": "http://example.org/ns#Attribution2",
+      "@type": "Attribution",
+      "hadRole": "http://resources.data.gov/vocab/isotc211/CI_RoleCode/principalInvestigator",
+      "agent": "https://orcid.org/0000-0002-8881-2550"
+    },
+    {
+      "@id": "http://example.org/ns#Attribution1",
+      "@type": "Attribution",
+      "hadRole": "http://resources.data.gov/vocab/isotc211/CI_RoleCode/ResponsiblePartyRole/custodian",
+      "agent": "http://www.doi.gov"
+    }
+  ]
+}

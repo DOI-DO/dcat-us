@@ -1,0 +1,21 @@
+{
+  "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
+  "@graph": [
+    {
+      "@id": "http://example.org/ns#Identifier1",
+      "@type": "Identifier",
+      "notation": "10.12345/ex.doi.67890",
+      "schemaAgency": "http://www.doi.org/",
+      "http://www.w3.org/ns/dcat#version": "1.0"
+    },
+    {
+      "@id": "http://example.org/ns#Dataset1",
+      "@type": "Dataset",
+      "description": "This dataset provides an example of how to use a DOI as an identifier.",
+      "title": "Example Dataset with DOI",
+      "otherIdentifier": [
+        "http://example.org/ns#Identifier1"
+      ]
+    }
+  ]
+}

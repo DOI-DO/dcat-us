@@ -1,0 +1,31 @@
+{
+  "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
+  "@graph": [
+    {
+      "@id": "https://www.nasa.gov",
+      "@type": "Organization",
+      "http://purl.org/dc/terms/type": {
+        "@id": "http://data.resource.gov/vocab/org-type#Administration"
+      },
+      "altLabel": "NASA",
+      "notation": [
+        "US-NASA"
+      ],
+      "prefLabel": "National Aeronautics and Space Administration",
+      "name": "NASA"
+    },
+    {
+      "@id": "https://www.doi.gov",
+      "@type": "Organization",
+      "http://purl.org/dc/terms/type": {
+        "@id": "http://data.resource.gov/vocab/org-type#Department"
+      },
+      "altLabel": "Department of the Interior",
+      "notation": [
+        "DOI"
+      ],
+      "prefLabel": "U.S. Department of the Interior",
+      "name": "U.S. Department of the Interior"
+    }
+  ]
+}

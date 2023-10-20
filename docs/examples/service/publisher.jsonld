@@ -1,0 +1,18 @@
+{
+  "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
+  "@graph": [
+    {
+      "@id": "https://uscensus.gov",
+      "@type": "http://xmlns.com/foaf/0.1/Organization",
+      "http://xmlns.com/foaf/0.1/name:": {
+        "@language": "en",
+        "@value": "US Census"
+      }
+    },
+    {
+      "@id": "https://uscensus.gov/opendata/service",
+      "@type": "DataService",
+      "publisher": "https://uscensus.gov"
+    }
+  ]
+}
