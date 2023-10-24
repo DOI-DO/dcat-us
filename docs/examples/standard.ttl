@@ -11,7 +11,6 @@
     skos:inScheme <http://data.gov/vocab/metadata-schema> ;
     a dcterms:Standard;
     dc:identifier "iso-19139" ;
-    skos:prefLabel "ISO/TS 19139:2007 - Geographic MetaData extensible markup language (GMD)"@en ;
     dcterms:title "ISO/TS 19139:2007 - Geographic MetaData extensible markup language (GMD)"@en ;
     skos:altLabel "ISO 19139"@en ;
     rdfs:isDefinedBy <https://www.iso.org/standard/32557.html> .
@@ -20,7 +19,6 @@
     skos:inScheme <http://data.gov/vocab/metadata-schema> ;
     a dcterms:Standard ;
     dc:identifier "sdmx" ;
-    skos:prefLabel "Statistical Data and Metadata eXchange"@en ;
     dcterms:title "Statistical Data and Metadata eXchange"@en ;
     skos:altLabel "SDMX"@en ;
     rdfs:isDefinedBy <https://sdmx.org/> .

@@ -1,6 +1,6 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix : <http://example.org/> .
+@prefix : <http://example.org/ns#> .
 
 :CSVDistributionExample1
   a dcat:Distribution ;

@@ -1,3 +1,4 @@
 {
-    "todo-tree.tree.scanMode": "current file"
+    "todo-tree.tree.scanMode": "current file",
+    "liveServer.settings.port": 5501
 }

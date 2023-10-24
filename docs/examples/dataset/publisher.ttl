@@ -9,4 +9,4 @@
 
 <https://uscensus.gov>
   a org:Organization ;
-  foaf:name: "Federal Office of Topography".
+  foaf:name "Federal Office of Topography".

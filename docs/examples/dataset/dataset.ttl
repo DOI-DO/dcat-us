@@ -3,6 +3,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix org: <http://www.w3.org/ns/org#> .
 
 # ---------- class Dataset --------------------------------------------------
 <https://uscensus.gov/dataset1>
@@ -44,7 +45,7 @@
 
 # ---------- class Publisher ------------------------------------------------
 <https://uscensus.gov>
-  a foaf:Organization ;
+  a org:Organization ;
   foaf:name "US Census"@en .
 
 # ---------- class Distribution ----------------------------------------------
