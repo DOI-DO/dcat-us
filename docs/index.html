@@ -24,6 +24,110 @@
       columns: 4;
     }
   </style>
+  <!-- TABS IMPLEMENTATION -->
+  <style>
+    .example {
+                border-color: #EA1252;
+                background: #FEF11E;
+                counter-increment: example;
+                overflow: auto;
+                clear: both;
+            }
+  </style>
+  <script>
+    function openTab(example, tabClass) {
+      var i;
+      var x = document.getElementsByClassName(example);
+      for (i = 0; i < x.length; i++) {
+        x[i].classList.remove("selected");
+        if (x[i].classList.contains(tabClass)) {
+          x[i].classList.add("selected");
+        }
+      }
+    }
+  </script>
+  <style>
+    /* example tab selection */
+    .ds-selector-tabs {
+      padding-bottom: 2em;
+    }
+  
+    .ds-selector-tabs .selectors {
+      padding: 0;
+      border-bottom: 1px solid #ccc;
+      height: 28px;
+    }
+  
+    .ds-selector-tabs .selectors button {
+      display: inline-block;
+      min-width: 54px;
+      text-align: center;
+      font-size: 11px;
+      font-weight: bold;
+      height: 27px;
+      padding: 0 8px;
+      line-height: 27px;
+      transition: all, 0.218s;
+      border-top-right-radius: 2px;
+      border-top-left-radius: 2px;
+      color: #666;
+      border: 1px solid transparent;
+    }
+  
+    .ds-selector-tabs .selectors button:first-child {
+      margin-left: 2px;
+    }
+  
+    .ds-selector-tabs .selectors button.selected {
+      color: #202020 !important;
+      border: 1px solid #ccc;
+      border-bottom: 1px solid #fff !important;
+    }
+  
+    .ds-selector-tabs .selectors button:hover {
+      background-color: transparent;
+      color: #202020;
+      cursor: pointer;
+    }
+  
+    .ds-selector-tabs pre,
+    .ds-selector-tabs table {
+      display: none;
+    }
+  
+    /* Print parts that might be hidden */
+    @media print {
+  
+      .ds-selector-tabs pre,
+      .ds-selector-tabs table {
+        display: inline;
+      }
+    }
+  
+    .ds-selector-tabs pre.selected,
+    .ds-selector-tabs table.selected {
+      display: block;
+    }
+  
+    a.playground {
+      display: inline-block;
+      width: 150px;
+      border: 1px solid transparent;
+      border-top-right-radius: 2px;
+      border-top-left-radius: 2px;
+      background-color: rgb(192, 192, 192);
+      text-decoration: none;
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+  
+    a[href].playground {
+      padding: 4px 0 3px 8px;
+      border-bottom: none;
+      text-decoration: none;
+      color: #666;
+    }
+  </style>
 
 </head>
 
@@ -1102,7 +1206,7 @@
                 href="http://data.resources.gov/ontology/dcat-us#specificRestriction"><code>dcat-us:specificRestriction</code></a>
             </td>
             <td><a data-cite="SKOS-REFERENCE#concepts"><code>skos:Concept</code></a></td>
-            <td><strong>R</strong></td>
+            <td>R</td>
             <td>0..1</td>
           </tr>
           <tr>
@@ -1110,7 +1214,7 @@
             <td><a href="http://data.resources.gov/ontology/dcat-us#restrictionNote"><code>dcat-us:restrictionNote</code></a>
             </td>
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
-            <td><strong>O</strong></td>
+            <td>O</td>
             <td>0..1</td>
           </tr>
         </tbody>
@@ -1231,11 +1335,15 @@
       </section>
       <section id="access_restriction-example">
         <h3>Example</h3>
-        <aside class="example" title="AccessRestriction examples">
-          <pre data-include-format="text" data-include="./examples/restriction/access-restriction.ttl"></pre>
+        <aside class="example ds-selector-tabs" title="AccessRestriction examples">
+          <div class="selectors">
+            <button class="selected exampleTab1 ttl" onclick="openTab('exampleTab1', 'ttl')">TTL</button>
+            <button class="exampleTab1 jsonld" onclick="openTab('exampleTab1', 'jsonld')">JSON-LD</button>
+          </div>
+          <pre class="selected ttl exampleTab1" data-include-format="text" data-include="./examples/restriction/access-restriction.ttl"></pre>
+          <pre class="jsonld exampleTab1 json" data-include-format="text" data-include="./examples/restriction/access-restriction.jsonld"></pre>
         </aside>
       </section>
-
     </section>
 
     <section id="properties-for-activity">
@@ -1305,7 +1413,7 @@
             </td>
             <td><a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a>
             </td>
-            <td><strong>O</strong></td>
+            <td>O</td>
             <td>0..1</td>
           </tr>
 
@@ -1454,7 +1562,7 @@
             </td>
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
             </td>
-            <td><strong>R</strong></td>
+            <td>R</td>
             <td>0..1</td>
           </tr>
           <tr>
@@ -1463,7 +1571,7 @@
             </td>
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
             </td>
-            <td><strong>R</strong></td>
+            <td>R</td>
             <td>0..1</td>
           </tr>
           <tr>
@@ -1472,7 +1580,7 @@
             </td>
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
             </td>
-            <td><strong>R</strong></td>
+            <td>R</td>
             <td>0..1</td>
           </tr>
           <tr>
@@ -1481,7 +1589,7 @@
             </td>
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
             </td>
-            <td><strong>R</strong></td>
+            <td>R</td>
             <td>0..1</td>
           </tr>
           <tr>
@@ -1490,7 +1598,7 @@
             </td>
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
             </td>
-            <td><strong>R</strong></td>
+            <td>R</td>
             <td>0..1</td>
           </tr>
         </tbody>
@@ -1728,7 +1836,7 @@
             </td>
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
             </td>
-            <td><strong>R</strong></td>
+            <td>R</td>
             <td>0..1</td>
           </tr>
           <tr>
@@ -1737,7 +1845,7 @@
             </td>
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
             </td>
-            <td><strong>R</strong></td>
+            <td>R</td>
             <td>0..1</td>
           </tr>
           <tr>
@@ -1746,7 +1854,7 @@
             </td>
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
             </td>
-            <td><strong>R</strong></td>
+            <td>R</td>
             <td>0..1</td>
           </tr>
           <tr>
@@ -1755,7 +1863,7 @@
             </td>
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
             </td>
-            <td><strong>R</strong></td>
+            <td>R</td>
             <td>0..1</td>
           </tr>
           <tr>
@@ -1764,7 +1872,7 @@
             </td>
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
             </td>
-            <td><strong>R</strong></td>
+            <td>R</td>
             <td>0..1</td>
           </tr>
         </tbody>
@@ -2023,7 +2131,7 @@
             </td>
             <td><a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a>
             </td>
-            <td><strong>R</strong></td>
+            <td>R</td>
             <td>0..1</td>
           </tr>
         </tbody>
@@ -3916,28 +4024,28 @@
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/conformsTo"><code>dcterms:conformsTo</code></a>
             </td>
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Standard"><code>dcterms:Standard</code></a></td>
-            <td><strong>R</strong></td>
+            <td>R</td>
             <td>0..1</td>
           </tr>
           <tr>
             <td><a href="#catalog-record-status">change type</a></td>
             <td><a data-cite="VOCAB-ADMS#adms-status"><code>adms:status</code></a></td>
             <td><a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a></td>
-            <td><strong>R</strong></td>
+            <td>R</td>
             <td>0..1</td>
           </tr>
           <tr>
             <td><a href="#catalog-record-description">description</a></td>
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/description"><code>dcterms:description</code></a></td>
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
-            <td><strong>O</strong></td>
+            <td>O</td>
             <td>0..n</td>
           <tr>
             <td><a href="#catalog-record-language">language</a></td>
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/language"><code>dcterms:language</code></a></td>
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LinguisticSystem"><code>dcterms:LinguisticSystem</code></a>
             </td>
-            <td><strong>O</strong></td>
+            <td>O</td>
             <td>0..n</td>
           </tr>
           <tr>
@@ -3950,7 +4058,7 @@
               <a data-cite="XMLSCHEMA11-2##gYear"><code>xsd:gYear</code></a>
               or <a data-cite="XMLSCHEMA11-2#gYearMonth"><code>xsd:gYearMonth</code></a>)
             </td>
-            <td><strong>O</strong></td>
+            <td>O</td>
             <td>0..n</td>
           </tr>
           <tr>
@@ -3978,14 +4086,14 @@
             <td><a href="#catalog-record-source">source metadata</a></td>
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/source"><code>dcterms:source</code></a></td>
             <td><a data-cite="VOCAB-DCAT-3#Class:Resource"><code>dcat:Resource</code></a></td>
-            <td><strong>O</strong></td>
+            <td>O</td>
             <td>0..1</td>
           </tr>
           <tr>
             <td><a href="#catalog-record-title">title</a></td>
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/title"><code>dcterms:title</code></a></td>
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
-            <td><strong>O</strong></td>
+            <td>O</td>
             <td>0..n</td>
           </tr>
         </tbody>
@@ -4549,7 +4657,7 @@
             </td>
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
 
-            <td><strong>O</strong></td>
+            <td>O</td>
             <td>0..n</td>
           </tr>
           <tr>
@@ -4558,7 +4666,7 @@
             </td>
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
 
-            <td><strong>R</strong></td>
+            <td>R</td>
             <td>0..n</td>
           </tr>
           <tr>
@@ -4576,7 +4684,7 @@
             </td>
             <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a>
             </td>
-            <td><strong>O</strong></td>
+            <td>O</td>
             <td>0..n</td>
           </tr>
           <tr>
@@ -4838,7 +4946,7 @@
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
             </td>
 
-            <td><strong>R</strong></td>
+            <td>R</td>
             <td>0..n</td>
           </tr>
           <tr>
@@ -4852,7 +4960,7 @@
               <a data-cite="XMLSCHEMA11-2##gYear"><code>xsd:gYear</code></a>
               or <a data-cite="XMLSCHEMA11-2#gYearMonth"><code>xsd:gYearMonth</code></a>)
             </td>
-            <td><strong>O</strong></td>
+            <td>O</td>
             <td>0..1</td>
           </tr>
           <tr>
@@ -4866,7 +4974,7 @@
               <a data-cite="XMLSCHEMA11-2##gYear"><code>xsd:gYear</code></a>
               or <a data-cite="XMLSCHEMA11-2#gYearMonth"><code>xsd:gYearMonth</code></a>)
             </td>
-            <td><strong>O</strong></td>
+            <td>O</td>
             <td>0..1</td>
           </tr>
           <tr>
@@ -4880,7 +4988,7 @@
               <a data-cite="XMLSCHEMA11-2##gYear"><code>xsd:gYear</code></a>
               or <a data-cite="XMLSCHEMA11-2#gYearMonth"><code>xsd:gYearMonth</code></a>)
             </td>
-            <td><strong>O</strong></td>
+            <td>O</td>
             <td>0..1</td>
           </tr>
           <tr>
@@ -4889,7 +4997,7 @@
             </td>
             <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a>
             </td>
-            <td><strong>O</strong></td>
+            <td>O</td>
             <td>0..1</td>
           </tr>
         </tbody>
@@ -5213,7 +5321,7 @@
             </td>
             <td><a data-cite="RDF-SCHEMA#ch_resource"><code>rdfs:Resource</code></a>
             </td>
-            <td><strong>O</strong></td>
+            <td>O</td>
             <td>0..1</td>
           </tr>
           <tr>
@@ -5221,7 +5329,7 @@
             <td><a data-cite="VCARD-RDF#d4e1077"><code>vcard:organization-name</code></a>
             </td>
             <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a></td>
-            <td><strong>O</strong></td>
+            <td>O</td>
             <td>0..1</td>
           </tr>
           <tr>
@@ -5229,7 +5337,7 @@
             <td><a data-cite="VCARD-RDF#d4e876"><code>vcard:family-name</code></a>
             </td>
             <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a></td>
-            <td><strong>O</strong></td>
+            <td>O</td>
             <td>0..1</td>
           </tr>
           <tr>
@@ -5237,7 +5345,7 @@
             <td><a data-cite="VCARD-RDF#d4e907"><code>vcard:given-name</code></a>
             </td>
             <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a></td>
-            <td><strong>O</strong></td>
+            <td>O</td>
             <td>0..1</td>
           </tr>
           <tr>
@@ -5245,7 +5353,7 @@
             <td><a data-cite="VCARD-RDF#d4e1234"><code>vcard:title</code></a>
             </td>
             <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a></td>
-            <td><strong>O</strong></td>
+            <td>O</td>
             <td>0..1</td>
           </tr>
           <tr>
@@ -5254,7 +5362,7 @@
             </td>
             <td><a data-cite="VCARD-RDF#d4e1292"><code>vcard:Address</code></a>
             </td>
-            <td><strong>O</strong></td>
+            <td>O</td>
             <td>0..n</td>
           </tr>
         </tbody>
@@ -5600,7 +5708,7 @@
       </thead>
       <tbody>
         <tr>
-          <td><a href="#cui_restriction-cui_banner_marking">cui banner marking</a></td>
+          <td><a href="#cui_restriction-cui_banner_marking">CUI banner marking</a></td>
           <td><a href="http://data.resources.gov/ontology/dcat-us#cuiBannerMarking"><code>dcat-us:cuiBannerMarking</code></a>
           </td>
           <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a>
@@ -5609,7 +5717,7 @@
           <td>1..1</td>
         </tr>
         <tr>
-          <td><a href="#cui_restriction-designation_indicator">cui designation indicator</a></td>
+          <td><a href="#cui_restriction-designation_indicator">CUI designation indicator</a></td>
           <td><a href="http://data.resources.gov/ontology/dcat-us#designationIndicator"><code>dcat-us:designationIndicator</code></a>
           </td>
           <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a>
@@ -5623,7 +5731,7 @@
           </td>
           <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a>
           </td>
-          <td><strong>O</strong></td>
+          <td>O</td>
           <td>0..n</td>
         </tr>
       </tbody>
@@ -5666,12 +5774,12 @@
         </table>
       </section>
       <section id="cui_restriction-designation_indicator">
-        <h4>Property: designation indicator</h4>
+        <h4>Property: CUI designation indicator</h4>
         <table class="def">
           <tbody>
             <tr>
               <th>Property</th>
-              <td>Designation Indicator</td>
+              <td>CUI designation Indicator</td>
             </tr>
             <tr>
               <th>Requirement level</th>
@@ -5693,10 +5801,17 @@
             </tr>
             <tr>
               <th>Definition</th>
-              <td>Designation Indicator show which agency made the document CUI. free text per NARA Marking
-                Guidebook
-                and DODI 5200.48 (should have at least "controlled by:).It is best practice to include contact
-                information.</td>
+              <td>Designation Indicator shows which agency made the document CUI</td>
+            </tr>
+            <tr>
+              <th>Usage note</th>
+              <td>
+                <ul>
+                  <li>Free text per NARA Marking Guidebook and DODI 5200.48 (should have at least "Controlled by:").</li>
+                  <li>It is best practice to include contact
+                  information.</li>
+                </ul>
+              </td>
             </tr>
           </tbody>
         </table>
@@ -5711,7 +5826,7 @@
           <tbody>
             <tr>
               <th>Property</th>
-              <td>Required indicator per authority</td>
+              <td>required indicator per authority</td>
             </tr>
             <tr>
               <th>Requirement level</th>
@@ -5829,7 +5944,7 @@
           <td>1..n</td>
         </tr>
         <tr>
-          <td><a href="#data-service-contact-point">Contact Point</a></td>
+          <td><a href="#data-service-contact-point">contact point</a></td>
           <td>
             <a data-cite="VOCAB-DCAT-3#Property:resource_contact_point">
               <code>dcat:contactPoint</code>
@@ -5840,7 +5955,7 @@
           <td>1..n</td>
         </tr>
         <tr>
-          <td><a href="#data-service-publisher">Publisher</a></td>
+          <td><a href="#data-service-publisher">publisher</a></td>
           <td><a data-cite="DCTERMS#http://purl.org/dc/terms/publisher"><code>dcterms:publisher</code></a></td>
           <td><a href="http://xmlns.com/foaf/0.1/term_Agent"><code>foaf:Agent</code></a>
           </td>
@@ -5848,7 +5963,7 @@
           <td>1..1</td>
         </tr>
         <tr>
-          <td><a href="#data-service-title">Title</a></td>
+          <td><a href="#data-service-title">title</a></td>
           <td><a data-cite="DCTERMS#http://purl.org/dc/terms/title"><code>dcterms:title</code></a></td>
           <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
           <td><strong>M</strong></td>
@@ -5857,7 +5972,7 @@
         <tr>
           <td><a href="#data-service-endpoint-description">endpoint description</a></td>
           <td><a data-cite="VOCAB-DCAT-3#Property:data_service_endpoint_description">
-              <code>dcterms:endpointDescription</code></a>
+              <code>dcat:endpointDescription</code></a>
           </td>
           <td><a data-cite="RDF-SCHEMA#ch_resource"><code>rdfs:Resource</code></a></td>
           <td>R</td>
@@ -5880,7 +5995,7 @@
           <td>0..n</td>
         </tr>
         <tr>
-          <td><a href="#data-service-keyword">Keyword</a></td>
+          <td><a href="#data-service-keyword">keyword/tag</a></td>
           <td><a data-cite="VOCAB-DCAT-3#Property:resource_keyword"><code>dcat:keyword</code></a>
           </td>
           <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
@@ -5893,7 +6008,8 @@
           <td><a
               href="http://www.w3.org/ns/dcat#spatialResolutionInMeters"><code>dcat:spatialResolutionInMeters</code></a>
           </td>
-          <td><a data-cite="XMLSCHEMA11-2#decimal"><code>xsd:decimal</code></a>
+          <td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a>
+          typed as <a data-cite="XMLSCHEMA11-2#decimal"><code>xsd:decimal</code></a>
           </td>
           <td>O</td>
           <td>0..n</td>
@@ -5904,7 +6020,7 @@
           </td>
           <td>
             <a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a>
-            typed
+            typed as 
             <a data-cite="XMLSCHEMA11-2#duration"><code>xsd:duration</code></a>
           </td>
           <td>O</td>
@@ -5940,7 +6056,7 @@
           <td><a href="#data-service-created">creation date</a></td>
           <td><a data-cite="DCTERMS#http://purl.org/dc/terms/created"><code>dcterms:created</code></a>
           </td>
-          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a> typed as xsd:date or xsd:dateTime
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a> typed as  <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a> or <a data-cite="XMLSCHEMA11-2#dateTime"><code>xsd:dateTime</code></a>
           </td>
           <td>O</td>
           <td>0..1</td>
@@ -5958,7 +6074,7 @@
           <td><a data-cite="DCTERMS#http://purl.org/dc/terms/description"><code>dcterms:description</code></a>
           </td>
           <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
-          <td><strong>O</strong></td>
+          <td>O</td>
           <td>O..n</td>
         </tr>
         <tr>
@@ -5992,7 +6108,7 @@
           <td>0..1</td>
         </tr>
         <tr>
-          <td><a href="#data-service-rights">Rights</a></td>
+          <td><a href="#data-service-rights">rights</a></td>
           <td><a data-cite="DCTERMS#http://purl.org/dc/terms/rights">
               <code>dcterms:rights</code></a>
           </td>
@@ -6025,17 +6141,16 @@
           <td>0..n</td>
         </tr>
         <tr>
-          <td><a href="#data-service-type">type</a></td>
+          <td><a href="#data-service-type">category</a></td>
           <td><a href="http://purl.org/dc/terms/type"><code>dcterms:type</code></a>
           </td>
           <td><a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a>
           </td>
-          <td><strong>O</strong></td>
+          <td>O</td>
           <td>0..1</td>
         </tr>
         <tr>
-          <td><a href="#data-service-hasQualityMeasurement">spatial resolution</a></td>
-
+          <td><a href="#data-service-hasQualityMeasurement">quality measurement</a></td>
           <td><a
               href="https://www.w3.org/TR/vocab-dqv/#dqv:hasQualityMeasurement"><code>dqv:hasQualityMeasurement</code></a>
           </td>
@@ -6137,7 +6252,7 @@
           <tbody>
             <tr>
               <th>Property</th>
-              <td>contact Point</td>
+              <td>contact point</td>
             </tr>
             <tr>
               <th>Requirement level</th>
@@ -6160,18 +6275,15 @@
               <td><a data-cite="VCARD-RDF#d4e1508"><code>vcard:Contact</code></a></td>
             </tr>
             <tr>
+              <th>Definition</th>
+              <td>This property contains contact information that can be used for sending comments about the Data Service.</td>
+            </tr>
+            <tr>
               <th>Usage note</th>
               <td>
                 <ul>
-                  <li>This property contains contact information that can be used for sending
-                    comments about the Dataset.
-                  </li>
-                  <li>This property MUST contain an email address that is continuously monitored
-                    by the data publisher.
-                  </li>
-                  <li>If there are several contributors involved in the publication of the Dataset,
-                    the property can be used multiple times.
-                  </li>
+                  <li>This property MUST contain an email address that is continuously monitored by the data publisher.</li>
+                  <li>If there are several contributors involved in the publication of the Dataset, the property can be used multiple times.</li>
                 </ul>
               </td>
             </tr>
@@ -6208,8 +6320,7 @@
             </tr>
             <tr>
               <th>Definition</th>
-              <td>This property refers to an entity (organization) responsible for making the Data Service
-                available.
+              <td>This property refers to an entity (organization) responsible for making the Data Service available.
               </td>
             </tr>
             <tr>
@@ -6361,13 +6472,12 @@
               </td>
             </tr>
             <tr>
+              <th>Definition</th>
+              <td>This property refers to the license under which the Data Service is made available.</td>
+            </tr>
+            <tr>
               <th>Usage note</th>
-              <td>
-                <ul>
-                  <li>This property refers to the license under which the Data Service is made available.</li>
-                  <li>CV to used: [[DATA-GOV-LICENSE]]</li>
-                </ul>
-              </td>
+              <td>CV to used: [[DATA-GOV-LICENSE]]</td>
             </tr>
           </tbody>
         </table>
@@ -6403,7 +6513,7 @@
             </tr>
             <tr>
               <th>Definition</th>
-              <td>Dataset that is part of the catalog.</td>
+              <td>The Dataset that is served by this data service.</td>
             </tr>
             <tr>
               <th>Usage note</th>
@@ -6422,12 +6532,12 @@
     <section id="data-service-optional-props">
       <h4>Optional Properties</h4>
       <section id="data-service-keyword">
-        <h4>Property: keyword</h4>
+        <h4>Property: keyword/tag</h4>
         <table class="def">
           <tbody>
             <tr>
               <th>Property</th>
-              <td>keyword</td>
+              <td>keyword/tag</td>
             </tr>
             <tr>
               <th>Requirement level</th>
@@ -6448,10 +6558,9 @@
               </td>
             </tr>
             <tr>
-              <th>Usage note</th>
+              <th>Definition</th>
               <td>
                 This property contains a keyword or tag describing the Data Service.
-
               </td>
             </tr>
           </tbody>
@@ -6484,14 +6593,13 @@
             </tr>
             <tr>
               <th>Range</th>
-              <td><a data-cite="XMLSCHEMA11-2#decimal"><code>xsd:decimal</code></a></td>
+              <td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a>
+              typed as <a data-cite="XMLSCHEMA11-2#decimal"><code>xsd:decimal</code></a></td>
             </tr>
             <tr>
-              <th>Usage note</th>
+              <th>Definition</th>
               <td>
-                This property refers to the minimum spatial separation resolvable in a Data Service, measured in
-                metres.
-
+                This property refers to the minimum spatial separation resolvable in a Data Service, measured in meters.
               </td>
             </tr>
           </tbody>
@@ -6531,9 +6639,9 @@
               </td>
             </tr>
             <tr>
-              <th>Usage note</th>
+              <th>Definition</th>
               <td>
-                This property refers to the minimum time period resolvable in the Data Service.
+                The minimum time period resolvable by the Data Service.
               </td>
             </tr>
           </tbody>
@@ -6570,16 +6678,12 @@
               </td>
             </tr>
             <tr>
+              <th>Definition</th>
+              <td>This property refers to a theme of the Data Service. A Data Service may be associated with multiple themes.</td>
+            </tr>
+            <tr>
               <th>Usage note</th>
-              <td>
-                <ul>
-                  <li>
-                    This property refers to a Category of the Data Service. A Data Service may be associated with
-                    multiple Categories.
-                  </li>
-                  <li>CV to be used: [[DATA-GOV-THEME]]</li>
-                </ul>
-              </td>
+              <td>CV to be used: [[DATA-GOV-THEME]]</td>
             </tr>
           </tbody>
         </table>
@@ -6615,15 +6719,12 @@
               </td>
             </tr>
             <tr>
+              <th>Definition</th>
+              <td>This property MAY include information regarding access or restrictions based on privacy, security, or other policies.</td>
+            </tr>
+            <tr>
               <th>Usage note</th>
-              <td>
-                <ul>
-                  <li>This property MAY include information regarding access or restrictions based on privacy,
-                    security, or other policies.
-                  </li>
-                  <li>CV must be used: [[DATA-GOV-AR]]</li>
-                </ul>
-              </td>
+              <td>CV must be used: [[DATA-GOV-AR]]</td>
             </tr>
           </tbody>
         </table>
@@ -6658,7 +6759,7 @@
               </td>
             </tr>
             <tr>
-              <th>Usage note</th>
+              <th>Definition</th>
               <td>
                 This property is used to indicate the general standard or specification that the Data Service
                 endpoints implement.
@@ -6694,12 +6795,13 @@
             </tr>
             <tr>
               <th>Range</th>
-              <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a> typed as xsd:date or
-                xsd:dateTime
+              <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a> typed as <a
+                data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a> or <a
+                data-cite="XMLSCHEMA11-2#dateTime"><code>xsd:dateTime</code></a>
               </td>
             </tr>
             <tr>
-              <th>Usage note</th>
+              <th>Definition</th>
               <td>
                 This property contains the date on which the Data Service has been first created.
 
@@ -6780,19 +6882,12 @@
               </td>
             </tr>
             <tr>
+              <th>Definition</th>
+              <td>This property contains a free-text account of the Data Service.</td>
+            </tr>
+            <tr>
               <th>Usage note</th>
-              <td>
-                <ul>
-                  <li>This property contains a free-text account of the Data Service.</li>
-                  <li>
-                    This property can be repeated for parallel language versions of the
-                    description (see <a class="no-sectionRef" href="#multilingualism"></a>). On the user interface
-                    of
-                    data portals, the content of the element whose language corresponds to the
-                    display language selected by the user is displayed.
-                  </li>
-                </ul>
-              </td>
+              <td>This property can be repeated for parallel language versions of the description (see <a class="no-sectionRef" href="#multilingualism"></a>). On the user interface of data portals, the content of the element whose language corresponds to the display language selected by the user is displayed.</td>
             </tr>
           </tbody>
         </table>
@@ -6828,7 +6923,7 @@
               </td>
             </tr>
             <tr>
-              <th>Usage note</th>
+              <th>Definition</th>
               <td>
                 This property contains the main identifier for the Data Service, e.g. the URI or other unique
                 identifier in the context of the Catalog.
@@ -6854,7 +6949,7 @@
               <td>Optional</td>
             </tr>
             <tr>
-              <td>Optional</td>
+              <th>Cardinality</th>
               <td>0..n</td>
             </tr>
             <tr>
@@ -6868,17 +6963,13 @@
               </td>
             </tr>
             <tr>
+              <th>Definition</th>
+              <td>This property refers to a language supported by the Data Service. This property can be repeated if multiple languages
+              are supported in the Data Service.</td>
+            </tr>
+            <tr>
               <th>Usage note</th>
-              <td>
-                <ul>
-                  <li>This property refers to a language supported by the Data Service. This property can be
-                    repeated
-                    if multiple languages
-                    are supported in the Data Service.
-                  </li>
-                  <li>CV to be used: [[ISO 639-1]]</li>
-                </ul>
-              </td>
+              <td>CV to be used: [[ISO 639-1]]</td>
             </tr>
           </tbody>
         </table>
@@ -6919,10 +7010,9 @@
               </td>
             </tr>
             <tr>
-              <th>Usage note</th>
+              <th>Definition</th>
               <td>
                 This property contains the most recent date on which the Data Service was changed or modified.
-
               </td>
             </tr>
           </tbody>
@@ -6959,7 +7049,7 @@
               </td>
             </tr>
             <tr>
-              <th>Usage note</th>
+              <th>Definition</th>
               <td>
                 A statement that concerns all rights for the Data Service not addressed with dcterms:license
                 or
@@ -7000,7 +7090,7 @@
               <td><a href="http://xmlns.com/foaf/0.1/term_Organization"><code>foaf:Organization</code></a></td>
             </tr>
             <tr>
-              <th>Usage note</th>
+              <th>Definition</th>
               <td>
                 This property refers to an Agent (organization) holding rights on the Data Service.
 
@@ -7008,10 +7098,10 @@
             </tr>
           </tbody>
         </table>
-        <aside class="example" title="Usage of dcterms:rightsHolder for dcat:DataService">
-          <!-- TODO: uncomment below and add a dcterms:rightsHolder example for dcat:DataService-->
-          <!-- <pre data-include-format="text" data-include="./examples/service/rightsHolder.ttl"></pre> -->
-        </aside>
+        <!-- TODO: uncomment below and add a dcterms:rightsHolder example for dcat:DataService-->
+        <!-- <aside class="example" title="Usage of dcterms:rightsHolder for dcat:DataService">
+          <pre data-include-format="text" data-include="./examples/service/rightsHolder.ttl"></pre>
+        </aside> -->
       </section>
       <section id="data-service-spatial">
         <h4>Property: spatial/geographic coverage</h4>
@@ -7040,11 +7130,12 @@
               </td>
             </tr>
             <tr>
+              <th>Definition</th>
+              <td>This property refers to a geographic region that is covered by the Data Service.</td>
+            </tr>
+            <tr>
               <th>Usage note</th>
-              <td>
-                <ul>
-                  <li>This property refers to a geographic region that is covered by the Data Service.</li>
-                  <li>TO DISCUSS: Conventions to be used: The Vocabularies Name Authority Lists MUST be used for
+              <td>TO DISCUSS: Conventions to be used: The Vocabularies Name Authority Lists MUST be used for
                     continents, countries and
                     places that are in those lists; if a particular location is not in one of the mentioned Named
                     Authority Lists, Geonames URIs MUST be used:
@@ -7052,8 +7143,6 @@
                     [[DATA-GOV-COUNTRY]],
                     [[DATA-GOV-PLACE]],
                     [[GEONAMES]]
-                  </li>
-                </ul>
               </td>
             </tr>
           </tbody>
@@ -7089,26 +7178,25 @@
               </td>
             </tr>
             <tr>
-              <th>Usage note</th>
+              <th>Definition</th>
               <td>
                 This property refers to a temporal period that the Data Service covers.
-
               </td>
             </tr>
           </tbody>
         </table>
-        <aside class="example" title="Usage of dcterms:temporal for dcat:DataService">
-          <!-- TODO: uncomment below and add a dcterms:temporal example for dcat:DataService-->
-          <!-- <pre data-include-format="text" data-include="./examples/service/temporal.ttl"></pre> -->
-        </aside>
+        <!-- TODO: uncomment below and add a dcterms:temporal example for dcat:DataService-->
+        <!-- <aside class="example" title="Usage of dcterms:temporal for dcat:DataService">
+          <pre data-include-format="text" data-include="./examples/service/temporal.ttl"></pre>
+        </aside> -->
       </section>
       <section id="data-service-type">
-        <h4>Property: type</h4>
+        <h4>Property: category</h4>
         <table class="def">
           <tbody>
             <tr>
               <th>Property</th>
-              <td>type</td>
+              <td>category</td>
             </tr>
             <tr>
               <th>Requirement level</th>
@@ -7129,6 +7217,10 @@
               </td>
             </tr>
             <tr>
+              <th>Definition</th>
+              <td>Category of the data service</td>
+            </tr>
+            <tr>
               <th>Usage note</th>
               <td>
                 <ul>
@@ -7140,17 +7232,18 @@
             </tr>
           </tbody>
         </table>
-        <aside class="example" title="Usage of dcterms:type for DataService">
+        <!-- TODO -->
+        <!-- <aside class="example" title="Usage of dcterms:type for DataService"> -->
           <!-- <pre data-include-format="text" data-include="./examples/service/type.ttl"></pre> -->
-        </aside>
+        <!-- </aside> -->
       </section>
       <section id="data-service-hasQualityMeasurement">
-        <h4>Property: spatial resolution</h4>
+        <h4>Property: quality measurement</h4>
         <table class="def">
           <tbody>
             <tr>
               <th>Property</th>
-              <td>spatial resolution</td>
+              <td>quality measurement</td>
             </tr>
             <tr>
               <th>Requirement level</th>
@@ -7173,30 +7266,46 @@
               </td>
             </tr>
             <tr>
+              <th>Definition</th>
+              <td>Refers to the performed quality measurements.</td>
+            </tr>
+            <tr>
               <th>Usage note</th>
-              <td>
-                <ul>
-                  <li>Refers to the performed quality measurements.</li>
-                  <li>In GeoDCAT-AP, this property is used to specify "spatial resolution", as defined in
-                    [INSPIRE-MD-REG], [ISO-19115], and
-                    [ISO-19115-1].</li>
-                </ul>
-              </td>
+              <td>In GeoDCAT-AP, this property is used to specify "spatial resolution", as defined in [INSPIRE-MD-REG], [ISO-19115], and [ISO-19115-1].</td>
             </tr>
           </tbody>
         </table>
-        <aside class="example" title="Usage of dqv:hasQualityMeasurement for DataService">
+        <!-- TODO -->
+        <!-- <aside class="example" title="Usage of dqv:hasQualityMeasurement for DataService"> -->
           <!-- <pre data-include-format="text" data-include="./examples/service/quality-measurement.ttl"></pre> -->
-        </aside>
+        <!-- </aside> -->
       </section>
       <section id="data-service-hasPolicy">
         <h4>Property: has policy</h4>
 
         <table class="def">
           <tr>
-            <th>RDF Property:</th>
+            <th>Property</th>
+            <td>has policy</td>
+          </tr>
+          <tr>
+            <th>Requirement level</th>
+            <td>Optional</td>
+          </tr>
+          <tr>
+            <th>Cardinality</th>
+            <td>0..n</td>
+          </tr>
+          <tr>
+            <th>URI:</th>
             <td>
               <a data-cite="ODRL-VOCAB#term-hasPolicy"><code>odrl:hasPolicy</code></a>
+            </td>
+          </tr>
+          <tr>
+            <th class="prop">Range:</th>
+            <td>
+              <a data-cite="ODRL-VOCAB#term-Policy"><code>odrl:Policy</code></a>
             </td>
           </tr>
           <tr>
@@ -7207,13 +7316,7 @@
               conformant policy expressing the rights associated with the
               Data Service.
             </td>
-          </tr>
-          <tr>
-            <th class="prop">Range:</th>
-            <td>
-              <a data-cite="ODRL-VOCAB#term-Policy"><code>odrl:Policy</code></a>
-            </td>
-          </tr>
+          </tr>      
           <tr>
             <th class="prop">Usage note</th>
             <td>
@@ -7252,7 +7355,7 @@
               </td>
             </tr>
             <tr>
-              <th>Usage note</th>
+              <th>Definition</th>
               <td>
                 This property refers to a link to an Agent having some form of responsibility for the Data
                 Service.
@@ -7261,11 +7364,11 @@
             </tr>
           </tbody>
         </table>
-        <aside class="example" id="ex-data-service-qualified-attribution"
-          title="Example for prov:qualifiedAttribution on dcat:DataService">
+        <!-- <aside class="example" id="ex-data-service-qualified-attribution"
+          title="Example for prov:qualifiedAttribution on dcat:DataService"> -->
           <!-- TODO -->
           <!-- <pre data-include-format="text" data-include="./examples/service/qualified-attribution.ttl"></pre> -->
-        </aside>
+        <!-- </aside> -->
       </section>
       <section id="data-service-wasUsedBy">
         <h4>Property: was used by</h4>
@@ -7295,23 +7398,21 @@
               </td>
             </tr>
             <tr>
+              <th>Definition</th>
+              <td>This property refers to an Activity that used the Data Service.</td>
+            </tr>
+            <tr>
               <th>Usage note</th>
-              <td>
-                <ul>
-                  <li>This property refers to an Activity that used the Data Service.
-                  </li>
-                  <li>This property MAY be used to specify a testing Activity over a Data Service, against a given
+              <td>This property MAY be used to specify a testing Activity over a Data Service, against a given
                     Standard, producing as
-                    output a conformance degree.</li>
-                </ul>
-              </td>
+                    output a conformance degree.</td>
             </tr>
           </tbody>
         </table>
-        <aside class="example" id="ex-data-service-wasUsedBy" title="Example for prov:wasUsedBy on dcat:DataService">
+        <!-- <aside class="example" id="ex-data-service-wasUsedBy" title="Example for prov:wasUsedBy on dcat:DataService"> -->
           <!-- TODO -->
           <!-- <pre data-include-format="text" data-include="./examples/service/wasUsedBy.ttl"></pre> -->
-        </aside>
+        <!-- </aside> -->
       </section>
       <section id="data-service-geographic-extent">
         <h4>Property: geographic bounding box</h4>
@@ -7341,12 +7442,10 @@
               </td>
             </tr>
             <tr>
-              <th>Usage note</th>
+              <th>Definition</th>
               <td>
-                <ul>
-                  <!-- TODO -->
-                </ul>
-              </td>
+                  This property describes the spatial extent of domain of application of an data service and is standardized in
+                  WGS 84 Lat/Long coordinate system.</td>
             </tr>
           </tbody>
         </table>
@@ -7520,7 +7619,7 @@
           <td><a data-cite="DCTERMS#http://purl.org/dc/terms/publisher"><code>dcterms:publisher</code></a>
           </td>
           <td><a href="http://xmlns.com/foaf/0.1/#term_Agent"><code>foaf:Agent</code></a></td>
-          <td><strong>R</strong></td>
+          <td>R</td>
           <td>0..1</td>
           <td><span style="color: black;">No Change</span></td>
         </tr>
@@ -7939,7 +8038,7 @@
           <tbody>
             <tr>
               <th>Property</th>
-              <td>Title</td>
+              <td>title</td>
             </tr>
             <tr>
               <th>Requirement level</th>
@@ -7959,15 +8058,13 @@
               </td>
             </tr>
             <tr>
+              <th>Definition</th>
+              <td>This property contains a name given to the Dataset.</td>
+            </tr>
+            <tr>
               <th>Usage note</th>
-              <td>
-                <ul>
-                  <li>This property contains a name given to the Dataset.</li>
-                  <li>This property can be repeated for parallel language versions of the title
-                    (see <a href="#multilingualism">Multilingualism</a>).
-                  </li>
-                </ul>
-              </td>
+              <td>This property can be repeated for parallel language versions of the title
+                    (see <a href="#multilingualism">Multilingualism</a>).</td>
             </tr>
           </tbody>
         </table>
@@ -8002,19 +8099,16 @@
               </td>
             </tr>
             <tr>
+              <th>Definition</th>
+              <td>This property contains a free-text account of the Dataset.</td>
+            </tr>
+            <tr>
               <th>Usage note</th>
-              <td>
-                <ul>
-                  <li>This property contains a free-text account of the Dataset.</li>
-                  <li>
-                    This property can be repeated for parallel language versions of the
+              <td>This property can be repeated for parallel language versions of the
                     description (see <a href="#multilingualism">Multilingualism</a>). On the user interface
                     of
                     data portals, the content of the element whose language corresponds to the
-                    display language selected by the user is displayed.
-                  </li>
-                </ul>
-              </td>
+                    display language selected by the user is displayed.</td>
             </tr>
           </tbody>
         </table>
@@ -8788,7 +8882,7 @@
 
         <table class="def">
           <tr>
-            <th>RDF Property:</th>
+            <th>URI</th>
             <td>
               <a href="http://www.w3.org/ns/dcat#hasVersion"><code>dcat:hasVersion</code></a>
             </td>
@@ -12608,7 +12702,7 @@
           </td>
           <td><a href="http://xmlns.com/foaf/0.1/#term_Person"><code>foaf:Person</code></a>
           </td>
-          <td><strong>O</strong></td>
+          <td>O</td>
           <td>0..n</td>
         </tr>
 
@@ -12618,7 +12712,7 @@
           </td>
           <td><a href="https://www.w3.org/TR/vocab-org/#org:Organization"><code>org:Organization</code></a>
           </td>
-          <td><strong>O</strong></td>
+          <td>O</td>
           <td>0..n</td>
         </tr>
 
@@ -12658,7 +12752,7 @@
           </td>
           <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
           </td>
-          <td><strong>R</strong></td>
+          <td>R</td>
           <td>0..1</td>
         </tr>
 
@@ -12674,7 +12768,7 @@
             <a data-cite="XMLSCHEMA11-2##gYear"><code>xsd:gYear</code></a>
             or <a data-cite="XMLSCHEMA11-2#gYearMonth"><code>xsd:gYearMonth</code></a>)
           </td>
-          <td>M</td>
+          <td><strong>M</strong></td>
           <td>1</td>
 
         </tr>
@@ -12684,7 +12778,7 @@
           </td>
           <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
           </td>
-          <td><strong>R</strong></td>
+          <td>R</td>
           <td>0..1</td>
         </tr>
         <tr>
@@ -12693,7 +12787,7 @@
           </td>
           <td><a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a>
           </td>
-          <td><strong>R</strong></td>
+          <td>R</td>
           <td>0..1</td>
         </tr>
         <tr>
@@ -12702,7 +12796,7 @@
           </td>
           <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
           </td>
-          <td><strong>O</strong></td>
+          <td>O</td>
           <td>0..n</td>
         </tr>
         <tr>
@@ -12711,7 +12805,7 @@
           </td>
           <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
           </td>
-          <td><strong>R</strong></td>
+          <td>R</td>
           <td>0..n</td>
         </tr>
         <tr>
@@ -12720,7 +12814,7 @@
           </td>
           <td><a data-cite="DCTerms#terms_Standard"><code>dcterms:Standard</code></a>
           </td>
-          <td><strong>O</strong></td>
+          <td>O</td>
           <td>0..n</td>
         </tr>
         <tr>
@@ -12729,7 +12823,7 @@
           </td>
           <td><a href="http://purl.org/dc/terms/MediaType"><code>dcterms:MediaType</code></a>
           </td>
-          <td><strong>O</strong></td>
+          <td>O</td>
           <td>0..n</td>
         </tr>
       </tbody>
@@ -13549,7 +13643,7 @@
           </td>
           <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a>
           </td>
-          <td><strong>R</strong></td>
+          <td>R</td>
           <td>0..1</td>
         </tr>
         <tr>
@@ -13814,21 +13908,21 @@
           <td><a href="#investment-description">description</a></td>
           <td><a data-cite="DCTERMS#http://purl.org/dc/terms/description"><code>dcterms:description</code></a></td>
           <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
-          <td><strong>R</strong></td>
+          <td>R</td>
           <td>0..n</td>
         </tr>
         <tr>
           <td><a href="#investment-type">category</a></td>
           <td><a href="http://purl.org/dc/terms/type"><code>dcterms:type</code></a> </td>
           <td><a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a> </td>
-          <td><strong>O</strong></td>
+          <td>O</td>
           <td>0..n</td>
         </tr>
         <tr>
           <td><a href="#investment-identifier">identifier</a></td>
           <td><a data-cite="DCTERMS#http://purl.org/dc/terms/identifier"><code>dcterms:identifier</code></a></td>
           <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
-          <td><strong>O</strong></td>
+          <td>O</td>
           <td>0..n</td>
         </tr>
         <tr>
@@ -14162,7 +14256,7 @@
           </td>
           <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
           </td>
-          <td><strong>O</strong></td>
+          <td>O</td>
           <td>0..n</td>
         </tr>
 
@@ -14285,7 +14379,7 @@
           </td>
           <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
           </td>
-          <td><strong>O</strong></td>
+          <td>O</td>
           <td>0..n</td>
         </tr>
 
@@ -14828,7 +14922,7 @@
           <td><a href="#media-type-label">label</a></td>
           <td><a data-cite="RDF-SCHEMA#ch_label"><code>rdfs:label</code></a></td>
           <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a></td>
-          <td><strong>R</strong></td>
+          <td>R</td>
           <td>0..1</td>
         </tr>
       </tbody>
@@ -14955,7 +15049,7 @@
           </td>
           <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
 
-          <td><strong>R</strong></td>
+          <td>R</td>
           <td>0..n</td>
         </tr>
       </tbody>
@@ -15159,7 +15253,7 @@
           </td>
           <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a>
           </td>
-          <td><strong>O</strong></td>
+          <td>O</td>
           <td>0..1</td>
           <td><span style="color: green;">Aligned</span></td>
         </tr>
@@ -15169,7 +15263,7 @@
           </td>
           <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a>
           </td>
-          <td><strong>O</strong></td>
+          <td>O</td>
           <td>0..n</td>
           <td><span style="color: green;">Aligned</span></td>
         </tr>
@@ -15179,7 +15273,7 @@
           </td>
           <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a>
           </td>
-          <td><strong>O</strong></td>
+          <td>O</td>
           <td>0..n</td>
           <td><span style="color: green;">Aligned</span></td>
         </tr>
@@ -15188,7 +15282,7 @@
           <td><a href="https://www.w3.org/TR/vocab-org/#org:subOrganizationOf"><code>org:subOrganizationOf</code></a>
           </td>
           <td><a href="https://www.w3.org/TR/vocab-org/#org:Organization"><code>org:Organization</code></a></td>
-          <td><strong>O</strong></td>
+          <td>O</td>
           <td>0..1</td>
           <td>No Change</td>
         </tr>
@@ -15444,7 +15538,7 @@
             <a data-cite="XMLSCHEMA11-2##gYear"><code>xsd:gYear</code></a>
             or <a data-cite="XMLSCHEMA11-2#gYearMonth"><code>xsd:gYearMonth</code></a>)
           </td>
-          <td><strong>R</strong></td>
+          <td>R</td>
           <td>0..1</td>
         </tr>
         <tr>
@@ -15458,7 +15552,7 @@
             <a data-cite="XMLSCHEMA11-2##gYear"><code>xsd:gYear</code></a>
             or <a data-cite="XMLSCHEMA11-2#gYearMonth"><code>xsd:gYearMonth</code></a>)
           </td>
-          <td><strong>R</strong></td>
+          <td>R</td>
           <td>0..1</td>
         </tr>
       </tbody>
@@ -15620,7 +15714,7 @@
           </td>
           <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a>
           </td>
-          <td><strong>O</strong></td>
+          <td>O</td>
           <td>0..1</td>
         </tr>
         <tr>
@@ -15629,7 +15723,7 @@
           </td>
           <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a>
           </td>
-          <td><strong>R</strong></td>
+          <td>R</td>
           <td>0..1</td>
         </tr>
         <tr>
@@ -15638,7 +15732,7 @@
           </td>
           <td><a href="http://xmlns.com/foaf/0.1/#term_Organization"><code>foaf:Organization</code></a>
           </td>
-          <td><strong>O</strong></td>
+          <td>O</td>
           <td>0..n</td>
         </tr>
       </tbody>
@@ -15858,7 +15952,7 @@
           <td><a href="#program-description">description</a></td>
           <td><a data-cite="DCTERMS#http://purl.org/dc/terms/description"><code>dcterms:description</code></a></td>
           <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
-          <td><strong>R</strong></td>
+          <td>R</td>
           <td>0..n</td>
         </tr>
 
@@ -15866,14 +15960,14 @@
           <td><a href="#program-type">category</a></td>
           <td><a href="http://purl.org/dc/terms/type"><code>dcterms:type</code></a> </td>
           <td><a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a> </td>
-          <td><strong>O</strong></td>
+          <td>O</td>
           <td>0..n</td>
         </tr>
         <tr>
           <td><a href="#program-identifier">identifier</a></td>
           <td><a data-cite="DCTERMS#http://purl.org/dc/terms/identifier"><code>dcterms:identifier</code></a></td>
           <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
-          <td><strong>O</strong></td>
+          <td>O</td>
           <td>0..n</td>
         </tr>
 
@@ -16210,7 +16304,7 @@
           <td><a href="#provenance-statement-label">provenance statement text</a></td>
           <td><a data-cite="RDF-SCHEMA#ch_label"><code>rdfs:label</code></a></td>
           <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a></td>
-          <td><strong>R</strong></td>
+          <td>R</td>
           <td>0..n</td>
         </tr>
 
@@ -16319,7 +16413,7 @@
           </td>
           <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
     
-          <td><strong>O</strong></td>
+          <td>O</td>
           <td>0..n</td>
         </tr>
         <tr>
@@ -16328,7 +16422,7 @@
           </td>
           <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
     
-          <td><strong>R</strong></td>
+          <td>R</td>
           <td>0..n</td>
         </tr>
         <tr>
@@ -16346,7 +16440,7 @@
           </td>
           <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a>
           </td>
-          <td><strong>O</strong></td>
+          <td>O</td>
           <td>0..n</td>
         </tr>
         <tr>
@@ -16627,7 +16721,7 @@
           </td>
           <td><a data-cite="RDF-SCHEMA#ch_resource"><code>rdfs:Resource</code></a></td>
 
-          <td><strong>O</strong></td>
+          <td>O</td>
           <td>0..1</td>
         </tr>
       </tbody>
@@ -16988,7 +17082,7 @@
           <td><a href="#rights-statement-label">label</a></td>
           <td><a data-cite="RDF-SCHEMA#ch_label"><code>rdfs:label</code></a></td>
           <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
-          <td><strong>R</strong></td>
+          <td>R</td>
           <td>0..n</td>
         </tr>
         <tr>
@@ -16996,7 +17090,7 @@
           <td><a href="https://schema.theodi.org/odrs/#prop_attributionText"><code>odrs:attributionText</code></a>
           </td>
           <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
-          <td><strong>R</strong></td>
+          <td>R</td>
           <td>0..n</td>
         </tr>
 
@@ -17594,7 +17688,7 @@
           <td><a href="http://data.resources.gov/ontology/dcat-us#specificRestriction"><code>dcat-us:specificRestriction</code></a>
           </td>
           <td><a data-cite="SKOS-REFERENCE#concepts"><code>skos:Concept</code></a>
-          <td><strong>R</strong></td>
+          <td>R</td>
           <td>0..1</td>
         </tr>
         <tr>
@@ -17602,7 +17696,7 @@
           <td><a href="http://data.resources.gov/ontology/dcat-us#restrictionNote"><code>dcat-us:restrictionNote</code></a>
           </td>
           <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
-          <td><strong>O</strong></td>
+          <td>O</td>
           <td>0..1</td>
         </tr>
       </tbody>
@@ -18493,7 +18587,7 @@
             publishers can provide metadata that adheres to a standard, making it easier for data consumers to
             understand
             and utilize the data.</li>
-          <li><b>Simplified Search and Discovery:</b> The <code>>dcat-us:geographicBoundingBox</code> property
+          <li><b>Simplified Search and Discovery:</b> The <code>dcat-us:geographicBoundingBox</code> property
             simplifies the search and discovery process for geospatial data. Instead of relying on complex geometric
             representations like polygons, users can specify a bounding box by defining the minimum and maximum values
             of
