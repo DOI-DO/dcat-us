@@ -3,7 +3,7 @@
 @prefix locn: <http://www.w3.org/ns/locn#> .
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 
-<https://opendata.zurich/opendata/1234>
+<https://example.com/ns/Dataset1>
   a dcat:Dataset ;
   dcterms:spatial [
     a dcterms:Location ;
@@ -27,4 +27,7 @@
           7.24  53.504 , 3.053 53.504 ,
           3.053 47.975
         ))"""^^gsp:wktLiteral
-  ], <http://publications.europa.eu/resource/authority/country/CHE> .
+  ], <https://www.geonames.org/2658434> .
+
+<https://www.geonames.org/2658434> a dcterms:Location;
+    skos:prefLabel "Switzerland".
