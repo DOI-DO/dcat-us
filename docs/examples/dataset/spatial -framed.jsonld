@@ -18,7 +18,6 @@
         }
      },
      {
-        "@id":"_:ndba7099de0464d34bc1eb96f70c3800bb3",
         "@type":"Location",
         "bbox":{
            "@type":"http://www.opengis.net/ont/geosparql#wktLiteral",
