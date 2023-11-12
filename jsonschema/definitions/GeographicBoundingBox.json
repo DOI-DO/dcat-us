@@ -25,7 +25,7 @@
         },
         "southBoundingLatitude": {
             "$id": "http://data.resources.gov/ontology/dcat-us#southBoundingLatitude",
-            "title": "south bouding latitude",
+            "title": "south bounding latitude",
             "description": "South bound latitude in decimal degrees",
             "type": "string"
         },

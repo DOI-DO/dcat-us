@@ -16,7 +16,7 @@
     },
     {
       "@id": "http://www.bafu.admin.ch/laerm/about",
-      "http://www.w3.org/2000/01/rdf-schema#label": "Somthing about noise"
+      "http://www.w3.org/2000/01/rdf-schema#label": "Something about noise"
     },
     {
       "@id": "http://www.bafu.admin.ch/legal_info",

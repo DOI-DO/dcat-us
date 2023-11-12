@@ -2694,7 +2694,7 @@ dcat-us-shp:Distribution_Shape-status a sh:PropertyShape ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Distribution_Shape-temporalResolution a sh:PropertyShape ;
-    rdfs:label "termporal resolution" ;
+    rdfs:label "temporal resolution" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
     sh:datatype xsd:duration ;
     sh:description "The minimum time period resolvable in the dataset distribution." ;
@@ -2894,7 +2894,7 @@ dcat-us-shp:GeographicBoundingBox_Shape-northBoundingLatitude a sh:PropertyShape
     sh:severity sh:Violation .
 
 dcat-us-shp:GeographicBoundingBox_Shape-southBoundingLatitude a sh:PropertyShape ;
-    rdfs:label "south bouding latitude" ;
+    rdfs:label "south bounding latitude" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Mandatory ;
     sh:datatype xsd:decimal ;
     sh:description "South bound latitude in decimal degrees" ;

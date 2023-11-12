@@ -9,5 +9,5 @@
                <http://www.bafu.admin.ch/laerm/about> .
 
 <http://www.bafu.admin.ch/laerm/index> rdfs:label "Webseite des BAFU" .
-<http://www.bafu.admin.ch/laerm/about> rdfs:label "Somthing about noise" .
+<http://www.bafu.admin.ch/laerm/about> rdfs:label "Something about noise" .
 <http://www.bafu.admin.ch/legal_info> rdfs:label "legal information" .

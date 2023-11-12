@@ -534,7 +534,7 @@
         },
         "temporalResolution": {
             "$id": "http://www.w3.org/ns/dcat#temporalResolution",
-            "title": "termporal resolution",
+            "title": "temporal resolution",
             "description": "The minimum time period resolvable in the dataset distribution.",
             "oneOf": [
                 {
