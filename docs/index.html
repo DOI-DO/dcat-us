@@ -7724,6 +7724,16 @@
             <td><span style="color: black;">No Change</span></td>
           </tr>
           <tr>
+            <td><a href="#dataset-describedBy">data dictionary</a></td>
+            <td><a href="http://data.resources.gov/ontology/dcat-us#describedBy"><code>dcat-us:describedBy</code></a>
+            </td>
+            <td><a data-cite="VOCAB-DCAT-3#Class:Distribution"><code>dcat:Distribution</code></a>
+            </td>
+            <td>R</td>
+            <td>0..1</td>
+            <td><span style="color: green;">Fixed</span></td>
+          </tr>
+          <tr>
             <td><a href="#dataset-distribution">dataset distribution</a></td>
             <td><a data-cite="VOCAB-DCAT-3#Property:dataset_distribution"><code>dcat:distribution</code></a></td>
             <td><a data-cite="VOCAB-DCAT-3#Class:Distribution"><code>dcat:Distribution</code></a>
@@ -7842,6 +7852,7 @@
             <td>0..n</td>
             <td><span style="color: green;">Aligned</span></td>
           </tr>
+          
           <tr>
             <td><a href="#dataset-documentation">documentation</a></td>
             <td><a href="http://xmlns.com/foaf/0.1/#term_page"><code>foaf:page</code></a></td>
@@ -8122,16 +8133,7 @@
             <td>0..n</td>
             <td><span style="color: red;">New!</span></td>
           </tr>
-          <tr>
-            <td><a href="#dataset-supportedSchema">supported schema</a></td>
-            <td><a data-cite="VOCAB-ADMS#supportedSchema"><code>adms:supportedSchema</code></a>
-            </td>
-            <td><a data-cite="VOCAB-DCAT-3#Class:Dataset"><code>dcat:Dataset</code></a>
-            </td>
-            <td>O</td>
-            <td>0..1</td>
-            <td><span style="color: red;">New!</span></td>
-          </tr>
+         
           <tr>
             <td><a href="#dataset-metadataDistribution">metadata distribution</a></td>
             <td><a href="http://data.resources.gov/ontology/dcat-us#metadataDistribution">
@@ -10214,27 +10216,23 @@
               <tr>
                 <th>Usage note</th>
                 <td>
-                  <ul>
-                    <!-- come up with usage notes for dcat-us:applicableLegislation-->
-                    <li>TO-DO
-                    </li>
-                  </ul>
+                  <p>Applicable Legislation for the dataset (e.g. using reference to Federal Registry)</a>
                 </td>
               </tr>
             </tbody>
           </table>
         </section>
-        <section id="dataset-supportedSchema">
-          <h4>Property: supported schema</h4>
+        <section id="dataset-describedBy">
+          <h4>Property: data dictionary</h4>
           <table class="def">
             <tbody>
               <tr>
                 <th>Property</th>
-                <td>supported schema</td>
+                <td>data dictionary</td>
               </tr>
               <tr>
                 <th>Requirement level</th>
-                <td>Optional</td>
+                <td>Recommended</td>
               </tr>
               <tr>
                 <th>Cardinality</th>
@@ -10242,23 +10240,19 @@
               </tr>
               <tr>
                 <th>URI</th>
-                <td><a data-cite="VOCAB-ADMS#supportedSchema"><code>adms:supportedSchema</code></a>
+                <td><a href="http://data.resources.gov/ontology/dcat-us#describedBy"><code>dcat-us:describedBy</code></a>
                 </td>
 
               </tr>
               <tr>
                 <th>Range</th>
-                <td><a data-cite="VOCAB-DCAT-3#Class:Dataset"><code>dcat:Dataset</code></a>
+                <td><a data-cite="VOCAB-DCAT-3#Class:Distribution"><code>dcat:Distribution</code></a>
                 </td>
               </tr>
               <tr>
                 <th>Usage note</th>
                 <td>
-                  <ul>
-                    <!-- come up with usage notes for adms:supportedSchema-->
-                    <li>TO-DO
-                    </li>
-                  </ul>
+                  <p>This is used to specify a data dictionary or schema that defines fields (dimensions, measures, attributes) in the dataset.</p>
                 </td>
               </tr>
             </tbody>
@@ -11289,6 +11283,16 @@
             <td><span style="color: red;">New!</span></td>
           </tr>
           <tr>
+            <td><a href="#distribution-describedBy">data dictionary</a></td>
+            <td><a href="http://data.resources.gov/ontology/dcat-us#describedBy"><code>dcat-us:describedBy</code></a>
+            </td>
+            <td><a data-cite="VOCAB-DCAT-3#Class:Distribution"><code>dcat:Distribution</code></a>
+            </td>
+            <td>R</td>
+            <td>0..1</td>
+            <td><span style="color: green;">Fixed</span></td>
+          </tr>
+          <tr>
             <td><a href="#distribution-description">description</a></td>
             <td><a data-cite="VOCAB-DCAT-3#Property:distribution_description">
                 <code>dcterms:description</code></a>
@@ -11794,6 +11798,42 @@
             <pre class="jsonld exampleTab1 json" data-include-format="text"
               data-include="./examples/distribution/description.jsonld"></pre>
           </aside>
+        </section>
+        <section id="distribution-describedBy">
+          <h4>Property: data dictionary</h4>
+          <table class="def">
+            <tbody>
+              <tr>
+                <th>Property</th>
+                <td>data dictionary</td>
+              </tr>
+              <tr>
+                <th>Requirement level</th>
+                <td>Recommended</td>
+              </tr>
+              <tr>
+                <th>Cardinality</th>
+                <td>0..1</td>
+              </tr>
+              <tr>
+                <th>URI</th>
+                <td><a href="http://data.resources.gov/ontology/dcat-us#describedBy"><code>dcat-us:describedBy</code></a>
+                </td>
+
+              </tr>
+              <tr>
+                <th>Range</th>
+                <td><a data-cite="VOCAB-DCAT-3#Class:Distribution"><code>dcat:Distribution</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Usage note</th>
+                <td>
+                  <p>This is used to specify a data dictionary or schema that defines fields (dimensions, measures, attributes) in the distribution.</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </section>
         <section id="distribution-format">
           <h4>Property: format</h4>
