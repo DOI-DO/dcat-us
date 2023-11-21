@@ -3558,5 +3558,19 @@ dcat-us-shp:GeometryAsWKTorGMLorGeoJSON rdf:first ( gsp:wktLiteral gsp:gmlLitera
 
 dcat-us-shp:DateOrDateTimeOrYearOrYearMonth rdf:first ( xsd:date xsd:dateTime xsd:gYear xsd:gYearMonth ) .
 
-dash:StringOrLangString rdf:first ( xsd:string rdf:langString ) .
+dash:StringOrLangString
+  a rdf:List ;
+  rdf:first [
+      sh:datatype xsd:string ;
+    ] ;
+  rdf:rest (
+      [
+        sh:datatype rdf:langString ;
+      ]
+    ) ;
+  rdfs:comment "An rdf:List that can be used in property constraints as value for sh:or to indicate that all values of a property must be either xsd:string or rdf:langString." ;
+  rdfs:label "String or langString" ;
+  rdfs:isDefinedBy <http://datashapes.org/dash> ;
+  rdfs:comment "This shape was copied into dcat-us_3.0_shacl_shapes.ttl on 2023-11-21."@en ;
+.
 
