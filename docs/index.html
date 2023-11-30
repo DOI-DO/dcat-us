@@ -19653,7 +19653,7 @@
           <code>{
           "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
           "@type": "dcat:Dataset",
-          "name": "Daily Temperature Observations",
+          "title": "Daily Temperature Observations",
           "temporalResolution": "P1D"
         }</code>
         </pre>
@@ -19662,6 +19662,44 @@
           <code>"P1D"</code>. This notation follows the XML Schema duration format and is understood in the JSON-LD
           context without requiring an additional <code>@type</code> declaration for the resolution.
         </p>
+        <p>
+          The <code>dcterms:accrualPeriodicity</code> property in JSON-LD specifies the frequency at which a dataset is
+          updated or new data is added. This property is vital for users to understand how often the dataset's
+          information is refreshed.
+        </p>
+
+        <!-- Example of Daily Updates -->
+        <p>
+          Example of a dataset updated daily:
+        </p>
+        <pre>
+          <code>{
+        "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
+        "@type": "dcat:Dataset",
+        "title": "Daily Air Quality Index",
+        "accrualPeriodicity": "daily"
+      }</code>
+        </pre>
+
+        <!-- Example of Monthly Updates -->
+        <p>
+          Example of a dataset updated monthly:
+        </p>
+        <pre>
+          <code>{
+        "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
+        "@type": "dcat:Dataset",
+        "title": "Monthly Employment Statistics",
+        "accrualPeriodicity": "monthly"
+      }</code>
+        </pre>
+
+        <p>
+          These examples illustrate the use of <code>dcterms:accrualPeriodicity</code> in JSON-LD to clearly represent
+          the update frequency of datasets. By specifying this property, users can easily determine the refresh rate of
+          the dataset's data, which is crucial for its application and relevance.
+        </p>
+
       </section>
 
 
@@ -20472,7 +20510,7 @@
           <li>Be operated and/or maintained by an agency of the US Government, by a recognised standards
             organization or another trusted organization.</li>
           <li>Be properly documented.</li>
-          <li>Have labels in english, and optionally in Spanish</li>
+          <li>Have la"@context": "http://schema.org/",bels in english, and optionally in Spanish</li>
           <li>Contain a relatively small number of terms (e.g. 10-25) that are general enough to enable a
             wide range of
             resources to be classified.</li>
