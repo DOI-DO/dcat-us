@@ -1,0 +1,110 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcat-us: <http://data.resources.gov/ontology/dcat-us#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix org1: <http://www.w3c.org/ns/org#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2> a dcat:Dataset ;
+    dcat-us:program <https://fpi.omb.gov/programs/015:001> ;
+    dcterms:accrualPeriodicity <http://purl.org/cld/freq/weekly> ;
+    dcterms:description """The Inventory of Owned and Leased Properties (IOLP) allows users to search properties owned and leased by the General Services Administration (GSA) across the United States, Puerto Rico, Guam and American Samoa.
+
+The Owned and Leased Data Sets include the following data except where noted below for Leases:
+
+- Location Code - GSA’s alphanumeric identifier for the building
+- Real Property Asset Name - Allows users to find information about a specific building 
+- Installation Name - Allows users to identify whether a property is part of an installation, such as a campus
+- Owned or Leased - Indicates the building is federally owned (F) or leased (L)
+- GSA Region - GSA assigned region for building location
+- Street Address/City/State/Zip Code - Building address
+- Longitude and Latitude - Map coordinates of the building (only through .csv export)
+- Rentable Square Feet - Total rentable square feet in building
+- Available Square Feet - Vacant space in building
+- Construction Date (Owned Only) - Year built
+- Congressional District - Congressional District building is located
+- Senator/Representative/URL - Senator/Representative of the Congressional District and their URL
+- Building Status - Indicates building is active
+- Lease Number (Leased Only) - GSA’s alphanumeric identifier for the lease
+- Lease Effective/Expiration Dates (Leased Only) - Date lease starts/expires
+- Real Property Asset Type - Identifies a property as land, building, or structure""" ;
+    dcterms:identifier "GSA-4495" ;
+    dcterms:issued "2002-01-01"^^xsd:date ;
+    dcterms:language <http://id.loc.gov/vocabulary/iso639-1/en-us> ;
+    dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+    dcterms:modified "2023-11-16T21:38:25.152Z" ;
+    dcterms:publisher <https://www.gsa.gov> ;
+    dcterms:spatial <http://id.loc.gov/authorities/names/n78095330> ;
+    dcterms:title "Inventory of Owned and Leased Properties (IOLP)" ;
+    adms:identifier [ a adms:Identifier ;
+            skos:notation "GSA-4495" ;
+            adms:schemaAgency <https://www.gsa.gov> ] ;
+    dcat:contactPoint [ a vcard:Contact ;
+            vcard:fn "Valerie R Butler" ] ;
+    dcat:distribution <https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/967d2d5e-c917-48a3-b7d8-d01ffd7e0783>,
+        <https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/bfbd1f68-b7d8-4822-98bb-4eceabd2c3a7>,
+        <https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/d3cb3a80-9227-45a7-8bf8-1c10b0b4de2b> ;
+    dcat:keyword "BUILDING_STATUS",
+        "City",
+        "LEASE_EFFECTIVE_DATE",
+        "LEASE_EXPIRATION_DATE",
+        "Latitude",
+        "Lease_Num",
+        "Longitude",
+        "STATE_CD",
+        "STREET_ADDRESS",
+        "Zipcode5",
+        "geospatial" ;
+    dcat:theme <https://data.gov/vocab/themes/geospatial> .
+
+<http://id.loc.gov/authorities/names/n78095330> a dcterms:Location ;
+    skos:prefLabel "United States" .
+
+<https://data.gov/vocab/themes/geospatial> a skos:Concept ;
+    skos:definition "Geospatial data theme" ;
+    skos:inScheme <https://data.gov/vocab/themes> ;
+    skos:prefLabel "Geospatial" .
+
+<https://fpi.omb.gov/programs/015:001> a dcat-us:Program ;
+    dcterms:identifier "023:003" ;
+    dcterms:title "Rental of Space Program" .
+
+<https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/967d2d5e-c917-48a3-b7d8-d01ffd7e0783> a dcat:Distribution ;
+    dcat-us:accessRestriction [ a dcat-us:AccessRestriction ;
+            dcat-us:restrictionStatus <https://data.resources.gov/vocab/nara/AccessRestrictionStatusAuthorityList/Unrestricted> ] ;
+    dcat-us:useRestriction [ a dcat-us:UseRestriction ;
+            dcat-us:restrictionStatus <https://data.resources.gov/vocab/nara/UseRestrictionStatusAuthorityList/Unrestricted> ] ;
+    dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+    dcterms:title "IOLP Buildings 11.27.23.xlsx" ;
+    dcat:downloadURL <https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/967d2d5e-c917-48a3-b7d8-d01ffd7e0783/download/iolp-buildings-11.27.23.xlsx> ;
+    dcat:mediaType <https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet> .
+
+<https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/bfbd1f68-b7d8-4822-98bb-4eceabd2c3a7> a dcat:Distribution ;
+    dcat-us:accessRestriction [ a dcat-us:AccessRestriction ;
+            dcat-us:restrictionStatus <https://data.resources.gov/vocab/nara/AccessRestrictionStatusAuthorityList/Unrestricted> ] ;
+    dcat-us:useRestriction [ a dcat-us:UseRestriction ;
+            dcat-us:restrictionStatus <https://data.resources.gov/vocab/nara/UseRestrictionStatusAuthorityList/Unrestricted> ] ;
+    dcterms:conformsTo <http://www.isotc211.org/2005/gmd> ;
+    dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+    dcterms:title "IOLP19139_080123.xml" ;
+    dcat:downloadURL <https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/bfbd1f68-b7d8-4822-98bb-4eceabd2c3a7/download/iolp19139_080123.xml> ;
+    dcat:mediaType <https://www.iana.org/assignments/media-types/application/xml> .
+
+<https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/d3cb3a80-9227-45a7-8bf8-1c10b0b4de2b> a dcat:Distribution ;
+    dcat-us:accessRestriction [ a dcat-us:AccessRestriction ;
+            dcat-us:restrictionStatus <https://data.resources.gov/vocab/nara/AccessRestrictionStatusAuthorityList/Unrestricted> ] ;
+    dcat-us:useRestriction [ a dcat-us:UseRestriction ;
+            dcat-us:restrictionStatus <https://data.resources.gov/vocab/nara/UseRestrictionStatusAuthorityList/Unrestricted> ] ;
+    dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+    dcterms:title "IOLP Leases 11.27.23.xlsx" ;
+    dcat:downloadURL <https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/d3cb3a80-9227-45a7-8bf8-1c10b0b4de2b/download/iolp-leases-11.27.23.xlsx> ;
+    dcat:mediaType <https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet> .
+
+<https://www.gsa.gov> a org1:Organization ;
+    skos:notation "023:0",
+        "47" ;
+    foaf:name "General Services Administration" .
+
