@@ -2,24 +2,24 @@
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
   "@graph": [
     {
-      "@id": "http://example.org/ns#intrinsicDimensions",
-      "@type": "http://www.w3.org/ns/dqv#Category",
-      "http://www.w3.org/2004/02/skos/core#prefLabel": "Intrinsic dimensions"
-    },
-    {
       "@id": "http://example.org/ns#completeness",
-      "@type": "http://www.w3.org/ns/dqv#Dimension",
-      "http://www.w3.org/2004/02/skos/core#definition": "Completeness refers to the degree to which all required information\n    is present in a particular dataset.",
-      "http://www.w3.org/2004/02/skos/core#prefLabel": "Completeness",
-      "http://www.w3.org/ns/dqv#inCategory": {
+      "@type": "dqv:Dimension",
+      "skos:definition": "Completeness refers to the degree to which all required information\n    is present in a particular dataset.",
+      "skos:prefLabel": "Completeness",
+      "dqv:inCategory": {
         "@id": "http://example.org/ns#intrinsicDimensions"
       }
     },
     {
+      "@id": "http://example.org/ns#intrinsicDimensions",
+      "@type": "dqv:Category",
+      "skos:prefLabel": "Intrinsic dimensions"
+    },
+    {
       "@id": "http://example.org/ns#csvCompletenessMetric",
-      "@type": "Metric",
-      "http://www.w3.org/2004/02/skos/core#definition": "Ratio between the number of objects represented in the csv and the \n    number of  objects expected to be represented according to the declared dataset\n    scope.",
-      "expectedDataType": "xsd:double",
+      "@type": "dqv:Metric",
+      "skos:definition": "Ratio between the number of objects represented in the csv and the \n    number of  objects expected to be represented according to the declared dataset\n    scope.",
+      "expectedDataType": "http://www.w3.org/2001/XMLSchema#double",
       "inDimension": "http://example.org/ns#completeness"
     }
   ]

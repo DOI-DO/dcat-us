@@ -1,9 +1,9 @@
 {
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
-  "@id": "http://example.org/CSVDistributionExample1",
-  "@type": "Distribution",
+  "@id": "http://example.org/ns#CSVDistributionExample1",
+  "@type": "dcat:Distribution",
   "format": "http://resources.data.gov/authority/file-type/csv",
-  "http://www.w3.org/ns/dcat#compressedFormat": {
+  "dcat:compressedFormat": {
     "@id": "http://www.iana.org/assignments/media-types/application/zip"
   },
   "mediaType": "http://www.iana.org/assignments/media-types/text/csv",

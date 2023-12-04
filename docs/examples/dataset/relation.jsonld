@@ -2,12 +2,8 @@
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
   "@graph": [
     {
-      "@id": "http://www.bafu.admin.ch/laerm/index",
-      "http://www.w3.org/2000/01/rdf-schema#label": "Webseite des BAFU"
-    },
-    {
       "@id": "https://uscensus.gov/123",
-      "@type": "Dataset",
+      "@type": "dcat:Dataset",
       "relation": [
         "http://www.bafu.admin.ch/laerm/index",
         "http://www.bafu.admin.ch/legal_info",
@@ -15,12 +11,16 @@
       ]
     },
     {
-      "@id": "http://www.bafu.admin.ch/laerm/about",
-      "http://www.w3.org/2000/01/rdf-schema#label": "Somthing about noise"
+      "@id": "http://www.bafu.admin.ch/legal_info",
+      "rdfs:label": "legal information"
     },
     {
-      "@id": "http://www.bafu.admin.ch/legal_info",
-      "http://www.w3.org/2000/01/rdf-schema#label": "legal information"
+      "@id": "http://www.bafu.admin.ch/laerm/index",
+      "rdfs:label": "Webseite des BAFU"
+    },
+    {
+      "@id": "http://www.bafu.admin.ch/laerm/about",
+      "rdfs:label": "Somthing about noise"
     }
   ]
 }

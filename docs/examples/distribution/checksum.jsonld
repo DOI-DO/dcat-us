@@ -3,7 +3,7 @@
   "@graph": [
     {
       "@id": "http://example.com#Distribution1",
-      "@type": "Distribution",
+      "@type": "dcat:Distribution",
       "checksum": "http://example.com#checksum001",
       "downloadURL": [
         "https://data.ct.gov/api/views/5mzw-sjtu/rows.rdf?accessType=DOWNLOAD"
@@ -11,9 +11,9 @@
     },
     {
       "@id": "http://example.com#checksum001",
-      "@type": "Checksum",
+      "@type": "spdx:Checksum",
       "algorithm": "https://spdx.org/rdf/terms/#checksumAlgorithm_sha256",
-      "http://spdx.org/rdf/terms#checksumValue": "5bcc814127be171c75595d419f371c74c9cf041419c45d6e8d2c789e5c303b47"
+      "spdx:checksumValue": "5bcc814127be171c75595d419f371c74c9cf041419c45d6e8d2c789e5c303b47"
     }
   ]
 }

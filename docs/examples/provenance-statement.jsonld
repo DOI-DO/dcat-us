@@ -2,15 +2,15 @@
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
   "@graph": [
     {
-      "@id": "_:n22541c687c794c68abd6971440e7af0db1",
-      "@type": "ProvenanceStatement",
+      "@id": "_:n713cd92e61624e30a05d198cd9d4840fb1",
+      "@type": "dcterms:ProvenanceStatement",
       "labelMap": {
         "en": "\n    The raster data sets have been created out of the Noise Spatial Database, \n    which in turn contains all versions delivered by the relevant countries \n    to Reportnet (CDR). The data from Reportnet is automatically \n    incorporated into the database, with the exception of those data sets which \n    require a manual review (due to problems with naming conventions or \n    Coordinate Reference System). The data set covers any submission by the \n    countries until 01/01/2019.\n  "
       }
     },
     {
-      "@id": "_:n22541c687c794c68abd6971440e7af0db2",
-      "@type": "ProvenanceStatement",
+      "@id": "_:n713cd92e61624e30a05d198cd9d4840fb2",
+      "@type": "dcterms:ProvenanceStatement",
       "labelMap": {
         "en": "The temperature measurements were collected from weather stations worldwide over the past century.",
         "es": "Las mediciones de temperatura fueron recolectadas de estaciones meteorol\u00f3gicas en todo el mundo durante el \u00faltimo siglo"

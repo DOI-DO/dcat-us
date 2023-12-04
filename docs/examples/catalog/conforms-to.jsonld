@@ -1,6 +1,6 @@
 {
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
   "@id": "https://uscensus.gov/Catalog1",
-  "@type": "Catalog",
+  "@type": "dcat:Catalog",
   "conformsTo": "http://resource.data.gov/profile/dcat-us#"
 }

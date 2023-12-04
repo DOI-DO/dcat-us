@@ -1,7 +1,7 @@
 {
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
   "@id": "https://doi.org/10.7265/N5K072F8",
-  "@type": "Dataset",
+  "@type": "dcat:Dataset",
   "identifier": [
     "10.7265/N5K072F8"
   ]

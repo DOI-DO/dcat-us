@@ -3,21 +3,21 @@
   "@graph": [
     {
       "@id": "http://example.org/ns#Distribution2",
-      "@type": "Distribution",
-      "format": "_:n786bc89ef7034ad797be760ff36e867cb1"
+      "@type": "dcat:Distribution",
+      "format": "_:n71ebbe95d0cb454897f35a2adc569c50b1"
     },
     {
-      "@id": "_:n786bc89ef7034ad797be760ff36e867cb1",
-      "@type": "MediaType",
+      "@id": "_:n71ebbe95d0cb454897f35a2adc569c50b1",
+      "@type": "dcterms:MediaType",
       "label": "Geopackage"
     },
     {
       "@id": "http://example.org/ns#Distribution1",
-      "@type": "Distribution",
+      "@type": "dcat:Distribution",
       "downloadURL": [
         "https://commons.wikimedia.org/wiki/file"
       ],
-      "mediaType": "https://www.iana.org/assignments/media-types/text/csv"
+      "mediaType": "text/csv"
     }
   ]
 }

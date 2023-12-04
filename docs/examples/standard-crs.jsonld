@@ -2,18 +2,11 @@
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
   "@graph": [
     {
-      "@id": "http://www.opengis.net/def/crs/OGC",
-      "@type": "ConceptScheme",
-      "titleMap": {
-        "en": "OGC Coordinate Reference Systems"
-      }
-    },
-    {
       "@id": "http://www.opengis.net/def/crs/OGC/1.3/CRS84",
-      "@type": "Standard",
+      "@type": "dcterms:Standard",
       "identifier": [
         {
-          "@type": "xsd:anyURI",
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
           "@value": "urn:ogc:def:crs:OGC:1.3:CRS84"
         }
       ],
@@ -22,9 +15,16 @@
       },
       "category": "http://data.gov/resource/glossary/SpatialReferenceSystem",
       "inScheme": "http://www.opengis.net/def/crs/OGC",
-      "http://www.w3.org/2004/02/skos/core#prefLabel": {
+      "skos:prefLabel": {
         "@language": "en",
         "@value": "CRS84"
+      }
+    },
+    {
+      "@id": "http://www.opengis.net/def/crs/OGC",
+      "@type": "skos:ConceptScheme",
+      "titleMap": {
+        "en": "OGC Coordinate Reference Systems"
       }
     }
   ]

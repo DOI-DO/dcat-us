@@ -3,21 +3,21 @@
   "@graph": [
     {
       "@id": "http://example.org/Dataset1",
-      "@type": "Dataset",
+      "@type": "dcat:Dataset",
       "qualifiedAttribution": [
-        "_:n9fe68a40380646df8477873defdff27ab1",
-        "_:n9fe68a40380646df8477873defdff27ab2"
+        "_:nc1889696c3ae4c5f882bcd961b8a09e8b1",
+        "_:nc1889696c3ae4c5f882bcd961b8a09e8b2"
       ]
     },
     {
-      "@id": "_:n9fe68a40380646df8477873defdff27ab1",
-      "@type": "Attribution",
+      "@id": "_:nc1889696c3ae4c5f882bcd961b8a09e8b1",
+      "@type": "prov:Attribution",
       "hadRole": "http://resources.data.gov/vocab/isotc211/CI_RoleCode/distributor",
       "agent": "https://www.uscensus.gov"
     },
     {
-      "@id": "_:n9fe68a40380646df8477873defdff27ab2",
-      "@type": "Attribution",
+      "@id": "_:nc1889696c3ae4c5f882bcd961b8a09e8b2",
+      "@type": "prov:Attribution",
       "hadRole": "http://resources.data.gov/vocab/isotc211/CI_RoleCode/funder",
       "agent": "https://www.doi.gov"
     }

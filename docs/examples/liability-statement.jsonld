@@ -3,12 +3,12 @@
   "@graph": [
     {
       "@id": "http://example.org/datasets/1",
-      "@type": "Dataset",
-      "liabilityStatement": "_:nb4506b42af074bb5a3fd2bd591594bc8b1"
+      "@type": "dcat:Dataset",
+      "liabilityStatement": "_:nbc2376fa342f4322b7750b93f061b8b6b1"
     },
     {
-      "@id": "_:nb4506b42af074bb5a3fd2bd591594bc8b1",
-      "@type": "LiabilityStatement",
+      "@id": "_:nbc2376fa342f4322b7750b93f061b8b6b1",
+      "@type": "dcat-us:LiabilityStatement",
       "label": "This dataset is provided 'as-is' without any guarantees or warranties. The provider is not responsible for any inaccuracies or omissions."
     }
   ]

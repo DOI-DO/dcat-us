@@ -3,25 +3,25 @@
   "@graph": [
     {
       "@id": "https://uscensus.gov/123",
-      "@type": "DataService",
+      "@type": "dcat:DataService",
       "contactPoint": [
-        "_:nb03929665041447cbf347378ed53f1d2b1",
-        "_:nb03929665041447cbf347378ed53f1d2b2"
+        "_:n89b85bc84afc4398ae0a32fa192effdab1",
+        "_:n89b85bc84afc4398ae0a32fa192effdab2"
       ]
     },
     {
-      "@id": "_:nb03929665041447cbf347378ed53f1d2b1",
-      "@type": "http://www.w3.org/2006/vcard/ns#Organization",
-      "http://www.w3.org/2006/vcard/ns#fn": "Abteilung L\u00e4rm BAFU",
-      "http://www.w3.org/2006/vcard/ns#hasEmail": {
+      "@id": "_:n89b85bc84afc4398ae0a32fa192effdab1",
+      "@type": "vcard:Organization",
+      "vcard:fn": "Abteilung L\u00e4rm BAFU",
+      "vcard:hasEmail": {
         "@id": "mailto:noise@bafu.admin.ch"
       }
     },
     {
-      "@id": "_:nb03929665041447cbf347378ed53f1d2b2",
-      "@type": "http://www.w3.org/2006/vcard/ns#Individual",
-      "http://www.w3.org/2006/vcard/ns#fn": "Sekretariat BAFU",
-      "http://www.w3.org/2006/vcard/ns#hasEmail": {
+      "@id": "_:n89b85bc84afc4398ae0a32fa192effdab2",
+      "@type": "vcard:Individual",
+      "vcard:fn": "Sekretariat BAFU",
+      "vcard:hasEmail": {
         "@id": "mailto:sekretariat@bafu.admin.ch"
       }
     }

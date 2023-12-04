@@ -2,18 +2,28 @@
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
   "@graph": [
     {
+      "@id": "https://uscensus.gov/data/345",
+      "@type": "dcat:Dataset",
+      "descriptionMap": {
+        "en": "some dataset"
+      },
+      "titleMap": {
+        "en": "some title"
+      }
+    },
+    {
       "@id": "https://uscensus.gov/catalog-endpoint.rdf",
-      "@type": "Catalog",
+      "@type": "dcat:Catalog",
       "descriptionMap": {
         "en": "Open Data Catalog for New York Cityh"
       },
       "issued": {
-        "@type": "xsd:dateTime",
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
         "@value": "2021-01-07T00:00:00"
       },
-      "http://purl.org/dc/terms/language:": "en",
+      "dcterms:language:": "en",
       "modified": {
-        "@type": "xsd:dateTime",
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
         "@value": "2021-01-07T00:00:00"
       },
       "publisher": "https://uscensus.gov",
@@ -28,19 +38,11 @@
     },
     {
       "@id": "https://uscensus.gov/index.html",
-      "@type": "Document"
-    },
-    {
-      "@id": "https://uscensus.gov",
-      "@type": "http://xmlns.com/foaf/0.1/Organization",
-      "http://xmlns.com/foaf/0.1/name": {
-        "@language": "en",
-        "@value": "US Census"
-      }
+      "@type": "foaf:Document"
     },
     {
       "@id": "https://uscensus.gov/data/123",
-      "@type": "Dataset",
+      "@type": "dcat:Dataset",
       "descriptionMap": {
         "en": "some dataset"
       },
@@ -49,13 +51,11 @@
       }
     },
     {
-      "@id": "https://uscensus.gov/data/345",
-      "@type": "Dataset",
-      "descriptionMap": {
-        "en": "some dataset"
-      },
-      "titleMap": {
-        "en": "some title"
+      "@id": "https://uscensus.gov",
+      "@type": "foaf:Organization",
+      "foaf:name": {
+        "@language": "en",
+        "@value": "US Census"
       }
     }
   ]

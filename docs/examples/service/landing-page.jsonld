@@ -3,12 +3,12 @@
   "@graph": [
     {
       "@id": "https://opendata.uscensus.gov/1234/about",
-      "@type": "Document"
+      "@type": "foaf:Document"
     },
     {
       "@id": "https://opendata.uscensus.gov/1234",
-      "@type": "DataService",
-      "http://www.w3.org/ns/dcat#landingPage": {
+      "@type": "dcat:DataService",
+      "dcat:landingPage": {
         "@id": "https://opendata.uscensus.gov/1234/about"
       }
     }

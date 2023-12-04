@@ -2,18 +2,18 @@
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
   "@graph": [
     {
-      "@id": "http://example.org/NationalCensus",
-      "@type": "Activity",
-      "category": "http://example.org/CensusActivity",
-      "label": "National Census"
-    },
-    {
       "@id": "http://example.org/Census2020Dataset",
-      "@type": "Dataset",
+      "@type": "dcat:Dataset",
       "title": "Census Dataset",
       "wasGeneratedBy": [
         "http://example.org/NationalCensus"
       ]
+    },
+    {
+      "@id": "http://example.org/NationalCensus",
+      "@type": "prov:Activity",
+      "category": "http://example.org/CensusActivity",
+      "label": "National Census"
     }
   ]
 }

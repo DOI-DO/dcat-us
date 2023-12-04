@@ -3,12 +3,12 @@
   "@graph": [
     {
       "@id": "https://data.census.gov/catalog",
-      "@type": "Catalog",
+      "@type": "dcat:Catalog",
       "homepage": "https://census.gov/catalog.html"
     },
     {
       "@id": "https://census.gov/catalog.html",
-      "@type": "Document"
+      "@type": "foaf:Document"
     }
   ]
 }

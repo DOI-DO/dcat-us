@@ -3,12 +3,12 @@
   "@graph": [
     {
       "@id": "http://www.example.com#distribution1",
-      "@type": "Distribution",
-      "rights": "_:n8e62d011bd9241b9ac2dc1c8dbb3e5b9b1"
+      "@type": "dcat:Distribution",
+      "rights": "_:nfe23cf7b2a444b66a135a5ed90961a89b1"
     },
     {
-      "@id": "_:n8e62d011bd9241b9ac2dc1c8dbb3e5b9b1",
-      "@type": "RightsStatement",
+      "@id": "_:nfe23cf7b2a444b66a135a5ed90961a89b1",
+      "@type": "dcterms:RightsStatement",
       "attributionText": "\u00a9 20023 ACME Inc."
     }
   ]

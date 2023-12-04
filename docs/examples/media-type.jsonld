@@ -2,23 +2,23 @@
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
   "@graph": [
     {
-      "@id": "http://example.org/ns#GeopackageDistribution",
-      "@type": "Distribution",
-      "format": "_:nd952facbe633489fa349e0b14de909deb1"
-    },
-    {
-      "@id": "_:nd952facbe633489fa349e0b14de909deb1",
-      "@type": "MediaType",
-      "label": "Geopackage"
+      "@id": "http://www.iana.org/assignments/media-types/text/csv",
+      "@type": "dcterms:MediaType"
     },
     {
       "@id": "http://example.org/ns#dataset-001-csv",
-      "@type": "Distribution",
+      "@type": "dcat:Distribution",
       "mediaType": "http://www.iana.org/assignments/media-types/text/csv"
     },
     {
-      "@id": "http://www.iana.org/assignments/media-types/text/csv",
-      "@type": "MediaType"
+      "@id": "http://example.org/ns#GeopackageDistribution",
+      "@type": "dcat:Distribution",
+      "format": "_:n70519605146340309ad20000cf9a63e0b1"
+    },
+    {
+      "@id": "_:n70519605146340309ad20000cf9a63e0b1",
+      "@type": "dcterms:MediaType",
+      "label": "Geopackage"
     }
   ]
 }

@@ -3,21 +3,21 @@
   "@graph": [
     {
       "@id": "http://www.example.com#budget2018",
-      "@type": "Dataset",
+      "@type": "dcat:Dataset",
       "temporal": [
-        "_:n8502dbd5cf074d58b560e236263564c7b1"
+        "_:n9472ac5bedc74a2899bcc3b603e3c497b1"
       ],
       "title": "Budget for 2018"
     },
     {
-      "@id": "_:n8502dbd5cf074d58b560e236263564c7b1",
-      "@type": "PeriodOfTime",
+      "@id": "_:n9472ac5bedc74a2899bcc3b603e3c497b1",
+      "@type": "dcterms:PeriodOfTime",
       "endDate": {
-        "@type": "xsd:date",
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
         "@value": "2018-12-31"
       },
       "startDate": {
-        "@type": "xsd:date",
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
         "@value": "2018-01-01"
       }
     }

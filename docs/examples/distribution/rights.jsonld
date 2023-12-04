@@ -3,12 +3,12 @@
   "@graph": [
     {
       "@id": "http://example.org/ns#usgs-rights-statement",
-      "@type": "RightsStatement",
+      "@type": "dcterms:RightsStatement",
       "attributionText": "\n    This dataset is provided by the United States Geological Survey (USGS). While most USGS information is in the public domain, when using, sharing, or creating derivative works, users are requested to provide appropriate acknowledgment of the USGS as the source of the information. \n    Suggested citation: 'Source: United States Geological Survey (USGS). Dataset accessed [date] at [URL/DOI].'\n    Acknowledging the USGS preserves the integrity and context of the scientific data while recognizing the intellectual and material investment made by the agency and its partners.\n    "
     },
     {
       "@id": "http://example.org/ns#Distribution1",
-      "@type": "Distribution",
+      "@type": "dcat:Distribution",
       "license": "https://creativecommons.org/publicdomain/zero/1.0/",
       "rights": "http://example.org/ns#usgs-rights-statement",
       "accessURL": [

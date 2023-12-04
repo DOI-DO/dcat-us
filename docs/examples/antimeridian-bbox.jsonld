@@ -3,18 +3,18 @@
   "@graph": [
     {
       "@id": "https://example.com/dataset1",
-      "@type": "Dataset",
+      "@type": "dcat:Dataset",
       "geographicBoundingBox": [
-        "_:n060b04f514ae40b6a5ced430ba0880c4b1"
+        "_:n07b1f95e98164eeda0ab5836d61845d2b1"
       ]
     },
     {
-      "@id": "_:n060b04f514ae40b6a5ced430ba0880c4b1",
-      "@type": "GeographicBoundingBox",
-      "http://data.resources.gov/ontology/dcat-us#eastBoundingLongitude": -65,
-      "http://data.resources.gov/ontology/dcat-us#northBoundingLatitude": 49,
-      "http://data.resources.gov/ontology/dcat-us#southBoundingLatitude": 11,
-      "http://data.resources.gov/ontology/dcat-us#westBoundingLongitude": 176
+      "@id": "_:n07b1f95e98164eeda0ab5836d61845d2b1",
+      "@type": "dcat-us:GeographicBoundingBox",
+      "dcat-us:eastBoundingLongitude": -65,
+      "dcat-us:northBoundingLatitude": 49,
+      "dcat-us:southBoundingLatitude": 11,
+      "dcat-us:westBoundingLongitude": 176
     }
   ]
 }

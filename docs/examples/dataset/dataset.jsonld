@@ -3,16 +3,16 @@
   "@graph": [
     {
       "@id": "https://uscensus.gov/dataset1",
-      "@type": "Dataset",
+      "@type": "dcat:Dataset",
       "descriptionMap": {
         "en": "This dataset contains information regarding the\n                 census in County of Loudoun"
       },
       "issued": {
-        "@type": "xsd:date",
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
         "@value": "2021-04-26"
       },
       "modified": {
-        "@type": "xsd:date",
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
         "@value": "2021-04-26"
       },
       "publisher": "https://uscensus.gov/",
@@ -20,15 +20,15 @@
         "http://publications.europa.eu/resource/authority/country/CHE"
       ],
       "temporal": [
-        "_:n179b981356394274a99b93cddaf99e6eb3"
+        "_:n3a21f11cd9564e0485b1fba708199788b3"
       ],
       "titleMap": {
         "en": "Loudoun County",
         "es": "Condado de Loudoun"
       },
       "contactPoint": [
-        "_:n179b981356394274a99b93cddaf99e6eb1",
-        "_:n179b981356394274a99b93cddaf99e6eb2"
+        "_:n3a21f11cd9564e0485b1fba708199788b1",
+        "_:n3a21f11cd9564e0485b1fba708199788b2"
       ],
       "distribution": [
         "https://uscensus.gov/data/123",
@@ -47,44 +47,44 @@
       ]
     },
     {
-      "@id": "_:n179b981356394274a99b93cddaf99e6eb1",
-      "@type": "Contact",
+      "@id": "_:n3a21f11cd9564e0485b1fba708199788b1",
+      "@type": "vcard:Contact",
       "email": "mailto:noise@uscensus.gov",
       "fn": "US Census"
     },
     {
-      "@id": "_:n179b981356394274a99b93cddaf99e6eb2",
-      "@type": "Contact",
+      "@id": "_:n3a21f11cd9564e0485b1fba708199788b2",
+      "@type": "vcard:Contact",
       "email": "mailto:johnsmith@uscensus.gov",
       "fn": "John Smith"
     },
     {
-      "@id": "_:n179b981356394274a99b93cddaf99e6eb3",
-      "@type": "PeriodOfTime",
+      "@id": "_:n3a21f11cd9564e0485b1fba708199788b3",
+      "@type": "dcterms:PeriodOfTime",
       "endDate": {
-        "@type": "xsd:dateTime",
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
         "@value": "2021-06-22T00:00:00"
       },
       "startDate": {
-        "@type": "xsd:dateTime",
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
         "@value": "2020-01-01T00:00:00"
       }
     },
     {
       "@id": "https://uscensus.gov/data/456",
-      "@type": "Distribution"
-    },
-    {
-      "@id": "https://uscensus.gov",
-      "@type": "http://xmlns.com/foaf/0.1/Organization",
-      "http://xmlns.com/foaf/0.1/name": {
-        "@language": "en",
-        "@value": "US Census"
-      }
+      "@type": "dcat:Distribution"
     },
     {
       "@id": "https://uscensus.gov/data/123",
-      "@type": "Distribution"
+      "@type": "dcat:Distribution"
+    },
+    {
+      "@id": "https://uscensus.gov",
+      "@type": "http://www.w3.org/ns/org#Organization",
+      "foaf:name": {
+        "@language": "en",
+        "@value": "US Census"
+      }
     }
   ]
 }

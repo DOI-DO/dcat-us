@@ -1,7 +1,7 @@
 {
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
   "@id": "https://uscensus.gov/opendata/resource/1234",
-  "@type": "Distribution",
+  "@type": "dcat:Distribution",
   "language": [
     "http://publications.europa.eu/resource/authority/language/DEU",
     "http://publications.europa.eu/resource/authority/language/FRA"

@@ -2,55 +2,55 @@
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
   "@graph": [
     {
+      "@id": "https://data.resources.gov/vocab/nara/AccessRestrictionStatusAuthorityList/Unrestricted",
+      "@type": "skos:Concept",
+      "inScheme": "https://data.resources.gov/vocab/nara/AccessRestrictionStatusAuthorityList",
+      "prefLabelMap": {
+        "en": "Unrestricted"
+      },
+      "skos:scopeNote": {
+        "@language": "en",
+        "@value": "Use if there are no access restrictions on the archival materials."
+      }
+    },
+    {
       "@id": "https://data.resources.gov/vocab/nara/SpecificAccessRestrictionAuthorityList/FOIAb6",
-      "@type": "Concept",
-      "http://www.w3.org/2004/02/skos/core#broader": {
+      "@type": "skos:Concept",
+      "skos:broader": {
         "@id": "https://data.resources.gov/vocab/nara/SpecificAccessRestrictionAuthorityList/FOIA"
       },
       "inScheme": "https://data.resources.gov/vocab/nara/SpecificAccessRestrictionAuthorityList",
       "prefLabelMap": {
         "en": "FOIA (b)(6) Personal Information"
       },
-      "http://www.w3.org/2004/02/skos/core#scopeNote": {
+      "skos:scopeNote": {
         "@language": "en",
         "@value": "Use for archival materials with personal information that invades the privacy of living individuals."
       }
     },
     {
+      "@id": "http://example.org/AccessRestriction1",
+      "@type": "dcat-us:AccessRestriction",
+      "restrictionNote": "The records may be restricted due to privacy concerns. \n    Register numbers 1 through 900 have been screened and are open for research.",
+      "restrictionStatus": "https://data.resources.gov/vocab/nara/AccessRestrictionStatusAuthorityList/RestrictedPossibly",
+      "specificRestriction": "file:///home/stephanef/work/fairness/dcat-us/docs/examples/restriction/SpecificAccessRestrictionAuthorityList/FOIAb6"
+    },
+    {
       "@id": "https://data.resources.gov/vocab/nara/AccessRestrictionStatusAuthorityList/RestrictedPossibly",
-      "@type": "Concept",
+      "@type": "skos:Concept",
       "inScheme": "https://data.resources.gov/vocab/nara/AccessRestrictionStatusAuthorityList",
       "prefLabelMap": {
         "en": "Restricted - Possibly"
       },
-      "http://www.w3.org/2004/02/skos/core#scopeNote": {
+      "skos:scopeNote": {
         "@language": "en",
         "@value": "Use if the archival materials may be restricted. Use if the archival materials have been reviewed or partially reviewed \n    and found to contain restricted material, but the restrictions have not been recorded, identified and/or verified at the file unit or item level."
       }
     },
     {
-      "@id": "https://data.resources.gov/vocab/nara/AccessRestrictionStatusAuthorityList/Unrestricted",
-      "@type": "Concept",
-      "inScheme": "https://data.resources.gov/vocab/nara/AccessRestrictionStatusAuthorityList",
-      "prefLabelMap": {
-        "en": "Unrestricted"
-      },
-      "http://www.w3.org/2004/02/skos/core#scopeNote": {
-        "@language": "en",
-        "@value": "Use if there are no access restrictions on the archival materials."
-      }
-    },
-    {
       "@id": "http://example.org/AccessRestriction2",
-      "@type": "AccessRestriction",
+      "@type": "dcat-us:AccessRestriction",
       "restrictionStatus": "https://data.resources.gov/vocab/nara/AccessRestrictionStatusAuthorityList/Unrestricted"
-    },
-    {
-      "@id": "http://example.org/AccessRestriction1",
-      "@type": "AccessRestriction",
-      "restrictionNote": "The records may be restricted due to privacy concerns. \n    Register numbers 1 through 900 have been screened and are open for research.",
-      "restrictionStatus": "https://data.resources.gov/vocab/nara/AccessRestrictionStatusAuthorityList/RestrictedPossibly",
-      "specificRestriction": "file:///home/stephanef/work/fairness/dcat-us/docs/examples/restriction/SpecificAccessRestrictionAuthorityList/FOIAb6"
     }
   ]
 }

@@ -3,15 +3,15 @@
   "@graph": [
     {
       "@id": "https://uscensus.gov",
-      "@type": "http://xmlns.com/foaf/0.1/Organization",
-      "http://xmlns.com/foaf/0.1/name:": {
+      "@type": "foaf:Organization",
+      "foaf:name:": {
         "@language": "en",
         "@value": "US Census"
       }
     },
     {
       "@id": "https://uscensus.gov/opendata/service",
-      "@type": "DataService",
+      "@type": "dcat:DataService",
       "publisher": "https://uscensus.gov"
     }
   ]

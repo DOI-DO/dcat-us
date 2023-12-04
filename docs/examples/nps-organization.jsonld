@@ -2,44 +2,40 @@
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
   "@graph": [
     {
-      "@id": "http://data.example.org/dataset/park-visitor-data",
-      "@type": "Dataset",
-      "http://www.w3.org/ns/dcat#description": "This dataset contains statistics about visitors to national parks managed by the NPS.",
-      "http://www.w3.org/ns/dcat#publisher": {
-        "@id": "https://www.nps.gov"
-      },
-      "http://www.w3.org/ns/dcat#title": "National Park Visitor Statistics"
-    },
-    {
       "@id": "https://www.nps.gov",
-      "@type": "Organization",
-      "altLabel": [
+      "@type": "http://www.w3.org/ns/org#Organization",
+      "skos:altLabel": [
         "NPS",
         "National Parks",
         "U.S. National Park Service"
       ],
-      "notation": [
-        "NPS"
-      ],
-      "prefLabel": "National Park Service",
-      "subOrganizationOf": [
-        "https://www.doi.gov"
-      ],
-      "name": "National Park Service"
+      "skos:notation": "NPS",
+      "skos:prefLabel": "National Park Service",
+      "http://www.w3.org/ns/org#subOrganizationOf": {
+        "@id": "https://www.doi.gov"
+      },
+      "foaf:name": "National Park Service"
+    },
+    {
+      "@id": "http://data.example.org/dataset/park-visitor-data",
+      "@type": "dcat:Dataset",
+      "dcat:description": "This dataset contains statistics about visitors to national parks managed by the NPS.",
+      "dcat:publisher": {
+        "@id": "https://www.nps.gov"
+      },
+      "dcat:title": "National Park Visitor Statistics"
     },
     {
       "@id": "https://www.doi.gov",
-      "@type": "Organization",
-      "altLabel": [
+      "@type": "http://www.w3.org/ns/org#Organization",
+      "skos:altLabel": [
         "DOI",
         "U.S. Department of the Interior",
         "Interior Department"
       ],
-      "notation": [
-        "DOI"
-      ],
-      "prefLabel": "Department of the Interior",
-      "name": "Department of the Interior"
+      "skos:notation": "DOI",
+      "skos:prefLabel": "Department of the Interior",
+      "foaf:name": "Department of the Interior"
     }
   ]
 }

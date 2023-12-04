@@ -2,12 +2,8 @@
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
   "@graph": [
     {
-      "@id": "https://data.census.gov/data/123",
-      "@type": "Dataset"
-    },
-    {
       "@id": "https://data.census.gov/catalog",
-      "@type": "Catalog",
+      "@type": "dcat:Catalog",
       "dataset": [
         "https://data.census.gov/data/123",
         "https://data.census.gov/data/345"
@@ -15,7 +11,11 @@
     },
     {
       "@id": "https://data.census.gov/data/345",
-      "@type": "Dataset"
+      "@type": "dcat:Dataset"
+    },
+    {
+      "@id": "https://data.census.gov/data/123",
+      "@type": "dcat:Dataset"
     }
   ]
 }

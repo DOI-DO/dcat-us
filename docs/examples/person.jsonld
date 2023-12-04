@@ -3,16 +3,16 @@
   "@graph": [
     {
       "@id": "http://www.doi.gov",
-      "@type": "Organization",
-      "name": "Department of Interior"
+      "@type": "http://www.w3.org/ns/org#Organization",
+      "foaf:name": "Department of Interior"
     },
     {
       "@id": "http://example.org/JohnSmith",
-      "@type": "Person",
-      "memberOf": [
-        "http://www.doi.gov"
-      ],
-      "http://xmlns.com/foaf/0.1/firstName": "John",
+      "@type": "foaf:Person",
+      "http://www.w3.org/ns/org#memberOf": {
+        "@id": "http://www.doi.gov"
+      },
+      "foaf:firstName": "John",
       "givenName": "Smith",
       "name": "John Smith"
     }

@@ -1,6 +1,6 @@
 {
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
   "@id": "https://canton.zh/opendata/catalog/treecount",
-  "@type": "Distribution",
+  "@type": "dcat:Distribution",
   "description": "Some description for the distribution"
 }

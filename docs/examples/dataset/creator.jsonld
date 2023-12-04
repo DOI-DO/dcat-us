@@ -3,11 +3,11 @@
   "@graph": [
     {
       "@id": "https://orcid.org/0000-0002-0693-466X",
-      "@type": "Person"
+      "@type": "foaf:Person"
     },
     {
       "@id": "https://doi.org/10.7265/N5K072F8",
-      "@type": "Dataset",
+      "@type": "dcat:Dataset",
       "creator": "https://orcid.org/0000-0002-0693-466X"
     }
   ]

@@ -1,9 +1,9 @@
 {
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
   "@id": "https://data.census.gov/catalog",
-  "@type": "Catalog",
+  "@type": "dcat:Catalog",
   "modified": {
-    "@type": "xsd:date",
+    "@type": "http://www.w3.org/2001/XMLSchema#date",
     "@value": "2021-04-26"
   }
 }

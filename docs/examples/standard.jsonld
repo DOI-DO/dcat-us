@@ -3,53 +3,45 @@
   "@graph": [
     {
       "@id": "http://www.isotc211.org/2005/gmd",
-      "@type": "Standard",
+      "@type": "dcterms:Standard",
       "http://purl.org/dc/elements/1.1/identifier": "iso-19139",
       "titleMap": {
         "en": "ISO/TS 19139:2007 - Geographic MetaData extensible markup language (GMD)"
       },
-      "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": {
+      "rdfs:isDefinedBy": {
         "@id": "https://www.iso.org/standard/32557.html"
       },
-      "http://www.w3.org/2004/02/skos/core#altLabel": {
+      "skos:altLabel": {
         "@language": "en",
         "@value": "ISO 19139"
       },
-      "inScheme": "http://data.gov/vocab/metadata-schema",
-      "http://www.w3.org/2004/02/skos/core#prefLabel": {
-        "@language": "en",
-        "@value": "ISO/TS 19139:2007 - Geographic MetaData extensible markup language (GMD)"
-      }
-    },
-    {
-      "@id": "http://data.gov/vocab/metadata-schema",
-      "@type": "ConceptScheme",
-      "titleMap": {
-        "en": "Metadata schemas"
-      },
-      "http://www.w3.org/2000/01/rdf-schema#label": {
-        "@language": "en",
-        "@value": "Metadata schemas"
-      }
+      "inScheme": "http://data.gov/vocab/metadata-schema"
     },
     {
       "@id": "https://sdmx.org/",
-      "@type": "Standard",
+      "@type": "dcterms:Standard",
       "http://purl.org/dc/elements/1.1/identifier": "sdmx",
       "titleMap": {
         "en": "Statistical Data and Metadata eXchange"
       },
-      "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": {
+      "rdfs:isDefinedBy": {
         "@id": "https://sdmx.org/"
       },
-      "http://www.w3.org/2004/02/skos/core#altLabel": {
+      "skos:altLabel": {
         "@language": "en",
         "@value": "SDMX"
       },
-      "inScheme": "http://data.gov/vocab/metadata-schema",
-      "http://www.w3.org/2004/02/skos/core#prefLabel": {
+      "inScheme": "http://data.gov/vocab/metadata-schema"
+    },
+    {
+      "@id": "http://data.gov/vocab/metadata-schema",
+      "@type": "skos:ConceptScheme",
+      "titleMap": {
+        "en": "Metadata schemas"
+      },
+      "rdfs:label": {
         "@language": "en",
-        "@value": "Statistical Data and Metadata eXchange"
+        "@value": "Metadata schemas"
       }
     }
   ]

@@ -3,30 +3,30 @@
   "@graph": [
     {
       "@id": "http://example.org/ns#WashingtonDCGeometry",
-      "@type": "http://www.opengis.net/ont/geosparql#Geometry",
-      "http://www.opengis.net/ont/geosparql#asWKT": {
-        "@type": "http://www.opengis.net/ont/geosparql#wktLiteral",
+      "@type": "gsp:Geometry",
+      "gsp:asWKT": {
+        "@type": "gsp:wktLiteral",
         "@value": "POLYGON ((\n        -77.119759 38.791645, \n        -76.909393 38.791645, \n        -76.909393 38.99538, \n        -77.119759 38.99538, \n        -77.119759 38.791645\n    ))"
       }
     },
     {
       "@id": "http://sws.geonames.org/4140963/",
-      "@type": "Location",
-      "http://www.w3.org/2004/02/skos/core#altLabel": [
+      "@type": "dcterms:Location",
+      "skos:altLabel": [
         "DC",
         "Federal Capital",
         "District of Columbia"
       ],
       "prefLabel": "Washington D.C",
       "bbox": {
-        "@type": "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "@type": "gsp:wktLiteral",
         "@value": "POLYGON((-77.0500 38.8900 , -77.0200 38.8900 , -77.0200 38.9200 , -77.0500 38.9200 ,-77.0500 38.8900))"
       },
       "centroid": {
-        "@type": "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "@type": "gsp:wktLiteral",
         "@value": "POINT(-77.0369 38.9072)"
       },
-      "http://www.w3.org/ns/dcat#geometry": {
+      "dcat:geometry": {
         "@id": "http://example.org/ns#WashingtonDCGeometry"
       }
     }

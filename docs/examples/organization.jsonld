@@ -3,29 +3,25 @@
   "@graph": [
     {
       "@id": "https://www.nasa.gov",
-      "@type": "Organization",
-      "http://purl.org/dc/terms/type": {
+      "@type": "http://www.w3.org/ns/org#Organization",
+      "dcterms:type": {
         "@id": "http://data.resource.gov/vocab/org-type#Administration"
       },
-      "altLabel": "NASA",
-      "notation": [
-        "US-NASA"
-      ],
-      "prefLabel": "National Aeronautics and Space Administration",
-      "name": "NASA"
+      "skos:altLabel": "NASA",
+      "skos:notation": "US-NASA",
+      "skos:prefLabel": "National Aeronautics and Space Administration",
+      "foaf:name": "NASA"
     },
     {
       "@id": "https://www.doi.gov",
-      "@type": "Organization",
-      "http://purl.org/dc/terms/type": {
+      "@type": "http://www.w3.org/ns/org#Organization",
+      "dcterms:type": {
         "@id": "http://data.resource.gov/vocab/org-type#Department"
       },
-      "altLabel": "Department of the Interior",
-      "notation": [
-        "DOI"
-      ],
-      "prefLabel": "U.S. Department of the Interior",
-      "name": "U.S. Department of the Interior"
+      "skos:altLabel": "Department of the Interior",
+      "skos:notation": "DOI",
+      "skos:prefLabel": "U.S. Department of the Interior",
+      "foaf:name": "U.S. Department of the Interior"
     }
   ]
 }

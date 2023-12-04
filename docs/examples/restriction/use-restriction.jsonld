@@ -2,52 +2,52 @@
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
   "@graph": [
     {
-      "@id": "http://example.org/UseRestriction1",
-      "@type": "AccessRestriction",
-      "restrictionNote": "Some or all of the images in this series may be subject to copyright or other intellectual property restrictions.",
-      "restrictionStatus": "https://data.resources.gov/vocab/nara/UseRestrictionStatusAuthorityList/RestrictedPossibly",
-      "specificRestriction": "https://data.resources.gov/vocab/nara/SpecificUseRestrictionAuthorityList/Copyright"
-    },
-    {
-      "@id": "https://data.resources.gov/vocab/nara/UseRestrictionStatusAuthorityList/Unrestricted",
-      "@type": "Concept",
-      "inScheme": "https://data.resources.gov/vocab/nara/UseRestrictionStatusAuthorityList",
-      "prefLabelMap": {
-        "en": "Unrestricted"
-      },
-      "http://www.w3.org/2004/02/skos/core#scopeNote": {
-        "@language": "en",
-        "@value": "Use if there are no copyright, donor, or other use restrictions on the archival materials."
-      }
-    },
-    {
       "@id": "https://data.resources.gov/vocab/nara/SpecificUseRestrictionAuthorityList/Copyright",
-      "@type": "Concept",
+      "@type": "skos:Concept",
       "inScheme": "https://data.resources.gov/vocab/nara/SpecificUseRestrictionAuthorityList",
       "prefLabelMap": {
         "en": "Copyright"
       },
-      "http://www.w3.org/2004/02/skos/core#scopeNote": {
+      "skos:scopeNote": {
         "@language": "en",
         "@value": "Use if the archival materials have a copyright restriction regarding their use. If necessary, explain the copyright restriction further in Use Restriction Note."
       }
     },
     {
+      "@id": "https://data.resources.gov/vocab/nara/UseRestrictionStatusAuthorityList/Unrestricted",
+      "@type": "skos:Concept",
+      "inScheme": "https://data.resources.gov/vocab/nara/UseRestrictionStatusAuthorityList",
+      "prefLabelMap": {
+        "en": "Unrestricted"
+      },
+      "skos:scopeNote": {
+        "@language": "en",
+        "@value": "Use if there are no copyright, donor, or other use restrictions on the archival materials."
+      }
+    },
+    {
+      "@id": "http://example.org/UnrestrictedUseRestriction",
+      "@type": "dcat-us:UseRestriction",
+      "restrictionStatus": "https://data.resources.gov/vocab/nara/UseRestrictionStatusAuthorityList/Unrestricted"
+    },
+    {
       "@id": "https://data.resources.gov/vocab/nara/UseRestrictionStatusAuthorityList/RestrictedPossibly",
-      "@type": "Concept",
+      "@type": "skos:Concept",
       "inScheme": "https://data.resources.gov/vocab/nara/UseRestrictionStatusAuthorityList",
       "prefLabelMap": {
         "en": "Restricted - Possibly"
       },
-      "http://www.w3.org/2004/02/skos/core#scopeNote": {
+      "skos:scopeNote": {
         "@language": "en",
         "@value": "Use if the archival materials may have a use restriction."
       }
     },
     {
-      "@id": "http://example.org/UnrestrictedUseRestriction",
-      "@type": "UseRestriction",
-      "restrictionStatus": "https://data.resources.gov/vocab/nara/UseRestrictionStatusAuthorityList/Unrestricted"
+      "@id": "http://example.org/UseRestriction1",
+      "@type": "dcat-us:AccessRestriction",
+      "restrictionNote": "Some or all of the images in this series may be subject to copyright or other intellectual property restrictions.",
+      "restrictionStatus": "https://data.resources.gov/vocab/nara/UseRestrictionStatusAuthorityList/RestrictedPossibly",
+      "specificRestriction": "https://data.resources.gov/vocab/nara/SpecificUseRestrictionAuthorityList/Copyright"
     }
   ]
 }

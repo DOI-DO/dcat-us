@@ -1,7 +1,7 @@
 {
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
   "@id": "https://data.census.gov/catalog",
-  "@type": "Catalog",
+  "@type": "dcat:Catalog",
   "description": "US Census Data Catalog",
   "title": "US Census Open Data Catalog"
 }

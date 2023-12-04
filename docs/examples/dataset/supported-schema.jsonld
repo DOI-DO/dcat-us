@@ -2,21 +2,19 @@
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
   "@graph": [
     {
-      "@id": "http://example.org/ns#ISO19139Schema",
-      "@type": "Dataset",
-      "conformsTo": "http://www.isotc211.org/2005/gmd",
-      "description": "This is the XML Schema implementation of ISO 19139:2007 standard for geographic information metadata.",
-      "identifier": [
-        "ISO 19139"
+      "@id": "http://example.org/ns#ISO19139DataDistribution",
+      "@type": "dcat:Distribution",
+      "conformsTo": [
+        "http://www.isotc211.org/2005/gmd"
       ],
-      "title": "ISO 19139:2007 - Geographic Information Metadata XML Schema Implementation",
-      "category": [
-        "http://data.gov/vocab/resource-type/Schema"
+      "format": "https://www.iana.org/assignments/media-types/application/xml",
+      "accessURL": [
+        "http://example.org/data/iso19139-dataset.xml"
       ]
     },
     {
       "@id": "http://example.org/ns#ISO19139Dataset",
-      "@type": "Dataset",
+      "@type": "dcat:Dataset",
       "description": "This dataset contains geographic metadata and is compliant with the ISO 19139 standard.",
       "title": "Geographic Dataset following ISO 19139",
       "supportedSchema": "http://example.org/ns#ISO19139Schema",
@@ -25,14 +23,16 @@
       ]
     },
     {
-      "@id": "http://example.org/ns#ISO19139DataDistribution",
-      "@type": "Distribution",
-      "conformsTo": [
-        "http://www.isotc211.org/2005/gmd"
+      "@id": "http://example.org/ns#ISO19139Schema",
+      "@type": "dcat:Dataset",
+      "conformsTo": "http://www.isotc211.org/2005/gmd",
+      "description": "This is the XML Schema implementation of ISO 19139:2007 standard for geographic information metadata.",
+      "identifier": [
+        "ISO 19139"
       ],
-      "format": "https://www.iana.org/assignments/media-types/application/xml",
-      "accessURL": [
-        "http://example.org/data/iso19139-dataset.xml"
+      "title": "ISO 19139:2007 - Geographic Information Metadata XML Schema Implementation",
+      "category": [
+        "http://data.gov/vocab/resource-type/Schema"
       ]
     }
   ]
