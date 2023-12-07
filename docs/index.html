@@ -159,13 +159,8 @@
   <aside class="note">
     <p>DCAT 3 advances beyond its predecessor, DCAT 2 Data Catalog Vocabulary (DCAT) - Version 2, while preserving its
       relevance without rendering it obsolete. The foundational DCAT namespace persists in DCAT 3, ensuring a harmonious
-      coexistence with the terminology of DCAT 2. Notably, while DCAT 3 introduces enhancements such as relaxed
-      constraints, novel classes, and properties, these modifications uphold the integrity of prior terms, preventing
-      any disruption to their definitions.
-    </p>
-    <p>
-
-      In the realm of implementations, any fresh deployment is expected to embrace the DCAT 3 standard, harnessing its
+      coexistence with the terminology of DCAT 2. Notably, while DCAT 3 introduces eNOTE the DCAT 3 standard, harnessing
+      its
       evolved capabilities. However, pre-existing implementations need not undergo an upgrade unless they seek to
       leverage the newfound functionalities. Specifically, current instances of DCAT 2/ POD 1.1 deployments that do not
       intersect with DCAT 3's novel elements—such as versioning, dataset series, and inverse properties—can continue
@@ -7418,7 +7413,8 @@
               </tr>
               <tr>
                 <th>Definition</th>
-                <td>Refers to the performed quality measurements.It represents the evaluation of a given dataset against a specific quality metric</td>
+                <td>Refers to the performed quality measurements.It represents the evaluation of a given dataset against
+                  a specific quality metric</td>
               </tr>
               <tr>
                 <th>Usage note</th>
@@ -9761,7 +9757,7 @@
             </tbody>
           </table>
         </section>
-        
+
         <section id="dataset-hasQualityMeasurement">
           <h4>Property: quality measurement</h4>
           <table class="def">
@@ -9792,12 +9788,14 @@
               </tr>
               <tr>
                 <th>Definition</th>
-                <td>Refers to the performed quality measurements.It represents the evaluation of a given dataset against a specific quality metric</td>
+                <td>Refers to the performed quality measurements.It represents the evaluation of a given dataset against
+                  a specific quality metric</td>
               </tr>
               <tr>
                 <th>Usage note</th>
-                <td>Use for quality measurements other than spatial resolution in meters (use <a href="#dataset-spatial-resolution"><code>dcat:spatialResolutionInMeters</code></a>).
-                Examples of quality measurements includes completeness, accuracy, accuracy, timeliness, granularity. 
+                <td>Use for quality measurements other than spatial resolution in meters (use <a
+                    href="#dataset-spatial-resolution"><code>dcat:spatialResolutionInMeters</code></a>).
+                  Examples of quality measurements includes completeness, accuracy, accuracy, timeliness, granularity.
                 </td>
               </tr>
             </tbody>
@@ -12354,13 +12352,15 @@
               </tr>
               <tr>
                 <th>Definition</th>
-                <td>Refers to the performed quality measurements on a distribution.It represents the evaluation of a given distribution against a specific quality metric</td>
+                <td>Refers to the performed quality measurements on a distribution.It represents the evaluation of a
+                  given distribution against a specific quality metric</td>
               </tr>
               <tr>
                 <th>Usage note</th>
-                <td>Use for quality measurements other than <a href="#distribution-spatial_resolution_in_meters"><code>dcat:spatialResolutionInMeters</code></a> or  
+                <td>Use for quality measurements other than <a
+                    href="#distribution-spatial_resolution_in_meters"><code>dcat:spatialResolutionInMeters</code></a> or
                   <a href="#distribution-temporal_resolution"><code>dcat:temporalResolution</code></a>.
-                Examples of quality measurements includes completeness, accuracy, accuracy, timeliness, granularity. 
+                  Examples of quality measurements includes completeness, accuracy, accuracy, timeliness, granularity.
                 </td>
               </tr>
             </tbody>
@@ -12902,29 +12902,45 @@
                 <th>Usage note</th>
                 <td>
                   <ul>
-                    <li>This property refers to the media type of the Distribution as defined in the official
-                      register
-                      of
-                      media types managed by IANA.
+                    <li>>This property refers to the media type of the Distribution as defined in the official
+                      register of media types managed by IANA. [[IANA-MEDIA-TYPES]].</li>
+                    <li>The encoding in JSON-LD allows to use mime type without the full URL (e.g. text/csv). The
+                      JSON-LD context
+                      processor will expand automatically to the full uri in RDF using the base uri
+                      <a
+                        href='https://www.iana.org/assignments/media-types/'>https://www.iana.org/assignments/media-types/</a>.
+                      This preserves backward compatibility with DCAT-US 1.1
                     </li>
-                    <li>
-                      Der Wert des Elements "dcat:mediaType" muss einem MIME Type gemäss IANA
-                      entsprechen: [[IANA-MEDIA-TYPES]].
                     </li>
                   </ul>
+
                 </td>
               </tr>
             </tbody>
           </table>
+          <aside class="note">
+            <p>In DCAT-US 1.1, the JSON-LD context incorrectly modeled the media type as a string rather than a URI. The
+              introduction of the <a href="https://www.w3.org/TR/json-ld11/#base-iri"><code>@base</code></a> directive in the JSON-LD context addresses this issue, facilitating the
+              transition of the mediatype property from DCAT 1.1 to DCAT-US 3.0. This adjustment ensures that the
+              representation is now compliant with the DCAT specification, enabling the correct interpretation of media
+              types as URIs rather than mere strings. This important update not only corrects the previous modeling
+              mistake but also aligns DCAT-US 3.0 with the established standards and practices in data cataloging.
+            </p>
+          </aside>
           <aside class="example ds-selector-tabs" title="Usage of dcat:mediaType for dcat:Distribution">
             <div class="selectors">
               <button class="selected exampleTab1 ttl" onclick="openTab('exampleTab1', 'ttl')">TTL</button>
               <button class="exampleTab1 jsonld" onclick="openTab('exampleTab1', 'jsonld')">JSON-LD</button>
             </div>
-            <pre class="selected ttl exampleTab1" data-include-format="text"
+            <pre class="selected ttl exampleTab1" data-include-format="text" title="Example for geopackage mediatype"
               data-include="./examples/distribution/media-type.ttl"></pre>
+    
             <pre class="jsonld exampleTab1 json" data-include-format="text"
-              data-include="./examples/distribution/media-type.jsonld"></pre>
+              data-include="./examples/distribution/media-type1.jsonld"></pre>
+              <pre class="jsonld exampleTab1 json" data-include-format="text"
+              data-include="./examples/distribution/media-type2.jsonld"></pre>
+              <pre class="jsonld exampleTab1 json" data-include-format="text"
+              data-include="./examples/distribution/media-type3.jsonld"></pre>
           </aside>
         </section>
         <section id="distribution-packaging-format">
