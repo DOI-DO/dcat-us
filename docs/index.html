@@ -11433,11 +11433,7 @@
             <td><a data-cite="VOCAB-DCAT-3#Property:distribution_size">
                 <code>dcat:byteSize</code></a>
             </td>
-            <td><a data-cite="RDF-SCHEMA#ch_literal">
-                <code>rdfs:Literal</code></a>
-              (typed
-              as <a data-cite="XMLSCHEMA11-2#decimal"><code>xsd:decimal</code></a>)
-            </td>
+            <td><a data-cite="XMLSCHEMA11-2#nonNegativeInteger"><code>xsd:nonNegativeInteger</code></a></td>
             <td>O</td>
             <td>0..1</td>
             <td><span style="color: green;">Aligned</span></td>
@@ -11503,7 +11499,7 @@
             <td><span style="color: green;">Aligned</span></td>
           </tr>
           <tr>
-            <td><a href="#distribution-conforms_to">linked schemas</a></td>
+            <td><a href="#distribution-conforms_to">conforms to</a></td>
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/conformsTo"><code>dcterms:conformsTo</code></a>
             </td>
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Standard"><code>dcterms:Standard</code></a>
@@ -12475,18 +12471,17 @@
               </tr>
               <tr>
                 <th>Range</th>
-                <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
-                  (typed
-                  as <a data-cite="XMLSCHEMA11-2#decimal"><code>xsd:decimal</code></a>).
+                <td><a data-cite="XMLSCHEMA11-2#distribution-byte-size"><code>xsd:nonNegativeInteger</code></a>
                 </td>
               </tr>
               <tr>
+                <th>Definition</th>
+                <td>The size of a distribution in bytes.</td>
+              </tr>
+              <tr>
                 <th>Usage note</th>
-                <td>
-                  This property contains the size of a Distribution in bytes.
-                  If the precise size is not known, an approximate size can be indicated.
-
-                </td>
+                <td> The size in bytes can be approximated (as a non-negative integer) when the precise size is not
+                  known. </td>
               </tr>
             </tbody>
           </table>
