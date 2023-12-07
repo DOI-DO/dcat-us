@@ -12827,12 +12827,12 @@
           </table>
         </section>
         <section id="distribution-conforms_to">
-          <h4>Property: linked schemas</h4>
+          <h4>Property: conforms to</h4>
           <table class="def">
             <tbody>
               <tr>
                 <th>Property</th>
-                <td>linked schemas</td>
+                <td>conforms to</td>
               </tr>
               <tr>
                 <th>Requirement level</th>
@@ -12849,17 +12849,38 @@
               </tr>
               <tr>
                 <th>Range</th>
-                <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Standard"><code>dcterms:Standard</code></a>
+                <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Standard"><code>dcterms:Standard</code></a> (A basis
+                  for comparison; a reference point against which other things can be evaluated.)
                 </td>
+              </tr>
+              <tr>
+                <th>Definition</th>
+                <td>An established standard to which the distribution conforms.</td>
               </tr>
               <tr>
                 <th>Usage note</th>
                 <td>
-                  This property refers to a page or document about this Data Service.
+                  This is used to identify a standardized specification the distribution conforms to. It's recommended
+                  that this be a URI that serves as a unique identifier for the standard. The URI may or may not also be
+                  a URL that provides documentation of the specification. This property SHOULD be used to indicate the
+                  model, schema, ontology, view or profile that this representation of a dataset conforms to. This is
+                  (generally) a complementary concern to the media-type or format.
                 </td>
               </tr>
             </tbody>
           </table>
+          <aside class="note">
+            <p>
+              <a href="http://purl.org/dc/terms/Standard"><code>dcterms:Standard</code></a> is defined in [DCTERMS] as
+              "A basis for comparison; a reference point against which other things can be evaluated." It is not
+              restricted to formal standards issued by bodies like <abbr
+                title="International Organization for Standardization">ISO</abbr> and <abbr
+                title="World Wide Web Consortium">W3C</abbr>. In this context it will usually be used
+              for a schema, ontology, data model or profile which specifies the structure of a dataset distribution.
+              This is not necessarily tied to a single encoding or serialization.
+            </p>
+          </aside>
+
           <aside class="example ds-selector-tabs" title="Usage of dcterms:conformsTo for dcat:Distribution">
             <div class="selectors">
               <button class="selected exampleTab1 ttl" onclick="openTab('exampleTab1', 'ttl')">TTL</button>
@@ -12920,7 +12941,8 @@
           </table>
           <aside class="note">
             <p>In DCAT-US 1.1, the JSON-LD context incorrectly modeled the media type as a string rather than a URI. The
-              introduction of the <a href="https://www.w3.org/TR/json-ld11/#base-iri"><code>@base</code></a> directive in the JSON-LD context addresses this issue, facilitating the
+              introduction of the <a href="https://www.w3.org/TR/json-ld11/#base-iri"><code>@base</code></a> directive
+              in the JSON-LD context addresses this issue, facilitating the
               transition of the mediatype property from DCAT 1.1 to DCAT-US 3.0. This adjustment ensures that the
               representation is now compliant with the DCAT specification, enabling the correct interpretation of media
               types as URIs rather than mere strings. This important update not only corrects the previous modeling
@@ -12934,12 +12956,12 @@
             </div>
             <pre class="selected ttl exampleTab1" data-include-format="text" title="Example for geopackage mediatype"
               data-include="./examples/distribution/media-type.ttl"></pre>
-    
+
             <pre class="jsonld exampleTab1 json" data-include-format="text"
               data-include="./examples/distribution/media-type1.jsonld"></pre>
-              <pre class="jsonld exampleTab1 json" data-include-format="text"
+            <pre class="jsonld exampleTab1 json" data-include-format="text"
               data-include="./examples/distribution/media-type2.jsonld"></pre>
-              <pre class="jsonld exampleTab1 json" data-include-format="text"
+            <pre class="jsonld exampleTab1 json" data-include-format="text"
               data-include="./examples/distribution/media-type3.jsonld"></pre>
           </aside>
         </section>
