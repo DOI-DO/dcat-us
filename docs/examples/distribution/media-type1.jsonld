@@ -3,10 +3,10 @@
   "@id": "http://example.org/ns#Distribution2",
   "@type": "dcat:Distribution",
   "title": "Geopackage Distribution",
+  "downloadURL": "https://example.com/geopackage2.gpkg>",
   "mediaType": {
-    "@id": "http://www.iana.org/assignments/media-types/application/geopackage+sqlite3".
+    "@id": "http://www.iana.org/assignments/media-types/application/geopackage+sqlite3",
     "@type": "dcterms:MediaType",
     "label": "Geopackage"
-}
-
+  }
 }

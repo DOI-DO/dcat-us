@@ -5,13 +5,16 @@
 
 ex:Distribution1
   a dcat:Distribution ;
-  dcat:downloadURL <https://commons.wikimedia.org/wiki/file> ;
-  dcat:mediaType <https://www.iana.org/assignments/media-types/text/csv> ; 
-  .
+  dcterms:title "CSV distribution";
+  dcat:downloadURL <https://example.com/download.csv> ;
+  dcat:mediaType <https://www.iana.org/assignments/media-types/text/csv>
+.
 
     
 ex:Distribution2 a dcat:Distribution ;
-  dcterms:format [ 
-      a dcterms:MediaType ;
-      rdfs:label "Geopackage" 
-    ] .
+  dcterms:title "Geopackage distribution";
+  dcat:downloadURL <https://example.com/geopackage2.gpkg> ;
+  dcterms:mediaType <https://www.iana.org/assignments/media-types/application/geopackage+sqlite3> ;
+
+<https://www.iana.org/assignments/media-types/application/geopackage+sqlite3>  a dcterms:MediaType ;
+    rdfs:label "Geopackage" .

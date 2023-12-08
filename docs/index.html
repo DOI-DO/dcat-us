@@ -5,7 +5,7 @@
   <title>DCAT-US - Version 3</title>
   <meta content="text/html; charset=utf-8" http-equiv="content-type">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <script class="remove" src="https://www.w3.org/Tools/respec/respec-w3c" defer></script>
+  <script  src="https://www.w3.org/Tools/respec/respec-w3c"  class="remove"  defer></script>
   <script class="remove" src="config.js"></script>
   <script src="https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js"></script>
   <link rel="stylesheet" type="text/css" href="style.css">
@@ -12157,7 +12157,9 @@
               </tr>
               <tr>
                 <th>Definition</th>
-                <td>More information about the format in which a Distribution is released. This is different from the file format as, for example, a XML file (file format) could contain an XML schema (representation technique).
+                <td>More information about the format in which a Distribution is released. This is different from the
+                  file format as, for example, a XML file (file format) could contain an XML schema (representation
+                  technique).
                 </td>
               </tr>
               <tr>
@@ -12168,7 +12170,8 @@
                   structure data within a dataset, like specifying RFC 4180 for CSV, GeoJSON for JSON, OWL for RDF, or
                   XML Schema for XML. This contrasts with <a href="#distribution-format">dcterms:format</a>, which
                   broadly identifies the file format (e.g., CSV, JSON, RDF, XML), providing a general idea of the data's
-                  structure and syntax. Meanwhile, <a href="#distribution-media-type">dcterms:mediaType</a> complements these by
+                  structure and syntax. Meanwhile, <a href="#distribution-media-type">dcterms:mediaType</a> complements
+                  these by
                   defining the MIME type, such as 'text/csv' or 'application/json', crucial for software processing and
                   data transmission. The detailed insight provided by <a
                     data-cite="VOCAB-ADMS#adms-representationtechnique"><code>adms:representationTechnique</code></a> is
@@ -12819,15 +12822,23 @@
                 <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
                 </td>
               </tr>
+
+              <tr>
+                <th>Definition</th>
+                <td>A language of the resource. This refers to the natural language used for textual metadata (i.e.,
+                  titles, descriptions, etc.) of a cataloged resource (i.e., dataset or service) or the textual values
+                  of a dataset distribution
+                </td>
+              </tr>
               <tr>
                 <th>Usage note</th>
                 <td>
                   <ul>
-                    <li>This property refers to a language used in the Distribution.</li>
-                    <li>This property can be repeated if the metadata is provided in multiple languages.</li>
-                    <li>The property MUST be set if the distribution is language-dependent, or if it is given in
-                      some of the languages German, French, Italian and English but not in all four languages.
-                    </li>
+                    <li>If representations of a dataset are available for each language separately, define an instance
+                      of dcat:Distribution for each language and describe the specific language of each distribution
+                      using dcterms:language (i.e., the dataset will have multiple <a data-cite="VOCAB-DCAT-3#Property:resource_language"><code>dcterms:language</code></a> values and each
+                      distribution will have just one as the value of its <a data-cite="VOCAB-DCAT-3#Property:resource_language"><code>dcterms:language</code></a> property). In case of
+                      multilingual distributions, the distributions will have multiple <a data-cite="VOCAB-DCAT-3#Property:resource_language"><code>dcterms:language</code></a> values.</li>
                     <li>CV to be used: [[ISO 639-1]]
                     </li>
                   </ul>
