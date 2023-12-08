@@ -5,7 +5,7 @@
   <title>DCAT-US - Version 3</title>
   <meta content="text/html; charset=utf-8" http-equiv="content-type">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <script  src="https://www.w3.org/Tools/respec/respec-w3c"  class="remove"  defer></script>
+  <script src="https://www.w3.org/Tools/respec/respec-w3c" class="remove" defer></script>
   <script class="remove" src="config.js"></script>
   <script src="https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js"></script>
   <link rel="stylesheet" type="text/css" href="style.css">
@@ -3028,20 +3028,28 @@
                 </td>
               </tr>
               <tr>
-                <th>Usage note</th>
-                <td>
-                  <ul>
-                    <li>This property refers to a language used in the textual metadata describing
-                      titles, descriptions, etc. of the Datasets in the Catalog.
-                    </li>
-                    <li>The properties title and description of Catalogs, Datasets or Distribution
-                      can be provided in multiple languages. In that case, it makes sense to also list
-                      these languages on the Catalog level.
-                    </li>
-                    <li>CV to be used: [[ISO 639-1]]</li>
-                  </ul>
+                <th>Definition</th>
+                <td>A language used in the textual metadata describing titles, descriptions, etc. of the Datasets in the
+                  Catalogue.</definition>
                 </td>
               </tr>
+
+
+              <tr>
+                <th>Usage note</th>
+                <td>>Resources defined by the Library of Congress ([[ISO 639-1]] SHOULD be used.</td>
+              </tr>
+              <tr>
+                <th>Usage note</th>
+                <td>The value(s) provided for members of a catalog (i.e., dataset or service) override the value(s)
+                  provided for the catalog if they conflict.</td>
+              </tr>
+              <tr>
+                <th>Usage note</th>
+                <td>This property can be repeated if the resources of the catalog are provided in multiple languages.
+                </td>
+              </tr>
+
             </tbody>
           </table>
           <aside class="example ds-selector-tabs" title="Usage of dcterms:language for dcat:Catalog">
@@ -4395,8 +4403,12 @@
               </tr>
               <tr>
                 <th>Definition</th>
-                <td>A language used in the textual metadata describing titles, descriptions, etc. of the Catalog Record.
+                <td>A language used in the textual metadata describing titles, descriptions, etc. of the members of the catalog.
                 </td>
+              </tr>
+              <tr>
+                <th>Usage note</th>
+                <td>>Resources defined by the Library of Congress [[ISO 639-1]] SHOULD be used.</td>
               </tr>
               <tr>
                 <th>Usage note</th>
@@ -6233,8 +6245,8 @@
             <td>0..n</td>
           </tr>
           <tr>
-            <td><a href="#data-service-modified">update/modification date</a></td>
-            <td><a data-cite="DCTERMS#http://purl.org/dc/terms/modified"><code>dcterms:modified</code></a></td>
+            <td><a href="#data-service-modified">update/modification date</a></t <td><a
+                data-cite="DCTERMS#http://purl.org/dc/terms/modified"><code>dcterms:modified</code></a></td>
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
               (typed
               as <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>,
@@ -6327,7 +6339,7 @@
           </tr>
           <tr>
             <td><a href="#data-service-geographic-extent">geographic bounding box</a></td>
-            <td><a href="##http://TBD/geographicBoundingBox"><code>dcat-us:geographicBoundingBox</code></a>
+            <td><a href="#data-service-geographic-extent"><code>dcat-us:geographicBoundingBox</code></a>
             </td>
             <td><a href="#properties-for-geographic_bbox"><code>dcat-us:GeographicBoundingBox</code></a>
             </td>
@@ -7138,12 +7150,16 @@
               <tr>
                 <th>Definition</th>
                 <td>This property refers to a language supported by the Data Service. This property can be repeated if
-                  multiple languages
-                  are supported in the Data Service.</td>
+                  multiple languages are supported in the Data Service.</td>
               </tr>
               <tr>
                 <th>Usage note</th>
-                <td>CV to be used: [[ISO 639-1]]</td>
+                <td>>Resources defined by the Library of Congress ([[ISO 639-1]] SHOULD be used.</td>
+              </tr>
+              <tr>
+                <th>Usage note</th>
+                <td>This property can be repeated if the service is provided in multiple languages. (e.g. map service
+                  rendering maps in spanish or english)</td>
               </tr>
             </tbody>
           </table>
@@ -7571,7 +7587,7 @@
               </tr>
               <tr>
                 <th>Range</th>
-                <td><a data-cite="#properties-for-geographic_bbox"><code>dcat-us:GeographicBoundingBox</code></a>
+                <td><a href="#data-service-geographic-extent">><code>dcat-us:GeographicBoundingBox</code></a>
                 </td>
               </tr>
               <tr>
@@ -7776,7 +7792,7 @@
           </tr>
           <tr>
             <td><a href="#dataset-geographic_bounding_box">geographic bounding box</a></td>
-            <td><a href="data-service-geographic-extent"><code>dcat-us:geographicBoundingBox</code></a>
+            <td><a href="#dataset-geographic_bounding_box"><code>dcat-us:geographicBoundingBox</code></a>
             </td>
             <td><a href="#properties-for-geographic_bbox"><code>dcat-us:GeographicBoundingBox</code></a>
             </td>
@@ -9271,17 +9287,39 @@
                     data-cite="DCTERMS#http://purl.org/dc/terms/LinguisticSystem"><code>dcterms:LinguisticSystem</code></a>
                 </td>
               </tr>
+
               <tr>
-                <th>Usage note</th>
-                <td>
-                  <ul>
-                    <li>This property refers to a language of the Dataset.
-                      This property can be repeated if there are multiple languages in the Dataset.
-                    </li>
-                    <li>CV to be used: [[ISO 639-1]]</li>
-                  </ul>
+                <th>Definition</th>
+                <td>A language of the dataset. This refers to the natural language used for textual metadata (i.e.,
+                  titles, descriptions, etc.) of a dataset.</definition>
                 </td>
               </tr>
+
+
+              <tr>
+                <th>Usage note</th>
+                <td>Resources defined by the Library of Congress ([[ISO 639-1]] SHOULD be used.</td>
+              </tr>
+              <tr>
+                <th>Usage note</th>
+                <td>The value(s) provided for members of a catalog (i.e., dataset or service) override the value(s)
+                  provided for the catalog if they conflict.</td>
+              </tr>
+              <tr>
+                <th>Usage note</th>
+                <td>If representations of a dataset are available for each language separately, define an instance
+                  of <a href="#properties-for-distribution">dcat:Distribution</a> for each language and describe the
+                  specific language of each distribution
+                  using <a data-cite="VOCAB-DCAT-3#Property:resource_language"><code>dcterms:language</code></a>
+                  (i.e., the dataset will have multiple <a
+                    data-cite="VOCAB-DCAT-3#Property:resource_language"><code>dcterms:language</code></a> values and
+                  each distribution will have just one as the value of its <a
+                    data-cite="VOCAB-DCAT-3#Property:resource_language"><code>dcterms:language</code></a> property).
+                  In case of multilingual distributions, the distributions will have multiple <a
+                    data-cite="VOCAB-DCAT-3#Property:resource_language"><code>dcterms:language</code></a> values.
+                </td>
+              </tr>
+
             </tbody>
           </table>
           <aside class="example ds-selector-tabs" title="Usage of dcterms:language for dcat:Dataset">
@@ -12826,25 +12864,53 @@
               <tr>
                 <th>Definition</th>
                 <td>A language of the resource. This refers to the natural language used for textual metadata (i.e.,
-                  titles, descriptions, etc.) of a cataloged resource (i.e., dataset or service) or the textual values
-                  of a dataset distribution
+                  titles, descriptions, etc.) of textual values of a dataset distribution
                 </td>
               </tr>
               <tr>
                 <th>Usage note</th>
                 <td>
-                  <ul>
-                    <li>If representations of a dataset are available for each language separately, define an instance
-                      of dcat:Distribution for each language and describe the specific language of each distribution
-                      using dcterms:language (i.e., the dataset will have multiple <a data-cite="VOCAB-DCAT-3#Property:resource_language"><code>dcterms:language</code></a> values and each
-                      distribution will have just one as the value of its <a data-cite="VOCAB-DCAT-3#Property:resource_language"><code>dcterms:language</code></a> property). In case of
-                      multilingual distributions, the distributions will have multiple <a data-cite="VOCAB-DCAT-3#Property:resource_language"><code>dcterms:language</code></a> values.</li>
-                    <li>CV to be used: [[ISO 639-1]]
-                    </li>
-                  </ul>
+                  <p>Resources defined by the Library of Congress ([[ISO 639-1]] SHOULD be used.</p>
+                </td>
+              </tr>
+              <tr>
+                <th>Usage note</th>
+                <td>If representations of a dataset are available for each language separately, define an instance
+                  of <a href="#properties-for-distribution">dcat:Distribution</a> for each language and describe the
+                  specific language of each distribution
+                  using <a data-cite="VOCAB-DCAT-3#Property:resource_language"><code>dcterms:language</code></a>
+                  (i.e., the dataset will have multiple <a
+                    data-cite="VOCAB-DCAT-3#Property:resource_language"><code>dcterms:language</code></a> values and
+                  each distribution will have just one as the value of its <a
+                    data-cite="VOCAB-DCAT-3#Property:resource_language"><code>dcterms:language</code></a> property).
+                  In case of multilingual distributions, the distributions will have multiple <a
+                    data-cite="VOCAB-DCAT-3#Property:resource_language"><code>dcterms:language</code></a> values.
+                </td>
+              </tr>
+              <tr>
+                <th>Usage Note</th>
+                <td>
+                  For datasets available in separate languages, create a <a
+                    href="#properties-for-distribution">dcat:Distribution</a> instance for each language version.
+                  Assign a unique <a
+                    data-cite="VOCAB-DCAT-3#Property:resource_language"><code>dcterms:language</code></a> value to
+                  each distribution to specify its language. Distributions with multiple languages should list
+                  several <a data-cite="VOCAB-DCAT-3#Property:resource_language"><code>dcterms:language</code></a>
+                  values.
+
                 </td>
               </tr>
           </table>
+          <aside class="example ds-selector-tabs" title="Usage of dcterms:language for dcat:Distribution">
+            <div class="selectors">
+              <button class="selected exampleTab1 ttl" onclick="openTab('exampleTab1', 'ttl')">TTL</button>
+              <button class="exampleTab1 jsonld" onclick="openTab('exampleTab1', 'jsonld')">JSON-LD</button>
+            </div>
+            <pre class="selected ttl exampleTab1" data-include-format="text"
+              data-include="./examples/distribution/language.ttl"></pre>
+            <pre class="jsonld exampleTab1 json" data-include-format="text"
+              data-include="./examples/distribution/language.jsonld"></pre>
+          </aside>
         </section>
         <section id="distribution-conforms_to">
           <h4>Property: conforms to</h4>

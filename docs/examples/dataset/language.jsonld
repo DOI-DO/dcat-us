@@ -2,8 +2,5 @@
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
   "@id": "https://uscensus.gov/opendata/1234",
   "@type": "dcat:Dataset",
-  "language": [
-    "http://publications.europa.eu/resource/authority/language/DEU",
-    "http://publications.europa.eu/resource/authority/language/FRA"
-  ]
+  "language": [ "en" , "es" ]
 }
