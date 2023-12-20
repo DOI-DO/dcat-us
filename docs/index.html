@@ -3037,7 +3037,7 @@
 
               <tr>
                 <th>Usage note</th>
-                <td>>Resources defined by the Library of Congress ([[ISO 639-1]] SHOULD be used.</td>
+                <td>Resources defined by the Library of Congress ([[ISO 639-1]] SHOULD be used.</td>
               </tr>
               <tr>
                 <th>Usage note</th>
@@ -4403,12 +4403,13 @@
               </tr>
               <tr>
                 <th>Definition</th>
-                <td>A language used in the textual metadata describing titles, descriptions, etc. of the members of the catalog.
+                <td>A language used in the textual metadata describing titles, descriptions, etc. of the members of the
+                  catalog.
                 </td>
               </tr>
               <tr>
                 <th>Usage note</th>
-                <td>>Resources defined by the Library of Congress [[ISO 639-1]] SHOULD be used.</td>
+                <td>Resources defined by the Library of Congress [[ISO 639-1]] SHOULD be used.</td>
               </tr>
               <tr>
                 <th>Usage note</th>
@@ -7154,7 +7155,7 @@
               </tr>
               <tr>
                 <th>Usage note</th>
-                <td>>Resources defined by the Library of Congress ([[ISO 639-1]] SHOULD be used.</td>
+                <td>Resources defined by the Library of Congress ([[ISO 639-1]] SHOULD be used.</td>
               </tr>
               <tr>
                 <th>Usage note</th>
@@ -7587,7 +7588,7 @@
               </tr>
               <tr>
                 <th>Range</th>
-                <td><a href="#data-service-geographic-extent">><code>dcat-us:GeographicBoundingBox</code></a>
+                <td><a href="#data-service-geographic-extent"><code>dcat-us:GeographicBoundingBox</code></a>
                 </td>
               </tr>
               <tr>
@@ -9658,7 +9659,7 @@
                 </td>
               </tr>
             </tbody>
-          </table>>
+          </table>
         </section>
         <section id="dataset-release-date">
           <h4>Property: release date</h4>
@@ -12874,20 +12875,6 @@
                 </td>
               </tr>
               <tr>
-                <th>Usage note</th>
-                <td>If representations of a dataset are available for each language separately, define an instance
-                  of <a href="#properties-for-distribution">dcat:Distribution</a> for each language and describe the
-                  specific language of each distribution
-                  using <a data-cite="VOCAB-DCAT-3#Property:resource_language"><code>dcterms:language</code></a>
-                  (i.e., the dataset will have multiple <a
-                    data-cite="VOCAB-DCAT-3#Property:resource_language"><code>dcterms:language</code></a> values and
-                  each distribution will have just one as the value of its <a
-                    data-cite="VOCAB-DCAT-3#Property:resource_language"><code>dcterms:language</code></a> property).
-                  In case of multilingual distributions, the distributions will have multiple <a
-                    data-cite="VOCAB-DCAT-3#Property:resource_language"><code>dcterms:language</code></a> values.
-                </td>
-              </tr>
-              <tr>
                 <th>Usage Note</th>
                 <td>
                   For datasets available in separate languages, create a <a
@@ -13006,22 +12993,37 @@
                 </td>
               </tr>
               <tr>
+                <th>Definition</th>
+                <td>
+                  This property refers to the media type of the Distribution as defined in the official
+                  register of media types managed by IANA [[IANA-MEDIA-TYPES]].</li>
+                </td>
+              </tr>
+              <tr>
                 <th>Usage note</th>
                 <td>
-                  <ul>
-                    <li>>This property refers to the media type of the Distribution as defined in the official
-                      register of media types managed by IANA. [[IANA-MEDIA-TYPES]].</li>
-                    <li>The encoding in JSON-LD allows to use mime type without the full URL (e.g. text/csv). The
-                      JSON-LD context
-                      processor will expand automatically to the full uri in RDF using the base uri
-                      <a
-                        href='https://www.iana.org/assignments/media-types/'>https://www.iana.org/assignments/media-types/</a>.
-                      This preserves backward compatibility with DCAT-US 1.1
-                    </li>
-                    </li>
-                  </ul>
-
+                  <p>
+                    The <code>mediaType</code> property specifies the media type (MIME type) of the distribution.
+                    It should be used when the distribution's format corresponds to a standard media type registered
+                    with the IANA Media Types [[IANA-MEDIA-TYPES]].
+                    This property provides a precise technical descriptor of the data format (e.g.,
+                    <code>application/json</code>, <code>text/csv</code>).
+                  </p>
                 </td>
+              </tr>
+              <tr>
+                <th>Usage note</th>
+                <td>
+                  This property refers to the media type of the Distribution as defined in the official
+                  register of media types managed by IANA. [[IANA-MEDIA-TYPES]].</li>
+                </td>
+              </tr>
+              <tr>
+                <th>Usage note</th>
+                <td>The encoding in JSON-LD allows to use mime type without the full URL (e.g. text/csv). The
+                  JSON-LD context processor will expand automatically to the full uri in RDF using the base uri <a
+                    href='https://www.iana.org/assignments/media-types/'>https://www.iana.org/assignments/media-types/</a>.
+                  This preserves backward compatibility with DCAT-US 1.1 </td>
               </tr>
             </tbody>
           </table>
