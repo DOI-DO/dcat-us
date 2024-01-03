@@ -6246,8 +6246,8 @@
             <td>0..n</td>
           </tr>
           <tr>
-            <td><a href="#data-service-modified">update/modification date</a></t <td><a
-                data-cite="DCTERMS#http://purl.org/dc/terms/modified"><code>dcterms:modified</code></a></td>
+            <td><a href="#data-service-modified">update/modification date</a></td>
+            <td><a  data-cite="DCTERMS#http://purl.org/dc/terms/modified"><code>dcterms:modified</code></a></td>
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
               (typed
               as <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>,
@@ -7992,7 +7992,7 @@
             </td>
             <td>O</td>
             <td>0..n</td>
-            <td><span style="color: green;">Aligned</span></td>
+            <td><span style="color: green;">Fixed</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-sample">sample</a></td>
@@ -9729,6 +9729,7 @@
         </section>
         <section id="dataset-rights">
           <h4>Property: rights</h4>
+          <aside class=note><strong>Changes from DCAT-US 1.1:</strong>  In transitioning from the DCAT-US 1.1 to the DCAT-US 3.0 Profile,  the cardinality of this property has been extended to 0..n</aside>
           <table class="def">
             <tbody>
               <tr>
@@ -9761,6 +9762,8 @@
               </tr>
             </tbody>
           </table>
+
+         
         </section>
         <section id="dataset-sample">
           <h4>Property: sample</h4>
