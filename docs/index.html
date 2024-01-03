@@ -2551,7 +2551,7 @@
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/RightsStatement"><code>dcterms:RightsStatement</code></a>
             </td>
             <td>R</td>
-            <td>0..1</td>
+            <td>0..n</td>
             <td><span style="color: green;">Aligned</span></td>
           </tr>
           <tr>
@@ -3183,7 +3183,7 @@
               </tr>
               <tr>
                 <th>Cardinality</th>
-                <td>0..1</td>
+                <td>0..n</td>
               </tr>
               <tr>
                 <th>URI</th>
@@ -6279,7 +6279,7 @@
           <tr>
             <td><a href="#data-service-spatial">spatial/geographic coverage</a></td>
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/spatial"><code>dcterms:spatial</code></a>
-            </td>hasQualityMeasuremen
+            </td>
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Location"><code>dcterms:Location</code></a></td>
             <td>O</td>
             <td>0..n</td>
@@ -7235,9 +7235,7 @@
                 <th>Definition</th>
                 <td>
                   A statement that concerns all rights for the Data Service not addressed with dcterms:license
-                  or
-                  dcterms:accessRights, such as copyright
-                  statements.
+                  or dcterms:accessRights, such as copyright statements.
                 </td>
               </tr>
             </tbody>
@@ -7983,6 +7981,18 @@
             <td>O</td>
             <td>0..1</td>
             <td>No Change</td>
+          </tr>
+          <tr>
+            <td><a href="#dataset-rights">rights</a></td>
+            <td><a data-cite="DCTERMS#http://purl.org/dc/terms/rights">
+                <code>dcterms:rights</code></a>
+            </td>
+            <td><a data-cite="DCTERMS#http://purl.org/dc/terms/RightsStatement">
+                <code>dcterms:RightsStatement</code></a>
+            </td>
+            <td>O</td>
+            <td>0..n</td>
+            <td><span style="color: green;">Aligned</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-sample">sample</a></td>
@@ -9717,6 +9727,41 @@
               data-include="./examples/dataset/issued.jsonld"></pre>
           </aside>
         </section>
+        <section id="dataset-rights">
+          <h4>Property: rights</h4>
+          <table class="def">
+            <tbody>
+              <tr>
+                <th>Property</th>
+                <td>rights</td>
+              </tr>
+              <tr>
+                <th>Requirement level</th>
+                <td>Recommended</td>
+              </tr>
+              <tr>
+                <th>Cardinality</th>
+                <td>0..n</td>
+              </tr>
+              <tr>
+                <th>URI</th>
+                <td><a data-cite="DCTERMS#http://purl.org/dc/terms/rights"><code>dcterms:rights</code></a></td>
+              </tr>
+              <tr>
+                <th>Range</th>
+                <td><a data-cite="DCTERMS#http://purl.org/dc/terms/RightsStatement">
+                    <code>dcterms:RightsStatement</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Usage note</th>
+                <td>
+                  This property refers to a statement that specifies copyrights associated with the Dataset.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
         <section id="dataset-sample">
           <h4>Property: sample</h4>
           <table class="def">
@@ -11322,7 +11367,7 @@
                 <code>dcterms:RightsStatement</code></a>
             </td>
             <td>R</td>
-            <td>0..1</td>
+            <td>0..n</td>
             <td><span style="color: green;">Aligned</span></td>
           </tr>
           <tr>
@@ -11913,7 +11958,7 @@
               </tr>
               <tr>
                 <th>Cardinality</th>
-                <td>0..1</td>
+                <td>0..n</td>
               </tr>
               <tr>
                 <th>URI</th>
