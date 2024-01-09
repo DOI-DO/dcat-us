@@ -6247,7 +6247,7 @@
           </tr>
           <tr>
             <td><a href="#data-service-modified">update/modification date</a></td>
-            <td><a  data-cite="DCTERMS#http://purl.org/dc/terms/modified"><code>dcterms:modified</code></a></td>
+            <td><a data-cite="DCTERMS#http://purl.org/dc/terms/modified"><code>dcterms:modified</code></a></td>
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
               (typed
               as <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>,
@@ -9729,7 +9729,8 @@
         </section>
         <section id="dataset-rights">
           <h4>Property: rights</h4>
-          <aside class=note><strong>Changes from DCAT-US 1.1:</strong>  In transitioning from the DCAT-US 1.1 to the DCAT-US 3.0 Profile,  the cardinality of this property has been extended to 0..n</aside>
+          <aside class=note><strong>Changes from DCAT-US 1.1:</strong> In transitioning from the DCAT-US 1.1 to the
+            DCAT-US 3.0 Profile, the cardinality of this property has been extended to 0..n</aside>
           <table class="def">
             <tbody>
               <tr>
@@ -9763,7 +9764,7 @@
             </tbody>
           </table>
 
-         
+
         </section>
         <section id="dataset-sample">
           <h4>Property: sample</h4>
@@ -14852,31 +14853,28 @@
         <tr>
           <th class="prop">Definition:</th>
 
-          <td>A formal declaration accompanying a dataset which outlines the responsibilities and limitations of the
-            data provider in terms of the accuracy, completeness, and potential use of the data. It often serves to
-            limit the legal exposure of the data provider by defining the scope of allowed uses and disclaiming
-            warranties or guarantees.
+          <td>A formal declaration accompanying a dataset intended to limit the legal exposure of the data provider by disclaiming warranties or guarantees.
           </td>
         </tr>
         <tr>
           <th class="prop">Usage note</th>
           <td>
             <ul>
-              <li>
-                The LiabilityStatement should be attached to a dcat:Dataset to indicate the terms and conditions of
-                the
-                dataset's usage.</li>
-              <li>This statement should provide information on:
+              <li>This statement often includes information of the following aspects:
                 <ul>
-                  <li>The accuracy or completeness of the dataset.</li>
-                  <li>Limitations on how the dataset may be used.</li>
-                  <li>Any disclaimers or lack of guarantees/warranties.</li>
-                  <li>Indemnification details.</li>
+                  <li>Limitation of Responsibility: Clarifying that the publisher or provider is not responsible for any
+                    errors in the data, and any consequences resulting from its use.</li>
+                  <li>No Guarantee of Validity: Indicating that there is no guarantee of the accuracy, reliability, or
+                    completeness of the data provided.</li>
+                  <li>Absence of Endorsement: Stating that inclusion of the data in the catalog does not imply
+                    endorsement by the publisher or provider.</li>
+                  <li>Use at Own Risk: Advising users that they use the data at their own risk and are responsible for
+                    ensuring its appropriateness for their intended purposes.</li>
                 </ul>
+              </li>
               <li>The statement may be provided as a literal text or as a URL pointing to a detailed liability
                 statement.</li>
-              <li>Utilizing the LiabilityStatement helps in setting clear expectations for consumers of the dataset
-                and
+              <li>Utilizing the LiabilityStatement helps in setting clear expectations for consumers of the dataset and
                 limits potential legal exposures of the data provider.</li>
             </ul>
           </td>
@@ -14968,7 +14966,7 @@
           <pre class="selected ttl exampleTab1" data-include-format="text"
             data-include="./examples/liability-statement.ttl"></pre>
           <pre class="jsonld exampleTab1 json" data-include-format="text"
-            data-include="./examples/liability-statement.jsonld"></pre>
+            data-include="./examples/liability-statement1.jsonld"></pre>
         </aside>
       </section>
     </section>
