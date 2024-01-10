@@ -14853,7 +14853,8 @@
         <tr>
           <th class="prop">Definition:</th>
 
-          <td>A formal declaration accompanying a dataset intended to limit the legal exposure of the data provider by disclaiming warranties or guarantees.
+          <td>A formal declaration accompanying a dataset intended to limit the legal exposure of the data provider by
+            disclaiming warranties or guarantees.
           </td>
         </tr>
         <tr>
@@ -15078,9 +15079,8 @@
               <tr>
                 <th>Usage note</th>
                 <td>Property <code>spdx:licenseText</code> MAY only be used to specify license information in legacy
-                  metadata records, not compliant with
-                  standard license from an endorsed registry. This property can be repeated for
-                  parallel language versions of the description </td>
+                  metadata records, not compliant with1 standard license from an endorsed registry. This property can be
+                  repeated for parallel language versions of the description </td>
               </tr>
             </tbody>
           </table>
@@ -18422,8 +18422,8 @@
             <td>1..1</td>
           </tr>
           <tr>
-            <td><a href="#use_restriction-authority">specific restriction</a></td>
-            <td><a href="#use_restriction-authority"><code>dcat-us:specificRestriction</code></a>
+            <td><a href="#use_restriction-specific_restriction">specific restriction</a></td>
+            <td><a href="#use_restriction-specific_restriction"><code>dcat-us:specificRestriction</code></a>
             </td>
             <td><a data-cite="SKOS-REFERENCE#concepts"><code>skos:Concept</code></a>
             <td>R</td>
@@ -18478,13 +18478,13 @@
 
       <section id="use_restriction-recommended-props">
         <h3>Recommended Properties</h3>
-        <section id="use_restriction-authority">
-          <h4>Property: restriction authority</h4>
+        <section id="use_restriction-specific_restriction">
+          <h4>Property: specific restriction</h4>
           <table class="def">
             <tbody>
               <tr>
                 <th>Property</th>
-                <td>restriction authority</td>
+                <td>specific restriction</td>
               </tr>
               <tr>
                 <th>Requirement level</th>
@@ -18496,7 +18496,7 @@
               </tr>
               <tr>
                 <th>URI</th>
-                <td><a href="#use_restriction-authority"><code>dcat-us:specificRestriction</code></a>
+                <td><a href="#use_restriction-specific_restriction"><code>dcat-us:specificRestriction</code></a>
                 </td>
               </tr>
               <tr>
@@ -18506,7 +18506,9 @@
               </tr>
               <tr>
                 <th>Definition</th>
-                <td>The authority of the restriction</td>
+                <td>The identification of the type of use restrictions, based on copyright, donor, or statutory
+                  provisions, on the archival materials.
+                </td>
               </tr>
             </tbody>
           </table>
@@ -19937,43 +19939,464 @@
     <!-- Legal Information  -->
     <section id="legal-metadata" class="informative">
 
-      <h3>Legal Information</h3>
-      <aside class="note">TODO</aside>
+      <h3>Legal Metadata</h3>
+
       <p>
-        Supplying accurate and adequate legal information holds significance in establishing trust among those who wish
-        to reuse candidate data. The absence of clear legal details poses a risk to data reuse, as individuals are left
-        unaware of permissible actions. While prior regulations and initiatives, like the Findable, Accessible,
-        Interoperable, and Reusable (FAIR) data principles, underline this importance, contemporary laws have become
-        more
-        rigorous by stipulating a baseline level of reuse standards. Selecting the right way to express conditions for
-        access to and re-use of resources can be complex. In essence, it is advisable for data publishers to engage
-        their
-        legal experts to ensure the provision of suitable guidelines.
-
+        The DCAT-US specification emphasizes clear and accurate legal information provision for datasets,
+        data series, distributions, and data services. Aligning with the FAIR data principles, this approach is
+        essential for informed data use and ensuring compliance with relevant laws and policies. Contemporary laws
+        increasingly mandate clear legal guidelines, highlighting the need for explicit reuse standard disclosures. The
+        DCAT-US strategy aims to articulate legal information at the most specific sharing level to prevent conflicts
+        and discrepancies, ensuring clarity and consistency across different data organization levels. Engaging legal
+        experts is crucial in developing precise and understandable guidelines for each data publisher.
       </p>
-      <p>DCAT-US employs a strategy to express legal information only at the most specific level of sharing, such as
-        Distribution or Data Service, to avoid potential conflicts. If legal information are provided at both the
-        Dataset and Distribution levels, discrepancies might arise without clear precedence. This approach eliminates
-        the need to resolve conflicts between legal information at the Dataset (or Dataset Series) level and its related
-        Distributions or Data Services.</p>
+
       <p>
-        This specification distinguishes the following main situations:
-        one where a statement is associated with a resource that is explicitly declared as a 'license';
-        a second, where the statement is associated with a resource denoting only access rights;
-        a third, covering all the other cases - i.e., statements not concerning licensing conditions and/or access
-        rights(e.g., copyright statements).
-
+        Legal information within DCAT-US is categorized into distinct types, each addressing different legal aspects for
+        digital resources. This categorization helps in tailoring the guidelines to the specific nature of each
+        resource, including those governed by the National Archives and Records Administration (NARA).
       </p>
-      <aside class="note">TO COMPLETE</aside>
 
-      <aside class="note">
-        <p>
-          The provision of licensing conditions and access rights complies with the Best Practices 4 ("<a
-            data-cite="DWBP#licenses">Provide data license information</a>") and 22 ("<a
-            data-cite="DWBP#DataUnavailabilityReference">Provide an explanation for data that is not available</a>"),
-          respectively, from [[DWBP]].
-        </p>
+      <ul>
+        <li><strong>License Declarations:</strong> Provide clear guidelines on resource usage, redistribution, or
+          modification.</li>
+        <li><strong>Access Rights:</strong> Detail who can access the resource and under what conditions.</li>
+        <li><strong>Usage Rights:</strong> Concern the rights associated with resource use, often detailing scope and
+          limitations.</li>
+        <li><strong>Liability Statements:</strong> Outline responsibilities and liabilities associated with resource
+          usage.</li>
+        <li><strong>Copyright Information:</strong> Clarify the copyright status of the resource.</li>
+        <li><strong>Controlled Unclassified Information (CUI):</strong> Indicate special handling or dissemination
+          controls for CUI, especially relevant to NARA.</li>
+        <li><strong>Privacy and Confidentiality:</strong> Address personal data, privacy, and confidentiality issues.
+        </li>
+        <li><strong>Intellectual Property Rights (IPR):</strong> Deal with intellectual property aspects like patents
+          and trademarks.</li>
+      </ul>
+
+
+      <p>
+        The DCAT-US profile addresses unique requirements for digital resources managed by the <a
+          href="https://www.archives.gov/">National Archives and Records Administration (NARA)</a>. It employs a
+        structured approach to define access, use and CUI restrictions using well-defined code lists, enhancing the
+        precision of legal information management, which is critical for datasets involving NARA-governed materials.
+        These materials, governed by NARA's guidelines, involve a range of legal and ethical considerations, including
+        content sensitivity, legal compliance, donor stipulations, and preservation needs. </p>
+      <p> Adherence to these NARA-specific guidelines is vital for the responsible management of datasets with
+        historical, legal, or cultural significance, ensuring they align with legal frameworks. Below are the key
+        NARA-specific restrictions: </p>
+
+      <ul>
+        <li><strong>Access Restrictions:</strong> Detailing who can access NARA-governed digital assets and under what
+          conditions, in accordance with the federal records legal framework. This includes guidelines on public access
+          and accessing restricted records.</li>
+        <li><strong>Use Restrictions:</strong> Outlining the rights and limitations associated with the use
+          of NARA-governed assets, focusing on specific legal constraints.</li>
+        <li><strong>Controlled Unclassified Information (CUI) Restrictions:</strong> Specifying the handling and
+          dissemination controls for NARA assets that involve CUI, as mandated by law.</li>
+      </ul>
+
+
+      <h4>Access Rights</h4>
+      <p>
+        The <a href="#distribution-access-rights"><code>dct:accessRights</code></a> property in the DCAT-US
+        specification plays a key role in defining the accessibility of a dataset, distribution or data service. This
+        property provides information about the access restrictions placed on a digital resources, including any
+        limitations or permissions required for accessing the data. </p>
+      <p>
+        Accurately defining access rights is crucial for data providers to ensure
+        that users are aware of any conditions or limitations on accessing datasets.
+        This transparency aids users in understanding and complying with access
+        policies, facilitating responsible and legal use of data.
+      </p>
+
+      <p>
+        The <a href="#distribution-access-rights"><code>dct:accessRights</code></a> property is used to describe the
+        general conditions under which a dataset is
+        accessible. This may include information about:
+      <ul>
+        <li>
+          <strong>Public Access:</strong> Indicating whether a dataset is publicly
+          accessible or restricted to certain groups.
+        </li>
+        <li>
+          <strong>Restrictions:</strong> Detailing any specific conditions or
+          limitations on who can access the dataset.
+        </li>
+        <li>
+          <strong>Requirements:</strong> Outlining any prerequisites for accessing
+          the dataset, such as membership, subscriptions, or compliance with
+          certain terms.
+        </li>
+      </ul>
+      </p>
+      <p>
+        The access rights is defined as an instance of <a
+          href="#properties-for-rights-statement"><code>dcterms:RightsStatement</code></a>. This class accommodates URL
+        references and custom rights statements as literal via <a
+          href="#rights-statement-attributionText"><code>odrs:attributionText</code></a>.
+      </p>
+
+      <p>Additionally, access rights applies both at the dataset and distribution levels. While a dataset access rights
+        defines the overall terms for the entire dataset, each distribution can have its own specific access rights,
+        potentially different from the dataset's access rights. This flexibility allows for tailored access rights for
+        different forms or versions of the dataset, enhancing the dataset's usability and compliance with varied user
+        needs.</p>
+      <p>
+        This property does not typically include the access URL or mechanism, which
+        is covered by the <a href="distribution-access-url"><code>dcat:accessURL</code></a> property. Instead,
+        <a href="#distribution-access-rights"><code>dct:accessRights</code></a> focuses on the legal or policy
+        constraints that govern the availability of the dataset.
+      </p>
+      <h4>License Document</h4>
+      <p>
+        The <a href="#properties-for-license-document"><code>dcat-us:LicenseDocument</code></a> is an RDF Class in the
+        DCAT-US
+        specification designed to specify the licensing terms under which a dataset
+        is made available. This class plays a vital role in clearly communicating
+        the legal permissions and restrictions associated with the use of a dataset.
+        Its focus is broader, covering various aspects of dataset usage and
+        redistribution in a digital environment, typically for datasets published by
+        or for government agencies.
+      </p>
+      <p>
+        The License Document typically includes information such as:
+      <ul>
+        <li>
+          <strong>Terms of Use:</strong> Detailed conditions under which the
+          dataset can be used, modified, shared, or distributed.
+        </li>
+        <li>
+          <strong>Restrictions:</strong> Any limitations or prohibitions regarding
+          the use of the dataset.
+        </li>
+        <li>
+          <strong>Rights Granted:</strong> Specific rights that are granted to
+          users of the dataset, such as the right to use, reproduce, or distribute.
+        </li>
+        <li>
+          <strong>Attribution Requirements:</strong> Requirements for acknowledging
+          the source of the dataset in derivative works or publications.
+        </li>
+      </ul>
+      </p>
+      <p>
+        In dataset metadata, the <a href="#properties-for-license-document"><code>dcat-us:LicenseDocument</code></a> can
+        be referenced using the property <code>dct:license</code>. This ensures that users are aware of and can easily
+        access the licensing terms associated with a dataset. </p>
+      <p>
+        Implementing <a href="#properties-for-license-document"><code>dcat-us:LicenseDocument</code></a> is crucial
+        for data providers to ensure legal clarity and compliance, and it assists users in understanding their rights
+        and responsibilities when using the dataset. </p>
+      <p>Property <a href="#license-document-license-text"><code>spdx:licenseText</code></a> MAY only be used to
+        specify license information in legacy metadata records, not compliant with1 standard license from an endorsed
+        registry. This property can be repeated
+        for parallel language versions of the description </p>
+      <p>
+        Additionally, licensing applies both at the dataset and distribution levels.
+        While a dataset license defines the overall terms for the entire dataset,
+        each distribution can have its own specific license, potentially different
+        from the dataset's license. This flexibility allows for tailored legal terms
+        for different forms or versions of the dataset, enhancing the dataset's
+        usability and compliance with varied user needs.
+      </p>
+      <p>
+        It is important for data providers to ensure consistency between the dataset
+        license and distribution licenses to avoid confusion. Clear and accessible
+        licensing information for both datasets and their distributions is essential
+        for users to understand their legal rights and obligations.
+      </p>
+
+      <p>Concerning license vocabularies, implementers are encouraged to consult legal
+        experts to develop precise and understandable guidelines.
+      </p>
+
+
+
+
+
+      <h4>Liability Statement</h4>
+      <p>
+        The introduction of <a href="#properties-for-liability_statement"><code>dcat-us:LiabilityStatement</code></a>
+        in the DCAT-US 3.0 profile is a formal declaration by data providers aimed at limiting legal exposure related to
+        the dataset. It disclaims warranties and guarantees, setting clear user expectations for dataset usage, thereby
+        enhancing legal compliance and transparency.
+      </p>
+      <p>
+        Key aspects typically covered in the Liability Statement include:
+      <ul>
+        <li>
+          <strong>Limitation of Responsibility:</strong> Disclaiming provider
+          responsibility for data errors and consequential impacts.
+        </li>
+        <li>
+          <strong>No Guarantee of Validity:</strong> No assurance of data
+          accuracy, reliability, or completeness.
+        </li>
+        <li>
+          <strong>Absence of Endorsement:</strong> Clarifying that catalog
+          inclusion does not imply provider endorsement.
+        </li>
+        <li>
+          <strong>Use at Own Risk:</strong> Users are responsible for assessing
+          data suitability for their purposes.
+        </li>
+      </ul>
+      </p>
+      <p>
+        The Liability Statement can be conveyed as literal text or a URL in the
+        dataset metadata, offering flexibility in communication based on the dataset's
+        legal context.
+      </p>
+
+      <p>Concerning liability statement, implementers are encouraged to consult legal
+        experts to develop precise and understandable guidelines.
+      </p>
+
+      <h5>Example</h5>
+      <aside class="example ds-selector-tabs" title="LiabilityStatement example">
+        <div class="selectors">
+          <button class="selected exampleTab1 ttl" onclick="openTab('exampleTab1', 'ttl')">TTL</button>
+          <button class="exampleTab1 jsonld" onclick="openTab('exampleTab1', 'jsonld')">JSON-LD</button>
+        </div>
+        <pre class="selected ttl exampleTab1" data-include-format="text"
+          data-include="./examples/liability-statement.ttl"></pre>
+        <pre class="jsonld exampleTab1 json" data-include-format="text"
+          data-include="./examples/liability-statement1.jsonld"></pre>
       </aside>
+
+      <h4>Copyrights</h4>
+      <p>
+        Copyrights are legal rights granted to the creators of original works,
+        including literary, dramatic, musical, artistic, and certain other
+        intellectual creations. These rights provide creators with exclusive control
+        over the use and distribution of their works for a specific period.
+      </p>
+      <p>
+        Key aspects of copyright law include:
+      <ul>
+        <li>
+          <strong>Exclusive Rights:</strong> Copyright holders have exclusive rights
+          to reproduce, distribute, perform, display, and create derivative works
+          from their creations.
+        </li>
+        <li>
+          <strong>Duration:</strong> The duration of copyright protection varies by
+          jurisdiction.
+        </li>
+        <li>
+          <strong>Public Domain:</strong> After copyright protection expires, works
+          enter the public domain and can be used freely by anyone without
+          permission or payment.
+        </li>
+        <li>
+          <strong>Fair Use:</strong> Certain uses of copyrighted material may be
+          considered fair use, such as for criticism, comment, news reporting,
+          teaching, scholarship, and research, without the need for permission from
+          or payment to the copyright holder.
+        </li>
+      </ul>
+      </p>
+      <p>
+        The copyrights is defined as an instance of <a
+          href="#properties-for-rights-statement"><code>dcterms:RightsStatement</code></a>. This class accommodates URL
+        references and custom copyrights statements as literal via <a
+          href="#rights-statement-attributionText"><code>odrs:attributionText</code></a>.
+      </p>
+
+      <p>Additionally, copyrights applies both at the dataset and distribution levels. While a dataset copyrights
+        defines the overall terms for the entire dataset, each distribution can have its own specific copyrights,
+        potentially different from the dataset's copyrights. This flexibility allows for tailored copyrights for
+        different forms or versions of the dataset, enhancing the dataset's usability and compliance with varied user
+        needs.</p>
+
+
+      <h4>NARA Access Restrictions</h4>
+      <p>
+        The National Archives and Records Administration (NARA) enforces Access Restrictions to ethically and legally
+        manage a wide array of historical records. These restrictions protect sensitive information, comply with legal
+        standards, honor donor agreements, and preserve physical and digital integrity.
+      </p>
+
+      <p>
+        Access Restrictions are tailored to each archival collection, balancing historical significance with legal,
+        ethical, and preservation considerations. This ensures appropriate access while respecting archival practices.
+      </p>
+
+      <p>
+        The <a href="#properties-for-access_restriction"><code>dcat-us:AccessRestriction</code></a> class in DCAT-US
+        application profile represents NARA's access restrictions, providing a framework to define and communicate
+        limitations on record accessibility. This class supports NARA in managing sensitive content, maintaining
+        confidentiality, and upholding data integrity, aiding stakeholders in understanding accessibility constraints.
+        The following properties are used to describe use restrictions:
+      </p>
+
+      <ul>
+        <li>
+          <strong>Restriction Status:</strong> This mandatory property is linked to the NARA <a
+            href="https://www.archives.gov/research/catalog/lcdrg/authority_lists/accesslist.html">Access Restriction
+            Status
+            Authority
+            List</a>, the <a href="#access_restriction-restriction_status">dcat-us:restrictionStatus</a> property
+          indicates whether or not there are access restrictions on the archival materials.
+        </li>
+        <li>
+          <strong>Specific Restriction:</strong> This recommended <a
+            href="#access_restriction-specific_restriction">dcat-us:specificRestriction</a> property refers to the NARA
+          <a href="https://www.archives.gov/research/catalog/lcdrg/authority_lists/specificaccesslist.html">Specific
+            Access
+            Restriction Authority List</a> for detailed information on restrictions. It defines specific access
+          restrictions
+          to the archival materials, based on national security considerations, donor restrictions, court orders, and
+          other statutory or regulatory provisions.
+        </li>
+        <li>
+          <strong>Restriction Note:</strong> This optional <a
+            href="#access_restriction-restriction_note">dcat-us:restrictionNote</a> property can include additional
+          contextor annotations about restrictions. Its use depends on the <a
+            href="#access_restriction-restriction_status">dcat-us:restrictionStatus</a> property, and certain terms
+          from the authority lists may require its application. It clarifies complex access restrictions, explains
+          multiple
+          levels of security classifications, identifies restricting statutes, or explains access restrictions not
+          included in the <a
+            href="https://www.archives.gov/research/catalog/lcdrg/elements/specificaccess.html">Specific Access
+            Restriction Authority List</a> or <a
+            href="https://www.archives.gov/research/catalog/lcdrg/authority_lists/securitylist.html">Security
+            Classification Authority List</a>.
+        </li>
+      </ul>
+
+      <p>
+        These properties and their corresponding code lists are essential for encoding and interpreting restriction data
+        accurately within the NARA guidelines and DCAT-US framework. The SKOS vocabulary for these lists is available in
+        the <a href="https://github.com/DOI-DO/dcat-us/blob/main/vocabularies/nara-restrictions.ttl">DCAT-US
+          repository</a>, with JSON-LD URIs abbreviated for space. The following is the code list for <a
+          href="#access_restriction-restriction_status">dcat-us:restrictionStatus</a> property:
+      </p>
+
+      <table class="simple">
+        <thead>
+          <tr>
+            <th>URI (abbr.)</th>
+            <th>Label</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code title="http://data.gov/vocab/access-rights/no-limitations">no-limitations</code></td>
+            <td>No limitations</td>
+            <td>Anybody can directly and anonymously access the data, without being required to register or
+              authenticate.</td>
+          </tr>
+          <tr>
+            <td><code title="http://data.gov/vocab/access-rights/registration-required">registration-required</code>
+            </td>
+            <td>Registration required</td>
+            <td>Anybody can access the data, but they have to register first.</td>
+          </tr>
+          <tr>
+            <td><code title="http://data.gov/vocab/access-rights/authorisation-required">authorisation-required</code>
+            </td>
+            <td>Authorisation required</td>
+            <td>Only some users can access the resource.</td>
+          </tr>
+          <tr>
+            <td><code title="http://data.gov/vocab/access-rights/unknown">unknown</code></td>
+            <td>Unknown</td>
+            <td>Access restrictions are unknown.</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+
+
+
+      <h4>NARA Use Restrictions</h4>
+
+      <p>
+        The <a href="#properties-for-use_restriction"><code>dcat-us:UseRestriction</code></a> class in DCAT-US 3.0 is
+        used by the National Archives and Records Administration (NARA) to define use restrictions on resources. This
+        includes limitations for legal and ethical compliance, like protecting privacy and intellectual property rights.
+        The following properties are used to describe use restrictions:
+      </p>
+
+      <ul>
+        <li>
+          <strong>Restriction Status:</strong> This mandatory property is linked to the NARA <a
+            href="https://www.archives.gov/research/catalog/lcdrg/elements/use.html">Use Restriction Status Authority
+            List</a>, the <a href="#use_restriction-restriction_status">dcat-us:restrictionStatus</a> property specifies
+          the type of use restrictions.
+        </li>
+        <li>
+          <strong>Specific Restriction:</strong> This recommended <a
+            href="#use_restriction-specific_restriction">dcat-us:specificRestriction</a> property refers to the NARA <a
+            href="https://www.archives.gov/research/catalog/lcdrg/elements/specificuse.html">Specific Restriction
+            Authority List</a> for detailed information on restrictions.
+        </li>
+        <li>
+          <strong>Restriction Note:</strong> This optional <a
+            href="#use_restriction-restriction_note">dcat-us:restrictionNote</a> property can include additional context
+          or annotations about restrictions. Its use depends on the 'restriction status' property, and certain terms
+          from the authority lists may require its application.
+        </li>
+      </ul>
+
+      <p>
+        These properties and their corresponding code lists are essential for encoding and interpreting restriction data
+        accurately within the NARA guidelines and DCAT-US framework. The SKOS vocabulary for these lists is available in
+        the <a href="https://github.com/DOI-DO/dcat-us/blob/main/vocabularies/nara-restrictions.ttl">DCAT-US
+          repository</a>, with JSON-LD URIs abbreviated for space.
+      </p>
+
+
+
+      <h4>Controlled Unclassified Information (CUI) Restrictions</h4>
+      <p>
+        Controlled Unclassified Information (CUI) in NARA archives needs protection due to its sensitive nature. This
+        safeguarding is essential for national security, privacy, intellectual property, and confidentiality of
+        sensitive data. You can learn more about CUI on the <a href="https://www.archives.gov/cui">NARA website</a>.
+      </p>
+
+      <p>
+        The <a href="#properties-for-cui_restriction"><code>dcat-us:CuiRestriction</code></a> class in DCAT-US 3.0 is
+        tailored for managing CUI, requiring specific safeguarding in line with legal and policy requirements. It aligns
+        with NARA guidelines to ensure compliance, enhance data security, and improve data
+        interoperability, transparency, and efficient resource management in government data systems.
+      </p>
+
+      <p>
+        The <a href="#properties-for-cui_restriction"><code>dcat-us:CuiRestriction</code></a> class is instrumental in
+        managing Controlled Unclassified Information (CUI) within the DCAT-US framework. It mandates certain properties
+        for effective representation and management of CUI data:
+      </p>
+
+      <ul>
+        <li>
+          <strong>CUI Banner Marking:</strong> The <a
+            href="#cui_restriction-designation_indicator"><code>dcat-us:cuiBannerMarking</code></a> property is
+          essential for marking CUI.
+        </li>
+        <li>
+          <strong>CUI Designation Indicator:</strong> Detailed in the <a
+            href="#cui_restriction-designation_indicator"><code>dcat-us:designationIndicator</code></a>, this free-text
+          property follows guidelines from the NARA Marking Guidebook and DODI 5200.48, typically including "Controlled
+          by:" and contact information.
+        </li>
+        <li>
+          <strong>Required Indicator Per Authority:</strong> The optional <a
+            href="#cui_restriction-designation_indicator"><code>dcat-us:requiredIndicatorPerAuthority</code></a>
+          property allows for additional context and indicators as required by the authority.
+        </li>
+      </ul>
+
+      <p>
+        These properties collectively ensure that the CUI status is accurately represented, complying with relevant
+        standards and providing necessary flexibility for specific cases.
+      </p>
+
+
     </section>
 
     <!-- Provenance -->
@@ -20115,55 +20538,7 @@
           processing, and transformation.</p>
       </section>
     </section>
-    <!-- Resource Restrictions -->
-    <section id="restriction-metadata">
 
-      <h3>Resource Restrictions</h3>
-
-      <aside class="note">TODO</aside>
-
-      <p>DCAT-US profile makes use of a code list to specify access restrictions.</p>
-
-      <p>In the following table, the URIs of code list values are abbreviated for space constraints, specifying only the
-        local part. For all of them, the base URI is <code>http://data.gov/vocab/access-rights/</code></p>
-
-      <table class="simple">
-        <thead>
-          <tr>
-            <th>URI (abbr.)</th>
-            <th>Label</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code title="http://data.gov/vocab/access-rights/no-limitations">no-limitations</code></td>
-            <td>No limitations</td>
-            <td>Anybody can directly and anonymously access the data, without being required to register or
-              authenticate.
-            </td>
-          </tr>
-          <tr>
-            <td><code title="http://data.gov/vocab/access-rights/registration-required">registration-required</code>
-            </td>
-            <td>Registration required</td>
-            <td>Anybody can access the data, but they have to register first.</td>
-          </tr>
-          <tr>
-            <td><code title="http://data.gov/vocab/access-rights/authorisation-required">authorisation-required</code>
-            </td>
-            <td>Authorisation required</td>
-            <td>Only some users can access the resource.</td>
-          </tr>
-          <tr>
-            <td><code title="http://data.gov/vocab/access-rights/unknown">unknown</code></td>
-            <td>Unknown</td>
-            <td>Access restrictions are unknown.</td>
-          </tr>
-        </tbody>
-      </table>
-
-    </section>
 
     <!-- Content Description -->
     <section id="distribution-guideline">
@@ -20818,23 +21193,7 @@
         </ul>
 
       </section>
-      <section id="license-vocabularies">
 
-        <h3>License vocabularies</h3>
-
-        <p>Concerning license vocabularies, implementers are encouraged to use widely recognised licenses
-          such as Creative Commons licenses [[?CC]], and in particular the CC Zero Public Domain Dedication [[?CC0]] or
-          CC-BY Attribution 4.0 International [[?CC-BY]], or the Open Data Commons Public Domain Dedication and License
-          (PDDL) [[?PDDL]]. Often there is applicable legislation or a licency policy in place which determine the set
-          of
-          licenses to be used.
-        </p>
-
-        <p>Further activities in this area are undertaken by the Open Data Institute (ODI) with the Open
-          Data Rights Statement Vocabulary [[ODRS]] and by the Open Digital Rights Language (ODRL) Initiative
-          [[VOCAB-ODRL]].</p>
-
-      </section>
 
     </section>
 
