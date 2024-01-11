@@ -7,8 +7,8 @@
     "dash": "http://datashapes.org/dash#",
     "dcat": "http://www.w3.org/ns/dcat#",
     "dcatap": "http://data.europa.eu/r5r/",
-    "dcat-us": "http://data.resources.gov/ontology/dcat-us#",
-    "dcat-us-shp": "http://data.resources.gov/shapes/dcat-us#",
+    "dcat-us": "http://resources.data.gov/ontology/dcat-us#",
+    "dcat-us-shp": "http://resources.data.gov/shapes/dcat-us#",
     "dcterms": "http://purl.org/dc/terms/",
     "dqv": "http://www.w3.org/ns/dqv#",
     "foaf": "http://xmlns.com/foaf/0.1/",
@@ -48,10 +48,10 @@
       "@id": "dcat-us:AccessRestriction",
       "@context": {
         "restrictionNoteMap": {
-          "@id": "http://data.resources.gov/ontology/dcat-us#restrictionNote",
+          "@id": "http://resources.data.gov/ontology/dcat-us#restrictionNote",
           "@container": "@language"
         },
-        "restrictionNote": "http://data.resources.gov/ontology/dcat-us#restrictionNote",
+        "restrictionNote": "http://resources.data.gov/ontology/dcat-us#restrictionNote",
         "restrictionStatus": {
           "@id": "dcat-us:restrictionStatus",
           "@type": "@id"
@@ -65,8 +65,8 @@
     "dcat-us:CUIRestriction": {
       "@id": "dcat-us:CUIRestriction",
       "@context": {
-        "cuiBannerMarking": "http://data.resources.gov/ontology/dcat-us#cuiBannerMarking",
-        "designationIndicator": "http://data.resources.gov/ontology/dcat-us#designationIndicator",
+        "cuiBannerMarking": "http://resources.data.gov/ontology/dcat-us#cuiBannerMarking",
+        "designationIndicator": "http://resources.data.gov/ontology/dcat-us#designationIndicator",
         "requiredIndicatorPerAuthority": {
           "@id": "dcat-us:requiredIndicatorPerAuthority",
           "@type": "http://www.w3.org/2001/XMLSchema#string",
@@ -167,10 +167,10 @@
       "@id": "dcat-us:UseRestriction",
       "@context": {
         "restrictionNoteMap": {
-          "@id": "http://data.resources.gov/ontology/dcat-us#restrictionNote",
+          "@id": "http://resources.data.gov/ontology/dcat-us#restrictionNote",
           "@container": "@language"
         },
-        "restrictionNote": "http://data.resources.gov/ontology/dcat-us#restrictionNote",
+        "restrictionNote": "http://resources.data.gov/ontology/dcat-us#restrictionNote",
         "restrictionStatus": {
           "@id": "dcat-us:restrictionStatus",
           "@type": "@id"
@@ -558,10 +558,10 @@
           "@container": "@set"
         },
         "purposeMap": {
-          "@id": "http://data.resources.gov/ontology/dcat-us#purpose",
+          "@id": "http://resources.data.gov/ontology/dcat-us#purpose",
           "@container": "@language"
         },
-        "purpose": "http://data.resources.gov/ontology/dcat-us#purpose",
+        "purpose": "http://resources.data.gov/ontology/dcat-us#purpose",
         "contactPoint": {
           "@id": "dcat:contactPoint",
           "@type": "@id",

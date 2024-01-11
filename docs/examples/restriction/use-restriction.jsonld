@@ -2,9 +2,9 @@
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
   "@graph": [
     {
-      "@id": "https://data.resources.gov/vocab/nara/SpecificUseRestrictionAuthorityList/Copyright",
+      "@id": "https://resources.data.gov/vocab/nara/SpecificUseRestrictionAuthorityList/Copyright",
       "@type": "skos:Concept",
-      "inScheme": "https://data.resources.gov/vocab/nara/SpecificUseRestrictionAuthorityList",
+      "inScheme": "https://resources.data.gov/vocab/nara/SpecificUseRestrictionAuthorityList",
       "prefLabelMap": {
         "en": "Copyright"
       },
@@ -14,9 +14,9 @@
       }
     },
     {
-      "@id": "https://data.resources.gov/vocab/nara/UseRestrictionStatusAuthorityList/Unrestricted",
+      "@id": "https://resources.data.gov/vocab/nara/UseRestrictionStatusAuthorityList/Unrestricted",
       "@type": "skos:Concept",
-      "inScheme": "https://data.resources.gov/vocab/nara/UseRestrictionStatusAuthorityList",
+      "inScheme": "https://resources.data.gov/vocab/nara/UseRestrictionStatusAuthorityList",
       "prefLabelMap": {
         "en": "Unrestricted"
       },
@@ -28,12 +28,12 @@
     {
       "@id": "http://example.org/UnrestrictedUseRestriction",
       "@type": "dcat-us:UseRestriction",
-      "restrictionStatus": "https://data.resources.gov/vocab/nara/UseRestrictionStatusAuthorityList/Unrestricted"
+      "restrictionStatus": "https://resources.data.gov/vocab/nara/UseRestrictionStatusAuthorityList/Unrestricted"
     },
     {
-      "@id": "https://data.resources.gov/vocab/nara/UseRestrictionStatusAuthorityList/RestrictedPossibly",
+      "@id": "https://resources.data.gov/vocab/nara/UseRestrictionStatusAuthorityList/RestrictedPossibly",
       "@type": "skos:Concept",
-      "inScheme": "https://data.resources.gov/vocab/nara/UseRestrictionStatusAuthorityList",
+      "inScheme": "https://resources.data.gov/vocab/nara/UseRestrictionStatusAuthorityList",
       "prefLabelMap": {
         "en": "Restricted - Possibly"
       },
@@ -46,8 +46,8 @@
       "@id": "http://example.org/UseRestriction1",
       "@type": "dcat-us:AccessRestriction",
       "restrictionNote": "Some or all of the images in this series may be subject to copyright or other intellectual property restrictions.",
-      "restrictionStatus": "https://data.resources.gov/vocab/nara/UseRestrictionStatusAuthorityList/RestrictedPossibly",
-      "specificRestriction": "https://data.resources.gov/vocab/nara/SpecificUseRestrictionAuthorityList/Copyright"
+      "restrictionStatus": "https://resources.data.gov/vocab/nara/UseRestrictionStatusAuthorityList/RestrictedPossibly",
+      "specificRestriction": "https://resources.data.gov/vocab/nara/SpecificUseRestrictionAuthorityList/Copyright"
     }
   ]
 }

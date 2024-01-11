@@ -12,7 +12,7 @@
             "default": "UseRestriction"
         },
         "restrictionStatus": {
-            "$id": "http://data.resources.gov/ontology/dcat-us#restrictionStatus",
+            "$id": "http://resources.data.gov/ontology/dcat-us#restrictionStatus",
             "title": "restriction status",
             "description": "Indication of whether or not there are use restrictions on the archival materials",
             "oneOf": [
@@ -28,7 +28,7 @@
             ]
         },
         "restrictionNote": {
-            "$id": "http://data.resources.gov/ontology/dcat-us#restrictionNote",
+            "$id": "http://resources.data.gov/ontology/dcat-us#restrictionNote",
             "title": "restriction note",
             "description": "Significant information pertaining to the use or reproduction of the data.",
             "oneOf": [
@@ -41,7 +41,7 @@
             ]
         },
         "restrictionNoteMap": {
-            "$id": "http://data.resources.gov/ontology/dcat-us#restrictionNote_lang_map",
+            "$id": "http://resources.data.gov/ontology/dcat-us#restrictionNote_lang_map",
             "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
             "type": [
                 "null",
@@ -49,7 +49,7 @@
             ]
         },
         "specificRestriction": {
-            "$id": "http://data.resources.gov/ontology/dcat-us#specificRestriction",
+            "$id": "http://resources.data.gov/ontology/dcat-us#specificRestriction",
             "title": "specific restriction",
             "description": "The specific NARA restriction associated with the use restriction",
             "oneOf": [

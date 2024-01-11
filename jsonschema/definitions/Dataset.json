@@ -339,7 +339,7 @@
             ]
         },
         "applicableLegislation": {
-            "$id": "http://data.resources.gov/ontology/dcat-us#applicableLegislation",
+            "$id": "http://resources.data.gov/ontology/dcat-us#applicableLegislation",
             "title": "applicable legislation",
             "description": "applicable legislation for this dataset",
             "oneOf": [
@@ -365,7 +365,7 @@
             ]
         },
         "investment": {
-            "$id": "http://data.resources.gov/ontology/dcat-us#investment",
+            "$id": "http://resources.data.gov/ontology/dcat-us#investment",
             "title": "investment",
             "description": "federal investment used to produce a dataset",
             "oneOf": [
@@ -391,7 +391,7 @@
             ]
         },
         "liabilityStatement": {
-            "$id": "http://data.resources.gov/ontology/dcat-us#liabilityStatement",
+            "$id": "http://resources.data.gov/ontology/dcat-us#liabilityStatement",
             "title": "liability statement",
             "description": "A liability statement about the dataset",
             "oneOf": [
@@ -414,7 +414,7 @@
             ]
         },
         "metadataDistribution": {
-            "$id": "http://data.resources.gov/ontology/dcat-us#metadataDistribution",
+            "$id": "http://resources.data.gov/ontology/dcat-us#metadataDistribution",
             "title": "metadata distribution",
             "description": "Distribution to \"original\" metadata document",
             "oneOf": [
@@ -440,7 +440,7 @@
             ]
         },
         "program": {
-            "$id": "http://data.resources.gov/ontology/dcat-us#program",
+            "$id": "http://resources.data.gov/ontology/dcat-us#program",
             "title": "program",
             "description": "federal program used to produce a dataset",
             "oneOf": [
@@ -466,7 +466,7 @@
             ]
         },
         "purpose": {
-            "$id": "http://data.resources.gov/ontology/dcat-us#purpose",
+            "$id": "http://resources.data.gov/ontology/dcat-us#purpose",
             "title": "purpose",
             "description": "The purpose of the dataset",
             "oneOf": [
@@ -479,7 +479,7 @@
             ]
         },
         "purposeMap": {
-            "$id": "http://data.resources.gov/ontology/dcat-us#purpose_lang_map",
+            "$id": "http://resources.data.gov/ontology/dcat-us#purpose_lang_map",
             "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
             "type": [
                 "null",
@@ -1265,7 +1265,7 @@
             ]
         },
         "geographicBoundingBox": {
-            "$id": "http://data.resources.gov/ontology/dcat-us#geographicBoundingBox",
+            "$id": "http://resources.data.gov/ontology/dcat-us#geographicBoundingBox",
             "title": "geographic bounding box",
             "description": "WGS84 Geographic Bounding Box for this dataset",
             "oneOf": [

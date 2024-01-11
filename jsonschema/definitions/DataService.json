@@ -159,7 +159,7 @@
             ]
         },
         "geographicBoundingBox": {
-            "$id": "http://data.resources.gov/ontology/dcat-us#geographicBoundingBox",
+            "$id": "http://resources.data.gov/ontology/dcat-us#geographicBoundingBox",
             "title": "geographic bounding box",
             "description": "GeographicBoundingBox describes the spatial extent of domain of application of an data service and is standardized in WGS 84 Lat/Long coordinate system.",
             "oneOf": [

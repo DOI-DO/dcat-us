@@ -256,7 +256,7 @@
             ]
         },
         "accessRestriction": {
-            "$id": "http://data.resources.gov/ontology/dcat-us#accessRestriction",
+            "$id": "http://resources.data.gov/ontology/dcat-us#accessRestriction",
             "title": "access restriction",
             "description": "Access restriction related to the distribution",
             "oneOf": [
@@ -282,7 +282,7 @@
             ]
         },
         "cuiRestriction": {
-            "$id": "http://data.resources.gov/ontology/dcat-us#cuiRestriction",
+            "$id": "http://resources.data.gov/ontology/dcat-us#cuiRestriction",
             "title": "CUI restriction",
             "description": "Controlled Unclassified Information restriction related to the distribution",
             "oneOf": [
@@ -305,7 +305,7 @@
             ]
         },
         "useRestriction": {
-            "$id": "http://data.resources.gov/ontology/dcat-us#useRestriction",
+            "$id": "http://resources.data.gov/ontology/dcat-us#useRestriction",
             "title": "use restriction",
             "description": "Use restriction related to the distribution",
             "oneOf": [

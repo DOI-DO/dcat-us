@@ -2,9 +2,9 @@
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
   "@graph": [
     {
-      "@id": "https://data.resources.gov/vocab/nara/AccessRestrictionStatusAuthorityList/Unrestricted",
+      "@id": "https://resources.data.gov/vocab/nara/AccessRestrictionStatusAuthorityList/Unrestricted",
       "@type": "skos:Concept",
-      "inScheme": "https://data.resources.gov/vocab/nara/AccessRestrictionStatusAuthorityList",
+      "inScheme": "https://resources.data.gov/vocab/nara/AccessRestrictionStatusAuthorityList",
       "prefLabelMap": {
         "en": "Unrestricted"
       },
@@ -14,12 +14,12 @@
       }
     },
     {
-      "@id": "https://data.resources.gov/vocab/nara/SpecificAccessRestrictionAuthorityList/FOIAb6",
+      "@id": "https://resources.data.gov/vocab/nara/SpecificAccessRestrictionAuthorityList/FOIAb6",
       "@type": "skos:Concept",
       "skos:broader": {
-        "@id": "https://data.resources.gov/vocab/nara/SpecificAccessRestrictionAuthorityList/FOIA"
+        "@id": "https://resources.data.gov/vocab/nara/SpecificAccessRestrictionAuthorityList/FOIA"
       },
-      "inScheme": "https://data.resources.gov/vocab/nara/SpecificAccessRestrictionAuthorityList",
+      "inScheme": "https://resources.data.gov/vocab/nara/SpecificAccessRestrictionAuthorityList",
       "prefLabelMap": {
         "en": "FOIA (b)(6) Personal Information"
       },
@@ -32,13 +32,13 @@
       "@id": "http://example.org/AccessRestriction1",
       "@type": "dcat-us:AccessRestriction",
       "restrictionNote": "The records may be restricted due to privacy concerns. \n    Register numbers 1 through 900 have been screened and are open for research.",
-      "restrictionStatus": "https://data.resources.gov/vocab/nara/AccessRestrictionStatusAuthorityList/RestrictedPossibly",
+      "restrictionStatus": "https://resources.data.gov/vocab/nara/AccessRestrictionStatusAuthorityList/RestrictedPossibly",
       "specificRestriction": "file:///home/stephanef/work/fairness/dcat-us/docs/examples/restriction/SpecificAccessRestrictionAuthorityList/FOIAb6"
     },
     {
-      "@id": "https://data.resources.gov/vocab/nara/AccessRestrictionStatusAuthorityList/RestrictedPossibly",
+      "@id": "https://resources.data.gov/vocab/nara/AccessRestrictionStatusAuthorityList/RestrictedPossibly",
       "@type": "skos:Concept",
-      "inScheme": "https://data.resources.gov/vocab/nara/AccessRestrictionStatusAuthorityList",
+      "inScheme": "https://resources.data.gov/vocab/nara/AccessRestrictionStatusAuthorityList",
       "prefLabelMap": {
         "en": "Restricted - Possibly"
       },
@@ -50,7 +50,7 @@
     {
       "@id": "http://example.org/AccessRestriction2",
       "@type": "dcat-us:AccessRestriction",
-      "restrictionStatus": "https://data.resources.gov/vocab/nara/AccessRestrictionStatusAuthorityList/Unrestricted"
+      "restrictionStatus": "https://resources.data.gov/vocab/nara/AccessRestrictionStatusAuthorityList/Unrestricted"
     }
   ]
 }
