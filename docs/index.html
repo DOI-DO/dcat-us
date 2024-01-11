@@ -6285,6 +6285,15 @@
             <td>0..n</td>
           </tr>
           <tr>
+            <td><a href="#data-service-status">status</a></td>
+            <td><a data-cite="VOCAB-ADMS#adms-status"><code>adms:status</code></a></td>
+            <td><a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a>
+            </td>
+            <td>O</td>
+            <td>0..1</td>
+            <td><span style="color: green;">Aligned</span></td>
+          </tr>
+          <tr>
             <td><a href="#data-service-temporal">termporal coverage</a></td>
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/temporal"><code>dcterms:temporal</code></a></td>
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/PeriodOfTime"><code>dcterms:PeriodOfTime</code></a></td>
@@ -7523,6 +7532,43 @@
             </tbody>
           </table>
         </section>
+        <section id="data-service-status">
+          <h4>Property: status</h4>
+          <table class="def">
+            <tbody>
+              <tr>
+                <th>Property</th>
+                <td>status</td>
+              </tr>
+              <tr>
+                <th>Requirement level</th>
+                <td>Optional</td>
+              </tr>
+              <tr>
+                <th>Cardinality</th>
+                <td>0..1</td>
+              </tr>
+              <tr>
+                <th>URI</th>
+                <td><a data-cite="VOCAB-ADMS#adms-status"><code>adms:status</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Range</th>
+                <td><a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Usage note</th>
+                <td>
+                  This property refers to the maturity of the Data Service. It MUST take one of the values
+                  Completed, Deprecated, Under Development, Withdrawn from the ADMS status [[VOCAB-ADMS-SKOS]]
+                  vocabulary.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
         <section id="data-service-wasUsedBy">
           <h4>Property: was used by</h4>
           <table class="def">
@@ -8011,6 +8057,15 @@
             <td>O</td>
             <td>0..n</td>
             <td><span style="color: red;">New!</span></td>
+          </tr>
+          <tr>
+            <td><a href="#dataset-status">status</a></td>
+            <td><a data-cite="VOCAB-ADMS#adms-status"><code>adms:status</code></a></td>
+            <td><a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a>
+            </td>
+            <td>O</td>
+            <td>0..1</td>
+            <td><span style="color: green;">Aligned</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-hasQualityMeasurement">quality measurement</a></td>
@@ -9845,7 +9900,43 @@
             </tbody>
           </table>
         </section>
-
+        <section id="dataset-status">
+          <h4>Property: status</h4>
+          <table class="def">
+            <tbody>
+              <tr>
+                <th>Property</th>
+                <td>status</td>
+              </tr>
+              <tr>
+                <th>Requirement level</th>
+                <td>Optional</td>
+              </tr>
+              <tr>
+                <th>Cardinality</th>
+                <td>0..1</td>
+              </tr>
+              <tr>
+                <th>URI</th>
+                <td><a data-cite="VOCAB-ADMS#adms-status"><code>adms:status</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Range</th>
+                <td><a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Usage note</th>
+                <td>
+                  This property refers to the maturity of the Dataset. It MUST take one of the values
+                  Completed, Deprecated, Under Development, Withdrawn from the ADMS status [[VOCAB-ADMS-SKOS]]
+                  vocabulary.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
         <section id="dataset-hasQualityMeasurement">
           <h4>Property: quality measurement</h4>
           <table class="def">
@@ -12305,7 +12396,7 @@
                 <th>Usage note</th>
                 <td>
                   This property refers to the maturity of the Distribution. It MUST take one of the values
-                  Completed, Deprecated, Under Development, Withdrawn from the ADMS status [[VOCAB-ADMS-SKOS]
+                  Completed, Deprecated, Under Development, Withdrawn from the ADMS status [[VOCAB-ADMS-SKOS]]
                   vocabulary.
                 </td>
               </tr>
