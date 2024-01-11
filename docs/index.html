@@ -18752,8 +18752,9 @@
         <p>In the digital realm, ensuring consistent and persistent access to resources is paramount. <b>Identifier
             Resolution Services</b> play a crucial role in achieving this by providing unique and persistent identifiers
           for various digital objects and entities. This section delves into several prominent services, detailing their
-          functions and significance in the broader digital ecosystem. Please note that this is not an exhaustive list 
-          but rather a selection of popular examples intended to illustrate the diversity and importance of such services</p>
+          functions and significance in the broader digital ecosystem. Please note that this is not an exhaustive list
+          but rather a selection of popular examples intended to illustrate the diversity and importance of such
+          services</p>
         <dl>
           <dt><a href="https://archive.org/services/purl/">purl.org</a></dt>
           <dd>The PURL system is a service of the Internet Archive, which provides an interface to administer domain.
@@ -19588,7 +19589,8 @@
           interoperability. </p>
         <p>
           Additionally, the <a href="#standard-type"><code>dct:type</code></a> property is employed alongside
-          <a href="#dataset-conforms_to"><code>dct:conformsTo</code></a>  to delineate the type of reference system, be it spatial or temporal. For spatial
+          <a href="#dataset-conforms_to"><code>dct:conformsTo</code></a> to delineate the type of reference system, be
+          it spatial or temporal. For spatial
           datasets, <a href="#standard-type"><code>dct:type</code></a> typically points to a spatial reference system,
           as defined by URIs like <a
             href="http://resources.data.gov/categories/SpatialReferenceSystem">http://resources.data.gov/categories/SpatialReferenceSystem</a>.
@@ -20598,14 +20600,11 @@
     <!-- Provenance -->
     <section id="provenance-metadata">
       <h3>Provenance Metadata</h3>
-      <aside class="note">TO COMPLETE</aside>
       <p>Provenance and data lineage are crucial aspects of data management and transparency, ensuring that data
         consumers understand the origins, transformations, and utility of the data. In DCAT-US, leveraging [[DCTERMS]]
         (Dublin Core Terms) and [[PROV-O]] (W3C PROV Ontology) properties can effectively represent these aspects.
-        This
-        section outlines best practices for utilizing these properties to detail the provenance and data lineage
-        within
-        DCAT datasets.</p>
+        This section outlines best practices for utilizing these properties to detail the provenance and data lineage
+        within DCAT datasets.</p>
       <section id="basic-provenance">
         <h4>Basic Provenance Metadata</h4>
 
@@ -21108,14 +21107,71 @@
         dimensions,
         each encapsulating characteristics of importance to both data publishers and consumers.</p>
 
-      <p>The Data Quality Vocabulary defines machine-readable concepts such as measurements and criteria to assess
+      <p>The Data Quality Vocabulary (DQV) defines machine-readable concepts such as measurements and criteria to assess
         quality
         across various dimensions [[VOCAB-DQV]]. Tailored heuristics designed for specific assessment scenarios rely
         on
         quality indicators, which encompass data content, metadata, and human ratings. These indicators offer valuable
         insights into the dataset's suitability for its intended purpose.</p>
 
-      <aside class="note">TO COMPLETE</aside>
+      <p>
+        In the context of integrating data quality information into DCAT resources (Dataset, Distribution, Data Service,
+        Dataset Series), the Data Quality Vocabulary [[VOCAB-DQV]]
+        provides a structured and standardized way to represent and assess quality information for fitness of use. The
+        key components of DQV
+        relevant to this discussion are <a
+          href="#properties-for-quality-measurement"><code>dqv:QualityMeasurement</code></a>, <a
+          href="#properties-for-metric"><code>dqv:Metric</code></a>,
+        <a href="https://www.w3.org/TR/vocab-dqv/#dqv:Dimension"><code>dqv:Dimension</code></a>, and the property <a
+          href="#dataset-hasQualityMeasurement"><code>hasQualityMeasurement</code></a>. Here's how each of these
+        elements is used:
+      </p>
+      <ul>
+        <li>
+          <strong>dqv:QualityMeasurement:</strong> This class represents a specific measurement or assessment of
+          quality. It's a quantifiable value that indicates how well a dataset performs against a particular quality
+          metric. A <a href="#properties-for-quality-measurement"><code>dqv:QualityMeasurement</code></a> instance is
+          associated with a specific dataset and linked to the metric it measures.
+        </li>
+        <li>
+          <strong>dqv:Metric:</strong> The <a href="#properties-for-metric"><code>dqv:Metric</code></a> class represents
+          the standard or criterion used to assess a particular aspect of quality. Metrics are the yardsticks against
+          which quality is evaluated. Each metric is typically associated with a quality dimension. For example, a
+          metric could measure the accuracy of data, its timeliness, or its completeness.
+        </li>
+        <li>
+          <strong>dqv:Dimension:</strong> This <a
+            href="https://www.w3.org/TR/vocab-dqv/#dqv:Dimension"><code>dqv:Dimension</code></a> class represents the
+          various dimensions or categories of data quality, such as accuracy, timeliness, or completeness. Quality
+          dimensions help categorize different aspects of data quality, providing a framework for comprehensive
+          assessment.
+        </li>
+        <li>
+          <strong>Property hasQualityMeasurement:</strong> The <a
+            href="#dataset-hasQualityMeasurement"><code>hasQualityMeasurement</code></a> property is used to link a
+          resource to a <a href="#properties-for-quality-measurement"><code>dqv:QualityMeasurement</code></a>. It
+          indicates that the dataset has been evaluated in terms of quality and specifies the measurement. This linkage
+          is crucial for conveying the results of quality assessments to data consumers, enabling them to understand the
+          quality aspects that have been measured and the outcomes of those measurements.
+        </li>
+      </ul>
+
+      <p>
+        Using these DQV elements, data publishers can document the quality of their datasets in a structured and
+        meaningful way. This documentation includes specific measurements of quality, the criteria used for these
+        assessments, and the quality dimensions they relate to. The use of DQV thus enhances transparency and helps data
+        consumers make informed decisions about the suitability of a dataset for their specific needs.
+      </p>
+
+      <p>
+        The use of shareable controlled vocabularies for <a
+          href="#properties-for-metric"><code>dqv:Metric</code></a> and <a
+          href="https://www.w3.org/TR/vocab-dqv/#dqv:Dimension"><code>dqv:Dimension</code></a> is highly encouraged
+        within communities. These standardized vocabularies facilitate consistent and precise communication of data
+        quality aspects across different datasets and applications. By adopting such vocabularies, communities can
+        ensure that their data quality metrics and dimensions are universally understood, enhancing interoperability and
+        the effective use of data across diverse systems and contexts.
+      </p>
 
 
     </section>
