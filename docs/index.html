@@ -12149,7 +12149,8 @@
           <aside class="note">
             <p>Change from DCAT-US 1.1: In this version, it is mandated that the title property MUST be provided when
               the distribution contains only a part of the data offered by the Dataset. This is a change from DCAT-US
-              1.1 and aims to enhance clarity and specificity in data distribution, so it is easier for the user to distinguish roles of different distributions.</p>
+              1.1 and aims to enhance clarity and specificity in data distribution, so it is easier for the user to
+              distinguish roles of different distributions.</p>
           </aside>
           <aside class="example ds-selector-tabs" id="ex-distribution-title"
             title="Usage of dcterms:title for dcat:Distribution">
@@ -19310,8 +19311,9 @@
         <h4>Geographic Bounding Box</h4>
 
         <p>A bounding box represents the minimum and maximum coordinates that enclose a specific geographic area. In
-          DCAT-US, the <a href="#dataset-geographic-extent"><code>dcat-us:geographicBoundingBox</code></a> property
-          and the class <a href="#dataset-geographic-extent"><code>dcat-us:geographicBoundingBox</code></a> are
+          DCAT-US, the <a href="#dataset-geographic_bounding_box"><code>dcat-us:geographicBoundingBox</code></a>
+          property
+          and the class <a href="#geographic-bounding-box"><code>dcat-us:GeographicBoundingBox</code></a> are
           introduced
           and utilized to define the spatial extent of a resource. This class consists of four numerical properties: the
           west (<a href="#geographic_bbox-west-bounding-longitude"><code>dcat-us:westBoundingLongitude</code></a>)
@@ -19477,6 +19479,59 @@
           Overall, this property enhances the usability and effectiveness of geospatial datasets across diverse domains.
         </p>
       </section>
+      <section id="map-projections-coordinate-systems">
+        <h4>Handling Map Projections and Coordinate Systems</h4>
+        <p>
+          Geographic datasets in DCAT are commonly referenced using latitude and longitude coordinates based on the
+          WGS84 datum. This is facilitated by the recommended use of the <a
+            href="#dataset-geographic_bounding_box"><code>dcat-us:geographicBoundingBox</code></a> property and the
+          corresponding class <a href="#geographic-bounding-box"><code>dcat-us:GeographicBoundingBox</code></a> to
+          establish a uniform reference system for searching and indexing. However, the diverse
+          nature of geographic data often necessitates the use of various map projections and coordinate systems.
+        </p>
+        <p>
+          The <a href="#dataset-conforms_to"><code>dct:conformsTo</code></a> property in DCAT is integral in specifying
+          the Coordinate Reference System (CRS) utilized by a dataset or a distribution. Accurately defining the CRS is
+          essential for understanding the spatial context, enabling precise geographic analysis and ensuring data
+          interoperability. </p>
+        <p>
+          Additionally, the <a href="#standard-type"><code>dct:type</code></a> property is employed alongside
+          <a href="#dataset-conforms_to"><code>dct:conformsTo</code></a>  to delineate the type of reference system, be it spatial or temporal. For spatial
+          datasets, <a href="#standard-type"><code>dct:type</code></a> typically points to a spatial reference system,
+          as defined by URIs like <a
+            href="http://resources.data.gov/categories/SpatialReferenceSystem">http://resources.data.gov/categories/SpatialReferenceSystem</a>.
+        </p>
+        <p>
+          Utilizing URIs to reference EPSG standards ensures a clear and unambiguous specification of the CRS. For
+          example, the URI <a
+            href="http://www.opengis.net/def/crs/EPSG/0/4326">http://www.opengis.net/def/crs/EPSG/0/4269</a> explicitly
+          denotes adherence to the NAD 83 CRS. Standardized references like these enhance data consistency and
+          facilitate interoperability across various platforms and applications.
+        </p>
+        <p>
+          The reference system identifier SHOULD be preferably represented with an HTTP URI. In particular, spatial
+          reference systems should be specified by using the corresponding URIs from the “EPSG coordinate reference
+          systems” register operated by the Open Geospatial Consortium [[OGC-EPSG]]. This registry is crucial
+          for the precise identification of CRSs, thereby ensuring that spatial data referenced in DCAT are compatible
+          and functional across a multitude of geospatial applications.
+        </p>
+        <p>
+          <strong>Example: Specifying a CRS using an EPSG code for a geographic dataset</strong>
+        </p>
+        <aside class="example ds-selector-tabs" id="ex-data-crs-standard"
+          title="Example: Specifying a CRS using an EPSG code for a geographic dataset">
+          <div class="selectors">
+            <button class="selected exampleTab1 ttl" onclick="openTab('exampleTab1', 'ttl')">TTL</button>
+            <button class="exampleTab1 jsonld" onclick="openTab('exampleTab1', 'jsonld')">JSON-LD</button>
+          </div>
+          <pre class="selected ttl exampleTab1" data-include-format="text" data-include="./examples/crs.ttl"></pre>
+          <pre class="jsonld exampleTab1 json" data-include-format="text" data-include="./examples/crs.jsonld"></pre>
+        </aside>
+        <p>
+          Clearly defining the CRS is paramount for the effective use and integration of DCAT datasets, facilitating
+          their application in a broad spectrum of spatial data uses.
+        </p>
+      </section>
     </section>
 
     <!-- Temporal Metadata -->
@@ -19484,7 +19539,8 @@
 
       <h3>Temporal Metadata</h3>
       <p>
-        Temporal metadata is crucial for understanding and utilizing datasets effectively. This section is divided into
+        Temporal metadata is crucial for understanding and utilizing datasets effectively. This section is divided
+        into
         three main categories to cover key aspects: Lifecycle Temporal Properties, Temporal Coverage, and Temporal
         Resolution. Additionally, we provide insights into handling these temporal aspects in JSON-LD format. Accurate
         temporal metadata ensures datasets are relevant and reliable, especially for time-sensitive analyses.
@@ -19494,14 +19550,16 @@
           href="https://www.w3.org/TR/xmlschema11-2/#date">xsd:date</a>, <a
           href="https://www.w3.org/TR/xmlschema11-2/#dateTime">xsd:dateTime</a>, <a
           href="https://www.w3.org/TR/xmlschema11-2/#gYear">xsd:gYear</a>, and <a
-          href="https://www.w3.org/TR/xmlschema11-2/#gYearMonth">xsd:gYearMonth</a>, is essential. These formats provide
+          href="https://www.w3.org/TR/xmlschema11-2/#gYearMonth">xsd:gYearMonth</a>, is essential. These formats
+        provide
         the necessary precision, flexibility, contextual appropriateness, interoperability, and cater to diverse user
         needs, accommodating different datasets' requirements for detail.
       </p>
       <section id="lifecycle-temporal-properties">
         <h4>Lifecycle Temporal Properties</h4>
         <p>
-          Lifecycle temporal properties document the timeline of the dataset's creation, updates, and publication. These
+          Lifecycle temporal properties document the timeline of the dataset's creation, updates, and publication.
+          These
           properties are crucial for understanding the dataset's history, and currentness.
         </p>
 
@@ -19522,13 +19580,15 @@
             </ul>
           </li>
           <li>
-            <strong>Revision/Update Time (dcterms:modified):</strong> Shows when the dataset was last updated, using the
+            <strong>Revision/Update Time (dcterms:modified):</strong> Shows when the dataset was last updated, using
+            the
             same formats as the release time.
           </li>
           <li>
             <strong>Update Schedule (dcterms:accrualPeriodicity):</strong> Describes the frequency of dataset updates.
             Terms are taken from the <a
-              href="http://www.dublincore.org/specifications/dublin-core/collection-description/frequency/">Dublin Core
+              href="http://www.dublincore.org/specifications/dublin-core/collection-description/frequency/">Dublin
+              Core
               Collection Description Frequency Vocabulary</a>. Multiple formats allow for precise scheduling, whether
             regular or irregular. <a href="#frequency-coding">Frequency Coding Guide section</a> provides a guide to
             coding various standard frequencies as per ISO 19115, ISO-8601, and the Dublin Core standards.
@@ -19541,8 +19601,10 @@
           is modeled as a string based on [[ISO8601-1]]. This approach contrasts with the expected range for <a
             data-cite="DCTERMS#http://purl.org/dc/terms/accrualPeriodicity"><code>dcterms:accrualPeriodicity</code></a>
           which should be a resource from the <a
-            data-cite="DCTERMS#http://purl.org/dc/terms/Frequency"><code>dcterms:Frequency</code></a> class. The use of
-          [[ISO8601-1]] values can be challenging for end-users to understand. To address this, DCAT-US 3.0 has adopted
+            data-cite="DCTERMS#http://purl.org/dc/terms/Frequency"><code>dcterms:Frequency</code></a> class. The use
+          of
+          [[ISO8601-1]] values can be challenging for end-users to understand. To address this, DCAT-US 3.0 has
+          adopted
           the [[CLD-FREQ]] vocabularies and expects a URL. For ease of use in JSON-LD context, a shortcut has been
           defined, allowing the usage of only the local name of the URI. This accomplished by predefining the
           [[CLD-FREQ]] namespace for <a
@@ -19560,14 +19622,17 @@
         </p>
         <p>
           In DCAT, temporal coverage is defined using the property <a
-            data-cite="DCTERMS#http://purl.org/dc/terms/temporal"><code>dcterms:temporal</code></a> associated with the
-          <a href="#properties-for-period-of-time"><code>dcterms:PeriodOfTime</code></a> class. This class allows for a
+            data-cite="DCTERMS#http://purl.org/dc/terms/temporal"><code>dcterms:temporal</code></a> associated with
+          the
+          <a href="#properties-for-period-of-time"><code>dcterms:PeriodOfTime</code></a> class. This class allows for
+          a
           clear specification of the coverage period through defined start and end dates. For detailed representation,
           formats such as <a href="https://www.w3.org/TR/xmlschema11-2/#date">xsd:date</a>, <a
             href="https://www.w3.org/TR/xmlschema11-2/#dateTime">xsd:dateTime</a>, <a
             href="https://www.w3.org/TR/xmlschema11-2/#gYear">xsd:gYear</a>, or <a
             href="https://www.w3.org/TR/xmlschema11-2/#gYearMonth">xsd:gYearMonth</a> can be used. For instance, a
-          dataset on a year-long project might use "2023" (xsd:gYear), whereas a dataset with specific event dates might
+          dataset on a year-long project might use "2023" (xsd:gYear), whereas a dataset with specific event dates
+          might
           use "2023-03-15T13:00:00" (xsd:dateTime).
         </p>
         <p>
@@ -19579,7 +19644,8 @@
           patterns might span from <code>"1950-01-01"</code> to <code>"2000-12-31"</code>.
         </p>
         <p>
-          Adopting <a href="#properties-for-period-of-time"><code>dcterms:PeriodOfTime</code></a> in DCAT-US 3.0 aligns
+          Adopting <a href="#properties-for-period-of-time"><code>dcterms:PeriodOfTime</code></a> in DCAT-US 3.0
+          aligns
           it with international DCAT 3 standards, improving data interoperability and ensuring consistent handling of
           time-related data. This alignment rectifies previous inconsistencies and enhances the usability and exchange
           of data.
@@ -19593,12 +19659,15 @@
             href="#properties-for-dataset"><code>dcat:Dataset</code></a>, or
           <a href="#properties-for-distribution"><code>dcat:Distribution</code></a>, refers to the smallest time
           interval that can be discerned in the data. This property is
-          essential for understanding the granularity and frequency of data recording within the dataset or its specific
+          essential for understanding the granularity and frequency of data recording within the dataset or its
+          specific
           distributions.
         </p>
         <p>
-          Temporal resolution is particularly relevant in datasets where time plays a crucial role, such as time-series
-          data. It indicates the level of detail at which changes or updates in the data are recorded and presented. For
+          Temporal resolution is particularly relevant in datasets where time plays a crucial role, such as
+          time-series
+          data. It indicates the level of detail at which changes or updates in the data are recorded and presented.
+          For
           instance, a dataset with daily weather observations might have a temporal resolution of one day, represented
           as "P1D" in <a href="https://www.w3.org/TR/xmlschema11-2/#duration">XML Schema duration format</a>.
         </p>
@@ -19611,7 +19680,8 @@
           acknowledging that different formats might be updated at different frequencies.
         </p>
         <p>
-          This distinction is important for datasets available in multiple formats or distributions, as each might have
+          This distinction is important for datasets available in multiple formats or distributions, as each might
+          have
           different temporal characteristics. For example, a high-resolution version of a dataset updated every minute
           would be suitable for detailed, time-sensitive analyses, while a lower-resolution version updated annually
           might be better suited for long-term trend analyses.
@@ -19620,7 +19690,8 @@
           Examples of encoding durations in XML Schema duration format:
         <ul>
           <li>
-            Daily Resolution: A dataset with daily updates would use <code>"P1D"</code>, indicating an update frequency
+            Daily Resolution: A dataset with daily updates would use <code>"P1D"</code>, indicating an update
+            frequency
             of every day.
           </li>
           <li>
@@ -19632,7 +19703,8 @@
         <p>
           The <a href="#data-service-temporal_resolution">dcat:temporalResolution</a> can be specified using various
           time units such as seconds, minutes, hours, days, or
-          years, depending on the nature of the dataset or distribution. This specification aids in aligning the dataset
+          years, depending on the nature of the dataset or distribution. This specification aids in aligning the
+          dataset
           or distribution with user expectations and analytical requirements.
         </p>
       </section>
@@ -19843,7 +19915,8 @@
         </pre>
         <p>
           These examples illustrate the flexible use of <a
-            href="https://www.w3.org/TR/json-ld11/#typed-values"><code>@type</code></a> to accurately represent various
+            href="https://www.w3.org/TR/json-ld11/#typed-values"><code>@type</code></a> to accurately represent
+          various
           temporal
           aspects within a <code>dcat:Dataset</code>. By specifying the datatype, datasets can convey precise temporal
           information, enhancing data usability and interpretation.
@@ -19873,7 +19946,8 @@
           context without requiring an additional <code>@type</code> declaration for the resolution.
         </p>
         <p>
-          The <code>dcterms:accrualPeriodicity</code> property in JSON-LD specifies the frequency at which a dataset is
+          The <code>dcterms:accrualPeriodicity</code> property in JSON-LD specifies the frequency at which a dataset
+          is
           updated or new data is added. This property is vital for users to understand how often the dataset's
           information is refreshed.
         </p>
@@ -19906,7 +19980,8 @@
 
         <p>
           These examples illustrate the use of <code>dcterms:accrualPeriodicity</code> in JSON-LD to clearly represent
-          the update frequency of datasets. By specifying this property, users can easily determine the refresh rate of
+          the update frequency of datasets. By specifying this property, users can easily determine the refresh rate
+          of
           the dataset's data, which is crucial for its application and relevance.
         </p>
 
@@ -19925,13 +20000,15 @@
         elucidates the different mechanisms to manage and describe citations in the DCAT-US profile.</p>
       <section id="source-citation">
         <h4>Source citation</h4>
-        <p>Source citation is paramount in maintaining the integrity, traceability, and credibility of datasets within a
+        <p>Source citation is paramount in maintaining the integrity, traceability, and credibility of datasets within
+          a
           data catalog. In the DCAT-US profile, which aligns with the DCAT-3 standard, various mechanisms are
           established
           to articulate citations, ensuring that users and data consumers can accurately reference and validate
           datasets.
         </p>
-        <p><a data-cite="DCTERMS#http://purl.org/dc/terms/source"><code>dcterms:source</code></a>: Utilize this property
+        <p><a data-cite="DCTERMS#http://purl.org/dc/terms/source"><code>dcterms:source</code></a>: Utilize this
+          property
           to
           denote the original source dataset from which the current dataset is
           derived. It ensures a clear lineage and acknowledgment of the original data source, providing a pathway for
@@ -19950,14 +20027,16 @@
         The DCAT-US specification emphasizes clear and accurate legal information provision for datasets,
         data series, distributions, and data services. Aligning with the FAIR data principles, this approach is
         essential for informed data use and ensuring compliance with relevant laws and policies. Contemporary laws
-        increasingly mandate clear legal guidelines, highlighting the need for explicit reuse standard disclosures. The
+        increasingly mandate clear legal guidelines, highlighting the need for explicit reuse standard disclosures.
+        The
         DCAT-US strategy aims to articulate legal information at the most specific sharing level to prevent conflicts
         and discrepancies, ensuring clarity and consistency across different data organization levels. Engaging legal
         experts is crucial in developing precise and understandable guidelines for each data publisher.
       </p>
 
       <p>
-        Legal information within DCAT-US is categorized into distinct types, each addressing different legal aspects for
+        Legal information within DCAT-US is categorized into distinct types, each addressing different legal aspects
+        for
         digital resources. This categorization helps in tailoring the guidelines to the specific nature of each
         resource, including those governed by the National Archives and Records Administration (NARA).
       </p>
@@ -19993,7 +20072,8 @@
 
       <ul>
         <li><strong>Access Restrictions:</strong> Detailing who can access NARA-governed digital assets and under what
-          conditions, in accordance with the federal records legal framework. This includes guidelines on public access
+          conditions, in accordance with the federal records legal framework. This includes guidelines on public
+          access
           and accessing restricted records.</li>
         <li><strong>Use Restrictions:</strong> Outlining the rights and limitations associated with the use
           of NARA-governed assets, focusing on specific legal constraints.</li>
@@ -20037,12 +20117,14 @@
       </p>
       <p>
         The access rights is defined as an instance of <a
-          href="#properties-for-rights-statement"><code>dcterms:RightsStatement</code></a>. This class accommodates URL
+          href="#properties-for-rights-statement"><code>dcterms:RightsStatement</code></a>. This class accommodates
+        URL
         references and custom rights statements as literal via <a
           href="#rights-statement-attributionText"><code>odrs:attributionText</code></a>.
       </p>
 
-      <p>Additionally, access rights applies both at the dataset and distribution levels. While a dataset access rights
+      <p>Additionally, access rights applies both at the dataset and distribution levels. While a dataset access
+        rights
         defines the overall terms for the entire dataset, each distribution can have its own specific access rights,
         potentially different from the dataset's access rights. This flexibility allows for tailored access rights for
         different forms or versions of the dataset, enhancing the dataset's usability and compliance with varied user
@@ -20086,7 +20168,8 @@
       </ul>
       </p>
       <p>
-        In dataset metadata, the <a href="#properties-for-license-document"><code>dcat-us:LicenseDocument</code></a> can
+        In dataset metadata, the <a href="#properties-for-license-document"><code>dcat-us:LicenseDocument</code></a>
+        can
         be referenced using the property <code>dct:license</code>. This ensures that users are aware of and can easily
         access the licensing terms associated with a dataset. </p>
       <p>
@@ -20123,8 +20206,10 @@
       <h4>Liability Statement</h4>
       <p>
         The introduction of <a href="#properties-for-liability_statement"><code>dcat-us:LiabilityStatement</code></a>
-        in the DCAT-US 3.0 profile is a formal declaration by data providers aimed at limiting legal exposure related to
-        the dataset. It disclaims warranties and guarantees, setting clear user expectations for dataset usage, thereby
+        in the DCAT-US 3.0 profile is a formal declaration by data providers aimed at limiting legal exposure related
+        to
+        the dataset. It disclaims warranties and guarantees, setting clear user expectations for dataset usage,
+        thereby
         enhancing legal compliance and transparency.
       </p>
       <p>
@@ -20204,7 +20289,8 @@
       </p>
       <p>
         The copyrights is defined as an instance of <a
-          href="#properties-for-rights-statement"><code>dcterms:RightsStatement</code></a>. This class accommodates URL
+          href="#properties-for-rights-statement"><code>dcterms:RightsStatement</code></a>. This class accommodates
+        URL
         references and custom copyrights statements as literal via <a
           href="#rights-statement-attributionText"><code>odrs:attributionText</code></a>.
       </p>
@@ -20247,7 +20333,8 @@
         </li>
         <li>
           <strong>Specific Restriction:</strong> This recommended <a
-            href="#access_restriction-specific_restriction">dcat-us:specificRestriction</a> property refers to the NARA
+            href="#access_restriction-specific_restriction">dcat-us:specificRestriction</a> property refers to the
+          NARA
           <a href="https://www.archives.gov/research/catalog/lcdrg/authority_lists/specificaccesslist.html">Specific
             Access
             Restriction Authority List</a> for detailed information on restrictions. It defines specific access
@@ -20264,7 +20351,8 @@
           multiple
           levels of security classifications, identifies restricting statutes, or explains access restrictions not
           included in the <a
-            href="https://www.archives.gov/research/catalog/lcdrg/elements/specificaccess.html">Specific Access
+            href="https://www.archives.gov/research/catalog/lcdrg/elements/specificaccess.html">Specific
+            Access
             Restriction Authority List</a> or <a
             href="https://www.archives.gov/research/catalog/lcdrg/authority_lists/securitylist.html">Security
             Classification Authority List</a>.
@@ -20272,8 +20360,10 @@
       </ul>
 
       <p>
-        These properties and their corresponding code lists are essential for encoding and interpreting restriction data
-        accurately within the NARA guidelines and DCAT-US framework. The SKOS vocabulary for these lists is available in
+        These properties and their corresponding code lists are essential for encoding and interpreting restriction
+        data
+        accurately within the NARA guidelines and DCAT-US framework. The SKOS vocabulary for these lists is available
+        in
         the <a href="https://github.com/DOI-DO/dcat-us/blob/main/vocabularies/nara-restrictions.ttl">DCAT-US
           repository</a>, with JSON-LD URIs abbreviated for space. The following is the code list for <a
           href="#access_restriction-restriction_status">dcat-us:restrictionStatus</a> property:
@@ -20323,7 +20413,8 @@
       <p>
         The <a href="#properties-for-use_restriction"><code>dcat-us:UseRestriction</code></a> class in DCAT-US 3.0 is
         used by the National Archives and Records Administration (NARA) to define use restrictions on resources. This
-        includes limitations for legal and ethical compliance, like protecting privacy and intellectual property rights.
+        includes limitations for legal and ethical compliance, like protecting privacy and intellectual property
+        rights.
         The following properties are used to describe use restrictions:
       </p>
 
@@ -20331,26 +20422,30 @@
         <li>
           <strong>Restriction Status:</strong> This mandatory property is linked to the NARA <a
             href="https://www.archives.gov/research/catalog/lcdrg/elements/use.html">Use Restriction Status Authority
-            List</a>, the <a href="#use_restriction-restriction_status">dcat-us:restrictionStatus</a> property specifies
+            List</a>, the <a href="#use_restriction-restriction_status">dcat-us:restrictionStatus</a> property
+          specifies
           the type of use restrictions.
         </li>
         <li>
           <strong>Specific Restriction:</strong> This recommended <a
-            href="#use_restriction-specific_restriction">dcat-us:specificRestriction</a> property refers to the NARA <a
-            href="https://www.archives.gov/research/catalog/lcdrg/elements/specificuse.html">Specific Restriction
+            href="#use_restriction-specific_restriction">dcat-us:specificRestriction</a> property refers to the NARA
+          <a href="https://www.archives.gov/research/catalog/lcdrg/elements/specificuse.html">Specific Restriction
             Authority List</a> for detailed information on restrictions.
         </li>
         <li>
           <strong>Restriction Note:</strong> This optional <a
-            href="#use_restriction-restriction_note">dcat-us:restrictionNote</a> property can include additional context
+            href="#use_restriction-restriction_note">dcat-us:restrictionNote</a> property can include additional
+          context
           or annotations about restrictions. Its use depends on the 'restriction status' property, and certain terms
           from the authority lists may require its application.
         </li>
       </ul>
 
       <p>
-        These properties and their corresponding code lists are essential for encoding and interpreting restriction data
-        accurately within the NARA guidelines and DCAT-US framework. The SKOS vocabulary for these lists is available in
+        These properties and their corresponding code lists are essential for encoding and interpreting restriction
+        data
+        accurately within the NARA guidelines and DCAT-US framework. The SKOS vocabulary for these lists is available
+        in
         the <a href="https://github.com/DOI-DO/dcat-us/blob/main/vocabularies/nara-restrictions.ttl">DCAT-US
           repository</a>, with JSON-LD URIs abbreviated for space.
       </p>
@@ -20366,14 +20461,16 @@
 
       <p>
         The <a href="#properties-for-cui_restriction"><code>dcat-us:CuiRestriction</code></a> class in DCAT-US 3.0 is
-        tailored for managing CUI, requiring specific safeguarding in line with legal and policy requirements. It aligns
+        tailored for managing CUI, requiring specific safeguarding in line with legal and policy requirements. It
+        aligns
         with NARA guidelines to ensure compliance, enhance data security, and improve data
         interoperability, transparency, and efficient resource management in government data systems.
       </p>
 
       <p>
         The <a href="#properties-for-cui_restriction"><code>dcat-us:CuiRestriction</code></a> class is instrumental in
-        managing Controlled Unclassified Information (CUI) within the DCAT-US framework. It mandates certain properties
+        managing Controlled Unclassified Information (CUI) within the DCAT-US framework. It mandates certain
+        properties
         for effective representation and management of CUI data:
       </p>
 
@@ -20385,8 +20482,10 @@
         </li>
         <li>
           <strong>CUI Designation Indicator:</strong> Detailed in the <a
-            href="#cui_restriction-designation_indicator"><code>dcat-us:designationIndicator</code></a>, this free-text
-          property follows guidelines from the NARA Marking Guidebook and DODI 5200.48, typically including "Controlled
+            href="#cui_restriction-designation_indicator"><code>dcat-us:designationIndicator</code></a>, this
+          free-text
+          property follows guidelines from the NARA Marking Guidebook and DODI 5200.48, typically including
+          "Controlled
           by:" and contact information.
         </li>
         <li>
@@ -20410,13 +20509,16 @@
       <aside class="note">TO COMPLETE</aside>
       <p>Provenance and data lineage are crucial aspects of data management and transparency, ensuring that data
         consumers understand the origins, transformations, and utility of the data. In DCAT-US, leveraging [[DCTERMS]]
-        (Dublin Core Terms) and [[PROV-O]] (W3C PROV Ontology) properties can effectively represent these aspects. This
-        section outlines best practices for utilizing these properties to detail the provenance and data lineage within
+        (Dublin Core Terms) and [[PROV-O]] (W3C PROV Ontology) properties can effectively represent these aspects.
+        This
+        section outlines best practices for utilizing these properties to detail the provenance and data lineage
+        within
         DCAT datasets.</p>
       <section id="basic-provenance">
         <h4>Basic Provenance Metadata</h4>
 
-        <p>Within DCAT-US, the Dublin Core Terms [[DCTERMS]] vocabulary offers properties that allow data publishers to
+        <p>Within DCAT-US, the Dublin Core Terms [[DCTERMS]] vocabulary offers properties that allow data publishers
+          to
           articulate basic provenance information effectively. Particularly, <a
             data-cite="DCTERMS#http://purl.org/dc/terms/source"><code>dcterms:source</code></a> and <a
             data-cite="DCTERMS#http://purl.org/dc/terms/provenance"><code>dcterms:provenance</code></a> are
@@ -20445,7 +20547,8 @@
           utilized
           to
           denote the original source from which the current dataset is
-          derived. It can be a URI directly pointing to the original dataset or, in the absence of a URI, a descriptive
+          derived. It can be a URI directly pointing to the original dataset or, in the absence of a URI, a
+          descriptive
           reference that sufficiently identifies the original source. It's imperative to ensure that the source
           referenced
           is the most immediate or direct source from which the data was derived and to utilize persistent URIs when
@@ -20455,15 +20558,18 @@
         <p>On the other hand, <a
             data-cite="DCTERMS#http://purl.org/dc/terms/provenance"><code>dcterms:provenance</code></a>
           provides a mechanism to describe the history or lineage of the dataset.
-          This property allows publishers to detail the dataset's historical context and sequence of events or processes
+          This property allows publishers to detail the dataset's historical context and sequence of events or
+          processes
           that have influenced its formation or transformation. The provenance statement should be concise yet
           comprehensive, providing a clear and adequate understanding of the dataset's history and lineage. Employing
-          standardized nomenclature and terminologies ensures clarity and consistency across provenance statements.</p>
+          standardized nomenclature and terminologies ensures clarity and consistency across provenance statements.
+        </p>
 
         <p>In the context of data cataloging and transparency, embedding provenance information is vital to elucidate
           the
           origin and historical context of a dataset. The <a
-            data-cite="DCTerms#terms_Provenance Statement"><code>dcterms:ProvenanceStatement</code></a> from the Dublin
+            data-cite="DCTerms#terms_Provenance Statement"><code>dcterms:ProvenanceStatement</code></a> from the
+          Dublin
           Core Terms (DCTerms)
           vocabulary provides a structured way to incorporate this information within the DCAT-US framework.</p>
 
@@ -20522,7 +20628,8 @@
           plays
           a
           pivotal role in representing processes or actions taken
-          upon or with entities, thereby providing a structured framework to document the transformations, analyses, or
+          upon or with entities, thereby providing a structured framework to document the transformations, analyses,
+          or
           other actions that data undergoes. An instance of <a
             data-cite="PROV-O#Class:prov_Activity"><code>prov:Activity</code></a> is utilized to describe a particular
           occurrence
@@ -20530,13 +20637,16 @@
           associating activities with entities through properties such as <a
             data-cite="PROV-O#Property:prov_wasGeneratedBy"><code>prov:wasGeneratedBy</code></a>, a detailed
           account of the data's journey, from its origin through various transformations to its current state, can be
-          articulated. This not only enhances the transparency of the data but also provides a robust mechanism to trace
+          articulated. This not only enhances the transparency of the data but also provides a robust mechanism to
+          trace
           back through the steps involved in data creation and processing, thereby contributing to verifiable and
           trustworthy data lineage. Furthermore, <a
             data-cite="PROV-O#Class:prov_Activity"><code>prov:Activity</code></a>
           can be associated with prov:Agent through properties like
-          prov:wasAssociatedWith, offering insights into the roles of different agents (e.g., organizations, people, or
-          software) in data processing activities, thereby enriching the data provenance and lineage documentation.</p>
+          prov:wasAssociatedWith, offering insights into the roles of different agents (e.g., organizations, people,
+          or
+          software) in data processing activities, thereby enriching the data provenance and lineage documentation.
+        </p>
 
         <p>By adhering to these practices and effectively utilizing [[PROV-O]] properties, data publishers can enhance
           transparency and facilitate informed data usage among consumers by providing a clear view of data sourcing,
@@ -20555,10 +20665,12 @@
 
         <p>This category of properties deals with how data is encoded, structured, packaged, and presented, as well as
           the
-          media type and language it's available in. Properly understanding and managing these aspects is essential for
+          media type and language it's available in. Properly understanding and managing these aspects is essential
+          for
           data
           interoperability, accessibility, discoverability, and usability. A set standardized property values ensure
-          cross-platform interoperability, enabling datasets to be seamlessly processed and integrated. They offer clear
+          cross-platform interoperability, enabling datasets to be seamlessly processed and integrated. They offer
+          clear
           semantics about a dataset's nature, ensuring users and systems have a precise understanding. Furthermore, by
           promoting consistent descriptions, they enhance dataset discoverability, making it easier for users to find
           and
@@ -20625,7 +20737,8 @@
 
         <h4>Character encoding</h4>
 
-        <p>In [[VOCAB-DCAT-3]], the specification of the character encoding of a dataset and the character encoding of a
+        <p>In [[VOCAB-DCAT-3]], the specification of the character encoding of a dataset and the character encoding of
+          a
           metadata record is not explicitly supported. </p>
         <p>According to [[RFC4288]], the character set can be part of the
           media type specification, but only for type “text”. By contrast, in DCAT-US 3.0 application profile the
@@ -20687,7 +20800,8 @@
 
             <tr>
               <td>8859part1</td>
-              <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-1, Information technology
+              <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-1, Information
+                technology
                 -
                 8-bit single byte coded graphic character sets - Part 1 : Latin alphabet No.1</td>
               <td>ISO-8859-1</td>
@@ -20695,7 +20809,8 @@
 
             <tr>
               <td>8859part2</td>
-              <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-2, Information technology
+              <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-2, Information
+                technology
                 -
                 8-bit single byte coded graphic character sets - Part 2 : Latin alphabet No.2</td>
               <td>ISO-8859-2</td>
@@ -20703,7 +20818,8 @@
 
             <tr>
               <td>8859part3</td>
-              <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-3, Information technology
+              <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-3, Information
+                technology
                 -
                 8-bit single byte coded graphic character sets - Part 3 : Latin alphabet No.3</td>
               <td>ISO-8859-3</td>
@@ -20711,7 +20827,8 @@
 
             <tr>
               <td>8859part4</td>
-              <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-4, Information technology
+              <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-4, Information
+                technology
                 -
                 8-bit single byte coded graphic character sets - Part 4 : Latin alphabet No.4</td>
               <td>ISO-8859-4</td>
@@ -20719,7 +20836,8 @@
 
             <tr>
               <td>8859part5</td>
-              <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-5, Information technology
+              <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-5, Information
+                technology
                 -
                 8-bit single byte coded graphic character sets - Part 5 : Latin/Cyrillic alphabet</td>
               <td>ISO-8859-5</td>
@@ -20727,7 +20845,8 @@
 
             <tr>
               <td>8859part6</td>
-              <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-6, Information technology
+              <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-6, Information
+                technology
                 -
                 8-bit single byte coded graphic character sets - Part 6 : Latin/Arabic alphabet</td>
               <td>ISO-8859-6</td>
@@ -20735,7 +20854,8 @@
 
             <tr>
               <td>8859part7</td>
-              <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-7, Information technology
+              <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-7, Information
+                technology
                 -
                 8-bit single byte coded graphic character sets - Part 7 : Latin/Greek alphabet</td>
               <td>ISO-8859-7</td>
@@ -20743,7 +20863,8 @@
 
             <tr>
               <td>8859part8</td>
-              <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-8, Information technology
+              <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-8, Information
+                technology
                 -
                 8-bit single byte coded graphic character sets - Part 8 : Latin/Hebrew alphabet</td>
               <td>ISO-8859-8</td>
@@ -20751,7 +20872,8 @@
 
             <tr>
               <td>8859part9</td>
-              <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-9, Information technology
+              <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-9, Information
+                technology
                 -
                 8-bit single byte coded graphic character sets - Part 9 : Latin alphabet No.5</td>
               <td>ISO-8859-9</td>
@@ -20759,7 +20881,8 @@
 
             <tr>
               <td>8859part10</td>
-              <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-10, Information technology
+              <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-10, Information
+                technology
                 -
                 8-bit single byte coded graphic character sets - Part 10 : Latin alphabet No.6</td>
               <td>ISO-8859-10</td>
@@ -20767,7 +20890,8 @@
 
             <tr>
               <td>8859part11</td>
-              <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-11, Information technology
+              <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-11, Information
+                technology
                 -
                 8-bit single byte coded graphic character sets - Part 11 : Latin/Thai alphabet</td>
               <td>ISO-8859-11</td>
@@ -20775,7 +20899,8 @@
 
             <tr>
               <td>8859part13</td>
-              <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-13, Information technology
+              <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-13, Information
+                technology
                 -
                 8-bit single byte coded graphic character sets - Part 13 : Latin alphabet No.7</td>
               <td>ISO-8859-13</td>
@@ -20783,7 +20908,8 @@
 
             <tr>
               <td>8859part14</td>
-              <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-14, Information technology
+              <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-14, Information
+                technology
                 -
                 8-bit single byte coded graphic character sets - Part 14 : Latin alphabet No.8 (Celtic)</td>
               <td>ISO-8859-14</td>
@@ -20791,7 +20917,8 @@
 
             <tr>
               <td>8859part15</td>
-              <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-15, Information technology
+              <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-15, Information
+                technology
                 -
                 8-bit single byte coded graphic character sets - Part 15 : Latin alphabet No.9</td>
               <td>ISO-8859-15</td>
@@ -20799,7 +20926,8 @@
 
             <tr>
               <td>8859part16</td>
-              <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-16, Information technology
+              <td>ISO/<abbr title="International Electrotechnical Commission">IEC</abbr> 8859-16, Information
+                technology
                 -
                 8-bit single byte coded graphic character sets - Part 16 : Latin alphabet No.10</td>
               <td>ISO-8859-16</td>
@@ -20884,12 +21012,14 @@
       <p>Thorough documentation of data quality significantly streamlines the dataset selection process, enhancing the
         likelihood of reuse. Regardless of domain-specific nuances, documenting data quality and explicitly stating
         known
-        quality issues in metadata are fundamental practices. Typically, assessing quality involves multiple dimensions,
+        quality issues in metadata are fundamental practices. Typically, assessing quality involves multiple
+        dimensions,
         each encapsulating characteristics of importance to both data publishers and consumers.</p>
 
       <p>The Data Quality Vocabulary defines machine-readable concepts such as measurements and criteria to assess
         quality
-        across various dimensions [[VOCAB-DQV]]. Tailored heuristics designed for specific assessment scenarios rely on
+        across various dimensions [[VOCAB-DQV]]. Tailored heuristics designed for specific assessment scenarios rely
+        on
         quality indicators, which encompass data content, metadata, and human ratings. These indicators offer valuable
         insights into the dataset's suitability for its intended purpose.</p>
 
@@ -20903,7 +21033,8 @@
       <h3>Versioning</h3>
 
       <p>Versioning is a concept used to describe the relationship between an original resource and its variations,
-        updates, or translations. In this section, we explore how DCAT (Data Catalog Vocabulary) is employed to document
+        updates, or translations. In this section, we explore how DCAT (Data Catalog Vocabulary) is employed to
+        document
         versions resulting from updates or modifications throughout a resource's lifecycle.</p>
 
       <p>DCAT relies on established vocabularies, including the versioning section of the PAV ontology and terms from
@@ -20913,16 +21044,19 @@
         Records, Datasets, Dataset Series, and Distributions.</p>
 
       <p>The versioning approach within DCAT is designed to complement existing methods specific to certain resources
-        (such as versioning properties for ontologies in [[OWL2-OVERVIEW]]) and those prevalent in particular domains. A
+        (such as versioning properties for ontologies in [[OWL2-OVERVIEW]]) and those prevalent in particular domains.
+        A
         detailed comparison with other vocabularies can be found in section 11.4: Complementary Approaches to
         Versioning.
       </p>
 
-      <p>Versioning is closely linked to community conventions, data management strategies, and existing processes. Data
+      <p>Versioning is closely linked to community conventions, data management strategies, and existing processes.
+        Data
         providers bear the responsibility of determining when and why a new version should be released.</p>
 
       <p><strong>Handling Dataset Changes </strong></p>
-      <p>Datasets published on the Web are subject to change over time. Some datasets are updated on a regular schedule,
+      <p>Datasets published on the Web are subject to change over time. Some datasets are updated on a regular
+        schedule,
         while others evolve as improvements in data collection methods make updates necessary. To manage these changes
         effectively, new versions of a dataset may be created. However, there isn't a unanimous consensus on when
         changes
@@ -20939,12 +21073,14 @@
           <strong>Scenario 2:</strong> Removal of an existing bus stop, necessitating its deletion from the dataset.
         </li>
         <li>
-          <strong>Scenario 3:</strong> Identification and correction of an error in one of the existing bus stops stored
+          <strong>Scenario 3:</strong> Identification and correction of an error in one of the existing bus stops
+          stored
           in the dataset.
         </li>
       </ol>
 
-      <p>In general, when dealing with datasets that represent time series or spatial series, such as data for different
+      <p>In general, when dealing with datasets that represent time series or spatial series, such as data for
+        different
         regions or years, these are not typically regarded as multiple versions of the same dataset. Instead, each
         dataset
         covers a distinct set of observations about the world and should be treated as a new dataset. This principle
@@ -20952,7 +21088,8 @@
         applies to datasets collecting data about weekly weather forecasts for a specific city, where a new dataset is
         created each week to store data for that particular week.</p>
 
-      <p>Scenario 1 and 2 may trigger major version updates, while Scenario 3 is likely to trigger only a minor version
+      <p>Scenario 1 and 2 may trigger major version updates, while Scenario 3 is likely to trigger only a minor
+        version
         update. However, the distinction between minor and major versions is less critical than ensuring that any
         changes
         are clearly indicated by incrementing the version number. Even for minor changes, maintaining a record of
@@ -20974,26 +21111,31 @@
       <p>A Dataset Series is a collection of related datasets that share common characteristics, making them part of a
         cohesive group. This section provides guidance on the effective use of Dataset Series within data catalogs,
         emphasizing the benefits and considerations for publishers and users alike.</p>
-      <p>A Dataset Series is a way for publishers to convey that a dataset is evolving across specific dimensions and is
+      <p>A Dataset Series is a way for publishers to convey that a dataset is evolving across specific dimensions and
+        is
         available as a set of related datasets. However, choosing to group datasets this way depends on the use case.
         Since it demands extra metadata management from the publisher, it's optional. For instance, a dataset updated
-        frequently via an API may not require individual records for each yearly snapshot unless the publisher wishes to
+        frequently via an API may not require individual records for each yearly snapshot unless the publisher wishes
+        to
         share each snapshot's lifecycle.</p>
 
       <h4>Why Use Dataset Series?</h4>
       <p>Implementing Dataset Series offers several advantages:</p>
       <ul>
-        <li><strong>Organizational Clarity:</strong> Helps categorize and group datasets, making it easier for users to
+        <li><strong>Organizational Clarity:</strong> Helps categorize and group datasets, making it easier for users
+          to
           find and navigate related sets of data.</li>
         <li><strong>Efficient Data Management:</strong> Streamlines the management of multiple datasets, providing a
           structured approach for updates and maintenance.</li>
-        <li><strong>User Experience:</strong> Enhances data discoverability and understanding, as users can perceive the
+        <li><strong>User Experience:</strong> Enhances data discoverability and understanding, as users can perceive
+          the
           broader context of individual datasets within a collective series.</li>
       </ul>
       <h4>Guidelines for Implementing Dataset Series</h4>
       <p>When using Dataset Series, consider the following best practices:</p>
       <ul>
-        <li>Initiate a Dataset Series exclusively for managing multiple, interconnected datasets, ensuring each dataset
+        <li>Initiate a Dataset Series exclusively for managing multiple, interconnected datasets, ensuring each
+          dataset
           is significant independently and contributes to the series' overall narrative.</li>
         <li>Maintain up-to-date metadata for the Dataset Series, reflecting any addition or removal of datasets.
           Consider discontinuing the series if it no longer contains any datasets, particularly when persistent
@@ -21011,7 +21153,8 @@
       <ul>
         <li>Employ consistent metadata descriptors to clarify the relationships and commonalities within the series.
         </li>
-        <li>Utilize versioning for datasets that evolve or expand over time, helping users track changes and understand
+        <li>Utilize versioning for datasets that evolve or expand over time, helping users track changes and
+          understand
           the dataset's history.</li>
         <li>Highlight the distinct features of each dataset, ensuring its standalone value is clear, while also
           emphasizing its role in the broader series.</li>
@@ -21218,7 +21361,8 @@
       JSON-LD is a W3C Recommendation [[[json-ld11]]] that provided a standard approach to interpret JSON structures
       as RDF. The provided JSON-LD context file can be used by implementers to base their data exchange upon, and so
       create
-      a DCAT-US conformant data exchange. This JSON-LD context is not normative, i.e. other JSON-LD contexts are allowed
+      a DCAT-US conformant data exchange. This JSON-LD context is not normative, i.e. other JSON-LD contexts are
+      allowed
       to create a a conformant
       DCAT-US data exchange. The JSON-LD context file downloadable <a
         href="https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld">here</a>. </p>
@@ -21244,19 +21388,22 @@
     </p>
 
     <p>
-      JSON Schema's focus on structural validation forms a contrast with JSON-LD and RDF's capabilities. JSON-LD and RDF
+      JSON Schema's focus on structural validation forms a contrast with JSON-LD and RDF's capabilities. JSON-LD and
+      RDF
       go beyond just validation, allowing the creation of a graph of interconnected entities that can be easily
       integrated and reused across various contexts. This interconnectedness is fundamental to the concept of the
       semantic web, where data is not only readable but also comprehensible to machines.
     </p>
     <p>
       Specifically, JSON-LD facilitates the representation of data as a graph, making it suitable for more complex,
-      interlinked data representations, which is a cornerstone of linked data systems. This graph-based approach stands
+      interlinked data representations, which is a cornerstone of linked data systems. This graph-based approach
+      stands
       in contrast to the tree-like structures that JSON Schema is confined to, limiting its utility in scenarios
       requiring extensive data interconnectivity and reusability.
     </p>
     <p>
-      Implementers can use the provided JSON Schema for their data exchanges, aligning with DCAT-US standards. However,
+      Implementers can use the provided JSON Schema for their data exchanges, aligning with DCAT-US standards.
+      However,
       it's non-normative, meaning alternatives creating compliant exchanges are also valid. Download the current JSON
       Schema <a href="https://github.com/DOI-DO/dcat-us/blob/main/jsonschema/master_schema.json">here</a>.
     </p>
@@ -21271,19 +21418,23 @@
 
 
     <p>In order to verify whether a catalog adheres to the stipulated constraints in this Application Profile, the
-      constraints are articulated utilizing SHACL [[SHACL]]. All constraints in this specification that were amenable to
+      constraints are articulated utilizing SHACL [[SHACL]]. All constraints in this specification that were amenable
+      to
       SHACL expression translation have been incorporated. Consequently, this set of SHACL expressions can be employed
       to construct a validation check for data exchange between two systems, a common scenario being one catalog being
       harvested into another.</p>
 
-    <p>For example, it may be recognized that the data being exchanged doesn't include the organizations' details since
+    <p>For example, it may be recognized that the data being exchanged doesn't include the organizations' details
+      since
       they are uniquely identified by a deferenceable URI. In this scenario, enforcing rules about the mandatory
       presence of a name for each organization may not be pertinent. Rigorously applying the DCAT-AP SHACL expressions
       would trigger errors, even though the data is accessible via an alternative route. In this context, it's
       acceptable to omit this check during the validation phase.</p>
 
-    <p>This example underscores that to achieve an optimal user experience during a validation process, it's crucial to
-      consider the actual data transferred between systems and apply only the constraints relevant to the data exchange.
+    <p>This example underscores that to achieve an optimal user experience during a validation process, it's crucial
+      to
+      consider the actual data transferred between systems and apply only the constraints relevant to the data
+      exchange.
       To facilitate this, the SHACL expressions are organized into separate files, aligning with common validation
       configurations.</p>
     <p>The SHACL application profile for DCAT-US can be found <a

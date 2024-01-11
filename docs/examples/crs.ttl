@@ -1,0 +1,15 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/dataset/001>
+  a dcat:Dataset ;
+  dct:title "Sample Geospatial Dataset in NAD 83" ;
+  dct:description "This dataset provides geospatial data in the North American Datum 1983 (NAD 83) CRS." ;
+  dct:conformsTo <http://www.opengis.net/def/crs/EPSG/0/4269> .
+
+<http://www.opengis.net/def/crs/EPSG/0/4269>
+  a dct:Standard ;
+  dct:title "EPSG:4269 - NAD 83" ;
+  dct:description "North American Datum 1983 (NAD 83) is a geodetic reference system that is widely used in North America for mapping and navigation." ;
+  dct:type <http://resources.data.gov/categories/SpatialReferenceSystem> .

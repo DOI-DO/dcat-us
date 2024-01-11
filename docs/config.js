@@ -146,7 +146,7 @@ var respecConfig = {
       publisher: "https://theodi.org/",
     },
     "OGC-EPSG": {
-      href: "http://www.opengis.net/def/crs/EPSG/0/",
+      href: "http://www.opengis.net/def/crs/EPSG/",
       title: "OGC EPSG register of coordinate reference systems",
       publisher: "https://www.ogc.org/",
     },
