@@ -4726,7 +4726,7 @@
                 accessed, integrated with other resources, and reused across the DCAT-US ecosystem, promoting data
                 interoperability and accessibility.</li>
               <li>To enhance data interoperability and consistency, it is advisable to reuse established controlled
-                vocabularies such as GCMD, Agrovoc, and NAICS for data description.</li>
+                vocabularies such as Global Change Master Directory (GCMD) [[?GCMD]], Agrovoc, and NAICS for data description.</li>
             </ul>
           </td>
         </tr>
@@ -5021,7 +5021,7 @@
                 using SKOS encoding and provided in Linked Data format (RDF/XML,TTL, JSON-LD, NTriples)
               </li>
               <li>To enhance data interoperability and consistency, it is advisable to reuse established controlled
-                vocabularies such as GCMD, Agrovoc, and NAICS for data description.</li>
+                vocabularies such as Global Change Master Directory (GCMD) [[?GCMD]], Agrovoc, and NAICS for data description.</li>
             </ul>
           </td>
         </tr>
@@ -19323,66 +19323,75 @@
     <section id="resource-classification">
       <h3>Resource Classification</h3>
 
+      <p>Controlled vocabularies, including taxonomies and thesauri, dramatically enhance data searchability. Utilizing
+        these vocabularies allows datasets to be systematically classified, tagged, and described with standardized
+        terms, aiding users in retrieving relevant datasets, even when using varied terms or synonyms.</p>
 
-      <p>Controlled vocabularies, encompassing taxonomies, thesauri have a transformative impact on data searchability.
-        By using these vocabularies, datasets can be classified, tagged, and described with standardized terms and
-        phrases. This standardization ensures that users searching with different terms or synonyms can still retrieve
-        the most relevant datasets.</p>
-      <p>More than just keyword matching, the use of controlled vocabularies facilitates <strong>semantic
-          search</strong>. This means that the search process understands the context, relationships, and meanings
-        behind terms, rather than just the terms themselves. For instance, when using a thesaurus-based vocabulary,
-        searching for "automobiles" might also yield results for "cars" or "vehicles".</p>
-      <p>Such an enriched search experience becomes especially vital when dealing with vast and diverse datasets. It
-        ensures that users can find the most relevant and comprehensive results, even if the exact phrasing or
-        terminology varies between the user's query and the dataset's metadata. In essence, controlled vocabularies
-        bridge the gap between user intent and dataset content, leading to more accurate and meaningful search outcomes.
-      </p>
-      <p>The DCAT US profile uses a range of properties from the DCAT 3 framework to classify and categorize resources,
-        helping users and systems understand and navigate resources.</p>
-      <section id="resource-types">
-        <h4>Resource types</h4>
-        <p>
-          The <code>dcterms:type</code> property specifies the nature or genre of content and is applicable to
-          <strong>dcat:Dataset, dcat:DataService</strong>, and <strong>dcat:DatasetSeries</strong>. For instance, types
-          might include "Geospatial Dataset", "Image", "Statistical Dataset", or "Map". The <a
-            data-cite="DCMI-TYPES#section-7"><code>Dublin Core Type Vocabulary</code></a>
-          is for example a popular vocabulary used to categorize datasets.
-        </p>
-      </section>
-      <section id="keywords">
-        <h4>Keywords</h4>
-        <p>
-          Relevant for <strong>dcat:Dataset, dcat:DataService, dcat:Catalog, and dcat:DatasetSeries</strong>, the
-          <code>dcat:keyword</code> property allows datasets to be tagged with pertinent terms represented as literals.
-          Using keywords from <strong>AGROVOC</strong>, <strong>GCMD</strong>, or the <strong>North American Industry
-            Classification System (NAICS)</strong> can enhance consistency in the US context.
-        </p>
-      </section>
-      <section id="thematic-classification">
-        <h4>Thematic Classification</h4>
-        <p>
-          Applicable to <strong>dcat:Dataset</strong> and <strong>dcat:DatasetSeries</strong>, the
-          <code>dcat:theme</code>
-          property offers thematic categorization. The <strong>Data Theme Taxonomy from Data.gov</strong> (TBD) and the
-          <strong>Federal Geographic Data Committee (FGDC) Controlled Vocabularies</strong> such as ISO 19115 Topic
-          CodeList
-          and
-          Geoplatform NSDI Themes are widely used in the US to ensure a unified theming approach.
-        </p>
-      </section>
-      <section id="subject-classification">
-        <h4>Subject Classification</h4>
-        <p>
-          Suitable for <strong>dcat:Dataset</strong> and <strong>dcat:DatasetSeries</strong>, the
-          <code>dcterms:subject</code>
-          property provides deeper insight into a dataset's primary subject. Adopting vocabularies like the
-          <strong>Global Change Master Directory (GCMD)</strong> <strong>FAO Agrovoc</strong>, the <strong>Integrated
-            Taxonomic Information System (ITIS)</strong>, the <strong>North American Industry Classification System
-            (NAICS)</strong> or <strong>Library of Congress Subject Headings (LCSH)</strong>, can optimize clarity and
-          searchability in US Governement datasets.
-        </p>
-      </section>
+      <p>Employing controlled vocabularies enables <strong>semantic search</strong>, which comprehends the context and
+        relationships behind search terms. This approach enhances search results, for example, linking "automobiles"
+        with related terms like "cars" or "vehicles".</p>
+
+      <p>This enriched search experience is crucial for navigating vast, diverse datasets, ensuring comprehensive and
+        relevant results, and bridging the gap between user intent and dataset content.</p>
+
+      <p>The DCAT-US profile utilizes properties from the DCAT 3 framework for resource classification, providing
+        flexibility in the choice of
+        controlled vocabularies to meet the specific needs of various communities or agencies.</p>
+
+      <ul>
+        <li>
+          <p>
+            <a href="#dataset-type"><strong>dcterms:type</strong></a>: This property specifies the category or genre ofgc
+            the content in a resource. It's applicable to <a href="#properties-for-dataset">dcat:Dataset</a>, <a
+              href="#properties-for-data-service">dcat:DataService</a>, and <a
+              href="#properties-for-dataset-series">dcat:DatasetSeries</a>. For <a
+              href="#properties-for-data-service">dcat:DataService</a>, types might include "Web Map Service" (WMS) for
+            services providing geographical data in a map format, "Web Feature Service" (WFS) for services allowing
+            users to access geospatial features, or "RESTful API" for services using REST API protocols. For datasets,
+            types can be "Geospatial Dataset", "Image", "Statistical Dataset", or "Map". The Dublin Core Type Vocabulary
+            is a popular choice for providing standardized descriptors.
+          </p>
+        </li>
+        <li>
+          <p>
+            <a href="#dataset-keyword"><strong>dcat:keyword</strong></a>: This property allows for the tagging of
+            datasets with relevant keywords, facilitating easier discovery and categorization. It is suitable for use
+            with <a href="#properties-for-dataset">dcat:Dataset</a>, <a
+              href="#properties-for-data-service">dcat:DataService</a>, <a
+              href="#properties-for-dataset-series">dcat:DatasetSeries</a>, and <a
+              href="#properties-for-catalog">dcat:Catalog</a>. Employing keywords from established vocabularies such as
+            AGROVOC (for agricultural terms), Global Change Master Directory (GCMD) [[?GCMD]] (for Earth science), or NAICS (for industry classifications) ensures
+            consistency and enhances the discoverability of datasets within the US context.
+          </p>
+        </li>
+        <li>
+          <p>
+            <a href="#dataset-theme-category"><strong>dcat:theme</strong></a>: This property provides thematic
+            categorization for resources, specifically for <a href="#properties-for-dataset">dcat:Dataset</a> and <a
+              href="#properties-for-dataset-series">dcat:DatasetSeries</a>. Utilizing a unified thematic taxonomy, such
+            as the Data Theme Taxonomy from Data.gov or the FGDC (Federal Geographic Data Committee) Controlled
+            Vocabularies like the ISO 19115 Topic CodeList, ensures a cohesive approach to categorizing datasets. This
+            thematic classification aids users in navigating and identifying datasets relevant to particular subjects or
+            sectors.
+          </p>
+        </li>
+        <li>
+          <p>
+            <a href="#dataset-subject"><strong>dcterms:subject</strong></a>: Aimed at providing detailed insight into
+            the primary subject matter of a dataset, this property is crucial for <a
+              href="#properties-for-dataset">dcat:Dataset</a> and <a
+              href="#properties-for-dataset-series">dcat:DatasetSeries</a>. Adoption of controlled vocabularies like
+              Global Change Master Directory (GCMD) [[?GCMD]] for Earth science topics, FAO Agrovoc for agricultural subjects, ITIS for taxonomic information, NAICS
+            for industry classifications, or LCSH (Library of Congress Subject Headings) enhances the clarity and
+            searchability of datasets, particularly in the context of US Government data. These vocabularies enable
+            precise and comprehensive subject classification, facilitating more effective data discovery and use.
+          </p>
+        </li>
+      </ul>
+
     </section>
+
+   
     <!-- Spatial Metadata -->
     <section id="spatial-metadata">
       <h3>Spatial Metadata</h3>
@@ -21520,7 +21529,7 @@
             Profile, they
             may serve to increase interoperability across applications in the same region or domain. Examples
             are the full
-            set of concepts in GCMD [[GCMD]],and numerous other schemes.</p>
+            set of concepts in Global Change Master Directory (GCMD) [[?GCMD]],and numerous other schemes.</p>
 
           <p>For geospatial metadata, the working group has identified the following additional vocabularies:
           </p>
