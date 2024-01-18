@@ -10447,12 +10447,22 @@
               <tr>
                 <th>Usage note</th>
                 <td>
-                  Distribution to "original" metadata document
-
+                  Distribution to "original" metadata document from which the dataset is derived from
                 </td>
               </tr>
             </tbody>
           </table>
+          <aside class="example ds-selector-tabs" title="Usage of dcat-us:metadataDistribution for dcat:Dataset">
+            <div class="selectors">
+              <button class="selected exampleTab1 ttl" onclick="openTab('exampleTab1', 'ttl')">TTL</button>
+              <button class="exampleTab1 jsonld" onclick="openTab('exampleTab1', 'jsonld')">JSON-LD</button>
+            </div>
+            <pre class="selected ttl exampleTab1" data-include-format="text"
+              data-include="./examples/dataset/metadata-distribution.ttl"></pre>
+            <pre class="jsonld exampleTab1 json" data-include-format="text"
+              data-include="./examples/dataset/metadata-distribution.jsonld"></pre>
+          </aside>
+        
         </section>
         <section id="dataset-liability_statement">
           <h4>Property: liability statement</h4>
