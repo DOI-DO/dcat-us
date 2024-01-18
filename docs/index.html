@@ -265,31 +265,26 @@
     </section>
     <section id="area-of-application">
       <h3>Application Areas</h3>
-      <p>The DCAT Application Profile for data portals in United States (DCAT-US) is an Application Profile of the DCAT
-        vocabulary.
+      <p>The DCAT Application Profile for data portals in the United States (DCAT-US) is an Application Profile of the
+        DCAT vocabulary.
       </p>
       <ul>
-        <li><strong>DCAT (“Data Catalog Vocabulary”)</strong> is a semantic definition to describe data by the means of
-          an
-          RDF vocabulary.
-          It allows for a decentralized approach regarding the publication of data by enforcing interoperability
-          via the use of a common language to describe the data.
+        <li>The “Data Catalog Vocabulary” (DCAT) is a semantic language for describing data by means of an RDF
+          vocabulary. It allows for a decentralized and interoperable approach for publishing and finding data by use of
+          a common language for describing data. </li>
+        <li>DCAT is a generic language that can be applied in various contexts. An Application Profile applies the DCAT
+          vocabulary to a specific domain, context, or application, with the goal of facilitating data discovery,
+          access, and sharing. The DCAT-US application profile addresses specific requirements of the U.S. Government
+          (laws, regulations, and policies) and other needs of U.S. data producers and consumers.
         </li>
-        <li>Being DCAT a generic language, it can be applied in various contexts.
-          An Application Profile specifies its utilization within a specific domain, context or application,
-          with the goal of facilitating data exchange. In United States the application profile DCAT-US was defined,
-          which assumed the role of a de facto standard within the United States
-        </li>
-        <li>The community defined DCAT-US to provide guidance for American data publishers on how to specify their data
-          catalogs and to data portal managers on how to process data catalogs, in a DCAT-US conformant manner,
-          so that interoperability is assured.
+        <li>The DCAT-US Application Profile provides the guidance needed for data publishers to specify their data
+          catalogs and for data portal managers to process data catalogs. DCAT-US specifies the schema for metadata --
+          data describing data that can be validated for correctness and completeness. Metadata is by definition
+          secondary information about the data: when and by whom were they published, which usage conditions apply, how
+          often are they updated, whom to contact about them, and where and how can they be accessed.
         </li>
       </ul>
-      <p>It should be always kept in mind that DCAT-US primarily focus on metadata.
-        Metadata is by definition secondary information on the data: when and by whom were they published,
-        which usage conditions apply, how often are they updated, whom to contact about them and where
-        and how can they be accessed.
-      </p>
+
     </section>
     <!-- Gaps between POD 1.1 and DCAT -->
     <h3>Gaps with DCAT-US 1.1</h3>
@@ -4726,7 +4721,8 @@
                 accessed, integrated with other resources, and reused across the DCAT-US ecosystem, promoting data
                 interoperability and accessibility.</li>
               <li>To enhance data interoperability and consistency, it is advisable to reuse established controlled
-                vocabularies such as Global Change Master Directory (GCMD) [[?GCMD]], Agrovoc, and NAICS for data description.</li>
+                vocabularies such as Global Change Master Directory (GCMD) [[?GCMD]], Agrovoc, and NAICS for data
+                description.</li>
             </ul>
           </td>
         </tr>
@@ -5021,7 +5017,8 @@
                 using SKOS encoding and provided in Linked Data format (RDF/XML,TTL, JSON-LD, NTriples)
               </li>
               <li>To enhance data interoperability and consistency, it is advisable to reuse established controlled
-                vocabularies such as Global Change Master Directory (GCMD) [[?GCMD]], Agrovoc, and NAICS for data description.</li>
+                vocabularies such as Global Change Master Directory (GCMD) [[?GCMD]], Agrovoc, and NAICS for data
+                description.</li>
             </ul>
           </td>
         </tr>
@@ -19341,7 +19338,8 @@
       <ul>
         <li>
           <p>
-            <a href="#dataset-type"><strong>dcterms:type</strong></a>: This property specifies the category or genre ofgc
+            <a href="#dataset-type"><strong>dcterms:type</strong></a>: This property specifies the category or genre
+            ofgc
             the content in a resource. It's applicable to <a href="#properties-for-dataset">dcat:Dataset</a>, <a
               href="#properties-for-data-service">dcat:DataService</a>, and <a
               href="#properties-for-dataset-series">dcat:DatasetSeries</a>. For <a
@@ -19360,7 +19358,8 @@
               href="#properties-for-data-service">dcat:DataService</a>, <a
               href="#properties-for-dataset-series">dcat:DatasetSeries</a>, and <a
               href="#properties-for-catalog">dcat:Catalog</a>. Employing keywords from established vocabularies such as
-            AGROVOC (for agricultural terms), Global Change Master Directory (GCMD) [[?GCMD]] (for Earth science), or NAICS (for industry classifications) ensures
+            AGROVOC (for agricultural terms), Global Change Master Directory (GCMD) [[?GCMD]] (for Earth science), or
+            NAICS (for industry classifications) ensures
             consistency and enhances the discoverability of datasets within the US context.
           </p>
         </li>
@@ -19381,7 +19380,8 @@
             the primary subject matter of a dataset, this property is crucial for <a
               href="#properties-for-dataset">dcat:Dataset</a> and <a
               href="#properties-for-dataset-series">dcat:DatasetSeries</a>. Adoption of controlled vocabularies like
-              Global Change Master Directory (GCMD) [[?GCMD]] for Earth science topics, FAO Agrovoc for agricultural subjects, ITIS for taxonomic information, NAICS
+            Global Change Master Directory (GCMD) [[?GCMD]] for Earth science topics, FAO Agrovoc for agricultural
+            subjects, ITIS for taxonomic information, NAICS
             for industry classifications, or LCSH (Library of Congress Subject Headings) enhances the clarity and
             searchability of datasets, particularly in the context of US Government data. These vocabularies enable
             precise and comprehensive subject classification, facilitating more effective data discovery and use.
@@ -19391,7 +19391,7 @@
 
     </section>
 
-   
+
     <!-- Spatial Metadata -->
     <section id="spatial-metadata">
       <h3>Spatial Metadata</h3>
@@ -21173,631 +21173,631 @@
 
       </section>
     </section>
-      <section id="data-quality">
-        <h3>Data Quality</h3>
+    <section id="data-quality">
+      <h3>Data Quality</h3>
 
-        <p>The quality of a dataset plays a pivotal role in shaping trust, reusability, and the overall performance of
-          applications that rely on it. As a result, it is imperative to integrate data quality information seamlessly
-          into
-          both the data publishing and consumption processes. This inclusion allows for a thorough evaluation of a
-          dataset's
-          quality, thereby determining its suitability for a particular application.</p>
+      <p>The quality of a dataset plays a pivotal role in shaping trust, reusability, and the overall performance of
+        applications that rely on it. As a result, it is imperative to integrate data quality information seamlessly
+        into
+        both the data publishing and consumption processes. This inclusion allows for a thorough evaluation of a
+        dataset's
+        quality, thereby determining its suitability for a particular application.</p>
 
-        <p>Thorough documentation of data quality significantly streamlines the dataset selection process, enhancing the
-          likelihood of reuse. Regardless of domain-specific nuances, documenting data quality and explicitly stating
-          known
-          quality issues in metadata are fundamental practices. Typically, assessing quality involves multiple
-          dimensions,
-          each encapsulating characteristics of importance to both data publishers and consumers.</p>
+      <p>Thorough documentation of data quality significantly streamlines the dataset selection process, enhancing the
+        likelihood of reuse. Regardless of domain-specific nuances, documenting data quality and explicitly stating
+        known
+        quality issues in metadata are fundamental practices. Typically, assessing quality involves multiple
+        dimensions,
+        each encapsulating characteristics of importance to both data publishers and consumers.</p>
 
-        <p>The Data Quality Vocabulary (DQV) defines machine-readable concepts such as measurements and criteria to
-          assess
-          quality
-          across various dimensions [[VOCAB-DQV]]. Tailored heuristics designed for specific assessment scenarios rely
-          on
-          quality indicators, which encompass data content, metadata, and human ratings. These indicators offer valuable
-          insights into the dataset's suitability for its intended purpose.</p>
+      <p>The Data Quality Vocabulary (DQV) defines machine-readable concepts such as measurements and criteria to
+        assess
+        quality
+        across various dimensions [[VOCAB-DQV]]. Tailored heuristics designed for specific assessment scenarios rely
+        on
+        quality indicators, which encompass data content, metadata, and human ratings. These indicators offer valuable
+        insights into the dataset's suitability for its intended purpose.</p>
 
-        <p>
-          In the context of integrating data quality information into DCAT resources (Dataset, Distribution, Data
-          Service,
-          Dataset Series), the Data Quality Vocabulary [[VOCAB-DQV]]
-          provides a structured and standardized way to represent and assess quality information for fitness of use. The
-          key components of DQV
-          relevant to this discussion are <a
-            href="#properties-for-quality-measurement"><code>dqv:QualityMeasurement</code></a>, <a
-            href="#properties-for-metric"><code>dqv:Metric</code></a>,
-          <a href="https://www.w3.org/TR/vocab-dqv/#dqv:Dimension"><code>dqv:Dimension</code></a>, and the property <a
-            href="#dataset-hasQualityMeasurement"><code>hasQualityMeasurement</code></a>. Here's how each of these
-          elements is used:
-        </p>
-        <ul>
-          <li>
-            <strong>dqv:QualityMeasurement:</strong> This class represents a specific measurement or assessment of
-            quality. It's a quantifiable value that indicates how well a dataset performs against a particular quality
-            metric. A <a href="#properties-for-quality-measurement"><code>dqv:QualityMeasurement</code></a> instance is
-            associated with a specific dataset and linked to the metric it measures.
-          </li>
-          <li>
-            <strong>dqv:Metric:</strong> The <a href="#properties-for-metric"><code>dqv:Metric</code></a> class
-            represents
-            the standard or criterion used to assess a particular aspect of quality. Metrics are the yardsticks against
-            which quality is evaluated. Each metric is typically associated with a quality dimension. For example, a
-            metric could measure the accuracy of data, its timeliness, or its completeness.
-          </li>
-          <li>
-            <strong>dqv:Dimension:</strong> This <a
-              href="https://www.w3.org/TR/vocab-dqv/#dqv:Dimension"><code>dqv:Dimension</code></a> class represents the
-            various dimensions or categories of data quality, such as accuracy, timeliness, or completeness. Quality
-            dimensions help categorize different aspects of data quality, providing a framework for comprehensive
-            assessment.
-          </li>
-          <li>
-            <strong>Property hasQualityMeasurement:</strong> The <a
-              href="#dataset-hasQualityMeasurement"><code>hasQualityMeasurement</code></a> property is used to link a
-            resource to a <a href="#properties-for-quality-measurement"><code>dqv:QualityMeasurement</code></a>. It
-            indicates that the dataset has been evaluated in terms of quality and specifies the measurement. This
-            linkage
-            is crucial for conveying the results of quality assessments to data consumers, enabling them to understand
-            the
-            quality aspects that have been measured and the outcomes of those measurements.
-          </li>
-        </ul>
+      <p>
+        In the context of integrating data quality information into DCAT resources (Dataset, Distribution, Data
+        Service,
+        Dataset Series), the Data Quality Vocabulary [[VOCAB-DQV]]
+        provides a structured and standardized way to represent and assess quality information for fitness of use. The
+        key components of DQV
+        relevant to this discussion are <a
+          href="#properties-for-quality-measurement"><code>dqv:QualityMeasurement</code></a>, <a
+          href="#properties-for-metric"><code>dqv:Metric</code></a>,
+        <a href="https://www.w3.org/TR/vocab-dqv/#dqv:Dimension"><code>dqv:Dimension</code></a>, and the property <a
+          href="#dataset-hasQualityMeasurement"><code>hasQualityMeasurement</code></a>. Here's how each of these
+        elements is used:
+      </p>
+      <ul>
+        <li>
+          <strong>dqv:QualityMeasurement:</strong> This class represents a specific measurement or assessment of
+          quality. It's a quantifiable value that indicates how well a dataset performs against a particular quality
+          metric. A <a href="#properties-for-quality-measurement"><code>dqv:QualityMeasurement</code></a> instance is
+          associated with a specific dataset and linked to the metric it measures.
+        </li>
+        <li>
+          <strong>dqv:Metric:</strong> The <a href="#properties-for-metric"><code>dqv:Metric</code></a> class
+          represents
+          the standard or criterion used to assess a particular aspect of quality. Metrics are the yardsticks against
+          which quality is evaluated. Each metric is typically associated with a quality dimension. For example, a
+          metric could measure the accuracy of data, its timeliness, or its completeness.
+        </li>
+        <li>
+          <strong>dqv:Dimension:</strong> This <a
+            href="https://www.w3.org/TR/vocab-dqv/#dqv:Dimension"><code>dqv:Dimension</code></a> class represents the
+          various dimensions or categories of data quality, such as accuracy, timeliness, or completeness. Quality
+          dimensions help categorize different aspects of data quality, providing a framework for comprehensive
+          assessment.
+        </li>
+        <li>
+          <strong>Property hasQualityMeasurement:</strong> The <a
+            href="#dataset-hasQualityMeasurement"><code>hasQualityMeasurement</code></a> property is used to link a
+          resource to a <a href="#properties-for-quality-measurement"><code>dqv:QualityMeasurement</code></a>. It
+          indicates that the dataset has been evaluated in terms of quality and specifies the measurement. This
+          linkage
+          is crucial for conveying the results of quality assessments to data consumers, enabling them to understand
+          the
+          quality aspects that have been measured and the outcomes of those measurements.
+        </li>
+      </ul>
 
-        <p>
-          Using these DQV elements, data publishers can document the quality of their datasets in a structured and
-          meaningful way. This documentation includes specific measurements of quality, the criteria used for these
-          assessments, and the quality dimensions they relate to. The use of DQV thus enhances transparency and helps
-          data
-          consumers make informed decisions about the suitability of a dataset for their specific needs.
-        </p>
+      <p>
+        Using these DQV elements, data publishers can document the quality of their datasets in a structured and
+        meaningful way. This documentation includes specific measurements of quality, the criteria used for these
+        assessments, and the quality dimensions they relate to. The use of DQV thus enhances transparency and helps
+        data
+        consumers make informed decisions about the suitability of a dataset for their specific needs.
+      </p>
 
-        <p>
-          The use of shareable controlled vocabularies for <a href="#properties-for-metric"><code>dqv:Metric</code></a>
-          and <a href="https://www.w3.org/TR/vocab-dqv/#dqv:Dimension"><code>dqv:Dimension</code></a> is highly
-          encouraged
-          within communities. These standardized vocabularies facilitate consistent and precise communication of data
-          quality aspects across different datasets and applications. By adopting such vocabularies, communities can
-          ensure that their data quality metrics and dimensions are universally understood, enhancing interoperability
-          and
-          the effective use of data across diverse systems and contexts.
-        </p>
-
-
-      </section>
-      <!-- Versioning -->
-
-      <section id="versioning">
-        <h3>Versioning</h3>
-
-        <p>Versioning is a concept used to describe the relationship between an original resource and its variations,
-          updates, or translations. In this section, we explore how DCAT (Data Catalog Vocabulary) is employed to
-          document
-          versions resulting from updates or modifications throughout a resource's lifecycle.</p>
-
-        <p>DCAT relies on established vocabularies, including the versioning section of the PAV ontology and terms from
-          [[PAV]], [[DCTERMS]], [[OWL2-OVERVIEW]], and [[VOCAB-ADMS]].</p>
-
-        <p>It's important to note that versioning applies to all primary DCAT-US resources, including Catalogs, Catalog
-          Records, Datasets, Dataset Series, and Distributions.</p>
-
-        <p>The versioning approach within DCAT is designed to complement existing methods specific to certain resources
-          (such as versioning properties for ontologies in [[OWL2-OVERVIEW]]) and those prevalent in particular domains.
-          A
-          detailed comparison with other vocabularies can be found in section 11.4: Complementary Approaches to
-          Versioning.
-        </p>
-
-        <p>Versioning is closely linked to community conventions, data management strategies, and existing processes.
-          Data
-          providers bear the responsibility of determining when and why a new version should be released.</p>
-
-        <p><strong>Handling Dataset Changes </strong></p>
-        <p>Datasets published on the Web are subject to change over time. Some datasets are updated on a regular
-          schedule,
-          while others evolve as improvements in data collection methods make updates necessary. To manage these changes
-          effectively, new versions of a dataset may be created. However, there isn't a unanimous consensus on when
-          changes
-          to a dataset should categorize it as an entirely new dataset or simply a new version. Below, we outline
-          scenarios
-          where most publishers would agree that a revision warrants consideration as a new version:</p>
-
-        <p><strong>Scenarios:</strong></p>
-        <ol>
-          <li>
-            <strong>Scenario 1:</strong> Creation of a new bus stop that needs to be added to the dataset.
-          </li>
-          <li>
-            <strong>Scenario 2:</strong> Removal of an existing bus stop, necessitating its deletion from the dataset.
-          </li>
-          <li>
-            <strong>Scenario 3:</strong> Identification and correction of an error in one of the existing bus stops
-            stored
-            in the dataset.
-          </li>
-        </ol>
-
-        <p>In general, when dealing with datasets that represent time series or spatial series, such as data for
-          different
-          regions or years, these are not typically regarded as multiple versions of the same dataset. Instead, each
-          dataset
-          covers a distinct set of observations about the world and should be treated as a new dataset. This principle
-          also
-          applies to datasets collecting data about weekly weather forecasts for a specific city, where a new dataset is
-          created each week to store data for that particular week.</p>
-
-        <p>Scenario 1 and 2 may trigger major version updates, while Scenario 3 is likely to trigger only a minor
-          version
-          update. However, the distinction between minor and major versions is less critical than ensuring that any
-          changes
-          are clearly indicated by incrementing the version number. Even for minor changes, maintaining a record of
-          different dataset versions is essential for ensuring the dataset's reliability. Publishers should be mindful
-          that
-          a dataset may be in use by one or more data consumers, and they should take reasonable steps to inform those
-          consumers when a new version is released. For real-time data, an automated timestamp can serve as a version
-          identifier. It's crucial for publishers to adopt a consistent and informative approach to versioning for each
-          dataset, ensuring that data consumers can effectively understand and work with evolving data.</p>
+      <p>
+        The use of shareable controlled vocabularies for <a href="#properties-for-metric"><code>dqv:Metric</code></a>
+        and <a href="https://www.w3.org/TR/vocab-dqv/#dqv:Dimension"><code>dqv:Dimension</code></a> is highly
+        encouraged
+        within communities. These standardized vocabularies facilitate consistent and precise communication of data
+        quality aspects across different datasets and applications. By adopting such vocabularies, communities can
+        ensure that their data quality metrics and dimensions are universally understood, enhancing interoperability
+        and
+        the effective use of data across diverse systems and contexts.
+      </p>
 
 
-        <aside class="note">TO COMPLETE</aside>
-      </section>
+    </section>
+    <!-- Versioning -->
+
+    <section id="versioning">
+      <h3>Versioning</h3>
+
+      <p>Versioning is a concept used to describe the relationship between an original resource and its variations,
+        updates, or translations. In this section, we explore how DCAT (Data Catalog Vocabulary) is employed to
+        document
+        versions resulting from updates or modifications throughout a resource's lifecycle.</p>
+
+      <p>DCAT relies on established vocabularies, including the versioning section of the PAV ontology and terms from
+        [[PAV]], [[DCTERMS]], [[OWL2-OVERVIEW]], and [[VOCAB-ADMS]].</p>
+
+      <p>It's important to note that versioning applies to all primary DCAT-US resources, including Catalogs, Catalog
+        Records, Datasets, Dataset Series, and Distributions.</p>
+
+      <p>The versioning approach within DCAT is designed to complement existing methods specific to certain resources
+        (such as versioning properties for ontologies in [[OWL2-OVERVIEW]]) and those prevalent in particular domains.
+        A
+        detailed comparison with other vocabularies can be found in section 11.4: Complementary Approaches to
+        Versioning.
+      </p>
+
+      <p>Versioning is closely linked to community conventions, data management strategies, and existing processes.
+        Data
+        providers bear the responsibility of determining when and why a new version should be released.</p>
+
+      <p><strong>Handling Dataset Changes </strong></p>
+      <p>Datasets published on the Web are subject to change over time. Some datasets are updated on a regular
+        schedule,
+        while others evolve as improvements in data collection methods make updates necessary. To manage these changes
+        effectively, new versions of a dataset may be created. However, there isn't a unanimous consensus on when
+        changes
+        to a dataset should categorize it as an entirely new dataset or simply a new version. Below, we outline
+        scenarios
+        where most publishers would agree that a revision warrants consideration as a new version:</p>
+
+      <p><strong>Scenarios:</strong></p>
+      <ol>
+        <li>
+          <strong>Scenario 1:</strong> Creation of a new bus stop that needs to be added to the dataset.
+        </li>
+        <li>
+          <strong>Scenario 2:</strong> Removal of an existing bus stop, necessitating its deletion from the dataset.
+        </li>
+        <li>
+          <strong>Scenario 3:</strong> Identification and correction of an error in one of the existing bus stops
+          stored
+          in the dataset.
+        </li>
+      </ol>
+
+      <p>In general, when dealing with datasets that represent time series or spatial series, such as data for
+        different
+        regions or years, these are not typically regarded as multiple versions of the same dataset. Instead, each
+        dataset
+        covers a distinct set of observations about the world and should be treated as a new dataset. This principle
+        also
+        applies to datasets collecting data about weekly weather forecasts for a specific city, where a new dataset is
+        created each week to store data for that particular week.</p>
+
+      <p>Scenario 1 and 2 may trigger major version updates, while Scenario 3 is likely to trigger only a minor
+        version
+        update. However, the distinction between minor and major versions is less critical than ensuring that any
+        changes
+        are clearly indicated by incrementing the version number. Even for minor changes, maintaining a record of
+        different dataset versions is essential for ensuring the dataset's reliability. Publishers should be mindful
+        that
+        a dataset may be in use by one or more data consumers, and they should take reasonable steps to inform those
+        consumers when a new version is released. For real-time data, an automated timestamp can serve as a version
+        identifier. It's crucial for publishers to adopt a consistent and informative approach to versioning for each
+        dataset, ensuring that data consumers can effectively understand and work with evolving data.</p>
 
 
-      <!-- Dataset Series  -->
-      <section id="dataset-series-guidance">
-        <h3>Dataset Series</h3>
-        <p>A Dataset Series is a collection of related datasets that share common characteristics, making them part of a
-          cohesive group. This section provides guidance on the effective use of Dataset Series within data catalogs,
-          emphasizing the benefits and considerations for publishers and users alike.</p>
-        <p>A Dataset Series is a way for publishers to convey that a dataset is evolving across specific dimensions and
-          is
-          available as a set of related datasets. However, choosing to group datasets this way depends on the use case.
-          Since it demands extra metadata management from the publisher, it's optional. For instance, a dataset updated
-          frequently via an API may not require individual records for each yearly snapshot unless the publisher wishes
+      <aside class="note">TO COMPLETE</aside>
+    </section>
+
+
+    <!-- Dataset Series  -->
+    <section id="dataset-series-guidance">
+      <h3>Dataset Series</h3>
+      <p>A Dataset Series is a collection of related datasets that share common characteristics, making them part of a
+        cohesive group. This section provides guidance on the effective use of Dataset Series within data catalogs,
+        emphasizing the benefits and considerations for publishers and users alike.</p>
+      <p>A Dataset Series is a way for publishers to convey that a dataset is evolving across specific dimensions and
+        is
+        available as a set of related datasets. However, choosing to group datasets this way depends on the use case.
+        Since it demands extra metadata management from the publisher, it's optional. For instance, a dataset updated
+        frequently via an API may not require individual records for each yearly snapshot unless the publisher wishes
+        to
+        share each snapshot's lifecycle.</p>
+
+      <h4>Why Use Dataset Series?</h4>
+      <p>Implementing Dataset Series offers several advantages:</p>
+      <ul>
+        <li><strong>Organizational Clarity:</strong> Helps categorize and group datasets, making it easier for users
           to
-          share each snapshot's lifecycle.</p>
+          find and navigate related sets of data.</li>
+        <li><strong>Efficient Data Management:</strong> Streamlines the management of multiple datasets, providing a
+          structured approach for updates and maintenance.</li>
+        <li><strong>User Experience:</strong> Enhances data discoverability and understanding, as users can perceive
+          the
+          broader context of individual datasets within a collective series.</li>
+      </ul>
+      <h4>Guidelines for Implementing Dataset Series</h4>
+      <p>When using Dataset Series, consider the following best practices:</p>
+      <ul>
+        <li>Initiate a Dataset Series exclusively for managing multiple, interconnected datasets, ensuring each
+          dataset
+          is significant independently and contributes to the series' overall narrative.</li>
+        <li>Maintain up-to-date metadata for the Dataset Series, reflecting any addition or removal of datasets.
+          Consider discontinuing the series if it no longer contains any datasets, particularly when persistent
+          identifiers are employed.</li>
+        <li>Refrain from categorizing a single, frequently updated dataset as a Dataset Series, and avoid associating
+          distributions directly with a series. Distributions pertain to individual datasets within the series.</li>
+        <li>Ensure a coherent and strong thematic or contextual connection among the members of a Dataset Series,
+          defined by shared attributes such as topic, time frame, or publisher, among others.</li>
+        <li>Uphold high-quality metadata standards for both individual datasets and the Dataset Series, with specific
+          series guidelines superseding general practices where necessary.</li>
+      </ul>
+      <h4>Expressing Relationships and Connections</h4>
+      <p>Articulating the interconnections between datasets in a series is crucial for user understanding and data
+        management:</p>
+      <ul>
+        <li>Employ consistent metadata descriptors to clarify the relationships and commonalities within the series.
+        </li>
+        <li>Utilize versioning for datasets that evolve or expand over time, helping users track changes and
+          understand
+          the dataset's history.</li>
+        <li>Highlight the distinct features of each dataset, ensuring its standalone value is clear, while also
+          emphasizing its role in the broader series.</li>
+        <li>For more complex relationships, especially in automated or tightly interconnected collections, leverage
+          specific DCAT properties (e.g., next, previous, inSeries, last) to express the nuanced connections. Refer to
+          the DCAT versioning guidelines for detailed practices.</li>
+      </ul>
+      <h4>Impact on Metadata</h4>
+      <p>Being part of a Dataset Series may necessitate specific metadata considerations:</p>
+      <ul>
+        <li>Adjust metadata to emphasize the unique aspects of each dataset within the series, such as different time
+          periods, geographical areas, or methodologies.</li>
+        <li>Ensure that metadata reflects the cohesive nature of the series, helping users understand the context and
+          relationship between individual datasets.</li>
+      </ul>
+    </section>
 
-        <h4>Why Use Dataset Series?</h4>
-        <p>Implementing Dataset Series offers several advantages:</p>
+    <!-- Controlled vocabularies -->
+
+    <section id="controlled-vocabularies">
+
+      <h3>Controlled Vocabularies</h3>
+
+      <section id="importance-of-controlled-vocabularies">
+        <h4>Importance of Controlled Vocabularies</h4>
+        <p>Controlled vocabularies are predetermined sets of terms that have been carefully curated to
+          ensure consistency, accuracy, and standardized representation of concepts within a specific domain. In the
+          context of DCAT-US, controlled vocabularies are used to define and constrain the values of specific metadata
+          elements. These vocabularies enable the creation of a common language for describing datasets, facilitating
+          data
+          integration and harmonization across different repositories.
+
+        <p>The use of controlled vocabularies in DCAT-US offers several key benefits:
+
         <ul>
-          <li><strong>Organizational Clarity:</strong> Helps categorize and group datasets, making it easier for users
-            to
-            find and navigate related sets of data.</li>
-          <li><strong>Efficient Data Management:</strong> Streamlines the management of multiple datasets, providing a
-            structured approach for updates and maintenance.</li>
-          <li><strong>User Experience:</strong> Enhances data discoverability and understanding, as users can perceive
-            the
-            broader context of individual datasets within a collective series.</li>
+          <li><strong>Consistency</strong>: By providing a predefined list of terms, controlled vocabularies
+            ensure
+            consistent representation and labeling of metadata elements. This consistency promotes data
+            interoperability
+            and simplifies data integration efforts, as different datasets can be mapped to a shared set of
+            controlled
+            terms. </li>
+
+          <li><strong>Enhanced search and discovery</strong>: Controlled vocabularies enable more effective
+            search and
+            discovery of datasets. By aligning metadata elements with standardized terms, users can easily
+            navigate and
+            explore datasets based on their specific domain knowledge. Furthermore, controlled vocabularies
+            facilitate the
+            development of advanced search capabilities, such as faceted search, which allows users to
+            refine search
+            results based on predefined categories or facets.</li>
+
+          <li><strong>Data harmonization</strong>: In a diverse data landscape where multiple agencies and
+            organizations
+            produce and manage datasets, controlled vocabularies help in harmonizing the data
+            representation. By agreeing
+            on a set of controlled terms, data publishers can ensure that similar concepts are represented
+            consistently
+            across different datasets. This harmonization promotes data integration and interoperability,
+            enabling
+            meaningful analysis and comparison of data from various sources.</li>
+
         </ul>
-        <h4>Guidelines for Implementing Dataset Series</h4>
-        <p>When using Dataset Series, consider the following best practices:</p>
+
+      </section>
+      <section id="requirements-for-controlled-vocabularies">
+
+        <h4>Requirements for controlled vocabularies</h4>
+
+        <p>The following is a list of requirements that were identified for the controlled vocabularies to
+          be recommended
+          in this Application Profile.</p>
+
+        <p>Controlled vocabularies SHOULD:</p>
+
         <ul>
-          <li>Initiate a Dataset Series exclusively for managing multiple, interconnected datasets, ensuring each
-            dataset
-            is significant independently and contributes to the series' overall narrative.</li>
-          <li>Maintain up-to-date metadata for the Dataset Series, reflecting any addition or removal of datasets.
-            Consider discontinuing the series if it no longer contains any datasets, particularly when persistent
-            identifiers are employed.</li>
-          <li>Refrain from categorizing a single, frequently updated dataset as a Dataset Series, and avoid associating
-            distributions directly with a series. Distributions pertain to individual datasets within the series.</li>
-          <li>Ensure a coherent and strong thematic or contextual connection among the members of a Dataset Series,
-            defined by shared attributes such as topic, time frame, or publisher, among others.</li>
-          <li>Uphold high-quality metadata standards for both individual datasets and the Dataset Series, with specific
-            series guidelines superseding general practices where necessary.</li>
+          <li>Be published under an open license.</li>
+          <li>Be operated and/or maintained by an agency of the US Government, by a recognised standards
+            organization or another trusted organization.</li>
+          <li>Be properly documented.</li>
+          <li>Have labels in english, and optionally in Spanish</li>
+          <li>Contain a relatively small number of terms (e.g. 10-25) that are general enough to enable a
+            wide range of
+            resources to be classified.</li>
+          <li>Have terms that are identified by URIs with each URI resolving to documentation about the
+            term.</li>
+          <li>Have associated persistence and versioning policies.</li>
         </ul>
-        <h4>Expressing Relationships and Connections</h4>
-        <p>Articulating the interconnections between datasets in a series is crucial for user understanding and data
-          management:</p>
+
+        <p>These criteria do not intend to define a set of requirements for controlled vocabularies in
+          general; they are
+          only intended to be used for the selection of the controlled vocabularies that are proposed for
+          this Application
+          Profile.</p>
+
+      </section>
+      <section id="controlled-vocabularies-to-be-used">
+
+        <h4>Controlled vocabularies to be used</h4>
+
+        <p>In the table below, a number of properties are listed with controlled vocabularies that MUST be
+          used for the
+          listed properties. The declaration of the following controlled vocabularies as mandatory ensures a
+          minimum level
+          of interoperability.</p>
+
+        <p>Compared with [[DCAT-AP-20200608]], DCAT-US makes use of additional controlled vocabularies
+          mandated by
+          [[DATA-GOV-REG]], and operated by the Data.gov Registry - with the only exceptions of the
+          coordinate reference
+          systems register maintained by OGC [[OGC-EPSG]].</p>
+
+        <p>For two of these controlled vocabularies, namely the NGDA spatial data themes [[NGDA-THEMES]] and
+          the ISO
+          topic categories [[ISO-19115-1]], the DCAT-US Working Group has defined a set of harmonised mappings to
+          the Data.gov Vocabularies Data Themes [[DATA-GOV-THEME]], in order to facilitate the identification of the
+          relevant theme in [[DATA-GOV-THEME]] for geospatial/statistical metadata.</p>
+
+        <div data-include-format="html" data-include-replace="true"
+          data-include="./tables/controlled-vocabularies-to-be-used.html"></div>
+
+      </section>
+
+      <section id="other-controlled-vocabularies">
+
+        <h4>Other controlled vocabularies</h4>
+
+        <p>In addition to the proposed common vocabularies in <a class="no-sectionRef"
+            href="#controlled-vocabularies-to-be-used"></a>, which are mandatory to ensure minimal
+          interoperability,
+          implementers are encouraged to publish and to use further region or domain-specific vocabularies
+          that are
+          available online. While those may not be recognised by general implementations of the Application
+          Profile, they
+          may serve to increase interoperability across applications in the same region or domain. Examples
+          are the full
+          set of concepts in Global Change Master Directory (GCMD) [[?GCMD]],and numerous other schemes.</p>
+
+        <p>For geospatial metadata, the working group has identified the following additional vocabularies:
+        </p>
+
         <ul>
-          <li>Employ consistent metadata descriptors to clarify the relationships and commonalities within the series.
+          <li>
+            <p><strong>Geographic identifiers</strong>:</p>
+            <ul>
+              <li>
+                <p><strong>For marine regions: </strong></p>
+                <ul>
+                  <li>
+                    <p>Marine Regions <a href="http://www.marineregions.org/">http://www.marineregions.org/</a></p>
+                  </li>
+                  <li>
+                    <p>SeaVoX salt and fresh water body gazetteer - <a
+                        href="https://www.bodc.ac.uk/data/codes_and_formats/seavox/">https://www.bodc.ac.uk/data/codes_and_formats/seavox/</a>
+                    </p>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p><strong>General:</strong></p>
+                <ul>
+                  <li>
+                    <p>DBpedia for Geographic Placenames - <a
+                        href="http://dbpedia.org/about">http://dbpedia.org/about</a>
+                    </p>
+                  </li>
+                  <li>
+                    <p>National gazetteer vocabularies where feasible</p>
+                  </li>
+                  <li>
+                    <p>SeaVoX salt and fresh water body gazetteer for ‘marine geonames’ - <a
+                        href="https://www.bodc.ac.uk/data/codes_and_formats/seavox/">https://www.bodc.ac.uk/data/codes_and_formats/seavox/</a>
+                    </p>
+                  </li>
+                </ul>
+              </li>
+            </ul>
           </li>
-          <li>Utilize versioning for datasets that evolve or expand over time, helping users track changes and
-            understand
-            the dataset's history.</li>
-          <li>Highlight the distinct features of each dataset, ensuring its standalone value is clear, while also
-            emphasizing its role in the broader series.</li>
-          <li>For more complex relationships, especially in automated or tightly interconnected collections, leverage
-            specific DCAT properties (e.g., next, previous, inSeries, last) to express the nuanced connections. Refer to
-            the DCAT versioning guidelines for detailed practices.</li>
+          <li>
+            <p><strong>Keywords (with controlled vocabularies):</strong></p>
+
+          </li>
         </ul>
-        <h4>Impact on Metadata</h4>
-        <p>Being part of a Dataset Series may necessitate specific metadata considerations:</p>
-        <ul>
-          <li>Adjust metadata to emphasize the unique aspects of each dataset within the series, such as different time
-            periods, geographical areas, or methodologies.</li>
-          <li>Ensure that metadata reflects the cohesive nature of the series, helping users understand the context and
-            relationship between individual datasets.</li>
-        </ul>
-      </section>
-
-      <!-- Controlled vocabularies -->
-
-      <section id="controlled-vocabularies">
-
-        <h3>Controlled Vocabularies</h3>
-
-        <section id="importance-of-controlled-vocabularies">
-          <h4>Importance of Controlled Vocabularies</h4>
-          <p>Controlled vocabularies are predetermined sets of terms that have been carefully curated to
-            ensure consistency, accuracy, and standardized representation of concepts within a specific domain. In the
-            context of DCAT-US, controlled vocabularies are used to define and constrain the values of specific metadata
-            elements. These vocabularies enable the creation of a common language for describing datasets, facilitating
-            data
-            integration and harmonization across different repositories.
-
-          <p>The use of controlled vocabularies in DCAT-US offers several key benefits:
-
-          <ul>
-            <li><strong>Consistency</strong>: By providing a predefined list of terms, controlled vocabularies
-              ensure
-              consistent representation and labeling of metadata elements. This consistency promotes data
-              interoperability
-              and simplifies data integration efforts, as different datasets can be mapped to a shared set of
-              controlled
-              terms. </li>
-
-            <li><strong>Enhanced search and discovery</strong>: Controlled vocabularies enable more effective
-              search and
-              discovery of datasets. By aligning metadata elements with standardized terms, users can easily
-              navigate and
-              explore datasets based on their specific domain knowledge. Furthermore, controlled vocabularies
-              facilitate the
-              development of advanced search capabilities, such as faceted search, which allows users to
-              refine search
-              results based on predefined categories or facets.</li>
-
-            <li><strong>Data harmonization</strong>: In a diverse data landscape where multiple agencies and
-              organizations
-              produce and manage datasets, controlled vocabularies help in harmonizing the data
-              representation. By agreeing
-              on a set of controlled terms, data publishers can ensure that similar concepts are represented
-              consistently
-              across different datasets. This harmonization promotes data integration and interoperability,
-              enabling
-              meaningful analysis and comparison of data from various sources.</li>
-
-          </ul>
-
-        </section>
-        <section id="requirements-for-controlled-vocabularies">
-
-          <h4>Requirements for controlled vocabularies</h4>
-
-          <p>The following is a list of requirements that were identified for the controlled vocabularies to
-            be recommended
-            in this Application Profile.</p>
-
-          <p>Controlled vocabularies SHOULD:</p>
-
-          <ul>
-            <li>Be published under an open license.</li>
-            <li>Be operated and/or maintained by an agency of the US Government, by a recognised standards
-              organization or another trusted organization.</li>
-            <li>Be properly documented.</li>
-            <li>Have labels in english, and optionally in Spanish</li>
-            <li>Contain a relatively small number of terms (e.g. 10-25) that are general enough to enable a
-              wide range of
-              resources to be classified.</li>
-            <li>Have terms that are identified by URIs with each URI resolving to documentation about the
-              term.</li>
-            <li>Have associated persistence and versioning policies.</li>
-          </ul>
-
-          <p>These criteria do not intend to define a set of requirements for controlled vocabularies in
-            general; they are
-            only intended to be used for the selection of the controlled vocabularies that are proposed for
-            this Application
-            Profile.</p>
-
-        </section>
-        <section id="controlled-vocabularies-to-be-used">
-
-          <h4>Controlled vocabularies to be used</h4>
-
-          <p>In the table below, a number of properties are listed with controlled vocabularies that MUST be
-            used for the
-            listed properties. The declaration of the following controlled vocabularies as mandatory ensures a
-            minimum level
-            of interoperability.</p>
-
-          <p>Compared with [[DCAT-AP-20200608]], DCAT-US makes use of additional controlled vocabularies
-            mandated by
-            [[DATA-GOV-REG]], and operated by the Data.gov Registry - with the only exceptions of the
-            coordinate reference
-            systems register maintained by OGC [[OGC-EPSG]].</p>
-
-          <p>For two of these controlled vocabularies, namely the NGDA spatial data themes [[NGDA-THEMES]] and
-            the ISO
-            topic categories [[ISO-19115-1]], the DCAT-US Working Group has defined a set of harmonised mappings to
-            the Data.gov Vocabularies Data Themes [[DATA-GOV-THEME]], in order to facilitate the identification of the
-            relevant theme in [[DATA-GOV-THEME]] for geospatial/statistical metadata.</p>
-
-          <div data-include-format="html" data-include-replace="true"
-            data-include="./tables/controlled-vocabularies-to-be-used.html"></div>
-
-        </section>
-
-        <section id="other-controlled-vocabularies">
-
-          <h4>Other controlled vocabularies</h4>
-
-          <p>In addition to the proposed common vocabularies in <a class="no-sectionRef"
-              href="#controlled-vocabularies-to-be-used"></a>, which are mandatory to ensure minimal
-            interoperability,
-            implementers are encouraged to publish and to use further region or domain-specific vocabularies
-            that are
-            available online. While those may not be recognised by general implementations of the Application
-            Profile, they
-            may serve to increase interoperability across applications in the same region or domain. Examples
-            are the full
-            set of concepts in Global Change Master Directory (GCMD) [[?GCMD]],and numerous other schemes.</p>
-
-          <p>For geospatial metadata, the working group has identified the following additional vocabularies:
-          </p>
-
-          <ul>
-            <li>
-              <p><strong>Geographic identifiers</strong>:</p>
-              <ul>
-                <li>
-                  <p><strong>For marine regions: </strong></p>
-                  <ul>
-                    <li>
-                      <p>Marine Regions <a href="http://www.marineregions.org/">http://www.marineregions.org/</a></p>
-                    </li>
-                    <li>
-                      <p>SeaVoX salt and fresh water body gazetteer - <a
-                          href="https://www.bodc.ac.uk/data/codes_and_formats/seavox/">https://www.bodc.ac.uk/data/codes_and_formats/seavox/</a>
-                      </p>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <p><strong>General:</strong></p>
-                  <ul>
-                    <li>
-                      <p>DBpedia for Geographic Placenames - <a
-                          href="http://dbpedia.org/about">http://dbpedia.org/about</a>
-                      </p>
-                    </li>
-                    <li>
-                      <p>National gazetteer vocabularies where feasible</p>
-                    </li>
-                    <li>
-                      <p>SeaVoX salt and fresh water body gazetteer for ‘marine geonames’ - <a
-                          href="https://www.bodc.ac.uk/data/codes_and_formats/seavox/">https://www.bodc.ac.uk/data/codes_and_formats/seavox/</a>
-                      </p>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <p><strong>Keywords (with controlled vocabularies):</strong></p>
-
-            </li>
-          </ul>
-
-        </section>
-
 
       </section>
 
-    </section>
-
-    <!-- Dereferenceable identifiers -->
-    <section id="json-ld-context">
-
-      <h2>JSON-LD context file</h2>
-
-      <p>One common technical question is the format in which the data is being exchanged.
-        For DCAT-US 3.0 conformance, it is not mandatory that this happens in a RDF serialisation, but the exchanged
-        format SHOULD be unambiguously be transformable into RDF.
-        For the format JSON, a popular format to exchange data between systems, DCAT-US profile provides a <a
-          href="https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld">JSON-LD context
-          file</a>.
-        JSON-LD is a W3C Recommendation [[[json-ld11]]] that provided a standard approach to interpret JSON structures
-        as RDF. The provided JSON-LD context file can be used by implementers to base their data exchange upon, and so
-        create
-        a DCAT-US conformant data exchange. This JSON-LD context is not normative, i.e. other JSON-LD contexts are
-        allowed
-        to create a a conformant
-        DCAT-US data exchange. The JSON-LD context file downloadable <a
-          href="https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld">here</a>. </p>
 
     </section>
 
-    <!-- Dereferenceable identifiers -->
-    <section id="json-schema">
+  </section>
 
-      <h2>JSON Schemas</h2>
+  <!-- Dereferenceable identifiers -->
+  <section id="json-ld-context">
 
-      <p>One common technical question is the format in which the data is being exchanged.
-        For DCAT-US 3.0 conformance, it is not mandatory that this happens in a RDF serialisation, but the exchanged
-        format SHOULD be unambiguously be transformable into RDF.</p>
-      <p>For JSON, which is a widely adopted format for data exchange between systems, the DCAT-US profile offers an
-        informative JSON Schema. This schema aids in understanding the structure expected for DCAT-US compliant data
-        exchanges in JSON format.</p>
+    <h2>JSON-LD context file</h2>
 
-      <p>
-        JSON Schema offers a compact way to describe and validate the structure and content of JSON data, ensuring
-        specific formatting and value constraints. However, it's more limited than JSON-LD context and RDF serialization
-        due to its focus on structure over meaning.
-      </p>
+    <p>One common technical question is the format in which the data is being exchanged.
+      For DCAT-US 3.0 conformance, it is not mandatory that this happens in a RDF serialisation, but the exchanged
+      format SHOULD be unambiguously be transformable into RDF.
+      For the format JSON, a popular format to exchange data between systems, DCAT-US profile provides a <a
+        href="https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld">JSON-LD context
+        file</a>.
+      JSON-LD is a W3C Recommendation [[[json-ld11]]] that provided a standard approach to interpret JSON structures
+      as RDF. The provided JSON-LD context file can be used by implementers to base their data exchange upon, and so
+      create
+      a DCAT-US conformant data exchange. This JSON-LD context is not normative, i.e. other JSON-LD contexts are
+      allowed
+      to create a a conformant
+      DCAT-US data exchange. The JSON-LD context file downloadable <a
+        href="https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld">here</a>. </p>
 
-      <p>
-        JSON Schema's focus on structural validation forms a contrast with JSON-LD and RDF's capabilities. JSON-LD and
-        RDF
-        go beyond just validation, allowing the creation of a graph of interconnected entities that can be easily
-        integrated and reused across various contexts. This interconnectedness is fundamental to the concept of the
-        semantic web, where data is not only readable but also comprehensible to machines.
-      </p>
-      <p>
-        Specifically, JSON-LD facilitates the representation of data as a graph, making it suitable for more complex,
-        interlinked data representations, which is a cornerstone of linked data systems. This graph-based approach
-        stands
-        in contrast to the tree-like structures that JSON Schema is confined to, limiting its utility in scenarios
-        requiring extensive data interconnectivity and reusability.
-      </p>
-      <p>
-        Implementers can use the provided JSON Schema for their data exchanges, aligning with DCAT-US standards.
-        However,
-        it's non-normative, meaning alternatives creating compliant exchanges are also valid. Download the current JSON
-        Schema <a href="https://github.com/DOI-DO/dcat-us/blob/main/jsonschema/master_schema.json">here</a>.
-      </p>
+  </section>
 
-    </section>
+  <!-- Dereferenceable identifiers -->
+  <section id="json-schema">
 
+    <h2>JSON Schemas</h2>
 
-    <!-- Dereferenceable identifiers -->
-    <section id="validation">
+    <p>One common technical question is the format in which the data is being exchanged.
+      For DCAT-US 3.0 conformance, it is not mandatory that this happens in a RDF serialisation, but the exchanged
+      format SHOULD be unambiguously be transformable into RDF.</p>
+    <p>For JSON, which is a widely adopted format for data exchange between systems, the DCAT-US profile offers an
+      informative JSON Schema. This schema aids in understanding the structure expected for DCAT-US compliant data
+      exchanges in JSON format.</p>
 
-      <h2>SHACL Validation</h2>
+    <p>
+      JSON Schema offers a compact way to describe and validate the structure and content of JSON data, ensuring
+      specific formatting and value constraints. However, it's more limited than JSON-LD context and RDF serialization
+      due to its focus on structure over meaning.
+    </p>
 
+    <p>
+      JSON Schema's focus on structural validation forms a contrast with JSON-LD and RDF's capabilities. JSON-LD and
+      RDF
+      go beyond just validation, allowing the creation of a graph of interconnected entities that can be easily
+      integrated and reused across various contexts. This interconnectedness is fundamental to the concept of the
+      semantic web, where data is not only readable but also comprehensible to machines.
+    </p>
+    <p>
+      Specifically, JSON-LD facilitates the representation of data as a graph, making it suitable for more complex,
+      interlinked data representations, which is a cornerstone of linked data systems. This graph-based approach
+      stands
+      in contrast to the tree-like structures that JSON Schema is confined to, limiting its utility in scenarios
+      requiring extensive data interconnectivity and reusability.
+    </p>
+    <p>
+      Implementers can use the provided JSON Schema for their data exchanges, aligning with DCAT-US standards.
+      However,
+      it's non-normative, meaning alternatives creating compliant exchanges are also valid. Download the current JSON
+      Schema <a href="https://github.com/DOI-DO/dcat-us/blob/main/jsonschema/master_schema.json">here</a>.
+    </p>
 
-      <p>In order to verify whether a catalog adheres to the stipulated constraints in this Application Profile, the
-        constraints are articulated utilizing SHACL [[SHACL]]. All constraints in this specification that were amenable
-        to
-        SHACL expression translation have been incorporated. Consequently, this set of SHACL expressions can be employed
-        to construct a validation check for data exchange between two systems, a common scenario being one catalog being
-        harvested into another.</p>
-
-      <p>For example, it may be recognized that the data being exchanged doesn't include the organizations' details
-        since
-        they are uniquely identified by a deferenceable URI. In this scenario, enforcing rules about the mandatory
-        presence of a name for each organization may not be pertinent. Rigorously applying the DCAT-AP SHACL expressions
-        would trigger errors, even though the data is accessible via an alternative route. In this context, it's
-        acceptable to omit this check during the validation phase.</p>
-
-      <p>This example underscores that to achieve an optimal user experience during a validation process, it's crucial
-        to
-        consider the actual data transferred between systems and apply only the constraints relevant to the data
-        exchange.
-        To facilitate this, the SHACL expressions are organized into separate files, aligning with common validation
-        configurations.</p>
-      <p>The SHACL application profile for DCAT-US can be found <a
-          href="https://raw.githubusercontent.com/DOI-DO/dcat-us/main/shacl/dcat-us_3.0_shacl_shapes.ttl">here</a></p>
-
-      <aside class="NOTE">TODO</aside>
-    </section>
-    <section class="appendix" id="namespaces">
-      <h2>Namespaces</h2>
-      <p>Namespaces and prefixes used in normative parts of this recommendation are shown in the following
-        table:</p>
-      <table id="table-namespaces" class="simple">
-        <thead>
-          <tr>
-            <th>Prefix</th>
-            <th>Namespace IRI</th>
-            <th>Source</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>adms</code></td>
-            <td><code>http://www.w3.org/ns/adms#</code></td>
-            <td>[[VOCAB-ADMS]]</td>
-          </tr>
-          <tr>
-            <td><code>cnt</code></td>
-            <td><code>http://www.w3.org/2011/content#</code></td>
-            <td>[[Content-in-RDF10]]</td>
-          </tr>
-          <tr>
-            <td><code>dcat</code></td>
-            <td><code>https://www.w3.org/TR/vocab-dcat-3/</code></td>
-            <td>[[VOCAB-DCAT]]</td>
-          </tr>
-          <tr>
-            <td><code>dcat-us</code></td>
-            <td><code>http://resources.data.gov/ontology/dcat-us#</code></td>
-            <td>[[DCAT-US]]</td>
-          </tr>
-          <tr>
-            <td><code>dct</code></td>
-            <td><code>http://purl.org/dc/terms/</code></td>
-            <td>[[DCTERMS]]</td>
-          </tr>
-          <tr>
-            <td><code>dqv</code></td>
-            <td><code>https://www.w3.org/TR/vocab-dqv/</code></td>
-            <td>[[VOCAB-DQV]]</td>
-          </tr>
-          <tr>
-            <td><code>foaf</code></td>
-            <td><code>http://xmlns.com/foaf/0.1/</code></td>
-            <td>[[FOAF]]</td>
-          </tr>
-          <tr>
-            <td><code>gsp</code></td>
-            <td><code>http://www.opengis.net/ont/geosparql#</code></td>
-            <td>[[GeoSPARQL]]</td>
-          </tr>
-          <tr>
-            <td><code>locn</code></td>
-            <td><code>http://www.w3.org/ns/locn#</code></td>
-            <td>[[LOCN]]</td>
-          </tr>
-          <tr>
-            <td><code>odrs</code></td>
-            <td><code>https://schema.theodi.org/odrs/</code></td>
-            <td>[[ODRS]]</td>
-          </tr>
-          <tr>
-            <td><code>org</code></td>
-            <td><code>http://www.w3c.org/ns/org#</code></td>
-            <td>[[VOCAB-ORG]]</td>
-          </tr>
-          <tr>
-            <td><code>prov</code></td>
-            <td><code>http://www.w3.org/ns/prov#</code></td>
-            <td>[[PROV]]</td>
-          </tr>
-          <tr>
-            <td><code>rdf</code></td>
-            <td><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code></td>
-            <td>[[RDF-SYNTAX-GRAMMAR]]</td>
-          </tr>
-          <tr>
-            <td><code>rdfs</code></td>
-            <td><code>http://www.w3.org/2000/01/rdf-schema#</code></td>
-            <td>[[RDF-SCHEMA]]</td>
-          </tr>
-          <tr>
-            <td><code>schema</code></td>
-            <td><code>http://schema.org/</code></td>
-            <td>[[schema-org]]</td>
-          </tr>
-          <tr>
-            <td><code>sdmx-attribute</code></td>
-            <td><code>http://purl.org/linked-data/sdmx/2009/attribute#</code></td>
-            <td>[[SDMX-ATTRIBUTE]]</td>
-          </tr>
-          <tr>
-            <td><code>skos</code></td>
-            <td><code>http://www.w3.org/2004/02/skos/core#</code></td>
-            <td>[[SKOS-REFERENCE]]</td>
-          </tr>
-          <tr>
-            <td><code>spdx</code></td>
-            <td><code>http://spdx.org/rdf/terms#</code></td>
-            <td>[[SPDX]]</td>
-          </tr>
-          <tr>
-            <td><code>vcard</code></td>
-            <td><code>http://www.w3.org/2006/vcard/ns#</code></td>
-            <td>[[VCARD-RDF]]</td>
-          </tr>
-          <tr>
-            <td><code>xsd</code></td>
-            <td><code>http://www.w3.org/2001/XMLSchema#</code></td>
-            <td>[[XMLSCHEMA11-2]]</td>
-          </tr>
+  </section>
 
 
-        </tbody>
-      </table>
-    </section>
+  <!-- Dereferenceable identifiers -->
+  <section id="validation">
+
+    <h2>SHACL Validation</h2>
+
+
+    <p>In order to verify whether a catalog adheres to the stipulated constraints in this Application Profile, the
+      constraints are articulated utilizing SHACL [[SHACL]]. All constraints in this specification that were amenable
+      to
+      SHACL expression translation have been incorporated. Consequently, this set of SHACL expressions can be employed
+      to construct a validation check for data exchange between two systems, a common scenario being one catalog being
+      harvested into another.</p>
+
+    <p>For example, it may be recognized that the data being exchanged doesn't include the organizations' details
+      since
+      they are uniquely identified by a deferenceable URI. In this scenario, enforcing rules about the mandatory
+      presence of a name for each organization may not be pertinent. Rigorously applying the DCAT-AP SHACL expressions
+      would trigger errors, even though the data is accessible via an alternative route. In this context, it's
+      acceptable to omit this check during the validation phase.</p>
+
+    <p>This example underscores that to achieve an optimal user experience during a validation process, it's crucial
+      to
+      consider the actual data transferred between systems and apply only the constraints relevant to the data
+      exchange.
+      To facilitate this, the SHACL expressions are organized into separate files, aligning with common validation
+      configurations.</p>
+    <p>The SHACL application profile for DCAT-US can be found <a
+        href="https://raw.githubusercontent.com/DOI-DO/dcat-us/main/shacl/dcat-us_3.0_shacl_shapes.ttl">here</a></p>
+
+    <aside class="NOTE">TODO</aside>
+  </section>
+  <section class="appendix" id="namespaces">
+    <h2>Namespaces</h2>
+    <p>Namespaces and prefixes used in normative parts of this recommendation are shown in the following
+      table:</p>
+    <table id="table-namespaces" class="simple">
+      <thead>
+        <tr>
+          <th>Prefix</th>
+          <th>Namespace IRI</th>
+          <th>Source</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>adms</code></td>
+          <td><code>http://www.w3.org/ns/adms#</code></td>
+          <td>[[VOCAB-ADMS]]</td>
+        </tr>
+        <tr>
+          <td><code>cnt</code></td>
+          <td><code>http://www.w3.org/2011/content#</code></td>
+          <td>[[Content-in-RDF10]]</td>
+        </tr>
+        <tr>
+          <td><code>dcat</code></td>
+          <td><code>https://www.w3.org/TR/vocab-dcat-3/</code></td>
+          <td>[[VOCAB-DCAT]]</td>
+        </tr>
+        <tr>
+          <td><code>dcat-us</code></td>
+          <td><code>http://resources.data.gov/ontology/dcat-us#</code></td>
+          <td>[[DCAT-US]]</td>
+        </tr>
+        <tr>
+          <td><code>dct</code></td>
+          <td><code>http://purl.org/dc/terms/</code></td>
+          <td>[[DCTERMS]]</td>
+        </tr>
+        <tr>
+          <td><code>dqv</code></td>
+          <td><code>https://www.w3.org/TR/vocab-dqv/</code></td>
+          <td>[[VOCAB-DQV]]</td>
+        </tr>
+        <tr>
+          <td><code>foaf</code></td>
+          <td><code>http://xmlns.com/foaf/0.1/</code></td>
+          <td>[[FOAF]]</td>
+        </tr>
+        <tr>
+          <td><code>gsp</code></td>
+          <td><code>http://www.opengis.net/ont/geosparql#</code></td>
+          <td>[[GeoSPARQL]]</td>
+        </tr>
+        <tr>
+          <td><code>locn</code></td>
+          <td><code>http://www.w3.org/ns/locn#</code></td>
+          <td>[[LOCN]]</td>
+        </tr>
+        <tr>
+          <td><code>odrs</code></td>
+          <td><code>https://schema.theodi.org/odrs/</code></td>
+          <td>[[ODRS]]</td>
+        </tr>
+        <tr>
+          <td><code>org</code></td>
+          <td><code>http://www.w3c.org/ns/org#</code></td>
+          <td>[[VOCAB-ORG]]</td>
+        </tr>
+        <tr>
+          <td><code>prov</code></td>
+          <td><code>http://www.w3.org/ns/prov#</code></td>
+          <td>[[PROV]]</td>
+        </tr>
+        <tr>
+          <td><code>rdf</code></td>
+          <td><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code></td>
+          <td>[[RDF-SYNTAX-GRAMMAR]]</td>
+        </tr>
+        <tr>
+          <td><code>rdfs</code></td>
+          <td><code>http://www.w3.org/2000/01/rdf-schema#</code></td>
+          <td>[[RDF-SCHEMA]]</td>
+        </tr>
+        <tr>
+          <td><code>schema</code></td>
+          <td><code>http://schema.org/</code></td>
+          <td>[[schema-org]]</td>
+        </tr>
+        <tr>
+          <td><code>sdmx-attribute</code></td>
+          <td><code>http://purl.org/linked-data/sdmx/2009/attribute#</code></td>
+          <td>[[SDMX-ATTRIBUTE]]</td>
+        </tr>
+        <tr>
+          <td><code>skos</code></td>
+          <td><code>http://www.w3.org/2004/02/skos/core#</code></td>
+          <td>[[SKOS-REFERENCE]]</td>
+        </tr>
+        <tr>
+          <td><code>spdx</code></td>
+          <td><code>http://spdx.org/rdf/terms#</code></td>
+          <td>[[SPDX]]</td>
+        </tr>
+        <tr>
+          <td><code>vcard</code></td>
+          <td><code>http://www.w3.org/2006/vcard/ns#</code></td>
+          <td>[[VCARD-RDF]]</td>
+        </tr>
+        <tr>
+          <td><code>xsd</code></td>
+          <td><code>http://www.w3.org/2001/XMLSchema#</code></td>
+          <td>[[XMLSCHEMA11-2]]</td>
+        </tr>
+
+
+      </tbody>
+    </table>
+  </section>
 </body>
 
 </html>
