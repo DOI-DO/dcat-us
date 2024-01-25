@@ -1488,14 +1488,15 @@
         </tr>
         <tr>
           <th class="prop">Definition: </th>
-          <td>Specify the components of the delivery address for an entity
+          <td>Specify the components of the delivery address for a contact point
           </td>
         </tr>
 
 
         <tr>
           <th class="prop">Usage note</th>
-          <td>When incorporating [[VCARD-RDF]] <a data-cite="VCARD-RDF#d4e1292"><code>vcard:Address</code></a> within
+          <td>This class is used only to associate an address with a contact point. When incorporating [[VCARD-RDF]] <a
+              data-cite="VCARD-RDF#d4e1292"><code>vcard:Address</code></a> within
             DCAT-US, ensure
             to utilize its properties, such as <a data-cite="VCARD-RDF#d4e1218"><code>vcard:street-address</code></a>,
             <a data-cite="VCARD-RDF#d4e999"><code>vcard:locality</code></a>, and <a
@@ -1783,7 +1784,7 @@
         </tr>
         <tr>
           <th class="prop">Usage note</th>
-          <td></td>
+          <td>This class is used to define a location defined by an address. It should be used only with the property <a data-cite="DCTERMS#http://purl.org/dc/terms/spatial"><code>dcterms:spatial</code></a>, not the contact point <a href="#contact-address">address</a> property.</td>
         </tr>
         <tr>
           <th>Rationale:</th>
@@ -18594,7 +18595,8 @@
             comprehensively detail the nature and
             specifics of a relationship.
           </p>
-          The <a href="#properties-for-relationship">dcat:Relationship</a> class is fundamental in this profile for articulating complex
+          The <a href="#properties-for-relationship">dcat:Relationship</a> class is fundamental in this profile for
+          articulating complex
           relationships between cataloged resources. It enables the detailed expression of the nature, characteristics,
           and context of these relationships, extending beyond basic linking to provide a rich, nuanced representation
           of interconnections. This class is particularly valuable in instances where relationships between datasets or
@@ -18608,19 +18610,24 @@
             crucial context and understanding for users.
           </p>
           <p>
-            The <a href="#properties-for-relationship">dcat:Relationship</a>  class includes several properties that facilitate a comprehensive
+            The <a href="#properties-for-relationship">dcat:Relationship</a> class includes several properties that
+            facilitate a comprehensive
             description of relationships:
           </p>
           <ul>
-            <li><a href="#relationship-relation"><strong>dcat:relation:</strong></a> Specifies the target resource in the relationship, linking the subject
+            <li><a href="#relationship-relation"><strong>dcat:relation:</strong></a> Specifies the target resource in
+              the relationship, linking the subject
               dataset to its related resource.</li>
-            <li><a href="#relationship_hadRole"><strong>dcat:hadRole:</strong></a> Indicates the role or function of the related resource within the
+            <li><a href="#relationship_hadRole"><strong>dcat:hadRole:</strong></a> Indicates the role or function of the
+              related resource within the
               relationship, offering insights into the purpose or contribution of the related resource in relation to
               the subject dataset.</li>
           </ul>
           <p>
-            The combination of these properties with <a href="#properties-for-relationship">dcat:Relationship</a>  ensures a detailed, accurate
-            portrayal of the complex web of interdependencies within a data catalog with precise roles. This enhanced detail is critical
+            The combination of these properties with <a href="#properties-for-relationship">dcat:Relationship</a>
+            ensures a detailed, accurate
+            portrayal of the complex web of interdependencies within a data catalog with precise roles. This enhanced
+            detail is critical
             for users needing to understand dependencies and the broader context of datasets.
           </p>
         </li>
@@ -20867,9 +20874,11 @@
 
         <h4>Controlled vocabularies to be used</h4>
 
-        <aside class="note">Some of the vocabularies listed are placeholders and will be further developed during the implementation phase of the profile. This is a part of our ongoing efforts to refine and optimize the DCAT-US specification for enhanced usability and interoperability.</aside>
+        <aside class="note">Some of the vocabularies listed are placeholders and will be further developed during the
+          implementation phase of the profile. This is a part of our ongoing efforts to refine and optimize the DCAT-US
+          specification for enhanced usability and interoperability.</aside>
 
-       
+
 
         <p>In the table below, a number of properties are listed with controlled vocabularies that MUST be
           used for the
@@ -20889,7 +20898,7 @@
           the Data.gov Vocabularies Data Themes [[DATA-GOV-THEME]], in order to facilitate the identification of the
           relevant theme in [[DATA-GOV-THEME]] for geospatial/statistical metadata.</p>
 
-         <div data-include-format="html" data-include-replace="true"
+        <div data-include-format="html" data-include-replace="true"
           data-include="./tables/controlled-vocabularies-to-be-used.html"></div>
 
       </section>
