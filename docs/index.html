@@ -399,7 +399,7 @@
     </p>
     <section id="document-status">
       <h3>Document Status</h3>
-      <p>Initial Draft</p>
+      <p>Working Draft</p>
     </section>
 
   </section>
@@ -411,6 +411,7 @@
     <p>The following diagram captures the relationship between DCAT and DCAT-US :</p>
 
     <div id="diagram2" class="mermaid">
+      TOADD
       <!--   classDiagram
       DCAT <|-- DCAT_US: is_profile_of class DCAT { - defines classes - defines properties - base vocabulary } class
         DCAT_US { - uses classes of DCAT - specifies requirement levels - specifies cardinalities - specifies controlled
@@ -8128,9 +8129,9 @@
                 <td>O</td>
                 <td>0..n</td>
               </tr> -->
-    
-      
-    
+
+
+
 
           <tr>
             <td><a href="#dataset-metadataDistribution">metadata distribution</a></td>
@@ -9649,7 +9650,8 @@
                     <li>This property refers to a related resource where the relationship cannot be further specified
                       as
                       a
-                      dcat:qualifiedRelationship. This may be additional material such as an article, example or
+                      <a href="#dataset-qualified-relation">dcat:qualifiedRelation</a>. This may be additional material
+                      such as an article, example or
                       documentation helpful in the context of the Dataset.
                     </li>
                     <li>
@@ -10197,8 +10199,8 @@
             </aside>
           </section>
         </section>
-       
-     
+
+
         <section id="dataset-describedBy">
           <h4>Property: data dictionary</h4>
           <table class="def">
@@ -10288,7 +10290,7 @@
             <pre class="jsonld exampleTab1 json" data-include-format="text"
               data-include="./examples/dataset/metadata-distribution.jsonld"></pre>
           </aside>
-        
+
         </section>
         <section id="dataset-liability_statement">
           <h4>Property: liability statement</h4>
@@ -18457,7 +18459,215 @@
         </aside>
       </section>
     </section>
+    <section id="related-resources" class="informative">
+      <h3>Related Resources</h3>
 
+      <p>The DCAT-US 3.0 profile significantly enhances how relationships within data catalogs are understood by
+        introducing a set of properties and classes. These components effectively articulate the connections between
+        datasets and a diverse array of entities such as documents, related datasets, and other catalog assets. Take,
+        for
+        example, a dataset on climatic patterns. This dataset might not only stand alone but also link to satellite
+        imagery, climate change research, and environmental policy documents, thereby highlighting the interconnected
+        nature of data.</p>
+
+
+      <p>Properties such as <a href="#dataset-related-resource">dcterms:relation</a> and <a
+          href="#dataset-is-referenced-by">is referenced by</a> play a critical role in
+        highlighting a dataset's broader influence and practical applications. In addition, specialized properties like
+        <a href="#dataset-landing-page">dcat:landingPage</a>, <a href="#dataset-documentation">foaf:page</a>, and
+        <a href="#dataset-metadataDistribution">dcat-us:metadataDistribution</a> target specific aspects
+        of relationships, enhancing the depth and context of dataset metadata. The <a
+          href="#dataset-qualified-relation">dcat:qualifiedRelation</a>
+        property provides a flexible mechanism to define the roles within these relationships, further enriching the
+        descriptive capacity of the metadata.
+      </p>
+
+      <p>It's important to note that these relationships are between entities (such as datasets or
+        documents), not between entities and agents (like individuals or organizations). The latest category refers to
+        the <a href="#resource-attributions">Resource Attributions section.</a> </p>
+
+
+
+      <h4>Properties</h4>
+      <ul>
+        <li>
+          <a href="#dataset-is-referenced-by"><strong>dcterms:isReferencedBy</strong></a>
+          <p>This property refers to a related resource, such as a publication, that references, cites, or otherwise
+            points to the cataloged resource. It links a dataset with external resources that cite or utilize it.In
+            relation to the use case of data citation, when the cataloged resource is a dataset, the <a
+              href="#dataset-is-referenced-by">dcterms:isReferencedBy</a> property allows to relate the
+            dataset to the resources (such as scholarly publications) that cite or point to the dataset. Multiple <a
+              href="#dataset-is-referenced-by">dcterms:isReferencedBy</a> properties can be used to
+            indicate the dataset has been referenced by multiple publications, or other resources.</p>
+        </li>
+
+        <li>
+          <a href="#dataset-related-resource"><strong>dcterms:relation</strong></a>
+          <p>This property is a general indicator of a relationship between the cataloged resource and another resource.
+            It SHOULD be used where the nature of the relationship between a cataloged resource and related resources is
+            not known. A more specific sub-property SHOULD be used if the nature of the relationship of the link is
+            known. Many existing and legacy catalogs do not distinguish between dataset components, representations,
+            documentation, schemata and other resources that are lumped together as part of a dataset. <a
+              href="#dataset-related-resource">dcterms:relation</a>
+            is a super-property of a number of more specific properties which express more precise relationships, so use
+            of <a href="#dataset-related-resource">dcterms:relation</a> is not inconsistent with a subsequent
+            reclassification with more specific semantics,
+            though the more specialized sub-properties SHOULD be used to link a dataset to component and supplementary
+            resources if possible.</p>
+        </li>
+        <li>
+          <a href="#dataset-qualified-relation"><strong>dcat:qualifiedRelation</strong></a>
+          <p>The <a href="#dataset-qualified-relation">dcat:qualifiedRelation</a> property defines complex relationships
+            between resources, especially datasets. Used with the <em>dcat:Relationship</em> class, it details these
+            connections, specifying the nature of the relationship through well-defined roles.</p>
+          <p>DCAT 3 recognizes a variety of relationship types, such as alternate, canonical, original, preview,
+            stereo-mate, and working-copy-of. Roles are sourced from lists like <a
+              href="https://standards.iso.org/iso/19115/resources/Codelists/gml/DS_AssociationTypeCode.xml">DS_AssociationTypeCodes</a>
+            values from [[ISO-19115-1]], IANA Registry of Link Relations [[IANA-RELATIONS]], [[DataCite]] metadata
+            schema, and <a href="https://id.loc.gov/vocabulary/relators.html">MARC relators</a>. For instance, a
+            dataset's role in a relationship can be denoted using IRIs from these sources, ensuring a clear and
+            standardized representation.</p>
+          <p>For example, a dataset with a 'stereo-mate' relationship is expressed in DCAT 3 as follows:
+          <pre><code>ex:Test543L  a dcat:Dataset ;      
+        dcat:qualifiedRelation
+        [   a dcat:Relationship ; 
+            dcterms:relation &lt;http://dcat.example.org/Test543R&gt; ; 
+            dcat:hadRole &lt;http://registry.it.csiro.au/def/isotc211/DS_AssociationTypeCode/stereoMate&gt;      
+        ] ;  
+          </code></pre>
+
+          In this example, the 'stereo-mate' role is clearly defined using an IRI from the <a
+            href="https://standards.iso.org/iso/19115/resources/Codelists/gml/DS_AssociationTypeCode.xml">DS_AssociationTypeCodes</a>
+          codelist of [[ISO-19115-1]].</p>
+          <aside class="note">Note that <a href="#dataset-qualified-relation">dcat:qualifiedRelation</a> and
+            <em>dcat:Relationship</em>
+            follow W3C PROV-O patterns but are adapted to support Entity-Entity relations beyond 'was derived from',
+            addressing the need for a broader range of dataset relationships in the data catalog.
+          </aside>
+        </li>
+        <li>
+          <a href="#dataset-metadataDistribution"><strong>dcat-us:metadataDistribution</strong></a>
+          <p>This property, classified as optional and with a cardinality of 0..n, refers to metadata document
+            distributions from which the dataset metadata is derived. The URI for this property is
+            <em>dcat-us:metadataDistribution</em>, and its range is specified as <em>dcat:Distribution</em>.
+          </p>
+          <p>The <a href="#dataset-metadataDistribution">dcat-us:metadataDistribution</a> property is used to link a
+            dataset to the "original" metadata document distributions that serve as the source or foundation for the
+            dataset metadata. This linkage is crucial for tracing the dataset back to its original metadata, thereby
+            providing a clear lineage and understanding of the dataset metadata's derivation and context.</p>
+          <p>By utilizing this property, data catalogers can enhance the metadata's descriptive capacity, offering users
+            more comprehensive insights into the dataset's origins and ensuring greater transparency and traceability
+            within the data catalog.</p>
+        </li>
+        <li>
+          <a href="#dataset-landing-page"><strong>dcat:landingPage</strong></a>
+          <p>The <a href="#dataset-landing-page">dcat:landingPage</a> property is designed to provide a direct link to a
+            landing page specifically for the dataset. This property is essential for guiding users to a web page where
+            they can find more comprehensive information about the dataset, including details on accessing, using, and
+            citing it. The property is optional and its range is typically an IRI (Internationalized Resource
+            Identifier) that leads to the dataset's landing page.</p>
+          <p>This property enhances user experience by simplifying the process of finding relevant and detailed
+            information about a dataset, contributing to better accessibility and understanding of the dataset within
+            the data catalog.</p>
+        </li>
+
+        <li>
+          <a href="#dataset-documentation"><strong>foaf:page</strong></a>
+          <p>The <a href="#dataset-documentation">foaf:page</a> property, part of the [[FOAF]] vocabulary, is used to
+            link a dataset to a related web page. This property is broader than <a
+              href="#dataset-landing-page">dcat:landingPage</a> , as it can refer to any web page that is significantly
+            related to the dataset, not just the official landing page. The range for <a
+              href="#dataset-documentation">foaf:page</a>is an IRI pointing to the related web page. </p>
+          <p>By utilizing the <a href="#dataset-documentation">foaf:page</a> property, data publishers can provide
+            additional context, background information, or related resources that enrich the dataset’s metadata and
+            facilitate a deeper understanding for users engaging with the dataset.</p>
+        </li>
+
+      </ul>
+
+      <h4>Classes</h4>
+      <ul>
+        <li>
+          <a href="#properties-for-relationship"><strong>dcat:Relationship</strong></a>
+          <p>This class is essential for describing detailed relationships, especially when used with
+            <a href="#dataset-qualified-relation">dcat:qualifiedRelationship</a>. It enables catalogers to
+            comprehensively detail the nature and
+            specifics of a relationship.
+          </p>
+          The <a href="#properties-for-relationship">dcat:Relationship</a> class is fundamental in this profile for articulating complex
+          relationships between cataloged resources. It enables the detailed expression of the nature, characteristics,
+          and context of these relationships, extending beyond basic linking to provide a rich, nuanced representation
+          of interconnections. This class is particularly valuable in instances where relationships between datasets or
+          between datasets and other entities are multifaceted.
+          </p>
+          <p>
+            Utilizing <a href="#properties-for-relationship">dcat:Relationship</a> in conjunction with <a
+              href="#dataset-qualified-relation"><code>dcat:qualifiedRelationship</code></a> allows catalogers to
+            specify the precise nature of relationships. This includes the role of the related resource, the type of
+            relationship (e.g., derived from, part of, requires), and the directionality of the relationship, providing
+            crucial context and understanding for users.
+          </p>
+          <p>
+            The <a href="#properties-for-relationship">dcat:Relationship</a>  class includes several properties that facilitate a comprehensive
+            description of relationships:
+          </p>
+          <ul>
+            <li><a href="#relationship-relation"><strong>dcat:relation:</strong></a> Specifies the target resource in the relationship, linking the subject
+              dataset to its related resource.</li>
+            <li><a href="#relationship_hadRole"><strong>dcat:hadRole:</strong></a> Indicates the role or function of the related resource within the
+              relationship, offering insights into the purpose or contribution of the related resource in relation to
+              the subject dataset.</li>
+          </ul>
+          <p>
+            The combination of these properties with <a href="#properties-for-relationship">dcat:Relationship</a>  ensures a detailed, accurate
+            portrayal of the complex web of interdependencies within a data catalog with precise roles. This enhanced detail is critical
+            for users needing to understand dependencies and the broader context of datasets.
+          </p>
+        </li>
+        <li>
+          <a href="#properties-for-role"><strong>dcat:Role</strong></a>
+          <p>The <a href="#properties-for-document">dcat:Role</a> class, introduced in DCAT 2, represents a significant
+            concept in the DCAT-US
+            specification. It is defined as the function of a resource or agent with respect to another resource,
+            particularly in the context of resource attribution or resource relationships.</p>
+          <p>As a subclass of <a href="#properties-for-concept">skos:Concept</a>, <a
+              href="#properties-for-document">dcat:Role</a> is utilized to
+            specify the role of an Agent with respect to an Entity in a qualified-attribution scenario. It is also used
+            in a qualified-relation to indicate the role of an Entity in relation to another Entity. In both contexts,
+            it is recommended to manage the values of <a href="#properties-for-document">dcat:Role</a> as a controlled
+            vocabulary of roles. Examples of such controlled
+            vocabularies include the CI_RoleCode from [[ISO-19115-1]], the <a
+              href="https://standards.iso.org/iso/19115/resources/Codelists/gml/DS_AssociationTypeCode.xml">DS_AssociationTypeCodes</a>
+            values from [[ISO-19115-1]], IANA Registry of Link Relations [[IANA-RELATIONS]], [[DataCite]] metadata
+            schema, and <a href="https://id.loc.gov/vocabulary/relators.html">MARC relators</a>.</p>
+          <p>This class complements the <em>prov:Role</em> from the [[PROV-O]] ontology, which delineates the function
+            of an entity or agent with respect to an activity. In contrast, <a
+              href="#properties-for-document">dcat:Role</a> is specifically tailored to encapsulate the roles in the
+            context of resource attribution and inter-resource relationships, enhancing the
+            semantic richness and specificity of the metadata in data catalogs.</p>
+
+        </li>
+
+        <li>
+          <a href="#properties-for-document"><strong>foaf:Document</strong></a>
+          <p>The <a href="#properties-for-document">foaf:Document</a> class, a notable addition in DCAT-US 3.0, is
+            dedicated to representing various
+            types of publications, ranging from scientific papers and technical reports to books, book chapters, blog
+            posts, and more. This class plays a key role in ensuring that documents within data catalogs are
+            accurately
+            and comprehensively represented.</p>
+          <p>As an optional class, its implementation depends on the catalog's support for publications. Catalogs can
+            either provide a full description of a publication or denote it simply by its URI. The inclusion of
+            <a href="#properties-for-document">foaf:Document</a> enhances the DCAT-US profile by standardizing metadata
+            elements for documents, such
+            as title, identifier, category, publisher, classification, format, language. This standardization not only
+            improves metadata clarity
+            but also promotes interoperability across different data ecosystems, aiding both publishers and consumers.
+          </p>
+          <p>This class, aligned with the [[FOAF]] vocabulary, offers an effective way to capture and convey detailed
+            information about publications, thereby enriching the metadata within DCAT-US catalogs.</p>
+        </li>
+    </section>
     <!-- Resource classification Metadata -->
     <section id="resource-classification">
       <h3>Resource Classification</h3>
@@ -19235,33 +19445,7 @@
 
     </section>
 
-    <!-- Citations -->
-    <section id="citation-metadata">
 
-      <h3>Citation Metadata</h3>
-      <p>Citations play a pivotal role in ensuring the traceability and credibility of datasets within a data catalog.
-        In the DCAT-US 3.0 profile, various mechanisms have been introduced to describe
-        citations, ensuring that data consumers can reference and validate the datasets effectively. This section
-        elucidates the different mechanisms to manage and describe citations in the DCAT-US profile.</p>
-      <section id="source-citation">
-        <h4>Source citation</h4>
-        <p>Source citation is paramount in maintaining the integrity, traceability, and credibility of datasets within
-          a
-          data catalog. In the DCAT-US profile, which aligns with the DCAT-3 standard, various mechanisms are
-          established
-          to articulate citations, ensuring that users and data consumers can accurately reference and validate
-          datasets.
-        </p>
-        <p><a data-cite="DCTERMS#http://purl.org/dc/terms/source"><code>dcterms:source</code></a>: Utilize this
-          property
-          to
-          denote the original source dataset from which the current dataset is
-          derived. It ensures a clear lineage and acknowledgment of the original data source, providing a pathway for
-          users to explore the foundational data.</p>
-      </section>
-
-      <aside class="note">TO COMPLETE</aside>
-    </section>
 
     <!-- Legal Information  -->
     <section id="legal-metadata" class="informative">
@@ -19270,59 +19454,80 @@
 
       <p>
         The DCAT-US specification emphasizes clear and accurate legal information provision for datasets,
-        data series, distributions, and data services. Aligning with the FAIR data principles, this approach is
-        essential for informed data use and ensuring compliance with relevant laws and policies. Contemporary laws
-        increasingly mandate clear legal guidelines, highlighting the need for explicit reuse standard disclosures.
+        data series, distributions, and data services. Aligning with the FAIR data principles, this approach
+        is
+        essential for informed data use and ensuring compliance with relevant laws and policies. Contemporary
+        laws
+        increasingly mandate clear legal guidelines, highlighting the need for explicit reuse standard
+        disclosures.
         The
-        DCAT-US strategy aims to articulate legal information at the most specific sharing level to prevent conflicts
-        and discrepancies, ensuring clarity and consistency across different data organization levels. Engaging legal
+        DCAT-US strategy aims to articulate legal information at the most specific sharing level to prevent
+        conflicts
+        and discrepancies, ensuring clarity and consistency across different data organization levels.
+        Engaging legal
         experts is crucial in developing precise and understandable guidelines for each data publisher.
       </p>
 
       <p>
-        Legal information within DCAT-US is categorized into distinct types, each addressing different legal aspects
+        Legal information within DCAT-US is categorized into distinct types, each addressing different legal
+        aspects
         for
-        digital resources. This categorization helps in tailoring the guidelines to the specific nature of each
+        digital resources. This categorization helps in tailoring the guidelines to the specific nature of
+        each
         resource, including those governed by the National Archives and Records Administration (NARA).
       </p>
 
       <ul>
-        <li><strong>License Declarations:</strong> Provide clear guidelines on resource usage, redistribution, or
+        <li><strong>License Declarations:</strong> Provide clear guidelines on resource usage, redistribution,
+          or
           modification.</li>
         <li><strong>Access Rights:</strong> Detail who can access the resource and under what conditions.</li>
-        <li><strong>Usage Rights:</strong> Concern the rights associated with resource use, often detailing scope and
+        <li><strong>Usage Rights:</strong> Concern the rights associated with resource use, often detailing
+          scope and
           limitations.</li>
-        <li><strong>Liability Statements:</strong> Outline responsibilities and liabilities associated with resource
+        <li><strong>Liability Statements:</strong> Outline responsibilities and liabilities associated with
+          resource
           usage.</li>
         <li><strong>Copyright Information:</strong> Clarify the copyright status of the resource.</li>
-        <li><strong>Controlled Unclassified Information (CUI):</strong> Indicate special handling or dissemination
+        <li><strong>Controlled Unclassified Information (CUI):</strong> Indicate special handling or
+          dissemination
           controls for CUI, especially relevant to NARA.</li>
-        <li><strong>Privacy and Confidentiality:</strong> Address personal data, privacy, and confidentiality issues.
+        <li><strong>Privacy and Confidentiality:</strong> Address personal data, privacy, and confidentiality
+          issues.
         </li>
-        <li><strong>Intellectual Property Rights (IPR):</strong> Deal with intellectual property aspects like patents
+        <li><strong>Intellectual Property Rights (IPR):</strong> Deal with intellectual property aspects like
+          patents
           and trademarks.</li>
       </ul>
 
 
       <p>
         The DCAT-US profile addresses unique requirements for digital resources managed by the <a
-          href="https://www.archives.gov/">National Archives and Records Administration (NARA)</a>. It employs a
-        structured approach to define access, use and CUI restrictions using well-defined code lists, enhancing the
-        precision of legal information management, which is critical for datasets involving NARA-governed materials.
-        These materials, governed by NARA's guidelines, involve a range of legal and ethical considerations, including
+          href="https://www.archives.gov/">National Archives and Records Administration (NARA)</a>. It employs
+        a
+        structured approach to define access, use and CUI restrictions using well-defined code lists,
+        enhancing the
+        precision of legal information management, which is critical for datasets involving NARA-governed
+        materials.
+        These materials, governed by NARA's guidelines, involve a range of legal and ethical considerations,
+        including
         content sensitivity, legal compliance, donor stipulations, and preservation needs. </p>
       <p> Adherence to these NARA-specific guidelines is vital for the responsible management of datasets with
-        historical, legal, or cultural significance, ensuring they align with legal frameworks. Below are the key
+        historical, legal, or cultural significance, ensuring they align with legal frameworks. Below are the
+        key
         NARA-specific restrictions: </p>
 
       <ul>
-        <li><strong>Access Restrictions:</strong> Detailing who can access NARA-governed digital assets and under what
-          conditions, in accordance with the federal records legal framework. This includes guidelines on public
+        <li><strong>Access Restrictions:</strong> Detailing who can access NARA-governed digital assets and
+          under what
+          conditions, in accordance with the federal records legal framework. This includes guidelines on
+          public
           access
           and accessing restricted records.</li>
         <li><strong>Use Restrictions:</strong> Outlining the rights and limitations associated with the use
           of NARA-governed assets, focusing on specific legal constraints.</li>
-        <li><strong>Controlled Unclassified Information (CUI) Restrictions:</strong> Specifying the handling and
+        <li><strong>Controlled Unclassified Information (CUI) Restrictions:</strong> Specifying the handling
+          and
           dissemination controls for NARA assets that involve CUI, as mandated by law.</li>
       </ul>
 
@@ -19330,8 +19535,10 @@
       <h4>Access Rights</h4>
       <p>
         The <a href="#distribution-access-rights"><code>dct:accessRights</code></a> property in the DCAT-US
-        specification plays a key role in defining the accessibility of a dataset, distribution or data service. This
-        property provides information about the access restrictions placed on a digital resources, including any
+        specification plays a key role in defining the accessibility of a dataset, distribution or data
+        service. This
+        property provides information about the access restrictions placed on a digital resources, including
+        any
         limitations or permissions required for accessing the data. </p>
       <p>
         Accurately defining access rights is crucial for data providers to ensure
@@ -19341,7 +19548,8 @@
       </p>
 
       <p>
-        The <a href="#distribution-access-rights"><code>dct:accessRights</code></a> property is used to describe the
+        The <a href="#distribution-access-rights"><code>dct:accessRights</code></a> property is used to
+        describe the
         general conditions under which a dataset is
         accessible. This may include information about:
       <ul>
@@ -19371,8 +19579,10 @@
       <p>Additionally, access rights applies both at the dataset and distribution levels. While a dataset access
         rights
         defines the overall terms for the entire dataset, each distribution can have its own specific access rights,
-        potentially different from the dataset's access rights. This flexibility allows for tailored access rights for
-        different forms or versions of the dataset, enhancing the dataset's usability and compliance with varied user
+        potentially different from the dataset's access rights. This flexibility allows for tailored access rights
+        for
+        different forms or versions of the dataset, enhancing the dataset's usability and compliance with varied
+        user
         needs.</p>
       <p>
         This property does not typically include the access URL or mechanism, which
@@ -19382,7 +19592,8 @@
       </p>
       <h4>License Document</h4>
       <p>
-        The <a href="#properties-for-license-document"><code>dcat-us:LicenseDocument</code></a> is an RDF Class in the
+        The <a href="#properties-for-license-document"><code>dcat-us:LicenseDocument</code></a> is an RDF Class in
+        the
         DCAT-US
         specification designed to specify the licensing terms under which a dataset
         is made available. This class plays a vital role in clearly communicating
@@ -19415,14 +19626,17 @@
       <p>
         In dataset metadata, the <a href="#properties-for-license-document"><code>dcat-us:LicenseDocument</code></a>
         can
-        be referenced using the property <code>dct:license</code>. This ensures that users are aware of and can easily
+        be referenced using the property <code>dct:license</code>. This ensures that users are aware of and can
+        easily
         access the licensing terms associated with a dataset. </p>
       <p>
         Implementing <a href="#properties-for-license-document"><code>dcat-us:LicenseDocument</code></a> is crucial
-        for data providers to ensure legal clarity and compliance, and it assists users in understanding their rights
+        for data providers to ensure legal clarity and compliance, and it assists users in understanding their
+        rights
         and responsibilities when using the dataset. </p>
       <p>Property <a href="#license-document-license-text"><code>spdx:licenseText</code></a> MAY only be used to
-        specify license information in legacy metadata records, not compliant with1 standard license from an endorsed
+        specify license information in legacy metadata records, not compliant with1 standard license from an
+        endorsed
         registry. This property can be repeated
         for parallel language versions of the description </p>
       <p>
@@ -19451,7 +19665,8 @@
       <h4>Liability Statement</h4>
       <p>
         The introduction of <a href="#properties-for-liability_statement"><code>dcat-us:LiabilityStatement</code></a>
-        in the DCAT-US 3.0 profile is a formal declaration by data providers aimed at limiting legal exposure related
+        in the DCAT-US 3.0 profile is a formal declaration by data providers aimed at limiting legal exposure
+        related
         to
         the dataset. It disclaims warranties and guarantees, setting clear user expectations for dataset usage,
         thereby
@@ -19543,34 +19758,40 @@
       <p>Additionally, copyrights applies both at the dataset and distribution levels. While a dataset copyrights
         defines the overall terms for the entire dataset, each distribution can have its own specific copyrights,
         potentially different from the dataset's copyrights. This flexibility allows for tailored copyrights for
-        different forms or versions of the dataset, enhancing the dataset's usability and compliance with varied user
+        different forms or versions of the dataset, enhancing the dataset's usability and compliance with varied
+        user
         needs.</p>
 
 
       <h4>NARA Access Restrictions</h4>
       <p>
-        The National Archives and Records Administration (NARA) enforces Access Restrictions to ethically and legally
-        manage a wide array of historical records. These restrictions protect sensitive information, comply with legal
+        The National Archives and Records Administration (NARA) enforces Access Restrictions to ethically and
+        legally
+        manage a wide array of historical records. These restrictions protect sensitive information, comply with
+        legal
         standards, honor donor agreements, and preserve physical and digital integrity.
       </p>
 
       <p>
         Access Restrictions are tailored to each archival collection, balancing historical significance with legal,
-        ethical, and preservation considerations. This ensures appropriate access while respecting archival practices.
+        ethical, and preservation considerations. This ensures appropriate access while respecting archival
+        practices.
       </p>
 
       <p>
         The <a href="#properties-for-access_restriction"><code>dcat-us:AccessRestriction</code></a> class in DCAT-US
         application profile represents NARA's access restrictions, providing a framework to define and communicate
         limitations on record accessibility. This class supports NARA in managing sensitive content, maintaining
-        confidentiality, and upholding data integrity, aiding stakeholders in understanding accessibility constraints.
+        confidentiality, and upholding data integrity, aiding stakeholders in understanding accessibility
+        constraints.
         The following properties are used to describe use restrictions:
       </p>
 
       <ul>
         <li>
           <strong>Restriction Status:</strong> This mandatory property is linked to the NARA <a
-            href="https://www.archives.gov/research/catalog/lcdrg/authority_lists/accesslist.html">Access Restriction
+            href="https://www.archives.gov/research/catalog/lcdrg/authority_lists/accesslist.html">Access
+            Restriction
             Status
             Authority
             List</a>, the <a href="#access_restriction-restriction_status">dcat-us:restrictionStatus</a> property
@@ -19584,7 +19805,8 @@
             Access
             Restriction Authority List</a> for detailed information on restrictions. It defines specific access
           restrictions
-          to the archival materials, based on national security considerations, donor restrictions, court orders, and
+          to the archival materials, based on national security considerations, donor restrictions, court orders,
+          and
           other statutory or regulatory provisions.
         </li>
         <li>
@@ -19607,7 +19829,8 @@
       <p>
         These properties and their corresponding code lists are essential for encoding and interpreting restriction
         data
-        accurately within the NARA guidelines and DCAT-US framework. The SKOS vocabulary for these lists is available
+        accurately within the NARA guidelines and DCAT-US framework. The SKOS vocabulary for these lists is
+        available
         in
         the <a href="https://github.com/DOI-DO/dcat-us/blob/main/vocabularies/nara-restrictions.ttl">DCAT-US
           repository</a>, with JSON-LD URIs abbreviated for space. The following is the code list for <a
@@ -19656,8 +19879,10 @@
       <h4>NARA Use Restrictions</h4>
 
       <p>
-        The <a href="#properties-for-use_restriction"><code>dcat-us:UseRestriction</code></a> class in DCAT-US 3.0 is
-        used by the National Archives and Records Administration (NARA) to define use restrictions on resources. This
+        The <a href="#properties-for-use_restriction"><code>dcat-us:UseRestriction</code></a> class in DCAT-US 3.0
+        is
+        used by the National Archives and Records Administration (NARA) to define use restrictions on resources.
+        This
         includes limitations for legal and ethical compliance, like protecting privacy and intellectual property
         rights.
         The following properties are used to describe use restrictions:
@@ -19666,7 +19891,8 @@
       <ul>
         <li>
           <strong>Restriction Status:</strong> This mandatory property is linked to the NARA <a
-            href="https://www.archives.gov/research/catalog/lcdrg/elements/use.html">Use Restriction Status Authority
+            href="https://www.archives.gov/research/catalog/lcdrg/elements/use.html">Use Restriction Status
+            Authority
             List</a>, the <a href="#use_restriction-restriction_status">dcat-us:restrictionStatus</a> property
           specifies
           the type of use restrictions.
@@ -19689,7 +19915,8 @@
       <p>
         These properties and their corresponding code lists are essential for encoding and interpreting restriction
         data
-        accurately within the NARA guidelines and DCAT-US framework. The SKOS vocabulary for these lists is available
+        accurately within the NARA guidelines and DCAT-US framework. The SKOS vocabulary for these lists is
+        available
         in
         the <a href="https://github.com/DOI-DO/dcat-us/blob/main/vocabularies/nara-restrictions.ttl">DCAT-US
           repository</a>, with JSON-LD URIs abbreviated for space.
@@ -19699,13 +19926,15 @@
 
       <h4>Controlled Unclassified Information (CUI) Restrictions</h4>
       <p>
-        Controlled Unclassified Information (CUI) in NARA archives needs protection due to its sensitive nature. This
+        Controlled Unclassified Information (CUI) in NARA archives needs protection due to its sensitive nature.
+        This
         safeguarding is essential for national security, privacy, intellectual property, and confidentiality of
         sensitive data. You can learn more about CUI on the <a href="https://www.archives.gov/cui">NARA website</a>.
       </p>
 
       <p>
-        The <a href="#properties-for-cui_restriction"><code>dcat-us:CuiRestriction</code></a> class in DCAT-US 3.0 is
+        The <a href="#properties-for-cui_restriction"><code>dcat-us:CuiRestriction</code></a> class in DCAT-US 3.0
+        is
         tailored for managing CUI, requiring specific safeguarding in line with legal and policy requirements. It
         aligns
         with NARA guidelines to ensure compliance, enhance data security, and improve data
@@ -19713,7 +19942,8 @@
       </p>
 
       <p>
-        The <a href="#properties-for-cui_restriction"><code>dcat-us:CuiRestriction</code></a> class is instrumental in
+        The <a href="#properties-for-cui_restriction"><code>dcat-us:CuiRestriction</code></a> class is instrumental
+        in
         managing Controlled Unclassified Information (CUI) within the DCAT-US framework. It mandates certain
         properties
         for effective representation and management of CUI data:
