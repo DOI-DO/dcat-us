@@ -1784,7 +1784,9 @@
         </tr>
         <tr>
           <th class="prop">Usage note</th>
-          <td>This class is used to define a location defined by an address. It should be used only with the property <a data-cite="DCTERMS#http://purl.org/dc/terms/spatial"><code>dcterms:spatial</code></a>, not the contact point <a href="#contact-address">address</a> property.</td>
+          <td>This class is used to define a location defined by an address. It should be used only with the property <a
+              data-cite="DCTERMS#http://purl.org/dc/terms/spatial"><code>dcterms:spatial</code></a>, not the contact
+            point <a href="#contact-address">address</a> property.</td>
         </tr>
         <tr>
           <th>Rationale:</th>
@@ -19028,7 +19030,9 @@
 
         <ul>
           <li>
-            <strong>Release Time (dcterms:issued):</strong> Indicates the date when the dataset was first made
+            <strong>Release Time ( <a
+                data-cite="DCTERMS#http://purl.org/dc/terms/issued"><code>dcterms:issued</code></a>):</strong> Indicates
+            the date when the dataset was first made
             available. Formats include:
             <ul>
               <li><a href="https://www.w3.org/TR/xmlschema11-2/#date">xsd:date</a>(e.g., <code>2023-11-30</code>)</li>
@@ -19042,9 +19046,10 @@
             </ul>
           </li>
           <li>
-            <strong>Revision/Update Time (dcterms:modified):</strong> Shows when the dataset was last updated, using
-            the
-            same formats as the release time.
+            <strong>Revision/Update Time (<a
+                data-cite="DCTERMS#http://purl.org/dc/terms/modified"><code>dcterms:modified</code></a>):</strong> Shows
+            when the dataset was last updated, using
+            the same formats as the release time.
           </li>
           <li>
             <strong>Update Schedule (dcterms:accrualPeriodicity):</strong> Describes the frequency of dataset updates.
@@ -19054,6 +19059,12 @@
               Collection Description Frequency Vocabulary</a>. Multiple formats allow for precise scheduling, whether
             regular or irregular. <a href="#frequency-coding">Frequency Coding Guide section</a> provides a guide to
             coding various standard frequencies as per ISO 19115, ISO-8601, and the Dublin Core standards.
+          </li>
+          <li>
+            <strong>Record Creation Time (<a
+                data-cite="DCTERMS#http://purl.org/dc/terms/created"><code>dcterms:created</code></a>):</strong>
+            Specifies the date when the catalog record itself was created, separate from the dataset it catalogs. This
+            property uses the <a href="https://www.w3.org/TR/xmlschema11-2/#dateTime">xsd:dateTime</a> format.
           </li>
         </ul>
 
