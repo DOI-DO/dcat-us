@@ -5,11 +5,12 @@
   <title>DCAT-US - Version 3</title>
   <meta content="text/html; charset=utf-8" http-equiv="content-type">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <script src="https://www.w3.org/Tools/respec/respec-w3c" class="remove" defer></script>
   <script class="remove" src="config.js"></script>
-  <script src="https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js"></script>
+  <!--<script src="https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js"></script>-->
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" type="text/css" href="small.css" media="only all and (max-width: 649px)">
+  <script src="https://www.w3.org/Tools/respec/respec-w3c" class="remove" defer></script>
+
   <style>
     table.simple {
       width: 100%;
@@ -20714,75 +20715,265 @@
       <h3>Versioning</h3>
 
       <p>Versioning is a concept used to describe the relationship between an original resource and its variations,
-        updates, or translations. In this section, we explore how DCAT (Data Catalog Vocabulary) is employed to
-        document
-        versions resulting from updates or modifications throughout a resource's lifecycle.</p>
+        updates, or translations. In this section, we explore how versions resulting from updates or modifications
+        throughout a resource's lifecycle is used in DCAT-US 3.0 profile.</p>
 
-      <p>DCAT relies on established vocabularies, including the versioning section of the PAV ontology and terms from
+      <p>DCAT-US 3.0 relies on established vocabularies, including the versioning section of the PAV ontology and terms
+        from
         [[PAV]], [[DCTERMS]], [[OWL2-OVERVIEW]], and [[VOCAB-ADMS]].</p>
 
-      <p>It's important to note that versioning applies to all primary DCAT-US resources, including Catalogs, Catalog
-        Records, Datasets, Dataset Series, and Distributions.</p>
-
-      <p>The versioning approach within DCAT is designed to complement existing methods specific to certain resources
-        (such as versioning properties for ontologies in [[OWL2-OVERVIEW]]) and those prevalent in particular domains.
-        A
-        detailed comparison with other vocabularies can be found in section 11.4: Complementary Approaches to
-        Versioning.
+      <p>
+        It's essential to recognize that versioning is applicable to all primary DCAT resources, such as Catalogs,
+        Catalog Records, Datasets, and Distributions. This versioning capability extends across these resource types.
       </p>
+      <p>
+        The versioning methodology detailed in DCAT-US 3.0 is designed to enhance and work alongside existing versioning
+        practices specific to certain resource types (for instance, versioning properties for ontologies are detailed in
+        [OWL2-OVERVIEW]) and customary in various domains and communities. Refer to section 11.4 for an analysis of how
+        DCAT's versioning approach aligns with other vocabularies.
+      </p>
+      <aside class="note">The concept of versioning is deeply intertwined with the practices of the respective
+        community, the overarching data management policy, and established workflows. The responsibility for determining
+        the timing and rationale for releasing a new version lies with the data providers. Consequently, this DCAT US
+        profile does not set strict guidelines or rules for when modifications to a resource should lead to a new
+        release. Instead, it suggests referring to [DWBP] (sections 8.6 on Data Versioning and 8.7 on Data Identifiers)
+        for more guidance on this matter.
+      </aside>
 
-      <p>Versioning is closely linked to community conventions, data management strategies, and existing processes.
-        Data
-        providers bear the responsibility of determining when and why a new version should be released.</p>
 
       <p><strong>Handling Dataset Changes </strong></p>
-      <p>Datasets published on the Web are subject to change over time. Some datasets are updated on a regular
-        schedule,
-        while others evolve as improvements in data collection methods make updates necessary. To manage these changes
-        effectively, new versions of a dataset may be created. However, there isn't a unanimous consensus on when
-        changes
-        to a dataset should categorize it as an entirely new dataset or simply a new version. Below, we outline
-        scenarios
-        where most publishers would agree that a revision warrants consideration as a new version:</p>
 
-      <p><strong>Scenarios:</strong></p>
-      <ol>
-        <li>
-          <strong>Scenario 1:</strong> Creation of a new bus stop that needs to be added to the dataset.
+      <p>Web-based datasets are inherently dynamic, with some undergoing scheduled updates and others evolving due to
+        advancements in data collection techniques. To address these varying changes, the creation of new dataset
+        versions
+        is often necessary. The decision to classify changes as a new dataset or a new version of an existing dataset,
+        however, is not universally agreed upon. The following examples illustrate typical scenarios where a new version
+        is generally warranted:
+      </p>
+      <ul>
+        <li><strong>Scenario 1:</strong> Adding a new bus stop requires its inclusion in the dataset.</li>
+        <li><strong>Scenario 2:</strong> Eliminating an existing bus stop necessitates its removal from the dataset.
         </li>
-        <li>
-          <strong>Scenario 2:</strong> Removal of an existing bus stop, necessitating its deletion from the dataset.
-        </li>
-        <li>
-          <strong>Scenario 3:</strong> Identification and correction of an error in one of the existing bus stops
-          stored
-          in the dataset.
-        </li>
-      </ol>
-
-      <p>In general, when dealing with datasets that represent time series or spatial series, such as data for
-        different
-        regions or years, these are not typically regarded as multiple versions of the same dataset. Instead, each
-        dataset
-        covers a distinct set of observations about the world and should be treated as a new dataset. This principle
-        also
-        applies to datasets collecting data about weekly weather forecasts for a specific city, where a new dataset is
-        created each week to store data for that particular week.</p>
-
-      <p>Scenario 1 and 2 may trigger major version updates, while Scenario 3 is likely to trigger only a minor
-        version
-        update. However, the distinction between minor and major versions is less critical than ensuring that any
-        changes
-        are clearly indicated by incrementing the version number. Even for minor changes, maintaining a record of
-        different dataset versions is essential for ensuring the dataset's reliability. Publishers should be mindful
-        that
-        a dataset may be in use by one or more data consumers, and they should take reasonable steps to inform those
-        consumers when a new version is released. For real-time data, an automated timestamp can serve as a version
-        identifier. It's crucial for publishers to adopt a consistent and informative approach to versioning for each
-        dataset, ensuring that data consumers can effectively understand and work with evolving data.</p>
+        <li><strong>Scenario 3:</strong> Correcting a mistake related to a bus stop currently in the dataset.</li>
+      </ul>
+      <p>
+        It's important to note that datasets representing time or spatial series (like annual regional data or weekly
+        weather forecasts) are usually considered separate datasets, each capturing unique observations.
+      </p>
+      <p>
+        While Scenarios 1 and 2 might lead to significant version updates, Scenario 3 typically results in a minor
+        update. The key is not the scale of the change, but the clarity in marking these changes through version
+        numbering. Keeping a detailed version history is crucial for the integrity of the dataset,
+        especially considering its potential ongoing use by various stakeholders. Publishers are advised to inform users
+        proactively about new versions, particularly for datasets undergoing real-time updates, where automated
+        timestamps can aid in version identification. Ultimately, maintaining a systematic and transparent versioning
+        approach, including the use of semantic versioning, is vital for enabling users to navigate and utilize these
+        evolving datasets effectively.
+      </p>
 
 
-      <aside class="note">TO COMPLETE</aside>
+      <h4>Version Information</h4>
+      <p>
+        The DCAT-US profile recognizes the importance of associating versioned resources with further details. These
+        details can include aspects like the differences from the original resource (referred to as the version
+        "delta"), the version's name or identifier, and its release date.
+      </p>
+      <p>
+        To accommodate these details, the DCAT US 3.0 profile employs several specific properties:
+      <ul>
+        <li><code>dcat:version</code> (parallel to <code>pav:version</code> [[PAV]]) - This property is used for
+          denoting
+          the version name or identifier.</li>
+        <li><code>dcterms:issued</code> [[DCTERMS]] - Indicates the release date of a particular version.</li>
+        <li><code>adms:versionNotes</code> [[VOCAB-ADMS]] - Provides a textual summary of the changes in the version,
+          highlighting any issues of backward compatibility with the previous version of the resource.</li>
+      </ul>
+      </p>
+      <aside note="class">The DCAT-US profile does not define a specific standard for the version name or identifier,
+        but the use of semantic
+        versioning is encouraged. Incorporating semantic versioning, which uses a format of MAJOR.MINOR.PATCH, can
+        further enhance this
+        clarity. Semantic versioning provides explicit indications of the nature of changes: major changes (like new
+        additions), minor updates (such as small improvements), and patches (error corrections). This systematic
+        approach is beneficial for both publishers and users, as it simplifies the understanding of the extent and
+        impact of each update. Additional guidance can be found in [[DWBP]]'s <a
+          href="https://www.w3.org/TR/dwbp/#dataVersioning">Best Practice 7: Provide a version
+          indicator</a> </aside>
+
+
+      <h4>Dataset Versions</h4>
+      <p>
+        The versioning of datasets is an essential aspect of data management, facilitating the tracking of changes and
+        updates over time. In DCAT-US 3.0, dataset versioning is primarily managed through the use of properties that
+        identify and describe different versions of a dataset including:</p>
+      <ul>
+        <li><code>dcterms:hasVersion</code> - Links to a more recent version of the dataset.</li>
+        <li><code>dcterms:isVersionOf</code> - Indicates the dataset is a version of another dataset.</li>
+        <li><code>dcterms:version</code> - Provides the version number or identifier of the dataset.</li>
+        <li><code>dcterms:versionNotes</code> - Describes changes between this version and the previous version of the
+          dataset.</li>
+      </ul>
+
+      <p>
+        These properties ensure users can easily track dataset evolutions, access different versions, and understand
+        the changes made across versions. Implementing these versioning properties in the DCAT-US profile enhances data
+        discoverability and usability, aligning with best practices in data management.
+      </p>
+
+
+      <h4>Version Chains and Hierarchies</h4>
+      <p>
+        DCAT-US 3.0 profile facilitates the management of version histories and hierarchies through specific properties.
+        These properties help in establishing and navigating the relationships between different versions of a dataset.
+      </p>
+      <p>
+        The key properties for defining version chains and hierarchies include:</p>
+      <ul>
+        <li><code>dcat:previousVersion</code> - This property creates a backward navigable chain from a given version to
+          the first one, allowing for the tracking of a dataset's version history.</li>
+        <li><code>dcat:hasVersion</code> - Utilized for outlining a version hierarchy by linking an abstract resource to
+          its different versions.</li>
+        <li><code>dcat:hasCurrentVersion</code> - a subproperty of <code>dcat:hasVersion</code>) - This property is used
+          to connect an abstract resource to the snapshot representing the current version of its content. </li>
+      </ul>
+      </p>
+      <p>
+        Additionally, the <code>dcat:isVersionOf</code> property (inverse of <code>dcat:hasVersion</code>) can be used
+        to provide a backward link from a version to its abstract resource. The utilization of these properties
+        depends on the specific requirements of the use case.
+      </p>
+      <p>
+        It's important to note that the essential properties for specifying a version chain and hierarchy are
+        <code>dcat:previousVersion</code> and <code>dcat:hasVersion</code>. The choice to use additional properties is
+        determined by the needs of the relevant use case.
+      </p>
+      <p>
+        For further guidance on specifying a resource's status refer to Resource life-cycle section.
+      </p>
+
+
+      <p> The following example, adapted from <a data-cite="?DWBP#dataVersioning">&sect;&nbsp;<span class="secno">8.6
+          </span>Data Versioning</a> of [[DWBP]] demonstrates how to specify a version
+        chain and hierarchy for a bus stops dataset using the properties described in this section.</p>
+
+      <aside class="example" id="ex-version-chain-and-hierarchy"
+        title="Version history of the MyCity bus stops dataset">
+
+        <p>The MyCity bus stops dataset is updated whenever the list of bus stops changes. The different versions are
+          preserved in order to keep an historical record of the bus stops available at given points in time. An
+          abstract dataset is used to point to the version with the most up to date list of bus stops.</p>
+
+        <p>In <a href="#fig-version-chain-and-hierarchy"></a>, the resource with IRI <code>mycity-bus:stops</code> is
+          the abstract resource, corresponding always to the latest version of the MyCity bus stops dataset, whereas the
+          other ones correspond to specific versions of it. The current version is the one with IRI
+          <code>mycity-bus:stops-2015-12-07</code>.
+        </p>
+
+        <figure id="fig-version-chain-and-hierarchy">
+          <img src="./images/version-chain-and-hierarchy.svg">
+          <figcaption>Version chain and hierarchy of the MyCity bus stops dataset</figcaption>
+        </figure>
+
+        <p>The corresponding [[Turtle]] representation:</p>
+
+        <pre>
+      mycity-bus:stops a dcat:Dataset ;
+        ...
+        dcat:hasVersion mycity-bus:stops-2015-01-01 ,
+          mycity-bus:stops-2015-05-05 ,
+          mycity-bus:stops-2015-12-07 ;
+        dcat:hasCurrentVersion mycity-bus:stops-2015-12-07 ;
+      .
+      
+      mycity-bus:stops-2015-01-01 a dcat:Dataset ;
+        ...
+        dcat:isVersionOf mycity-bus:stops ;
+      .
+      
+      mycity-bus:stops-2015-05-05 a dcat:Dataset ;
+        ...
+        dcat:previousVersion mycity-bus:stops-2015-01-01 ;
+        dcat:isVersionOf mycity-bus:stops ;
+      .
+      
+      mycity-bus:stops-2015-12-07 a dcat:Dataset ;
+        ...
+        dcat:previousVersion mycity-bus:stops-2015-05-05 ;
+        dcat:isVersionOf mycity-bus:stops ;
+      .
+      </pre>
+
+      </aside>
+
+      <h4>Versions Replaced by Other Ones</h4>
+      <p>
+        In DCAT-US 3.0 profile, a significant type of relationship is the one where a given version replaces or
+        supersedes another.
+        To represent this, DCAT adopts the relevant properties from [[DCTERMS]]:
+      <ul>
+        <li><code>dcterms:replaces</code> - This property is used when a version supersedes another one.</li>
+        <li><code>dcterms:isReplacedBy</code> - Its inverse, this property provides a back link to the newer version
+          that replaces the current one.</li>
+      </ul>
+      </p>
+      <p>
+        It's important to note that these properties do not necessarily indicate a version chain. That is, a version
+        does not automatically replace its immediate predecessor.
+      </p>
+
+      <p>To illustrate how these roperties can be applied in DCAT-US 3.0, the following example reuses the description of the MyCity bus stop dataset in <a
+          href="#ex-version-chain-and-hierarchy"></a> to show how replaced versions can be specified in DCAT.</p>
+
+      <aside class="example" id="ex-version-replace" title="Replaced versions of the MyCity bus stops dataset">
+        <pre>
+      mycity-bus:stops-2015-01-01 a dcat:Dataset ;
+        ...
+        dcat:isVersionOf mycity-bus:stops ;
+      .
+      
+      mycity-bus:stops-2015-05-05 a dcat:Dataset ;
+        ...
+        dcat:previousVersion mycity-bus:stops-2015-01-01 ;
+        dcat:isVersionOf mycity-bus:stops ;
+        dcterms:replaces mycity-bus:stops-2015-01-01 ;
+      .
+      
+      mycity-bus:stops-2015-12-07 a dcat:Dataset ;
+        ...
+        dcat:previousVersion mycity-bus:stops-2015-05-05 ;
+        dcat:isVersionOf mycity-bus:stops ;
+        dcterms:replaces mycity-bus:stops-2015-05-05 ;
+      .
+      </pre>
+      </aside>
+
+      <h4>Resource Life-Cycle</h4>
+      <p>
+        The life-cycle of a resource, while distinct from versioning, is often closely related to it. The evolution of
+        a resource through its life-cycle stages—conception, creation, publication—may lead to new versions, though not
+        invariably (e.g., resources passing through an approval workflow without revisions). Conversely, creating a new
+        version does not always signify a life-cycle status change, such as in cases of minor updates or resources still
+        under development.
+      </p>
+      <p>
+        The life-cycle status of a resource holds significant value, informing data consumers about its developmental
+        stage, deprecation, or withdrawal, and indicating whether a new version is available. For data providers,
+        marking a resource with its life-cycle status is crucial for managing data workflows, such as ensuring a
+        resource is stable and appropriately flagged before publication.
+      </p>
+      <p>
+        Resource life-cycle management varies depending on community practices, data management policies, and
+        workflows. This variation extends to different resource types (e.g., datasets vs. catalog records), which may
+        follow distinct life-cycle statuses.
+      </p>
+      <p>
+        DCAT utilizes the <a href=""><code>adms:status</code></a> property [[VOCAB-ADMS]] to specify life-cycle
+        statuses, supplemented by relevant [[DCTERMS]] time-related properties (e.g., <code>dcterms:created</code>,
+        <code>dcterms:dateSubmitted</code>). However, DCAT-US profile does not mandate specific life-cycle statuses,
+        instead deferring to standards and practices suitable for each application scenario and communities of practice.
+      </p>
+
+
     </section>
 
 
