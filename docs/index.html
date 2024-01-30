@@ -405,73 +405,79 @@
 
   </section>
 
-  <section id="conformance-to-dcat-3">
-    <h2>Conformance</h2>
-    <p>DCAT-US is an application profile of DCAT Version 3.</p>
-    <p>The DCAT-Profile Guidance states that application profiles may form hierarchies.</p>
-    <p>The following diagram captures the relationship between DCAT and DCAT-US :</p>
-
-    <div id="diagram2" class="mermaid">
-      TOADD
-      <!--   classDiagram
-      DCAT <|-- DCAT_US: is_profile_of class DCAT { - defines classes - defines properties - base vocabulary } class
-        DCAT_US { - uses classes of DCAT - specifies requirement levels - specifies cardinalities - specifies controlled
-        vocabulary }-->
-    </div>
-
+  <section id="conformance" class="informative">
+   
     <section id="provider-requirements">
       <h3>Data Provider requirements</h3>
-      <p>A data catalog conforms to DCAT-US if:</p>
+
+      In order to conform to this Application Profile, an application that provides metadata MUST:
       <ul>
-        <li>
-          An RDF description of the catalog is available
+        <li>Provide a description of the Catalog, including at least the mandatory properties specified for the class
+          <a href="#properties-for-catalog">Catalog</a>.
         </li>
-        <li>
-          All classes and properties defined in DCAT-US 3.0 are used in a way consistent with the
-          semantics declared in this specification.
+        <li>Provide information for the mandatory properties for <a href="#properties-for-catalog-record">Catalog
+            Records</a>, if
+          descriptions of Catalogue Records are provided - please note that the provision of descriptions of Catalogue
+          Records is optional.</li>
+        <li>Provide descriptions of Datasets in the Catalogue, including at least the mandatory properties for the class
+          <a href="#properties-for-dataset">Dataset</a>.
         </li>
-        <li>
-          Properties not mentioned in this specification MAY be used if they are included in either
-          DCAT 3 and their usage conforms to DCAT 3 if they are
-          included in DCAT-US or to DCAT if they are only included in DCAT.
-        </li>
+        <li>Provide descriptions of Distributions, if any, of Datasets in the Catalogue, including at least the
+          mandatory properties for the class <a href="#properties-for-distribution">Distribution</a>.</li>
+
+        <li>Provide descriptions of Data Services, if any, of Datasets in the Catalogue, including at least the
+          mandatory properties for the class <a href="#properties-for-data-service">Data Service</a>.</li>
+
+        <li>Provide descriptions of all organisations involved in the descriptions of Catalogue and Datasets, including
+          at least the mandatory properties for the class <a href="#properties-for-agent">Agent</a>.</li>
+        <li>Apply the publication requirements for the controlled vocabularies as mentioned in section
+          [[[#controlled-vocabularies]]]. </li>
       </ul>
+
+      For the properties listed in the table in section [[[#controlled-vocabularies]]], the associated controlled
+      vocabularies
+      MUST be used. Additional controlled vocabularies MAY be used.
+      In addition to the mandatory properties, any of the recommended and optional properties defined in each class
+      description
+      MAY be provided.
     </section>
     <section id="receiver-requirements">
       <h3>Receiver requirements</h3>
-      <p>An application (data portal) conforms to DCAT-US if:</p>
-      <ul>
-        <li>
-          It is able to process RDF catalogs that conform to DCAT-US .
-        </li>
-        <li>
-          Processing means that it MUST accept incoming data and transparently provide this
-          data to applications and services.
-        </li>
-        <li>
-          Processing does not prescribe whether and how the metadata is stored internally,
-          displayed or made searchable.
-        </li>
-        <li>
-          This processing of metadata also applies to classes and properties not mentioned in DCAT-US that
-          are part of
-          DCAT 3. A DCAT-US conformant receiver MUST also be able to process these classes and
-          properties].
-        </li>
-      </ul>
+      In order to conform to this Application Profile, an application that receives metadata MUST be able to:
+      <li>
+        It is able to process RDF catalogs that conform to DCAT-US .
+      </li>
+      <li>Process information for all classes and properties specified in the class descriptions.</li>
+      <li>Process information for all controlled vocabularies specified in section [[[#controlled-vocabularies]]].
+      </li>
+      <li>
+        Properties not mentioned in this specification MAY be used if they are included in either DCAT 3 and their
+        usage conforms to DCAT 3 if they are
+        included in DCAT-US or to DCAT if they are only included in DCAT.
+      </li>
+
+      "Processing" means that receivers must accept incoming data and transparently provide these data to applications
+      and services.
+      It does neither imply nor prescribe what applications and services finally do with the data (parse, convert,
+      store, make searchable, display to users, etc.).
+
     </section>
 
   </section>
   <section id="dcat-us-classes">
     <h2>DCAT-US Classes</h2>
-    <p>This section displays the classes for the DCAT-US 3 profile. We distinguish <strong>core classes</strong>, which
+    <p>This section displays the classes for the DCAT-US 3 profile. We distinguish <strong>core classes</strong>,
+      which
       represent the primary business entities that the application profile is concerned with, from <strong>supporting
-        classes</strong>, which are used to provide additional context, metadata, or structure to the core classes.</p>
+        classes</strong>, which are used to provide additional context, metadata, or structure to the core classes.
+    </p>
     <p>This following table provides a summary of critical changes and
-      updates in the DCAT-US 3.0 Application Profile, offering valuable insights into the evolution of class definitions
+      updates in the DCAT-US 3.0 Application Profile, offering valuable insights into the evolution of class
+      definitions
       within this data cataloging standard. Each change type is carefully documented, from the introduction of new
       classes specifically designed for DCAT-US 3.0 to updates and adaptations from the broader DCAT specifications,
-      such as DCAT 1, DCAT 2, and DCAT 3. Understanding these changes is essential for data practitioners, as it enables
+      such as DCAT 1, DCAT 2, and DCAT 3. Understanding these changes is essential for data practitioners, as it
+      enables
       them to grasp the evolving landscape of data cataloging and its alignment with various DCAT versions, ultimately
       facilitating more effective data management and interoperability.</p>
 
@@ -1009,21 +1015,24 @@
         <h4>Requirement levels</h4>
         <p>DCAT-US defines four requirement levels for data receivers and senders:</p>
         <ul>
-          <li><strong>Mandatory property</strong>: a receiver MUST be able to process the information for that property;
+          <li><strong>Mandatory property</strong>: a receiver MUST be able to process the information for that
+            property;
             a sender MUST provide the information for that property.
           </li>
           <li><strong>Recommended property</strong>: a receiver MUST be able to process the information for that
             property;
             a sender SHOULD provide the information for that property if it is available.
           </li>
-          <li><strong>Optional property</strong>: a receiver MUST be able to process the information for that property;
+          <li><strong>Optional property</strong>: a receiver MUST be able to process the information for that
+            property;
             a sender MAY provide the information for that property but is not obliged to do so.
           </li>
           <li><strong>Deprecated property</strong>: a receiver SHOULD be able to process information about instances
             of that property; a sender SHOULD NOT provide the information about instances of that property.
           </li>
         </ul>
-        <p>The meaning of the terms MUST, MUST NOT, SHOULD and MAY in this section and in the following sections are as
+        <p>The meaning of the terms MUST, MUST NOT, SHOULD and MAY in this section and in the following sections are
+          as
           defined in RFC 2119.
         </p>
         <p>
@@ -1045,15 +1054,18 @@
             that
             property and the maximum number of values that MAY be provided.
           </li>
-          <li><strong>Usage note</strong>: specifies custom usage instructions and provides background information.</li>
+          <li><strong>Usage note</strong>: specifies custom usage instructions and provides background information.
+          </li>
           <li><strong>CV</strong> (“Controlled Vocabulary”): defines which controlled vocabulary SHOULD be used.</li>
         </ul>
       </section>
       <section id="property_evolution">
         <h4>Property Evolution in DCAT-US 3.0.</h4>
         <p>The following table provides an overview of the various types of changes and updates within the DCAT-US
-          specifications, shedding light on the evolution and adaptation of the data catalog standard. Each change type
-          is categorized, and its significance is explained, ranging from the introduction of new properties to updates
+          specifications, shedding light on the evolution and adaptation of the data catalog standard. Each change
+          type
+          is categorized, and its significance is explained, ranging from the introduction of new properties to
+          updates
           that align with the latest DCAT specifications. Understanding these changes is essential for data
           practitioners and stakeholders seeking to keep pace with the evolving landscape of data cataloging and data
           sharing standards.</p>
@@ -1133,7 +1145,8 @@
         <tr>
           <th class="prop">Rationale</th>
           <td>
-            The "AccessRestriction" class in the DCAT-US application profile is essential for categorizing and managing
+            The "AccessRestriction" class in the DCAT-US application profile is essential for categorizing and
+            managing
             access restrictions according to NARA standards, ensuring responsible access to sensitive historical
             records. It enhances transparency, aiding researchers and authorized users in understanding and navigating
             access parameters for archived materials.
@@ -1322,7 +1335,8 @@
         </tr>
         <tr>
           <th class="prop">Definition:</th>
-          <td>An activity is something that occurs over a period of time and acts upon or with entities; it may include
+          <td>An activity is something that occurs over a period of time and acts upon or with entities; it may
+            include
             consuming, processing, transforming, modifying, relocating, using, or generating entities.</td>
         </tr>
         <tr>
@@ -1330,7 +1344,8 @@
           <td>
             The activity associated with generation of a dataset will typically be an initiative, project, mission,
             survey, on-going activity ("business as usual"). mission or survey etc. Multiple <a
-              data-cite="PROV#Property:prov_wasGeneratedBy"><code>prov:wasGeneratedBy</code></a> properties can be used
+              data-cite="PROV#Property:prov_wasGeneratedBy"><code>prov:wasGeneratedBy</code></a> properties can be
+            used
             to indicate the dataset production context at various levels of granularity.
             Details about how to describe the activity that generated a dataset are out of scope for this applicition
             profile. <a data-cite="PROV#Activity"><code>prov:Activity</code></a> provides for minimum basic properties
@@ -1340,13 +1355,16 @@
         <tr>
           <th class="prop">Rationale:</th>
           <td>
-            <p>Integrating <a data-cite="PROV#Activity"><code>prov:Activity</code></a> into the DCAT-US schema offers a
+            <p>Integrating <a data-cite="PROV#Activity"><code>prov:Activity</code></a> into the DCAT-US schema offers
+              a
               streamlined, generic class to
               represent a myriad of operations, such as initiatives, projects, and ongoing activities, without the
-              complexity of managing numerous specialized classes. This inclusion not only simplifies the representation
+              complexity of managing numerous specialized classes. This inclusion not only simplifies the
+              representation
               of varied activities under a unified semantic framework but also enhances data provenance tracking and
               interoperability across diverse systems and domains. Consequently, it provides a flexible, future-proof
-              approach to accommodate evolving types of activities without necessitating continual schema modifications.
+              approach to accommodate evolving types of activities without necessitating continual schema
+              modifications.
             </p>
           </td>
         </tr>
@@ -1496,13 +1514,14 @@
 
         <tr>
           <th class="prop">Usage note</th>
-          <td>This class is used only to associate an address with a contact point. When incorporating [[VCARD-RDF]] <a
-              data-cite="VCARD-RDF#d4e1292"><code>vcard:Address</code></a> within
+          <td>This class is used only to associate an address with a contact point. When incorporating [[VCARD-RDF]]
+            <a data-cite="VCARD-RDF#d4e1292"><code>vcard:Address</code></a> within
             DCAT-US, ensure
             to utilize its properties, such as <a data-cite="VCARD-RDF#d4e1218"><code>vcard:street-address</code></a>,
             <a data-cite="VCARD-RDF#d4e999"><code>vcard:locality</code></a>, and <a
               data-cite="VCARD-RDF#d4e844"><code>vcard:country-name</code></a>, to provide comprehensive and accurate
-            address details for entities like organizations or publishers. Always adhere to consistent formatting across
+            address details for entities like organizations or publishers. Always adhere to consistent formatting
+            across
             the catalog, be mindful of privacy considerations, especially for individual addresses, and validate the
             data regularly to maintain its accuracy and reliability.
           </td>
@@ -1785,9 +1804,10 @@
         </tr>
         <tr>
           <th class="prop">Usage note</th>
-          <td>This class is used to define a location defined by an address. It should be used only with the property <a
-              data-cite="DCTERMS#http://purl.org/dc/terms/spatial"><code>dcterms:spatial</code></a>, not the contact
-            point <a href="#contact-address">address</a> property.</td>
+          <td>This class is used to define a location defined by an address. It should be used only with the property
+            <a data-cite="DCTERMS#http://purl.org/dc/terms/spatial"><code>dcterms:spatial</code></a>, not the contact
+            point <a href="#contact-address">address</a> property.
+          </td>
         </tr>
         <tr>
           <th>Rationale:</th>
@@ -1891,7 +1911,8 @@
               </tr>
               <tr>
                 <th>Usage note</th>
-                <td>The administrative area of an Address of the Agent. Depending on the country, this corresponds to a
+                <td>The administrative area of an Address of the Agent. Depending on the country, this corresponds to
+                  a
                   province, a county,
                   a region, or a state.</td>
               </tr>
@@ -2061,7 +2082,8 @@
               <li>Use this class when refering to a software agent that is associated with Catalogs, Catalog
                 Records, Data Services, or Datasets.</li>
               <li>If the Agent is an organization, the use of the <a
-                  href="http://www.w3c.org/ns/org#Organization"><code>org:Organization</code></a> is recommended. </li>
+                  href="http://www.w3c.org/ns/org#Organization"><code>org:Organization</code></a> is recommended.
+              </li>
               <li>If the Agent is a person, the use of <a
                   href="http://xmlns.com/foaf/0.1/#term_Person"><code>foaf:Person</code></a> is recommended</li>
             </ul>
@@ -2073,7 +2095,8 @@
             DCAT-US 3.0 serves a dual purpose. Firstly, it allows for the representation of software agents, aligning
             with modern data automation needs. Secondly, it acts as an abstract class for both <a
               href="http://xmlns.com/foaf/0.1/#term_Person"><code>foaf:Person</code></a> and <a
-              href="http://www.w3c.org/ns/org#Organization"><code>org:Organization</code></a>, promoting consistency and
+              href="http://www.w3c.org/ns/org#Organization"><code>org:Organization</code></a>, promoting consistency
+            and
             interoperability while simplifying resource descriptions within the dataset catalog.
           </td>
         </tr>
@@ -2235,7 +2258,8 @@
           <th class="prop">Rationale</th>
           <td>
 
-            The inclusion of <a data-cite="PROV#Class:Attribution"><code>prov:Attribution</code></a> in the DCAT profile
+            The inclusion of <a data-cite="PROV#Class:Attribution"><code>prov:Attribution</code></a> in the DCAT
+            profile
             enables clear data source attribution, promoting
             responsible data sharing and proper citation practices. It aligns the profile with data provenance best
             practices for accurate attribution in data sharing.
@@ -2419,9 +2443,11 @@
           <th class="prop">Rationale</th>
           <td>
             The update of the <a data-cite="VOCAB-DCAT-3#Class:Catalog"><code>dcat:Catalog</code></a> class aligns
-            with the generalization of catalog scope in DCAT-US 3.0, accommodating catalogs of datasets, data services,
+            with the generalization of catalog scope in DCAT-US 3.0, accommodating catalogs of datasets, data
+            services,
             or a mixture of both. It reflects the evolving landscape of data publication and discovery, allowing data
-            publishers to describe and share their resources effectively. Additionally, by making Catalog a subclass of
+            publishers to describe and share their resources effectively. Additionally, by making Catalog a subclass
+            of
             Dataset, DCAT-US promotes consistency in metadata representation and enables catalogs to be composed of
             other catalogs, promoting modularity and extensibility in the data catalog ecosystem.
           </td>
@@ -2659,7 +2685,8 @@
           </tr>
           <tr>
             <td><a href="#catalog-rightsHolder">rights holder</a></td>
-            <td><a data-cite="DCTERMS#http://purl.org/dc/terms/rightsHolder"><code>dcterms:rightsHolder</code></a></td>
+            <td><a data-cite="DCTERMS#http://purl.org/dc/terms/rightsHolder"><code>dcterms:rightsHolder</code></a>
+            </td>
             <td><a href="http://xmlns.com/foaf/0.1/term_Organization"><code>foaf:Organization</code></a></td>
             <td>O</td>
             <td>0..1</td>
@@ -2676,7 +2703,8 @@
           <tr>
             <td><a href="#catalog-temporal">temporal coverage</a></td>
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/temporal"><code>dcterms:temporal</code></a></td>
-            <td><a data-cite="DCTERMS#http://purl.org/dc/terms/PeriodOfTime"><code>dcterms:PeriodOfTime</code></a></td>
+            <td><a data-cite="DCTERMS#http://purl.org/dc/terms/PeriodOfTime"><code>dcterms:PeriodOfTime</code></a>
+            </td>
             <td>O</td>
             <td>0..n</td>
             <td><span style="color: green;">Aligned</span></td>
@@ -3001,7 +3029,8 @@
               </tr>
               <tr>
                 <th>Definition</th>
-                <td>A language used in the textual metadata describing titles, descriptions, etc. of the Datasets in the
+                <td>A language used in the textual metadata describing titles, descriptions, etc. of the Datasets in
+                  the
                   Catalogue.</definition>
                 </td>
               </tr>
@@ -3336,7 +3365,8 @@
                   <ul>
                     <li>This property contains the most recent date on which the Catalog was modified.</li>
                     <li>The value of this property indicates a change to the actual resource, not a change to the
-                      catalog record. An absent value MAY indicate that the resource has never changed after its initial
+                      catalog record. An absent value MAY indicate that the resource has never changed after its
+                      initial
                       publication, or that the date of last modification is not known, or that the resource is
                       continuously updated.</li>
                   </ul>
@@ -3800,7 +3830,8 @@
               </tr>
               <tr>
                 <th>URI</th>
-                <td><a data-cite="DCTERMS#http://purl.org/dc/terms/identifier"><code>dcterms:identifier</code></a></td>
+                <td><a data-cite="DCTERMS#http://purl.org/dc/terms/identifier"><code>dcterms:identifier</code></a>
+                </td>
               </tr>
               <tr>
                 <th>Range</th>
@@ -4042,14 +4073,20 @@
           <th class="prop">Usage note</th>
           <td>
             This class is optional and not all catalogs will use it. It exists for catalogs where a distinction
-            is made between metadata about a <em>dataset or service</em> and metadata about the <em>entry in the catalog
-              about the dataset or service</em>. For example, the <i>publication date</i> property of the <i>dataset</i>
+            is made between metadata about a <em>dataset or service</em> and metadata about the <em>entry in the
+              catalog
+              about the dataset or service</em>. For example, the <i>publication date</i> property of the
+            <i>dataset</i>
             reflects the date when the information was originally made available by the publishing agency, while the
             publication date of the <i>catalog record</i> is the date when the dataset was added to the catalog. In
-            cases where both dates differ, or where only the latter is known, the <em>publication date</em> SHOULD only
-            be specified for the catalog record. Notice that the <abbr title="World Wide Web Consortium">W3C</abbr> PROV
-            Ontology [[PROV-O]] allows describing further provenance information such as the details of the process and
-            the agent involved in a particular change to a dataset or its registration. </td>
+            cases where both dates differ, or where only the latter is known, the <em>publication date</em> SHOULD
+            only
+            be specified for the catalog record. Notice that the <abbr title="World Wide Web Consortium">W3C</abbr>
+            PROV
+            Ontology [[PROV-O]] allows describing further provenance information such as the details of the process
+            and
+            the agent involved in a particular change to a dataset or its registration.
+          </td>
         </tr>
         <tr>
           <th class="prop">Rationale</th>
@@ -4058,8 +4095,10 @@
               data-cite="VOCAB-DCAT-3#Class:Catalog_Record"><code>dcat:CatalogRecord</code></a> into DCAT-US 3.0 holds
             significant value. It enables catalogs to distinguish between metadata describing datasets or services and
             the actual catalog entries. This differentiation proves especially advantageous for ensuring adherence to
-            application profiles that demand specific metadata for catalog records. Furthermore, it streamlines resource
-            lifecycle management, empowering catalogs to monitor alterations and revisions to their entries, ultimately
+            application profiles that demand specific metadata for catalog records. Furthermore, it streamlines
+            resource
+            lifecycle management, empowering catalogs to monitor alterations and revisions to their entries,
+            ultimately
             bolstering data governance and quality assurance protocols.
           </td>
         </tr>
@@ -4375,7 +4414,8 @@
               </tr>
               <tr>
                 <th>Definition</th>
-                <td>A language used in the textual metadata describing titles, descriptions, etc. of the members of the
+                <td>A language used in the textual metadata describing titles, descriptions, etc. of the members of
+                  the
                   catalog.
                 </td>
               </tr>
@@ -4550,7 +4590,8 @@
           <td>Introducing the <a href="http://spdx.org/rdf/terms#Checksum"><code>spdx:Checksum</code></a> class in
             DCAT-US bolsters data integrity and trust by ensuring datasets remain
             unaltered during transfers. This standardized approach promotes consistency across catalogs, facilitates
-            error detection, and adapts to evolving cryptographic needs, enhancing the utility of automated tools.</td>
+            error detection, and adapts to evolving cryptographic needs, enhancing the utility of automated tools.
+          </td>
         </tr>
       </table>
 
@@ -4689,12 +4730,14 @@
           <th class="prop">Usage note</th>
           <td>
             <ul>
-              <li>Following FAIR Vocabulary principles, Concept URI should be made resolvable and accessible using SKOS
+              <li>Following FAIR Vocabulary principles, Concept URI should be made resolvable and accessible using
+                SKOS
                 encoding and provided in Linked Data format (RDF/XML,TTL, JSON-LD, NTriples)
               </li>
               <li>Ensure FAIR Resolvability: Make Concept URIs resolvable using FAIR principles, allowing them to be
                 Findable, Accessible, Interoperable, and Reusable. This ensures that <a
-                  href="SKOS-REFERENCE#Class:Concept"><code>skos:Concept</code></a> instances can be easily discovered,
+                  href="SKOS-REFERENCE#Class:Concept"><code>skos:Concept</code></a> instances can be easily
+                discovered,
                 accessed, integrated with other resources, and reused across the DCAT-US ecosystem, promoting data
                 interoperability and accessibility.</li>
               <li>To enhance data interoperability and consistency, it is advisable to reuse established controlled
@@ -5754,12 +5797,14 @@
               <tr>
                 <th>Usage Note</th>
                 <td>The <code>hasUID</code> property is used to assign a unique identifier
-                  to a contact associated with a dataset or catalog. This identifier, which is optional and should be a
+                  to a contact associated with a dataset or catalog. This identifier, which is optional and should be
+                  a
                   string, ensures that each contact can be distinctly recognized and referenced. The utility of this
                   property is particularly evident in scenarios where contacts need to be uniquely identified across
                   different datasets or catalogs, preventing any ambiguity. It can also serve as a part of a URI for a
                   contact, providing a consistent and resolvable identifier. Implementers are encouraged to use a
-                  globally unique string value, such as a ORCID or a URI that is guaranteed to be unique, to facilitate
+                  globally unique string value, such as a ORCID or a URI that is guaranteed to be unique, to
+                  facilitate
                   unambiguous identification and referencing of contacts.</td>
               </tr>
             </tbody>
@@ -5829,7 +5874,8 @@
         <tr>
           <th class="prop">Definition:</th>
           <td>Represents Controlled Unclassified Information (CUI), which is information that requires safeguarding or
-            dissemination controls in accordance with applicable laws, regulations, and government-wide policies but is
+            dissemination controls in accordance with applicable laws, regulations, and government-wide policies but
+            is
             not classified as confidential.</td>
         </tr>
         <tr>
@@ -5853,8 +5899,10 @@
             class in
             DCAT-US 3.0 is driven by the need for compliance with National Archives and Records Administration (NARA)
             guidelines regarding Controlled Unclassified Information (CUI). This addition ensures that DCAT-US aligns
-            with NARA's standards, promotes transparency, facilitates compliance audits, and supports efficient resource
-            management. Ultimately, it enhances data interoperability and security within the government data ecosystem.
+            with NARA's standards, promotes transparency, facilitates compliance audits, and supports efficient
+            resource
+            management. Ultimately, it enhances data interoperability and security within the government data
+            ecosystem.
           </td>
         </tr>
 
@@ -6298,7 +6346,8 @@
           </tr>
           <tr>
             <td><a href="#data-service-rightsHolder">rights holder</a></td>
-            <td><a data-cite="DCTERMS#http://purl.org/dc/terms/rightsHolder"><code>dcterms:rightsHolder</code></a></td>
+            <td><a data-cite="DCTERMS#http://purl.org/dc/terms/rightsHolder"><code>dcterms:rightsHolder</code></a>
+            </td>
             <td><a href="http://xmlns.com/foaf/0.1/term_Organization"><code>foaf:Organization</code></a></td>
             <td>O</td>
             <td>0..n</td>
@@ -6323,7 +6372,8 @@
           <tr>
             <td><a href="#data-service-temporal">termporal coverage</a></td>
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/temporal"><code>dcterms:temporal</code></a></td>
-            <td><a data-cite="DCTERMS#http://purl.org/dc/terms/PeriodOfTime"><code>dcterms:PeriodOfTime</code></a></td>
+            <td><a data-cite="DCTERMS#http://purl.org/dc/terms/PeriodOfTime"><code>dcterms:PeriodOfTime</code></a>
+            </td>
             <td>O</td>
             <td>0..n</td>
           </tr>
@@ -6525,7 +6575,8 @@
               </tr>
               <tr>
                 <th>Definition</th>
-                <td>This property refers to an entity (organization) responsible for making the Data Service available.
+                <td>This property refers to an entity (organization) responsible for making the Data Service
+                  available.
                 </td>
               </tr>
               <tr>
@@ -6911,7 +6962,8 @@
               </tr>
               <tr>
                 <th>Definition</th>
-                <td>This property refers to a theme of the Data Service. A Data Service may be associated with multiple
+                <td>This property refers to a theme of the Data Service. A Data Service may be associated with
+                  multiple
                   themes.</td>
               </tr>
               <tr>
@@ -7464,7 +7516,8 @@
               </tr>
               <tr>
                 <th>Definition</th>
-                <td>Refers to the performed quality measurements.It represents the evaluation of a given dataset against
+                <td>Refers to the performed quality measurements.It represents the evaluation of a given dataset
+                  against
                   a specific quality metric</td>
               </tr>
               <tr>
@@ -8469,12 +8522,15 @@
           <h4>Property: dataset distribution</h4>
 
           <aside class="note">
-            <strong>Changes from DCAT-US 1.1:</strong> In transitioning from the DCAT-US 1.1 to the DCAT-US 3.0 Profile,
+            <strong>Changes from DCAT-US 1.1:</strong> In transitioning from the DCAT-US 1.1 to the DCAT-US 3.0
+            Profile,
             the requirement level of <a
-              data-cite="VOCAB-DCAT-3#Property:dataset_distribution"><code>dcat:distribution</code></a> has been changed
+              data-cite="VOCAB-DCAT-3#Property:dataset_distribution"><code>dcat:distribution</code></a> has been
+            changed
             from <b>mandatory</b>
             to <b>recommended</b>, to offer greater flexibility to federal agencies, recognizing the varied
-            nature of datasets, their stages, and potential sensitivity. This change aimed to reduce barriers to dataset
+            nature of datasets, their stages, and potential sensitivity. This change aimed to reduce barriers to
+            dataset
             listings and adapt to the evolving data-sharing landscape within federal entities.
           </aside>
           <table class="def">
@@ -9506,7 +9562,8 @@
               </tr>
               <tr>
                 <th>Definition</th>
-                <td>The previous resource (before the current one) in an ordered collection or series of resources.</td>
+                <td>The previous resource (before the current one) in an ordered collection or series of resources.
+                </td>
               </tr>
             </tbody>
           </table>
@@ -9707,7 +9764,8 @@
                     <li>This property refers to a related resource where the relationship cannot be further specified
                       as
                       a
-                      <a href="#dataset-qualified-relation">dcat:qualifiedRelation</a>. This may be additional material
+                      <a href="#dataset-qualified-relation">dcat:qualifiedRelation</a>. This may be additional
+                      material
                       such as an article, example or
                       documentation helpful in the context of the Dataset.
                     </li>
@@ -9962,7 +10020,8 @@
               </tr>
               <tr>
                 <th>Definition</th>
-                <td>Refers to the performed quality measurements.It represents the evaluation of a given dataset against
+                <td>Refers to the performed quality measurements.It represents the evaluation of a given dataset
+                  against
                   a specific quality metric</td>
               </tr>
               <tr>
@@ -11206,7 +11265,8 @@
         <p>In this example, <code>ex:populationCensus</code> represents a series of datasets related to the US
           Population Census Data,
           which is issued every 10 years (decennial). Individual datasets for specific years (e.g.,
-          <code>ex:populationCensus-1950</code>) are also defined, each pointing to the next dataset in the series using
+          <code>ex:populationCensus-1950</code>) are also defined, each pointing to the next dataset in the series
+          using
           <code>dcat:next</code>.
         </p>
         <aside class="example ds-selector-tabs" id="ex-dataset-series" title="DatasetSeries example">
@@ -11225,29 +11285,37 @@
     <section id="properties-for-distribution">
       <h2>Distribution</h2>
       <aside class="note">Aligned with DCAT</aside>
-      <p>In the context of the DCAT-US profile, a metadata entry of this class serves to characterize a distribution of
-        data, which constitutes a specific representation of a Dataset. Datasets within this profile may offer multiple
-        serializations, each potentially differing in various aspects, including natural language, media type or format,
+      <p>In the context of the DCAT-US profile, a metadata entry of this class serves to characterize a distribution
+        of
+        data, which constitutes a specific representation of a Dataset. Datasets within this profile may offer
+        multiple
+        serializations, each potentially differing in various aspects, including natural language, media type or
+        format,
         schematic organization, temporal and spatial resolution, level of detail, or profiles that specify any
         combination of these attributes.</p>
 
-      <p>A distribution may encompass the entirety of the Dataset's data or only a subset thereof. For example, it could
-        encompass all data related to the population in the United States or focus exclusively on a specific year, such
+      <p>A distribution may encompass the entirety of the Dataset's data or only a subset thereof. For example, it
+        could
+        encompass all data related to the population in the United States or focus exclusively on a specific year,
+        such
         as 2020. Alternatively, it might provide the data in an alternate format, such as a graphical representation
         covering the years 2010 through 2020.</p>
 
-      <p>Within the DCAT-US profile, various relationships between Datasets and their distributions are represented. The
+      <p>Within the DCAT-US profile, various relationships between Datasets and their distributions are represented.
+        The
         most straightforward relationship involves aggregating different physical representations of data, referred to
         as "Distributions," into a single Dataset. An example of such a Dataset is a time series, where each
         distribution corresponds to one year of data, and the Dataset spans multiple years.</p>
 
 
-      <p>In the DCAT vocabulary, <code>dcat:Distribution</code> is employed to characterize the diverse representations
+      <p>In the DCAT vocabulary, <code>dcat:Distribution</code> is employed to characterize the diverse
+        representations
         and formats in which a dataset is disseminated, facilitating the description of different versions or media
         types of the same data, and often includes properties like <code>dcat:downloadURL</code> for direct download
         links. On the other hand, <code>dcat:DataService</code> serves the purpose of detailing data access services,
         such as APIs and endpoints, enabling programmatic or interactive data retrieval, with key properties like
-        <code>dcat:endpointURL</code> specifying service endpoints and <code>dcat:serviceType</code> indicating the type
+        <code>dcat:endpointURL</code> specifying service endpoints and <code>dcat:serviceType</code> indicating the
+        type
         of service, thus distinguishing between the description of data formats and the specification of data access
         services within the DCAT framework.
       </p>
@@ -11285,10 +11353,14 @@
         </tr>
         <tr>
           <th>Rationale:</th>
-          <td>The update to DCAT 3 <a data-cite="VOCAB-DCAT-3#Class:Distribution"><code>dcat:Distribution</code></a> is
-            of paramount significance as it greatly enhances data accessibility. It introduces a more comprehensive and
-            structured approach to describing data distributions, ensuring that data consumers can easily understand and
-            access the data in the format that best suits their needs, ultimately fostering greater data utilization and
+          <td>The update to DCAT 3 <a data-cite="VOCAB-DCAT-3#Class:Distribution"><code>dcat:Distribution</code></a>
+            is
+            of paramount significance as it greatly enhances data accessibility. It introduces a more comprehensive
+            and
+            structured approach to describing data distributions, ensuring that data consumers can easily understand
+            and
+            access the data in the format that best suits their needs, ultimately fostering greater data utilization
+            and
             dissemination.</td>
         </tr>
       </table>
@@ -12240,16 +12312,22 @@
                 <th>Usage note</th>
                 <td>
                   <a data-cite="VOCAB-ADMS#adms-representationtechnique"><code>adms:representationTechnique</code></a>
-                  in DCAT-US metadata plays a crucial role in detailing the specific schema, standard, or method used to
+                  in DCAT-US metadata plays a crucial role in detailing the specific schema, standard, or method used
+                  to
                   structure data within a dataset, like specifying RFC 4180 for CSV, GeoJSON for JSON, OWL for RDF, or
                   XML Schema for XML. This contrasts with <a href="#distribution-format">dcterms:format</a>, which
-                  broadly identifies the file format (e.g., CSV, JSON, RDF, XML), providing a general idea of the data's
-                  structure and syntax. Meanwhile, <a href="#distribution-media-type">dcterms:mediaType</a> complements
+                  broadly identifies the file format (e.g., CSV, JSON, RDF, XML), providing a general idea of the
+                  data's
+                  structure and syntax. Meanwhile, <a href="#distribution-media-type">dcterms:mediaType</a>
+                  complements
                   these by
-                  defining the MIME type, such as 'text/csv' or 'application/json', crucial for software processing and
+                  defining the MIME type, such as 'text/csv' or 'application/json', crucial for software processing
+                  and
                   data transmission. The detailed insight provided by <a
-                    data-cite="VOCAB-ADMS#adms-representationtechnique"><code>adms:representationTechnique</code></a> is
-                  indispensable for users needing comprehensive knowledge about the dataset's internal organization and
+                    data-cite="VOCAB-ADMS#adms-representationtechnique"><code>adms:representationTechnique</code></a>
+                  is
+                  indispensable for users needing comprehensive knowledge about the dataset's internal organization
+                  and
                   interpretation, which goes beyond the basic format or MIME type indicated by dcterms:format and
                   dcterms:mediaType.
                 </td>
@@ -12445,7 +12523,8 @@
               <tr>
                 <th>Usage note</th>
                 <td>Use for quality measurements other than <a
-                    href="#distribution-spatial_resolution_in_meters"><code>dcat:spatialResolutionInMeters</code></a> or
+                    href="#distribution-spatial_resolution_in_meters"><code>dcat:spatialResolutionInMeters</code></a>
+                  or
                   <a href="#distribution-temporal_resolution"><code>dcat:temporalResolution</code></a>.
                   Examples of quality measurements includes completeness, accuracy, accuracy, timeliness, granularity.
                 </td>
@@ -12957,7 +13036,8 @@
               </tr>
               <tr>
                 <th>Range</th>
-                <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Standard"><code>dcterms:Standard</code></a> (A basis
+                <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Standard"><code>dcterms:Standard</code></a> (A
+                  basis
                   for comparison; a reference point against which other things can be evaluated.)
                 </td>
               </tr>
@@ -12969,7 +13049,8 @@
                 <th>Usage note</th>
                 <td>
                   This is used to identify a standardized specification the distribution conforms to. It's recommended
-                  that this be a URI that serves as a unique identifier for the standard. The URI may or may not also be
+                  that this be a URI that serves as a unique identifier for the standard. The URI may or may not also
+                  be
                   a URL that provides documentation of the specification. This property SHOULD be used to indicate the
                   model, schema, ontology, view or profile that this representation of a dataset conforms to. This is
                   (generally) a complementary concern to the media-type or format.
@@ -13063,11 +13144,13 @@
             </tbody>
           </table>
           <aside class="note">
-            <p>In DCAT-US 1.1, the JSON-LD context incorrectly modeled the media type as a string rather than a URI. The
+            <p>In DCAT-US 1.1, the JSON-LD context incorrectly modeled the media type as a string rather than a URI.
+              The
               introduction of the <a href="https://www.w3.org/TR/json-ld11/#base-iri"><code>@base</code></a> directive
               in the JSON-LD context addresses this issue, facilitating the
               transition of the mediatype property from DCAT 1.1 to DCAT-US 3.0. This adjustment ensures that the
-              representation is now compliant with the DCAT specification, enabling the correct interpretation of media
+              representation is now compliant with the DCAT specification, enabling the correct interpretation of
+              media
               types as URIs rather than mere strings. This important update not only corrects the previous modeling
               mistake but also aligns DCAT-US 3.0 with the established standards and practices in data cataloging.
             </p>
@@ -13280,8 +13363,10 @@
         <tr>
           <th>Rationale:</th>
           <td>The introduction of <a href="http://xmlns.com/foaf/0.1/#term_Document"><code>foaf:Document</code></a>
-            significantly improves the representation of documents within the DCAT-US profile. It ensures that metadata
-            about documents, such as title, format, language, and access options, are clearly defined and standardized.
+            significantly improves the representation of documents within the DCAT-US profile. It ensures that
+            metadata
+            about documents, such as title, format, language, and access options, are clearly defined and
+            standardized.
             This
             alignment with global data standards fosters interoperability and eases document integration into various
             data ecosystems, benefiting both publishers and consumers.</td>
@@ -14002,8 +14087,10 @@
           <th class="prop">Rationale</th>
           <td>
             There is no consensus and common vocabulary to describe spatial bounding box in the
-            community. GML Envelope was proposed but it is too cumbersome to process. We introduce four separates fields
-            for each bound (west, east, north and south) that removes any ambiguity and make it easy to index and query
+            community. GML Envelope was proposed but it is too cumbersome to process. We introduce four separates
+            fields
+            for each bound (west, east, north and south) that removes any ambiguity and make it easy to index and
+            query
 
           </td>
         </tr>
@@ -14250,7 +14337,8 @@
         <tr>
           <th class="prop">Rationale</th>
           <td>
-            Incorporating <a href="http://www.w3.org/ns/adms#Identifier"><code>adms:Identifier</code></a> in the DCAT-US
+            Incorporating <a href="http://www.w3.org/ns/adms#Identifier"><code>adms:Identifier</code></a> in the
+            DCAT-US
             profile fosters a culture of data governance and trust by transparently documenting the authority behind
             each identifier. This enhances data reliability and credibility, boosting confidence for DCAT-US users.
             Additionally, it enables versatile data access using multiple identifiers, enhancing overall data
@@ -14520,7 +14608,8 @@
             <ul>
               <li>This statement often includes information of the following aspects:
                 <ul>
-                  <li>Limitation of Responsibility: Clarifying that the publisher or provider is not responsible for any
+                  <li>Limitation of Responsibility: Clarifying that the publisher or provider is not responsible for
+                    any
                     errors in the data, and any consequences resulting from its use.</li>
                   <li>No Guarantee of Validity: Indicating that there is no guarantee of the accuracy, reliability, or
                     completeness of the data provided.</li>
@@ -14532,7 +14621,8 @@
               </li>
               <li>The statement may be provided as a literal text or as a URL pointing to a detailed liability
                 statement.</li>
-              <li>Utilizing the LiabilityStatement helps in setting clear expectations for consumers of the dataset and
+              <li>Utilizing the LiabilityStatement helps in setting clear expectations for consumers of the dataset
+                and
                 limits potential legal exposures of the data provider.</li>
             </ul>
           </td>
@@ -14542,7 +14632,8 @@
           <td>Introducing <a href="#properties-for-liability_statement"><code>dcat-us:LiabilityStatement</code></a>
             in DCAT-US
             clarifies data provider responsibilities and limitations, reducing legal risks by defining acceptable uses
-            and disclaiming warranties. This ensures transparency and legal compliance in data sharing within the United
+            and disclaiming warranties. This ensures transparency and legal compliance in data sharing within the
+            United
             States.</td>
         </tr>
       </table>
@@ -14652,7 +14743,8 @@
           <th class="prop">Usage note</th>
           <td>
             License document SHOULD be specified only with URIs from an endorsed Data.gov registry.
-            Property <a href="http://spdx.org/rdf/terms#licenseText"><code>spdx:licenseText</code></a> MAY only be used
+            Property <a href="http://spdx.org/rdf/terms#licenseText"><code>spdx:licenseText</code></a> MAY only be
+            used
             to
             specify license information in legacy metadata records, not compliant with
             standard license from an endorsed Data.Gov registry.
@@ -14736,7 +14828,8 @@
               <tr>
                 <th>Usage note</th>
                 <td>Property <code>spdx:licenseText</code> MAY only be used to specify license information in legacy
-                  metadata records, not compliant with1 standard license from an endorsed registry. This property can be
+                  metadata records, not compliant with1 standard license from an endorsed registry. This property can
+                  be
                   repeated for parallel language versions of the description </td>
               </tr>
             </tbody>
@@ -14811,7 +14904,8 @@
           <td>The introduction of <a href="http://purl.org/dc/terms/Location"><code>dcterms:Location</code></a> in
             DCAT-US 3.0 is driven by the need to restore compatibility with the
             DCAT standard. DCAT-US 1.1 had deviated from the standard by using strings for location in
-            <a data-cite="DCTERMS#http://purl.org/dc/terms/spatial"><code>dcterms:spatial</code></a> property, which was
+            <a data-cite="DCTERMS#http://purl.org/dc/terms/spatial"><code>dcterms:spatial</code></a> property, which
+            was
             incompatible. This addition aligns DCAT-US with recognized geospatial standards (e.g., Geosparql, WKT,
             GeoJSON, W3C Location) for representing geometries, addresses, and location names, ensuring data
             compatibility, discoverability, and integration while adhering to international data management practices.
@@ -15195,7 +15289,8 @@
             whenever possible to
             enhance compatibility and interoperability. However, the ability to create custom media types using labels
             provides flexibility for unique data requirements. When creating custom media types, it's advisable to
-            provide clear and concise definitions to ensure transparency and understanding for data consumers. Striking
+            provide clear and concise definitions to ensure transparency and understanding for data consumers.
+            Striking
             a balance between standardized and custom media types optimizes data sharing within the DCAT-US framework.
           </td>
         </tr>
@@ -15317,7 +15412,8 @@
           <td>Introducing <a data-cite="VOCAB-DQV#Metric"><code>dqv:Metric</code></a> in the DCAT-US profile enhances
             dataset quality assessment and management by aligning with international data quality standards. It allows
             data publishers to systematically define and communicate dataset quality characteristics, promoting
-            transparency and informed data utilization, fostering trust, and supporting responsible data sharing within
+            transparency and informed data utilization, fostering trust, and supporting responsible data sharing
+            within
             the DCAT-US ecosystem.
           </td>
         </tr>
@@ -15524,9 +15620,11 @@
         <tr>
           <th class="prop">Usage note</th>
           <td>
-            When utilizing the <a href="http://www.w3c.org/ns/org#Organization"><code>org:Organization</code></a> class
+            When utilizing the <a href="http://www.w3c.org/ns/org#Organization"><code>org:Organization</code></a>
+            class
             in DCAT-US 3.0, data publishers are encouraged to provide the preferred label (<a
-              data-cite="SKOS-REFERENCE#prefLabel"><code>skos:prefLabel</code></a>) for the organization, along with any
+              data-cite="SKOS-REFERENCE#prefLabel"><code>skos:prefLabel</code></a>) for the organization, along with
+            any
             relevant alternative labels (<a data-cite="SKOS-REFERENCE#altLabel"><code>skos:altLabel</code></a>) and
             abbreviations <a data-cite="SKOS-REFERENCE#notation"><code>skos:notation</code></a>. This usage is
             consistent with the W3C Organization Recommendation standard [[VOCAB-ORG]].This practice ensures
@@ -15538,11 +15636,15 @@
         </tr>
         <tr>
           <th>Rationale:</th>
-          <td>Improving the <a href="http://www.w3c.org/ns/org#Organization"><code>org:Organization</code></a> class in
+          <td>Improving the <a href="http://www.w3c.org/ns/org#Organization"><code>org:Organization</code></a> class
+            in
             DCAT-US 3.0 by supporting prefLabel, alternative labels, and abbreviations is essential to enhance
-            organization representation. This enhancement accommodates variations in organization naming, promotes data
-            interoperability, and improves discoverability within datasets. By incorporating these features, DCAT-US 3.0
-            aligns with best practices in data representation, enhances data search and transparency, and optimizes the
+            organization representation. This enhancement accommodates variations in organization naming, promotes
+            data
+            interoperability, and improves discoverability within datasets. By incorporating these features, DCAT-US
+            3.0
+            aligns with best practices in data representation, enhances data search and transparency, and optimizes
+            the
             overall usability of data resources.
           </td>
         </tr>
@@ -15836,7 +15938,8 @@
           <td>The introduction of <a href="http://purl.org/dc/terms/PeriodOfTime"><code>dcterms:PeriodOfTime</code></a>
             in
             DCAT-US 3.0 is pivotal for harmonizing with international
-            standards and rectifying the inconsistency with DCAT 1. In DCAT-US 1.1, [[ISO8601-1]] was used for interval
+            standards and rectifying the inconsistency with DCAT 1. In DCAT-US 1.1, [[ISO8601-1]] was used for
+            interval
             representation in <code>dcterms:temporal</code>, diverging from DCAT 1's requirement of
             dcterms:PeriodOfTime. This
             alignment with DCAT 3
@@ -16267,7 +16370,8 @@
           <th>Rationale:</th>
           <td>Introducing <a data-cite="DCTerms#terms_Provenance Statement"><code>dcterms:ProvenanceStatement</code></a>
             in DCAT-US 3.0 enhances dataset transparency and trustworthiness. It allows data publishers to provide
-            structured information about significant changes in ownership and custody, aligning with international data
+            structured information about significant changes in ownership and custody, aligning with international
+            data
             quality and provenance standards. This flexibility ensures greater confidence in dataset authenticity and
             interpretation, promoting responsible data usage within DCAT-US.
           </td>
@@ -16369,7 +16473,8 @@
         </tr>
         <tr>
           <th class="prop">Definition: </th>
-          <td>A role is the function of a resource or agent with respect to another resource, in the context of resource
+          <td>A role is the function of a resource or agent with respect to another resource, in the context of
+            resource
             attribution or resource relationships.
           </td>
         </tr>
@@ -16662,7 +16767,8 @@
         <tr>
           <th>Rationale:</th>
           <td>The inclusion of <a data-cite="VOCAB-DQV#QualityMeasurement"><code>dqv:QualityMeasurement</code></a> in
-            DCAT-US assists end-users in better evaluating the fitness of use of resources. This optional class enhances
+            DCAT-US assists end-users in better evaluating the fitness of use of resources. This optional class
+            enhances
             data quality assessment, aligns with international standards (DQV), and enables more precise evaluation
             against specific quality metrics, ultimately improving data usability and adherence to recognized quality
             assessment practices. </td>
@@ -17062,7 +17168,8 @@
             in DCAT-US is vital for standardizing the conveyance of intellectual property rights (IPR) and access
             permissions. This optional class accommodates URL references and custom rights statements via attribution
             text, promoting transparency and compliance. By encouraging consistent rights information at the
-            Distribution and optional Dataset levels, DCAT-US enhances data sharing while reducing legal conflict risks.
+            Distribution and optional Dataset levels, DCAT-US enhances data sharing while reducing legal conflict
+            risks.
           </td>
         </tr>
         <tr>
@@ -17674,7 +17781,8 @@
             When utilizing the <a href="#properties-for-use_restriction"><code>dcat-us:UseRestriction</code></a>
             class, data
             publishers are encouraged to provide comprehensive and precise details regarding the specific use
-            restrictions applied to a resource. This may include information on access limitations, distribution rules,
+            restrictions applied to a resource. This may include information on access limitations, distribution
+            rules,
             reproduction guidelines, modification constraints, and any other pertinent restrictions. Adherence to NARA
             guidelines and standards should be a priority when defining use restrictions, ensuring that data resources
             align with archival and preservation practices. By offering clear and concise use restriction information,
@@ -17689,7 +17797,8 @@
             3.0, aligned with NARA (National Archives and
             Records Administration) guidelines, enhances compliance and interoperability with NARA-specific use
             restriction standards. This enables organizations to accurately convey NARA-specific restrictions on data
-            resources, ensuring adherence to archival and data preservation requirements, and promoting consistent data
+            resources, ensuring adherence to archival and data preservation requirements, and promoting consistent
+            data
             management practices within the DCAT-US framework.</td>
         </tr>
       </table>
@@ -17896,7 +18005,8 @@
         <h4>Generating Resolvable URLs</h4>
         <p>In the context of FAIR data, resources on the web must have unique, persistent, and resolvable identifiers.
           In
-          order to achieve the capability of persistence, it is necessary for the resource identifiers to comply to the
+          order to achieve the capability of persistence, it is necessary for the resource identifiers to comply to
+          the
           RFC
           3986 IETF standard for URIs (and IRIs, which are URI extended to cope with unicode). This means that it must
           comprise the following components:</p>
@@ -17916,15 +18026,19 @@
           enabling the selection of different representations of the desired resource.</p>
 
         <p> A PURL, or persistent URL, serves as a permanent address for accessing web resources. To grasp the concept
-          of PURLs, it's essential to first understand the concept of URL indirection (also known as URL redirect or URL
+          of PURLs, it's essential to first understand the concept of URL indirection (also known as URL redirect or
+          URL
           forwarding). This practice involves providing a stable and fixed web address/URL that is configured to point
           to different content, which might undergo periodic modifications.</p>
 
-        <p> When a user accesses a PURL, they are automatically redirected to the current location of the resource. This
-          means that when an author decides to relocate a page, they can easily update the PURL to direct it to the new
+        <p> When a user accesses a PURL, they are automatically redirected to the current location of the resource.
+          This
+          means that when an author decides to relocate a page, they can easily update the PURL to direct it to the
+          new
           location.</p>
 
-        <p> The practice of indirection proves beneficial as it ensures a consistent URL address for resources that are
+        <p> The practice of indirection proves beneficial as it ensures a consistent URL address for resources that
+          are
           prone to change, such as due to version updates or ownership changes.</p>
 
         <p>A concrete example of this practice can be observed in the utilization of purl.org URLs for identifying OBO
@@ -17941,15 +18055,19 @@
           domain.</p>
         <p>According to FAIR Principle A1, it is essential for (meta)data to be retrievable using its identifier. When
           the
-          identifier itself is not a resolvable URL, <b>Identifier Resolution Services</b> are required. These services
-          possess the capability to map an Internationalized Resource Identifier (IRI) to a specific location where the
+          identifier itself is not a resolvable URL, <b>Identifier Resolution Services</b> are required. These
+          services
+          possess the capability to map an Internationalized Resource Identifier (IRI) to a specific location where
+          the
           corresponding data can be accessed.</p>
       </section>
       <section id="identifier-resolution-services">
         <h4>Identifier Resolution services</h4>
         <p>In the digital realm, ensuring consistent and persistent access to resources is paramount. <b>Identifier
-            Resolution Services</b> play a crucial role in achieving this by providing unique and persistent identifiers
-          for various digital objects and entities. This section delves into several prominent services, detailing their
+            Resolution Services</b> play a crucial role in achieving this by providing unique and persistent
+          identifiers
+          for various digital objects and entities. This section delves into several prominent services, detailing
+          their
           functions and significance in the broader digital ecosystem. Please note that this is not an exhaustive list
           but rather a selection of popular examples intended to illustrate the diversity and importance of such
           services</p>
@@ -17979,22 +18097,27 @@
           </dd>
 
           <dt><a href="https://doi.org/">doi.org</a></dt>
-          <dd>DOI.org is a digital identifier system that assigns unique and persistent identifiers to digital objects.
+          <dd>DOI.org is a digital identifier system that assigns unique and persistent identifiers to digital
+            objects.
             These identifiers can be used to cite, share, and track digital objects across different platforms and
             systems. DOI.org identifiers can be used in DCAT to uniquely identify datasets and data services. This can
             help to improve the discoverability and interoperability of datasets and data services.</dd>
 
           <dt><a href="https://orcid.org">orcid.org</a></dt>
-          <dd>ORCID (Open Researcher and Contributor ID) is a global, non-profit organization that provides a unique and
+          <dd>ORCID (Open Researcher and Contributor ID) is a global, non-profit organization that provides a unique
+            and
             persistent identifier for researchers. ORCID IDs are used to link researchers to their professional
             activities, such as publications, grants, and affiliations. This helps to ensure that researchers are
             properly
             credited for their work and that their work is more easily discoverable. ORCID is a valuable tool for
-            researchers, and it is becoming increasingly important as the research landscape becomes more complex.</dd>
+            researchers, and it is becoming increasingly important as the research landscape becomes more complex.
+          </dd>
 
           <dt><a href="https://info.arxiv.org/help/arxiv_identifier.html">arxiv.org</a></dt>
-          <dd>ArXiv identifiers are globally unique identifiers (GUIDs) assigned to scholarly articles submitted to the
-            arXiv preprint server. These identifiers can be used in DCAT (Data Catalog Vocabulary) to uniquely identify
+          <dd>ArXiv identifiers are globally unique identifiers (GUIDs) assigned to scholarly articles submitted to
+            the
+            arXiv preprint server. These identifiers can be used in DCAT (Data Catalog Vocabulary) to uniquely
+            identify
             authors and their publications. This can help to improve the discoverability and interoperability of
             research
             data.</dd>
@@ -18028,11 +18151,13 @@
           more generic <code>dcterms:identifier</code>, this property is more structured. It's designed to link a
           resource to its identifier, which is itself described using further properties. This allows for a richer
           description of the identifier, such as specifying its type (e.g., ISBN, DOI), its status, and its version.
-          It's particularly useful in contexts where there's a need to provide additional metadata about the identifier
+          It's particularly useful in contexts where there's a need to provide additional metadata about the
+          identifier
           itself, beyond just its value.</p>
         <h5>skos:notation</h5>
         <p><code>skos:notation</code> is a property from the Simple Knowledge Organization System ([[SKOS-REFERENCE]])
-          vocabulary. It's used to provide a symbolic string notation for a concept. While it can function similarly to
+          vocabulary. It's used to provide a symbolic string notation for a concept. While it can function similarly
+          to
           an identifier, its primary intention is to give a machine-readable, often standardized, symbolic name to a
           concept, especially when such a notation exists in a legacy or external system. For example, in a controlled
           vocabulary, each concept might have a notation that denotes its code in a classification scheme.</p>
@@ -18152,22 +18277,29 @@
     <section id="stakeholders">
       <h3>Stakeholders</h3>
 
-      <p>In the realm of data cataloging and management, understanding the entities involved in the creation, curation,
+      <p>In the realm of data cataloging and management, understanding the entities involved in the creation,
+        curation,
         and maintenance of datasets is paramount. This section delves into the intricate details
         of these entities, categorizing them into distinct classes such as "Agent," "Person," and "Organization." Each
-        class provides a structured framework to represent various stakeholders, from individuals to software agents and
-        organizations, ensuring that data provenance is transparent and traceable. As we navigate through this section,
+        class provides a structured framework to represent various stakeholders, from individuals to software agents
+        and
+        organizations, ensuring that data provenance is transparent and traceable. As we navigate through this
+        section,
         we'll gain insights into the properties, roles, and significance of these agent representations within the
         DCAT-US 3.0 context, highlighting their pivotal role in enhancing data discoverability, interoperability, and
         usability.</p>
 
       <p>
-        Embracing globally unique, resolvable URLs and Persistent Identifiers (PIDs) stands paramount in fortifying the
+        Embracing globally unique, resolvable URLs and Persistent Identifiers (PIDs) stands paramount in fortifying
+        the
         integrity and usability of data ecosystems, especially in identifying diverse agents. This practice not only
-        ensures a crystal-clear, unambiguous identification, thereby averting potential duplications and inconsistencies
+        ensures a crystal-clear, unambiguous identification, thereby averting potential duplications and
+        inconsistencies
         from multiple URIs but also significantly enhances data discoverability and accessibility. By employing a
-        singular, steadfast identifier per agent, data practitioners safeguard against data misinterpretation and ensure
-        a coherent, traceable data lineage, bolstering data provenance and trust across various platforms and datasets.
+        singular, steadfast identifier per agent, data practitioners safeguard against data misinterpretation and
+        ensure
+        a coherent, traceable data lineage, bolstering data provenance and trust across various platforms and
+        datasets.
         Furthermore, adherence to standardized identification practices, utilizing reference registries like <a
           href="https://orcid.org">ORCID</a> or
         <a href="https://ror.org/">Research Organization Registry (ROR)</a> , not only aligns with global data
@@ -18265,17 +18397,20 @@
 
       <section id="organization">
         <h4>Organization</h4>
-        <p>The <code>Organization</code> agent plays a pivotal role in representing an organization or institution that
+        <p>The <code>Organization</code> agent plays a pivotal role in representing an organization or institution
+          that
           is instrumental in the production or management of a resource. It encapsulates information about the
           organization accountable for the resource, along with its pertinent contact details, thereby acting
-          proficiently as an Agent. Furthermore, it can be hierarchically decomposed into sub-organizations, offering a
+          proficiently as an Agent. Furthermore, it can be hierarchically decomposed into sub-organizations, offering
+          a
           structured view of the organizational layers.</p>
 
         <p>When employing <a href="https://www.w3.org/TR/vocab-org/#org:Organization"><code>org:Organization</code></a>
           within DCAT-US 3.0, adherence to the following guidelines is imperative:</p>
         <ul>
           <li><strong>Use Recognized URL Identifiers:</strong> It is strongly recommended to utilize well-known URL
-            identifiers for organizations that are centrally managed by a government registry. This practice ensures the
+            identifiers for organizations that are centrally managed by a government registry. This practice ensures
+            the
             unambiguous identification of organizations and fosters consistency and reliability in organizational
             referencing across cataloged resources.</li>
           <li><strong>Ensure Consistency:</strong> Employ <a data-cite="FOAF#term_name"><code>foaf:name</code></a> to
@@ -18290,8 +18425,10 @@
             acronyms, or aliases, thereby enhancing searchability and augmenting user-friendliness by accommodating
             various naming conventions.</li>
           <li><strong>Provide Abbreviations:</strong> Employ <a
-              data-cite="SKOS-REFERENCE#notation"><code>skos:notation</code></a> to document any abbreviations or short
-            forms that are commonly associated with the organization, facilitating users in recognizing and associating
+              data-cite="SKOS-REFERENCE#notation"><code>skos:notation</code></a> to document any abbreviations or
+            short
+            forms that are commonly associated with the organization, facilitating users in recognizing and
+            associating
             the organization with its widely-used abbreviations.</li>
           <li><strong>Represent Hierarchy:</strong> Optionally, utilize <a
               href="https://www.w3.org/TR/vocab-org/#org:subOrganizationOf"><code>org:subOrganizationOf</code></a> to
@@ -18303,7 +18440,8 @@
 
         <aside class="note">
           <p>Employing well-known URL identifiers, especially those managed by a centralized
-            government registry, enhances the reliability and verifiability of the organizational data. It ensures that
+            government registry, enhances the reliability and verifiability of the organizational data. It ensures
+            that
             users and systems can unambiguously identify and reference organizations, thereby promoting data integrity
             and interoperability across various governmental datasets and systems.</p>
         </aside>
@@ -18324,7 +18462,8 @@
         <h3>Contact Point</h3>
         <p>
           The <strong>Contact Point</strong> serves as a crucial element in data cataloging, providing a reference for
-          users to seek additional information, clarifications, or support regarding a resource published in a catalog.
+          users to seek additional information, clarifications, or support regarding a resource published in a
+          catalog.
           In the DCAT-US profile,
           contact point information is encoded using the widely used [[VCARD-RDF]] vocabulary, ensuring standardized
           representation and interoperability of contact details across various platforms and applications.
@@ -18337,8 +18476,10 @@
           providing users with multiple avenues to facilitate communication.
         </p>
         <p>
-          It is imperative to ensure that the contact point information is accurate, up-to-date, and reliable to foster
-          trust and facilitate efficient communication between data providers and consumers. The following sub-sections
+          It is imperative to ensure that the contact point information is accurate, up-to-date, and reliable to
+          foster
+          trust and facilitate efficient communication between data providers and consumers. The following
+          sub-sections
           provide detailed guidance on encoding contact point information, defining associated address details, and
           linking the contact point to the resources in the DCAT-US profile.
 
@@ -18346,8 +18487,10 @@
         <section id="encoding-contact-info">
           <h4>Encoding Contact Information</h4>
           <p>
-            The contact information is encoded using the <code><a data-cite="VCARD-RDF#Contact">vcard:Contact</a></code>
-            class. If the contact information is reused in many resources, it is recommended to identify it with URI to
+            The contact information is encoded using the
+            <code><a data-cite="VCARD-RDF#Contact">vcard:Contact</a></code>
+            class. If the contact information is reused in many resources, it is recommended to identify it with URI
+            to
             avoid duplicate entries.
             The <code><a data-cite="VCARD-RDF#fn">vcard:fn</a></code> (formatted name) and
             <code><a data-cite="VCARD-RDF#d4e57">vcard:email</a></code> (email address) properties are mandatory to
@@ -18376,18 +18519,22 @@
           <h4>Defining Address Details</h4>
           <p>
             Address details, when applicable, are encoded using the
-            <code><a data-cite="VCARD-RDF#d4e1292">vcard:Address</a></code> class and linked to the contact point using
-            the <code><a data-cite="VCARD-RDF#d4e101">vcard:hasAddress</a></code> property. The address does not have to
+            <code><a data-cite="VCARD-RDF#d4e1292">vcard:Address</a></code> class and linked to the contact point
+            using
+            the <code><a data-cite="VCARD-RDF#d4e101">vcard:hasAddress</a></code> property. The address does not have
+            to
             a URI, if it not reused anywhere else in the catalog. The address class can include properties like
             <code><a data-cite="VCARD-RDF#d4e1218">vcard:street-address</a></code>,
             <code><a data-cite="VCARD-RDF#d4e999">vcard:locality</a></code>,
             <code><a data-cite="VCARD-RDF#d4e999">vcard:locality</a></code>,
             <code><a data-cite="VCARD-RDF#d4e1157">vcard:region</a></code>,
             <code><a data-cite="VCARD-RDF#d4e1126">vcard:postal-code</a></code> and
-            <code><a data-cite="VCARD-RDF#d4e844">vcard:country-name</a></code> to provide detailed location information
+            <code><a data-cite="VCARD-RDF#d4e844">vcard:country-name</a></code> to provide detailed location
+            information
             about the contact point.
           </p>
-          <p> The following example illustrates how to define and encode address details, ensuring clarity and usability
+          <p> The following example illustrates how to define and encode address details, ensuring clarity and
+            usability
             for data consumers. </p>
           <pre class="example">
             :address456 a vcard:Address ;
@@ -18410,7 +18557,8 @@
             support, or inquiries regarding the dataset.
           </p>
           <p>
-            The following example illustrates how to link the defined contact point to the dataset, ensuring clarity and
+            The following example illustrates how to link the defined contact point to the dataset, ensuring clarity
+            and
             facilitating user navigation and communication.
           </p>
           <pre class="example">
@@ -18435,7 +18583,8 @@
 
       <p><strong>Attribution</strong> in data catalogs pertains to the systematic association of a resource (such as a
         dataset or service) with a responsible entity, termed an <strong>"agent"</strong>. Agents, which can be
-        individuals, organizations, or services, may contribute to, create, publish, or interact significantly with the
+        individuals, organizations, or services, may contribute to, create, publish, or interact significantly with
+        the
         data. The roles of agents, such as contributor, creator, publisher, funder, distributor, custodian, or editor,
         are crucial in understanding the lineage and responsibility of data management.</p>
 
@@ -18445,11 +18594,14 @@
       <ol>
         <li><strong>Provenance and Trustworthiness:</strong> Understanding the entities (agents) that have created or
           interacted with the data can significantly inform assessments of its quality and trustworthiness. Data
-          originating from or managed by reputable and trusted organizations or individuals may be deemed more reliable
+          originating from or managed by reputable and trusted organizations or individuals may be deemed more
+          reliable
           and credible.</li>
-        <li><strong>Credit and Accountability:</strong> Proper attributions ensure that all contributing individuals or
+        <li><strong>Credit and Accountability:</strong> Proper attributions ensure that all contributing individuals
+          or
           organizations are aptly acknowledged for their work or data. This practice not only adheres to ethical
-          guidelines and potentially legal requirements but also fosters a culture of recognition and accountability in
+          guidelines and potentially legal requirements but also fosters a culture of recognition and accountability
+          in
           data management and sharing.</li>
         <li><strong>Search and Discovery:</strong> Attributions serve as a valuable criterion in data search and
           discovery processes. Users may seek datasets created, managed, or contributed to by specific researchers,
@@ -18457,9 +18609,12 @@
           resources.</li>
         <li><strong>Collaboration and Networking:</strong> Identifying and acknowledging the agents associated with
           datasets can pave the way for new collaborative opportunities. It enables users and researchers to identify
-          and connect with individuals or organizations possessing relevant expertise or shared research interests.</li>
-        <li><strong>Issue Resolution:</strong> When users encounter issues or have queries about a dataset, attributions
-          provide a clear pathway to seek clarifications, report issues, or obtain additional information. This ensures
+          and connect with individuals or organizations possessing relevant expertise or shared research interests.
+        </li>
+        <li><strong>Issue Resolution:</strong> When users encounter issues or have queries about a dataset,
+          attributions
+          provide a clear pathway to seek clarifications, report issues, or obtain additional information. This
+          ensures
           that data reliability and integrity are maintained through active resolution of issues and continuous
           improvement.</li>
       </ol>
@@ -18485,19 +18640,25 @@
             href="https://id.loc.gov/vocabulary/relators">MARC relators</a>.</p>
         <p>Utilizing a generalized method for assigning an agent to a resource with a specified role is facilitated by
           <a data-cite="PROV-O#qualifiedAttribution"><code>prov:qualifiedAttribution</code></a> from [[PROV-O]]. This
-          method is particularly useful when the nature of the relationship is known but does not correspond with one of
+          method is particularly useful when the nature of the relationship is known but does not correspond with one
+          of
           the standard attribution property roles.
         </p>
         <p>The range of <a data-cite="PROV-O#qualifiedAttribution"><code>prov:qualifiedAttribution</code></a> is <a
             data-cite="PROV-O#Attribution"><code>prov:Attribution</code></a>. The relevant Agent is specified via
-          property <a data-cite="PROV-O#agent"><code>prov:agent</code></a>, whereas the role is specified with property
-          <a data-cite="VOCAB-DCAT-3#Property:relationship_hadRole"><code>dcat:hadRole</code></a>, which takes as value
-          a <a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a> describing that role, as those included
+          property <a data-cite="PROV-O#agent"><code>prov:agent</code></a>, whereas the role is specified with
+          property
+          <a data-cite="VOCAB-DCAT-3#Property:relationship_hadRole"><code>dcat:hadRole</code></a>, which takes as
+          value
+          a <a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a> describing that role, as those
+          included
           in the relevant code list operated by a US Government-controlled Registry.
         </p>
         <p>The <a data-cite="PROV-O#qualifiedAttribution"><code>prov:qualifiedAttribution</code></a> property is
-          utilized to provide more detailed and structured information about the attribution of a resource, allowing for
-          the specification of additional attributes, such as the role or position of the attributed entity, the date of
+          utilized to provide more detailed and structured information about the attribution of a resource, allowing
+          for
+          the specification of additional attributes, such as the role or position of the attributed entity, the date
+          of
           attribution, or other relevant details.</p>
 
         <p><a href="#ex-attributions"></a> provides an illustration of the usage of attribution properties:
@@ -18530,7 +18691,8 @@
 
       <p>Properties such as <a href="#dataset-related-resource">dcterms:relation</a> and <a
           href="#dataset-is-referenced-by">is referenced by</a> play a critical role in
-        highlighting a dataset's broader influence and practical applications. In addition, specialized properties like
+        highlighting a dataset's broader influence and practical applications. In addition, specialized properties
+        like
         <a href="#dataset-landing-page">dcat:landingPage</a>, <a href="#dataset-documentation">foaf:page</a>, and
         <a href="#dataset-metadataDistribution">dcat-us:metadataDistribution</a> target specific aspects
         of relationships, enhancing the depth and context of dataset metadata. The <a
@@ -18560,13 +18722,16 @@
 
         <li>
           <a href="#dataset-related-resource"><strong>dcterms:relation</strong></a>
-          <p>This property is a general indicator of a relationship between the cataloged resource and another resource.
-            It SHOULD be used where the nature of the relationship between a cataloged resource and related resources is
+          <p>This property is a general indicator of a relationship between the cataloged resource and another
+            resource.
+            It SHOULD be used where the nature of the relationship between a cataloged resource and related resources
+            is
             not known. A more specific sub-property SHOULD be used if the nature of the relationship of the link is
             known. Many existing and legacy catalogs do not distinguish between dataset components, representations,
             documentation, schemata and other resources that are lumped together as part of a dataset. <a
               href="#dataset-related-resource">dcterms:relation</a>
-            is a super-property of a number of more specific properties which express more precise relationships, so use
+            is a super-property of a number of more specific properties which express more precise relationships, so
+            use
             of <a href="#dataset-related-resource">dcterms:relation</a> is not inconsistent with a subsequent
             reclassification with more specific semantics,
             though the more specialized sub-properties SHOULD be used to link a dataset to component and supplementary
@@ -18574,7 +18739,8 @@
         </li>
         <li>
           <a href="#dataset-qualified-relation"><strong>dcat:qualifiedRelation</strong></a>
-          <p>The <a href="#dataset-qualified-relation">dcat:qualifiedRelation</a> property defines complex relationships
+          <p>The <a href="#dataset-qualified-relation">dcat:qualifiedRelation</a> property defines complex
+            relationships
             between resources, especially datasets. Used with the <em>dcat:Relationship</em> class, it details these
             connections, specifying the nature of the relationship through well-defined roles.</p>
           <p>DCAT 3 recognizes a variety of relationship types, such as alternate, canonical, original, preview,
@@ -18612,14 +18778,17 @@
             dataset to the "original" metadata document distributions that serve as the source or foundation for the
             dataset metadata. This linkage is crucial for tracing the dataset back to its original metadata, thereby
             providing a clear lineage and understanding of the dataset metadata's derivation and context.</p>
-          <p>By utilizing this property, data catalogers can enhance the metadata's descriptive capacity, offering users
+          <p>By utilizing this property, data catalogers can enhance the metadata's descriptive capacity, offering
+            users
             more comprehensive insights into the dataset's origins and ensuring greater transparency and traceability
             within the data catalog.</p>
         </li>
         <li>
           <a href="#dataset-landing-page"><strong>dcat:landingPage</strong></a>
-          <p>The <a href="#dataset-landing-page">dcat:landingPage</a> property is designed to provide a direct link to a
-            landing page specifically for the dataset. This property is essential for guiding users to a web page where
+          <p>The <a href="#dataset-landing-page">dcat:landingPage</a> property is designed to provide a direct link to
+            a
+            landing page specifically for the dataset. This property is essential for guiding users to a web page
+            where
             they can find more comprehensive information about the dataset, including details on accessing, using, and
             citing it. The property is optional and its range is typically an IRI (Internationalized Resource
             Identifier) that leads to the dataset's landing page.</p>
@@ -18632,7 +18801,8 @@
           <a href="#dataset-documentation"><strong>foaf:page</strong></a>
           <p>The <a href="#dataset-documentation">foaf:page</a> property, part of the [[FOAF]] vocabulary, is used to
             link a dataset to a related web page. This property is broader than <a
-              href="#dataset-landing-page">dcat:landingPage</a> , as it can refer to any web page that is significantly
+              href="#dataset-landing-page">dcat:landingPage</a> , as it can refer to any web page that is
+            significantly
             related to the dataset, not just the official landing page. The range for <a
               href="#dataset-documentation">foaf:page</a>is an IRI pointing to the related web page. </p>
           <p>By utilizing the <a href="#dataset-documentation">foaf:page</a> property, data publishers can provide
@@ -18653,16 +18823,19 @@
           </p>
           The <a href="#properties-for-relationship">dcat:Relationship</a> class is fundamental in this profile for
           articulating complex
-          relationships between cataloged resources. It enables the detailed expression of the nature, characteristics,
+          relationships between cataloged resources. It enables the detailed expression of the nature,
+          characteristics,
           and context of these relationships, extending beyond basic linking to provide a rich, nuanced representation
-          of interconnections. This class is particularly valuable in instances where relationships between datasets or
+          of interconnections. This class is particularly valuable in instances where relationships between datasets
+          or
           between datasets and other entities are multifaceted.
           </p>
           <p>
             Utilizing <a href="#properties-for-relationship">dcat:Relationship</a> in conjunction with <a
               href="#dataset-qualified-relation"><code>dcat:qualifiedRelationship</code></a> allows catalogers to
             specify the precise nature of relationships. This includes the role of the related resource, the type of
-            relationship (e.g., derived from, part of, requires), and the directionality of the relationship, providing
+            relationship (e.g., derived from, part of, requires), and the directionality of the relationship,
+            providing
             crucial context and understanding for users.
           </p>
           <p>
@@ -18674,7 +18847,8 @@
             <li><a href="#relationship-relation"><strong>dcat:relation:</strong></a> Specifies the target resource in
               the relationship, linking the subject
               dataset to its related resource.</li>
-            <li><a href="#relationship_hadRole"><strong>dcat:hadRole:</strong></a> Indicates the role or function of the
+            <li><a href="#relationship_hadRole"><strong>dcat:hadRole:</strong></a> Indicates the role or function of
+              the
               related resource within the
               relationship, offering insights into the purpose or contribution of the related resource in relation to
               the subject dataset.</li>
@@ -18689,13 +18863,15 @@
         </li>
         <li>
           <a href="#properties-for-role"><strong>dcat:Role</strong></a>
-          <p>The <a href="#properties-for-document">dcat:Role</a> class, introduced in DCAT 2, represents a significant
+          <p>The <a href="#properties-for-document">dcat:Role</a> class, introduced in DCAT 2, represents a
+            significant
             concept in the DCAT-US
             specification. It is defined as the function of a resource or agent with respect to another resource,
             particularly in the context of resource attribution or resource relationships.</p>
           <p>As a subclass of <a href="#properties-for-concept">skos:Concept</a>, <a
               href="#properties-for-document">dcat:Role</a> is utilized to
-            specify the role of an Agent with respect to an Entity in a qualified-attribution scenario. It is also used
+            specify the role of an Agent with respect to an Entity in a qualified-attribution scenario. It is also
+            used
             in a qualified-relation to indicate the role of an Entity in relation to another Entity. In both contexts,
             it is recommended to manage the values of <a href="#properties-for-document">dcat:Role</a> as a controlled
             vocabulary of roles. Examples of such controlled
@@ -18721,7 +18897,8 @@
             and comprehensively represented.</p>
           <p>As an optional class, its implementation depends on the catalog's support for publications. Catalogs can
             either provide a full description of a publication or denote it simply by its URI. The inclusion of
-            <a href="#properties-for-document">foaf:Document</a> enhances the DCAT-US profile by standardizing metadata
+            <a href="#properties-for-document">foaf:Document</a> enhances the DCAT-US profile by standardizing
+            metadata
             elements for documents, such
             as title, identifier, category, publisher, classification, format, language. This standardization not only
             improves metadata clarity
@@ -18735,7 +18912,8 @@
     <section id="resource-classification">
       <h3>Resource Classification</h3>
 
-      <p>Controlled vocabularies, including taxonomies and thesauri, dramatically enhance data searchability. Utilizing
+      <p>Controlled vocabularies, including taxonomies and thesauri, dramatically enhance data searchability.
+        Utilizing
         these vocabularies allows datasets to be systematically classified, tagged, and described with standardized
         terms, aiding users in retrieving relevant datasets, even when using varied terms or synonyms.</p>
 
@@ -18758,10 +18936,12 @@
             the content in a resource. It's applicable to <a href="#properties-for-dataset">dcat:Dataset</a>, <a
               href="#properties-for-data-service">dcat:DataService</a>, and <a
               href="#properties-for-dataset-series">dcat:DatasetSeries</a>. For <a
-              href="#properties-for-data-service">dcat:DataService</a>, types might include "Web Map Service" (WMS) for
+              href="#properties-for-data-service">dcat:DataService</a>, types might include "Web Map Service" (WMS)
+            for
             services providing geographical data in a map format, "Web Feature Service" (WFS) for services allowing
             users to access geospatial features, or "RESTful API" for services using REST API protocols. For datasets,
-            types can be "Geospatial Dataset", "Image", "Statistical Dataset", or "Map". The Dublin Core Type Vocabulary
+            types can be "Geospatial Dataset", "Image", "Statistical Dataset", or "Map". The Dublin Core Type
+            Vocabulary
             is a popular choice for providing standardized descriptors.
           </p>
         </li>
@@ -18772,7 +18952,8 @@
             with <a href="#properties-for-dataset">dcat:Dataset</a>, <a
               href="#properties-for-data-service">dcat:DataService</a>, <a
               href="#properties-for-dataset-series">dcat:DatasetSeries</a>, and <a
-              href="#properties-for-catalog">dcat:Catalog</a>. Employing keywords from established vocabularies such as
+              href="#properties-for-catalog">dcat:Catalog</a>. Employing keywords from established vocabularies such
+            as
             AGROVOC (for agricultural terms), Global Change Master Directory (GCMD) [[?GCMD]] (for Earth science), or
             NAICS (for industry classifications) ensures
             consistency and enhances the discoverability of datasets within the US context.
@@ -18782,10 +18963,12 @@
           <p>
             <a href="#dataset-theme-category"><strong>dcat:theme</strong></a>: This property provides thematic
             categorization for resources, specifically for <a href="#properties-for-dataset">dcat:Dataset</a> and <a
-              href="#properties-for-dataset-series">dcat:DatasetSeries</a>. Utilizing a unified thematic taxonomy, such
+              href="#properties-for-dataset-series">dcat:DatasetSeries</a>. Utilizing a unified thematic taxonomy,
+            such
             as the Data Theme Taxonomy from Data.gov or the FGDC (Federal Geographic Data Committee) Controlled
             Vocabularies like the ISO 19115 Topic CodeList, ensures a cohesive approach to categorizing datasets. This
-            thematic classification aids users in navigating and identifying datasets relevant to particular subjects or
+            thematic classification aids users in navigating and identifying datasets relevant to particular subjects
+            or
             sectors.
           </p>
         </li>
@@ -18820,7 +19003,8 @@
         the value and effective utilization of geospatial data within the US Government.</p>
 
       <p>The Data Catalog Vocabulary (DCAT) specification provides a standardized way to represent metadata about
-        datasets and services, including information about their spatial properties. In the context of DCAT-US, which is
+        datasets and services, including information about their spatial properties. In the context of DCAT-US, which
+        is
         a profile tailored specifically for the United States, several spatial properties are relevant for describing
         resources. This wiki page aims to provide an overview of these spatial properties and their usage within the
         DCAT-US framework.</p>
@@ -18832,7 +19016,8 @@
           property
           and the class <a href="#geographic-bounding-box"><code>dcat-us:GeographicBoundingBox</code></a> are
           introduced
-          and utilized to define the spatial extent of a resource. This class consists of four numerical properties: the
+          and utilized to define the spatial extent of a resource. This class consists of four numerical properties:
+          the
           west (<a href="#geographic_bbox-west-bounding-longitude"><code>dcat-us:westBoundingLongitude</code></a>)
           and east longitude (<a
             href="#geographic_bbox-east-bounding-longitude"><code>dcat-us:eastBoundingLongitude</code></a>),
@@ -18854,7 +19039,8 @@
           <pre class="jsonld exampleTab1 json" data-include-format="text"
             data-include="./examples/dataset/geographicbbox.jsonld"></pre>
         </aside>
-        <p>By specifying a bounding box, datasets can be associated with a particular geographic region. <b>If the west
+        <p>By specifying a bounding box, datasets can be associated with a particular geographic region. <b>If the
+            west
             bound longitude is greater than the east bound longitude, then the box spans the anti-meridian</b></p>
 
         <figure id="figure">
@@ -18873,7 +19059,8 @@
             data-include="./examples/antimeridian-bbox.jsonld"></pre>
         </aside>
         <p>Defining a common reference system is of utmost importance when searching for geospatial data. Geospatial
-          datasets are typically represented using different coordinate systems, projections, and datums, which can lead
+          datasets are typically represented using different coordinate systems, projections, and datums, which can
+          lead
           to challenges in interoperability and data integration. A common reference system ensures that data from
           diverse
           sources can be accurately aligned and combined, enabling effective analysis, visualization, and
@@ -18912,10 +19099,12 @@
             of
             latitude and longitude. Filtering geospatial data using a bounding box involves numeric comparisons, where
             the
-            latitude and longitude values of data points are compared to the minimum and maximum values of the bounding
+            latitude and longitude values of data points are compared to the minimum and maximum values of the
+            bounding
             box.
             This approach efficiently eliminates data points outside the specified spatial extent by performing simple
-            numeric operations. It leverages the inherent numerical properties of latitude and longitude values, making
+            numeric operations. It leverages the inherent numerical properties of latitude and longitude values,
+            making
             it
             computationally efficient and compatible with spatial indexing and query optimization techniques. By using
             numeric comparison, geospatial data can be filtered and retrieved faster, optimizing the search process in
@@ -18928,12 +19117,16 @@
             extent, reducing the need to process unnecessary data. This improves search performance and query
             efficiency,
             particularly when dealing with large-scale geospatial data collections.</li>
-          <li><b>Compatibility with Existing Tools and Standards:</b> The adoption of the dcat-us:geographicBoundingBox
-            property aligns wiofficetropolitan statistical areas, employing multiple bounding boxes for each area helps
-            retrieve data specific to each metropolitan region, ensuring more accurate and focused results. Furthermore,
+          <li><b>Compatibility with Existing Tools and Standards:</b> The adoption of the
+            dcat-us:geographicBoundingBox
+            property aligns wiofficetropolitan statistical areas, employing multiple bounding boxes for each area
+            helps
+            retrieve data specific to each metropolitan region, ensuring more accurate and focused results.
+            Furthermore,
             non-contiguous states like Alaska and Hawaii require separate bounding boxes to accurately capture their
             unique
-            spatial coverage. The inclusion of multiple bounding boxes in geospatial searches improves the accuracy and
+            spatial coverage. The inclusion of multiple bounding boxes in geospatial searches improves the accuracy
+            and
             relevance of the retrieved datasets, facilitating more effective decision-making and analysis in various
             applications and domains.
           </li>
@@ -18948,7 +19141,8 @@
           or location of a resource. This property allows for the description of the spatial aspect of a dataset,
           dataset
           distribution, or data service in a standardized manner.</p>
-        <p>The <a data-cite="DCTERMS#http://purl.org/dc/terms/spatial"><code>dcterms:spatial</code></a> property can be
+        <p>The <a data-cite="DCTERMS#http://purl.org/dc/terms/spatial"><code>dcterms:spatial</code></a> property can
+          be
           used
           to represent spatial coverage using various spatial reference systems,
           such as coordinates, polygons, or place names. This flexibility allows data publishers to express the
@@ -18986,14 +19180,16 @@
             data-cite="VOCAB-DCAT-3#Property:dataset_spatial_resolution"><code>dcat:spatialResolutionInMeters</code></a>
           property is used to specify the spatial resolution of a resource, measured in meters. This property helps
           users understand the level of detail provided by the dataset and assess its suitability for their specific
-          needs. Applications benefit from this property in various ways. For instance, in remote sensing and satellite
+          needs. Applications benefit from this property in various ways. For instance, in remote sensing and
+          satellite
           imagery, users can determine if the dataset captures the required level of detail for their analysis. In
           cartography and mapping, spatial resolution influences the clarity and accuracy of displayed features.
           Environmental modeling relies on appropriate resolution for accurate simulations, and emergency management
           requires datasets that support informed decision-making. The <a
             data-cite="VOCAB-DCAT-3#Property:dataset_spatial_resolution"><code>dcat:spatialResolutionInMeters</code></a>
           property supports data integration, ensuring compatibility between datasets with different resolutions.
-          Overall, this property enhances the usability and effectiveness of geospatial datasets across diverse domains.
+          Overall, this property enhances the usability and effectiveness of geospatial datasets across diverse
+          domains.
         </p>
       </section>
       <section id="map-projections-coordinate-systems">
@@ -19007,8 +19203,10 @@
           nature of geographic data often necessitates the use of various map projections and coordinate systems.
         </p>
         <p>
-          The <a href="#dataset-conforms_to"><code>dct:conformsTo</code></a> property in DCAT is integral in specifying
-          the Coordinate Reference System (CRS) utilized by a dataset or a distribution. Accurately defining the CRS is
+          The <a href="#dataset-conforms_to"><code>dct:conformsTo</code></a> property in DCAT is integral in
+          specifying
+          the Coordinate Reference System (CRS) utilized by a dataset or a distribution. Accurately defining the CRS
+          is
           essential for understanding the spatial context, enabling precise geographic analysis and ensuring data
           interoperability. </p>
         <p>
@@ -19022,7 +19220,8 @@
         <p>
           Utilizing URIs to reference EPSG standards ensures a clear and unambiguous specification of the CRS. For
           example, the URI <a
-            href="http://www.opengis.net/def/crs/EPSG/0/4326">http://www.opengis.net/def/crs/EPSG/0/4269</a> explicitly
+            href="http://www.opengis.net/def/crs/EPSG/0/4326">http://www.opengis.net/def/crs/EPSG/0/4269</a>
+          explicitly
           denotes adherence to the NAD 83 CRS. Standardized references like these enhance data consistency and
           facilitate interoperability across various platforms and applications.
         </p>
@@ -19085,7 +19284,8 @@
         <ul>
           <li>
             <strong>Release Time ( <a
-                data-cite="DCTERMS#http://purl.org/dc/terms/issued"><code>dcterms:issued</code></a>):</strong> Indicates
+                data-cite="DCTERMS#http://purl.org/dc/terms/issued"><code>dcterms:issued</code></a>):</strong>
+            Indicates
             the date when the dataset was first made
             available. Formats include:
             <ul>
@@ -19101,7 +19301,8 @@
           </li>
           <li>
             <strong>Revision/Update Time (<a
-                data-cite="DCTERMS#http://purl.org/dc/terms/modified"><code>dcterms:modified</code></a>):</strong> Shows
+                data-cite="DCTERMS#http://purl.org/dc/terms/modified"><code>dcterms:modified</code></a>):</strong>
+            Shows
             when the dataset was last updated, using
             the same formagits as the release time.
           </li>
@@ -20204,13 +20405,16 @@
 
       <h3>Distribution Metadata</h3>
 
-      <p>In the realm of data sharing and management, <a href="#properties-for-distribution">dcat:Distribution</a> plays
+      <p>In the realm of data sharing and management, <a href="#properties-for-distribution">dcat:Distribution</a>
+        plays
         a pivotal role as the tangible
         representation of datasets. A Distribution within the DCAT framework is more than just
         a link to a dataset; it is the embodiment of the dataset in a practical, accessible format, adhering to the
         W3C standards. It is the dataset manifested in a specific format, ranging from CSV
-        files to complex databases, inherently tied to its parent dataset. This relationship underscores the fact that a
-        Distribution does not exist in isolation but as a practical form of the dataset, prepared and published by data
+        files to complex databases, inherently tied to its parent dataset. This relationship underscores the fact that
+        a
+        Distribution does not exist in isolation but as a practical form of the dataset, prepared and published by
+        data
         providers for end users. The core attributes of a Distribution focus on its file-centric properties like
         download URLs, media types, file formats, byte sizes, character encodings, and checksums, emphasizing its
         primary function: efficient
@@ -20222,14 +20426,17 @@
         <p>
           The following guidelines are designed to help determine the most effective way to structure DCAT
           distributions, whether as a single file, a multi-file package, or multiple distributions. The choice depends
-          on the dataset's characteristics, user needs, and the data's intended use. Consider these guidelines to ensure
+          on the dataset's characteristics, user needs, and the data's intended use. Consider these guidelines to
+          ensure
           your distributions are user-friendly, accessible, and align with best practices in data management.
         </p>
         <ul>
           <li>
             <p>
-              <strong>Single-File Distribution:</strong> Ideal for datasets that are cohesive and standalone, typically
-              encapsulated in a single format like CSV or XML. This approach is beneficial for smaller or comprehensive
+              <strong>Single-File Distribution:</strong> Ideal for datasets that are cohesive and standalone,
+              typically
+              encapsulated in a single format like CSV or XML. This approach is beneficial for smaller or
+              comprehensive
               datasets, simplifying access and use. The key is to choose a file format that effectively represents all
               necessary data.
             </p>
@@ -20238,7 +20445,8 @@
             <p>
               <strong>Multi-File Packaged Distribution:</strong> Essential for complex datasets, such as ArcGIS
               shapefiles, which require multiple interdependent files. Packaging related files together is useful for
-              large or component-rich datasets. It's crucial to include all essential components and ensure the package
+              large or component-rich datasets. It's crucial to include all essential components and ensure the
+              package
               facilitates easy download and usage.
             </p>
           </li>
@@ -20252,7 +20460,8 @@
         </ul>
         <p>
           When selecting a distribution format, it is important to consider factors such as the interdependence of
-          files, the ease of user accessibility, the size and downloadability of the data, the frequency of updates, and
+          files, the ease of user accessibility, the size and downloadability of the data, the frequency of updates,
+          and
           the diversity of formats required. A thoughtful approach to these criteria will help in creating a
           distribution strategy that is both practical for data providers and beneficial for end-users, enhancing the
           overall effectiveness of data sharing and utilization.
@@ -20270,33 +20479,43 @@
 
         <ul>
           <li>
-            <a href="#distribution-download-url"> <strong>dcat:downloadURL:</strong></a> This property is preferred for
+            <a href="#distribution-download-url"> <strong>dcat:downloadURL:</strong></a> This property is preferred
+            for
             direct links to downloadable resources. It
-            is the most straightforward way to provide access to a distribution, allowing users to directly download the
+            is the most straightforward way to provide access to a distribution, allowing users to directly download
+            the
             dataset in its entirety without any intermediate steps or interactions.
           </li>
           <li>
-            <a href="#distribution-access-url"><strong>dcat:accessURL:</strong></a> This property should be used for the
+            <a href="#distribution-access-url"><strong>dcat:accessURL:</strong></a> This property should be used for
+            the
             URL of a service or location that
             provides access to the distribution, typically through a web form, query, or API call. It is ideal for
             scenarios where the distribution is accessed via an interactive mechanism rather than direct download. For
             example, when accessing datasets that require specific queries or are provided through a web service.
           </li>
           <li>
-            <a href="#distribution-media-type"><strong>dcat:mediaType:</strong></a> This property specifies the Internet
+            <a href="#distribution-media-type"><strong>dcat:mediaType:</strong></a> This property specifies the
+            Internet
             Media Type (also known as MIME type)
-            of the distribution, which are standardized identifiers for labeling the format of documents, files, or data
+            of the distribution, which are standardized identifiers for labeling the format of documents, files, or
+            data
             transmitted via the Internet. It is particularly useful in scenarios where the distribution format aligns
-            with media types registered by the Internet Assigned Numbers Authority (IANA) [[IANA-MEDIA-TYPES]], ensuring
+            with media types registered by the Internet Assigned Numbers Authority (IANA) [[IANA-MEDIA-TYPES]],
+            ensuring
             standardization and facilitating automated processing.
           </li>
           <li>
-            <a href="#distribution-format"><strong>dcterms:format:</strong></a> This property is applicable in scenarios
+            <a href="#distribution-format"><strong>dcterms:format:</strong></a> This property is applicable in
+            scenarios
             not covered by
-            <code>dcat:mediaType</code>, particularly when aligning with file formats recognized by central authorities.
-            The role of <code>dcterms:format</code> is to offer a detailed description of the distribution's file format
+            <code>dcat:mediaType</code>, particularly when aligning with file formats recognized by central
+            authorities.
+            The role of <code>dcterms:format</code> is to offer a detailed description of the distribution's file
+            format
             or physical medium. For instance, in the geospatial domain, this could include formats like “Shapefile” or
-            “GeoJSON”. These descriptions are crucial for providing human-readable information about the distribution's
+            “GeoJSON”. These descriptions are crucial for providing human-readable information about the
+            distribution's
             format, enhancing user understanding and aiding in the effective presentation within data catalogs.
           </li>
           <li>
@@ -20348,14 +20567,17 @@
           <li>
             <a href="#distribution-representation-technique"><strong>adms:representationTechnique:</strong></a> This
             property can be used to specify the technique or
-            method by which the data is represented in the distribution. This is different from the file format as, for
-            example, a ZIP file (file format) could contain an XML schema (representation technique). It can help users
+            method by which the data is represented in the distribution. This is different from the file format as,
+            for
+            example, a ZIP file (file format) could contain an XML schema (representation technique). It can help
+            users
             understand the underlying structure or visualization method of the dataset. For example, for spatial
             datasets, this property SHOULD be used to express the spatial representation type (grid, vector, tin), by
             using the URIs from a code list managed in a registry.
           </li>
           <li>
-            <a href="#distribution-checksum"><strong>cnt:characterEncoding:</strong></a> This property SHOULD be used to
+            <a href="#distribution-checksum"><strong>cnt:characterEncoding:</strong></a> This property SHOULD be used
+            to
             specify the character encoding of
             the Distribution, by using as value the character set names in the the IANA Character Set names register
             [[IANA-CHARSETS]]. Character encoding in [[ISO-19115]] metadata is specified with a code list that
@@ -20718,7 +20940,8 @@
         updates, or translations. In this section, we explore how versions resulting from updates or modifications
         throughout a resource's lifecycle is used in DCAT-US 3.0 profile.</p>
 
-      <p>DCAT-US 3.0 relies on established vocabularies, including the versioning section of the PAV ontology and terms
+      <p>DCAT-US 3.0 relies on established vocabularies, including the versioning section of the PAV ontology and
+        terms
         from
         [[PAV]], [[DCTERMS]], [[OWL2-OVERVIEW]], and [[VOCAB-ADMS]].</p>
 
@@ -20727,16 +20950,21 @@
         Catalog Records, Datasets, and Distributions. This versioning capability extends across these resource types.
       </p>
       <p>
-        The versioning methodology detailed in DCAT-US 3.0 is designed to enhance and work alongside existing versioning
-        practices specific to certain resource types (for instance, versioning properties for ontologies are detailed in
-        [OWL2-OVERVIEW]) and customary in various domains and communities. Refer to section 11.4 for an analysis of how
+        The versioning methodology detailed in DCAT-US 3.0 is designed to enhance and work alongside existing
+        versioning
+        practices specific to certain resource types (for instance, versioning properties for ontologies are detailed
+        in
+        [OWL2-OVERVIEW]) and customary in various domains and communities. Refer to section 11.4 for an analysis of
+        how
         DCAT's versioning approach aligns with other vocabularies.
       </p>
       <aside class="note">The concept of versioning is deeply intertwined with the practices of the respective
-        community, the overarching data management policy, and established workflows. The responsibility for determining
+        community, the overarching data management policy, and established workflows. The responsibility for
+        determining
         the timing and rationale for releasing a new version lies with the data providers. Consequently, this DCAT US
         profile does not set strict guidelines or rules for when modifications to a resource should lead to a new
-        release. Instead, it suggests referring to [DWBP] (sections 8.6 on Data Versioning and 8.7 on Data Identifiers)
+        release. Instead, it suggests referring to [DWBP] (sections 8.6 on Data Versioning and 8.7 on Data
+        Identifiers)
         for more guidance on this matter.
       </aside>
 
@@ -20747,7 +20975,8 @@
         advancements in data collection techniques. To address these varying changes, the creation of new dataset
         versions
         is often necessary. The decision to classify changes as a new dataset or a new version of an existing dataset,
-        however, is not universally agreed upon. The following examples illustrate typical scenarios where a new version
+        however, is not universally agreed upon. The following examples illustrate typical scenarios where a new
+        version
         is generally warranted:
       </p>
       <ul>
@@ -20764,7 +20993,8 @@
         While Scenarios 1 and 2 might lead to significant version updates, Scenario 3 typically results in a minor
         update. The key is not the scale of the change, but the clarity in marking these changes through version
         numbering. Keeping a detailed version history is crucial for the integrity of the dataset,
-        especially considering its potential ongoing use by various stakeholders. Publishers are advised to inform users
+        especially considering its potential ongoing use by various stakeholders. Publishers are advised to inform
+        users
         proactively about new versions, particularly for datasets undergoing real-time updates, where automated
         timestamps can aid in version identification. Ultimately, maintaining a systematic and transparent versioning
         approach, including the use of semantic versioning, is vital for enabling users to navigate and utilize these
@@ -20816,24 +21046,30 @@
 
       <p>
         These properties ensure users can easily track dataset evolutions, access different versions, and understand
-        the changes made across versions. Implementing these versioning properties in the DCAT-US profile enhances data
+        the changes made across versions. Implementing these versioning properties in the DCAT-US profile enhances
+        data
         discoverability and usability, aligning with best practices in data management.
       </p>
 
 
       <h4>Version Chains and Hierarchies</h4>
       <p>
-        DCAT-US 3.0 profile facilitates the management of version histories and hierarchies through specific properties.
-        These properties help in establishing and navigating the relationships between different versions of a dataset.
+        DCAT-US 3.0 profile facilitates the management of version histories and hierarchies through specific
+        properties.
+        These properties help in establishing and navigating the relationships between different versions of a
+        dataset.
       </p>
       <p>
         The key properties for defining version chains and hierarchies include:</p>
       <ul>
-        <li><code>dcat:previousVersion</code> - This property creates a backward navigable chain from a given version to
+        <li><code>dcat:previousVersion</code> - This property creates a backward navigable chain from a given version
+          to
           the first one, allowing for the tracking of a dataset's version history.</li>
-        <li><code>dcat:hasVersion</code> - Utilized for outlining a version hierarchy by linking an abstract resource to
+        <li><code>dcat:hasVersion</code> - Utilized for outlining a version hierarchy by linking an abstract resource
+          to
           its different versions.</li>
-        <li><code>dcat:hasCurrentVersion</code> - a subproperty of <code>dcat:hasVersion</code>) - This property is used
+        <li><code>dcat:hasCurrentVersion</code> - a subproperty of <code>dcat:hasVersion</code>) - This property is
+          used
           to connect an abstract resource to the snapshot representing the current version of its content. </li>
       </ul>
       </p>
@@ -20864,7 +21100,8 @@
           abstract dataset is used to point to the version with the most up to date list of bus stops.</p>
 
         <p>In <a href="#fig-version-chain-and-hierarchy"></a>, the resource with IRI <code>mycity-bus:stops</code> is
-          the abstract resource, corresponding always to the latest version of the MyCity bus stops dataset, whereas the
+          the abstract resource, corresponding always to the latest version of the MyCity bus stops dataset, whereas
+          the
           other ones correspond to specific versions of it. The current version is the one with IRI
           <code>mycity-bus:stops-2015-12-07</code>.
         </p>
@@ -20921,8 +21158,9 @@
         does not automatically replace its immediate predecessor.
       </p>
 
-      <p>To illustrate how these roperties can be applied in DCAT-US 3.0, the following example reuses the description of the MyCity bus stop dataset in <a
-          href="#ex-version-chain-and-hierarchy"></a> to show how replaced versions can be specified in DCAT.</p>
+      <p>To illustrate how these roperties can be applied in DCAT-US 3.0, the following example reuses the description
+        of the MyCity bus stop dataset in <a href="#ex-version-chain-and-hierarchy"></a> to show how replaced versions
+        can be specified in DCAT.</p>
 
       <aside class="example" id="ex-version-replace" title="Replaced versions of the MyCity bus stops dataset">
         <pre>
@@ -20950,9 +21188,12 @@
       <h4>Resource Life-Cycle</h4>
       <p>
         The life-cycle of a resource, while distinct from versioning, is often closely related to it. The evolution of
-        a resource through its life-cycle stages—conception, creation, publication—may lead to new versions, though not
-        invariably (e.g., resources passing through an approval workflow without revisions). Conversely, creating a new
-        version does not always signify a life-cycle status change, such as in cases of minor updates or resources still
+        a resource through its life-cycle stages—conception, creation, publication—may lead to new versions, though
+        not
+        invariably (e.g., resources passing through an approval workflow without revisions). Conversely, creating a
+        new
+        version does not always signify a life-cycle status change, such as in cases of minor updates or resources
+        still
         under development.
       </p>
       <p>
@@ -20970,7 +21211,8 @@
         DCAT utilizes the <a href=""><code>adms:status</code></a> property [[VOCAB-ADMS]] to specify life-cycle
         statuses, supplemented by relevant [[DCTERMS]] time-related properties (e.g., <code>dcterms:created</code>,
         <code>dcterms:dateSubmitted</code>). However, DCAT-US profile does not mandate specific life-cycle statuses,
-        instead deferring to standards and practices suitable for each application scenario and communities of practice.
+        instead deferring to standards and practices suitable for each application scenario and communities of
+        practice.
       </p>
 
 
@@ -21130,7 +21372,8 @@
         <h4>Controlled vocabularies to be used</h4>
 
         <aside class="note">Some of the vocabularies listed are placeholders and will be further developed during the
-          implementation phase of the profile. This is a part of our ongoing efforts to refine and optimize the DCAT-US
+          implementation phase of the profile. This is a part of our ongoing efforts to refine and optimize the
+          DCAT-US
           specification for enhanced usability and interoperability.</aside>
 
 
