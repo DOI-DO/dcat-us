@@ -406,7 +406,7 @@
   </section>
 
   <section id="conformance" class="informative">
-   
+
     <section id="provider-requirements">
       <h3>Data Provider requirements</h3>
 
@@ -8004,6 +8004,16 @@
             <td><span style="color: green;">Aligned</span></td>
           </tr>
           <tr>
+            <td><a href="#dataset-in-series">inSeries</a></td>
+            <td><a data-cite="VOCAB-DCAT-3#Property:resource_prev"><code>dcat:inSeries</code></a>
+            </td>
+            <td><a data-cite="VOCAB-DCAT-3#Class:DatasetSeries"><code>dcat:DatasetSeries</code></a>
+            </td>
+            <td>O</td>
+            <td>0..n</td>
+            <td><span style="color: green;">Aligned</span></td>
+          </tr>
+          <tr>
             <td><a href="#dataset-is-referenced-by">is referenced by</a></td>
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/isReferencedBy"><code>dcterms:isReferencedBy</code></a>
             </td>
@@ -8043,8 +8053,8 @@
             <td><span style="color: red;">New!</span></td>
           </tr>
           <tr>
-            <td><a href="#dataset-previous">previous</a></td>
-            <td><a data-cite="VOCAB-DCAT-3#Property:resource_previous"><code>dcat:previous</code></a>
+            <td><a href="#dataset-prev">prev</a></td>
+            <td><a data-cite="VOCAB-DCAT-3#Property:resource_prev"><code>dcat:prev</code></a>
             </td>
             <td><a data-cite="VOCAB-DCAT-3#Class:Dataset"><code>dcat:Dataset</code></a>
             </td>
@@ -9329,6 +9339,49 @@
             </tr>
           </table>
         </section>
+        <section id="dataset-in-series">
+          <h4>Property: inSeries</h4>
+          <table class="def">
+            <tbody>
+              <tr>
+                <th>Property</th>
+                <td>inSeries</td>
+              </tr>
+              <tr>
+                <th>Requirement level</th>
+                <td>Optional</td>
+              </tr>
+              <tr>
+                <td>Optional</td>
+                <td>0..n</td>
+              </tr>
+              <tr>
+                <th>URI</th>
+                <td><a data-cite="VOCAB-DCAT-3#Property:resource_prev"><code>dcat:inSeries</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Range</th>
+                <td><a data-cite="VOCAB-DCAT-3#Class:DatasetSeries"><code>dcat:DatasetSeries</code></a>
+              </tr>
+              <tr>
+                <th>Usage note</th>
+                <td>The datasets are linked to the dataset series by using the property <code>dcat:inSeries</code>.
+                  Note that a dataset series can also be hierarchical, and a dataset series can be a member of another
+                  dataset series </td>
+              </tr>
+              <tr>
+                <th>Definition</th>
+                <td>A dataset series of which the dataset is part.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <aside class="example" title="Usage of dcat:inSeries for dcat:Dataset">
+            <pre class="ttl" data-include-format="text"
+              data-include="./examples/dataset/in_series.ttl"></pre>
+          </aside>
+        </section>
         <section id="dataset-is-referenced-by">
           <h4>Property: is referenced by</h4>
           <table class="def">
@@ -9530,13 +9583,13 @@
               data-include="./examples/dataset/other-identifier.jsonld"></pre>
           </aside>
         </section>
-        <section id="dataset-previous">
-          <h4>Property: previous</h4>
+        <section id="dataset-prev">
+          <h4>Property: prev</h4>
           <table class="def">
             <tbody>
               <tr>
                 <th>Property</th>
-                <td>previous</td>
+                <td>prev</td>
               </tr>
               <tr>
                 <th>Requirement level</th>
@@ -9548,7 +9601,7 @@
               </tr>
               <tr>
                 <th>URI</th>
-                <td><a data-cite="VOCAB-DCAT-3#Property:resource_previous"><code>dcat:previous</code></a>
+                <td><a data-cite="VOCAB-DCAT-3#Property:resource_prev"><code>dcat:prev</code></a>
                 </td>
               </tr>
               <tr>
@@ -21220,7 +21273,8 @@
 
 
     <!-- Dataset Series  -->
-    <section id="dataset-series-guidance">
+    <section id="dataset-series-guidance" class="informative">
+
       <h3>Dataset Series</h3>
       <p>A Dataset Series is a collection of related datasets that share common characteristics, making them part of a
         cohesive group. This section provides guidance on the effective use of Dataset Series within data catalogs,
@@ -21233,19 +21287,17 @@
         to
         share each snapshot's lifecycle.</p>
 
-      <h4>Why Use Dataset Series?</h4>
+      <p><strong>Why Use Dataset Series?</strong></p>
       <p>Implementing Dataset Series offers several advantages:</p>
       <ul>
         <li><strong>Organizational Clarity:</strong> Helps categorize and group datasets, making it easier for users
-          to
-          find and navigate related sets of data.</li>
+          to find and navigate related sets of data.</li>
         <li><strong>Efficient Data Management:</strong> Streamlines the management of multiple datasets, providing a
           structured approach for updates and maintenance.</li>
         <li><strong>User Experience:</strong> Enhances data discoverability and understanding, as users can perceive
-          the
-          broader context of individual datasets within a collective series.</li>
+          the broader context of individual datasets within a collective series.</li>
       </ul>
-      <h4>Guidelines for Implementing Dataset Series</h4>
+      <p><strong>Guidelines for Implementing Dataset Series</strong></p>
       <p>When using Dataset Series, consider the following best practices:</p>
       <ul>
         <li>Initiate a Dataset Series exclusively for managing multiple, interconnected datasets, ensuring each
@@ -21261,22 +21313,21 @@
         <li>Uphold high-quality metadata standards for both individual datasets and the Dataset Series, with specific
           series guidelines superseding general practices where necessary.</li>
       </ul>
-      <h4>Expressing Relationships and Connections</h4>
+      <p><strong>Expressing Relationships and Connections</strong></p>
       <p>Articulating the interconnections between datasets in a series is crucial for user understanding and data
         management:</p>
       <ul>
         <li>Employ consistent metadata descriptors to clarify the relationships and commonalities within the series.
         </li>
         <li>Utilize versioning for datasets that evolve or expand over time, helping users track changes and
-          understand
-          the dataset's history.</li>
+          understand the dataset's history.</li>
         <li>Highlight the distinct features of each dataset, ensuring its standalone value is clear, while also
           emphasizing its role in the broader series.</li>
         <li>For more complex relationships, especially in automated or tightly interconnected collections, leverage
-          specific DCAT properties (e.g., next, previous, inSeries, last) to express the nuanced connections. Refer to
+          specific DCAT properties (e.g., next, prev, inSeries, last) to express the nuanced connections. Refer to
           the DCAT versioning guidelines for detailed practices.</li>
       </ul>
-      <h4>Impact on Metadata</h4>
+      <p><strong>Impact on Metadata</strong></p>
       <p>Being part of a Dataset Series may necessitate specific metadata considerations:</p>
       <ul>
         <li>Adjust metadata to emphasize the unique aspects of each dataset within the series, such as different time
@@ -21284,6 +21335,107 @@
         <li>Ensure that metadata reflects the cohesive nature of the series, helping users understand the context and
           relationship between individual datasets.</li>
       </ul>
+
+
+      <section id="dataset-series-specification">
+
+        <h4>How to specify dataset series</h4>
+
+
+        <p>DCAT-US profile makes dataset series first class citizens of data catalogs by using the [[DCAT-3]] new class
+          <a href="#properties-for-dataset-series"><code>dcat:DatasetSeries</code></a>, defined as a subclass of <a
+            href="#properties-for-dataset"><code>dcat:Dataset</code></a>.
+          The datasets are linked to the dataset series by using the property <a
+            href="#dataset-in-series"><code>dcat:inSeries</code></a>.
+          <!-- The dataset series and the child datasets are linked by using the [[DCTERMS]] property <a href="#Property:dataset_series_series_member"><code>dcat:seriesMember</code></a> and/or its inverse <a href="#Property:dataset_in_series"><code>dcat:inSeries</code></a>.
+-->
+          Note that a dataset series can also be hierarchical, and a dataset series can be a member of another dataset
+          series.
+        </p>
+        <!--div class="issue" data-number="1307"> </div-->
+
+        <aside class="example" id="ex-dataset-series-containment" title="Yearly budget datasets grouped into a series">
+          <p>In the following example, yearly budget data are grouped into a series. The series is typed as
+            <a href="#properties-for-dataset-series"><code>dcat:DatasetSeries</code></a>, the child datasets are typed as 
+            <a href="#properties-for-dataset"><code>dcat:Dataset</code></a>. The datasets are
+            linked to the series by using <a href="#dataset-in-series"><code>dcat:inSeries</code></a>.
+          </p>
+        
+          <pre>
+ex:USCatalog a dcat:Catalog ;
+dcterms:title "US Data Catalog"@en ;
+dcat:dataset ex:budget , ex:employment , ex:finance ;
+.
+
+ex:budget a dcat:DatasetSeries ;
+dcterms:title "Budget data"@en ;<!--dcat:seriesMember ex:budget-2018 ,
+ex:budget-2019 , ex:budget-2020 ;-->
+.
+
+ex:budget-2018 a dcat:Dataset ;
+dcterms:title "Budget data for year 2018"@en ;
+dcat:inSeries ex:budget ;
+.
+
+ex:budget-2019 a dcat:Dataset ;
+dcterms:title "Budget data for year 2019"@en ;
+dcat:inSeries ex:budget ;
+.
+
+ex:budget-2020 a dcat:Dataset ;
+dcterms:title "Budget data for year 2020"@en ;
+dcat:inSeries ex:budget ;
+.
+</pre>
+        </aside>
+
+
+        <p>Dataset series may evolve over time, by acquiring new datasets. E.g., a dataset series about yearly budget
+          data will acquire a new child dataset every year. In such cases, it might be important to link the yearly
+          releases with relationships specifying the first, previous, next, and latest ones. In such a scenario, DCAT
+          makes use of properties <a href="#dataset-series-first"><code>dcat:first</code></a>, <a
+            href="#dataset-prev"><code>dcat:prev</code></a>, and <a
+            href="#dataset-series-last"><code>dcat:last</code></a>, respectively.
+        <aside class="example" id="ex-dataset-series-releases" title="Linking datasets in a series">
+          <p>The following example defines a <a
+              href="#properties-for-dataset-series"><code>dcat:DatasetSeries</code></a> for annual budgets by specifying
+            the publication date (<code>dcterms:issued</code>) of each child dataset, and the previous (<a
+              href="#dataset-prev"><code>dcat:prev</code></a>) and next (<a
+              href="#dataset-next"><code>dcat:next</code></a>) dataset in the series. Moreover, the dataset series is
+            linked to its first ( <a href="#dataset-series-first"><code>dcat:first</code></a>) and last <a
+              href="#dataset-series-last"><code>dcat:last</code></a>) child datasets.</p>
+          <pre>
+ex:budget a dcat:DatasetSeries ;
+dcterms:title "Budget data"@en ;<!--dcat:seriesMember ex:budget-2018 ,
+ex:budget-2019 , ex:budget-2020 -->
+dcat:first ex:budget-2018 ;
+dcat:last ex:budget-2020 ;
+.
+
+ex:budget-2018 a dcat:Dataset ;
+dcterms:title "Budget data for year 2018"@en ;
+dcat:inSeries ex:budget ;
+dcterms:issued "2019-01-01"^^xsd:date ;
+dcat:next ex:budget-2019 ;
+.
+
+ex:budget-2019 a dcat:Dataset ;
+dcterms:title "Budget data for year 2019"@en ;
+dcat:inSeries ex:budget ;
+dcterms:issued "2020-01-01"^^xsd:date ;
+dcat:prev ex:budget-2018 ;
+dcat:next ex:budget-2020 ;
+.
+
+ex:budget-2020 a dcat:Dataset ;
+dcterms:title "Budget data for year 2020"@en ;
+dcat:inSeries ex:budget ;
+dcterms:issued "2021-01-01"^^xsd:date ;
+dcat:prev ex:budget-2019 ;
+.
+</pre>
+        </aside>
+      </section>
     </section>
 
     <!-- Controlled vocabularies -->

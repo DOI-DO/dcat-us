@@ -1,0 +1,23 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex: <http://example.org/ns#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix geonames: <http://www.geonames.org/ontology#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Define the DatasetSeries
+ex:populationCensus a dcat:DatasetSeries ;
+  dcterms:title "US Population Census Data"@en ;
+  .
+
+# Define individual datasets within the series
+ex:populationCensus-1950 a dcat:Dataset ;
+  dcterms:title "US Population Census Data for year 1950"@en ;
+  dcat:inSeries ex:populationCensus ;
+  .
+
+ex:populationCensus-1960 a dcat:Dataset ;
+  dcterms:title "US Population Census Data for year 1960"@en ;
+  dcat:inSeries ex:populationCensus ;
+  .  
