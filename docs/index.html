@@ -7963,6 +7963,15 @@
             <td>O</td>
             <td>0..n</td>
             <td><span style="color: black;">No Change</span></td>
+          </tr>   
+          <tr>
+            <td><a href="#dataset-contributor">contributor</a></td>
+            <td><a data-cite="DCTERMS#http://purl.org/dc/terms/contributor"><code>dcterms:contributor</code></a></td>
+            <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Agent"><code>dcterms:Agent</code></a>
+            </td>
+            <td>O</td>
+            <td>0..n</td>
+            <td><span style="color: red;">New!</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-creator">creator</a></td>
@@ -8003,6 +8012,18 @@
             <td>0..n</td>
             <td><span style="color: green;">Aligned</span></td>
           </tr>
+
+          <tr>
+            <td><a href="#dataset-image">image</a></td>
+            <td><a data-cite="SCHEMA-ORG/image" data-no-xref=""><code>schema:image</code></a></td>
+            <td><a data-cite="SCHEMA-ORG/url" data-no-xref=""><code>schema:url</code></a> or
+              <a data-cite="SCHEMA-ORG/ImageObject" data-no-xref=""><code>schema:ImageObject</code></a>
+            </td>
+            <td>O</td>
+            <td>0..n</td>
+            <td><span style="color: red;">New!</span></td>
+          </tr>
+        
           <tr>
             <td><a href="#dataset-in-series">inSeries</a></td>
             <td><a data-cite="VOCAB-DCAT-3#Property:resource_prev"><code>dcat:inSeries</code></a>
@@ -8034,6 +8055,30 @@
             <td>0..n</td>
             <td><span style="color: green;">Fixed</span></td>
           </tr>
+
+          <tr>
+            <td><a href="#dataset-liability_statement">liability statement</a></td>
+            <td><a href="#dataset-liability_statement"><code>dcat-us:liabilityStatement</code></a>
+            </td>
+            <td><a href="#properties-for-liability_statement">
+                <code>dcat-us:LiabilityStatement</code></a>
+            </td>
+            <td>O</td>
+            <td>0..1</td>
+            <td><span style="color: red;">New!</span></td>
+          </tr>
+
+          <tr>
+            <td><a href="#dataset-metadataDistribution">metadata distribution</a></td>
+            <td><a href="#dataset-metadataDistribution">
+                <code>dcat-us:metadataDistribution</code></a>
+            </td>
+            <td><a data-cite="VOCAB-DCAT-3#Class:Distribution"><code>dcat:Distribution</code></a>
+            </td>
+            <td>O</td>
+            <td>0..n</td>
+            <td><span style="color: red;">New!</span></td>
+          </tr>
           <tr>
             <td><a href="#dataset-next">next</a></td>
             <td><a data-cite="VOCAB-DCAT-3#Property:resource_next"><code>dcat:next</code></a>
@@ -8048,6 +8093,17 @@
             <td><a href="#dataset-otherIdentifier">other identifier</a></td>
             <td><a data-cite="VOCAB-ADMS#identifier"><code>adms:identifier</code></a></td>
             <td><a href="http://www.w3.org/ns/adms#Identifier"><code>adms:Identifier</code></a></td>
+            <td>O</td>
+            <td>0..n</td>
+            <td><span style="color: red;">New!</span></td>
+          </tr>
+          <tr>
+            <td><a href="#dataset-purpose">purpose</a></td>
+            <td><a href="#dataset-purpose">
+                <code>dcat-us:purpose</code></a>
+            </td>
+            <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+            </td>
             <td>O</td>
             <td>0..n</td>
             <td><span style="color: red;">New!</span></td>
@@ -8140,6 +8196,14 @@
             <td><span style="color: red;">New!</span></td>
           </tr>
           <tr>
+            <td><a href="#dataset-scope-note">scope note</a></td>
+            <td><a data-cite="SKOS-REFERENCE#scopeNote"><code>skos:scopeNote</code></a></td>
+            <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+            <td>O</td>
+            <td>0..n</td>
+            <td><span style="color: red;">New!</span></td>
+          </tr>
+          <tr>
             <td><a href="#dataset-source">source</a></td>
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/source"><code>dcterms:source</code></a></td>
             <td><a data-cite="VOCAB-DCAT-3#Class:Dataset"><code>dcat:Dataset</code></a>
@@ -8156,6 +8220,15 @@
             <td>O</td>
             <td>0..1</td>
             <td><span style="color: green;">Aligned</span></td>
+          </tr>
+          <tr>
+            <td><a href="#dataset-subject">subject</a></td>
+            <td><a data-cite="DCTERMS#http://purl.org/dc/terms/subject"><code>dcterms:subject</code></a></td>
+            <td><a data-cite="SKOS-REFERENCE#concepts"><code>skos:Concept</code></a>
+            </td>
+            <td>O</td>
+            <td>0..n</td>
+            <td><span style="color: red;">New!</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-hasQualityMeasurement">quality measurement</a></td>
@@ -8253,66 +8326,7 @@
 
 
 
-          <tr>
-            <td><a href="#dataset-metadataDistribution">metadata distribution</a></td>
-            <td><a href="#dataset-metadataDistribution">
-                <code>dcat-us:metadataDistribution</code></a>
-            </td>
-            <td><a data-cite="VOCAB-DCAT-3#Class:Distribution"><code>dcat:Distribution</code></a>
-            </td>
-            <td>O</td>
-            <td>0..n</td>
-            <td><span style="color: red;">New!</span></td>
-          </tr>
-          <tr>
-            <td><a href="#dataset-liability_statement">liability statement</a></td>
-            <td><a href="#dataset-liability_statement"><code>dcat-us:liabilityStatement</code></a>
-            </td>
-            <td><a href="#properties-for-liability_statement">
-                <code>dcat-us:LiabilityStatement</code></a>
-            </td>
-            <td>O</td>
-            <td>0..1</td>
-            <td><span style="color: red;">New!</span></td>
-          </tr>
-          <tr>
-            <td><a href="#dataset-purpose">purpose</a></td>
-            <td><a href="#dataset-purpose">
-                <code>dcat-us:purpose</code></a>
-            </td>
-            <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
-            </td>
-            <td>O</td>
-            <td>0..n</td>
-            <td><span style="color: red;">New!</span></td>
-          </tr>
-          <tr>
-            <td><a href="#dataset-contributor">contributor</a></td>
-            <td><a data-cite="DCTERMS#http://purl.org/dc/terms/contributor"><code>dcterms:contributor</code></a></td>
-            <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Agent"><code>dcterms:Agent</code></a>
-            </td>
-            <td>O</td>
-            <td>0..n</td>
-            <td><span style="color: red;">New!</span></td>
-          </tr>
-          <tr>
-            <td><a href="#dataset-image">image</a></td>
-            <td><a data-cite="SCHEMA-ORG/image" data-no-xref=""><code>schema:image</code></a></td>
-            <td><a data-cite="SCHEMA-ORG/url" data-no-xref=""><code>schema:url</code></a> or
-              <a data-cite="SCHEMA-ORG/ImageObject" data-no-xref=""><code>schema:ImageObject</code></a>
-            </td>
-            <td>O</td>
-            <td>0..n</td>
-            <td><span style="color: red;">New!</span></td>
-          </tr>
-          <tr>
-            <td><a href="#dataset-usage-note">related resource</a></td>
-            <td><a href="https://vocab.org/vann/#usageNote"><code>vann:usageNote</code></a></td>
-            <td><a data-cite="RDF-SCHEMA#ch_resource"><code>rdfs:Resource</code></a></td>
-            <td>O</td>
-            <td>0..n</td>
-            <td><span style="color: red;">New!</span></td>
-          </tr>
+
         </tbody>
       </table>
 
@@ -9200,6 +9214,44 @@
               data-include="./examples/dataset/creator.jsonld"></pre>
           </aside>
         </section>
+
+        <section id="dataset-describedBy">
+          <h4>Property: data dictionary</h4>
+          <table class="def">
+            <tbody>
+              <tr>
+                <th>Property</th>
+                <td>data dictionary</td>
+              </tr>
+              <tr>
+                <th>Requirement level</th>
+                <td>Recommended</td>
+              </tr>
+              <tr>
+                <th>Cardinality</th>
+                <td>0..1</td>
+              </tr>
+              <tr>
+                <th>URI</th>
+                <td><a href="#dataset-describedBy"><code>dcat-us:describedBy</code></a>
+                </td>
+
+              </tr>
+              <tr>
+                <th>Range</th>
+                <td><a data-cite="VOCAB-DCAT-3#Class:Distribution"><code>dcat:Distribution</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Usage note</th>
+                <td>
+                  <p>This is used to specify a data dictionary or schema that defines fields (dimensions, measures,
+                    attributes) in the dataset.</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
         <section id="dataset-documentation">
           <h4>Property: documentation</h4>
           <table class="def">
@@ -9291,6 +9343,50 @@
             <pre class="jsonld exampleTab1 json" data-include-format="text"
               data-include="./examples/dataset/frequency.jsonld"></pre>
           </aside>
+        </section>
+        <section id="dataset-hasQualityMeasurement">
+          <h4>Property: quality measurement</h4>
+          <table class="def">
+            <tbody>
+              <tr>
+                <th>Property</th>
+                <td>quality measurement</td>
+              </tr>
+              <tr>
+                <th>Requirement level</th>
+                <td>Optional</td>
+              </tr>
+              <tr>
+                <th>Cardinality</th>
+                <td>0..n</td>
+              </tr>
+              <tr>
+                <th>URI</th>
+                <td><a
+                    href="https://www.w3.org/TR/vocab-dqv/#dqv:hasQualityMeasurement"><code>dqv:hasQualityMeasurement</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Range</th>
+                <td><a
+                    href="https://www.w3.org/TR/vocab-dqv/#dqv:QualityMeasurement"><code>dqv:QualityMeasurement</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Definition</th>
+                <td>Refers to the performed quality measurements.It represents the evaluation of a given dataset
+                  against
+                  a specific quality metric</td>
+              </tr>
+              <tr>
+                <th>Usage note</th>
+                <td>Use for quality measurements other than spatial resolution in meters (use <a
+                    href="#dataset-spatial-resolution"><code>dcat:spatialResolutionInMeters</code></a>).
+                  Examples of quality measurements includes completeness, accuracy, accuracy, timeliness, granularity.
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </section>
         <section id="dataset-hasVersion">
           <h4>Property: has version</h4>
@@ -9972,6 +10068,30 @@
               data-include="./examples/dataset/sample.jsonld"></pre>
           </aside>
         </section>
+        <section id="dataset-scope-note">
+          <h4>Property: usage note</h4>
+          <table class="def" id="table-scope-note">
+            <tbody>
+              <tr>
+                <th>Property</th>
+                <td>usage note</td>
+              </tr>
+              <tr>
+                <th>Requirement level</th>
+                <td>Optional</td>
+              </tr>
+              <tr>
+                <th>Cardinality</th>
+                <td>0..n</td>
+              </tr>
+              <tr>
+                <th>URI</th>
+                <td><a data-cite="SKOS-REFERENCE#scopeNote"><code>skos:scopeNote</code></a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
         <section id="dataset-source">
           <h4>Property: source</h4>
           <table class="def">
@@ -10000,6 +10120,46 @@
                 <th>Usage note</th>
                 <td>
                   A related Dataset from which the described Dataset is derived.
+
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section id="dataset-subject">
+          <h4>Property: subject</h4>
+          <table class="def">
+            <tbody>
+              <tr>
+                <th>Property</th>
+                <td>subject</td>
+              </tr>
+              <tr>
+                <th>Requirement level</th>
+                <td><strong>Optional</strong></td>
+              </tr>
+              <tr>
+                <th>Cardinality</th>
+                <td>0..n</td>
+              </tr>
+              <tr>
+                <th>URI</th>
+                <td><a data-cite="DCTERMS#http://purl.org/dc/terms/subject"><code>dcterms:subject</code></a></td>
+              </tr>
+              <tr>
+                <th>Range</th>
+                <td><a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a></td>
+              </tr>
+              <tr>
+                <th>Definition</th>
+                <td>
+                  Primary Subjects of the Dataset.
+                </td>
+              </tr>
+              <tr>
+                <th>Usage note</th>
+                <td>
+                  Primary Subjects of the Dataset defined in a controlled vocabularies. Subjects are typically narrower in meaning than <code>dcat:theme</code>.
 
                 </td>
               </tr>
@@ -10043,50 +10203,7 @@
             </tbody>
           </table>
         </section>
-        <section id="dataset-hasQualityMeasurement">
-          <h4>Property: quality measurement</h4>
-          <table class="def">
-            <tbody>
-              <tr>
-                <th>Property</th>
-                <td>quality measurement</td>
-              </tr>
-              <tr>
-                <th>Requirement level</th>
-                <td>Optional</td>
-              </tr>
-              <tr>
-                <th>Cardinality</th>
-                <td>0..n</td>
-              </tr>
-              <tr>
-                <th>URI</th>
-                <td><a
-                    href="https://www.w3.org/TR/vocab-dqv/#dqv:hasQualityMeasurement"><code>dqv:hasQualityMeasurement</code></a>
-                </td>
-              </tr>
-              <tr>
-                <th>Range</th>
-                <td><a
-                    href="https://www.w3.org/TR/vocab-dqv/#dqv:QualityMeasurement"><code>dqv:QualityMeasurement</code></a>
-                </td>
-              </tr>
-              <tr>
-                <th>Definition</th>
-                <td>Refers to the performed quality measurements.It represents the evaluation of a given dataset
-                  against
-                  a specific quality metric</td>
-              </tr>
-              <tr>
-                <th>Usage note</th>
-                <td>Use for quality measurements other than spatial resolution in meters (use <a
-                    href="#dataset-spatial-resolution"><code>dcat:spatialResolutionInMeters</code></a>).
-                  Examples of quality measurements includes completeness, accuracy, accuracy, timeliness, granularity.
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
+       
         <section id="dataset-spatial-resolution">
           <h4>Property: spatial resolution in meters</h4>
           <table class="def">
@@ -10370,43 +10487,6 @@
         </section>
 
 
-        <section id="dataset-describedBy">
-          <h4>Property: data dictionary</h4>
-          <table class="def">
-            <tbody>
-              <tr>
-                <th>Property</th>
-                <td>data dictionary</td>
-              </tr>
-              <tr>
-                <th>Requirement level</th>
-                <td>Recommended</td>
-              </tr>
-              <tr>
-                <th>Cardinality</th>
-                <td>0..1</td>
-              </tr>
-              <tr>
-                <th>URI</th>
-                <td><a href="#dataset-describedBy"><code>dcat-us:describedBy</code></a>
-                </td>
-
-              </tr>
-              <tr>
-                <th>Range</th>
-                <td><a data-cite="VOCAB-DCAT-3#Class:Distribution"><code>dcat:Distribution</code></a>
-                </td>
-              </tr>
-              <tr>
-                <th>Usage note</th>
-                <td>
-                  <p>This is used to specify a data dictionary or schema that defines fields (dimensions, measures,
-                    attributes) in the dataset.</p>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
         <section id="dataset-metadataDistribution">
           <h4>Property: metadata distribution</h4>
           <table class="def">
@@ -10596,30 +10676,7 @@
               data-include="./examples/dataset/image.jsonld"></pre>
           </aside>
         </section>
-        <section id="dataset-usage-note">
-          <h4>Property: usage note</h4>
-          <table class="def" id="table-dataset-usage-note">
-            <tbody>
-              <tr>
-                <th>Property</th>
-                <td>usage note</td>
-              </tr>
-              <tr>
-                <th>Requirement level</th>
-                <td>Optional</td>
-              </tr>
-              <tr>
-                <th>Cardinality</th>
-                <td>0..n</td>
-              </tr>
-              <tr>
-                <th>URI</th>
-                <td><a href="http://purl.org/vocab/vann/usageNote"><code>vann:usageNote</code></a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
+       
       </section>
     </section>
     <!-- dcat:DatasetSeries-->
