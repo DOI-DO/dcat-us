@@ -120,9 +120,8 @@ dcat-us-shp:Catalog_Shape a sh:NodeShape ;
         dcat-us-shp:Catalog_Shape-theme,
         dcat-us-shp:Catalog_Shape-themeTaxonomy,
         dcat-us-shp:Catalog_Shape-title ;
-    sh:targetClass dcat:Catalog,
-        prov:Activity .
-
+    sh:targetClass dcat:Catalog .
+    
 dcat-us-shp:Checksum_Shape a sh:NodeShape ;
     rdfs:label "Checksum" ;
     sh:property dcat-us-shp:Checksum_Shape-algorithm,
