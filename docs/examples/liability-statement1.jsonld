@@ -1,0 +1,9 @@
+{
+  "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
+  "@id": "http://example.org/datasets/1",
+  "@type": "dcat:Dataset",
+  "liabilityStatement": {
+    "@type": "dcat-us:LiabilityStatement",
+    "label": "This dataset is provided 'as-is' without any guarantees or warranties. The provider is not responsible for any inaccuracies or omissions."
+  }
+}

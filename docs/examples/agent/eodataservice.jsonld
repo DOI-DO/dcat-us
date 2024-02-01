@@ -2,23 +2,23 @@
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
   "@graph": [
     {
-      "@id": "http://example.org/EarthObservationService",
-      "@type": "Concept",
-      "prefLabel": "Earth Observation Service"
-    },
-    {
-      "@id": "http://example.org/ImageryService",
-      "@type": "Concept",
-      "prefLabel": "Imagery Service"
-    },
-    {
       "@id": "http://example.org/LandsatDataService",
-      "@type": "Agent",
+      "@type": "foaf:Agent",
       "category": [
         "http://example.org/EarthObservationService",
         "http://example.org/ImageryService"
       ],
       "name": "Landsat Data Service"
+    },
+    {
+      "@id": "http://example.org/EarthObservationService",
+      "@type": "skos:Concept",
+      "prefLabel": "Earth Observation Service"
+    },
+    {
+      "@id": "http://example.org/ImageryService",
+      "@type": "skos:Concept",
+      "prefLabel": "Imagery Service"
     }
   ]
 }

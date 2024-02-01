@@ -4,5 +4,5 @@
 <https://uscensus.gov/opendata/1234>
   a dcat:Dataset ;
 
-  dcterms:language <http://publications.europa.eu/resource/authority/language/DEU> ,
-               <http://publications.europa.eu/resource/authority/language/FRA>.
+  dcterms:language  <http://id.loc.gov/vocabulary/iso639-1/es>,
+                    <http://id.loc.gov/vocabulary/iso639-1/en> .

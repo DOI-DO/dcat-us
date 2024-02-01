@@ -1,7 +1,7 @@
 {
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
   "@id": "https://uscensus.gov/opendata/service",
-  "@type": "DataService",
+  "@type": "dcat:DataService",
   "titleMap": {
     "en": "Opendata catalog service of the US Census"
   }

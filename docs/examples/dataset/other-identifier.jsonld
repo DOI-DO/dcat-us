@@ -3,14 +3,14 @@
   "@graph": [
     {
       "@id": "http://example.org/ns#Identifier1",
-      "@type": "Identifier",
+      "@type": "adms:Identifier",
       "notation": "10.12345/ex.doi.67890",
       "schemaAgency": "http://www.doi.org/",
-      "http://www.w3.org/ns/dcat#version": "1.0"
+      "dcat:version": "1.0"
     },
     {
       "@id": "http://example.org/ns#Dataset1",
-      "@type": "Dataset",
+      "@type": "dcat:Dataset",
       "description": "This dataset provides an example of how to use a DOI as an identifier.",
       "title": "Example Dataset with DOI",
       "otherIdentifier": [

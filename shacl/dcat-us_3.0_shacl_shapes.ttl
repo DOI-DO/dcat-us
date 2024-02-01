@@ -24,7 +24,6 @@
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix spdx: <http://spdx.org/rdf/terms#> .
-@prefix vann: <http://purl.org/vocab/vann/> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -121,9 +120,8 @@ dcat-us-shp:Catalog_Shape a sh:NodeShape ;
         dcat-us-shp:Catalog_Shape-theme,
         dcat-us-shp:Catalog_Shape-themeTaxonomy,
         dcat-us-shp:Catalog_Shape-title ;
-    sh:targetClass dcat:Catalog,
-        prov:Activity .
-
+    sh:targetClass dcat:Catalog .
+    
 dcat-us-shp:Checksum_Shape a sh:NodeShape ;
     rdfs:label "Checksum" ;
     sh:property dcat-us-shp:Checksum_Shape-algorithm,
@@ -198,7 +196,6 @@ dcat-us-shp:Dataset_Shape a sh:NodeShape ;
     rdfs:label "Dataset" ;
     sh:property dcat-us-shp:Dataset_Shape-accessRights,
         dcat-us-shp:Dataset_Shape-accrualPeriodicity,
-        dcat-us-shp:Dataset_Shape-applicableLegislation,
         dcat-us-shp:Dataset_Shape-category,
         dcat-us-shp:Dataset_Shape-conformsTo,
         dcat-us-shp:Dataset_Shape-contactPoint,
@@ -217,7 +214,6 @@ dcat-us-shp:Dataset_Shape a sh:NodeShape ;
         dcat-us-shp:Dataset_Shape-identifier,
         dcat-us-shp:Dataset_Shape-image,
         dcat-us-shp:Dataset_Shape-inSeries,
-        dcat-us-shp:Dataset_Shape-investment,
         dcat-us-shp:Dataset_Shape-isReferencedBy,
         dcat-us-shp:Dataset_Shape-issued,
         dcat-us-shp:Dataset_Shape-keyword,
@@ -229,7 +225,6 @@ dcat-us-shp:Dataset_Shape a sh:NodeShape ;
         dcat-us-shp:Dataset_Shape-otherIdentifier,
         dcat-us-shp:Dataset_Shape-page,
         dcat-us-shp:Dataset_Shape-previousVersion,
-        dcat-us-shp:Dataset_Shape-program,
         dcat-us-shp:Dataset_Shape-provenance,
         dcat-us-shp:Dataset_Shape-publisher,
         dcat-us-shp:Dataset_Shape-purpose,
@@ -240,6 +235,7 @@ dcat-us-shp:Dataset_Shape a sh:NodeShape ;
         dcat-us-shp:Dataset_Shape-rights,
         dcat-us-shp:Dataset_Shape-rightsHolder,
         dcat-us-shp:Dataset_Shape-sample,
+        dcat-us-shp:Dataset_Shape-scopeNote,
         dcat-us-shp:Dataset_Shape-source,
         dcat-us-shp:Dataset_Shape-spatial,
         dcat-us-shp:Dataset_Shape-spatialResolutionInMeters,
@@ -250,7 +246,6 @@ dcat-us-shp:Dataset_Shape a sh:NodeShape ;
         dcat-us-shp:Dataset_Shape-temporalResolution,
         dcat-us-shp:Dataset_Shape-theme,
         dcat-us-shp:Dataset_Shape-title,
-        dcat-us-shp:Dataset_Shape-usageNote,
         dcat-us-shp:Dataset_Shape-version,
         dcat-us-shp:Dataset_Shape-versionNotes,
         dcat-us-shp:Dataset_Shape-wasAttributedTo,
@@ -274,7 +269,6 @@ dcat-us-shp:Distribution_Shape a sh:NodeShape ;
         dcat-us-shp:Distribution_Shape-description,
         dcat-us-shp:Distribution_Shape-downloadURL,
         dcat-us-shp:Distribution_Shape-format,
-        dcat-us-shp:Distribution_Shape-hasPolicy,
         dcat-us-shp:Distribution_Shape-hasQualityMeasurement,
         dcat-us-shp:Distribution_Shape-image,
         dcat-us-shp:Distribution_Shape-issued,
@@ -300,11 +294,13 @@ dcat-us-shp:Document_Shape a sh:NodeShape ;
         dcat-us-shp:Document_Shape-category,
         dcat-us-shp:Document_Shape-conformsTo,
         dcat-us-shp:Document_Shape-creator,
+        dcat-us-shp:Document_Shape-creators,
         dcat-us-shp:Document_Shape-description,
         dcat-us-shp:Document_Shape-identifier,
         dcat-us-shp:Document_Shape-issued,
         dcat-us-shp:Document_Shape-mediaType,
         dcat-us-shp:Document_Shape-publisher,
+        dcat-us-shp:Document_Shape-publishers,
         dcat-us-shp:Document_Shape-title ;
     sh:targetClass foaf:Document .
 
@@ -324,15 +320,6 @@ dcat-us-shp:Identifier_Shape a sh:NodeShape ;
         dcat-us-shp:Identifier_Shape-schemaAgency,
         dcat-us-shp:Identifier_Shape-version ;
     sh:targetClass adms:Identifier .
-
-dcat-us-shp:Investment_Shape a sh:NodeShape ;
-    rdfs:label "Investment" ;
-    sh:property dcat-us-shp:Investment_Shape-category,
-        dcat-us-shp:Investment_Shape-description,
-        dcat-us-shp:Investment_Shape-identifier,
-        dcat-us-shp:Investment_Shape-otherIdentifier,
-        dcat-us-shp:Investment_Shape-title ;
-    sh:targetClass dcat-us:Investment .
 
 dcat-us-shp:LiabilityStatement_Shape a sh:NodeShape ;
     rdfs:label "Liability Statement" ;
@@ -389,15 +376,6 @@ dcat-us-shp:Person_Shape a sh:NodeShape ;
         dcat-us-shp:Person_Shape-name ;
     sh:targetClass foaf:Person .
 
-dcat-us-shp:Program_Shape a sh:NodeShape ;
-    rdfs:label "Program" ;
-    sh:property dcat-us-shp:Program_Shape-category,
-        dcat-us-shp:Program_Shape-description,
-        dcat-us-shp:Program_Shape-identifier,
-        dcat-us-shp:Program_Shape-otherIdentifier,
-        dcat-us-shp:Program_Shape-title ;
-    sh:targetClass dcat-us:Program .
-
 dcat-us-shp:ProvenanceStatement_Shape a sh:NodeShape ;
     rdfs:label "Provenance Statement" ;
     sh:property dcat-us-shp:ProvenanceStatement_Shape-label ;
@@ -440,11 +418,9 @@ dcat-us-shp:UseRestriction_Shape a sh:NodeShape ;
         dcat-us-shp:UseRestriction_Shape-specificRestriction ;
     sh:targetClass dcat-us:UseRestriction .
 
-dash:DateOrDateTime rdf:first ( xsd:date xsd:dateTime ) .
-
-dash:HTMLOrStringOrLangString rdf:first ( rdf:HTML xsd:string xsd:langString ) .
-
-dash:StringOrLangStringOrHTML rdf:first ( xsd:string rdf:langString rdf:HTML ) .
+dash:DateOrDateTime a rdf:List ;
+    rdf:first [ sh:datatype xsd:date ] ;
+    rdf:rest ( [ sh:datatype xsd:dateTime ] ) .
 
 : a owl:Ontology ;
     dcterms:conformsTo <https://www.w3.org/TR/shacl> ;
@@ -472,36 +448,33 @@ dcat-us-shp:AccessRestriction_Shape-restrictionNote a sh:PropertyShape ;
 dcat-us-shp:AccessRestriction_Shape-restrictionStatus a sh:PropertyShape ;
     rdfs:label "restriction status" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Mandatory ;
-    sh:class skos:Concept ;
     sh:description "The indication of whether or not there are access restrictions on the data." ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:name "restrictionStatus" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class skos:Concept ] ) ;
     sh:path dcat-us:restrictionStatus ;
     sh:severity sh:Violation .
 
 dcat-us-shp:AccessRestriction_Shape-specificRestriction a sh:PropertyShape ;
     rdfs:label "specific restriction" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
-    sh:class skos:Concept ;
     sh:description "The specific NARA restriction associated with the access restriction" ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "specificRestriction" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class skos:Concept ] ) ;
     sh:path dcat-us:specificRestriction ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Activity_Shape-category a sh:PropertyShape ;
     rdfs:label "category" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class skos:Concept ;
     sh:description "The category of the Activity " ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "category" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class skos:Concept ] ) ;
     sh:path dcterms:type ;
     sh:severity sh:Violation .
 
@@ -629,12 +602,11 @@ dcat-us-shp:Address_Location_Shape-thoroughfare a sh:PropertyShape ;
 dcat-us-shp:Agent_Shape-category a sh:PropertyShape ;
     rdfs:label "category" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
-    sh:class skos:Concept ;
     sh:description "This property refers to a type of the Agent that makes the Catalog, Catalog Record, Data Service, or Dataset available" ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "category" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class skos:Concept ] ) ;
     sh:path dcterms:type ;
     sh:severity sh:Violation .
 
@@ -653,24 +625,22 @@ dcat-us-shp:Agent_Shape-name a sh:PropertyShape ;
 dcat-us-shp:Attribution_Shape-agent a sh:PropertyShape ;
     rdfs:label "agent" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Mandatory ;
-    sh:class foaf:Agent ;
     sh:description "The agent property references an Agent that plays a role in the resource" ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:name "agent" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class foaf:Agent ] ) ;
     sh:path prov:agent ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Attribution_Shape-hadRole a sh:PropertyShape ;
     rdfs:label "role" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Mandatory ;
-    sh:class dcat:Role ;
     sh:description "The function of an entity or agent with respect to another entity or resource." ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:name "hadRole" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class dcat:Role ] ) ;
     sh:path dcat:hadRole ;
     sh:severity sh:Violation .
 
@@ -712,12 +682,11 @@ dcat-us-shp:CUIRestriction-requiredIndicatorPerAuthority a sh:PropertyShape ;
 dcat-us-shp:CatalogRecord_Shape-conformsTo a sh:PropertyShape ;
     rdfs:label "application profile" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
-    sh:class dcterms:Standard ;
     sh:description "An Application Profile that the Catalog Record's metadata conforms to." ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "conformsTo" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcterms:Standard ] ) ;
     sh:path dcterms:conformsTo ;
     sh:severity sh:Violation .
 
@@ -745,11 +714,10 @@ dcat-us-shp:CatalogRecord_Shape-issued a sh:PropertyShape ;
 dcat-us-shp:CatalogRecord_Shape-language a sh:PropertyShape ;
     rdfs:label "language" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dcterms:LinguisticSystem ;
     sh:description "A language used in the textual metadata describing titles, descriptions, etc. of the Catalog Record." ;
     sh:minCount 0 ;
     sh:name "language" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class dcterms:LinguisticSystem ] ) ;
     sh:path dcterms:language ;
     sh:severity sh:Violation .
 
@@ -768,36 +736,33 @@ dcat-us-shp:CatalogRecord_Shape-modified a sh:PropertyShape ;
 dcat-us-shp:CatalogRecord_Shape-primaryTopic a sh:PropertyShape ;
     rdfs:label "primary topic" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Mandatory ;
-    sh:class dcat:Resource ;
     sh:description "A link to the Dataset, Data service or Catalog described in the Catalog Record." ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:name "primaryTopic" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcat:Resource ] ) ;
     sh:path foaf:primaryTopic ;
     sh:severity sh:Violation .
 
 dcat-us-shp:CatalogRecord_Shape-source a sh:PropertyShape ;
     rdfs:label "source metadata" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dcat:Resource ;
     sh:description "The original metadata that was used in creating metadata for the datasets, data services, or catalogs in the Catalog Record." ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "source" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class dcat:Resource ] ) ;
     sh:path dcterms:source ;
     sh:severity sh:Violation .
 
 dcat-us-shp:CatalogRecord_Shape-status a sh:PropertyShape ;
     rdfs:label "change type" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
-    sh:class skos:Concept ;
     sh:description "The status of the catalog record in the context of editorial flow of the dataset and data service descriptions." ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "status" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class skos:Concept ] ) ;
     sh:path adms:status ;
     sh:severity sh:Violation .
 
@@ -814,81 +779,74 @@ dcat-us-shp:CatalogRecord_Shape-title a sh:PropertyShape ;
 dcat-us-shp:Catalog_Shape-accessRights a sh:PropertyShape ;
     rdfs:label "access rights" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dcterms:RightsStatement ;
     sh:description "This property refers to information that indicates whether the Catalog is open data, has access restrictions or is not public." ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "accessRights" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcterms:RightsStatement ] ) ;
     sh:path dcterms:accessRights ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Catalog_Shape-catalog a sh:PropertyShape ;
     rdfs:label "catalog" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dcat:Catalog ;
     sh:description "This property refers to a catalog whose contents are of interest in the context of this catalog." ;
     sh:minCount 0 ;
     sh:name "catalog" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class dcat:Catalog ] ) ;
     sh:path dcat:catalog ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Catalog_Shape-category a sh:PropertyShape ;
     rdfs:label "category" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class skos:Concept ;
     sh:description "The category of the Catalog " ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "category" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class skos:Concept ] ) ;
     sh:path dcterms:type ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Catalog_Shape-conformsTo a sh:PropertyShape ;
     rdfs:label "schema version" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
-    sh:class dcterms:Standard ;
     sh:description "An established standard to which the described catalog conforms." ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "conformsTo" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcterms:Standard ] ) ;
     sh:path dcterms:conformsTo ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Catalog_Shape-contactPoint a sh:PropertyShape ;
     rdfs:label "contact point" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class vcard:Contact ;
     sh:description "This property contains contact information that can be used for sending comments about the Catalogue." ;
     sh:minCount 0 ;
     sh:name "contactPoint" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class vcard:Contact ] ) ;
     sh:path dcat:contactPoint ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Catalog_Shape-creator a sh:PropertyShape ;
     rdfs:label "creator" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class foaf:Agent ;
     sh:description "The entity responsible for creating the resource." ;
     sh:minCount 0 ;
     sh:name "creator" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
-    sh:or dcat-us-shp:PersonOrOrganization ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class foaf:Agent ] ),
+        dcat-us-shp:PersonOrOrganization ;
     sh:path dcterms:creator ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Catalog_Shape-dataset a sh:PropertyShape ;
     rdfs:label "dataset" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Mandatory ;
-    sh:class dcat:Dataset ;
     sh:description "This property links the Catalog with the Dataset(s) that is/are part of the Catalog." ;
     sh:minCount 1 ;
     sh:name "dataset" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class dcat:Dataset ] ) ;
     sh:path dcat:dataset ;
     sh:severity sh:Violation .
 
@@ -906,23 +864,21 @@ dcat-us-shp:Catalog_Shape-description a sh:PropertyShape ;
 dcat-us-shp:Catalog_Shape-hasPart a sh:PropertyShape ;
     rdfs:label "has part" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dcat:Catalog ;
     sh:description "This property refers to a related catalog that is part of the described catalog." ;
     sh:minCount 0 ;
     sh:name "hasPart" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class dcat:Catalog ] ) ;
     sh:path dcterms:hasPart ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Catalog_Shape-homepage a sh:PropertyShape ;
     rdfs:label "homepage" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
-    sh:class foaf:Document ;
     sh:description "A homepage of the catalog (a public Web document usually available in HTML)." ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "homepage" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class foaf:Document ] ) ;
     sh:path foaf:homepage ;
     sh:severity sh:Violation .
 
@@ -932,7 +888,7 @@ dcat-us-shp:Catalog_Shape-identifier a sh:PropertyShape ;
     sh:description "This property contains the main identifier for the Catalog, e.g. the URI or other unique identifier." ;
     sh:minCount 0 ;
     sh:name "identifier" ;
-    sh:nodeKind sh:LIteral ;
+    sh:nodeKind sh:Literal ;
     sh:path dcterms:identifier ;
     sh:severity sh:Violation .
 
@@ -962,23 +918,21 @@ dcat-us-shp:Catalog_Shape-keyword a sh:PropertyShape ;
 dcat-us-shp:Catalog_Shape-language a sh:PropertyShape ;
     rdfs:label "language" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
-    sh:class dcterms:LinguisticSystem ;
     sh:description "This property refers to a language used in the textual metadata describing titles, descriptions, etc. of the Datasets in the Catalog." ;
     sh:minCount 0 ;
     sh:name "language" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class dcterms:LinguisticSystem ] ) ;
     sh:path dcterms:language ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Catalog_Shape-license a sh:PropertyShape ;
     rdfs:label "license" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
-    sh:class dcterms:LicenseDocument ;
     sh:description "This property refers to the license under which the Catalog can be used or reused." ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "license" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcterms:LicenseDocument ] ) ;
     sh:path dcterms:license ;
     sh:severity sh:Violation .
 
@@ -997,123 +951,112 @@ dcat-us-shp:Catalog_Shape-modified a sh:PropertyShape ;
 dcat-us-shp:Catalog_Shape-publisher a sh:PropertyShape ;
     rdfs:label "publisher" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Mandatory ;
-    sh:class foaf:Agent ;
     sh:description "Entity responsible for making the catalog available." ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:name "publisher" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class foaf:Agent ] ) ;
     sh:path dcterms:publisher ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Catalog_Shape-qualifiedAttribution a sh:PropertyShape ;
     rdfs:label "qualified attribution" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class prov:Attribution ;
     sh:description "This property refers to a link to an Agent having some form of responsibility for the Catalog." ;
     sh:minCount 0 ;
     sh:name "qualifiedAttribution" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class prov:Attribution ] ) ;
     sh:path prov:qualifiedAttribution ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Catalog_Shape-record a sh:PropertyShape ;
     rdfs:label "catalog record" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dcat:CatalogRecord ;
     sh:description "A record describing the registration of a single resource (e.g., a dataset, a data service) that is part of the catalog." ;
     sh:minCount 0 ;
     sh:name "record" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class dcat:CatalogRecord ] ) ;
     sh:path dcat:record ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Catalog_Shape-rights a sh:PropertyShape ;
     rdfs:label "rights" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dcterms:RightStatement ;
     sh:description "This property refers to a statement that specifies rights associated with the Catalogue." ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "rights" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcterms:RightStatement ] ) ;
     sh:path dcterms:rights ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Catalog_Shape-rightsHolder a sh:PropertyShape ;
     rdfs:label "rights holder" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class foaf:Organizatin ;
     sh:description "This property refers to an organization holding rights on the Catalog." ;
     sh:minCount 0 ;
     sh:name "rightsHolder" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class foaf:Organizatin ] ) ;
     sh:path dcterms:rightsHolder ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Catalog_Shape-service a sh:PropertyShape ;
     rdfs:label "service" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dcat:DataService ;
     sh:description "This property refers to a site or end-point (Data Service) that is listed in the Catalog." ;
     sh:minCount 0 ;
     sh:name "service" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class dcat:DataService ] ) ;
     sh:path dcat:service ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Catalog_Shape-spatial a sh:PropertyShape ;
     rdfs:label "spatial/geographic coverage" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
-    sh:class dcterms:Location ;
     sh:description "The geographical area covered by the catalog." ;
     sh:minCount 0 ;
     sh:name "spatial" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcterms:Location ] ) ;
     sh:path dcterms:spatial ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Catalog_Shape-subject a sh:PropertyShape ;
     rdfs:label "subject" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class skos:Concept ;
     sh:description "Primary subject of the catalog" ;
     sh:minCount 0 ;
     sh:name "subject" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class skos:Concept ] ) ;
     sh:path dcterms:subject ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Catalog_Shape-temporal a sh:PropertyShape ;
     rdfs:label "temporal coverage" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dcterms:PeriodOfTime ;
     sh:description "This property refers to a temporal period that the Catalog covers." ;
     sh:minCount 0 ;
     sh:name "temporal" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcterms:PeriodOfTime ] ) ;
     sh:path dcterms:temporal ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Catalog_Shape-theme a sh:PropertyShape ;
     rdfs:label "theme/category" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class skos:Concept ;
     sh:description "This property refers to a category of the Catalog. A Catalog may be associated with multiple themes." ;
     sh:minCount 0 ;
     sh:name "theme" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class skos:Concept ] ) ;
     sh:path dcat:theme ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Catalog_Shape-themeTaxonomy a sh:PropertyShape ;
     rdfs:label "themes" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
-    sh:class skos:ConceptScheme ;
     sh:description "A knowledge organization system (KOS) used to classify the resources documented in the catalog (e.g., datasets and services)." ;
     sh:minCount 0 ;
     sh:name "themeTaxonomy" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class skos:ConceptScheme ] ) ;
     sh:path dcat:themeTaxonomy ;
     sh:severity sh:Violation .
 
@@ -1131,12 +1074,11 @@ dcat-us-shp:Catalog_Shape-title a sh:PropertyShape ;
 dcat-us-shp:Checksum_Shape-algorithm a sh:PropertyShape ;
     rdfs:label "algorithm" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Mandatory ;
-    sh:class spdx:ChecksumAlgorithm ;
     sh:description "The algorithm used to produce the subject Checksum." ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:name "algorithm" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class spdx:ChecksumAlgorithm ] ) ;
     sh:path spdx:algorithm .
 
 dcat-us-shp:Checksum_Shape-checksumValue a sh:PropertyShape ;
@@ -1244,13 +1186,12 @@ dcat-us-shp:Concept_Shape-definition a sh:PropertyShape ;
 dcat-us-shp:Concept_Shape-inScheme a sh:PropertyShape ;
     rdfs:label "in scheme" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Mandatory ;
-    sh:class skos:ConceptScheme ;
     sh:description """
 Concept scheme defining the concept.""" ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:name "inScheme" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class skos:ConceptScheme ] ) ;
     sh:path skos:inScheme ;
     sh:severity sh:Violation .
 
@@ -1278,24 +1219,22 @@ dcat-us-shp:Concept_Shape-prefLabel a sh:PropertyShape ;
 dcat-us-shp:Contact_Shape-address a sh:PropertyShape ;
     rdfs:label "address" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class vcard:Address ;
     sh:description "This property specifies the address of the contact" ;
     sh:minCount 0 ;
     sh:name "address" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class vcard:Address ] ) ;
     sh:path vcard:address ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Contact_Shape-email a sh:PropertyShape ;
     rdfs:label "email" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Mandatory ;
-    sh:class rdfs:Resource ;
     sh:description "The email address of the contact" ;
     sh:maxCount 1 ;
     sh:message "Invalid email format. Should be a URI starting with mailto:" ;
     sh:minCount 1 ;
     sh:name "email" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class rdfs:Resource ] ) ;
     sh:path vcard:email ;
     sh:pattern "^mailto:.+@.+$" ;
     sh:severity sh:Violation .
@@ -1348,13 +1287,12 @@ dcat-us-shp:Contact_Shape-organization-name a sh:PropertyShape ;
 dcat-us-shp:Contact_Shape-tel a sh:PropertyShape ;
     rdfs:label "telephone" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class rdfs:Resource ;
     sh:description "This property specifies the telephone number for telephony communication with the person or organization." ;
     sh:maxCount 1 ;
     sh:message "Invalid telephone format. Should be a URI starting with tel:" ;
     sh:minCount 0 ;
     sh:name "tel" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class rdfs:Resource ] ) ;
     sh:path vcard:tel ;
     sh:pattern "^tel:\\\\+?[1-9][0-9]{1,14}$" ;
     sh:severity sh:Violation .
@@ -1373,46 +1311,42 @@ dcat-us-shp:Contact_Shape-title a sh:PropertyShape ;
 dcat-us-shp:DataService_Shape-accessRights a sh:PropertyShape ;
     rdfs:label "access rights" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dcterms:RightsStatement ;
     sh:description "This property MAY include information regarding access or restrictions based on privacy, security, or other policies." ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "accessRights" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcterms:RightsStatement ] ) ;
     sh:path dcterms:accessRights ;
     sh:severity sh:Violation .
 
 dcat-us-shp:DataService_Shape-category a sh:PropertyShape ;
     rdfs:label "category" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class skos:Concept ;
     sh:description "Category of the data service" ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "category" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class skos:Concept ] ) ;
     sh:path dcterms:type ;
     sh:severity sh:Violation .
 
 dcat-us-shp:DataService_Shape-conformsTo a sh:PropertyShape ;
     rdfs:label "conforms to" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dcterms:Standard ;
     sh:description "This property is used to indicate the general standard or specification that the Data Service endpoints implement." ;
     sh:minCount 0 ;
     sh:name "conformsTo" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcterms:Standard ] ) ;
     sh:path dcterms:conformsTo ;
     sh:severity sh:Violation .
 
 dcat-us-shp:DataService_Shape-contactPoint a sh:PropertyShape ;
     rdfs:label "contact point" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Mandatory ;
-    sh:class vcard:Contact ;
     sh:description "This property contains contact information that can be used for sending comments about the Data Service." ;
     sh:minCount 1 ;
     sh:name "contactPoint" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class vcard:Contact ] ) ;
     sh:path dcat:contactPoint ;
     sh:severity sh:Violation .
 
@@ -1431,11 +1365,10 @@ dcat-us-shp:DataService_Shape-created a sh:PropertyShape ;
 dcat-us-shp:DataService_Shape-creator a sh:PropertyShape ;
     rdfs:label "creator" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class foaf:Agent ;
     sh:description "This property refers to the Agent primarily responsible for producing the Data Service." ;
     sh:minCount 0 ;
     sh:name "creator" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class foaf:Agent ] ) ;
     sh:path dcterms:creator ;
     sh:severity sh:Violation .
 
@@ -1456,51 +1389,47 @@ dcat-us-shp:DataService_Shape-endpointDescription a sh:PropertyShape ;
     sh:description "A description of the services available via the end-points, including their operations, parameters etc." ;
     sh:minCount 0 ;
     sh:name "endpointDescription" ;
-    sh:nodeKind sh:Literal ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class rdfs:Resource ] ) ;
     sh:path dcat:endpointDescription ;
     sh:severity sh:Violation .
 
 dcat-us-shp:DataService_Shape-endpointURL a sh:PropertyShape ;
     rdfs:label "endpoint URL" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Mandatory ;
-    sh:class rdfs:Resource ;
     sh:description "The root location or primary endpoint of the service (a Web-resolvable IRI)" ;
     sh:minCount 1 ;
     sh:name "endpointURL" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class rdfs:Resource ] ) ;
     sh:path dcat:endpointURL ;
     sh:severity sh:Violation .
 
 dcat-us-shp:DataService_Shape-geographicBoundingBox a sh:PropertyShape ;
     rdfs:label "geographic bounding box" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dcat-us:GeographicBoundingBox ;
-    sh:description "GeographicBoundingBox describes the spatial extent of domain of application of an data service and is standardized in WGS 84 Lat/Long coordinate system." ;
+    sh:description "This property describes the spatial extent of domain of application of an data service and is standardized in WGS 84 Lat/Long coordinate system." ;
     sh:minCount 0 ;
     sh:name "geographicBoundingBox" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcat-us:GeographicBoundingBox ] ) ;
     sh:path dcat-us:geographicBoundingBox ;
     sh:severity sh:Violation .
 
 dcat-us-shp:DataService_Shape-hasPolicy a sh:PropertyShape ;
-    rdfs:label "policy" ;
+    rdfs:label "has policy" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class odrl:Policy ;
     sh:description "An ODRL conformant policy expressing the rights associated with the Data Service." ;
     sh:minCount 0 ;
     sh:name "hasPolicy" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class odrl:Policy ] ) ;
     sh:path odrl:hasPolicy ;
     sh:severity sh:Violation .
 
 dcat-us-shp:DataService_Shape-hasQualityMeasurement a sh:PropertyShape ;
     rdfs:label "quality measurement" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dqv:QualityMeasurement ;
     sh:description "Refers to the performed quality measurements." ;
     sh:minCount 0 ;
     sh:name "hasQualityMeasurement" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dqv:QualityMeasurement ] ) ;
     sh:path dqv:hasQualityMeasurement ;
     sh:severity sh:Violation .
 
@@ -1528,28 +1457,26 @@ dcat-us-shp:DataService_Shape-keyword a sh:PropertyShape ;
 dcat-us-shp:DataService_Shape-language a sh:PropertyShape ;
     rdfs:label "language" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dcterms:LinguisticSystem ;
     sh:description "This property refers to a language supported by the Data Service. This property can be repeated if multiple languages are supported in the Data Service." ;
     sh:minCount 0 ;
     sh:name "language" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class dcterms:LinguisticSystem ] ) ;
     sh:path dcterms:language ;
     sh:severity sh:Violation .
 
 dcat-us-shp:DataService_Shape-license a sh:PropertyShape ;
     rdfs:label "license" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
-    sh:class dcterms:LicenseDocument ;
     sh:description "This property refers to the license under which the Data Service is made available." ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "license" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcterms:LicenseDocument ] ) ;
     sh:path dcterms:license ;
     sh:severity sh:Violation .
 
 dcat-us-shp:DataService_Shape-modified a sh:PropertyShape ;
-    rdfs:label "last modified" ;
+    rdfs:label "update/modification date" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
     sh:description "This property contains the most recent date on which the Data Service was changed or modified." ;
     sh:maxCount 1 ;
@@ -1563,75 +1490,69 @@ dcat-us-shp:DataService_Shape-modified a sh:PropertyShape ;
 dcat-us-shp:DataService_Shape-publisher a sh:PropertyShape ;
     rdfs:label "publisher" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Mandatory ;
-    sh:class foaf:Agent ;
     sh:description "This property refers to an entity (organization) responsible for making the Data Service available." ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:name "publisher" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class foaf:Agent ] ) ;
     sh:path dcterms:publisher ;
     sh:severity sh:Violation .
 
 dcat-us-shp:DataService_Shape-qualifiedAttribution a sh:PropertyShape ;
     rdfs:label "qualified attribution" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class prov:Attribution ;
     sh:description "This property refers to a link to an Agent having some form of responsibility for the DataService." ;
     sh:minCount 0 ;
     sh:name "qualifiedAttribution" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class prov:Attribution ] ) ;
     sh:path prov:qualifiedAttribution ;
     sh:severity sh:Violation .
 
 dcat-us-shp:DataService_Shape-rights a sh:PropertyShape ;
     rdfs:label "rights" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dcterms:RightStatement ;
     sh:description "A statement that concerns all rights for the Data Service not addressed with dcterms:license or dcterms:accessRights, such as copyright statements." ;
     sh:minCount 0 ;
     sh:name "rights" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcterms:RightStatement ] ) ;
     sh:path dcterms:rights ;
     sh:severity sh:Violation .
 
 dcat-us-shp:DataService_Shape-rightsHolder a sh:PropertyShape ;
     rdfs:label "rights holder" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class org:Organization ;
     sh:description "This property refers to an Agent (organization) holding rights on the Data Service." ;
     sh:minCount 0 ;
     sh:name "rightsHolder" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class org:Organization ] ) ;
     sh:path dcterms:rightsHolder ;
     sh:severity sh:Violation .
 
 dcat-us-shp:DataService_Shape-servesDataset a sh:PropertyShape ;
     rdfs:label "serves dataset" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
-    sh:class dcat:Dataset ;
-    sh:description "Dataset that is served by this data service" ;
+    sh:description "The Dataset that is served by this data service." ;
     sh:minCount 0 ;
     sh:name "servesDataset" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class dcat:Dataset ] ) ;
     sh:path dcat:servesDataset ;
     sh:severity sh:Violation .
 
 dcat-us-shp:DataService_Shape-spatial a sh:PropertyShape ;
-    rdfs:label "spatial/geographical coverage" ;
+    rdfs:label "spatial/geographic coverage" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dcterms:Location ;
     sh:description "This property refers to a geographic region that is covered by the Data Service." ;
     sh:minCount 0 ;
     sh:name "spatial" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcterms:Location ] ) ;
     sh:path dcterms:spatial ;
     sh:severity sh:Violation .
 
 dcat-us-shp:DataService_Shape-spatialResolutionInMeters a sh:PropertyShape ;
-    rdfs:label "Spatial resolution (meters)" ;
+    rdfs:label "spatial resolution in meters" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
     sh:datatype xsd:decimal ;
-    sh:description "This property refers to the minimum spatial separation resolvable in a Data Service, measured in metres." ;
+    sh:description "This property refers to the minimum spatial separation resolvable in a Data Service, measured in meters." ;
     sh:minCount 0 ;
     sh:name "spatialResolutionInMeters" ;
     sh:nodeKind sh:Literal ;
@@ -1641,19 +1562,17 @@ dcat-us-shp:DataService_Shape-spatialResolutionInMeters a sh:PropertyShape ;
 dcat-us-shp:DataService_Shape-temporal a sh:PropertyShape ;
     rdfs:label "temporal coverage" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dcterms:PeriodOfTime ;
     sh:description "This property refers to a temporal period that the DataService covers." ;
     sh:minCount 0 ;
     sh:name "temporal" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcterms:PeriodOfTime ] ) ;
     sh:path dcterms:temporal ;
     sh:severity sh:Violation .
 
 dcat-us-shp:DataService_Shape-temporalResolution a sh:PropertyShape ;
     rdfs:label "temporal resolution" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:datatype xsd:duration ;
-    sh:description "The minimum time period resolvable by the dataservice." ;
+    sh:description "The minimum time period resolvable by the Data Service." ;
     sh:minCount 0 ;
     sh:name "temporalResolution" ;
     sh:nodeKind sh:Literal ;
@@ -1661,13 +1580,12 @@ dcat-us-shp:DataService_Shape-temporalResolution a sh:PropertyShape ;
     sh:severity sh:Violation .
 
 dcat-us-shp:DataService_Shape-theme a sh:PropertyShape ;
-    rdfs:label "theme" ;
+    rdfs:label "theme/category" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class skos:Concept ;
     sh:description "This property refers to a theme of the Data Service. A Data Service may be associated with multiple themes." ;
     sh:minCount 0 ;
     sh:name "theme" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class skos:Concept ] ) ;
     sh:path dcat:theme ;
     sh:severity sh:Violation .
 
@@ -1683,93 +1601,75 @@ dcat-us-shp:DataService_Shape-title a sh:PropertyShape ;
     sh:severity sh:Violation .
 
 dcat-us-shp:DataService_Shape-wasUsedBy a sh:PropertyShape ;
-    rdfs:label "used by" ;
+    rdfs:label "was used by" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class prov:Activity ;
     sh:description "This property refers to an Activity that used the Data Service." ;
     sh:minCount 0 ;
     sh:name "wasUsedBy" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class prov:Activity ] ) ;
     sh:path prov:wasUsedBy ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Dataset_Shape-accessRights a sh:PropertyShape ;
     rdfs:label "access rights" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dcterms:RightsStatement ;
     sh:description "Information that indicates whether the Dataset is open data, has access restrictions or is public." ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "accessRights" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcterms:RightsStatement ] ) ;
     sh:path dcterms:accessRights ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Dataset_Shape-accrualPeriodicity a sh:PropertyShape ;
     rdfs:label "frequency" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dcterms:Frequency ;
     sh:description "This property refers to the frequency at which the Dataset is updated." ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "accrualPeriodicity" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class dcterms:Frequency ] ) ;
     sh:path dcterms:accrualPeriodicity ;
-    sh:severity sh:Violation .
-
-dcat-us-shp:Dataset_Shape-applicableLegislation a sh:PropertyShape ;
-    rdfs:label "applicable legislation" ;
-    dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dcat-us:Legislation ;
-    sh:description "applicable legislation for this dataset" ;
-    sh:minCount 0 ;
-    sh:name "applicableLegislation" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
-    sh:path dcat-us:applicableLegislation ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Dataset_Shape-category a sh:PropertyShape ;
     rdfs:label "category" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class skos:Concept ;
     sh:description "Category of the dataset" ;
     sh:minCount 0 ;
     sh:name "category" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class skos:Concept ] ) ;
     sh:path dcterms:type ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Dataset_Shape-conformsTo a sh:PropertyShape ;
     rdfs:label "conforms to" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dcterms:Standard ;
     sh:description "This property refers to an standard which the described Dataset conforms." ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "conformsTo" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcterms:Standard ] ) ;
     sh:path dcterms:conformsTo ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Dataset_Shape-contactPoint a sh:PropertyShape ;
     rdfs:label "contact point" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
-    sh:class vcard:Contact ;
     sh:description "This property contains contact information that can be used for sending comments about the Dataset." ;
     sh:minCount 0 ;
     sh:name "contactPoint" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class vcard:Contact ] ) ;
     sh:path dcat:contactPoint ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Dataset_Shape-contributor a sh:PropertyShape ;
     rdfs:label "contributor" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dcterms:Agent ;
     sh:description "This property refers to an agent contributing to the Dataset." ;
     sh:minCount 0 ;
     sh:name "contributor" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcterms:Agent ] ) ;
     sh:path dcterms:contributor ;
     sh:severity sh:Violation .
 
@@ -1788,12 +1688,11 @@ dcat-us-shp:Dataset_Shape-created a sh:PropertyShape ;
 dcat-us-shp:Dataset_Shape-creator a sh:PropertyShape ;
     rdfs:label "creator" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class foaf:Agent ;
     sh:description "This property refers to an entity responsible for producing the dataset." ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "creator" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class foaf:Agent ] ) ;
     sh:path dcterms:creator ;
     sh:severity sh:Violation .
 
@@ -1809,92 +1708,84 @@ dcat-us-shp:Dataset_Shape-description a sh:PropertyShape ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Dataset_Shape-distribution a sh:PropertyShape ;
-    rdfs:label "distribution" ;
+    rdfs:label "dataset distribution" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
-    sh:class dcat:Distribution ;
     sh:description "This property links the Dataset to an available Distribution." ;
     sh:minCount 0 ;
     sh:name "distribution" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcat:Distribution ] ) ;
     sh:path dcat:distribution ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Dataset_Shape-first a sh:PropertyShape ;
     rdfs:label "first" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dcat:Dataset ;
     sh:description "the first item of the sequence the dataset belongs to" ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "first" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class dcat:Dataset ] ) ;
     sh:path dcat:first ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Dataset_Shape-geographicBoundingBox a sh:PropertyShape ;
     rdfs:label "geographic bounding box" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
-    sh:class dcat-us:GeographicBoundingBox ;
     sh:description "WGS84 Geographic Bounding Box for this dataset" ;
     sh:minCount 0 ;
     sh:name "geographicBoundingBox" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcat-us:GeographicBoundingBox ] ) ;
     sh:path dcat-us:geographicBoundingBox ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Dataset_Shape-hasCurrentVersion a sh:PropertyShape ;
     rdfs:label "current version" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dcat:Dataset ;
     sh:description "reference to the current (latest) version of a dataset" ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "hasCurrentVersion" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class dcat:Dataset ] ) ;
     sh:path dcat:hasCurrentVersion ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Dataset_Shape-hasPart a sh:PropertyShape ;
     rdfs:label "has part" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dcat:Dataset ;
     sh:description "This property refers to a related dataset that is part of the described dataset." ;
     sh:minCount 0 ;
     sh:name "hasPart" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class dcat:Dataset ] ) ;
     sh:path dcterms:hasPart ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Dataset_Shape-hasPolicy a sh:PropertyShape ;
     rdfs:label "policy" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class odrl:Policy ;
     sh:description "An ODRL conformant policy expressing the rights associated with the Dataset" ;
     sh:minCount 0 ;
     sh:name "hasPolicy" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class odrl:Policy ] ) ;
     sh:path odrl:hasPolicy ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Dataset_Shape-hasQualityMeasurement a sh:PropertyShape ;
     rdfs:label "quality measurement" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dqv:QualityMeasurement ;
     sh:description "property referring to a quality measurement for the dataset" ;
     sh:minCount 0 ;
     sh:name "hasQualityMeasurement" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dqv:QualityMeasurement ] ) ;
     sh:path dqv:hasQualityMeasurement ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Dataset_Shape-hasVersion a sh:PropertyShape ;
     rdfs:label "has version" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dcat:Dataset ;
     sh:description "A related Dataset that is a version, edition, or adaptation of the described Dataset. " ;
     sh:minCount 0 ;
     sh:name "hasVersion" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class dcat:Dataset ] ) ;
     sh:path dcat:hasVersion ;
     sh:severity sh:Violation .
 
@@ -1911,44 +1802,30 @@ dcat-us-shp:Dataset_Shape-identifier a sh:PropertyShape ;
 dcat-us-shp:Dataset_Shape-image a sh:PropertyShape ;
     rdfs:label "image" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class rdfs:Resource ;
     sh:description "A thumbnail picture illustrating the content of the dataset." ;
     sh:minCount 0 ;
     sh:name "image" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class rdfs:Resource ] ) ;
     sh:path schema:image ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Dataset_Shape-inSeries a sh:PropertyShape ;
     rdfs:label "in series" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dcat:DatasetSeries ;
     sh:description "Dataset Series this dataset belong to" ;
     sh:minCount 0 ;
     sh:name "inSeries" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class dcat:DatasetSeries ] ) ;
     sh:path dcat:inSeries ;
-    sh:severity sh:Violation .
-
-dcat-us-shp:Dataset_Shape-investment a sh:PropertyShape ;
-    rdfs:label "investment" ;
-    dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dcat-us:Investment ;
-    sh:description "federal investment used to produce a dataset" ;
-    sh:minCount 0 ;
-    sh:name "investment" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
-    sh:path dcat-us:investment ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Dataset_Shape-isReferencedBy a sh:PropertyShape ;
     rdfs:label "is referenced by" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class rdfs:Resource ;
     sh:description "This property is about a related resource, such as a publication, that references, cites, or otherwise points to the Dataset." ;
     sh:minCount 0 ;
     sh:name "isReferencedBy" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class rdfs:Resource ] ) ;
     sh:path dcterms:isReferencedBy ;
     sh:severity sh:Violation .
 
@@ -1978,46 +1855,42 @@ dcat-us-shp:Dataset_Shape-keyword a sh:PropertyShape ;
 dcat-us-shp:Dataset_Shape-landingPage a sh:PropertyShape ;
     rdfs:label "landing page" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
-    sh:class foaf:Document ;
     sh:description "This property refers to a web page that provides access to the Dataset, its Distributions and/or additional information." ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "landingPage" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class foaf:Document ] ) ;
     sh:path dcat:landingPage ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Dataset_Shape-language a sh:PropertyShape ;
     rdfs:label "language" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dcterms:LinguisticSystem ;
     sh:description "A language used in the Dataset." ;
     sh:minCount 0 ;
     sh:name "language" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class dcterms:LinguisticSystem ] ) ;
     sh:path dcterms:language ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Dataset_Shape-liabilityStatement a sh:PropertyShape ;
     rdfs:label "liability statement" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dcat-us:LiabilityStatement ;
     sh:description "A liability statement about the dataset" ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "liabilityStatement" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcat-us:LiabilityStatement ] ) ;
     sh:path dcat-us:liabilityStatement ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Dataset_Shape-metadataDistribution a sh:PropertyShape ;
     rdfs:label "metadata distribution" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dcat:Distribution ;
     sh:description "Distribution to \"original\" metadata document" ;
     sh:minCount 0 ;
     sh:name "metadataDistribution" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class dcat:Distribution ] ) ;
     sh:path dcat-us:metadataDistribution ;
     sh:severity sh:Violation .
 
@@ -2036,69 +1909,53 @@ dcat-us-shp:Dataset_Shape-modified a sh:PropertyShape ;
 dcat-us-shp:Dataset_Shape-otherIdentifier a sh:PropertyShape ;
     rdfs:label "other identifier" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class adms:Identifier ;
     sh:description "reference to a structure identifier." ;
     sh:minCount 0 ;
     sh:name "otherIdentifier" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class adms:Identifier ] ) ;
     sh:path adms:identifier ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Dataset_Shape-page a sh:PropertyShape ;
     rdfs:label "documentation" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class foaf:Document ;
     sh:description "A page or document about this dataset" ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "page" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class foaf:Document ] ) ;
     sh:path foaf:page ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Dataset_Shape-previousVersion a sh:PropertyShape ;
     rdfs:label "previous version" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dcat:Dataset ;
     sh:description "previous dataset version " ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "previousVersion" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class dcat:Dataset ] ) ;
     sh:path dcat:previousVersion ;
-    sh:severity sh:Violation .
-
-dcat-us-shp:Dataset_Shape-program a sh:PropertyShape ;
-    rdfs:label "program" ;
-    dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dcat-us:Program ;
-    sh:description "federal program used to produce a dataset" ;
-    sh:minCount 0 ;
-    sh:name "program" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
-    sh:path dcat-us:program ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Dataset_Shape-provenance a sh:PropertyShape ;
     rdfs:label "provenance" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dcterms:ProvenanceStatement ;
     sh:description "A statement about the lineage of a Dataset" ;
     sh:minCount 0 ;
     sh:name "provenance" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcterms:ProvenanceStatement ] ) ;
     sh:path dcterms:provenance ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Dataset_Shape-publisher a sh:PropertyShape ;
     rdfs:label "publisher" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Mandatory ;
-    sh:class org:Organization ;
     sh:description "This property refers to an organisation responsible for making the Dataset available." ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:name "publisher" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class org:Organization ] ) ;
     sh:path dcterms:publisher ;
     sh:severity sh:Violation .
 
@@ -2116,100 +1973,102 @@ dcat-us-shp:Dataset_Shape-purpose a sh:PropertyShape ;
 dcat-us-shp:Dataset_Shape-qualifiedAttribution a sh:PropertyShape ;
     rdfs:label "qualified attribution" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class prov:Attribution ;
     sh:description "An agent having some form of responsibility for the dataset" ;
     sh:minCount 0 ;
     sh:name "qualifiedAttribution" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class prov:Attribution ] ) ;
     sh:path prov:qualifiedAttribution ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Dataset_Shape-qualifiedRelation a sh:PropertyShape ;
     rdfs:label "qualified relation" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dcat:Relationship ;
     sh:description "Qualified relationship with role of the dataset with another resource" ;
     sh:minCount 0 ;
     sh:name "qualifiedRelation" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcat:Relationship ] ) ;
     sh:path dcat:qualifiedRelation ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Dataset_Shape-relation a sh:PropertyShape ;
     rdfs:label "related resource" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class rdfs:Resource ;
     sh:description "Reference to a related source" ;
     sh:minCount 0 ;
     sh:name "relation" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class rdfs:Resource ] ) ;
     sh:path dcterms:relation ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Dataset_Shape-replaces a sh:PropertyShape ;
     rdfs:label "replaces" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dcat:Dataset ;
     sh:description "Reference to the replaced Dataset" ;
     sh:minCount 0 ;
     sh:name "replaces" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class dcat:Dataset ] ) ;
     sh:path dcterms:replaces ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Dataset_Shape-rights a sh:PropertyShape ;
     rdfs:label "rights" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dcterms:RightStatement ;
     sh:description "A statement that concerns all rights for the Dataset not addressed with dcterms:license or dcterms:accessRights, such as copyright statements." ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "rights" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcterms:RightStatement ] ) ;
     sh:path dcterms:rights ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Dataset_Shape-rightsHolder a sh:PropertyShape ;
     rdfs:label "rights holder" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class org:Organization ;
     sh:description "This property refers to an Agent (organization) holding rights on the Dataset." ;
     sh:minCount 0 ;
     sh:name "rightsHolder" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class org:Organization ] ) ;
     sh:path dcterms:rightsHolder ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Dataset_Shape-sample a sh:PropertyShape ;
     rdfs:label "sample" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dcat:Distribution ;
     sh:description "Links to a sample of an Dataset, which is a dcat:Distribution." ;
     sh:minCount 0 ;
     sh:name "sample" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class dcat:Distribution ] ) ;
     sh:path adms:sample ;
+    sh:severity sh:Violation .
+
+dcat-us-shp:Dataset_Shape-scopeNote a sh:PropertyShape ;
+    rdfs:label "usage note" ;
+    dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
+    sh:description "usage note for the dataset" ;
+    sh:minCount 0 ;
+    sh:name "scopeNote" ;
+    sh:nodeKind sh:Literal ;
+    sh:or dash:StringOrLangString ;
+    sh:path skos:scopeNote ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Dataset_Shape-source a sh:PropertyShape ;
     rdfs:label "data source" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class rdfs:Resource ;
     sh:description "Reference to the source of the dataset" ;
     sh:minCount 0 ;
     sh:name "source" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class rdfs:Resource ] ) ;
     sh:path dcterms:source ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Dataset_Shape-spatial a sh:PropertyShape ;
-    rdfs:label "spatial/geographical coverage" ;
+    rdfs:label "spatial/geographic coverage" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
-    sh:class dcterms:Location ;
-    sh:description "This property refers to the spatial coverage of the dataset" ;
+    sh:description "This property refers to a geographic region that is covered by the Dataset." ;
     sh:minCount 0 ;
     sh:name "spatial" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcterms:Location ] ) ;
     sh:path dcterms:spatial ;
     sh:severity sh:Violation .
 
@@ -2227,46 +2086,42 @@ dcat-us-shp:Dataset_Shape-spatialResolutionInMeters a sh:PropertyShape ;
 
 dcat-us-shp:Dataset_Shape-status a sh:PropertyShape ;
     rdfs:label "lifecycle status" ;
-    sh:class skos:Concept ;
     sh:description "The status of the dataset  in the context of maturity lifecycle." ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "status" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class skos:Concept ] ) ;
     sh:path adms:status ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Dataset_Shape-subject a sh:PropertyShape ;
     rdfs:label "subject" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class skos:Concept ;
     sh:description "Primary subject of the dataset" ;
     sh:minCount 0 ;
     sh:name "subject" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class skos:Concept ] ) ;
     sh:path dcterms:subject ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Dataset_Shape-supportedSchema a sh:PropertyShape ;
     rdfs:label "supported schema" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dcat:Dataset ;
     sh:description "supported schema for this dataset" ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "supportedSchema" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class dcat:Dataset ] ) ;
     sh:path adms:supportedSchema ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Dataset_Shape-temporal a sh:PropertyShape ;
     rdfs:label "temporal coverage" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
-    sh:class dcterms:PeriodOfTime ;
     sh:description "This property refers to a temporal period that the dataset  covers." ;
     sh:minCount 0 ;
     sh:name "temporal" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcterms:PeriodOfTime ] ) ;
     sh:path dcterms:temporal ;
     sh:severity sh:Violation .
 
@@ -2285,11 +2140,10 @@ dcat-us-shp:Dataset_Shape-temporalResolution a sh:PropertyShape ;
 dcat-us-shp:Dataset_Shape-theme a sh:PropertyShape ;
     rdfs:label "theme/category" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
-    sh:class skos:Concept ;
     sh:description "A theme of the dataset" ;
     sh:minCount 0 ;
     sh:name "theme" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class skos:Concept ] ) ;
     sh:path dcat:theme ;
     sh:severity sh:Violation .
 
@@ -2302,17 +2156,6 @@ dcat-us-shp:Dataset_Shape-title a sh:PropertyShape ;
     sh:nodeKind sh:Literal ;
     sh:or dash:StringOrLangString ;
     sh:path dcterms:title ;
-    sh:severity sh:Violation .
-
-dcat-us-shp:Dataset_Shape-usageNote a sh:PropertyShape ;
-    rdfs:label "usage note" ;
-    dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:description "usage note for the dataset" ;
-    sh:minCount 0 ;
-    sh:name "usageNote" ;
-    sh:nodeKind sh:Literal ;
-    sh:or dash:StringOrLangString ;
-    sh:path vann:usageNote ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Dataset_Shape-version a sh:PropertyShape ;
@@ -2340,90 +2183,83 @@ dcat-us-shp:Dataset_Shape-versionNotes a sh:PropertyShape ;
 dcat-us-shp:Dataset_Shape-wasAttributedTo a sh:PropertyShape ;
     rdfs:label "attribution" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class foaf:Agent ;
     sh:description "Agent attributed to this dataset" ;
     sh:minCount 0 ;
     sh:name "wasAttributedTo" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class foaf:Agent ] ) ;
     sh:path prov:wasAttributedTo ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Dataset_Shape-wasGeneratedBy a sh:PropertyShape ;
     rdfs:label "was generated by" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class prov:Activity ;
     sh:description "An activity that generated, or provides the business context for, the creation of the dataset" ;
     sh:minCount 0 ;
     sh:name "wasGeneratedBy" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class prov:Activity ] ) ;
     sh:path prov:wasGeneratedBy ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Dataset_Shape-wasUsedBy a sh:PropertyShape ;
     rdfs:label "used by" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class prov:Activity ;
     sh:description "This property refers to an Activity that used the Dataset" ;
     sh:minCount 0 ;
     sh:name "wasUsedBy" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class prov:Activity ] ) ;
     sh:path prov:wasUsedBy ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Distribution_Shape-accessRestriction a sh:PropertyShape ;
     rdfs:label "access restriction" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dcat-us:AccessRestriction ;
     sh:description "Access restriction related to the distribution" ;
     sh:minCount 0 ;
     sh:name "accessRestriction" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcat-us:AccessRestriction ] ) ;
     sh:path dcat-us:accessRestriction ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Distribution_Shape-accessRights a sh:PropertyShape ;
     rdfs:label "access rights" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dcterms:RightsStatement ;
     sh:description "This property MAY include information regarding access or restrictions based on privacy, security, or other policies." ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "accessRights" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcterms:RightsStatement ] ) ;
     sh:path dcterms:accessRights ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Distribution_Shape-accessService a sh:PropertyShape ;
     rdfs:label "access service" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dcat:DataService ;
     sh:description "A data service that gives access to the distribution of the dataset." ;
     sh:minCount 0 ;
     sh:name "accessService" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class dcat:DataService ] ) ;
     sh:path dcat:accessService ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Distribution_Shape-accessURL a sh:PropertyShape ;
     rdfs:label "access URL" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Mandatory ;
-    sh:class rdfs:Resource ;
     sh:description "A URL that gives access to a Distribution of the Dataset." ;
-    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
     sh:name "accessURL" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class rdfs:Resource ] ) ;
     sh:path dcat:accessURL ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Distribution_Shape-availability a sh:PropertyShape ;
     rdfs:label "availability" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
-    sh:class skos:Concept ;
     sh:description "An indication how long it is planned to keep the Distribution of the Dataset available." ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "availability" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class skos:Concept ] ) ;
     sh:path dcatap:availability ;
     sh:severity sh:Violation .
 
@@ -2452,47 +2288,43 @@ dcat-us-shp:Distribution_Shape-characterEncoding a sh:PropertyShape ;
 dcat-us-shp:Distribution_Shape-checksum a sh:PropertyShape ;
     rdfs:label "checksum" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class spdx:Checksum ;
     sh:description "A mechanism that can be used to verify that the contents of a distribution have not changed." ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "checksum" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class spdx:Checksum ] ) ;
     sh:path spdx:checksum ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Distribution_Shape-compressFormat a sh:PropertyShape ;
     rdfs:label "compression format" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dcterms:MediaType ;
     sh:description "The format of the file in which the data is contained in a compressed form, e.g. to reduce the size of the downloadable file" ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "compressFormat" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcterms:MediaType ] ) ;
     sh:path dcat:compressFormat ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Distribution_Shape-conformsTo a sh:PropertyShape ;
     rdfs:label "linked schemas" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dcterms:Standard ;
     sh:description "This property refers to an established schema or reference systems which the described Distribution conforms." ;
     sh:minCount 0 ;
     sh:name "conformsTo" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcterms:Standard ] ) ;
     sh:path dcterms:conformsTo ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Distribution_Shape-cuiRestriction a sh:PropertyShape ;
     rdfs:label "CUI restriction" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dcat-us:CUIRestriction ;
     sh:description "Controlled Unclassified Information restriction related to the distribution" ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "cuiRestriction" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcat-us:CUIRestriction ] ) ;
     sh:path dcat-us:cuiRestriction ;
     sh:severity sh:Violation .
 
@@ -2510,56 +2342,42 @@ dcat-us-shp:Distribution_Shape-description a sh:PropertyShape ;
 dcat-us-shp:Distribution_Shape-downloadURL a sh:PropertyShape ;
     rdfs:label "download URL" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class rdfs:Resource ;
     sh:description "A URL that is a direct link to a downloadable file in a given format." ;
+    sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "downloadURL" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class rdfs:Resource ] ) ;
     sh:path dcat:downloadURL ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Distribution_Shape-format a sh:PropertyShape ;
     rdfs:label "format" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
-    sh:class dcterms:MediaType ;
     sh:description "The file format of the Distribution." ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "format" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcterms:MediaType ] ) ;
     sh:path dcterms:format ;
-    sh:severity sh:Violation .
-
-dcat-us-shp:Distribution_Shape-hasPolicy a sh:PropertyShape ;
-    rdfs:label "policy" ;
-    dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class odrl:Policy ;
-    sh:description "An ODRL conformant policy expressing the rights associated with the Data Service." ;
-    sh:minCount 0 ;
-    sh:name "hasPolicy" ;
-    sh:nodeKind sh:IRI ;
-    sh:path odrl:hasPolicy ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Distribution_Shape-hasQualityMeasurement a sh:PropertyShape ;
     rdfs:label "quality measurement" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dqv:QualityMeasurement ;
     sh:description "property referring to a quality measurement for the distribution" ;
     sh:minCount 0 ;
     sh:name "hasQualityMeasurement" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dqv:QualityMeasurement ] ) ;
     sh:path dqv:hasQualityMeasurement ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Distribution_Shape-image a sh:PropertyShape ;
     rdfs:label "image" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class rdfs:Resource ;
     sh:description "A thumbnail picture illustrating the content of the distribution" ;
     sh:minCount 0 ;
     sh:name "image" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class rdfs:Resource ] ) ;
     sh:path schema:image ;
     sh:severity sh:Violation .
 
@@ -2578,35 +2396,32 @@ dcat-us-shp:Distribution_Shape-issued a sh:PropertyShape ;
 dcat-us-shp:Distribution_Shape-language a sh:PropertyShape ;
     rdfs:label "language" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dcterms:LinguisticSystem ;
     sh:description "A language used in the Distribution." ;
     sh:minCount 0 ;
     sh:name "language" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class dcterms:LinguisticSystem ] ) ;
     sh:path dcterms:language ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Distribution_Shape-license a sh:PropertyShape ;
     rdfs:label "license" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Mandatory ;
-    sh:class dcterms:LicenseDocument ;
     sh:description "A licence under which the Distribution is made available." ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:name "license" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcterms:LicenseDocument ] ) ;
     sh:path dcterms:license ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Distribution_Shape-mediaType a sh:PropertyShape ;
     rdfs:label "media type" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dcterms:MediaType ;
     sh:description "The media type of the Distribution as defined in the official register of media types managed by IANA." ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "mediaType" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcterms:MediaType ] ) ;
     sh:path dcat:mediaType ;
     sh:severity sh:Violation .
 
@@ -2625,47 +2440,43 @@ dcat-us-shp:Distribution_Shape-modified a sh:PropertyShape ;
 dcat-us-shp:Distribution_Shape-packageFormat a sh:PropertyShape ;
     rdfs:label "packaging format" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dcterms:MediaType ;
     sh:description "The format of the file in which one or more data files are grouped together, e.g. to enable a set of related files to be downloaded together." ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "packageFormat" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcterms:MediaType ] ) ;
     sh:path dcat:packageFormat ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Distribution_Shape-page a sh:PropertyShape ;
     rdfs:label "documentation" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class foaf:Document ;
     sh:description "A page or document about this Distribution." ;
     sh:minCount 0 ;
     sh:name "page" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class foaf:Document ] ) ;
     sh:path foaf:page ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Distribution_Shape-representationTechnique a sh:PropertyShape ;
     rdfs:label "representation technique" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class skos:Concept ;
     sh:description "This property MAY be used to provide more information about the format in which an Distribution is released. This is different from the file format as, for example, a ZIP file (file format) could contain an XML schema (representation technique). In DCAT-US profile,  this property SHOULD be used to express the spatial representation type (grid, vector, tin), by using the URIs of the corresponding code list operated by an approved registry. " ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "representationTechnique" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class skos:Concept ] ) ;
     sh:path adms:representationTechnique ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Distribution_Shape-rights a sh:PropertyShape ;
     rdfs:label "rights" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
-    sh:class dcterms:RightsStatement ;
     sh:description "A statement that specifies rights associated with the Distribution." ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "rights" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcterms:RightsStatement ] ) ;
     sh:path dcterms:rights ;
     sh:severity sh:Violation .
 
@@ -2684,12 +2495,11 @@ dcat-us-shp:Distribution_Shape-spatialResolutionInMeters a sh:PropertyShape ;
 dcat-us-shp:Distribution_Shape-status a sh:PropertyShape ;
     rdfs:label "lifecycle status" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class skos:Concept ;
     sh:description "The status of the distribution in the context of maturity lifecycle." ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "status" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class skos:Concept ] ) ;
     sh:path adms:status ;
     sh:severity sh:Violation .
 
@@ -2719,11 +2529,10 @@ dcat-us-shp:Distribution_Shape-title a sh:PropertyShape ;
 dcat-us-shp:Distribution_Shape-useRestriction a sh:PropertyShape ;
     rdfs:label "use restriction" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dcat-us:UseRestriction ;
     sh:description "Use restriction related to the distribution" ;
     sh:minCount 0 ;
     sh:name "useRestriction" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcat-us:UseRestriction ] ) ;
     sh:path dcat-us:useRestriction ;
     sh:severity sh:Violation .
 
@@ -2752,45 +2561,45 @@ dcat-us-shp:Document_Shape-bibliographicCitation a sh:PropertyShape ;
 dcat-us-shp:Document_Shape-category a sh:PropertyShape ;
     rdfs:label "category" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
-    sh:class skos:Concept ;
     sh:description "Category of the document" ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "category" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class skos:Concept ] ) ;
     sh:path dcterms:type ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Document_Shape-conformsTo a sh:PropertyShape ;
     rdfs:label "conforms to standard" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dcterms:Standard ;
     sh:description "This property refers to an standard which the described Document conforms." ;
     sh:minCount 0 ;
     sh:name "conformsTo" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcterms:Standard ] ) ;
     sh:path dcterms:conformsTo ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Document_Shape-creator a sh:PropertyShape ;
-    rdfs:label "author(s) as literal",
-        "corporate author",
+    rdfs:label "corporate author",
         "individual author" ;
-    dcat-us-shp:requirementLevel dcat-us-shp:Mandatory,
-        dcat-us-shp:Optional ;
-    sh:class org:Organization,
-        foaf:Person ;
+    dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
     sh:description "The organization responsible for creating the resource.",
-        "The person responsible for creating the document.",
-        "list of authors as a literal" ;
-    sh:minCount 0,
-        1 ;
+        "The person responsible for creating the document." ;
+    sh:minCount 0 ;
     sh:name "creator" ;
-    sh:nodeKind sh:BlankNodeOrIRI,
-        sh:IRI,
-        sh:Literal ;
-    sh:path dc:creator,
-        dcterms:creator ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class org:Organization ] ),
+        ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class foaf:Person ] ) ;
+    sh:path dcterms:creator ;
+    sh:severity sh:Violation .
+
+dcat-us-shp:Document_Shape-creators a sh:PropertyShape ;
+    rdfs:label "author(s) as literal" ;
+    dcat-us-shp:requirementLevel dcat-us-shp:Mandatory ;
+    sh:description "list of authors as a literal" ;
+    sh:minCount 1 ;
+    sh:name "creators" ;
+    sh:nodeKind sh:Literal ;
+    sh:path dc:creator ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Document_Shape-description a sh:PropertyShape ;
@@ -2830,28 +2639,33 @@ dcat-us-shp:Document_Shape-issued a sh:PropertyShape ;
 dcat-us-shp:Document_Shape-mediaType a sh:PropertyShape ;
     rdfs:label "media type" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class dcterms:MediaType ;
     sh:description "The file format of the Document." ;
     sh:minCount 0 ;
     sh:name "mediaType" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class dcterms:MediaType ] ) ;
     sh:path dcat:mediaType ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Document_Shape-publisher a sh:PropertyShape ;
-    rdfs:label "publisher",
-        "publisher(s) as literal" ;
+    rdfs:label "publisher" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Mandatory ;
-    sh:class org:Organization ;
-    sh:description "list of publishers as a literal",
-        "publisher organization of the document" ;
+    sh:description "publisher organization of the document" ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:name "publisher" ;
-    sh:nodeKind sh:IRI,
-        sh:Literal ;
-    sh:path dc:publisher,
-        dcterms:publisher ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class org:Organization ] ) ;
+    sh:path dcterms:publisher ;
+    sh:severity sh:Violation .
+
+dcat-us-shp:Document_Shape-publishers a sh:PropertyShape ;
+    rdfs:label "publisher(s) as literal" ;
+    dcat-us-shp:requirementLevel dcat-us-shp:Mandatory ;
+    sh:description "list of publishers as a literal" ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "publishers" ;
+    sh:nodeKind sh:Literal ;
+    sh:path dc:publisher ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Document_Shape-title a sh:PropertyShape ;
@@ -2924,12 +2738,11 @@ dcat-us-shp:GeographicBoundingBox_Shape-westBoundingLongitude a sh:PropertyShape
 dcat-us-shp:Identifier_Shape-creator a sh:PropertyShape ;
     rdfs:label "creator" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class org:Organization ;
     sh:description "the agency that manages the identifier scheme" ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "creator" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class org:Organization ] ) ;
     sh:path dcterms:creator ;
     sh:severity sh:Violation .
 
@@ -2959,11 +2772,11 @@ dcat-us-shp:Identifier_Shape-notation a sh:PropertyShape ;
 dcat-us-shp:Identifier_Shape-schemaAgency a sh:PropertyShape ;
     rdfs:label "schema agency" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class org:Organization ;
     sh:description "The name of the agency that issued the identifier." ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "schemaAgency" ;
+    sh:nodeKind sh:Literal ;
     sh:path adms:schemaAgency ;
     sh:severity sh:Violation .
 
@@ -2976,60 +2789,6 @@ dcat-us-shp:Identifier_Shape-version a sh:PropertyShape ;
     sh:name "version" ;
     sh:nodeKind sh:Literal ;
     sh:path dcterms:version ;
-    sh:severity sh:Violation .
-
-dcat-us-shp:Investment_Shape-category a sh:PropertyShape ;
-    rdfs:label "category" ;
-    dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class skos:Concept ;
-    sh:description "Category of the investment" ;
-    sh:minCount 0 ;
-    sh:name "category" ;
-    sh:nodeKind sh:IRI ;
-    sh:path dcterms:type ;
-    sh:severity sh:Violation .
-
-dcat-us-shp:Investment_Shape-description a sh:PropertyShape ;
-    rdfs:label "description" ;
-    dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
-    sh:description "This property contains a free-text account of the Standard. This property can be repeated for parallel language versions of the description" ;
-    sh:minCount 0 ;
-    sh:name "description" ;
-    sh:nodeKind sh:Literal ;
-    sh:or dash:StringOrLangString ;
-    sh:path dcterms:description ;
-    sh:severity sh:Violation .
-
-dcat-us-shp:Investment_Shape-identifier a sh:PropertyShape ;
-    rdfs:label "identifier" ;
-    dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:description "identifier of the investment" ;
-    sh:minCount 0 ;
-    sh:name "identifier" ;
-    sh:nodeKind sh:Literal ;
-    sh:path dcterms:identifier ;
-    sh:severity sh:Violation .
-
-dcat-us-shp:Investment_Shape-otherIdentifier a sh:PropertyShape ;
-    rdfs:label "other identifier" ;
-    dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class adms:Identifier ;
-    sh:description "This property refers to a secondary identifier of the Investment" ;
-    sh:minCount 0 ;
-    sh:name "otherIdentifier" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
-    sh:path adms:identifier ;
-    sh:severity sh:Violation .
-
-dcat-us-shp:Investment_Shape-title a sh:PropertyShape ;
-    rdfs:label "title" ;
-    dcat-us-shp:requirementLevel dcat-us-shp:Mandatory ;
-    sh:description "This property contains a name given to the Standard. This property can be repeated for parallel language versions of the name" ;
-    sh:minCount 1 ;
-    sh:name "title" ;
-    sh:nodeKind sh:Literal ;
-    sh:or dash:StringOrLangString ;
-    sh:path dcterms:title ;
     sh:severity sh:Violation .
 
 dcat-us-shp:LiabilityStatement_Shape-label a sh:PropertyShape ;
@@ -3103,12 +2862,11 @@ dcat-us-shp:Location_Shape-identifier a sh:PropertyShape ;
 dcat-us-shp:Location_Shape-inScheme a sh:PropertyShape ;
     rdfs:label "gazetteer" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class skos:ConceptScheme ;
     sh:description "This property MAY be used to specify the gazetteer to which the Location belongs." ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "inScheme" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class skos:ConceptScheme ] ) ;
     sh:path skos:inScheme ;
     sh:severity sh:Violation .
 
@@ -3138,24 +2896,22 @@ dcat-us-shp:MediaType_Shape-label a sh:PropertyShape ;
 dcat-us-shp:Metric_Shape-expectedDataType a sh:PropertyShape ;
     rdfs:label "expected datatype" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Mandatory ;
-    sh:class xsd:anySimpleType ;
     sh:description "Represents the expected data type for the metric's observed value (e.g., xsd:boolean, xsd:double etc...)" ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:name "expectedDataType" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class xsd:anySimpleType ] ) ;
     sh:path dqv:expectedDataType ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Metric_Shape-inDimension a sh:PropertyShape ;
     rdfs:label "in dimension" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Mandatory ;
-    sh:class dqv:Dimension ;
     sh:description "Represents the dimensions a quality metric, certificate and annotation allow a measurement of." ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:name "inDimension" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class dqv:Dimension ] ) ;
     sh:path dqv:inDimension ;
     sh:severity sh:Violation .
 
@@ -3207,11 +2963,10 @@ dcat-us-shp:Organization_Shape-prefLabel a sh:PropertyShape ;
 dcat-us-shp:Organization_Shape-subOrganizationOf a sh:PropertyShape ;
     rdfs:label "suborganization of" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class org:Organization ;
     sh:description "Represents hierarchical containment of Organizations or OrganizationalUnits; indicates an Organization which contains this Organization." ;
     sh:minCount 0 ;
     sh:name "subOrganizationOf" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class org:Organization ] ) ;
     sh:path org:subOrganizationOf ;
     sh:severity sh:Violation .
 
@@ -3239,7 +2994,9 @@ dcat-us-shp:PeriodOfTime_Shape-startDate a sh:PropertyShape ;
     sh:path dcat:startDate ;
     sh:severity sh:Violation .
 
-dcat-us-shp:PersonOrOrganization rdf:first ( foaf:Person org:Organization ) .
+dcat-us-shp:PersonOrOrganization a rdf:List ;
+    rdf:first [ sh:class foaf:Person ] ;
+    rdf:rest ( [ sh:class org:Organization ] ) .
 
 dcat-us-shp:Person_Shape-firstname a sh:PropertyShape ;
     rdfs:label "first name" ;
@@ -3268,11 +3025,10 @@ dcat-us-shp:Person_Shape-givenName a sh:PropertyShape ;
 dcat-us-shp:Person_Shape-memberOf a sh:PropertyShape ;
     rdfs:label "member of" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class org:Organization ;
     sh:description "This property MAY be used to specify the affiliation of the Person to an organization." ;
     sh:minCount 0 ;
     sh:name "memberOf" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class org:Organization ] ) ;
     sh:path org:memberOf ;
     sh:severity sh:Violation .
 
@@ -3286,60 +3042,6 @@ dcat-us-shp:Person_Shape-name a sh:PropertyShape ;
     sh:name "name" ;
     sh:nodeKind sh:Literal ;
     sh:path foaf:name ;
-    sh:severity sh:Violation .
-
-dcat-us-shp:Program_Shape-category a sh:PropertyShape ;
-    rdfs:label "category" ;
-    dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class skos:Concept ;
-    sh:description "Category of the program" ;
-    sh:minCount 0 ;
-    sh:name "category" ;
-    sh:nodeKind sh:IRI ;
-    sh:path dcterms:type ;
-    sh:severity sh:Violation .
-
-dcat-us-shp:Program_Shape-description a sh:PropertyShape ;
-    rdfs:label "description" ;
-    dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
-    sh:description "This property contains a free-text account of the Program. This property can be repeated for parallel language versions of the description" ;
-    sh:minCount 0 ;
-    sh:name "description" ;
-    sh:nodeKind sh:Literal ;
-    sh:or dash:StringOrLangString ;
-    sh:path dcterms:description ;
-    sh:severity sh:Violation .
-
-dcat-us-shp:Program_Shape-identifier a sh:PropertyShape ;
-    rdfs:label "identifier" ;
-    dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:description "This property contains the unique identifier for the Program." ;
-    sh:minCount 0 ;
-    sh:name "identifier" ;
-    sh:nodeKind sh:Literal ;
-    sh:path dcterms:identifier ;
-    sh:severity sh:Violation .
-
-dcat-us-shp:Program_Shape-otherIdentifier a sh:PropertyShape ;
-    rdfs:label "other identifier" ;
-    dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:class adms:Identifier ;
-    sh:description "This property refers to a secondary identifier of the Dataset, such as MAST/ADS [MAST-ADS], [DataCite], [DOI], [EZID] or [W3ID]." ;
-    sh:minCount 0 ;
-    sh:name "otherIdentifier" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
-    sh:path adms:identifier ;
-    sh:severity sh:Violation .
-
-dcat-us-shp:Program_Shape-title a sh:PropertyShape ;
-    rdfs:label "title" ;
-    dcat-us-shp:requirementLevel dcat-us-shp:Mandatory ;
-    sh:description "This property contains a title of the program. This property can be repeated for parallel language versions of the name" ;
-    sh:minCount 1 ;
-    sh:name "title" ;
-    sh:nodeKind sh:Literal ;
-    sh:or dash:StringOrLangString ;
-    sh:path dcterms:title ;
     sh:severity sh:Violation .
 
 dcat-us-shp:ProvenanceStatement_Shape-label a sh:PropertyShape ;
@@ -3356,24 +3058,22 @@ dcat-us-shp:ProvenanceStatement_Shape-label a sh:PropertyShape ;
 dcat-us-shp:QualityMeasurement_Shape-isMeasurementOf a sh:PropertyShape ;
     rdfs:label "is measurement of" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Mandatory ;
-    sh:class dqv:Metric ;
     sh:description "Indicates the metric being observed." ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:name "isMeasurementOf" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class dqv:Metric ] ) ;
     sh:path dqv:isMeasurementOf ;
     sh:severity sh:Violation .
 
 dcat-us-shp:QualityMeasurement_Shape-unitMeasure a sh:PropertyShape ;
     rdfs:label "unit of measure" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
-    sh:class rdfs:Resource ;
     sh:description "Unit of measure associated with the value" ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "unitMeasure" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class rdfs:Resource ] ) ;
     sh:path sdmx-attribute:unitMeasure ;
     sh:severity sh:Violation .
 
@@ -3391,24 +3091,22 @@ dcat-us-shp:QualityMeasurement_Shape-value a sh:PropertyShape ;
 dcat-us-shp:Relationship_Shape-hadRole a sh:PropertyShape ;
     rdfs:label "role" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Mandatory ;
-    sh:class dcat:Role ;
     sh:description "The function of an entity or agent with respect to another entity or resource." ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:name "hadRole" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class dcat:Role ] ) ;
     sh:path dcat:hadRole ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Relationship_Shape-relation a sh:PropertyShape ;
     rdfs:label "relation" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Mandatory ;
-    sh:class rdfs:Resource ;
     sh:description "The resource related to the source resource." ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:name "relation" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class rdfs:Resource ] ) ;
     sh:path dcterms:relation ;
     sh:severity sh:Violation .
 
@@ -3426,12 +3124,11 @@ dcat-us-shp:RightsStatement_Shape-attributionText a sh:PropertyShape ;
 dcat-us-shp:Standard_Shape-category a sh:PropertyShape ;
     rdfs:label "category" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
-    sh:class skos:Concept ;
     sh:description "This property refers to the type of the Standard. A controlled vocabulary for the values has not been established." ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "category" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class skos:Concept ] ) ;
     sh:path dcterms:type ;
     sh:severity sh:Violation .
 
@@ -3471,12 +3168,11 @@ dcat-us-shp:Standard_Shape-identifier a sh:PropertyShape ;
 dcat-us-shp:Standard_Shape-inScheme a sh:PropertyShape ;
     rdfs:label "in scheme" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
-    sh:class skos:ConceptScheme ;
     sh:description "This property MAY be used to specify the reference register to which the Standard belongs." ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "inScheme" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class skos:ConceptScheme ] ) ;
     sh:path skos:inScheme ;
     sh:severity sh:Violation .
 
@@ -3530,47 +3226,42 @@ dcat-us-shp:UseRestriction_Shape-restrictionNote a sh:PropertyShape ;
 dcat-us-shp:UseRestriction_Shape-restrictionStatus a sh:PropertyShape ;
     rdfs:label "restriction status" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Mandatory ;
-    sh:class skos:Concept ;
     sh:description "Indication of whether or not there are use restrictions on the archival materials" ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:name "restrictionStatus" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class skos:Concept ] ) ;
     sh:path dcat-us:restrictionStatus ;
     sh:severity sh:Violation .
 
 dcat-us-shp:UseRestriction_Shape-specificRestriction a sh:PropertyShape ;
     rdfs:label "specific restriction" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
-    sh:class skos:Concept ;
     sh:description "The specific NARA restriction associated with the use restriction" ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "specificRestriction" ;
-    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class skos:Concept ] ) ;
     sh:path dcat-us:specificRestriction ;
     sh:severity sh:Violation .
 
 <https://www.linkedin.com/in/stephanefellah/> a foaf:Person ;
     foaf:name "Stephane Fellah" .
 
-dcat-us-shp:GeometryAsWKTorGMLorGeoJSON rdf:first ( gsp:wktLiteral gsp:gmlLiteral gsp:geoJSONLiteral ) .
+dcat-us-shp:GeometryAsWKTorGMLorGeoJSON a rdf:List ;
+    rdf:first [ sh:datatype gsp:wktLiteral ] ;
+    rdf:rest ( [ sh:datatype gsp:gmlLiteral ] [ sh:datatype gsp:geoJSONLiteral ] ) .
 
-dcat-us-shp:DateOrDateTimeOrYearOrYearMonth rdf:first ( xsd:date xsd:dateTime xsd:gYear xsd:gYearMonth ) .
+dcat-us-shp:DateOrDateTimeOrYearOrYearMonth a rdf:List ;
+    rdf:first [ sh:datatype xsd:date ] ;
+    rdf:rest ( [ sh:datatype xsd:dateTime ] [ sh:datatype xsd:gYear ] [ sh:datatype xsd:gYearMonth ] ) .
 
-dash:StringOrLangString
-  a rdf:List ;
-  rdf:first [
-      sh:datatype xsd:string ;
-    ] ;
-  rdf:rest (
-      [
-        sh:datatype rdf:langString ;
-      ]
-    ) ;
-  rdfs:comment "An rdf:List that can be used in property constraints as value for sh:or to indicate that all values of a property must be either xsd:string or rdf:langString." ;
-  rdfs:label "String or langString" ;
-  rdfs:isDefinedBy <http://datashapes.org/dash> ;
-  rdfs:comment "This shape was copied into dcat-us_3.0_shacl_shapes.ttl on 2023-11-21."@en ;
-.
+dash:StringOrLangString a rdf:List ;
+    rdf:first [ sh:datatype xsd:string ] ;
+    rdf:rest ( [ sh:datatype rdf:langString ] ) ;
+    rdfs:comment
+      "An rdf:List that can be used in property constraints as value for sh:or to indicate that all values of a property must be either xsd:string or rdf:langString.",
+      "This shape was copied into dcat-us_3.0_shacl_shapes.ttl on 2023-11-21."@en ;
+    rdfs:label "String or langString" ;
+    rdfs:isDefinedBy <http://datashapes.org/dash> .
 

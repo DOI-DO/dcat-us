@@ -1,6 +1,6 @@
 {
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
   "@id": "https://meta.geo.census.gov/data/existing/decennial/GEO/GPMB/TIGERline/Archived_19115/tl_2020_us_cbsa.shp.iso.xml",
-  "@type": "Dataset",
+  "@type": "dcat:Dataset",
   "accrualPeriodicity": "http://publications.europa.eu/resource/authority/frequency/ANNUAL"
 }

@@ -3,13 +3,13 @@
   "@graph": [
     {
       "@id": "http://www.example.com#Catalog1",
-      "@type": "Catalog",
-      "rights": "_:n181e70a70b61462088c7ca5256182dffb1"
+      "@type": "dcat:Catalog",
+      "rights": "_:n778b9f3a6376437299617563a27bc44ab1"
     },
     {
-      "@id": "_:n181e70a70b61462088c7ca5256182dffb1",
-      "@type": "RightsStatement",
-      "http://www.w3.org/2000/01/rdf-schema#label": {
+      "@id": "_:n778b9f3a6376437299617563a27bc44ab1",
+      "@type": "dcterms:RightsStatement",
+      "rdfs:label": {
         "@language": "en",
         "@value": "\u00a9 20023 ACME Inc."
       }

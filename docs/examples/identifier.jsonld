@@ -1,12 +1,12 @@
 {
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
   "@id": "http://example.org/ns#Identifier1",
-  "@type": "Identifier",
+  "@type": "adms:Identifier",
   "issued": {
-    "@type": "xsd:gYear",
+    "@type": "http://www.w3.org/2001/XMLSchema#gYear",
     "@value": "2023"
   },
   "notation": "10.12345/ex.doi.67890",
   "schemaAgency": "http://www.doi.org/",
-  "http://www.w3.org/ns/dcat#version": "1.0"
+  "dcat:version": "1.0"
 }

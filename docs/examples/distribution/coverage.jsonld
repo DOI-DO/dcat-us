@@ -3,21 +3,21 @@
   "@graph": [
     {
       "@id": "http://bfs/kantonalen-Abstimmungsvorlagen/11",
-      "@type": "Distribution",
-      "http://purl.org/dc/terms/coverage": "2019-09-22"
-    },
-    {
-      "@id": "http://bfs/echtzeitdaten-Abstimmungsvorlagen/12",
-      "@type": "Distribution",
-      "http://purl.org/dc/terms/coverage": "2019-09-01"
+      "@type": "dcat:Distribution",
+      "dcterms:coverage": "2019-09-22"
     },
     {
       "@id": "http://bfs/echtzeitdaten-Abstimmungsvorlagen",
-      "@type": "Dataset",
+      "@type": "dcat:Dataset",
       "distribution": [
         "http://bfs/kantonalen-Abstimmungsvorlagen/11",
         "http://bfs/echtzeitdaten-Abstimmungsvorlagen/12"
       ]
+    },
+    {
+      "@id": "http://bfs/echtzeitdaten-Abstimmungsvorlagen/12",
+      "@type": "dcat:Distribution",
+      "dcterms:coverage": "2019-09-01"
     }
   ]
 }

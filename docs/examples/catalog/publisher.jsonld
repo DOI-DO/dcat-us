@@ -3,13 +3,13 @@
   "@graph": [
     {
       "@id": "https://data.census.gov/catalog",
-      "@type": "Catalog",
+      "@type": "dcat:Catalog",
       "publisher": "https://census.gov"
     },
     {
       "@id": "https://census.gov",
-      "@type": "Organization",
-      "name": "US Census Bureau"
+      "@type": "http://www.w3.org/ns/org#Organization",
+      "foaf:name": "US Census Bureau"
     }
   ]
 }

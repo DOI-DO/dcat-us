@@ -3,35 +3,35 @@
   "@graph": [
     {
       "@id": "https://data.census.gov/catalog",
-      "@type": "Catalog",
+      "@type": "dcat:Catalog",
       "spatial": [
-        "_:nfd46051f09cb42adb57a3066d824ad91b1",
-        "_:nfd46051f09cb42adb57a3066d824ad91b2",
-        "_:nfd46051f09cb42adb57a3066d824ad91b3",
+        "_:n0952d41616bb4e0ca74ff3a101d5796bb1",
+        "_:n0952d41616bb4e0ca74ff3a101d5796bb2",
+        "_:n0952d41616bb4e0ca74ff3a101d5796bb3",
         "http://id.loc.gov/vocabulary/countries/xxu"
       ]
     },
     {
-      "@id": "_:nfd46051f09cb42adb57a3066d824ad91b1",
-      "@type": "Location",
+      "@id": "_:n0952d41616bb4e0ca74ff3a101d5796bb1",
+      "@type": "dcterms:Location",
       "geometry": {
-        "@type": "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "@type": "gsp:wktLiteral",
         "@value": "POLYGON ((\n          4.8842353 52.375108 , 4.884276 52.375153 ,\n          4.8842567 52.375159 , 4.883981 52.375254 ,\n          4.8838502 52.375109 , 4.883819 52.375075 ,\n          4.8841037 52.374979 , 4.884143 52.374965 ,\n          4.8842069 52.375035 , 4.884263 52.375016 ,\n          4.8843200 52.374996 , 4.884255 52.374926 ,\n          4.8843289 52.374901 , 4.884451 52.375034 ,\n          4.8842353 52.375108\n        ))"
       }
     },
     {
-      "@id": "_:nfd46051f09cb42adb57a3066d824ad91b2",
-      "@type": "Location",
+      "@id": "_:n0952d41616bb4e0ca74ff3a101d5796bb2",
+      "@type": "dcterms:Location",
       "centroid": {
-        "@type": "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "@type": "gsp:wktLiteral",
         "@value": "POINT(4.88412 52.37509)"
       }
     },
     {
-      "@id": "_:nfd46051f09cb42adb57a3066d824ad91b3",
-      "@type": "Location",
+      "@id": "_:n0952d41616bb4e0ca74ff3a101d5796bb3",
+      "@type": "dcterms:Location",
       "bbox": {
-        "@type": "http://www.opengis.net/ont/geosparql#wktLiteral",
+        "@type": "gsp:wktLiteral",
         "@value": "POLYGON((\n          3.053 47.975 , 7.24  47.975 ,\n          7.24  53.504 , 3.053 53.504 ,\n          3.053 47.975\n        ))"
       }
     }

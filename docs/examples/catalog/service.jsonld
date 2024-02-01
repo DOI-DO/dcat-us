@@ -2,36 +2,36 @@
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
   "@graph": [
     {
-      "@id": "https://data.census.gov/service/123",
-      "@type": "DataService"
-    },
-    {
-      "@id": "https://data.census.gov/service/345",
-      "@type": "DataService"
+      "@id": "https://data.census.gov/data/345",
+      "@type": "dcat:Dataset"
     },
     {
       "@id": "https://census.gov",
-      "@type": "Organization"
+      "@type": "http://www.w3.org/ns/org#Organization"
+    },
+    {
+      "@id": "https://data.census.gov/index.html",
+      "@type": "foaf:Document"
     },
     {
       "@id": "https://data.census.gov/data/123",
-      "@type": "Dataset"
+      "@type": "dcat:Dataset"
     },
     {
       "@id": "https://data.census.gov/catalog",
-      "@type": "Catalog",
+      "@type": "dcat:Catalog",
       "service": [
         "https://data.census.gov/service/123",
         "https://data.census.gov/service/345"
       ]
     },
     {
-      "@id": "https://data.census.gov/index.html",
-      "@type": "Document"
+      "@id": "https://data.census.gov/service/345",
+      "@type": "dcat:DataService"
     },
     {
-      "@id": "https://data.census.gov/data/345",
-      "@type": "Dataset"
+      "@id": "https://data.census.gov/service/123",
+      "@type": "dcat:DataService"
     }
   ]
 }

@@ -3,17 +3,17 @@
   "@graph": [
     {
       "@id": "http://example.org/catalog",
-      "http://www.w3.org/ns/dcat#record": {
+      "dcat:record": {
         "@id": "http://example.org/record-001"
       }
     },
     {
       "@id": "http://example.org/record-001",
-      "@type": "CatalogRecord",
+      "@type": "dcat:CatalogRecord",
       "conformsTo": "https://www.data.gov/ontology/dcat-us#",
       "issued": [
         {
-          "@type": "xsd:date",
+          "@type": "http://www.w3.org/2001/XMLSchema#date",
           "@value": "2022-12-11"
         }
       ],

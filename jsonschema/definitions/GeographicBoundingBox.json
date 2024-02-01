@@ -12,25 +12,25 @@
             "default": "GeographicBoundingBox"
         },
         "eastBoundingLongitude": {
-            "$id": "http://data.resources.gov/ontology/dcat-us#eastBoundingLongitude",
+            "$id": "http://resources.data.gov/ontology/dcat-us#eastBoundingLongitude",
             "title": "east bounding longitude",
             "description": "East bound longitude in decimal degrees",
             "type": "string"
         },
         "northBoundingLatitude": {
-            "$id": "http://data.resources.gov/ontology/dcat-us#northBoundingLatitude",
+            "$id": "http://resources.data.gov/ontology/dcat-us#northBoundingLatitude",
             "title": "north bounding latitude",
             "description": "North bound latitude in decimal degrees",
             "type": "string"
         },
         "southBoundingLatitude": {
-            "$id": "http://data.resources.gov/ontology/dcat-us#southBoundingLatitude",
+            "$id": "http://resources.data.gov/ontology/dcat-us#southBoundingLatitude",
             "title": "south bouding latitude",
             "description": "South bound latitude in decimal degrees",
             "type": "string"
         },
         "westBoundingLongitude": {
-            "$id": "http://data.resources.gov/ontology/dcat-us#westBoundingLongitude",
+            "$id": "http://resources.data.gov/ontology/dcat-us#westBoundingLongitude",
             "title": "west bounding longitude",
             "description": "West bound longitude in decimal degrees",
             "type": "string"

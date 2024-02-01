@@ -1,0 +1,14 @@
+{
+  "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
+  "@id": "http://example.org/dataset/001",
+  "@type": "dcat:Dataset",
+  "title": "Sample Geospatial Dataset in NAD 83",
+  "description": "This dataset provides geospatial data in the North American Datum 1983 (NAD 83) CRS.",
+  "conformsTo": {
+    "@id": "http://www.opengis.net/def/crs/EPSG/0/4269",
+    "@type": "dct:Standard",
+    "title": "EPSG:4269 - NAD 83",
+    "description": "North American Datum 1983 (NAD 83) is a geodetic reference system that is widely used in North America for mapping and navigation.",
+    "category": "SpatialReferenceSystem"
+  }
+}

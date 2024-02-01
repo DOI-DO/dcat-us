@@ -3,21 +3,21 @@
   "@graph": [
     {
       "@id": "https://uscensus.gov/123",
-      "@type": "Dataset",
+      "@type": "dcat:Dataset",
       "contactPoint": [
-        "_:n92529f37966640b392a22b9336641753b1",
-        "_:n92529f37966640b392a22b9336641753b2"
+        "_:n1b82daff83f04c058aa2c0258318fa2bb1",
+        "_:n1b82daff83f04c058aa2c0258318fa2bb2"
       ]
     },
     {
-      "@id": "_:n92529f37966640b392a22b9336641753b1",
-      "@type": "Contact",
+      "@id": "_:n1b82daff83f04c058aa2c0258318fa2bb1",
+      "@type": "vcard:Contact",
       "email": "mailto:noise@bafu.admin.ch",
       "fn": "Abteilung L\u00e4rm BAFU"
     },
     {
-      "@id": "_:n92529f37966640b392a22b9336641753b2",
-      "@type": "Contact",
+      "@id": "_:n1b82daff83f04c058aa2c0258318fa2bb2",
+      "@type": "vcard:Contact",
       "email": "mailto:sekretariat@bafu.admin.ch",
       "fn": "Sekretariat BAFU"
     }

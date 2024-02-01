@@ -1,0 +1,15 @@
+{
+  "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
+  "@id": "http://example.org/ns#Dataset1",
+  "@type": "dcat:Dataset",
+  "title": "Geographic Dataset imported from ISO 19139",
+  "description": "This dataset contains geographic metadata imported from the ISO 19139 metadata document.",
+  "metadataDistribution": {
+    "@id": "http://example.org/ns#ISO19139Distribution ",
+    "@type": "dcat:Distribution",
+    "conformsTo": "hhttp://www.isotc211.org/2005/gmd",
+    "format": "https://www.iana.org/assignments/media-types/application/xml",
+    "mediaType": "https://www.iana.org/assignments/media-types/application/xml",
+    "downloadUrl": "http://example.org/data/iso19139-dataset.xml"
+  }
+}

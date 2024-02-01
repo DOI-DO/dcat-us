@@ -2,13 +2,13 @@
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
   "@graph": [
     {
-      "@id": "https://creativecommons.org/publicdomain/zero/1.0/",
-      "@type": "LicenseDocument"
+      "@id": "https://data.census.gov/catalog",
+      "@type": "dcat:Catalog",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/"
     },
     {
-      "@id": "https://data.census.gov/catalog",
-      "@type": "Catalog",
-      "license": "https://creativecommons.org/publicdomain/zero/1.0/"
+      "@id": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "@type": "dcterms:LicenseDocument"
     }
   ]
 }

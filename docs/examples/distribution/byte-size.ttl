@@ -3,6 +3,4 @@
 
 <https://uscensus.gov/reforestation-data/1234>
   a dcat:Distribution ;
-  dcat:accessURL <https://tierstatistik.identitas.ch/data/fig-equids-size> ;
-  dcat:downloadURL <https://tierstatistik.identitas.ch/data/fig-equids-size> ;
-  dcat:byteSize "1944.5"^^xsd:decimal .
+  dcat:byteSize "1944502"^^xsd:nonNegativeInteger .

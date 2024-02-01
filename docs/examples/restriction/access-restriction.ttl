@@ -1,37 +1,37 @@
 @prefix ex: <http://example.org/> .
-@prefix dcat-us: <http://data.resources.gov/ontology/dcat-us#> .
+@prefix dcat-us: <http://resources.data.gov/ontology/dcat-us#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 ex:AccessRestriction1  a dcat-us:AccessRestriction;
-  dcat-us:restrictionStatus <https://data.resources.gov/vocab/nara/AccessRestrictionStatusAuthorityList/RestrictedPossibly>;
+  dcat-us:restrictionStatus <https://resources.data.gov/vocab/nara/AccessRestrictionStatusAuthorityList/RestrictedPossibly>;
   dcat-us:restrictionNote """The records may be restricted due to privacy concerns. 
     Register numbers 1 through 900 have been screened and are open for research.""";
   dcat-us:specificRestriction <SpecificAccessRestrictionAuthorityList/FOIAb6>
 .
 
 ex:AccessRestriction2 a dcat-us:AccessRestriction;
-    dcat-us:restrictionStatus <https://data.resources.gov/vocab/nara/AccessRestrictionStatusAuthorityList/Unrestricted>;
+    dcat-us:restrictionStatus <https://resources.data.gov/vocab/nara/AccessRestrictionStatusAuthorityList/Unrestricted>;
 .    
 
 
 # The following concepts are typically accessible though a central registry. Added for convenience
 
 
-<https://data.resources.gov/vocab/nara/AccessRestrictionStatusAuthorityList/RestrictedPossibly>   a skos:Concept ;
+<https://resources.data.gov/vocab/nara/AccessRestrictionStatusAuthorityList/RestrictedPossibly>   a skos:Concept ;
     skos:prefLabel "Restricted - Possibly"@en ;
     skos:scopeNote """Use if the archival materials may be restricted. Use if the archival materials have been reviewed or partially reviewed 
     and found to contain restricted material, but the restrictions have not been recorded, identified and/or verified at the file unit or item level."""@en ;
-    skos:inScheme <https://data.resources.gov/vocab/nara/AccessRestrictionStatusAuthorityList> .
+    skos:inScheme <https://resources.data.gov/vocab/nara/AccessRestrictionStatusAuthorityList> .
 
-<https://data.resources.gov/vocab/nara/AccessRestrictionStatusAuthorityList/Unrestricted> a skos:Concept ;
+<https://resources.data.gov/vocab/nara/AccessRestrictionStatusAuthorityList/Unrestricted> a skos:Concept ;
     skos:prefLabel "Unrestricted"@en ;
     skos:scopeNote "Use if there are no access restrictions on the archival materials."@en ;
-    skos:inScheme <https://data.resources.gov/vocab/nara/AccessRestrictionStatusAuthorityList> .
+    skos:inScheme <https://resources.data.gov/vocab/nara/AccessRestrictionStatusAuthorityList> .
 
 
-<https://data.resources.gov/vocab/nara/SpecificAccessRestrictionAuthorityList/FOIAb6>  a skos:Concept ;
+<https://resources.data.gov/vocab/nara/SpecificAccessRestrictionAuthorityList/FOIAb6>  a skos:Concept ;
     skos:prefLabel "FOIA (b)(6) Personal Information"@en ;
     skos:scopeNote "Use for archival materials with personal information that invades the privacy of living individuals."@en ;
-    skos:inScheme <https://data.resources.gov/vocab/nara/SpecificAccessRestrictionAuthorityList>;
-    skos:broader <https://data.resources.gov/vocab/nara/SpecificAccessRestrictionAuthorityList/FOIA>;
+    skos:inScheme <https://resources.data.gov/vocab/nara/SpecificAccessRestrictionAuthorityList>;
+    skos:broader <https://resources.data.gov/vocab/nara/SpecificAccessRestrictionAuthorityList/FOIA>;
     .   

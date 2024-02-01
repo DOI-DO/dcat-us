@@ -1,6 +1,6 @@
 
 @base <http://data.gov/resources/program#> .
-@prefix dcat-us: <http://data.resources.gov/ontology/dcat-us#> .
+@prefix dcat-us: <http://resources.data.gov/ontology/dcat-us#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix program: <http://data.gov/resources/program/> .
 

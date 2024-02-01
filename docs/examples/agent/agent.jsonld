@@ -1,7 +1,7 @@
 {
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
   "@id": "http://example.org/ArcGISPro",
-  "@type": "Agent",
+  "@type": "foaf:Agent",
   "category": "http://example.org/GISSoftware",
   "name": "ArcGIS Pro"
 }

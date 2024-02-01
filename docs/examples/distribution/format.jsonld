@@ -3,17 +3,17 @@
   "@graph": [
     {
       "@id": "http://example.org/ns#Distribution2",
-      "@type": "Distribution",
-      "format": "_:nee05fb4512894bdaab479764bfca4f5ab1"
+      "@type": "dcat:Distribution",
+      "format": "_:n3678446b51694d1195dabb01ec42f7d5b1"
     },
     {
-      "@id": "_:nee05fb4512894bdaab479764bfca4f5ab1",
-      "@type": "MediaType",
+      "@id": "_:n3678446b51694d1195dabb01ec42f7d5b1",
+      "@type": "dcterms:MediaType",
       "label": "Geopackage"
     },
     {
       "@id": "http://example.org/ns#Distribution1",
-      "@type": "Distribution",
+      "@type": "dcat:Distribution",
       "format": "https://www.iana.org/assignments/media-types/text/csv"
     }
   ]

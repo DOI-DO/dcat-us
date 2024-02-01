@@ -3,14 +3,14 @@
   "@graph": [
     {
       "@id": "http://example.org/ns#Test543L",
-      "@type": "Dataset",
+      "@type": "dcat:Dataset",
       "qualifiedRelation": [
-        "_:nc9b8f0c0352d4a75af7ce26e384a54ebb1"
+        "_:n9124dcc3e7e94267a4aa572a9f598af5b1"
       ]
     },
     {
-      "@id": "_:nc9b8f0c0352d4a75af7ce26e384a54ebb1",
-      "@type": "Relationship",
+      "@id": "_:n9124dcc3e7e94267a4aa572a9f598af5b1",
+      "@type": "dcat:Relationship",
       "relation": "http://example.org/Test543R",
       "hadRole": "http://registry.it.csiro.au/def/isotc211/DS_AssociationTypeCode/stereoMate"
     }

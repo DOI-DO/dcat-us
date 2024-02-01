@@ -3,14 +3,14 @@
   "@graph": [
     {
       "@id": "https://uscensus.gov/123",
-      "@type": "Dataset",
+      "@type": "dcat:Dataset",
       "isReferencedBy": [
         "https://uscensus.gov/456"
       ]
     },
     {
       "@id": "https://uscensus.gov/456",
-      "@type": "Dataset"
+      "@type": "dcat:Dataset"
     }
   ]
 }

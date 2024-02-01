@@ -1,7 +1,7 @@
 {
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
   "@id": "https://gcmd.earthdata.nasa.gov/kms/concept/bb27bbb7-7bc4-4e38-833a-30e0a7861ccc",
-  "@type": "Concept",
+  "@type": "skos:Concept",
   "definition": "The ratio of the area of the water surface covered by ice as a \n    fraction of the whole area. Sea ice concentration has been monitored by polar \n    orbiting satellites at all wavelengths.",
   "inScheme": "https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/sciencekeywords",
   "prefLabel": "SEA ICE CONCENTRATION"

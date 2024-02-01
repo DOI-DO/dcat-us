@@ -2,25 +2,25 @@
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
   "@graph": [
     {
-      "@id": "http://example.org/NationalCensus",
-      "@type": "Activity",
-      "category": "http://example.org/CensusActivity",
+      "@id": "http://example.org/ns#Census2020Dataset",
+      "@type": "dcat:Dataset",
+      "rdfs:label": "Census Dataset",
+      "prov:value": "A dataset containing data collected from the national census in 2020.",
+      "wasGeneratedBy": [
+        "http://example.org/ns#NationalCensus"
+      ]
+    },
+    {
+      "@id": "http://example.org/ns#NationalCensus",
+      "@type": "prov:Activity",
+      "category": "http://example.org/ns#CensusActivity",
       "label": "National Census"
     },
     {
-      "@id": "http://example.org/CensusActivity",
-      "@type": "Concept",
-      "http://www.w3.org/2000/01/rdf-schema#label": "Census Activity",
+      "@id": "http://example.org/ns#CensusActivity",
+      "@type": "skos:Concept",
+      "rdfs:label": "Census Activity",
       "definition": "An activity type representing the conducting of a census in 2020."
-    },
-    {
-      "@id": "http://example.org/Census2020Dataset",
-      "@type": "Dataset",
-      "http://www.w3.org/2000/01/rdf-schema#label": "Census Dataset",
-      "http://www.w3.org/ns/prov#value": "A dataset containing data collected from the national census in 2020.",
-      "wasGeneratedBy": [
-        "http://example.org/NationalCensus"
-      ]
     }
   ]
 }

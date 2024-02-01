@@ -1,8 +1,8 @@
 {
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
   "@id": "http://data.gov/resources/program/010-148",
-  "@type": "Program",
-  "http://data.resources.gov/ontology/dcat-us#agency": {
+  "@type": "dcat-us:Program",
+  "dcat-us:agency": {
     "@id": "http://www.doi.gov"
   },
   "identifier": [

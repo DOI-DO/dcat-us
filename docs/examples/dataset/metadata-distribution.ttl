@@ -1,0 +1,18 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix ex: <http://example.org/ns#> .
+
+# Define the dataset imported from ISO 19139 document
+ex:Dataset1 a dcat:Dataset ;
+    dcterms:title "Geographic Dataset imported from ISO 19139" ;
+    dcterms:description "This dataset contains geographic metadata imported from the ISO 19139 metadata document." ;
+    dcat:metadataDistribution ex:ISO19139Distribution.
+
+# Define the distribution of the ISO 19139 Metadata document
+ex:ISO19139Distribution a dcat:Distribution ;
+    dcterms:title "ISO 19139 Metadata document" ;
+    dcat:downloadUrl <http://example.org/data/iso19139-dataset.xml> ;
+    dcterms:mediaType <https://www.iana.org/assignments/media-types/application/xml> ;
+    dcterms:format <https://www.iana.org/assignments/media-types/application/xml>;
+    dcterms:conformsTo <http://www.isotc211.org/2005/gmd> .
