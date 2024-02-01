@@ -72,11 +72,11 @@
       "license": "https://creativecommons.org/publicdomain/zero/1.0/",
       "accessRestriction": {
         "@type": "dcat-us:AccessRestriction",
-        "restrictionStatus": "https://resources.data.gov/vocab/nara/AccessRestrictionStatusAuthorityList/Unrestricted"
+        "restrictionStatus": "https://data.resources.gov/vocab/nara/AccessRestrictionStatusAuthorityList/Unrestricted"
       },
       "useRestriction": {
         "@type": "dcat-us:UseRestriction",
-        "restrictionStatus": "https://resources.data.gov/vocab/nara/UseRestrictionStatusAuthorityList/Unrestricted"
+        "restrictionStatus": "https://data.resources.gov/vocab/nara/UseRestrictionStatusAuthorityList/Unrestricted"
       }
     },
     {
@@ -88,11 +88,11 @@
       "license": "https://creativecommons.org/publicdomain/zero/1.0/",
       "accessRestriction": {
         "@type": "dcat-us:AccessRestriction",
-        "restrictionStatus": "https://resources.data.gov/vocab/nara/AccessRestrictionStatusAuthorityList/Unrestricted"
+        "restrictionStatus": "https://data.resources.gov/vocab/nara/AccessRestrictionStatusAuthorityList/Unrestricted"
       },
       "useRestriction": {
         "@type": "dcat-us:UseRestriction",
-        "restrictionStatus": "https://resources.data.gov/vocab/nara/UseRestrictionStatusAuthorityList/Unrestricted"
+        "restrictionStatus": "https://data.resources.gov/vocab/nara/UseRestrictionStatusAuthorityList/Unrestricted"
       }
     },
     {
@@ -104,11 +104,11 @@
       "license": "https://creativecommons.org/publicdomain/zero/1.0/",
       "accessRestriction": {
         "@type": "dcat-us:AccessRestriction",
-        "restrictionStatus": "https://resources.data.gov/vocab/nara/AccessRestrictionStatusAuthorityList/Unrestricted"
+        "restrictionStatus": "https://data.resources.gov/vocab/nara/AccessRestrictionStatusAuthorityList/Unrestricted"
       },
       "useRestriction": {
         "@type": "dcat-us:UseRestriction",
-        "restrictionStatus": "https://resources.data.gov/vocab/nara/UseRestrictionStatusAuthorityList/Unrestricted"
+        "restrictionStatus": "https://data.resources.gov/vocab/nara/UseRestrictionStatusAuthorityList/Unrestricted"
       }
     }
   ],

@@ -1,6 +1,6 @@
 @prefix adms: <http://www.w3.org/ns/adms#> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix dcat-us: <http://resources.data.gov/ontology/dcat-us#> .
+@prefix dcat-us: <http://data.resources.gov/ontology/dcat-us#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix org1: <http://www.w3c.org/ns/org#> .
@@ -35,15 +35,17 @@ The Owned and Leased Data Sets include the following data except where noted bel
     dcterms:issued "2002-01-01"^^xsd:date ;
     dcterms:language <http://id.loc.gov/vocabulary/iso639-1/en-us> ;
     dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
-    dcterms:modified "2023-11-16T21:38:25.152Z" ;
+    dcterms:modified "2023-11-16T21:38:25.152Z"^^xsd:dateTime;
     dcterms:publisher <https://www.gsa.gov> ;
     dcterms:spatial <http://id.loc.gov/authorities/names/n78095330> ;
     dcterms:title "Inventory of Owned and Leased Properties (IOLP)" ;
     adms:identifier [ a adms:Identifier ;
             skos:notation "GSA-4495" ;
-            adms:schemaAgency <https://www.gsa.gov> ] ;
+            adms:schemaAgency "https://www.gsa.gov" ] ;
     dcat:contactPoint [ a vcard:Contact ;
-            vcard:fn "Valerie R Butler" ] ;
+            vcard:fn "Valerie R Butler" ;
+            vcard:email <mailto:valerie.butler@gsa.gov>
+            ] ;
     dcat:distribution <https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/967d2d5e-c917-48a3-b7d8-d01ffd7e0783>,
         <https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/bfbd1f68-b7d8-4822-98bb-4eceabd2c3a7>,
         <https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/d3cb3a80-9227-45a7-8bf8-1c10b0b4de2b> ;
@@ -74,9 +76,9 @@ The Owned and Leased Data Sets include the following data except where noted bel
 
 <https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/967d2d5e-c917-48a3-b7d8-d01ffd7e0783> a dcat:Distribution ;
     dcat-us:accessRestriction [ a dcat-us:AccessRestriction ;
-            dcat-us:restrictionStatus <https://resources.data.gov/vocab/nara/AccessRestrictionStatusAuthorityList/Unrestricted> ] ;
+            dcat-us:restrictionStatus <https://data.resources.gov/vocab/nara/AccessRestrictionStatusAuthorityList/Unrestricted> ] ;
     dcat-us:useRestriction [ a dcat-us:UseRestriction ;
-            dcat-us:restrictionStatus <https://resources.data.gov/vocab/nara/UseRestrictionStatusAuthorityList/Unrestricted> ] ;
+            dcat-us:restrictionStatus <https://data.resources.gov/vocab/nara/UseRestrictionStatusAuthorityList/Unrestricted> ] ;
     dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
     dcterms:title "IOLP Buildings 11.27.23.xlsx" ;
     dcat:downloadURL <https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/967d2d5e-c917-48a3-b7d8-d01ffd7e0783/download/iolp-buildings-11.27.23.xlsx> ;
@@ -84,9 +86,9 @@ The Owned and Leased Data Sets include the following data except where noted bel
 
 <https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/bfbd1f68-b7d8-4822-98bb-4eceabd2c3a7> a dcat:Distribution ;
     dcat-us:accessRestriction [ a dcat-us:AccessRestriction ;
-            dcat-us:restrictionStatus <https://resources.data.gov/vocab/nara/AccessRestrictionStatusAuthorityList/Unrestricted> ] ;
+            dcat-us:restrictionStatus <https://data.resources.gov/vocab/nara/AccessRestrictionStatusAuthorityList/Unrestricted> ] ;
     dcat-us:useRestriction [ a dcat-us:UseRestriction ;
-            dcat-us:restrictionStatus <https://resources.data.gov/vocab/nara/UseRestrictionStatusAuthorityList/Unrestricted> ] ;
+            dcat-us:restrictionStatus <https://data.resources.gov/vocab/nara/UseRestrictionStatusAuthorityList/Unrestricted> ] ;
     dcterms:conformsTo <http://www.isotc211.org/2005/gmd> ;
     dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
     dcterms:title "IOLP19139_080123.xml" ;
@@ -95,9 +97,9 @@ The Owned and Leased Data Sets include the following data except where noted bel
 
 <https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/d3cb3a80-9227-45a7-8bf8-1c10b0b4de2b> a dcat:Distribution ;
     dcat-us:accessRestriction [ a dcat-us:AccessRestriction ;
-            dcat-us:restrictionStatus <https://resources.data.gov/vocab/nara/AccessRestrictionStatusAuthorityList/Unrestricted> ] ;
+            dcat-us:restrictionStatus <https://data.resources.gov/vocab/nara/AccessRestrictionStatusAuthorityList/Unrestricted> ] ;
     dcat-us:useRestriction [ a dcat-us:UseRestriction ;
-            dcat-us:restrictionStatus <https://resources.data.gov/vocab/nara/UseRestrictionStatusAuthorityList/Unrestricted> ] ;
+            dcat-us:restrictionStatus <https://data.resources.gov/vocab/nara/UseRestrictionStatusAuthorityList/Unrestricted> ] ;
     dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
     dcterms:title "IOLP Leases 11.27.23.xlsx" ;
     dcat:downloadURL <https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/d3cb3a80-9227-45a7-8bf8-1c10b0b4de2b/download/iolp-leases-11.27.23.xlsx> ;
