@@ -15,11 +15,15 @@ ex:NationalCensus a prov:Activity ;
 
 # Activity Type
 ex:CensusActivity a skos:Concept ;
-    rdfs:label "Census Activity" ;
-    skos:definition "An activity type representing the conducting of a census in 2020." .
+    skos:prefLabel "Census Activity" ;
+    skos:definition "An activity type representing the conducting of a census in 2020.";
+    skos:inScheme ex:ActivityTypeScheme 
+.
 
 # Dataset resulting from the census activity
 ex:Census2020Dataset a dcat:Dataset ;
-    rdfs:label "Census Dataset" ;
-    prov:value "A dataset containing data collected from the national census in 2020." ;
+    dcterms:title "Census Dataset" ;
+    dcterms:identifier "doi:10.1234/5678" ;
+    dcterms:description "A dataset containing data collected from the national census in 2020." ;
+    dcterms:publisher <https://census.gov> ;
     prov:wasGeneratedBy ex:NationalCensus .
