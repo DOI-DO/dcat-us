@@ -165,6 +165,11 @@ var respecConfig = {
       title: "QUDT Units Vocabulary ",
       publisher: "http://www.qudt.org",
     },
+    "SDMX-ATTRIBUTE": {
+      href:"http://purl.org/linked-data/sdmx/2009/attribute",
+      title:"SDMX Attribute Concept Vocabulary",
+      publisher:"SDMX",
+    },
     SPDX: {
       href: "https://spdx.org/rdf/terms/",
       title: "SPDX 2.2.1",
@@ -185,7 +190,7 @@ var respecConfig = {
     "DATA-GOV-LICENSE": {
       href: "https://TBD/vocabulary/licenses",
       title:
-        "Data.Gov List of licenses for US opendata to enter in dct:license",
+        "Data.Gov List of licenses for US opendata to enter in dct:license " ,
       publisher: "United States Government",
     },
     "DATA-GOV": {

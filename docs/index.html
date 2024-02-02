@@ -5,11 +5,12 @@
   <title>DCAT-US - Version 3</title>
   <meta content="text/html; charset=utf-8" http-equiv="content-type">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+  <script class="remove" src="https://www.w3.org/Tools/respec/respec-w3c" defer></script>
+  <script class="remove" src="config.js"></script>
   <!--<script src="https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js"></script>-->
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" type="text/css" href="small.css" media="only all and (max-width: 649px)">
- 
+
 
   <style>
     table.simple {
@@ -129,8 +130,6 @@
       color: #666;
     }
   </style>
-  <script class="remove" src="config.js" defer></script>
-  <script src="https://www.w3.org/Tools/respec/respec-w3c" class="remove" defer></script>
 
 </head>
 
@@ -198,7 +197,8 @@
         federal agencies, file formats, and units of measure.</li>
       <li>DCAT-US v3 will overcome the limitations of DCAT v1.1 when documenting geospatial data, eliminating the need
         for a separate federal standard for this subset of data.</li>
-      <li>DCAT-US v3 follows a similar approach to European metadata DCAT-AP; vendor support is already in place, with
+      <li>DCAT-US v3 follows a similar approach to European metadata [[?DCAT-AP]]; vendor support is already in place,
+        with
         additional support underway.</li>
     </ul>
     <p>Please review the documentation below and provide feedback to help make this standard as useful as possible to
@@ -334,11 +334,12 @@
 
     <p>One prevalent format for data exchange between systems is JSON (JavaScript Object Notation), which is widely used
       due to its simplicity and human-readable nature. To facilitate data exchange in JSON while adhering to the DCAT-US
-      profile, a dedicated mechanism is provided: the JSON-LD context file. JSON-LD (JSON for Linked Data) is a W3C
-      Recommendation (JSON-LD 1.1) that establishes a standardized approach for interpreting JSON structures as RDF,
+      profile, a dedicated mechanism is provided: the JSON-LD context file. JSON-LD 1.1 (JSON for Linked Data) is a W3C
+      Recommendation [[?JSON-LD]] that establishes a standardized approach for interpreting JSON structures as RDF,
       enhancing the potential for semantic integration and interoperability.</p>
 
-    <p> The DCAT-US profile offers a JSON-LD context file that implementers can utilize as a foundation for their data
+    <p> The DCAT-US profile offers a [[?JSON-LD]] context file that implementers can utilize as a foundation for their
+      data
       exchange processes. By incorporating this JSON-LD context file, implementers can ensure that their data adheres to
       the DCAT-US standards while being exchanged in a JSON format. This allows for a coherent and consistent
       representation of the data that aligns with the RDF model, promoting interoperability among different systems and
@@ -407,7 +408,7 @@
 
   </section>
 
-  <section id="conformance" class="informative">
+  <section id="conformance">
 
     <section id="provider-requirements">
       <h3>Data Provider requirements</h3>
@@ -1794,7 +1795,7 @@
 
     <section id="properties-for-address-location">
       <h2>Address (Location)</h2>
-      <aside class="note">Aligned with GeoDCAT-AP 2.0.0</aside>
+      <aside class="note">Aligned with [[?GeoDCAT-AP]] 2.0.0</aside>
       <table class="def">
         <tr>
           <th>RDF Class:</th>
@@ -2983,7 +2984,7 @@
                   <ul>
                     <li>This property refers to a web page that acts as the main page for the Catalog</li>
                     <li>For instance data.gov, would be the homepage of the Data Catalog exported
-                      to [[DATA-GOV]].
+                      to [[?DATA-GOV]].
                     </li>
                   </ul>
                 </td>
@@ -3100,7 +3101,7 @@
                   <ul>
                     <li>This property refers to the license under which the Catalog can be used or reused.
                     </li>
-                    <li>CV to be used: [[DATA-GOV-LICENSE]]</li>
+                    <li>CV to be used: [[?DATA-GOV-LICENSE]]</li>
                   </ul>
                 </td>
               </tr>
@@ -3252,14 +3253,14 @@
                 <td>
                   <ul>
                     <li>This property refers to a geographical area covered by the Catalog.</li>
-                    <li>TO DISCUSS: Conventions to be used: The Vocabularies Name Authority Lists MUST be used for
+                    <li>Conventions to be used: The Vocabularies Name Authority Lists MUST be used for
                       continents, countries and
                       places that are in those lists; if a particular location is not in one of the mentioned Named
                       Authority Lists, Geonames URIs MUST be used:
-                      [[DATA-GOV-CONT]],
-                      [[DATA-GOV-COUNTRY]],
-                      [[DATA-GOV-PLACE]],
-                      [[GEONAMES]]
+                      [[?DATA-GOV-CONT]],
+                      [[?DATA-GOV-COUNTRY]],
+                      [[?DATA-GOV-PLACE]],
+                      [[?GEONAMES]]
                     </li>
                   </ul>
                 </td>
@@ -3523,7 +3524,7 @@
                       restrictions or is not public.
                     </li>
                     <li>
-                      CV to be used: [[DATA-GOV-AR]].
+                      CV to be used: [[?DATA-GOV-AR]].
                     </li>
                   </ul>
                 </td>
@@ -3806,7 +3807,7 @@
                       This property refers to a category of the Catalog. A Catalog may be associated with multiple
                       themes.
                     </li>
-                    <li>CV to be used: [[DATA-GOV-THEME]]</li>
+                    <li>CV to be used: [[?DATA-GOV-THEME]]</li>
                   </ul>
                 </td>
               </tr>
@@ -5979,7 +5980,7 @@
               </tr>
               <tr>
                 <th>Range</th>
-                <td><a data-cite=" XMLSCHEMA11-2#string"><code>xsd:string</code></a>
+                <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a>
                 </td>
               </tr>
               <tr>
@@ -6131,7 +6132,7 @@
                 <a href="http://purl.org/dc/terms/type"><code>dcterms:type</code></a>
                 property. Its value may be taken from a controlled vocabulary such
                 as the Data.GOV spatial data service type code list
-                [[DATA-GOV-SDST]].
+                [[?DATA-GOV-SDST]].
               </li>
             </ul>
           </td>
@@ -6395,15 +6396,6 @@
             </td>
             <td><a
                 href="https://www.w3.org/TR/vocab-dqv/#dqv:QualityMeasurement"><code>dqv:QualityMeasurement</code></a>
-            </td>
-            <td>O</td>
-            <td>0..n</td>
-          </tr>
-          <tr>
-            <td><a href="#data-service-hasPolicy">has policy</a></td>
-            <td><a href="https://www.w3.org/TR/odrl-vocab/#term-hasPolicy"><code>odrl:hasPolicy</code></a>
-            </td>
-            <td><a href="https://www.w3.org/TR/odrl-vocab/#term-Policy"><code>odrl:Policy</code></a>
             </td>
             <td>O</td>
             <td>0..n</td>
@@ -6750,7 +6742,7 @@
               </tr>
               <tr>
                 <th>Usage note</th>
-                <td>CV to used: [[DATA-GOV-LICENSE]]</td>
+                <td>CV to used: [[?DATA-GOV-LICENSE]]</td>
               </tr>
             </tbody>
           </table>
@@ -6970,7 +6962,7 @@
               </tr>
               <tr>
                 <th>Usage note</th>
-                <td>CV to be used: [[DATA-GOV-THEME]]</td>
+                <td>CV to be used: [[?DATA-GOV-THEME]]</td>
               </tr>
             </tbody>
           </table>
@@ -7009,7 +7001,7 @@
               </tr>
               <tr>
                 <th>Usage note</th>
-                <td>CV must be used: [[DATA-GOV-AR]]</td>
+                <td>CV must be used: [[?DATA-GOV-AR]]</td>
               </tr>
             </tbody>
           </table>
@@ -7402,9 +7394,9 @@
                   continents, countries and
                   places that are in those lists; if a particular location is not in one of the mentioned Named
                   Authority Lists, Geonames URIs MUST be used:
-                  [[DATA-GOV-CONT]],
-                  [[DATA-GOV-COUNTRY]],
-                  [[DATA-GOV-PLACE]],
+                  [[?DATA-GOV-CONT]],
+                  [[?DATA-GOV-COUNTRY]],
+                  [[?DATA-GOV-PLACE]],
                   [[GEONAMES]]
                 </td>
               </tr>
@@ -7529,53 +7521,7 @@
             </tbody>
           </table>
         </section>
-        <section id="data-service-hasPolicy">
-          <h4>Property: has policy</h4>
 
-          <table class="def">
-            <tr>
-              <th>Property</th>
-              <td>has policy</td>
-            </tr>
-            <tr>
-              <th>Requirement level</th>
-              <td>Optional</td>
-            </tr>
-            <tr>
-              <th>Cardinality</th>
-              <td>0..n</td>
-            </tr>
-            <tr>
-              <th>URI:</th>
-              <td>
-                <a data-cite="ODRL-VOCAB#term-hasPolicy"><code>odrl:hasPolicy</code></a>
-              </td>
-            </tr>
-            <tr>
-              <th class="prop">Range:</th>
-              <td>
-                <a data-cite="ODRL-VOCAB#term-Policy"><code>odrl:Policy</code></a>
-              </td>
-            </tr>
-            <tr>
-              <th class="prop">Definition:</th>
-              <td>
-                An
-                <abbr title="Open Digital Rights Language">ODRL</abbr>
-                conformant policy expressing the rights associated with the
-                Data Service.
-              </td>
-            </tr>
-            <tr>
-              <th class="prop">Usage note</th>
-              <td>
-                Information about rights expressed as an ODRL policy
-                [[ODRL-MODEL]] using the ODRL vocabulary [[ODRL-VOCAB]] MAY be
-                provided for the Data Service.
-              </td>
-            </tr>
-          </table>
-        </section>
         <section id="data-service-qualified-attribution">
           <h4>Property: qualified attribution</h4>
           <table class="def">
@@ -7965,7 +7911,7 @@
             <td>O</td>
             <td>0..n</td>
             <td><span style="color: black;">No Change</span></td>
-          </tr>   
+          </tr>
           <tr>
             <td><a href="#dataset-contributor">contributor</a></td>
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/contributor"><code>dcterms:contributor</code></a></td>
@@ -8025,7 +7971,7 @@
             <td>0..n</td>
             <td><span style="color: red;">New!</span></td>
           </tr>
-        
+
           <tr>
             <td><a href="#dataset-in-series">inSeries</a></td>
             <td><a data-cite="VOCAB-DCAT-3#Property:resource_prev"><code>dcat:inSeries</code></a>
@@ -8642,9 +8588,9 @@
                     <li>CV to be used: The Vocabularies Name Authority Lists MUST be used for continents,
                       countries and places that are in those lists; if a particular location is not in one of
                       the mentioned Named Authority Lists, Geonames URIs MUST be used:
-                      [[DATA-GOV-CONT]],
-                      [[DATA-GOV-COUNTRY]],
-                      [[DATA-GOV-PLACE]],
+                      [[?DATA-GOV-CONT]],
+                      [[?DATA-GOV-COUNTRY]],
+                      [[?DATA-GOV-PLACE]],
                       [[GEONAMES]]
                     </li>
                   </ul>
@@ -9008,7 +8954,7 @@
                       This property refers to a category of the Dataset. A Dataset may be associated with multiple
                       themes.
                     </li>
-                    <li>CV to be used: [[DATA-GOV-THEME]]</li>
+                    <li>CV to be used: [[?DATA-GOV-THEME]]</li>
                   </ul>
                 </td>
               </tr>
@@ -9065,7 +9011,7 @@
                       restrictions or is not public.
                     </li>
                     <li>
-                      CV to be used: [[DATA-GOV-AR]].
+                      CV to be used: [[?DATA-GOV-AR]].
                     </li>
                   </ul>
                 </td>
@@ -9476,8 +9422,7 @@
             </tbody>
           </table>
           <aside class="example" title="Usage of dcat:inSeries for dcat:Dataset">
-            <pre class="ttl" data-include-format="text"
-              data-include="./examples/dataset/in_series.ttl"></pre>
+            <pre class="ttl" data-include-format="text" data-include="./examples/dataset/in_series.ttl"></pre>
           </aside>
         </section>
         <section id="dataset-is-referenced-by">
@@ -10161,7 +10106,8 @@
               <tr>
                 <th>Usage note</th>
                 <td>
-                  Primary Subjects of the Dataset defined in a controlled vocabularies. Subjects are typically narrower in meaning than <code>dcat:theme</code>.
+                  Primary Subjects of the Dataset defined in a controlled vocabularies. Subjects are typically narrower
+                  in meaning than <code>dcat:theme</code>.
 
                 </td>
               </tr>
@@ -10205,7 +10151,7 @@
             </tbody>
           </table>
         </section>
-       
+
         <section id="dataset-spatial-resolution">
           <h4>Property: spatial resolution in meters</h4>
           <table class="def">
@@ -10678,7 +10624,7 @@
               data-include="./examples/dataset/image.jsonld"></pre>
           </aside>
         </section>
-       
+
       </section>
     </section>
     <!-- dcat:DatasetSeries-->
@@ -10709,7 +10655,7 @@
           <td>
             <ul>
               <li>Dataset series can be also soft-typed via property dcterms:type as in the approach used in
-                [[GeoDCAT-AP]]</li>
+                [[?GeoDCAT-AP]]</li>
               <li>Common scenarios for dataset series include: time series composed of periodically released
                 subsets; map-series composed of items of the same type or theme but with differing spatial footprints.
               </li>
@@ -11055,9 +11001,9 @@
                     <li>CV to be used: The Vocabularies Name Authority Lists MUST be used for continents,
                       countries and places that are in those lists; if a particular location is not in one of
                       the mentioned Named Authority Lists, Geonames URIs MUST be used:
-                      [[DATA-GOV-CONT]],
-                      [[DATA-GOV-COUNTRY]],
-                      [[DATA-GOV-PLACE]],
+                      [[?DATA-GOV-CONT]],
+                      [[?DATA-GOV-COUNTRY]],
+                      [[?DATA-GOV-PLACE]],
                       [[GEONAMES]]
                     </li>
                   </ul>
@@ -11903,7 +11849,7 @@
                 <td>
                   <ul>
                     <li>This property refers to the license under which the Distribution is made available.</li>
-                    <li>CV to used: [[DATA-GOV-LICENSE]]</li>
+                    <li>CV to used: [[?DATA-GOV-LICENSE]]</li>
                   </ul>
                 </td>
               </tr>
@@ -12093,7 +12039,7 @@
                 <td>
                   <ul>
                     <li>This property refers to the file format of the Distribution.</li>
-                    <li>CV to be used: [[DATA-GOV-FT]]</li>
+                    <li>CV to be used: [[?DATA-GOV-FT]]</li>
                     <li>If a format is not available, use media type ([[IANA-MEDIA-TYPES]]) if applicable.
                     </li>
                   </ul>
@@ -13053,7 +12999,7 @@
                       sense to add a limited number of thumbnails to the metadata.
                     </li>
                     <li>
-                      It’s a DCAT-US Custom Class (not present in [[DCAT-AP]]).
+                      It’s a DCAT-US Custom Class (not present in [[?DCAT-AP]]).
                     </li>
                   </ul>
                 </td>
@@ -16595,7 +16541,7 @@
         <tr>
           <th class="prop">Usage note</th>
           <td>Used in a qualified-attribution to specify the role of an Agent with respect to an Entity. It is
-            recommended that the values be managed as a controlled vocabulary of agent roles, such as [[ISO-19115-1]]
+            recommended that the values be managed as a controlled vocabulary of agent roles, such as [[?ISO-19115-1]]
             <code>CI_RoleCode</code>.
           </td>
         </tr>
@@ -17031,7 +16977,7 @@
               <tr>
                 <th>URI</th>
                 <td><a
-                    href="hhttp://purl.org/linked-data/sdmx/2009/attribute#unitMeasure"><code>sdmx-attribute:unitMeasure</code></a>
+                    href="http://purl.org/linked-data/sdmx/2009/attribute#unitMeasure"><code>sdmx-attribute:unitMeasure</code></a>
                 </td>
               </tr>
               <tr>
@@ -18748,7 +18694,7 @@
         <p>While there are numerous roles of significance in relation to cataloged resources, such as funder,
           distributor, custodian, and editor, some of these roles are enumerated in the <a
             href="https://standards.iso.org/iso/19115/resources/Codelists/gml/CI_RoleCode.xml"><code>CI_RoleCode</code></a>
-          values from [[ISO-19115-1]], in the [[DataCite]] metadata schema, and included within the <a
+          values from [[?ISO-19115-1]], in the [[?DataCite]] metadata schema, and included within the <a
             href="https://id.loc.gov/vocabulary/relators">MARC relators</a>.</p>
         <p>Utilizing a generalized method for assigning an agent to a resource with a specified role is facilitated by
           <a data-cite="PROV-O#qualifiedAttribution"><code>prov:qualifiedAttribution</code></a> from [[PROV-O]]. This
@@ -18858,7 +18804,7 @@
           <p>DCAT 3 recognizes a variety of relationship types, such as alternate, canonical, original, preview,
             stereo-mate, and working-copy-of. Roles are sourced from lists like <a
               href="https://standards.iso.org/iso/19115/resources/Codelists/gml/DS_AssociationTypeCode.xml">DS_AssociationTypeCodes</a>
-            values from [[ISO-19115-1]], IANA Registry of Link Relations [[IANA-RELATIONS]], [[DataCite]] metadata
+            values from [[?ISO-19115-1]], IANA Registry of Link Relations [[?IANA-RELATIONS]], [[?DataCite]] metadata
             schema, and <a href="https://id.loc.gov/vocabulary/relators.html">MARC relators</a>. For instance, a
             dataset's role in a relationship can be denoted using IRIs from these sources, ensuring a clear and
             standardized representation.</p>
@@ -18873,7 +18819,7 @@
 
           In this example, the 'stereo-mate' role is clearly defined using an IRI from the <a
             href="https://standards.iso.org/iso/19115/resources/Codelists/gml/DS_AssociationTypeCode.xml">DS_AssociationTypeCodes</a>
-          codelist of [[ISO-19115-1]].</p>
+          codelist of [[?ISO-19115-1]].</p>
           <aside class="note">Note that <a href="#dataset-qualified-relation">dcat:qualifiedRelation</a> and
             <em>dcat:Relationship</em>
             follow W3C PROV-O patterns but are adapted to support Entity-Entity relations beyond 'was derived from',
@@ -18987,9 +18933,9 @@
             in a qualified-relation to indicate the role of an Entity in relation to another Entity. In both contexts,
             it is recommended to manage the values of <a href="#properties-for-document">dcat:Role</a> as a controlled
             vocabulary of roles. Examples of such controlled
-            vocabularies include the CI_RoleCode from [[ISO-19115-1]], the <a
+            vocabularies include the CI_RoleCode from [[?ISO-19115-1]], the <a
               href="https://standards.iso.org/iso/19115/resources/Codelists/gml/DS_AssociationTypeCode.xml">DS_AssociationTypeCodes</a>
-            values from [[ISO-19115-1]], IANA Registry of Link Relations [[IANA-RELATIONS]], [[DataCite]] metadata
+            values from [[?ISO-19115-1]], IANA Registry of Link Relations [[?IANA-RELATIONS]], [[?DataCite]] metadata
             schema, and <a href="https://id.loc.gov/vocabulary/relators.html">MARC relators</a>.</p>
           <p>This class complements the <em>prov:Role</em> from the [[PROV-O]] ontology, which delineates the function
             of an entity or agent with respect to an activity. In contrast, <a
@@ -19340,7 +19286,7 @@
         <p>
           The reference system identifier SHOULD be preferably represented with an HTTP URI. In particular, spatial
           reference systems should be specified by using the corresponding URIs from the “EPSG coordinate reference
-          systems” register operated by the Open Geospatial Consortium [[OGC-EPSG]]. This registry is crucial
+          systems” register operated by the Open Geospatial Consortium [[?OGC-EPSG]]. This registry is crucial
           for the precise identification of CRSs, thereby ensuring that spatial data referenced in DCAT are compatible
           and functional across a multitude of geospatial applications.
         </p>
@@ -20692,7 +20638,7 @@
             to
             specify the character encoding of
             the Distribution, by using as value the character set names in the the IANA Character Set names register
-            [[IANA-CHARSETS]]. Character encoding in [[ISO-19115]] metadata is specified with a code list that
+            [[IANA-CHARSETS]]. Character encoding in [[?ISO-19115-1]] metadata is specified with a code list that
             can be mapped to the corresponding codes in [[IANA-CHARSETS]], as shown in the following table
             (entries with 1-to-many mappings are in italic).
 
@@ -21075,7 +21021,7 @@
         determining
         the timing and rationale for releasing a new version lies with the data providers. Consequently, this DCAT US
         profile does not set strict guidelines or rules for when modifications to a resource should lead to a new
-        release. Instead, it suggests referring to [DWBP] (sections 8.6 on Data Versioning and 8.7 on Data
+        release. Instead, it suggests referring to [?DWBP] (sections 8.6 on Data Versioning and 8.7 on Data
         Identifiers)
         for more guidance on this matter.
       </aside>
@@ -21138,7 +21084,7 @@
         clarity. Semantic versioning provides explicit indications of the nature of changes: major changes (like new
         additions), minor updates (such as small improvements), and patches (error corrections). This systematic
         approach is beneficial for both publishers and users, as it simplifies the understanding of the extent and
-        impact of each update. Additional guidance can be found in [[DWBP]]'s <a
+        impact of each update. Additional guidance can be found in [[?DWBP]]'s <a
           href="https://www.w3.org/TR/dwbp/#dataVersioning">Best Practice 7: Provide a version
           indicator</a> </aside>
 
@@ -21201,7 +21147,7 @@
 
 
       <p> The following example, adapted from <a data-cite="?DWBP#dataVersioning">&sect;&nbsp;<span class="secno">8.6
-          </span>Data Versioning</a> of [[DWBP]] demonstrates how to specify a version
+          </span>Data Versioning</a> of [[?DWBP]] demonstrates how to specify a version
         chain and hierarchy for a bus stops dataset using the properties described in this section.</p>
 
       <aside class="example" id="ex-version-chain-and-hierarchy"
@@ -21401,7 +21347,8 @@
         <h4>How to specify dataset series</h4>
 
 
-        <p>DCAT-US profile makes dataset series first class citizens of data catalogs by using the [[DCAT-3]] new class
+        <p>DCAT-US profile makes dataset series first class citizens of data catalogs by using the [[VOCAB-DCAT-3]] new
+          class
           <a href="#properties-for-dataset-series"><code>dcat:DatasetSeries</code></a>, defined as a subclass of <a
             href="#properties-for-dataset"><code>dcat:Dataset</code></a>.
           The datasets are linked to the dataset series by using the property <a
@@ -21415,11 +21362,12 @@
 
         <aside class="example" id="ex-dataset-series-containment" title="Yearly budget datasets grouped into a series">
           <p>In the following example, yearly budget data are grouped into a series. The series is typed as
-            <a href="#properties-for-dataset-series"><code>dcat:DatasetSeries</code></a>, the child datasets are typed as 
+            <a href="#properties-for-dataset-series"><code>dcat:DatasetSeries</code></a>, the child datasets are typed
+            as
             <a href="#properties-for-dataset"><code>dcat:Dataset</code></a>. The datasets are
             linked to the series by using <a href="#dataset-in-series"><code>dcat:inSeries</code></a>.
           </p>
-        
+
           <pre>
 ex:USCatalog a dcat:Catalog ;
 dcterms:title "US Data Catalog"@en ;
@@ -21595,17 +21543,18 @@ dcat:prev ex:budget-2019 ;
           minimum level
           of interoperability.</p>
 
-        <p>Compared with [[DCAT-AP-20200608]], DCAT-US makes use of additional controlled vocabularies
+        <p>Compared with [[?DCAT-AP-20200608]], DCAT-US makes use of additional controlled vocabularies
           mandated by
-          [[DATA-GOV-REG]], and operated by the Data.gov Registry - with the only exceptions of the
+          [[?DATA-GOV-REG]], and operated by the Data.gov Registry - with the only exceptions of the
           coordinate reference
-          systems register maintained by OGC [[OGC-EPSG]].</p>
+          systems register maintained by OGC [[?OGC-EPSG]].</p>
 
-        <p>For two of these controlled vocabularies, namely the NGDA spatial data themes [[NGDA-THEMES]] and
+        <p>For two of these controlled vocabularies, namely the NGDA spatial data themes [[?NGDA-THEMES]] and
           the ISO
-          topic categories [[ISO-19115-1]], the DCAT-US Working Group has defined a set of harmonised mappings to
-          the Data.gov Vocabularies Data Themes [[DATA-GOV-THEME]], in order to facilitate the identification of the
-          relevant theme in [[DATA-GOV-THEME]] for geospatial/statistical metadata.</p>
+          topic categories [[?ISO-19115-1]], the DCAT-US Working Group has defined a set of harmonised mappings to
+          the Data.gov Vocabularies Data Themes [[?DATA-GOV-THEME]] (TBD), in order to facilitate the identification of
+          the
+          relevant theme in [[?DATA-GOV-THEME]] for geospatial/statistical metadata.</p>
 
         <div data-include-format="html" data-include-replace="true"
           data-include="./tables/controlled-vocabularies-to-be-used.html"></div>
@@ -21751,7 +21700,7 @@ dcat:prev ex:budget-2019 ;
 
 
     <p>In order to verify whether a catalog adheres to the stipulated constraints in this Application Profile, the
-      constraints are articulated utilizing SHACL [[SHACL]]. All constraints in this specification that were amenable
+      constraints are articulated utilizing SHACL [[?SHACL]]. All constraints in this specification that were amenable
       to
       SHACL expression translation have been incorporated. Consequently, this set of SHACL expressions can be employed
       to construct a validation check for data exchange between two systems, a common scenario being one catalog being
@@ -21760,7 +21709,7 @@ dcat:prev ex:budget-2019 ;
     <p>For example, it may be recognized that the data being exchanged doesn't include the organizations' details
       since
       they are uniquely identified by a deferenceable URI. In this scenario, enforcing rules about the mandatory
-      presence of a name for each organization may not be pertinent. Rigorously applying the DCAT-AP SHACL expressions
+      presence of a name for each organization may not be pertinent. Rigorously applying the DCAT-US SHACL expressions
       would trigger errors, even though the data is accessible via an alternative route. In this context, it's
       acceptable to omit this check during the validation phase.</p>
 
@@ -21834,11 +21783,6 @@ dcat:prev ex:budget-2019 ;
           <td>[[LOCN]]</td>
         </tr>
         <tr>
-          <td><code>odrs</code></td>
-          <td><code>https://schema.theodi.org/odrs/</code></td>
-          <td>[[ODRS]]</td>
-        </tr>
-        <tr>
           <td><code>org</code></td>
           <td><code>http://www.w3c.org/ns/org#</code></td>
           <td>[[VOCAB-ORG]]</td>
@@ -21866,7 +21810,7 @@ dcat:prev ex:budget-2019 ;
         <tr>
           <td><code>sdmx-attribute</code></td>
           <td><code>http://purl.org/linked-data/sdmx/2009/attribute#</code></td>
-          <td>[[SDMX-ATTRIBUTE]]</td>
+          <td>[[?SDMX-ATTRIBUTE]]</td>
         </tr>
         <tr>
           <td><code>skos</code></td>
