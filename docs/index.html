@@ -136,7 +136,7 @@
 <body>
 
   <section id="abstract">
-    <p>The DCAT-US Profile Version 3 (DCAT-US 3.0) is an updated specification designed to facilitate data cataloging,
+    <p>The DCAT-US 3.0 Profile (DCAT-US 3.0) is an updated specification designed to facilitate data cataloging,
       discovery, and interoperability among US government agencies. Leveraging the strong foundation laid by the Project
       Open Data (POD) 1.1 standard (also known as [[DCAT-US-1.1]]), this profile seamlessly aligns with the
       emerging Data Catalog Vocabulary (DCAT) - Version 3 (DCAT 3) [[VOCAB-DCAT-3]] recommendations approved by the
@@ -151,7 +151,8 @@
       specialized properties to address geospatial and statistical datasets, effectively harnessing established
       vocabularies to elevate the process of data sharing and subsequent reuse. </p>
 
-    <p>Distinguished by its usage of the Shapes Constraint Language (SHACL) for structural and semantic validation, the
+    <p>Distinguished by its usage of the Shapes Constraint Language (SHACL) [[?SHACL]] for structural and semantic
+      validation, the
       DCAT-US 3.0 introduces a highly refined, interoperable, and future-proof framework for describing and validating
       dataset metadata. In essence, it is not just a specification but an advanced stride towards achieving a
       data-centric landscape where precise metadata description empowers the efficient flow of information while laying
@@ -159,7 +160,8 @@
   </section>
 
   <aside class="note">
-    <p>DCAT 3 advances beyond its predecessor, DCAT 2 Data Catalog Vocabulary (DCAT) - Version 2, while preserving its
+    <p>DCAT 3 [[VOCAB-DCAT-3]] advances beyond its predecessor, DCAT 2 Data Catalog Vocabulary (DCAT) - Version 2
+      [[?VOCAB-DCAT-2]], while preserving its
       relevance without rendering it obsolete. The foundational DCAT namespace persists in DCAT 3, ensuring a harmonious
       coexistence with the terminology of DCAT 2. Notably, while DCAT 3 introduces eNOTE the DCAT 3 standard, harnessing
       its
@@ -175,37 +177,35 @@
     <h2>Background</h2>
     <p>The <a href="https://github.com/DOI-DO/dcat-us">FAIRness Project</a> is introducing a draft update to the Data
       Catalog (DCAT) standard for the United States.
-      This update, “DCAT-US v3.0 Schema,” builds upon the requirements we received from agencies as well as data
+      This update, “DCAT-US 3.0 Schema,” builds upon the requirements we received from agencies as well as data
       creators, providers, and users, Data Inventory statutory requirements, and the lessons learned over ten years of
       successful implementation of the Project Open Data Metadata Standard (DCAT-US v1.1) used by Data.gov.</p>
 
-    <p>We need your help to review and comment on this draft so that it meets agencies’ data inventory needs and those
+    <p>We need your help to review and comment on this draft so that it meets agencies' data inventory needs and those
       of cross-government programs like Data.gov, GeoPlatform, and the Standard Application Process Portal.</p>
 
     <p>Once approved and implemented, the update will improve the FAIRness, or Findability, Accessibility,
-      Interoperability, and Reusability of all types of federal data. DCAT-US v3 will provide a *single* metadata
+      Interoperability, and Reusability of all types of federal data. DCAT-US 3.0 will provide a *single* metadata
       standard able to support most requirements for documentation of business, technical, statistical, and geospatial
       data consistently.</p>
 
-    <p>Key features of the DCAT-3 Schema are:</p>
+    <p>Key features of the DCAT-US 3.0 Schema are:</p>
     <ul>
-      <li>DCAT-US v3 is not a “new” standard; it is a “profile” of or implementation of the World Wide Web Consortium’s
+      <li>DCAT-US 3.0 is not a “new” standard; it is a “profile” of or implementation of the World Wide Web Consortium's
         (W3C) DCAT standard [[VOCAB-DCAT-3]]</li>
-      <li>DCAT-US v3 is compatible with existing DCAT v1.1 metadata. No translation is required to implement the new
+      <li>DCAT-US 3.0 is compatible with existing DCAT v1.1 metadata. No translation is required to implement the new
         schema. New metadata elements are added, but there are no major changes to existing elements.</li>
-      <li>DCAT-US v3 supports new and updated controlled vocabularies, allowing for consistently naming items like
+      <li>DCAT-US 3.0 supports new and updated controlled vocabularies, allowing for consistently naming items like
         federal agencies, file formats, and units of measure.</li>
-      <li>DCAT-US v3 will overcome the limitations of DCAT v1.1 when documenting geospatial data, eliminating the need
+      <li>DCAT-US 3.0 will overcome the limitations of DCAT v1.1 when documenting geospatial data, eliminating the need
         for a separate federal standard for this subset of data.</li>
-      <li>DCAT-US v3 follows a similar approach to European metadata [[?DCAT-AP]]; vendor support is already in place,
-        with
-        additional support underway.</li>
+      <li>DCAT-US 3.0 follows a similar approach to European metadata [[?DCAT-AP]]; vendor support is already in place,
+        with additional support underway.</li>
     </ul>
     <p>Please review the documentation below and provide feedback to help make this standard as useful as possible to
       you and the broader federal data user community.</p>
     <p>Please follow the instructions found <a href="https://github.com/DOI-DO/dcat-us/wiki#contribute">here</a> to
-      submit
-      your comments and issues with the current draft schema specification.</p>
+      submit your comments and issues with the current draft schema specification.</p>
 
   </section>
 
@@ -213,18 +213,18 @@
 
   <section id="overview" class="informative">
     <h2>Overview</h2>
-    <p>The DCAT-US Profile Version 3 is a comprehensive update to the Project Open Data (POD) 1.1 standard, designed to
+    <p>The DCAT-US 3.0 Profile is a comprehensive update to the Project Open Data (POD) 1.1 standard, designed to
       meet the evolving needs of data exchange and interoperability among US government agencies. This profile builds on
       the foundation laid by POD 1.1 and is aligned with the latest DCAT 3 standard from the World Wide Web Consortium
       (W3C). In addition, the profile aims to embody the FAIR principles, ensuring that data is Findable, Accessible,
       Interoperable, and Reusable. This introduction will provide an overview of the purpose of this profile, highlight
       the gaps between POD 1.1 and DCAT 3, and elaborate on the differences and enhancements offered by the DCAT-US
-      Profile Version 3.
+      3.0 profile.
     </p>
 
     <!-- Purpose and Evolution-->
     <h3>Purpose and Evolution</h3>
-    <p>The purpose of the DCAT-US Profile Version 3 is to improve data discoverability, accessibility, and
+    <p>The purpose of the DCAT-US 3.0 Profile is to improve data discoverability, accessibility, and
       interoperability among US government agencies. By adhering to the FAIR principles, the profile promotes more
       effective data sharing and reuse. The FAIR principles emphasize that data should be:
     </p>
@@ -234,7 +234,7 @@
       <li>Interoperable: Ready for use with other data sources and applications.</li>
       <li>Reusable: Clearly documented and licensed, facilitating reuse by others.</li>
     </ul>
-    <p>The DCAT-US Profile Version 3 bridges the gap between the POD 1.1 and DCAT 3 standards by incorporating the
+    <p>The DCAT-US 3.0 Profile bridges the gap between the POD 1.1 and DCAT 3 standards by incorporating the
       best features of both while also addressing specific metadata requirements unique to the US context. It offers a
       standardized approach for describing and exchanging datasets, thereby enabling more efficient data sharing and
       reuse.
@@ -242,20 +242,20 @@
     <section id="dcat-vocabulary">
       <h3>Data Structure</h3>
       <p>The Application Profile specified in this document is based on the specification of the Data Catalog Vocabulary
-        (DCAT)
-        developed under the responsibility of the Government Linked Data Working Group at W3C. DCAT is an RDF vocabulary
+        Version 3 (DCAT 3) [[VOCAB-DCAT-3]]
+        developed under the responsibility of the W3C Dataset Exchange Working Group (DXWG). DCAT is an RDF vocabulary
         designed to facilitate interoperability between data catalogs published on the Web. Additional
         classes and properties from other well-known vocabularies are re-used where necessary.
       </p>
       <p>The DCAT vocabulary consists of classes and properties.</p>
       <ul>
         <li><strong>Classes are things on the internet</strong>: Not all of them have URIs, but it is recommended to
-          provide a URI for them.
-          They are complex things like a person, an organization, a dataset, a website or a downloadable data file.
+          provide a URI for them. They are complex things like a person, an organization, a dataset, a website or a
+          downloadable data file.
         </li>
         <li><strong>Classes have properties</strong>: The properties are the attributes describing these things. Some
-          properties occur
-          in more than one class, a title for example is a common attribute. Other properties are very specialized such
+          properties occur in more than one class, a title for example is a common attribute. Other properties are very
+          specialized such
           as a file format that only makes sense for a data file.
         </li>
         <li><strong>Properties can be simple or complex</strong>: Some properties are classes. For example, an
@@ -296,24 +296,20 @@
     </p>
     <ul>
       <li><strong>Increased expressiveness</strong>: DCAT 3 offers a richer set of classes and properties, enabling
-        more detailed
-        descriptions of datasets and their relationships.
+        more detailed descriptions of datasets and their relationships.
       </li>
       <li><strong>Improved support for geospatial data</strong>: DCAT 3 provides better support for describing
-        geospatial datasets,
-        including coordinate reference systems and geometry.
+        geospatial datasets, including coordinate reference systems and geometry.
       </li>
       <li><strong>Enhanced handling of statistical data</strong>: DCAT 3 and RDF Data Cube (QB) specification
-        introduce new vocabulary terms to describe statistical
-        datasets and their dimensions more effectively.
+        introduce new vocabulary terms to describe statistical datasets and their dimensions more effectively.
       </li>
       <li><strong>Refined vocabularies</strong>: DCAT 3 benefits from updated reference controlled vocabularies to
-        ensure better
-        interoperability between agencies and systems.
+        ensure better interoperability between agencies and systems.
       </li>
     </ul>
     <h3>DCAT-US Features</h3>
-    <p>The DCAT-US Profile Version 3 not only incorporates the enhancements provided by DCAT 3 but also maintains the
+    <p>The DCAT-US 3.0 Profile not only incorporates the enhancements provided by DCAT 3 but also maintains the
       US-specific metadata requirements defined in POD 1.1. This profile offers a harmonized approach to data cataloging
       that accounts for the unique needs of US agencies.
     </p>
@@ -377,28 +373,25 @@
         potentially affecting interoperability.
       </li>
     </ul>
-    <p>Considering these limitations, the DCAT-US Profile Version 3 has chosen SHACL as the foundation for its data
+    <p>Considering these limitations, the DCAT-US 3.0 Profile has chosen SHACL as the foundation for its data
       modeling and validation, ensuring a more expressive, interoperable, and future-proof framework for defining
       dataset metadata.
     </p>
-    <p>The DCAT-US Profile Version 3 is defined using the Shapes Constraint Language (SHACL), which offers several
+    <p>The DCAT-US 3.0 Profile is defined using the Shapes Constraint Language (SHACL), which offers several
       advantages over previous approaches:
     </p>
     <ul>
       <li><strong>Expressive and flexible</strong>: SHACL allows for the precise definition of constraints on RDF data,
-        making it easier
-        to validate and verify datasets.
+        making it easier to validate and verify datasets.
       </li>
       <li><strong>Scalable and efficient</strong>: SHACL is designed for efficient validation, making it suitable for
-        use with large
-        datasets and complex data models.
+        use with large datasets and complex data models.
       </li>
       <li><strong>Widely adopted</strong>: As a W3C recommendation, SHACL enjoys broad support among data management
-        tools and libraries,
-        facilitating interoperability and reuse.
+        tools and libraries, facilitating interoperability and reuse.
       </li>
     </ul>
-    <p>By using SHACL, the DCAT-US Profile Version 3 ensures a robust and extensible foundation for future updates, as
+    <p>By using [[?SHACL]], the DCAT-US 3.0 Profile ensures a robust and extensible foundation for future updates, as
       well as compatibility with a wide range of data processing tools and applications.
     </p>
     <section id="document-status">
@@ -438,11 +431,9 @@
       </ul>
 
       For the properties listed in the table in section [[[#controlled-vocabularies]]], the associated controlled
-      vocabularies
-      MUST be used. Additional controlled vocabularies MAY be used.
-      In addition to the mandatory properties, any of the recommended and optional properties defined in each class
-      description
-      MAY be provided.
+      vocabularies MUST be used. Additional controlled vocabularies MAY be used. In addition to the mandatory
+      properties, any of the recommended and optional properties defined in each class
+      description MAY be provided.
     </section>
     <section id="receiver-requirements">
       <h3>Receiver requirements</h3>
@@ -460,8 +451,8 @@
       </li>
 
       "Processing" means that receivers must accept incoming data and transparently provide these data to applications
-      and services.
-      It does neither imply nor prescribe what applications and services finally do with the data (parse, convert,
+      and services. It does neither imply nor prescribe what applications and services finally do with the data (parse,
+      convert,
       store, make searchable, display to users, etc.).
 
     </section>
@@ -2394,7 +2385,7 @@
       <h3>Catalog</h3>
       <aside class="note">Aligned with DCAT 3</aside>
       <aside class="note">
-        <p>The scope of [[VOCAB-DCAT-20140116]] (DCAT-1) and [[DCAT-US-1.1]] was catalogs of datasets. This has been
+        <p>The scope of [[VOCAB-DCAT-20114016]] (DCAT-1) and [[DCAT-US-1.1]] was catalogs of datasets. This has been
           generalized in [[VOCAB-DCAT-3]] and DCAT-US 3.0 application profile.
           Properties common to all cataloged resources are now associated with a super-class <a
             data-cite="VOCAB-DCAT-3#Class:Resource"><code>dcat:Resource</code></a>.</p>
