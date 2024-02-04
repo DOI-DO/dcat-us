@@ -5980,7 +5980,7 @@
               </tr>
               <tr>
                 <th>Range</th>
-                <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a>
+                <td><a data-cite=" XMLSCHEMA11-2#string"><code>xsd:string</code></a>
                 </td>
               </tr>
               <tr>
@@ -11435,18 +11435,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td><a href="#distribution-access-url">access URL</a></td>
-            <td><a data-cite="VOCAB-DCAT-3#Property:distribution_access_url">
-                <code>dcat:accessURL</code></a>
-            </td>
-            <td>
-              <a data-cite="RDF-SCHEMA#ch_resource"><code>rdfs:Resource</code></a>
-            </td>
-            <td><strong>M</strong></td>
-            <td>1..n</td>
-            <td>No Change</td>
-          </tr>
+
           <tr>
             <td><a href="#distribution-license">license</a></td>
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/license"><code>dcterms:license</code></a>
@@ -11456,6 +11445,18 @@
             <td><strong>M</strong></td>
             <td>1..1</td>
             <td><span style="color: green;">Aligned</span></td>
+          </tr>
+          <tr>
+            <td><a href="#distribution-access-url">access URL</a></td>
+            <td><a data-cite="VOCAB-DCAT-3#Property:distribution_access_url">
+                <code>dcat:accessURL</code></a>
+            </td>
+            <td>
+              <a data-cite="RDF-SCHEMA#ch_resource"><code>rdfs:Resource</code></a>
+            </td>
+            <td>R</td>
+            <td>0..1</td>
+            <td>No Change</td>
           </tr>
           <tr>
             <td><a href="#distribution-availability">availability</a></td>
@@ -11665,7 +11666,7 @@
             </td>
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Location"><code>rdfs:Resource</code></a></td>
             <td>O</td>
-            <td>0..n</td>
+            <td>0..1</td>
             <td>No Change</td>
           </tr>
           <tr>
@@ -11707,7 +11708,7 @@
             </td>
             <td>O</td>
             <td>0..n</td>
-            <td>unchanged</td>
+            <td>No Change</td>
           </tr>
           <tr>
             <td><a href="#distribution-media-type">media type</a></td>
@@ -11763,59 +11764,7 @@
       <section id="distribution-mandatory-props">
 
         <h4>Mandatory Properties</h4>
-        <section id="distribution-access-url">
-          <h4>Property: access URL</h4>
-          <table class="def">
-            <tbody>
-              <tr>
-                <th>Property</th>
-                <td>access URL</td>
-              </tr>
-              <tr>
-                <th>Requirement level</th>
-                <td><strong>Mandatory</strong></td>
-              </tr>
-              <tr>
-                <th>Cardinality</th>
-                <td>1..n</td>
-              </tr>
-              <tr>
-                <th>URI</th>
-                <td><a data-cite="VOCAB-DCAT-3#Property:distribution_access_url">
-                    <code>dcat:accessURL</code></a>
-                </td>
-              </tr>
-              <tr>
-                <th>Range</th>
-                <td><a data-cite="RDF-SCHEMA#ch_resource">
-                    <code>rdfs:Resource</code></a>
-                </td>
-              </tr>
-              <tr>
-                <th>Usage note</th>
-                <td>
-                  <ul>
-                    <li>This property contains a URL that gives access to a Distribution of the Dataset. The
-                      resource
-                      at
-                      the access URL may contain information about how to get the Dataset.
-                    </li>
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <aside class="example ds-selector-tabs" title="Usage of dcat:accessURL for dcat:Distribution">
-            <div class="selectors">
-              <button class="selected exampleTab1 ttl" onclick="openTab('exampleTab1', 'ttl')">TTL</button>
-              <button class="exampleTab1 jsonld" onclick="openTab('exampleTab1', 'jsonld')">JSON-LD</button>
-            </div>
-            <pre class="selected ttl exampleTab1" data-include-format="text"
-              data-include="./examples/distribution/access-url.ttl"></pre>
-            <pre class="jsonld exampleTab1 json" data-include-format="text"
-              data-include="./examples/distribution/access-url.jsonld"></pre>
-          </aside>
-        </section>
+
         <section id="distribution-license">
           <h4>Property: license</h4>
           <table class="def">
@@ -11869,6 +11818,62 @@
       </section>
       <section id="distribution-recommended-props">
         <h4>Recommended Properties</h4>
+        <section id="distribution-access-url">
+          <h4>Property: access URL</h4>
+          <table class="def">
+            <tbody>
+              <tr>
+                <th>Property</th>
+                <td>access URL</td>
+              </tr>
+              <tr>
+                <th>Requirement level</th>
+                <td>Recommended</td>
+              </tr>
+              <tr>
+                <th>Cardinality</th>
+                <td>0..1</td>
+              </tr>
+              <tr>
+                <th>URI</th>
+                <td><a data-cite="VOCAB-DCAT-3#Property:distribution_access_url">
+                    <code>dcat:accessURL</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Range</th>
+                <td><a data-cite="RDF-SCHEMA#ch_resource">
+                    <code>rdfs:Resource</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Usage note</th>
+                <td>
+                  <ul>
+                    <li>This should be the URL for an indirect means of accessing the data, such as API documentation, a
+                      'wizard' or other graphical interface which is used to generate a download, feed, or a request
+                      form for the data. When the access is restricted but the dataset is available online
+                      indirectly, this field should be the URL that provides indirect access. This should not be a
+                      direct download URL. It is usually assumed that accessURL is an HTML webpage. This property
+                      contains a URL that gives access to a Distribution of the Dataset (typically from a service). The
+                      resource at the access URL may contain information about how to get the Dataset.
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <aside class="example ds-selector-tabs" title="Usage of dcat:accessURL for dcat:Distribution">
+            <div class="selectors">
+              <button class="selected exampleTab1 ttl" onclick="openTab('exampleTab1', 'ttl')">TTL</button>
+              <button class="exampleTab1 jsonld" onclick="openTab('exampleTab1', 'jsonld')">JSON-LD</button>
+            </div>
+            <pre class="selected ttl exampleTab1" data-include-format="text"
+              data-include="./examples/distribution/access-url.ttl"></pre>
+            <pre class="jsonld exampleTab1 json" data-include-format="text"
+              data-include="./examples/distribution/access-url.jsonld"></pre>
+          </aside>
+        </section>
         <section id="distribution-availability">
           <h4>Property: availability</h4>
           <table class="def">
@@ -12813,13 +12818,8 @@
                 <td>
                   <ul>
                     <li>If a dataset contains distributions that differ regarding their content beyond just
-                      differences
-                      in format or resolution this property can be used to specify temporal or spatial coverage of
-                      the
-                      data that the distribution contains.
-                    </li>
-                    <li>
-                      It’s a DCAT-US Custom Class.
+                      differences in format or resolution this property can be used to specify temporal or spatial
+                      coverage of the data that the distribution contains.
                     </li>
                   </ul>
                 </td>
@@ -12885,7 +12885,7 @@
               </tr>
               <tr>
                 <th>Cardinality</th>
-                <td>0..n</td>
+                <td>0..1</td>
               </tr>
               <tr>
                 <th>URI</th>
@@ -12902,12 +12902,8 @@
               <tr>
                 <th>Usage note</th>
                 <td>
-
-                  In case of a downloadable file, it is good practice to repeat the mandatory accessURL
-                  in this more specific property, to indicate to the data user that the distribution has this
-                  extra characteristic of being downloadable. The downloadURLs MAY thus be the same as the
-                  accessURLs but they MAY also differ.
-
+                  This must be the direct download URL. Other means of accessing the dataset should be
+                  expressed using accessURL. This should always be accompanied by mediaType.
                 </td>
               </tr>
             </tbody>
@@ -18219,7 +18215,7 @@
           an identifier, its primary intention is to give a machine-readable, often standardized, symbolic name to a
           concept, especially when such a notation exists in a legacy or external system. For example, in a controlled
           vocabulary, each concept might have a notation that denotes its code in a classification scheme.</p>
-      
+
       </section>
     </section>
 
@@ -20463,13 +20459,10 @@
       <h3>Distribution Metadata</h3>
 
       <p>In the realm of data sharing and management, <a href="#properties-for-distribution">dcat:Distribution</a>
-        plays
-        a pivotal role as the tangible
-        representation of datasets. A Distribution within the DCAT framework is more than just
-        a link to a dataset; it is the embodiment of the dataset in a practical, accessible format, adhering to the
-        W3C standards. It is the dataset manifested in a specific format, ranging from CSV
-        files to complex databases, inherently tied to its parent dataset. This relationship underscores the fact that
-        a
+        plays a pivotal role as the tangible representation of datasets. A Distribution within the DCAT framework is
+        more than just a link to a dataset; it is the embodiment of the dataset in a practical, accessible format,
+        adhering to the W3C standards. It is the dataset manifested in a specific format, ranging from CSV files to
+        complex databases, inherently tied to its parent dataset. This relationship underscores the fact that a
         Distribution does not exist in isolation but as a practical form of the dataset, prepared and published by
         data
         providers for end users. The core attributes of a Distribution focus on its file-centric properties like
@@ -20484,18 +20477,15 @@
           The following guidelines are designed to help determine the most effective way to structure DCAT
           distributions, whether as a single file, a multi-file package, or multiple distributions. The choice depends
           on the dataset's characteristics, user needs, and the data's intended use. Consider these guidelines to
-          ensure
-          your distributions are user-friendly, accessible, and align with best practices in data management.
+          ensure your distributions are user-friendly, accessible, and align with best practices in data management.
         </p>
         <ul>
           <li>
             <p>
               <strong>Single-File Distribution:</strong> Ideal for datasets that are cohesive and standalone,
-              typically
-              encapsulated in a single format like CSV or XML. This approach is beneficial for smaller or
-              comprehensive
-              datasets, simplifying access and use. The key is to choose a file format that effectively represents all
-              necessary data.
+              typically encapsulated in a single format like CSV or XML. This approach is beneficial for smaller or
+              comprehensive datasets, simplifying access and use. The key is to choose a file format that effectively
+              represents all necessary data.
             </p>
           </li>
           <li>
@@ -20503,8 +20493,7 @@
               <strong>Multi-File Packaged Distribution:</strong> Essential for complex datasets, such as ArcGIS
               shapefiles, which require multiple interdependent files. Packaging related files together is useful for
               large or component-rich datasets. It's crucial to include all essential components and ensure the
-              package
-              facilitates easy download and usage.
+              package facilitates easy download and usage.
             </p>
           </li>
           <li>
@@ -20518,8 +20507,7 @@
         <p>
           When selecting a distribution format, it is important to consider factors such as the interdependence of
           files, the ease of user accessibility, the size and downloadability of the data, the frequency of updates,
-          and
-          the diversity of formats required. A thoughtful approach to these criteria will help in creating a
+          and the diversity of formats required. A thoughtful approach to these criteria will help in creating a
           distribution strategy that is both practical for data providers and beneficial for end-users, enhancing the
           overall effectiveness of data sharing and utilization.
         </p>
@@ -20537,17 +20525,14 @@
         <ul>
           <li>
             <a href="#distribution-download-url"> <strong>dcat:downloadURL:</strong></a> This property is preferred
-            for
-            direct links to downloadable resources. It
-            is the most straightforward way to provide access to a distribution, allowing users to directly download
-            the
-            dataset in its entirety without any intermediate steps or interactions.
+            for direct links to downloadable resources. It is the most straightforward way to provide access to a
+            distribution, allowing users to directly download
+            the dataset in its entirety without any intermediate steps or interactions.
           </li>
           <li>
             <a href="#distribution-access-url"><strong>dcat:accessURL:</strong></a> This property should be used for
-            the
-            URL of a service or location that
-            provides access to the distribution, typically through a web form, query, or API call. It is ideal for
+            the URL of a service or location that provides access to the distribution, typically through a web form,
+            query, or API call. It is ideal for
             scenarios where the distribution is accessed via an interactive mechanism rather than direct download. For
             example, when accessing datasets that require specific queries or are provided through a web service.
           </li>
