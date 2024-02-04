@@ -139,13 +139,13 @@
     <p>The DCAT-US Profile Version 3 (DCAT-US 3.0) is an updated specification designed to facilitate data cataloging,
       discovery, and interoperability among US government agencies. Leveraging the strong foundation laid by the Project
       Open Data (POD) 1.1 standard (also known as [[DCAT-US-1.1]]), this profile seamlessly aligns with the
-      emerging Data Catalog Vocabulary (DCAT) - Version 3 (DCAT 3.0)[[[VOCAB-DCAT-3]]] recommendations approved by the
+      emerging Data Catalog Vocabulary (DCAT) - Version 3 (DCAT 3) [[VOCAB-DCAT-3]] recommendations approved by the
       World Wide Web Consortium (W3C), all while upholding the essential FAIR principles. Moreover, it emphasizes
       maintaining compatibility with the existing POD 1.1 standard, ensuring a fluid transition. The result ensures
       data's Findability, Accessibility, Interoperability, and Reusability (FAIR). </p>
 
     <p>The predominant significance of the DCAT-US 3.0 lies in its role as a bridge between the well-established DCAT-US
-      1.1 and the forward-looking DCAT 3.0, uniting them under a single, standardized approach for articulating and
+      1.1 and the forward-looking DCAT 3, uniting them under a single, standardized approach for articulating and
       exchanging datasets. By harmonizing the most significant attributes of both standards, this profile also addresses
       the distinctive metadata prerequisites inherent to the US context. It goes above and beyond by encompassing
       specialized properties to address geospatial and statistical datasets, effectively harnessing established
@@ -215,10 +215,10 @@
     <h2>Overview</h2>
     <p>The DCAT-US Profile Version 3 is a comprehensive update to the Project Open Data (POD) 1.1 standard, designed to
       meet the evolving needs of data exchange and interoperability among US government agencies. This profile builds on
-      the foundation laid by POD 1.1 and is aligned with the latest DCAT 3.0 standard from the World Wide Web Consortium
+      the foundation laid by POD 1.1 and is aligned with the latest DCAT 3 standard from the World Wide Web Consortium
       (W3C). In addition, the profile aims to embody the FAIR principles, ensuring that data is Findable, Accessible,
       Interoperable, and Reusable. This introduction will provide an overview of the purpose of this profile, highlight
-      the gaps between POD 1.1 and DCAT 3.0, and elaborate on the differences and enhancements offered by the DCAT-US
+      the gaps between POD 1.1 and DCAT 3, and elaborate on the differences and enhancements offered by the DCAT-US
       Profile Version 3.
     </p>
 
@@ -234,7 +234,7 @@
       <li>Interoperable: Ready for use with other data sources and applications.</li>
       <li>Reusable: Clearly documented and licensed, facilitating reuse by others.</li>
     </ul>
-    <p>The DCAT-US Profile Version 3 bridges the gap between the POD 1.1 and DCAT 3.0 standards by incorporating the
+    <p>The DCAT-US Profile Version 3 bridges the gap between the POD 1.1 and DCAT 3 standards by incorporating the
       best features of both while also addressing specific metadata requirements unique to the US context. It offers a
       standardized approach for describing and exchanging datasets, thereby enabling more efficient data sharing and
       reuse.
@@ -291,29 +291,29 @@
     </section>
     <!-- Gaps between POD 1.1 and DCAT -->
     <h3>Gaps with DCAT-US 1.1</h3>
-    <p>The DCAT-US 1.1 standard, while effective for its time, had some limitations that the DCAT 3.0 standard has
+    <p>The DCAT-US 1.1 standard, while effective for its time, had some limitations that the DCAT 3 standard has
       addressed. The key differences between the two standards include:
     </p>
     <ul>
-      <li><strong>Increased expressiveness</strong>: DCAT 3.0 offers a richer set of classes and properties, enabling
+      <li><strong>Increased expressiveness</strong>: DCAT 3 offers a richer set of classes and properties, enabling
         more detailed
         descriptions of datasets and their relationships.
       </li>
-      <li><strong>Improved support for geospatial data</strong>: DCAT 3.0 provides better support for describing
+      <li><strong>Improved support for geospatial data</strong>: DCAT 3 provides better support for describing
         geospatial datasets,
         including coordinate reference systems and geometry.
       </li>
-      <li><strong>Enhanced handling of statistical data</strong>: DCAT 3.0 and RDF Data Cube (QB) specification
+      <li><strong>Enhanced handling of statistical data</strong>: DCAT 3 and RDF Data Cube (QB) specification
         introduce new vocabulary terms to describe statistical
         datasets and their dimensions more effectively.
       </li>
-      <li><strong>Refined vocabularies</strong>: DCAT 3.0 benefits from updated reference controlled vocabularies to
+      <li><strong>Refined vocabularies</strong>: DCAT 3 benefits from updated reference controlled vocabularies to
         ensure better
         interoperability between agencies and systems.
       </li>
     </ul>
     <h3>DCAT-US Features</h3>
-    <p>The DCAT-US Profile Version 3 not only incorporates the enhancements provided by DCAT 3.0 but also maintains the
+    <p>The DCAT-US Profile Version 3 not only incorporates the enhancements provided by DCAT 3 but also maintains the
       US-specific metadata requirements defined in POD 1.1. This profile offers a harmonized approach to data cataloging
       that accounts for the unique needs of US agencies.
     </p>
@@ -2392,7 +2392,7 @@
     </section>
     <section id="properties-for-catalog">
       <h3>Catalog</h3>
-      <aside class="note">Aligned with DCAT 3.0</aside>
+      <aside class="note">Aligned with DCAT 3</aside>
       <aside class="note">
         <p>The scope of [[VOCAB-DCAT-20140116]] (DCAT-1) and [[DCAT-US-1.1]] was catalogs of datasets. This has been
           generalized in [[VOCAB-DCAT-3]] and DCAT-US 3.0 application profile.
@@ -11708,7 +11708,7 @@
             </td>
             <td>O</td>
             <td>0..n</td>
-            <td>No Change</td>
+            <td>No Change</td>gi
           </tr>
           <tr>
             <td><a href="#distribution-media-type">media type</a></td>
@@ -19229,7 +19229,7 @@
       <section id="spatial-resolution">
         <h4>Spatial Resolution</h4>
         <p>Spatial resolution is a characteristic of geospatial datasets that describes the level of detail or
-          granularity in the spatial representation. In DCAT 3.0, the <a
+          granularity in the spatial representation. In DCAT 3, the <a
             data-cite="VOCAB-DCAT-3#Property:dataset_spatial_resolution"><code>dcat:spatialResolutionInMeters</code></a>
           property is used to specify the spatial resolution of a resource, measured in meters. This property helps
           users understand the level of detail provided by the dataset and assess its suitability for their specific
