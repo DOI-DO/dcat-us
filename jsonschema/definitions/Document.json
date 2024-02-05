@@ -11,6 +11,32 @@
             "type": "string",
             "default": "Document"
         },
+        "conformsTo": {
+            "$id": "http://purl.org/dc/terms/conformsTo",
+            "title": "conforms to standard",
+            "description": "This property refers to an standard which the described Document conforms.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Standard",
+                                "description": "inline description of Standard"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Standard",
+                                "format": "iri"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
         "creator": {
             "$id": "http://purl.org/dc/terms/creator",
             "title": "corporate author",
@@ -35,58 +61,6 @@
                         ]
                     }
                 }
-            ]
-        },
-        "publisher": {
-            "$id": "http://purl.org/dc/terms/publisher",
-            "title": "publisher",
-            "description": "publisher organization of the document",
-            "oneOf": [
-                {
-                    "$ref": "#/definitions/Organization",
-                    "description": "inline description of Organization"
-                },
-                {
-                    "type": "string",
-                    "description": "reference iri of Organization",
-                    "format": "iri"
-                }
-            ]
-        },
-        "issued": {
-            "$id": "http://purl.org/dc/terms/issued",
-            "title": "publication date",
-            "description": "publication date of the document",
-            "type": "string",
-            "oneOf": [
-                {
-                    "format": "date-time"
-                },
-                {
-                    "format": "date"
-                },
-                {
-                    "pattern": "^[0-9]{4}$",
-                    "description": "A year in YYYY format"
-                },
-                {
-                    "pattern": "^[0-9]{4}-[0-9]{2}$",
-                    "description": "A year and month in YYYY-MM format"
-                }
-            ]
-        },
-        "title": {
-            "$id": "http://purl.org/dc/terms/title",
-            "title": "title",
-            "description": "The title of the document in the indicated language",
-            "type": "string"
-        },
-        "titleMap": {
-            "$id": "http://purl.org/dc/terms/title_lang_map",
-            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-            "type": [
-                "null",
-                "object"
             ]
         },
         "mediaType": {
@@ -115,6 +89,60 @@
                 }
             ]
         },
+        "publisher": {
+            "$id": "http://purl.org/dc/terms/publisher",
+            "title": "publisher",
+            "description": "publisher organization of the document",
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/Organization",
+                    "description": "inline description of Organization"
+                },
+                {
+                    "type": "string",
+                    "description": "reference iri of Organization",
+                    "format": "iri"
+                }
+            ]
+        },
+        "category": {
+            "$id": "http://purl.org/dc/terms/type",
+            "title": "category",
+            "description": "Category of the document",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/Concept",
+                            "description": "inline description of Concept"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of Concept",
+                            "format": "iri"
+                        }
+                    ]
+                }
+            ]
+        },
+        "creators": {
+            "$id": "http://purl.org/dc/elements/1.1/creator",
+            "title": "author(s) as literal",
+            "description": "list of authors as a literal",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "publishers": {
+            "$id": "http://purl.org/dc/elements/1.1/publisher",
+            "title": "publisher(s) as literal",
+            "description": "list of publishers as a literal",
+            "type": "string"
+        },
         "abstract": {
             "$id": "http://purl.org/dc/terms/abstract",
             "title": "abstract",
@@ -134,32 +162,6 @@
             "type": [
                 "null",
                 "object"
-            ]
-        },
-        "conformsTo": {
-            "$id": "http://purl.org/dc/terms/conformsTo",
-            "title": "conforms to standard",
-            "description": "This property refers to an standard which the described Document conforms.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "oneOf": [
-                            {
-                                "$ref": "#/definitions/Standard",
-                                "description": "inline description of Standard"
-                            },
-                            {
-                                "type": "string",
-                                "description": "reference iri of Standard",
-                                "format": "iri"
-                            }
-                        ]
-                    }
-                }
             ]
         },
         "bibliographicCitation": {
@@ -209,35 +211,48 @@
                 }
             ]
         },
-        "category": {
-            "$id": "http://purl.org/dc/terms/type",
-            "title": "category",
-            "description": "Category of the document",
+        "issued": {
+            "$id": "http://purl.org/dc/terms/issued",
+            "title": "publication date",
+            "description": "publication date of the document",
+            "type": "string",
             "oneOf": [
                 {
-                    "type": "null"
+                    "format": "date-time"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Concept",
-                            "description": "inline description of Concept"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Concept",
-                            "format": "iri"
-                        }
-                    ]
+                    "format": "date"
+                },
+                {
+                    "pattern": "^[0-9]{4}$",
+                    "description": "A year in YYYY format"
+                },
+                {
+                    "pattern": "^[0-9]{4}-[0-9]{2}$",
+                    "description": "A year and month in YYYY-MM format"
                 }
+            ]
+        },
+        "title": {
+            "$id": "http://purl.org/dc/terms/title",
+            "title": "title",
+            "description": "The title of the document in the indicated language",
+            "type": "string"
+        },
+        "titleMap": {
+            "$id": "http://purl.org/dc/terms/title_lang_map",
+            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+            "type": [
+                "null",
+                "object"
             ]
         }
     },
     "required": [
-        "creator",
         "publisher",
+        "creators",
+        "publishers",
         "issued",
-        "publisher",
         "title"
     ]
 }

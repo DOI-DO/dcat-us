@@ -11,41 +11,49 @@
             "type": "string",
             "default": "CatalogRecord"
         },
-        "modified": {
-            "$id": "http://purl.org/dc/terms/modified",
-            "title": "update/modification date",
-            "description": "The most recent date on which the Catalog Record's entry was changed or modified.",
-            "type": "string",
+        "status": {
+            "$id": "http://www.w3.org/ns/adms#status",
+            "title": "change type",
+            "description": "The status of the catalog record in the context of editorial flow of the dataset and data service descriptions.",
             "oneOf": [
                 {
-                    "format": "date-time"
+                    "type": "null"
                 },
                 {
-                    "format": "date"
-                },
-                {
-                    "pattern": "^[0-9]{4}$",
-                    "description": "A year in YYYY format"
-                },
-                {
-                    "pattern": "^[0-9]{4}-[0-9]{2}$",
-                    "description": "A year and month in YYYY-MM format"
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/Concept",
+                            "description": "inline description of Concept"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of Concept",
+                            "format": "iri"
+                        }
+                    ]
                 }
             ]
         },
-        "primaryTopic": {
-            "$id": "http://xmlns.com/foaf/0.1/primaryTopic",
-            "title": "primary topic",
-            "description": "A link to the Dataset, Data service or Catalog described in the Catalog Record.",
+        "conformsTo": {
+            "$id": "http://purl.org/dc/terms/conformsTo",
+            "title": "application profile",
+            "description": "An Application Profile that the Catalog Record's metadata conforms to.",
             "oneOf": [
                 {
-                    "$ref": "#/definitions/Resource",
-                    "description": "inline description of Resource"
+                    "type": "null"
                 },
                 {
-                    "type": "string",
-                    "description": "reference iri of Resource",
-                    "format": "iri"
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/Standard",
+                            "description": "inline description of Standard"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of Standard",
+                            "format": "iri"
+                        }
+                    ]
                 }
             ]
         },
@@ -123,6 +131,28 @@
                 }
             ]
         },
+        "modified": {
+            "$id": "http://purl.org/dc/terms/modified",
+            "title": "update/modification date",
+            "description": "The most recent date on which the Catalog Record's entry was changed or modified.",
+            "type": "string",
+            "oneOf": [
+                {
+                    "format": "date-time"
+                },
+                {
+                    "format": "date"
+                },
+                {
+                    "pattern": "^[0-9]{4}$",
+                    "description": "A year in YYYY format"
+                },
+                {
+                    "pattern": "^[0-9]{4}-[0-9]{2}$",
+                    "description": "A year and month in YYYY-MM format"
+                }
+            ]
+        },
         "source": {
             "$id": "http://purl.org/dc/terms/source",
             "title": "source metadata",
@@ -155,56 +185,31 @@
                     "type": "null"
                 },
                 {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
+                    "type": "string"
                 }
             ]
         },
-        "status": {
-            "$id": "http://www.w3.org/ns/adms#status",
-            "title": "change type",
-            "description": "The status of the catalog record in the context of editorial flow of the dataset and data service descriptions.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Concept",
-                            "description": "inline description of Concept"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Concept",
-                            "format": "iri"
-                        }
-                    ]
-                }
+        "titleMap": {
+            "$id": "http://purl.org/dc/terms/title_lang_map",
+            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+            "type": [
+                "null",
+                "object"
             ]
         },
-        "conformsTo": {
-            "$id": "http://purl.org/dc/terms/conformsTo",
-            "title": "application profile",
-            "description": "An Application Profile that the Catalog Record's metadata conforms to.",
+        "primaryTopic": {
+            "$id": "http://xmlns.com/foaf/0.1/primaryTopic",
+            "title": "primary topic",
+            "description": "A link to the Dataset, Data service or Catalog described in the Catalog Record.",
             "oneOf": [
                 {
-                    "type": "null"
+                    "$ref": "#/definitions/Resource",
+                    "description": "inline description of Resource"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Standard",
-                            "description": "inline description of Standard"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Standard",
-                            "format": "iri"
-                        }
-                    ]
+                    "type": "string",
+                    "description": "reference iri of Resource",
+                    "format": "iri"
                 }
             ]
         }

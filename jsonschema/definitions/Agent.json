@@ -11,12 +11,6 @@
             "type": "string",
             "default": "Agent"
         },
-        "name": {
-            "$id": "http://xmlns.com/foaf/0.1/name",
-            "title": "name",
-            "description": "The name of the software agent",
-            "type": "string"
-        },
         "category": {
             "$id": "http://purl.org/dc/terms/type",
             "title": "category",
@@ -39,6 +33,12 @@
                     ]
                 }
             ]
+        },
+        "name": {
+            "$id": "http://xmlns.com/foaf/0.1/name",
+            "title": "name",
+            "description": "The name of the software agent",
+            "type": "string"
         }
     },
     "required": [

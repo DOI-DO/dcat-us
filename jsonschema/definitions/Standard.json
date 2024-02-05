@@ -11,39 +11,56 @@
             "type": "string",
             "default": "Standard"
         },
-        "created": {
-            "$id": "http://purl.org/dc/terms/created",
-            "title": "creation date",
-            "description": "This property contains the date on which the Standard has been first created.",
+        "category": {
+            "$id": "http://purl.org/dc/terms/type",
+            "title": "category",
+            "description": "This property refers to the type of the Standard. A controlled vocabulary for the values has not been established.",
             "oneOf": [
                 {
                     "type": "null"
                 },
                 {
-                    "type": "string",
                     "oneOf": [
                         {
-                            "format": "date-time"
+                            "$ref": "#/definitions/Concept",
+                            "description": "inline description of Concept"
                         },
                         {
-                            "format": "date"
-                        },
-                        {
-                            "pattern": "^[0-9]{4}$",
-                            "description": "A year in YYYY format"
-                        },
-                        {
-                            "pattern": "^[0-9]{4}-[0-9]{2}$",
-                            "description": "A year and month in YYYY-MM format"
+                            "type": "string",
+                            "description": "reference iri of Concept",
+                            "format": "iri"
                         }
                     ]
                 }
             ]
         },
-        "modified": {
-            "$id": "http://purl.org/dc/terms/modified",
-            "title": "last modified",
-            "description": "This property contains the most recent date on which the Standard was changed or modified.",
+        "inScheme": {
+            "$id": "http://www.w3.org/2004/02/skos/core#inScheme",
+            "title": "in scheme",
+            "description": "This property MAY be used to specify the reference register to which the Standard belongs.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/ConceptScheme",
+                            "description": "inline description of ConceptScheme"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of ConceptScheme",
+                            "format": "iri"
+                        }
+                    ]
+                }
+            ]
+        },
+        "created": {
+            "$id": "http://purl.org/dc/terms/created",
+            "title": "creation date",
+            "description": "This property contains the date on which the Standard has been first created.",
             "oneOf": [
                 {
                     "type": "null"
@@ -135,6 +152,35 @@
                 }
             ]
         },
+        "modified": {
+            "$id": "http://purl.org/dc/terms/modified",
+            "title": "last modified",
+            "description": "This property contains the most recent date on which the Standard was changed or modified.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string",
+                    "oneOf": [
+                        {
+                            "format": "date-time"
+                        },
+                        {
+                            "format": "date"
+                        },
+                        {
+                            "pattern": "^[0-9]{4}$",
+                            "description": "A year in YYYY format"
+                        },
+                        {
+                            "pattern": "^[0-9]{4}-[0-9]{2}$",
+                            "description": "A year and month in YYYY-MM format"
+                        }
+                    ]
+                }
+            ]
+        },
         "title": {
             "$id": "http://purl.org/dc/terms/title",
             "title": "title",
@@ -154,52 +200,6 @@
             "type": [
                 "null",
                 "object"
-            ]
-        },
-        "category": {
-            "$id": "http://purl.org/dc/terms/type",
-            "title": "category",
-            "description": "This property refers to the type of the Standard. A controlled vocabulary for the values has not been established.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Concept",
-                            "description": "inline description of Concept"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Concept",
-                            "format": "iri"
-                        }
-                    ]
-                }
-            ]
-        },
-        "inScheme": {
-            "$id": "http://www.w3.org/2004/02/skos/core#inScheme",
-            "title": "in scheme",
-            "description": "This property MAY be used to specify the reference register to which the Standard belongs.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/ConceptScheme",
-                            "description": "inline description of ConceptScheme"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of ConceptScheme",
-                            "format": "iri"
-                        }
-                    ]
-                }
             ]
         }
     },

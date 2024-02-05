@@ -11,41 +11,6 @@
             "type": "string",
             "default": "Distribution"
         },
-        "accessURL": {
-            "$id": "http://www.w3.org/ns/dcat#accessURL",
-            "title": "access URL",
-            "description": "A URL that gives access to a Distribution of the Dataset.",
-            "type": "array",
-            "items": {
-                "oneOf": [
-                    {
-                        "$ref": "#/definitions/Resource",
-                        "description": "inline description of Resource"
-                    },
-                    {
-                        "type": "string",
-                        "description": "reference iri of Resource",
-                        "format": "iri"
-                    }
-                ]
-            }
-        },
-        "license": {
-            "$id": "http://purl.org/dc/terms/license",
-            "title": "license",
-            "description": "A licence under which the Distribution is made available.",
-            "oneOf": [
-                {
-                    "$ref": "#/definitions/LicenseDocument",
-                    "description": "inline description of LicenseDocument"
-                },
-                {
-                    "type": "string",
-                    "description": "reference iri of LicenseDocument",
-                    "format": "iri"
-                }
-            ]
-        },
         "representationTechnique": {
             "$id": "http://www.w3.org/ns/adms#representationTechnique",
             "title": "representation technique",
@@ -134,6 +99,29 @@
                 }
             ]
         },
+        "accessURL": {
+            "$id": "http://www.w3.org/ns/dcat#accessURL",
+            "title": "access URL",
+            "description": "A URL that gives access to a Distribution of the Dataset.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/Resource",
+                            "description": "inline description of Resource"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of Resource",
+                            "format": "iri"
+                        }
+                    ]
+                }
+            ]
+        },
         "byteSize": {
             "$id": "http://www.w3.org/ns/dcat#byteSize",
             "title": "byte size",
@@ -179,20 +167,17 @@
                     "type": "null"
                 },
                 {
-                    "type": "array",
-                    "items": {
-                        "oneOf": [
-                            {
-                                "$ref": "#/definitions/Resource",
-                                "description": "inline description of Resource"
-                            },
-                            {
-                                "type": "string",
-                                "description": "reference iri of Resource",
-                                "format": "iri"
-                            }
-                        ]
-                    }
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/Resource",
+                            "description": "inline description of Resource"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of Resource",
+                            "format": "iri"
+                        }
+                    ]
                 }
             ]
         },
@@ -255,8 +240,44 @@
                 }
             ]
         },
+        "temporalResolution": {
+            "$id": "http://www.w3.org/ns/dcat#temporalResolution",
+            "title": "termporal resolution",
+            "description": "The minimum time period resolvable in the dataset distribution.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "availability": {
+            "$id": "http://data.europa.eu/r5r/availability",
+            "title": "availability",
+            "description": "An indication how long it is planned to keep the Distribution of the Dataset available.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/Concept",
+                            "description": "inline description of Concept"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of Concept",
+                            "format": "iri"
+                        }
+                    ]
+                }
+            ]
+        },
         "accessRestriction": {
-            "$id": "http://resources.data.gov/ontology/dcat-us#accessRestriction",
+            "$id": "http://data.resources.gov/ontology/dcat-us#accessRestriction",
             "title": "access restriction",
             "description": "Access restriction related to the distribution",
             "oneOf": [
@@ -282,7 +303,7 @@
             ]
         },
         "cuiRestriction": {
-            "$id": "http://resources.data.gov/ontology/dcat-us#cuiRestriction",
+            "$id": "http://data.resources.gov/ontology/dcat-us#cuiRestriction",
             "title": "CUI restriction",
             "description": "Controlled Unclassified Information restriction related to the distribution",
             "oneOf": [
@@ -305,7 +326,7 @@
             ]
         },
         "useRestriction": {
-            "$id": "http://resources.data.gov/ontology/dcat-us#useRestriction",
+            "$id": "http://data.resources.gov/ontology/dcat-us#useRestriction",
             "title": "use restriction",
             "description": "Use restriction related to the distribution",
             "oneOf": [
@@ -376,195 +397,6 @@
                             }
                         ]
                     }
-                }
-            ]
-        },
-        "language": {
-            "$id": "http://purl.org/dc/terms/language",
-            "title": "language",
-            "description": "A language used in the Distribution.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "oneOf": [
-                            {
-                                "$ref": "#/definitions/LinguisticSystem",
-                                "description": "inline description of LinguisticSystem"
-                            },
-                            {
-                                "type": "string",
-                                "description": "reference iri of LinguisticSystem",
-                                "format": "iri"
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
-        "hasQualityMeasurement": {
-            "$id": "http://www.w3.org/ns/dqv#hasQualityMeasurement",
-            "title": "quality measurement",
-            "description": "property referring to a quality measurement for the distribution",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "oneOf": [
-                            {
-                                "$ref": "#/definitions/QualityMeasurement",
-                                "description": "inline description of QualityMeasurement"
-                            },
-                            {
-                                "type": "string",
-                                "description": "reference iri of QualityMeasurement",
-                                "format": "iri"
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
-        "page": {
-            "$id": "http://xmlns.com/foaf/0.1/page",
-            "title": "documentation",
-            "description": "A page or document about this Distribution.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "oneOf": [
-                            {
-                                "$ref": "#/definitions/Document",
-                                "description": "inline description of Document"
-                            },
-                            {
-                                "type": "string",
-                                "description": "reference iri of Document",
-                                "format": "iri"
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
-        "hasPolicy": {
-            "$id": "http://www.w3.org/ns/odrl/2/hasPolicy",
-            "title": "policy",
-            "description": "An ODRL conformant policy expressing the rights associated with the Data Service.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "oneOf": [
-                            {
-                                "$ref": "#/definitions/Policy",
-                                "description": "inline description of Policy"
-                            },
-                            {
-                                "type": "string",
-                                "description": "reference iri of Policy",
-                                "format": "iri"
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
-        "image": {
-            "$id": "https://schema.org/image",
-            "title": "image",
-            "description": "A thumbnail picture illustrating the content of the distribution",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "oneOf": [
-                            {
-                                "$ref": "#/definitions/Resource",
-                                "description": "inline description of Resource"
-                            },
-                            {
-                                "type": "string",
-                                "description": "reference iri of Resource",
-                                "format": "iri"
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
-        "checksum": {
-            "$id": "http://spdx.org/rdf/terms#checksum",
-            "title": "checksum",
-            "description": "A mechanism that can be used to verify that the contents of a distribution have not changed.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Checksum",
-                            "description": "inline description of Checksum"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Checksum",
-                            "format": "iri"
-                        }
-                    ]
-                }
-            ]
-        },
-        "temporalResolution": {
-            "$id": "http://www.w3.org/ns/dcat#temporalResolution",
-            "title": "termporal resolution",
-            "description": "The minimum time period resolvable in the dataset distribution.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
-            ]
-        },
-        "availability": {
-            "$id": "http://data.europa.eu/r5r/availability",
-            "title": "availability",
-            "description": "An indication how long it is planned to keep the Distribution of the Dataset available.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Concept",
-                            "description": "inline description of Concept"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Concept",
-                            "format": "iri"
-                        }
-                    ]
                 }
             ]
         },
@@ -641,6 +473,48 @@
                 }
             ]
         },
+        "language": {
+            "$id": "http://purl.org/dc/terms/language",
+            "title": "language",
+            "description": "A language used in the Distribution.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/LinguisticSystem",
+                                "description": "inline description of LinguisticSystem"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of LinguisticSystem",
+                                "format": "iri"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "license": {
+            "$id": "http://purl.org/dc/terms/license",
+            "title": "license",
+            "description": "A licence under which the Distribution is made available.",
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/LicenseDocument",
+                    "description": "inline description of LicenseDocument"
+                },
+                {
+                    "type": "string",
+                    "description": "reference iri of LicenseDocument",
+                    "format": "iri"
+                }
+            ]
+        },
         "modified": {
             "$id": "http://purl.org/dc/terms/modified",
             "title": "last modified",
@@ -713,10 +587,110 @@
                 "null",
                 "object"
             ]
+        },
+        "hasQualityMeasurement": {
+            "$id": "http://www.w3.org/ns/dqv#hasQualityMeasurement",
+            "title": "quality measurement",
+            "description": "property referring to a quality measurement for the distribution",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/QualityMeasurement",
+                                "description": "inline description of QualityMeasurement"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of QualityMeasurement",
+                                "format": "iri"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "page": {
+            "$id": "http://xmlns.com/foaf/0.1/page",
+            "title": "documentation",
+            "description": "A page or document about this Distribution.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Document",
+                                "description": "inline description of Document"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Document",
+                                "format": "iri"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "image": {
+            "$id": "https://schema.org/image",
+            "title": "image",
+            "description": "A thumbnail picture illustrating the content of the distribution",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Resource",
+                                "description": "inline description of Resource"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Resource",
+                                "format": "iri"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "checksum": {
+            "$id": "http://spdx.org/rdf/terms#checksum",
+            "title": "checksum",
+            "description": "A mechanism that can be used to verify that the contents of a distribution have not changed.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/Checksum",
+                            "description": "inline description of Checksum"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of Checksum",
+                            "format": "iri"
+                        }
+                    ]
+                }
+            ]
         }
     },
     "required": [
-        "accessURL",
         "license"
     ]
 }

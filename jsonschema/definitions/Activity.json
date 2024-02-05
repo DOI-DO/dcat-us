@@ -11,6 +11,29 @@
             "type": "string",
             "default": "Activity"
         },
+        "category": {
+            "$id": "http://purl.org/dc/terms/type",
+            "title": "category",
+            "description": "The category of the Activity ",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/Concept",
+                            "description": "inline description of Concept"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of Concept",
+                            "format": "iri"
+                        }
+                    ]
+                }
+            ]
+        },
         "label": {
             "$id": "http://www.w3.org/2000/01/rdf-schema#label",
             "title": "label",
@@ -30,29 +53,6 @@
             "type": [
                 "null",
                 "object"
-            ]
-        },
-        "category": {
-            "$id": "http://purl.org/dc/terms/type",
-            "title": "category",
-            "description": "The category of the Catalog ",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Concept",
-                            "description": "inline description of Concept"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Concept",
-                            "format": "iri"
-                        }
-                    ]
-                }
             ]
         }
     },

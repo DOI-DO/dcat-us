@@ -11,20 +11,6 @@
             "type": "string",
             "default": "ConceptScheme"
         },
-        "title": {
-            "$id": "http://purl.org/dc/terms/title",
-            "title": "title",
-            "description": "The title of the concept scheme in the indicated language.",
-            "type": "string"
-        },
-        "titleMap": {
-            "$id": "http://purl.org/dc/terms/title_lang_map",
-            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-            "type": [
-                "null",
-                "object"
-            ]
-        },
         "version": {
             "$id": "http://www.w3.org/ns/dcat#version",
             "title": "version info",
@@ -65,6 +51,27 @@
                         }
                     ]
                 }
+            ]
+        },
+        "description": {
+            "$id": "http://purl.org/dc/terms/description",
+            "title": "description",
+            "description": "This property contains a description of the Concept Scheme. ",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "descriptionMap": {
+            "$id": "http://purl.org/dc/terms/description_lang_map",
+            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+            "type": [
+                "null",
+                "object"
             ]
         },
         "issued": {
@@ -125,21 +132,14 @@
                 }
             ]
         },
-        "description": {
-            "$id": "http://purl.org/dc/terms/description",
-            "title": "description",
-            "description": "This property contains a description of the Concept Scheme. ",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
-            ]
+        "title": {
+            "$id": "http://purl.org/dc/terms/title",
+            "title": "title",
+            "description": "The title of the concept scheme in the indicated language.",
+            "type": "string"
         },
-        "descriptionMap": {
-            "$id": "http://purl.org/dc/terms/description_lang_map",
+        "titleMap": {
+            "$id": "http://purl.org/dc/terms/title_lang_map",
             "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
             "type": [
                 "null",

@@ -27,12 +27,6 @@
                 }
             ]
         },
-        "value": {
-            "$id": "http://www.w3.org/ns/dqv#value",
-            "title": "value",
-            "description": "Refers to values computed by metric.",
-            "type": "string"
-        },
         "unitMeasure": {
             "$id": "http://purl.org/linked-data/sdmx/2009/attribute#unitMeasure",
             "title": "unit of measure",
@@ -55,6 +49,12 @@
                     ]
                 }
             ]
+        },
+        "value": {
+            "$id": "http://www.w3.org/ns/dqv#value",
+            "title": "value",
+            "description": "Refers to values computed by metric.",
+            "type": "string"
         }
     },
     "required": [

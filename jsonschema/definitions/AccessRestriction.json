@@ -12,7 +12,7 @@
             "default": "AccessRestriction"
         },
         "restrictionStatus": {
-            "$id": "http://resources.data.gov/ontology/dcat-us#restrictionStatus",
+            "$id": "http://data.resources.gov/ontology/dcat-us#restrictionStatus",
             "title": "restriction status",
             "description": "The indication of whether or not there are access restrictions on the data.",
             "oneOf": [
@@ -27,29 +27,8 @@
                 }
             ]
         },
-        "restrictionNote": {
-            "$id": "http://resources.data.gov/ontology/dcat-us#restrictionNote",
-            "title": "restriction note",
-            "description": "A note related to the access restriction",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
-            ]
-        },
-        "restrictionNoteMap": {
-            "$id": "http://resources.data.gov/ontology/dcat-us#restrictionNote_lang_map",
-            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-            "type": [
-                "null",
-                "object"
-            ]
-        },
         "specificRestriction": {
-            "$id": "http://resources.data.gov/ontology/dcat-us#specificRestriction",
+            "$id": "http://data.resources.gov/ontology/dcat-us#specificRestriction",
             "title": "specific restriction",
             "description": "The specific NARA restriction associated with the access restriction",
             "oneOf": [
@@ -69,6 +48,27 @@
                         }
                     ]
                 }
+            ]
+        },
+        "restrictionNote": {
+            "$id": "http://data.resources.gov/ontology/dcat-us#restrictionNote",
+            "title": "restriction note",
+            "description": "A note related to the access restriction",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "restrictionNoteMap": {
+            "$id": "http://data.resources.gov/ontology/dcat-us#restrictionNote_lang_map",
+            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+            "type": [
+                "null",
+                "object"
             ]
         }
     },

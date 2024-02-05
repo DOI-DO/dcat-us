@@ -13,14 +13,8 @@
         "GeographicBoundingBox": {
             "$ref": "definitions/GeographicBoundingBox.json"
         },
-        "Investment": {
-            "$ref": "definitions/Investment.json"
-        },
         "LiabilityStatement": {
             "$ref": "definitions/LiabilityStatement.json"
-        },
-        "Program": {
-            "$ref": "definitions/Program.json"
         },
         "UseRestriction": {
             "$ref": "definitions/UseRestriction.json"
@@ -28,11 +22,17 @@
         "Catalog": {
             "$ref": "definitions/Catalog.json"
         },
+        "CatalogRecord": {
+            "$ref": "definitions/CatalogRecord.json"
+        },
         "DataService": {
             "$ref": "definitions/DataService.json"
         },
         "Dataset": {
             "$ref": "definitions/Dataset.json"
+        },
+        "DatasetSeries": {
+            "$ref": "definitions/DatasetSeries.json"
         },
         "Distribution": {
             "$ref": "definitions/Distribution.json"
@@ -94,8 +94,11 @@
         "ConceptScheme": {
             "$ref": "definitions/ConceptScheme.json"
         },
-        "Contact": {
-            "$ref": "definitions/Contact.json"
+        "Checksum": {
+            "$ref": "definitions/Checksum.json"
+        },
+        "Kind": {
+            "$ref": "definitions/Kind.json"
         }
     }
 }

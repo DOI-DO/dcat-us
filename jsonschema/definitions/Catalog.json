@@ -11,69 +11,6 @@
             "type": "string",
             "default": "Catalog"
         },
-        "dataset": {
-            "$id": "http://www.w3.org/ns/dcat#dataset",
-            "title": "dataset",
-            "description": "This property links the Catalog with the Dataset(s) that is/are part of the Catalog.",
-            "type": "array",
-            "items": {
-                "oneOf": [
-                    {
-                        "$ref": "#/definitions/Dataset",
-                        "description": "inline description of Dataset"
-                    },
-                    {
-                        "type": "string",
-                        "description": "reference iri of Dataset",
-                        "format": "iri"
-                    }
-                ]
-            }
-        },
-        "description": {
-            "$id": "http://purl.org/dc/terms/description",
-            "title": "description",
-            "description": "Free-text description of the catalog (in the language indicated in the attribute).",
-            "type": "string"
-        },
-        "descriptionMap": {
-            "$id": "http://purl.org/dc/terms/description_lang_map",
-            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-            "type": [
-                "null",
-                "object"
-            ]
-        },
-        "publisher": {
-            "$id": "http://purl.org/dc/terms/publisher",
-            "title": "publisher",
-            "description": "Entity responsible for making the catalog available.",
-            "oneOf": [
-                {
-                    "$ref": "#/definitions/Agent",
-                    "description": "inline description of Agent"
-                },
-                {
-                    "type": "string",
-                    "description": "reference iri of Agent",
-                    "format": "iri"
-                }
-            ]
-        },
-        "title": {
-            "$id": "http://purl.org/dc/terms/title",
-            "title": "title",
-            "description": "The title of the catalog in the indicated language",
-            "type": "string"
-        },
-        "titleMap": {
-            "$id": "http://purl.org/dc/terms/title_lang_map",
-            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-            "type": [
-                "null",
-                "object"
-            ]
-        },
         "catalog": {
             "$id": "http://www.w3.org/ns/dcat#catalog",
             "title": "catalog",
@@ -113,18 +50,37 @@
                     "items": {
                         "oneOf": [
                             {
-                                "$ref": "#/definitions/Contact",
-                                "description": "inline description of Contact"
+                                "$ref": "#/definitions/Kind",
+                                "description": "inline description of Kind"
                             },
                             {
                                 "type": "string",
-                                "description": "reference iri of Contact",
+                                "description": "reference iri of Kind",
                                 "format": "iri"
                             }
                         ]
                     }
                 }
             ]
+        },
+        "dataset": {
+            "$id": "http://www.w3.org/ns/dcat#dataset",
+            "title": "dataset",
+            "description": "This property links the Catalog with the Dataset(s) that is/are part of the Catalog.",
+            "type": "array",
+            "items": {
+                "oneOf": [
+                    {
+                        "$ref": "#/definitions/Dataset",
+                        "description": "inline description of Dataset"
+                    },
+                    {
+                        "type": "string",
+                        "description": "reference iri of Dataset",
+                        "format": "iri"
+                    }
+                ]
+            }
         },
         "keyword": {
             "$id": "http://www.w3.org/ns/dcat#keyword",
@@ -225,6 +181,32 @@
                 }
             ]
         },
+        "themeTaxonomy": {
+            "$id": "http://www.w3.org/ns/dcat#themeTaxonomy",
+            "title": "themes",
+            "description": "A knowledge organization system (KOS) used to classify the resources documented in the catalog (e.g., datasets and services).",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/ConceptScheme",
+                                "description": "inline description of ConceptScheme"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of ConceptScheme",
+                                "format": "iri"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
         "accessRights": {
             "$id": "http://purl.org/dc/terms/accessRights",
             "title": "access rights",
@@ -248,6 +230,29 @@
                 }
             ]
         },
+        "conformsTo": {
+            "$id": "http://purl.org/dc/terms/conformsTo",
+            "title": "schema version",
+            "description": "An established standard to which the described catalog conforms.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/Standard",
+                            "description": "inline description of Standard"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of Standard",
+                            "format": "iri"
+                        }
+                    ]
+                }
+            ]
+        },
         "creator": {
             "$id": "http://purl.org/dc/terms/creator",
             "title": "creator",
@@ -261,21 +266,31 @@
                     "items": {
                         "oneOf": [
                             {
+                                "$ref": "#/definitions/Agent",
+                                "description": "inline description of Agent"
+                            },
+                            {
                                 "type": "string",
-                                "format": "iri",
-                                "description": "This can be one of the following: Person, Organization"
-                            },
-                            {
-                                "$ref": "#/definitions/Person",
-                                "description": "An inline description of Person."
-                            },
-                            {
-                                "$ref": "#/definitions/Organization",
-                                "description": "An inline description of Organization."
+                                "description": "reference iri of Agent",
+                                "format": "iri"
                             }
                         ]
                     }
                 }
+            ]
+        },
+        "description": {
+            "$id": "http://purl.org/dc/terms/description",
+            "title": "description",
+            "description": "Free-text description of the catalog (in the language indicated in the attribute).",
+            "type": "string"
+        },
+        "descriptionMap": {
+            "$id": "http://purl.org/dc/terms/description_lang_map",
+            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+            "type": [
+                "null",
+                "object"
             ]
         },
         "hasPart": {
@@ -317,182 +332,6 @@
                     "items": {
                         "type": "string"
                     }
-                }
-            ]
-        },
-        "rights": {
-            "$id": "http://purl.org/dc/terms/rights",
-            "title": "rights",
-            "description": "This property refers to a statement that specifies rights associated with the Catalogue.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/RightStatement",
-                            "description": "inline description of RightStatement"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of RightStatement",
-                            "format": "iri"
-                        }
-                    ]
-                }
-            ]
-        },
-        "rightsHolder": {
-            "$id": "http://purl.org/dc/terms/rightsHolder",
-            "title": "rights holder",
-            "description": "This property refers to an organization holding rights on the Catalog.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "oneOf": [
-                            {
-                                "$ref": "#/definitions/Organizatin",
-                                "description": "inline description of Organizatin"
-                            },
-                            {
-                                "type": "string",
-                                "description": "reference iri of Organizatin",
-                                "format": "iri"
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
-        "subject": {
-            "$id": "http://purl.org/dc/terms/subject",
-            "title": "subject",
-            "description": "Primary subject of the catalog",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "oneOf": [
-                            {
-                                "$ref": "#/definitions/Concept",
-                                "description": "inline description of Concept"
-                            },
-                            {
-                                "type": "string",
-                                "description": "reference iri of Concept",
-                                "format": "iri"
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
-        "temporal": {
-            "$id": "http://purl.org/dc/terms/temporal",
-            "title": "temporal coverage",
-            "description": "This property refers to a temporal period that the Catalog covers.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "oneOf": [
-                            {
-                                "$ref": "#/definitions/PeriodOfTime",
-                                "description": "inline description of PeriodOfTime"
-                            },
-                            {
-                                "type": "string",
-                                "description": "reference iri of PeriodOfTime",
-                                "format": "iri"
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
-        "qualifiedAttribution": {
-            "$id": "http://www.w3.org/ns/prov#qualifiedAttribution",
-            "title": "qualified attribution",
-            "description": "This property refers to a link to an Agent having some form of responsibility for the Catalog.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "oneOf": [
-                            {
-                                "$ref": "#/definitions/Attribution",
-                                "description": "inline description of Attribution"
-                            },
-                            {
-                                "type": "string",
-                                "description": "reference iri of Attribution",
-                                "format": "iri"
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
-        "themeTaxonomy": {
-            "$id": "http://www.w3.org/ns/dcat#themeTaxonomy",
-            "title": "themes",
-            "description": "A knowledge organization system (KOS) used to classify the resources documented in the catalog (e.g., datasets and services).",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "oneOf": [
-                            {
-                                "$ref": "#/definitions/ConceptScheme",
-                                "description": "inline description of ConceptScheme"
-                            },
-                            {
-                                "type": "string",
-                                "description": "reference iri of ConceptScheme",
-                                "format": "iri"
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
-        "conformsTo": {
-            "$id": "http://purl.org/dc/terms/conformsTo",
-            "title": "schema version",
-            "description": "An established standard to which the described catalog conforms.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Standard",
-                            "description": "inline description of Standard"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Standard",
-                            "format": "iri"
-                        }
-                    ]
                 }
             ]
         },
@@ -603,6 +442,71 @@
                 }
             ]
         },
+        "publisher": {
+            "$id": "http://purl.org/dc/terms/publisher",
+            "title": "publisher",
+            "description": "Entity responsible for making the catalog available.",
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/Agent",
+                    "description": "inline description of Agent"
+                },
+                {
+                    "type": "string",
+                    "description": "reference iri of Agent",
+                    "format": "iri"
+                }
+            ]
+        },
+        "rights": {
+            "$id": "http://purl.org/dc/terms/rights",
+            "title": "rights",
+            "description": "This property refers to a statement that specifies rights associated with the Catalogue.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/RightStatement",
+                            "description": "inline description of RightStatement"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of RightStatement",
+                            "format": "iri"
+                        }
+                    ]
+                }
+            ]
+        },
+        "rightsHolder": {
+            "$id": "http://purl.org/dc/terms/rightsHolder",
+            "title": "rights holder",
+            "description": "This property refers to an organization holding rights on the Catalog.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Organizatin",
+                                "description": "inline description of Organizatin"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Organizatin",
+                                "format": "iri"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
         "spatial": {
             "$id": "http://purl.org/dc/terms/spatial",
             "title": "spatial/geographic coverage",
@@ -629,6 +533,95 @@
                 }
             ]
         },
+        "subject": {
+            "$id": "http://purl.org/dc/terms/subject",
+            "title": "subject",
+            "description": "Primary subject of the catalog",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Concept",
+                                "description": "inline description of Concept"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Concept",
+                                "format": "iri"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "temporal": {
+            "$id": "http://purl.org/dc/terms/temporal",
+            "title": "temporal coverage",
+            "description": "A temporal period that the Catalog covers.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/PeriodOfTime",
+                                "description": "inline description of PeriodOfTime"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of PeriodOfTime",
+                                "format": "iri"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "title": {
+            "$id": "http://purl.org/dc/terms/title",
+            "title": "title",
+            "description": "The title of the catalog in the indicated language",
+            "type": "string"
+        },
+        "titleMap": {
+            "$id": "http://purl.org/dc/terms/title_lang_map",
+            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+            "type": [
+                "null",
+                "object"
+            ]
+        },
+        "category": {
+            "$id": "http://purl.org/dc/terms/type",
+            "title": "category",
+            "description": "The category of the Catalog ",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/Concept",
+                            "description": "inline description of Concept"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of Concept",
+                            "format": "iri"
+                        }
+                    ]
+                }
+            ]
+        },
         "homepage": {
             "$id": "http://xmlns.com/foaf/0.1/homepage",
             "title": "homepage",
@@ -649,6 +642,32 @@
                             "format": "iri"
                         }
                     ]
+                }
+            ]
+        },
+        "qualifiedAttribution": {
+            "$id": "http://www.w3.org/ns/prov#qualifiedAttribution",
+            "title": "qualified attribution",
+            "description": "This property refers to a link to an Agent having some form of responsibility for the Catalog.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Attribution",
+                                "description": "inline description of Attribution"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Attribution",
+                                "format": "iri"
+                            }
+                        ]
+                    }
                 }
             ]
         }

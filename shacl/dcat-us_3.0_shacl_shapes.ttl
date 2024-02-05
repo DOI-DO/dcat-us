@@ -121,7 +121,7 @@ dcat-us-shp:Catalog_Shape a sh:NodeShape ;
         dcat-us-shp:Catalog_Shape-themeTaxonomy,
         dcat-us-shp:Catalog_Shape-title ;
     sh:targetClass dcat:Catalog .
-    
+
 dcat-us-shp:Checksum_Shape a sh:NodeShape ;
     rdfs:label "Checksum" ;
     sh:property dcat-us-shp:Checksum_Shape-algorithm,
@@ -146,18 +146,6 @@ dcat-us-shp:Concept_Shape a sh:NodeShape ;
         dcat-us-shp:Concept_Shape-notation,
         dcat-us-shp:Concept_Shape-prefLabel ;
     sh:targetClass skos:Concept .
-
-dcat-us-shp:Contact_Shape a sh:NodeShape ;
-    rdfs:label "Contact" ;
-    sh:property dcat-us-shp:Contact_Shape-address,
-        dcat-us-shp:Contact_Shape-email,
-        dcat-us-shp:Contact_Shape-family-name,
-        dcat-us-shp:Contact_Shape-fn,
-        dcat-us-shp:Contact_Shape-given-name,
-        dcat-us-shp:Contact_Shape-organization-name,
-        dcat-us-shp:Contact_Shape-tel,
-        dcat-us-shp:Contact_Shape-title ;
-    sh:targetClass vcard:Kind .
 
 dcat-us-shp:DataService_Shape a sh:NodeShape ;
     rdfs:label "Data Service" ;
@@ -192,6 +180,22 @@ dcat-us-shp:DataService_Shape a sh:NodeShape ;
         dcat-us-shp:DataService_Shape-wasUsedBy ;
     sh:targetClass dcat:DataService .
 
+dcat-us-shp:DatasetSeries_Shape a sh:NodeShape ;
+    rdfs:label "Dataset Series" ;
+    sh:property dcat-us-shp:DatasetSeries_Shape-accrualPeriodicity,
+        dcat-us-shp:DatasetSeries_Shape-contactPoint,
+        dcat-us-shp:DatasetSeries_Shape-description,
+        dcat-us-shp:DatasetSeries_Shape-first,
+        dcat-us-shp:DatasetSeries_Shape-issued,
+        dcat-us-shp:DatasetSeries_Shape-last,
+        dcat-us-shp:DatasetSeries_Shape-modified,
+        dcat-us-shp:DatasetSeries_Shape-publisher,
+        dcat-us-shp:DatasetSeries_Shape-seriesMember,
+        dcat-us-shp:DatasetSeries_Shape-spatial,
+        dcat-us-shp:DatasetSeries_Shape-temporal,
+        dcat-us-shp:DatasetSeries_Shape-title ;
+    sh:targetClass dcat:DatasetSeries .
+
 dcat-us-shp:Dataset_Shape a sh:NodeShape ;
     rdfs:label "Dataset" ;
     sh:property dcat-us-shp:Dataset_Shape-accessRights,
@@ -208,7 +212,6 @@ dcat-us-shp:Dataset_Shape a sh:NodeShape ;
         dcat-us-shp:Dataset_Shape-geographicBoundingBox,
         dcat-us-shp:Dataset_Shape-hasCurrentVersion,
         dcat-us-shp:Dataset_Shape-hasPart,
-        dcat-us-shp:Dataset_Shape-hasPolicy,
         dcat-us-shp:Dataset_Shape-hasQualityMeasurement,
         dcat-us-shp:Dataset_Shape-hasVersion,
         dcat-us-shp:Dataset_Shape-identifier,
@@ -320,6 +323,18 @@ dcat-us-shp:Identifier_Shape a sh:NodeShape ;
         dcat-us-shp:Identifier_Shape-schemaAgency,
         dcat-us-shp:Identifier_Shape-version ;
     sh:targetClass adms:Identifier .
+
+dcat-us-shp:Kind_Shape a sh:NodeShape ;
+    rdfs:label "Contact" ;
+    sh:property dcat-us-shp:Kind_Shape-address,
+        dcat-us-shp:Kind_Shape-email,
+        dcat-us-shp:Kind_Shape-family-name,
+        dcat-us-shp:Kind_Shape-fn,
+        dcat-us-shp:Kind_Shape-given-name,
+        dcat-us-shp:Kind_Shape-organization-name,
+        dcat-us-shp:Kind_Shape-tel,
+        dcat-us-shp:Kind_Shape-title ;
+    sh:targetClass vcard:Kind .
 
 dcat-us-shp:LiabilityStatement_Shape a sh:NodeShape ;
     rdfs:label "Liability Statement" ;
@@ -773,6 +788,7 @@ dcat-us-shp:CatalogRecord_Shape-title a sh:PropertyShape ;
     sh:minCount 0 ;
     sh:name "title" ;
     sh:nodeKind sh:Literal ;
+    sh:or dash:StringOrLangString ;
     sh:path dcterms:title ;
     sh:severity sh:Violation .
 
@@ -835,8 +851,7 @@ dcat-us-shp:Catalog_Shape-creator a sh:PropertyShape ;
     sh:description "The entity responsible for creating the resource." ;
     sh:minCount 0 ;
     sh:name "creator" ;
-    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class foaf:Agent ] ),
-        dcat-us-shp:PersonOrOrganization ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class foaf:Agent ] ) ;
     sh:path dcterms:creator ;
     sh:severity sh:Violation .
 
@@ -1033,7 +1048,7 @@ dcat-us-shp:Catalog_Shape-subject a sh:PropertyShape ;
 dcat-us-shp:Catalog_Shape-temporal a sh:PropertyShape ;
     rdfs:label "temporal coverage" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:description "This property refers to a temporal period that the Catalog covers." ;
+    sh:description "A temporal period that the Catalog covers." ;
     sh:minCount 0 ;
     sh:name "temporal" ;
     sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcterms:PeriodOfTime ] ) ;
@@ -1215,98 +1230,6 @@ dcat-us-shp:Concept_Shape-prefLabel a sh:PropertyShape ;
     sh:or dash:StringOrLangString ;
     sh:path skos:prefLabel ;
     sh:severity sh:Violation .
-
-dcat-us-shp:Contact_Shape-address a sh:PropertyShape ;
-    rdfs:label "address" ;
-    dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:description "This property specifies the address of the contact" ;
-    sh:minCount 0 ;
-    sh:name "address" ;
-    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class vcard:Address ] ) ;
-    sh:path vcard:address ;
-    sh:severity sh:Violation .
-
-dcat-us-shp:Contact_Shape-email a sh:PropertyShape ;
-    rdfs:label "email" ;
-    dcat-us-shp:requirementLevel dcat-us-shp:Mandatory ;
-    sh:description "The email address of the contact" ;
-    sh:maxCount 1 ;
-    sh:message "Invalid email format. Should be a URI starting with mailto:" ;
-    sh:minCount 1 ;
-    sh:name "email" ;
-    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class rdfs:Resource ] ) ;
-    sh:path vcard:email ;
-    sh:pattern "^mailto:.+@.+$" ;
-    sh:severity sh:Violation .
-
-dcat-us-shp:Contact_Shape-family-name a sh:PropertyShape ;
-    rdfs:label "family name" ;
-    dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:datatype xsd:string ;
-    sh:description "This property specifies the family name of the person to contact" ;
-    sh:maxCount 1 ;
-    sh:minCount 0 ;
-    sh:name "family-name" ;
-    sh:nodeKind sh:Literal ;
-    sh:path vcard:family-name .
-
-dcat-us-shp:Contact_Shape-fn a sh:PropertyShape ;
-    rdfs:label "formatted name" ;
-    dcat-us-shp:requirementLevel dcat-us-shp:Mandatory ;
-    sh:datatype xsd:string ;
-    sh:description "The formatted text corresponding to the name of the contact" ;
-    sh:maxCount 1 ;
-    sh:minCount 1 ;
-    sh:name "fn" ;
-    sh:nodeKind sh:Literal ;
-    sh:path vcard:fn ;
-    sh:severity sh:Violation .
-
-dcat-us-shp:Contact_Shape-given-name a sh:PropertyShape ;
-    rdfs:label "given name" ;
-    dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:datatype xsd:string ;
-    sh:description "This property specifies the given name of the person to contact" ;
-    sh:maxCount 1 ;
-    sh:minCount 0 ;
-    sh:name "given-name" ;
-    sh:nodeKind sh:Literal ;
-    sh:path vcard:given-name .
-
-dcat-us-shp:Contact_Shape-organization-name a sh:PropertyShape ;
-    rdfs:label "organization name" ;
-    dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:datatype xsd:string ;
-    sh:description "This property specifies the name of the organization to contact" ;
-    sh:maxCount 1 ;
-    sh:minCount 0 ;
-    sh:name "organization-name" ;
-    sh:nodeKind sh:Literal ;
-    sh:path vcard:organization-name .
-
-dcat-us-shp:Contact_Shape-tel a sh:PropertyShape ;
-    rdfs:label "telephone" ;
-    dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:description "This property specifies the telephone number for telephony communication with the person or organization." ;
-    sh:maxCount 1 ;
-    sh:message "Invalid telephone format. Should be a URI starting with tel:" ;
-    sh:minCount 0 ;
-    sh:name "tel" ;
-    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class rdfs:Resource ] ) ;
-    sh:path vcard:tel ;
-    sh:pattern "^tel:\\\\+?[1-9][0-9]{1,14}$" ;
-    sh:severity sh:Violation .
-
-dcat-us-shp:Contact_Shape-title a sh:PropertyShape ;
-    rdfs:label "position title" ;
-    dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:datatype xsd:string ;
-    sh:description "This property specifies the position role of the person to contact" ;
-    sh:maxCount 1 ;
-    sh:minCount 0 ;
-    sh:name "title" ;
-    sh:nodeKind sh:Literal ;
-    sh:path vcard:title .
 
 dcat-us-shp:DataService_Shape-accessRights a sh:PropertyShape ;
     rdfs:label "access rights" ;
@@ -1562,7 +1485,7 @@ dcat-us-shp:DataService_Shape-spatialResolutionInMeters a sh:PropertyShape ;
 dcat-us-shp:DataService_Shape-temporal a sh:PropertyShape ;
     rdfs:label "temporal coverage" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:description "This property refers to a temporal period that the DataService covers." ;
+    sh:description "A temporal period that the DataService covers." ;
     sh:minCount 0 ;
     sh:name "temporal" ;
     sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcterms:PeriodOfTime ] ) ;
@@ -1608,6 +1531,136 @@ dcat-us-shp:DataService_Shape-wasUsedBy a sh:PropertyShape ;
     sh:name "wasUsedBy" ;
     sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class prov:Activity ] ) ;
     sh:path prov:wasUsedBy ;
+    sh:severity sh:Violation .
+
+dcat-us-shp:DatasetSeries_Shape-accrualPeriodicity a sh:PropertyShape ;
+    rdfs:label "frequency" ;
+    dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
+    sh:description "This property refers to the frequency at which the Dataset Series is updated." ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "accrualPeriodicity" ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class dcterms:Frequency ] ) ;
+    sh:path dcterms:accrualPeriodicity ;
+    sh:severity sh:Violation .
+
+dcat-us-shp:DatasetSeries_Shape-contactPoint a sh:PropertyShape ;
+    rdfs:label "contact point" ;
+    dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
+    sh:description "This property contains contact information that can be used for sending comments about the Dataset Series." ;
+    sh:minCount 0 ;
+    sh:name "contactPoint" ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class vcard:Kind ] ) ;
+    sh:path dcat:contactPoint ;
+    sh:severity sh:Violation .
+
+dcat-us-shp:DatasetSeries_Shape-description a sh:PropertyShape ;
+    rdfs:label "description" ;
+    dcat-us-shp:requirementLevel dcat-us-shp:Mandatory ;
+    sh:description "A free-text account of the Dataset Series." ;
+    sh:minCount 1 ;
+    sh:name "description" ;
+    sh:nodeKind sh:Literal ;
+    sh:or dash:StringOrLangString ;
+    sh:path dcterms:description ;
+    sh:severity sh:Violation .
+
+dcat-us-shp:DatasetSeries_Shape-first a sh:PropertyShape ;
+    rdfs:label "first" ;
+    dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
+    sh:description "The first dataset in an ordered dataset series, to which the current dataset belongs." ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "first" ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class dcat:Dataset ] ) ;
+    sh:path dcat:first ;
+    sh:severity sh:Violation .
+
+dcat-us-shp:DatasetSeries_Shape-issued a sh:PropertyShape ;
+    rdfs:label "release date" ;
+    dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
+    sh:description "The date of formal issuance (e.g.,publication) of the Dataset Series." ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "issued" ;
+    sh:nodeKind sh:Literal ;
+    sh:or dcat-us-shp:DateOrDateTimeOrYearOrYearMonth ;
+    sh:path dcterms:issued ;
+    sh:severity sh:Violation .
+
+dcat-us-shp:DatasetSeries_Shape-last a sh:PropertyShape ;
+    rdfs:label "last" ;
+    dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
+    sh:description "The last resource in an ordered dataset series" ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "last" ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class dcat:Dataset ] ) ;
+    sh:path dcat:last ;
+    sh:severity sh:Violation .
+
+dcat-us-shp:DatasetSeries_Shape-modified a sh:PropertyShape ;
+    rdfs:label "update/modification date" ;
+    dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
+    sh:description "This property contains the most recent date on which the Dataset Series was changed or modified." ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "modified" ;
+    sh:nodeKind sh:Literal ;
+    sh:or dcat-us-shp:DateOrDateTimeOrYearOrYearMonth ;
+    sh:path dcterms:modified ;
+    sh:severity sh:Violation .
+
+dcat-us-shp:DatasetSeries_Shape-publisher a sh:PropertyShape ;
+    rdfs:label "publisher" ;
+    dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
+    sh:description "An entity (organization) responsible for ensuring the coherency of the Dataset Series." ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "publisher" ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class foaf:Agent ] ) ;
+    sh:path dcterms:publisher ;
+    sh:severity sh:Violation .
+
+dcat-us-shp:DatasetSeries_Shape-seriesMember a sh:PropertyShape ;
+    rdfs:label "series member" ;
+    dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
+    sh:description "A member of the Dataset Series." ;
+    sh:minCount 0 ;
+    sh:name "seriesMember" ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class dcat:Dataset ] ) ;
+    sh:path dcat:seriesMember ;
+    sh:severity sh:Violation .
+
+dcat-us-shp:DatasetSeries_Shape-spatial a sh:PropertyShape ;
+    rdfs:label "spatial/geographic coverage" ;
+    dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
+    sh:description "This property refers to a geographic region that is covered by the Dataset Series." ;
+    sh:minCount 0 ;
+    sh:name "spatial" ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcterms:Location ] ) ;
+    sh:path dcterms:spatial ;
+    sh:severity sh:Violation .
+
+dcat-us-shp:DatasetSeries_Shape-temporal a sh:PropertyShape ;
+    rdfs:label "temporal coverage" ;
+    dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
+    sh:description "A temporal period that the Dataset Series covers." ;
+    sh:minCount 0 ;
+    sh:name "temporal" ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcterms:PeriodOfTime ] ) ;
+    sh:path dcterms:temporal ;
+    sh:severity sh:Violation .
+
+dcat-us-shp:DatasetSeries_Shape-title a sh:PropertyShape ;
+    rdfs:label "title" ;
+    dcat-us-shp:requirementLevel dcat-us-shp:Mandatory ;
+    sh:description "A name given to the Dataset Series." ;
+    sh:minCount 1 ;
+    sh:name "title" ;
+    sh:nodeKind sh:Literal ;
+    sh:or dash:StringOrLangString ;
+    sh:path dcterms:title ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Dataset_Shape-accessRights a sh:PropertyShape ;
@@ -1757,16 +1810,6 @@ dcat-us-shp:Dataset_Shape-hasPart a sh:PropertyShape ;
     sh:name "hasPart" ;
     sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class dcat:Dataset ] ) ;
     sh:path dcterms:hasPart ;
-    sh:severity sh:Violation .
-
-dcat-us-shp:Dataset_Shape-hasPolicy a sh:PropertyShape ;
-    rdfs:label "policy" ;
-    dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:description "An ODRL conformant policy expressing the rights associated with the Dataset" ;
-    sh:minCount 0 ;
-    sh:name "hasPolicy" ;
-    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class odrl:Policy ] ) ;
-    sh:path odrl:hasPolicy ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Dataset_Shape-hasQualityMeasurement a sh:PropertyShape ;
@@ -2118,7 +2161,7 @@ dcat-us-shp:Dataset_Shape-supportedSchema a sh:PropertyShape ;
 dcat-us-shp:Dataset_Shape-temporal a sh:PropertyShape ;
     rdfs:label "temporal coverage" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
-    sh:description "This property refers to a temporal period that the dataset  covers." ;
+    sh:description "A temporal period that the dataset  covers." ;
     sh:minCount 0 ;
     sh:name "temporal" ;
     sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcterms:PeriodOfTime ] ) ;
@@ -2791,6 +2834,98 @@ dcat-us-shp:Identifier_Shape-version a sh:PropertyShape ;
     sh:path dcterms:version ;
     sh:severity sh:Violation .
 
+dcat-us-shp:Kind_Shape-address a sh:PropertyShape ;
+    rdfs:label "address" ;
+    dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
+    sh:description "This property specifies the address of the contact" ;
+    sh:minCount 0 ;
+    sh:name "address" ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class vcard:Address ] ) ;
+    sh:path vcard:address ;
+    sh:severity sh:Violation .
+
+dcat-us-shp:Kind_Shape-email a sh:PropertyShape ;
+    rdfs:label "email" ;
+    dcat-us-shp:requirementLevel dcat-us-shp:Mandatory ;
+    sh:description "The email address of the contact" ;
+    sh:maxCount 1 ;
+    sh:message "Invalid email format. Should be a URI starting with mailto:" ;
+    sh:minCount 1 ;
+    sh:name "email" ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class rdfs:Resource ] ) ;
+    sh:path vcard:email ;
+    sh:pattern "^mailto:.+@.+$" ;
+    sh:severity sh:Violation .
+
+dcat-us-shp:Kind_Shape-family-name a sh:PropertyShape ;
+    rdfs:label "family name" ;
+    dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
+    sh:datatype xsd:string ;
+    sh:description "This property specifies the family name of the person to contact" ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "family-name" ;
+    sh:nodeKind sh:Literal ;
+    sh:path vcard:family-name .
+
+dcat-us-shp:Kind_Shape-fn a sh:PropertyShape ;
+    rdfs:label "formatted name" ;
+    dcat-us-shp:requirementLevel dcat-us-shp:Mandatory ;
+    sh:datatype xsd:string ;
+    sh:description "The formatted text corresponding to the name of the contact" ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "fn" ;
+    sh:nodeKind sh:Literal ;
+    sh:path vcard:fn ;
+    sh:severity sh:Violation .
+
+dcat-us-shp:Kind_Shape-given-name a sh:PropertyShape ;
+    rdfs:label "given name" ;
+    dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
+    sh:datatype xsd:string ;
+    sh:description "This property specifies the given name of the person to contact" ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "given-name" ;
+    sh:nodeKind sh:Literal ;
+    sh:path vcard:given-name .
+
+dcat-us-shp:Kind_Shape-organization-name a sh:PropertyShape ;
+    rdfs:label "organization name" ;
+    dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
+    sh:datatype xsd:string ;
+    sh:description "This property specifies the name of the organization to contact" ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "organization-name" ;
+    sh:nodeKind sh:Literal ;
+    sh:path vcard:organization-name .
+
+dcat-us-shp:Kind_Shape-tel a sh:PropertyShape ;
+    rdfs:label "telephone" ;
+    dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
+    sh:description "This property specifies the telephone number for telephony communication with the person or organization." ;
+    sh:maxCount 1 ;
+    sh:message "Invalid telephone format. Should be a URI starting with tel:" ;
+    sh:minCount 0 ;
+    sh:name "tel" ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class rdfs:Resource ] ) ;
+    sh:path vcard:tel ;
+    sh:pattern "^tel:\\\\+?[1-9][0-9]{1,14}$" ;
+    sh:severity sh:Violation .
+
+dcat-us-shp:Kind_Shape-title a sh:PropertyShape ;
+    rdfs:label "position title" ;
+    dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
+    sh:datatype xsd:string ;
+    sh:description "This property specifies the position role of the person to contact" ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "title" ;
+    sh:nodeKind sh:Literal ;
+    sh:path vcard:title .
+
 dcat-us-shp:LiabilityStatement_Shape-label a sh:PropertyShape ;
     rdfs:label "liability statement text" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
@@ -2993,10 +3128,6 @@ dcat-us-shp:PeriodOfTime_Shape-startDate a sh:PropertyShape ;
     sh:or dcat-us-shp:DateOrDateTimeOrYearOrYearMonth ;
     sh:path dcat:startDate ;
     sh:severity sh:Violation .
-
-dcat-us-shp:PersonOrOrganization a rdf:List ;
-    rdf:first [ sh:class foaf:Person ] ;
-    rdf:rest ( [ sh:class org:Organization ] ) .
 
 dcat-us-shp:Person_Shape-firstname a sh:PropertyShape ;
     rdfs:label "first name" ;

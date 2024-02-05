@@ -11,157 +11,10 @@
             "type": "string",
             "default": "DataService"
         },
-        "contactPoint": {
-            "$id": "http://www.w3.org/ns/dcat#contactPoint",
-            "title": "contact point",
-            "description": "This property contains contact information that can be used for sending comments about the Data Service.",
-            "type": "array",
-            "items": {
-                "oneOf": [
-                    {
-                        "$ref": "#/definitions/Contact",
-                        "description": "inline description of Contact"
-                    },
-                    {
-                        "type": "string",
-                        "description": "reference iri of Contact",
-                        "format": "iri"
-                    }
-                ]
-            }
-        },
-        "endpointURL": {
-            "$id": "http://www.w3.org/ns/dcat#endpointURL",
-            "title": "endpoint URL",
-            "description": "The root location or primary endpoint of the service (a Web-resolvable IRI)",
-            "type": "array",
-            "items": {
-                "oneOf": [
-                    {
-                        "$ref": "#/definitions/Resource",
-                        "description": "inline description of Resource"
-                    },
-                    {
-                        "type": "string",
-                        "description": "reference iri of Resource",
-                        "format": "iri"
-                    }
-                ]
-            }
-        },
-        "publisher": {
-            "$id": "http://purl.org/dc/terms/publisher",
-            "title": "publisher",
-            "description": "This property refers to an entity (organization) responsible for making the Data Service available.",
-            "oneOf": [
-                {
-                    "$ref": "#/definitions/Agent",
-                    "description": "inline description of Agent"
-                },
-                {
-                    "type": "string",
-                    "description": "reference iri of Agent",
-                    "format": "iri"
-                }
-            ]
-        },
-        "title": {
-            "$id": "http://purl.org/dc/terms/title",
-            "title": "title",
-            "description": "The title of the data service in the indicated language",
-            "type": "string"
-        },
-        "titleMap": {
-            "$id": "http://purl.org/dc/terms/title_lang_map",
-            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-            "type": [
-                "null",
-                "object"
-            ]
-        },
-        "keyword": {
-            "$id": "http://www.w3.org/ns/dcat#keyword",
-            "title": "keyword/tag",
-            "description": "This property contains a keyword or tag describing the Data Service.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
-            ]
-        },
-        "keywordMap": {
-            "$id": "http://www.w3.org/ns/dcat#keyword_lang_map",
-            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-            "type": [
-                "null",
-                "object"
-            ]
-        },
-        "spatialResolutionInMeters": {
-            "$id": "http://www.w3.org/ns/dcat#spatialResolutionInMeters",
-            "title": "Spatial resolution (meters)",
-            "description": "This property refers to the minimum spatial separation resolvable in a Data Service, measured in metres.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                }
-            ]
-        },
-        "temporalResolution": {
-            "$id": "http://www.w3.org/ns/dcat#temporalResolution",
-            "title": "temporal resolution",
-            "description": "The minimum time period resolvable by the dataservice.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                }
-            ]
-        },
-        "theme": {
-            "$id": "http://www.w3.org/ns/dcat#theme",
-            "title": "theme",
-            "description": "This property refers to a theme of the Data Service. A Data Service may be associated with multiple themes.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "oneOf": [
-                            {
-                                "$ref": "#/definitions/Concept",
-                                "description": "inline description of Concept"
-                            },
-                            {
-                                "type": "string",
-                                "description": "reference iri of Concept",
-                                "format": "iri"
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
         "geographicBoundingBox": {
-            "$id": "http://resources.data.gov/ontology/dcat-us#geographicBoundingBox",
+            "$id": "http://data.resources.gov/ontology/dcat-us#geographicBoundingBox",
             "title": "geographic bounding box",
-            "description": "GeographicBoundingBox describes the spatial extent of domain of application of an data service and is standardized in WGS 84 Lat/Long coordinate system.",
+            "description": "This property describes the spatial extent of domain of application of an data service and is standardized in WGS 84 Lat/Long coordinate system.",
             "oneOf": [
                 {
                     "type": "null"
@@ -177,6 +30,51 @@
                             {
                                 "type": "string",
                                 "description": "reference iri of GeographicBoundingBox",
+                                "format": "iri"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "contactPoint": {
+            "$id": "http://www.w3.org/ns/dcat#contactPoint",
+            "title": "contact point",
+            "description": "This property contains contact information that can be used for sending comments about the Data Service.",
+            "type": "array",
+            "items": {
+                "oneOf": [
+                    {
+                        "$ref": "#/definitions/Kind",
+                        "description": "inline description of Kind"
+                    },
+                    {
+                        "type": "string",
+                        "description": "reference iri of Kind",
+                        "format": "iri"
+                    }
+                ]
+            }
+        },
+        "endpointDescription": {
+            "$id": "http://www.w3.org/ns/dcat#endpointDescription",
+            "title": "endpoint description",
+            "description": "A description of the services available via the end-points, including their operations, parameters etc.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Resource",
+                                "description": "inline description of Resource"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Resource",
                                 "format": "iri"
                             }
                         ]
@@ -233,6 +131,452 @@
                 }
             ]
         },
+        "creator": {
+            "$id": "http://purl.org/dc/terms/creator",
+            "title": "creator",
+            "description": "This property refers to the Agent primarily responsible for producing the Data Service.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Agent",
+                                "description": "inline description of Agent"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Agent",
+                                "format": "iri"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "license": {
+            "$id": "http://purl.org/dc/terms/license",
+            "title": "license",
+            "description": "This property refers to the license under which the Data Service is made available.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/LicenseDocument",
+                            "description": "inline description of LicenseDocument"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of LicenseDocument",
+                            "format": "iri"
+                        }
+                    ]
+                }
+            ]
+        },
+        "rights": {
+            "$id": "http://purl.org/dc/terms/rights",
+            "title": "rights",
+            "description": "A statement that concerns all rights for the Data Service not addressed with dcterms:license or dcterms:accessRights, such as copyright statements.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/RightStatement",
+                                "description": "inline description of RightStatement"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of RightStatement",
+                                "format": "iri"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "spatial": {
+            "$id": "http://purl.org/dc/terms/spatial",
+            "title": "spatial/geographic coverage",
+            "description": "This property refers to a geographic region that is covered by the Data Service.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Location",
+                                "description": "inline description of Location"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Location",
+                                "format": "iri"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "temporal": {
+            "$id": "http://purl.org/dc/terms/temporal",
+            "title": "temporal coverage",
+            "description": "A temporal period that the DataService covers.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/PeriodOfTime",
+                                "description": "inline description of PeriodOfTime"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of PeriodOfTime",
+                                "format": "iri"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "hasQualityMeasurement": {
+            "$id": "http://www.w3.org/ns/dqv#hasQualityMeasurement",
+            "title": "quality measurement",
+            "description": "Refers to the performed quality measurements.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/QualityMeasurement",
+                                "description": "inline description of QualityMeasurement"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of QualityMeasurement",
+                                "format": "iri"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "qualifiedAttribution": {
+            "$id": "http://www.w3.org/ns/prov#qualifiedAttribution",
+            "title": "qualified attribution",
+            "description": "This property refers to a link to an Agent having some form of responsibility for the DataService.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Attribution",
+                                "description": "inline description of Attribution"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Attribution",
+                                "format": "iri"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "wasUsedBy": {
+            "$id": "http://www.w3.org/ns/prov#wasUsedBy",
+            "title": "was used by",
+            "description": "This property refers to an Activity that used the Data Service.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Activity",
+                                "description": "inline description of Activity"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Activity",
+                                "format": "iri"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "endpointURL": {
+            "$id": "http://www.w3.org/ns/dcat#endpointURL",
+            "title": "endpoint URL",
+            "description": "The root location or primary endpoint of the service (a Web-resolvable IRI)",
+            "type": "array",
+            "items": {
+                "oneOf": [
+                    {
+                        "$ref": "#/definitions/Resource",
+                        "description": "inline description of Resource"
+                    },
+                    {
+                        "type": "string",
+                        "description": "reference iri of Resource",
+                        "format": "iri"
+                    }
+                ]
+            }
+        },
+        "servesDataset": {
+            "$id": "http://www.w3.org/ns/dcat#servesDataset",
+            "title": "serves dataset",
+            "description": "The Dataset that is served by this data service.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Dataset",
+                                "description": "inline description of Dataset"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Dataset",
+                                "format": "iri"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "theme": {
+            "$id": "http://www.w3.org/ns/dcat#theme",
+            "title": "theme/category",
+            "description": "This property refers to a theme of the Data Service. A Data Service may be associated with multiple themes.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Concept",
+                                "description": "inline description of Concept"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Concept",
+                                "format": "iri"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "language": {
+            "$id": "http://purl.org/dc/terms/language",
+            "title": "language",
+            "description": "This property refers to a language supported by the Data Service. This property can be repeated if multiple languages are supported in the Data Service.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/LinguisticSystem",
+                                "description": "inline description of LinguisticSystem"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of LinguisticSystem",
+                                "format": "iri"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "publisher": {
+            "$id": "http://purl.org/dc/terms/publisher",
+            "title": "publisher",
+            "description": "This property refers to an entity (organization) responsible for making the Data Service available.",
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/Agent",
+                    "description": "inline description of Agent"
+                },
+                {
+                    "type": "string",
+                    "description": "reference iri of Agent",
+                    "format": "iri"
+                }
+            ]
+        },
+        "rightsHolder": {
+            "$id": "http://purl.org/dc/terms/rightsHolder",
+            "title": "rights holder",
+            "description": "This property refers to an Agent (organization) holding rights on the Data Service.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Organization",
+                                "description": "inline description of Organization"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Organization",
+                                "format": "iri"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "category": {
+            "$id": "http://purl.org/dc/terms/type",
+            "title": "category",
+            "description": "Category of the data service",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/Concept",
+                            "description": "inline description of Concept"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of Concept",
+                            "format": "iri"
+                        }
+                    ]
+                }
+            ]
+        },
+        "hasPolicy": {
+            "$id": "http://www.w3.org/ns/odrl/2/hasPolicy",
+            "title": "has policy",
+            "description": "An ODRL conformant policy expressing the rights associated with the Data Service.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Policy",
+                                "description": "inline description of Policy"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Policy",
+                                "format": "iri"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "keyword": {
+            "$id": "http://www.w3.org/ns/dcat#keyword",
+            "title": "keyword/tag",
+            "description": "This property contains a keyword or tag describing the Data Service.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "keywordMap": {
+            "$id": "http://www.w3.org/ns/dcat#keyword_lang_map",
+            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+            "type": [
+                "null",
+                "object"
+            ]
+        },
+        "spatialResolutionInMeters": {
+            "$id": "http://www.w3.org/ns/dcat#spatialResolutionInMeters",
+            "title": "spatial resolution in meters",
+            "description": "This property refers to the minimum spatial separation resolvable in a Data Service, measured in meters.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            ]
+        },
+        "temporalResolution": {
+            "$id": "http://www.w3.org/ns/dcat#temporalResolution",
+            "title": "temporal resolution",
+            "description": "The minimum time period resolvable by the Data Service.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            ]
+        },
         "created": {
             "$id": "http://purl.org/dc/terms/created",
             "title": "creation date",
@@ -259,32 +603,6 @@
                             "description": "A year and month in YYYY-MM format"
                         }
                     ]
-                }
-            ]
-        },
-        "creator": {
-            "$id": "http://purl.org/dc/terms/creator",
-            "title": "creator",
-            "description": "This property refers to the Agent primarily responsible for producing the Data Service.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "oneOf": [
-                            {
-                                "$ref": "#/definitions/Agent",
-                                "description": "inline description of Agent"
-                            },
-                            {
-                                "type": "string",
-                                "description": "reference iri of Agent",
-                                "format": "iri"
-                            }
-                        ]
-                    }
                 }
             ]
         },
@@ -325,35 +643,9 @@
                 }
             ]
         },
-        "language": {
-            "$id": "http://purl.org/dc/terms/language",
-            "title": "language",
-            "description": "This property refers to a language supported by the Data Service. This property can be repeated if multiple languages are supported in the Data Service.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "oneOf": [
-                            {
-                                "$ref": "#/definitions/LinguisticSystem",
-                                "description": "inline description of LinguisticSystem"
-                            },
-                            {
-                                "type": "string",
-                                "description": "reference iri of LinguisticSystem",
-                                "format": "iri"
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
         "modified": {
             "$id": "http://purl.org/dc/terms/modified",
-            "title": "last modified",
+            "title": "update/modification date",
             "description": "This property contains the most recent date on which the Data Service was changed or modified.",
             "oneOf": [
                 {
@@ -380,300 +672,18 @@
                 }
             ]
         },
-        "rights": {
-            "$id": "http://purl.org/dc/terms/rights",
-            "title": "rights",
-            "description": "A statement that concerns all rights for the Data Service not addressed with dcterms:license or dcterms:accessRights, such as copyright statements.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "oneOf": [
-                            {
-                                "$ref": "#/definitions/RightStatement",
-                                "description": "inline description of RightStatement"
-                            },
-                            {
-                                "type": "string",
-                                "description": "reference iri of RightStatement",
-                                "format": "iri"
-                            }
-                        ]
-                    }
-                }
-            ]
+        "title": {
+            "$id": "http://purl.org/dc/terms/title",
+            "title": "title",
+            "description": "The title of the data service in the indicated language",
+            "type": "string"
         },
-        "rightsHolder": {
-            "$id": "http://purl.org/dc/terms/rightsHolder",
-            "title": "rights holder",
-            "description": "This property refers to an Agent (organization) holding rights on the Data Service.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "oneOf": [
-                            {
-                                "$ref": "#/definitions/Organization",
-                                "description": "inline description of Organization"
-                            },
-                            {
-                                "type": "string",
-                                "description": "reference iri of Organization",
-                                "format": "iri"
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
-        "spatial": {
-            "$id": "http://purl.org/dc/terms/spatial",
-            "title": "spatial/geographical coverage",
-            "description": "This property refers to a geographic region that is covered by the Data Service.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "oneOf": [
-                            {
-                                "$ref": "#/definitions/Location",
-                                "description": "inline description of Location"
-                            },
-                            {
-                                "type": "string",
-                                "description": "reference iri of Location",
-                                "format": "iri"
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
-        "temporal": {
-            "$id": "http://purl.org/dc/terms/temporal",
-            "title": "temporal coverage",
-            "description": "This property refers to a temporal period that the DataService covers.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "oneOf": [
-                            {
-                                "$ref": "#/definitions/PeriodOfTime",
-                                "description": "inline description of PeriodOfTime"
-                            },
-                            {
-                                "type": "string",
-                                "description": "reference iri of PeriodOfTime",
-                                "format": "iri"
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
-        "category": {
-            "$id": "http://purl.org/dc/terms/type",
-            "title": "category",
-            "description": "Category of the data service",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Concept",
-                            "description": "inline description of Concept"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Concept",
-                            "format": "iri"
-                        }
-                    ]
-                }
-            ]
-        },
-        "hasQualityMeasurement": {
-            "$id": "http://www.w3.org/ns/dqv#hasQualityMeasurement",
-            "title": "quality measurement",
-            "description": "Refers to the performed quality measurements.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "oneOf": [
-                            {
-                                "$ref": "#/definitions/QualityMeasurement",
-                                "description": "inline description of QualityMeasurement"
-                            },
-                            {
-                                "type": "string",
-                                "description": "reference iri of QualityMeasurement",
-                                "format": "iri"
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
-        "hasPolicy": {
-            "$id": "http://www.w3.org/ns/odrl/2/hasPolicy",
-            "title": "policy",
-            "description": "An ODRL conformant policy expressing the rights associated with the Data Service.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "oneOf": [
-                            {
-                                "$ref": "#/definitions/Policy",
-                                "description": "inline description of Policy"
-                            },
-                            {
-                                "type": "string",
-                                "description": "reference iri of Policy",
-                                "format": "iri"
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
-        "qualifiedAttribution": {
-            "$id": "http://www.w3.org/ns/prov#qualifiedAttribution",
-            "title": "qualified attribution",
-            "description": "This property refers to a link to an Agent having some form of responsibility for the DataService.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "oneOf": [
-                            {
-                                "$ref": "#/definitions/Attribution",
-                                "description": "inline description of Attribution"
-                            },
-                            {
-                                "type": "string",
-                                "description": "reference iri of Attribution",
-                                "format": "iri"
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
-        "wasUsedBy": {
-            "$id": "http://www.w3.org/ns/prov#wasUsedBy",
-            "title": "used by",
-            "description": "This property refers to an Activity that used the Data Service.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "oneOf": [
-                            {
-                                "$ref": "#/definitions/Activity",
-                                "description": "inline description of Activity"
-                            },
-                            {
-                                "type": "string",
-                                "description": "reference iri of Activity",
-                                "format": "iri"
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
-        "endpointDescription": {
-            "$id": "http://www.w3.org/ns/dcat#endpointDescription",
-            "title": "endpoint description",
-            "description": "A description of the services available via the end-points, including their operations, parameters etc.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                }
-            ]
-        },
-        "servesDataset": {
-            "$id": "http://www.w3.org/ns/dcat#servesDataset",
-            "title": "serves dataset",
-            "description": "Dataset that is served by this data service",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "oneOf": [
-                            {
-                                "$ref": "#/definitions/Dataset",
-                                "description": "inline description of Dataset"
-                            },
-                            {
-                                "type": "string",
-                                "description": "reference iri of Dataset",
-                                "format": "iri"
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
-        "license": {
-            "$id": "http://purl.org/dc/terms/license",
-            "title": "license",
-            "description": "This property refers to the license under which the Data Service is made available.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/LicenseDocument",
-                            "description": "inline description of LicenseDocument"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of LicenseDocument",
-                            "format": "iri"
-                        }
-                    ]
-                }
+        "titleMap": {
+            "$id": "http://purl.org/dc/terms/title_lang_map",
+            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+            "type": [
+                "null",
+                "object"
             ]
         }
     },

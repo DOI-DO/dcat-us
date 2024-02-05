@@ -27,20 +27,6 @@
                 }
             ]
         },
-        "prefLabel": {
-            "$id": "http://www.w3.org/2004/02/skos/core#prefLabel",
-            "title": "preferred label",
-            "description": "Preferred label for the controlled vocabulary term (one per language).",
-            "type": "string"
-        },
-        "prefLabelMap": {
-            "$id": "http://www.w3.org/2004/02/skos/core#prefLabel_lang_map",
-            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-            "type": [
-                "null",
-                "object"
-            ]
-        },
         "altLabel": {
             "$id": "http://www.w3.org/2004/02/skos/core#altLabel",
             "title": "alternate label",
@@ -56,6 +42,27 @@
         },
         "altLabelMap": {
             "$id": "http://www.w3.org/2004/02/skos/core#altLabel_lang_map",
+            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+            "type": [
+                "null",
+                "object"
+            ]
+        },
+        "definition": {
+            "$id": "http://www.w3.org/2004/02/skos/core#definition",
+            "title": "definition",
+            "description": "Definition of the controlled vocabulary term.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "definitionMap": {
+            "$id": "http://www.w3.org/2004/02/skos/core#definition_lang_map",
             "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
             "type": [
                 "null",
@@ -78,21 +85,14 @@
                 }
             ]
         },
-        "definition": {
-            "$id": "http://www.w3.org/2004/02/skos/core#definition",
-            "title": "definition",
-            "description": "Definition of the controlled vocabulary term.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
-            ]
+        "prefLabel": {
+            "$id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+            "title": "preferred label",
+            "description": "Preferred label for the controlled vocabulary term (one per language).",
+            "type": "string"
         },
-        "definitionMap": {
-            "$id": "http://www.w3.org/2004/02/skos/core#definition_lang_map",
+        "prefLabelMap": {
+            "$id": "http://www.w3.org/2004/02/skos/core#prefLabel_lang_map",
             "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
             "type": [
                 "null",

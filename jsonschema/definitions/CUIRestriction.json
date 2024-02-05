@@ -12,19 +12,19 @@
             "default": "CUIRestriction"
         },
         "cuiBannerMarking": {
-            "$id": "http://resources.data.gov/ontology/dcat-us#cuiBannerMarking",
+            "$id": "http://data.resources.gov/ontology/dcat-us#cuiBannerMarking",
             "title": "CUI banner marking",
             "description": "CUI (Controlled Unclassified Information) banner marking is required for any unclassified information that is deemed sensitive and requires protection.",
             "type": "string"
         },
         "designationIndicator": {
-            "$id": "http://resources.data.gov/ontology/dcat-us#designationIndicator",
+            "$id": "http://data.resources.gov/ontology/dcat-us#designationIndicator",
             "title": "CUI designation indicator",
             "description": "Designation Indicator shows which agency made the document CUI",
             "type": "string"
         },
         "requiredIndicatorPerAuthority": {
-            "$id": "http://resources.data.gov/ontology/dcat-us#requiredIndicatorPerAuthority",
+            "$id": "http://data.resources.gov/ontology/dcat-us#requiredIndicatorPerAuthority",
             "title": "required indicator per authority",
             "description": "free text (e.g., text of the category description or the distribution statement)",
             "oneOf": [

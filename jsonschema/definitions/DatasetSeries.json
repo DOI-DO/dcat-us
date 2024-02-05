@@ -1,0 +1,301 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "DatasetSeries",
+    "type": "object",
+    "properties": {
+        "@id": {
+            "type": "string",
+            "format": "iri"
+        },
+        "@type": {
+            "type": "string",
+            "default": "DatasetSeries"
+        },
+        "title": {
+            "$id": "http://purl.org/dc/terms/title",
+            "title": "title",
+            "description": "A name given to the Dataset Series.",
+            "type": "string"
+        },
+        "titleMap": {
+            "$id": "http://purl.org/dc/terms/title_lang_map",
+            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+            "type": [
+                "null",
+                "object"
+            ]
+        },
+        "description": {
+            "$id": "http://purl.org/dc/terms/description",
+            "title": "description",
+            "description": "A free-text account of the Dataset Series.",
+            "type": "string"
+        },
+        "descriptionMap": {
+            "$id": "http://purl.org/dc/terms/description_lang_map",
+            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+            "type": [
+                "null",
+                "object"
+            ]
+        },
+        "contactPoint": {
+            "$id": "http://www.w3.org/ns/dcat#contactPoint",
+            "title": "contact point",
+            "description": "This property contains contact information that can be used for sending comments about the Dataset Series.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Kind",
+                                "description": "inline description of Kind"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Kind",
+                                "format": "iri"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "first": {
+            "$id": "http://www.w3.org/ns/dcat#first",
+            "title": "first",
+            "description": "The first dataset in an ordered dataset series, to which the current dataset belongs.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/Dataset",
+                            "description": "inline description of Dataset"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of Dataset",
+                            "format": "iri"
+                        }
+                    ]
+                }
+            ]
+        },
+        "spatial": {
+            "$id": "http://purl.org/dc/terms/spatial",
+            "title": "spatial/geographic coverage",
+            "description": "This property refers to a geographic region that is covered by the Dataset Series.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Location",
+                                "description": "inline description of Location"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Location",
+                                "format": "iri"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "last": {
+            "$id": "http://www.w3.org/ns/dcat#last",
+            "title": "last",
+            "description": "The last resource in an ordered dataset series",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/Dataset",
+                            "description": "inline description of Dataset"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of Dataset",
+                            "format": "iri"
+                        }
+                    ]
+                }
+            ]
+        },
+        "modified": {
+            "$id": "http://purl.org/dc/terms/modified",
+            "title": "update/modification date",
+            "description": "This property contains the most recent date on which the Dataset Series was changed or modified.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string",
+                    "oneOf": [
+                        {
+                            "format": "date-time"
+                        },
+                        {
+                            "format": "date"
+                        },
+                        {
+                            "pattern": "^[0-9]{4}$",
+                            "description": "A year in YYYY format"
+                        },
+                        {
+                            "pattern": "^[0-9]{4}-[0-9]{2}$",
+                            "description": "A year and month in YYYY-MM format"
+                        }
+                    ]
+                }
+            ]
+        },
+        "publisher": {
+            "$id": "http://purl.org/dc/terms/publisher",
+            "title": "publisher",
+            "description": "An entity (organization) responsible for ensuring the coherency of the Dataset Series.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/Agent",
+                            "description": "inline description of Agent"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of Agent",
+                            "format": "iri"
+                        }
+                    ]
+                }
+            ]
+        },
+        "seriesMember": {
+            "$id": "http://www.w3.org/ns/dcat#seriesMember",
+            "title": "series member",
+            "description": "A member of the Dataset Series.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/Dataset",
+                                "description": "inline description of Dataset"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of Dataset",
+                                "format": "iri"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "temporal": {
+            "$id": "http://purl.org/dc/terms/temporal",
+            "title": "temporal coverage",
+            "description": "A temporal period that the Dataset Series covers.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/PeriodOfTime",
+                                "description": "inline description of PeriodOfTime"
+                            },
+                            {
+                                "type": "string",
+                                "description": "reference iri of PeriodOfTime",
+                                "format": "iri"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "accrualPeriodicity": {
+            "$id": "http://purl.org/dc/terms/accrualPeriodicity",
+            "title": "frequency",
+            "description": "This property refers to the frequency at which the Dataset Series is updated.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/Frequency",
+                            "description": "inline description of Frequency"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of Frequency",
+                            "format": "iri"
+                        }
+                    ]
+                }
+            ]
+        },
+        "issued": {
+            "$id": "http://purl.org/dc/terms/issued",
+            "title": "release date",
+            "description": "The date of formal issuance (e.g.,publication) of the Dataset Series.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string",
+                    "oneOf": [
+                        {
+                            "format": "date-time"
+                        },
+                        {
+                            "format": "date"
+                        },
+                        {
+                            "pattern": "^[0-9]{4}$",
+                            "description": "A year in YYYY format"
+                        },
+                        {
+                            "pattern": "^[0-9]{4}-[0-9]{2}$",
+                            "description": "A year and month in YYYY-MM format"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "required": [
+        "title",
+        "description"
+    ]
+}
