@@ -12,11 +12,11 @@
   # mandatory properties
 
   dcat:contactPoint [
-    a vcard:Contact ;
+    a vcard:Kind ;
     vcard:fn "US Census" ;
     vcard:email <mailto:noise@uscensus.gov> 
   ], [
-    a vcard:Contact ;
+    a vcard:Kind ;
     vcard:fn "John Smith" ;
     vcard:email <mailto:johnsmith@uscensus.gov> 
   ] ;

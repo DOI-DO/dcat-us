@@ -1301,8 +1301,8 @@
         "street-address": "http://www.w3.org/2006/vcard/ns#street-address"
       }
     },
-    "vcard:Contact": {
-      "@id": "vcard:Contact",
+    "vcard:Kind": {
+      "@id": "vcard:Kind",
       "@context": {
         "address": {
           "@id": "vcard:address",

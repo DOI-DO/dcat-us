@@ -157,7 +157,7 @@ dcat-us-shp:Contact_Shape a sh:NodeShape ;
         dcat-us-shp:Contact_Shape-organization-name,
         dcat-us-shp:Contact_Shape-tel,
         dcat-us-shp:Contact_Shape-title ;
-    sh:targetClass vcard:Contact .
+    sh:targetClass vcard:Kind .
 
 dcat-us-shp:DataService_Shape a sh:NodeShape ;
     rdfs:label "Data Service" ;
@@ -825,7 +825,7 @@ dcat-us-shp:Catalog_Shape-contactPoint a sh:PropertyShape ;
     sh:description "This property contains contact information that can be used for sending comments about the Catalogue." ;
     sh:minCount 0 ;
     sh:name "contactPoint" ;
-    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class vcard:Contact ] ) ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class vcard:Kind ] ) ;
     sh:path dcat:contactPoint ;
     sh:severity sh:Violation .
 
@@ -1346,7 +1346,7 @@ dcat-us-shp:DataService_Shape-contactPoint a sh:PropertyShape ;
     sh:description "This property contains contact information that can be used for sending comments about the Data Service." ;
     sh:minCount 1 ;
     sh:name "contactPoint" ;
-    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class vcard:Contact ] ) ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class vcard:Kind ] ) ;
     sh:path dcat:contactPoint ;
     sh:severity sh:Violation .
 
@@ -1659,7 +1659,7 @@ dcat-us-shp:Dataset_Shape-contactPoint a sh:PropertyShape ;
     sh:description "This property contains contact information that can be used for sending comments about the Dataset." ;
     sh:minCount 0 ;
     sh:name "contactPoint" ;
-    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class vcard:Contact ] ) ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class vcard:Kind ] ) ;
     sh:path dcat:contactPoint ;
     sh:severity sh:Violation .
 

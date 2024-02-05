@@ -12,7 +12,7 @@
   dcterms:title "US Census Data Service"@en ;
   dcat:endpointURL <https://data.census.gov/> ;
   dcat:contactPoint [
-    a vcard:Contact ;
+    a vcard:Kind ;
     vcard:fn "US Census Bureau" ;
     vcard:hasEmail <mailto:info@census.gov>  
   ], [

@@ -3,7 +3,7 @@
   "@graph": [
     {
       "@id": "http://example.org/ns#vcard123",
-      "@type": "vcard:Contact",
+      "@type": "vcard:Kind",
       "email": "mailto:john.doe@example.com",
       "family-name": "Doe",
       "fn": "John Doe",

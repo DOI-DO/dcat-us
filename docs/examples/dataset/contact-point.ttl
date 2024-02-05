@@ -4,11 +4,11 @@
 <https://uscensus.gov/123>
   a dcat:Dataset ;
   dcat:contactPoint [
-    a vcard:Contact ;
+    a vcard:Kind ;
     vcard:fn "Abteilung Lärm BAFU" ;
     vcard:email <mailto:noise@bafu.admin.ch>
   ], [
-    a vcard:Contact ;
+    a vcard:Kind ;
     vcard:fn "Sekretariat BAFU" ;
     vcard:email <mailto:sekretariat@bafu.admin.ch>
   ] .

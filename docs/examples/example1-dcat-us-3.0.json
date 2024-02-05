@@ -48,7 +48,7 @@
   ],
 
   "contactPoint": {
-    "@type": "vcard:Contact",
+    "@type": "vcard:Kind",
     "fn": "Valerie R Butler",
     "hasEmail": "mailto:valerie.butler@gsa.gov"
   },

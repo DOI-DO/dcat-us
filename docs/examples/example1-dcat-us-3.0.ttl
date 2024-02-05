@@ -42,7 +42,7 @@ The Owned and Leased Data Sets include the following data except where noted bel
     adms:identifier [ a adms:Identifier ;
             skos:notation "GSA-4495" ;
             adms:schemaAgency "https://www.gsa.gov" ] ;
-    dcat:contactPoint [ a vcard:Contact ;
+    dcat:contactPoint [ a vcard:Kind ;
             vcard:fn "Valerie R Butler" ;
             vcard:email <mailto:valerie.butler@gsa.gov>
             ] ;

@@ -11,13 +11,13 @@
     },
     {
       "@id": "_:n1b82daff83f04c058aa2c0258318fa2bb1",
-      "@type": "vcard:Contact",
+      "@type": "vcard:Kind",
       "email": "mailto:noise@bafu.admin.ch",
       "fn": "Abteilung L\u00e4rm BAFU"
     },
     {
       "@id": "_:n1b82daff83f04c058aa2c0258318fa2bb2",
-      "@type": "vcard:Contact",
+      "@type": "vcard:Kind",
       "email": "mailto:sekretariat@bafu.admin.ch",
       "fn": "Sekretariat BAFU"
     }

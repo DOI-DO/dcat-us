@@ -48,13 +48,13 @@
     },
     {
       "@id": "_:n3a21f11cd9564e0485b1fba708199788b1",
-      "@type": "vcard:Contact",
+      "@type": "vcard:Kind",
       "email": "mailto:noise@uscensus.gov",
       "fn": "US Census"
     },
     {
       "@id": "_:n3a21f11cd9564e0485b1fba708199788b2",
-      "@type": "vcard:Contact",
+      "@type": "vcard:Kind",
       "email": "mailto:johnsmith@uscensus.gov",
       "fn": "John Smith"
     },

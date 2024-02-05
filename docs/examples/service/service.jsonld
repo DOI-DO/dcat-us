@@ -26,7 +26,7 @@
     },
     {
       "@id": "_:n8839beedb0104e1bbcb5a35872e45687b1",
-      "@type": "vcard:Contact",
+      "@type": "vcard:Kind",
       "fn": "US Census Bureau",
       "vcard:hasEmail": {
         "@id": "mailto:info@census.gov"
