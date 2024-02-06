@@ -2,6 +2,6 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://uscensus.gov/reforestation-data/1234>
+<https://census.gov/reforestation-data/1234>
   a dcat:Distribution ;
-  dcterms:identifier "https://uscensus.gov/reforestation-data/1234" .
+  dcterms:identifier "https://census.gov/reforestation-data/1234" .

@@ -1,6 +1,6 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 
-<https://uscensus.gov/api>
+<https://census.gov/api>
   a dcat:DataService ;
-  dcterms:license <http://dcat-ap.ch/vocabulary/licenses/terms_open> .
+  dcterms:license <http://www.usa.gov/publicdomain/label/1.0/> .

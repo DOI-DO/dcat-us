@@ -2,7 +2,7 @@
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
   "@graph": [
     {
-      "@id": "https://uscensus.gov",
+      "@id": "https://census.gov",
       "@type": "foaf:Organization",
       "foaf:name:": {
         "@language": "en",
@@ -10,9 +10,9 @@
       }
     },
     {
-      "@id": "https://uscensus.gov/opendata/service",
+      "@id": "https://census.gov/opendata/service",
       "@type": "dcat:DataService",
-      "publisher": "https://uscensus.gov"
+      "publisher": "https://census.gov"
     }
   ]
 }

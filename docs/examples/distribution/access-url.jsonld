@@ -1,8 +1,8 @@
 {
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
-  "@id": "https://tierstatistik.identitas.ch/data/fig-equids-size",
+  "@id":"<https://census.gov/opendata/distribution/1234",
   "@type": "dcat:Distribution",
   "accessURL": [
-    "https://tierstatistik.identitas.ch/data/fig-equids-size/table"
+    "https://census.gov/opendata/distribution/1234.csv"
   ]
 }

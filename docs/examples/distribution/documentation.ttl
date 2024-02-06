@@ -1,9 +1,9 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 
-<https://opendata.uscensus.gov/1234>
+<https://opendata.census.gov/1234>
   a dcat:Distribution ;
-  foaf:page <https://opendata.uscensus.gov/1234/about> .
+  foaf:page <https://opendata.census.gov/1234/about> .
 
-<https://opendata.uscensus.gov/1234/about>
+<https://opendata.census.gov/1234/about>
   a foaf:Document .

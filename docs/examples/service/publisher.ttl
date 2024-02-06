@@ -2,10 +2,10 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 
-<https://uscensus.gov/opendata/service>
+<https://census.gov/opendata/service>
   a dcat:DataService ;
-  dcterms:publisher <https://uscensus.gov> .
+  dcterms:publisher <https://census.gov> .
 
-<https://uscensus.gov>
+<https://census.gov>
   a foaf:Organization ;
   foaf:name: "US Census"@en .

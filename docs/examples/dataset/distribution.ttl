@@ -1,7 +1,7 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 
 
-<https://uscensus.gov/datasets/123>
+<https://census.gov/datasets/123>
   a dcat:Dataset ;
-  dcat:distribution <https://uscensus.gov/resource/456>,
-                    <https://uscensus.gov/resource/345> .
+  dcat:distribution <https://census.gov/resource/456>,
+                    <https://census.gov/resource/345> .

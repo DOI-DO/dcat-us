@@ -11,8 +11,8 @@
   # creator of the resource          
   dcterms:creator <https://orcid.org/0000-0002-0693-466X>;
   dcterms:contributor <https://orcid.org/0000-0002-8881-2550>;
-  dcterms:publisher <https://www.uscensus.gov>;
-  dcterms:rightsHolder <https://www.uscensus.gov>;
+  dcterms:publisher <https://www.census.gov>;
+  dcterms:rightsHolder <https://www.census.gov>;
   prov:qualifiedAttribution [
     a prov:Attribution ;
     prov:agent <https://orcid.org/0000-0002-8881-2550> ;
@@ -20,7 +20,7 @@
   ] ;
   prov:qualifiedAttribution [
     a prov:Attribution ;
-    prov:agent <https://www.uscensus.gov> ;
+    prov:agent <https://www.census.gov> ;
     dcat:hadRole <http://resources.data.gov/vocab/isotc211/CI_RoleCode/distributor>
   ] ;
   prov:qualifiedAttribution [
@@ -34,4 +34,4 @@
 
 <https://orcid.org/0000-0002-8881-2550> a foaf:Person.
    
-<https://www.uscensus.gov>  a org:Organization.
+<https://www.census.gov>  a org:Organization.

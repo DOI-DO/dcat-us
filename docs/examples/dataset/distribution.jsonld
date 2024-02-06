@@ -1,9 +1,9 @@
 {
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
-  "@id": "https://uscensus.gov/datasets/123",
+  "@id": "https://census.gov/datasets/123",
   "@type": "dcat:Dataset",
   "distribution": [
-    "https://uscensus.gov/resource/456",
-    "https://uscensus.gov/resource/345"
+    "https://census.gov/resource/456",
+    "https://census.gov/resource/345"
   ]
 }

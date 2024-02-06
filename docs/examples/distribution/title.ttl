@@ -1,6 +1,6 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 
-<https://uscensus.gov/opendata/1234>
+<https://census.gov/opendata/1234>
   a dcat:Distribution ;
   dcterms:title "Some title of the distribution"@en .

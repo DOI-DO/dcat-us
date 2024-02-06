@@ -2,14 +2,14 @@
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
   "@graph": [
     {
-      "@id": "https://uscensus.gov/123",
+      "@id": "https://census.gov/123",
       "@type": "dcat:Dataset",
       "isReferencedBy": [
-        "https://uscensus.gov/456"
+        "https://census.gov/456"
       ]
     },
     {
-      "@id": "https://uscensus.gov/456",
+      "@id": "https://census.gov/456",
       "@type": "dcat:Dataset"
     }
   ]

@@ -1,9 +1,9 @@
 {
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
-  "@id": "https://uscensus.gov/opendata/service",
+  "@id": "https://census.gov/opendata/service",
   "@type": "dcat:DataService",
   "servesDataset": [
-    "https://uscensus.gov/data/123",
-    "https://uscensus.gov/data/345"
+    "https://census.gov/data/123",
+    "https://census.gov/data/345"
   ]
 }

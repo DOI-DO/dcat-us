@@ -1,6 +1,6 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 
-<https://uscensus.gov/opendata/service>
+<https://census.gov/opendata/service>
   a dcat:DataService ;
   dcterms:title "Opendata catalog service of the US Census"@en.

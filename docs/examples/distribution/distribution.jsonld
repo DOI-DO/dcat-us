@@ -5,7 +5,7 @@
       "@id": "http://example.org/Distribution1",
       "@type": "dcat:Distribution",
       "dcterms:accessURL": {
-        "@id": "https://uscensus.gov/data/1234/access"
+        "@id": "https://census.gov/data/1234/access"
       },
       "dcterms:availability": {
         "@id": "http://data.gov/resource/authority/planned-availability/STABLE"
@@ -17,13 +17,13 @@
         "@type": "http://www.w3.org/2001/XMLSchema#date",
         "@value": "2019-04-26"
       },
-      "rights": "http://example.org/uscensus.gov-rights-statement",
+      "rights": "http://example.org/census.gov-rights-statement",
       "title": "some title of the distribution"
     },
     {
-      "@id": "http://example.org/uscensus.gov-rights-statement",
+      "@id": "http://example.org/census.gov-rights-statement",
       "@type": "odrs:RightsStatement",
-      "odrs:attributionText": "Some uscensus.gov organization rights statement"
+      "odrs:attributionText": "Some census.gov organization rights statement"
     }
   ]
 }

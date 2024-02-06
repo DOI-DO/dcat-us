@@ -1,7 +1,7 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 
-<https://uscensus.gov/opendata/resource/1234>
+<https://census.gov/opendata/resource/1234>
   a dcat:Distribution ;
 
   dcterms:language  <http://id.loc.gov/vocabulary/iso639-1/en> .

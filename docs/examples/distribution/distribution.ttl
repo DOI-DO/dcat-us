@@ -10,7 +10,7 @@
 
   # mandatory properties
 
-  dcterms:accessURL <https://uscensus.gov/data/1234/access> ;
+  dcterms:accessURL <https://census.gov/data/1234/access> ;
   dcterms:license <http://data.gov/vocabulary/licenses/cc-by/4.0> ;
 
   # recommended properties
@@ -18,11 +18,11 @@
   dcterms:availability <http://data.gov/resource/authority/planned-availability/STABLE> ;
   dcterms:description "some description of the data";
   dcterms:format <http://data.gov/resource/authority/file-type/CSV> ;
-  dcterms:rights :uscensus.gov-rights-statement ;
+  dcterms:rights :census.gov-rights-statement ;
   dcterms:title "some title of the distribution" ;
   dcterms:modified "2019-04-26"^^xsd:date .
 
 # ---------- class RightsStatement ------------------------------------------
-:uscensus.gov-rights-statement
+:census.gov-rights-statement
     a odrs:RightsStatement;
-    odrs:attributionText "Some uscensus.gov organization rights statement" .
+    odrs:attributionText "Some census.gov organization rights statement" .

@@ -2,7 +2,7 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-<https://uscensus.gov/123>
+<https://census.gov/123>
   a dcat:Dataset ;
   dcterms:relation <http://www.bafu.admin.ch/laerm/index>,
                <http://www.bafu.admin.ch/legal_info>,

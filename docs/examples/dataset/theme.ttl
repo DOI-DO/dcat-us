@@ -1,6 +1,6 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 
-<https://uscensus.gov/opendata/1234>
+<https://census.gov/opendata/1234>
   a dcat:Dataset ;
 
   dcat:theme <http://publications.europa.eu/resource/authority/data-theme/GOVE> ,

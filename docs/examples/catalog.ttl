@@ -3,34 +3,34 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://uscensus.gov/catalog-endpoint.rdf>
+<https://census.gov/catalog-endpoint.rdf>
   a dcat:Catalog ;
 
-  dcat:dataset <https://uscensus.gov/data/123>, <https://uscensus.gov/data/345> ;
+  dcat:dataset <https://census.gov/data/123>, <https://census.gov/data/345> ;
 
   dcterms:title "Open Data Catalog for New York City"@en;
   dcterms:description "Open Data Catalog for New York Cityh"@en ;
 
   dcterms:issued "2021-01-07T00:00:00"^^xsd:dateTime ;
-  foaf:homepage <https://uscensus.gov/index.html> ;
-  dcterms:publisher <https://uscensus.gov> ;
+  foaf:homepage <https://census.gov/index.html> ;
+  dcterms:publisher <https://census.gov> ;
   dcterms:modified "2021-01-07T00:00:00"^^xsd:dateTime ;
   dcterms:language: "en" .
 
-<https://uscensus.gov/data/123>
+<https://census.gov/data/123>
   a dcat:Dataset ;
   dcterms:title "some title"@en ;
   dcterms:description "some dataset"@en .
 
-<https://uscensus.gov/data/345>
+<https://census.gov/data/345>
   a dcat:Dataset ;
   dcterms:title "some title"@en ;
   dcterms:description "some dataset"@en .
 
-<https://uscensus.gov/index.html>
+<https://census.gov/index.html>
   a foaf:Document .
 
-<https://uscensus.gov>
+<https://census.gov>
   a foaf:Organization   ;
   foaf:name "US Census"@en .
 

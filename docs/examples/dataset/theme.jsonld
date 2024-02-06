@@ -1,6 +1,6 @@
 {
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
-  "@id": "https://uscensus.gov/opendata/1234",
+  "@id": "https://census.gov/opendata/1234",
   "@type": "dcat:Dataset",
   "theme": [
     "http://publications.europa.eu/resource/authority/data-theme/GOVE",

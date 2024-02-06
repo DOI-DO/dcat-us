@@ -1,6 +1,6 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://uscensus.gov/reforestation-data/1234>
+<https://census.gov/reforestation-data/1234>
   a dcat:Distribution ;
   dcat:byteSize "1944502"^^xsd:nonNegativeInteger .

@@ -6,7 +6,7 @@
 @prefix org: <http://www.w3.org/ns/org#> .
 
 # ---------- class Dataset --------------------------------------------------
-<https://uscensus.gov/dataset1>
+<https://census.gov/dataset1>
   a dcat:Dataset ;
 
   # mandatory properties
@@ -14,26 +14,26 @@
   dcat:contactPoint [
     a vcard:Kind ;
     vcard:fn "US Census" ;
-    vcard:email <mailto:noise@uscensus.gov> 
+    vcard:email <mailto:noise@census.gov> 
   ], [
     a vcard:Kind ;
     vcard:fn "John Smith" ;
-    vcard:email <mailto:johnsmith@uscensus.gov> 
+    vcard:email <mailto:johnsmith@census.gov> 
   ] ;
   dcterms:description 
                  """This dataset contains information regarding the
                  census in County of Loudoun"""@en ;
-  dcterms:publisher <https://uscensus.gov/> ;
+  dcterms:publisher <https://census.gov/> ;
   dcterms:title "Loudoun County"@en, "Condado de Loudoun"@es ;
 
   # recommended properties
 
-  dcat:distribution <https://uscensus.gov/data/123> ,
-                    <https://uscensus.gov/data/456> ;
+  dcat:distribution <https://census.gov/data/123> ,
+                    <https://census.gov/data/456> ;
   dcat:keyword "loudoun"@en,
                "census"@en;
             
-  dcat:landingPage <https://opendata.uscensus.gov/1234/about> ;
+  dcat:landingPage <https://opendata.census.gov/1234/about> ;
   dcterms:issued "2021-04-26"^^xsd:date ;
   dcterms:spatial <http://publications.europa.eu/resource/authority/country/CHE> ;
   dcterms:temporal [ a dcterms:PeriodOfTime ;
@@ -44,13 +44,13 @@
   dcterms:modified "2021-04-26"^^xsd:date .
 
 # ---------- class Publisher ------------------------------------------------
-<https://uscensus.gov>
+<https://census.gov>
   a org:Organization ;
   foaf:name "US Census"@en .
 
 # ---------- class Distribution ----------------------------------------------
-<https://uscensus.gov/data/123>
+<https://census.gov/data/123>
   a dcat:Distribution .
 
-<https://uscensus.gov/data/456>
+<https://census.gov/data/456>
   a dcat:Distribution .

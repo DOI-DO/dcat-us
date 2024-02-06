@@ -1,6 +1,6 @@
 {
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
-  "@id": "https://uscensus.gov/opendata/resource/1234",
+  "@id": "https://census.gov/opendata/resource/1234",
   "@type": "dcat:Distribution",
   "language": "en"
 }

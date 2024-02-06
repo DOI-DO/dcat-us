@@ -2,7 +2,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix dcterms: <http://purl.org/dc/terms/>.
 
-<https://uscensus.gov/Catalog1>
+<https://census.gov/Catalog1>
   a dcat:Catalog ;
   dcterms:conformsTo <http://resource.data.gov/profile/dcat-us#> ;
 .

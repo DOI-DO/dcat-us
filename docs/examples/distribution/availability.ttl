@@ -2,6 +2,6 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix dcat-us: <http://resources.data.gov/ontology/dcat-us#> .
 
-<https://uscensus.gov/opendata/distribution/1234>
+<https://census.gov/opendata/distribution/1234>
   a dcat:Distribution ;
   dcat-us:availability <http://publications.europa.eu/resource/authority/planned-availability/EXPERIMENTAL> .

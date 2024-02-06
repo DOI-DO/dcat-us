@@ -1,6 +1,6 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 
-<https://uscensus.gov/opendata/service>
+<https://census.gov/opendata/service>
   a dcat:DataService ;
 
-  dcat:servesDataset <https://uscensus.gov/data/123>, <https://uscensus.gov/data/345> .
+  dcat:servesDataset <https://census.gov/data/123>, <https://census.gov/data/345> .

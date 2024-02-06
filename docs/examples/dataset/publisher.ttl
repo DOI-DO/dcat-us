@@ -3,10 +3,10 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix org: <http://www.w3.org/ns/org#> .
 
-<https://uscensus.gov/123>
+<https://census.gov/123>
   a dcat:Dataset ;
-  dcterms:publisher <https://uscensus.gov> .
+  dcterms:publisher <https://census.gov> .
 
-<https://uscensus.gov>
+<https://census.gov>
   a org:Organization ;
   foaf:name "Federal Office of Topography".

@@ -1,6 +1,6 @@
 {
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
-  "@id": "https://uscensus.gov/reforestation-data/1234",
+  "@id": "https://census.gov/reforestation-data/1234",
   "@type": "dcat:Distribution",
-  "dcterms:identifier": "https://uscensus.gov/reforestation-data/1234"
+  "dcterms:identifier": "https://census.gov/reforestation-data/1234"
 }

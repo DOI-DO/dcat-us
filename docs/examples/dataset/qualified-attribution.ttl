@@ -7,7 +7,7 @@ ex:Dataset1
   a dcat:Dataset ;
   prov:qualifiedAttribution [
     a prov:Attribution ;
-    prov:agent <https://www.uscensus.gov> ;
+    prov:agent <https://www.census.gov> ;
     dcat:hadRole <http://resources.data.gov/vocab/isotc211/CI_RoleCode/distributor>
   ] ;
   prov:qualifiedAttribution [
