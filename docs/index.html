@@ -7764,15 +7764,7 @@
             <td>1..n</td>
             <td><span style="color: green;">Multilingual support</span></td>
           </tr>
-          <tr>
-            <td><a href="#dataset-identifier">identifier</a></td>
-            <td><a data-cite="DCTERMS#http://purl.org/dc/terms/identifier"><code>dcterms:identifier</code></a>
-            </td>
-            <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
-            <td><strong>M</strong></td>
-            <td>1..n</td>
-            <td><span style="color: black;">No Change</span></td>
-          </tr>
+     
           <tr>
             <td><a href="#dataset-contact-point">contact point</a></td>
             <td><a data-cite="VOCAB-DCAT-3#Property:resource_contact_point"><code>dcat:contactPoint</code></a></td>
@@ -7799,6 +7791,15 @@
             <td>R</td>
             <td>0..n</td>
             <td><span style="color: black;">No Change</span></td>
+          </tr>
+          <tr>
+            <td><a href="#dataset-identifier">identifier</a></td>
+            <td><a data-cite="DCTERMS#http://purl.org/dc/terms/identifier"><code>dcterms:identifier</code></a>
+            </td>
+            <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
+            <td><strong>R</strong></td>
+            <td>0..n</td>
+            <td><span style="color: green;">Fixed</span></td>
           </tr>
           <tr>
             <td><a href="#dataset-spatial">spatial/geographic coverage</a></td>
@@ -8367,59 +8368,7 @@
               data-include="./examples/dataset/description.jsonld"></pre>
           </aside>
         </section>
-        <section id="dataset-identifier">
-          <h4>Property: identifier</h4>
-          <table class="def">
-            <tbody>
-              <tr>
-                <th>Property</th>
-                <td>identifier</td>
-              </tr>
-              <tr>
-                <th>Requirement level</th>
-                <td><strong>Mandatory</strong></td>
-              </tr>
-              <tr>
-                <th>Cardinality</th>
-                <td>1..n</td>
-              </tr>
-              <tr>
-                <th>URI</th>
-                <td><a data-cite="DCTERMS#http://purl.org/dc/terms/identifier"><code>dcterms:identifier</code></a>
-                </td>
-              </tr>
-              <tr>
-                <th>Range</th>
-                <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
-                </td>
-              </tr>
-              <tr>
-                <th>Usage note</th>
-                <td>
-                  <ul>
-                    <li>This property contains the unique identifier for the Dataset, e.g. the URI or other
-                      unique identifier in the context of the Catalog.
-                    </li>
-                    <li>
-                      The identifier may be used as part of the URI of the Dataset.
-                    </li>
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <aside class="example ds-selector-tabs" id="ex-dataset-identifier"
-            title="Usage of dcterms:identifier for dcat:Dataset">
-            <div class="selectors">
-              <button class="selected exampleTab1 ttl" onclick="openTab('exampleTab1', 'ttl')">TTL</button>
-              <button class="exampleTab1 jsonld" onclick="openTab('exampleTab1', 'jsonld')">JSON-LD</button>
-            </div>
-            <pre class="selected ttl exampleTab1" data-include-format="text"
-              data-include="./examples/dataset/identifier.ttl"></pre>
-            <pre class="jsonld exampleTab1 json" data-include-format="text"
-              data-include="./examples/dataset/identifier.jsonld"></pre>
-          </aside>
-        </section>
+
       </section>
       <section id="dataset-recommended-props">
         <h4>Recommended Properties</h4>
@@ -8539,6 +8488,56 @@
               data-include="./examples/dataset/distribution.ttl"></pre>
             <pre class="jsonld exampleTab1 json" data-include-format="text"
               data-include="./examples/dataset/distribution.jsonld"></pre>
+          </aside>
+        </section>
+        <section id="dataset-identifier">
+          <h4>Property: identifier</h4>
+          <table class="def">
+            <tbody>
+              <tr>
+                <th>Property</th>
+                <td>identifier</td>
+              </tr>
+              <tr>
+                <th>Requirement level</th>
+                <td><strong>Mandatory</strong></td>
+              </tr>
+              <tr>
+                <th>Cardinality</th>
+                <td>0..n</td>
+              </tr>
+              <tr>
+                <th>URI</th>
+                <td><a data-cite="DCTERMS#http://purl.org/dc/terms/identifier"><code>dcterms:identifier</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Range</th>
+                <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Usage note</th>
+                <td>
+                  <ul>
+                    <li>This property contains a unique identifier for the Dataset, e.g. a URI or other
+                      unique identifier in the context of the Catalog.
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <aside class="example ds-selector-tabs" id="ex-dataset-identifier"
+            title="Usage of dcterms:identifier for dcat:Dataset">
+            <div class="selectors">
+              <button class="selected exampleTab1 ttl" onclick="openTab('exampleTab1', 'ttl')">TTL</button>
+              <button class="exampleTab1 jsonld" onclick="openTab('exampleTab1', 'jsonld')">JSON-LD</button>
+            </div>
+            <pre class="selected ttl exampleTab1" data-include-format="text"
+              data-include="./examples/dataset/identifier.ttl"></pre>
+            <pre class="jsonld exampleTab1 json" data-include-format="text"
+              data-include="./examples/dataset/identifier.jsonld"></pre>
           </aside>
         </section>
         <section id="dataset-spatial">

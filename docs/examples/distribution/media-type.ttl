@@ -14,7 +14,8 @@ ex:Distribution1
 ex:Distribution2 a dcat:Distribution ;
   dcterms:title "Geopackage distribution";
   dcat:downloadURL <https://example.com/geopackage2.gpkg> ;
-  dcterms:mediaType <https://www.iana.org/assignments/media-types/application/geopackage+sqlite3> ;
+  dcterms:mediaType <https://www.iana.org/assignments/media-types/application/geopackage+sqlite3> 
+.
 
 <https://www.iana.org/assignments/media-types/application/geopackage+sqlite3>  a dcterms:MediaType ;
     rdfs:label "Geopackage" .

@@ -2,6 +2,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 
 # Define the National Park Service
 <https://www.nps.gov>
@@ -23,6 +24,6 @@
 # Example of a dataset managed by the National Park Service
 <http://data.example.org/dataset/park-visitor-data>
     a dcat:Dataset ;
-    dcat:publisher <https://www.nps.gov> ;
-    dcat:title "National Park Visitor Statistics" ;
-    dcat:description "This dataset contains statistics about visitors to national parks managed by the NPS." .
+    dcterms:publisher <https://www.nps.gov> ;
+    dcterms:title "National Park Visitor Statistics" ;
+    dcterms:description "This dataset contains statistics about visitors to national parks managed by the NPS." .
