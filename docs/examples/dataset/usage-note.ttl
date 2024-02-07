@@ -6,6 +6,9 @@
 
 
 ex:Dataset1 a dcat:Dataset;
+    dcterms:title "MAPPE model"@en;
+    dcterms:description "Multimedia Assessment of Pollutant Pathways in the Environment."@en;
+    dcterms:publisher ex:Organization1;
     vann:usageNote """The MAPPE model is a collection of ArcGIS raster calculations, 
         originally implemented in VBA for ArcGIS 9.x; as this environment 
         is obsolete, the author recommends to develop the calculations 

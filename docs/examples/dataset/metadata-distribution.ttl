@@ -7,6 +7,7 @@
 ex:Dataset1 a dcat:Dataset ;
     dcterms:title "Geographic Dataset imported from ISO 19139" ;
     dcterms:description "This dataset contains geographic metadata imported from the ISO 19139 metadata document." ;
+    dcterms:publisher ex:Organization1 ;
     dcat:metadataDistribution ex:ISO19139Distribution.
 
 # Define the distribution of the ISO 19139 Metadata document

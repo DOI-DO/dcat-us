@@ -4,6 +4,7 @@
   "@type": "dcat:Dataset",
   "title": "Geographic Dataset imported from ISO 19139",
   "description": "This dataset contains geographic metadata imported from the ISO 19139 metadata document.",
+  "publisher" : "http://example.org/ns#Organization1",
   "metadataDistribution": {
     "@id": "http://example.org/ns#ISO19139Distribution ",
     "@type": "dcat:Distribution",

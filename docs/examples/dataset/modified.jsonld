@@ -2,8 +2,11 @@
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
   "@id": "https://opendata.zurich/opendata/data/1234",
   "@type": "dcat:Dataset",
+  "title": "Dataset 1",
+  "description": "This is a dataset",
+  "publisher": "https://example.com/publisher1",
   "modified": {
-    "@type": "http://www.w3.org/2001/XMLSchema#date",
+    "@type": "xsd:date",
     "@value": "2021-04-26"
   }
 }

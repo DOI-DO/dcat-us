@@ -1,8 +1,10 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 
-<https://census.gov/opendata/1234>
+<https://example.com/dataset1>
   a dcat:Dataset ;
-
-  dcterms:language  <http://id.loc.gov/vocabulary/iso639-1/es>,
+  dcterms:title "Dataset 1" ;
+  dcterms:description "This is a dataset" ;
+  dcterms:publisher <https://example.com/publisher1> ;
+  dcterms:language  <http://id.loc.gov/vocabulary/iso639-1/es>,   # in JSON-LD use only "es" and "en"
                     <http://id.loc.gov/vocabulary/iso639-1/en> .

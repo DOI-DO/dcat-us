@@ -1,19 +1,14 @@
 {
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
-  "@graph": [
-    {
-      "@id": "http://example.org/Census2020Dataset",
-      "@type": "dcat:Dataset",
-      "title": "Census Dataset",
-      "wasGeneratedBy": [
-        "http://example.org/NationalCensus"
-      ]
-    },
-    {
-      "@id": "http://example.org/NationalCensus",
-      "@type": "prov:Activity",
-      "category": "http://example.org/CensusActivity",
-      "label": "National Census"
-    }
-  ]
+  "@id": "http://example.org/Census2020Dataset",
+  "@type": "dcat:Dataset",
+  "title": "2020 Census Dataset",
+  "description": "Dataset resulting from the 2020 National Census",
+  "publisher": "https://www.census.gov",
+  "wasGeneratedBy": {
+    "@id": "http://example.org/NationalCensus",
+    "@type": "prov:Activity",
+    "label": "National Census",
+    "type": "http://example.org/CensusActivity"
+  }
 }

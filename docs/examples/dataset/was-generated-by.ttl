@@ -7,7 +7,9 @@
 
 # Dataset resulting from the census activity
 ex:Census2020Dataset a dcat:Dataset ;
-    dcterms:title "Census Dataset" ;
+    dcterms:title "2020 Census Dataset" ;
+    dcterms:description "Dataset resulting from the 2020 National Census" ;
+    dcterms:publisher <https;//www.census.gov> ;
     prov:wasGeneratedBy ex:NationalCensus .
 
 # Activity
