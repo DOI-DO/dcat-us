@@ -5451,7 +5451,7 @@
           </tr>
           <tr>
             <td><a href="#contact-email">email</a></td>
-            <td><a data-cite="VCARD-RDF#d4e57"><code>vcard:email</code></a>
+            <td><a data-cite="VCARD-RDF#d4e183"><code>vcard:hasEmail</code></a>
             </td>
             <td><a data-cite="RDF-SCHEMA#ch_resource"><code>rdfs:Resource</code></a>
             </td>
@@ -5572,7 +5572,7 @@
               </tr>
               <tr>
                 <th>URI</th>
-                <td><a data-cite="VCARD-RDF#d4e57"><code>vcard:email</code></a>
+                <td><a data-cite="VCARD-RDF#d4e183"><code>vcard:hasEmail</code></a>
                 </td>
               </tr>
               <tr>
@@ -5586,7 +5586,7 @@
               </tr>
               <tr>
                 <th>Usage note</th>
-                <td>Use email with function name instead of individual name (e.g. support).</td>
+                <td>Use email with function name instead of individual name (e.g. support). The email address should be formatted as url starting with "mailto:" scheme</td>
               </tr>
             </tbody>
           </table>
@@ -11449,14 +11449,7 @@
             <td>0..1</td>
             <td>No Change</td>
           </tr>
-          <tr>
-            <td><a href="#distribution-availability">availability</a></td>
-            <td><code>dcatap:availability</code></td>
-            <td><a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a></td>
-            <td>R</td>
-            <td>0..1</td>
-            <td><span style="color: red;">New!</span></td>
-          </tr>
+      
           <tr>
             <td><a href="#distribution-format">format</a></td>
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/format"><code>dcterms:format</code></a>
@@ -11859,53 +11852,7 @@
               data-include="./examples/distribution/access-url.jsonld"></pre>
           </aside>
         </section>
-        <section id="distribution-availability">
-          <h4>Property: availability</h4>
-          <table class="def">
-            <tbody>
-              <tr>
-                <th>Property</th>
-                <td>availability</td>
-              </tr>
-              <tr>
-                <th>Requirement level</th>
-                <td>Recommended</td>
-              </tr>
-              <tr>
-                <th>Cardinality</th>
-                <td>0..1</td>
-              </tr>
-              <tr>
-                <th>URI</th>
-                <td>
-                  <code>dcatap:availability</code>
-                </td>
-              </tr>
-              <tr>
-                <th>Range</th>
-                <td><a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a></td>
-              </tr>
-              <tr>
-                <th>Usage note</th>
-                <td>
-                  This property indicates how long it is planned to keep the Distribution of the Dataset
-                  available.
-
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <aside class="example ds-selector-tabs" title="Usage of dcatap:availiablity for dcat:Distribution">
-            <div class="selectors">
-              <button class="selected exampleTab1 ttl" onclick="openTab('exampleTab1', 'ttl')">TTL</button>
-              <button class="exampleTab1 jsonld" onclick="openTab('exampleTab1', 'jsonld')">JSON-LD</button>
-            </div>
-            <pre class="selected ttl exampleTab1" data-include-format="text"
-              data-include="./examples/distribution/availability.ttl"></pre>
-            <pre class="jsonld exampleTab1 json" data-include-format="text"
-              data-include="./examples/distribution/availability.jsonld"></pre>
-          </aside>
-        </section>
+      
         <section id="distribution-description">
           <h4>Property: description</h4>
           <table class="def">

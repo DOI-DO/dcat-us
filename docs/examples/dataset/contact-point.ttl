@@ -1,8 +1,12 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 
-<https://census.gov/123>
+<https://census.gov/datasets/123>
   a dcat:Dataset ;
+  dcterms:title "Dataset 123" ;
+  dcterms:description "This dataset contains information about..." ;
+  dcterms:publisher <https://census.gov> ;
   dcat:contactPoint [
     a vcard:Kind ;
     vcard:fn "US Census Info" ;

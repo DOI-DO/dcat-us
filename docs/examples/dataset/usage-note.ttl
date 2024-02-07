@@ -1,15 +1,16 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/>.
-@prefix vann: <http://purl.org/vocab/vann/>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
 @prefix ex: <http://www.example.com#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
 
 
 ex:Dataset1 a dcat:Dataset;
     dcterms:title "MAPPE model";
     dcterms:description "Multimedia Assessment of Pollutant Pathways in the Environment.";
     dcterms:publisher ex:Organization1;
-    vann:usageNote """The MAPPE model is a collection of ArcGIS raster calculations, 
+    skos:scopeNote """The MAPPE model is a collection of ArcGIS raster calculations, 
         originally implemented in VBA for ArcGIS 9.x; as this environment 
         is obsolete, the author recommends to develop the calculations 
         anew just by picking the syntax from the reports. Anyway, the 

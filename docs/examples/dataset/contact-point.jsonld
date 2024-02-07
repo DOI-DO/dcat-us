@@ -1,12 +1,15 @@
 {
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
-  "@id": "https://census.gov/123",
+  "@id": "https://census.gov/datasets/123",
   "@type": "dcat:Dataset",
+  "title": "Dataset 123",
+  "description": "This dataset contains information about...",
+  "publisher": {
+    "@id": "https://census.gov"
+  },
   "contactPoint": {
     "@type": "vcard:Kind",
-    "vcard:fn": "US Census Info",
-    "vcard:hasEmail": {
-      "@id": "mailto:info@census.gov"
-    }
+    "fn": "US Census Info",
+    "hasEmail": "mailto:info@census.gov"
   }
 }

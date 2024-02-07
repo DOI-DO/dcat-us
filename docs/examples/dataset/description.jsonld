@@ -1,9 +1,11 @@
 {
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
-  "@id": "https://doi.org/10.7265/N5K072F8",
+  "@id": "https://census.gov/datasets/123",
   "@type": "dcat:Dataset",
-  "description": "The <a href=\"/data/seaice_index/\">Sea Ice Index</a> provides \n  a quick look at Arctic- and Antarctic-wide changes in sea ice. It is a source for \n  consistent, up-to-date sea ice extent and concentration images, in PNG format, \n  and data values, in GeoTIFF and ASCII text files, from November 1978 to the present. \n  Sea Ice Index images also depict trends and anomalies in ice cover calculated \n  using a 30-year reference period of 1981 through 2010. The images and data are \n  produced in a consistent way that makes the Index time-series appropriate for \n  use when looking at long-term trends in sea ice cover. Both monthly and daily \n  products are available. However, monthly products are better to use for long-term \n  trend analysis because errors in the daily product tend to be averaged out in \n  the monthly product and because day-to-day variations are often the result of \n  short-term weather.",
+  "title": "Dataset 123",
+  "publisher": "https://census.gov",
+  "description": "Some description in english",
   "descriptionMap": {
-    "es": "El <a href=\"/data/seaice_index/\">\u00cdndice de Hielo Marino</a> proporciona una \n  visi\u00f3n r\u00e1pida de los cambios en el hielo marino en el \u00c1rtico y la Ant\u00e1rtida. \n  Es una fuente de im\u00e1genes consistentes y actualizadas de la extensi\u00f3n y \n  concentraci\u00f3n del hielo marino, en formato PNG, y valores de datos en archivos \n  GeoTIFF y texto ASCII, desde noviembre de 1978 hasta la actualidad. Las im\u00e1genes \n  del \u00cdndice de Hielo Marino tambi\u00e9n muestran tendencias y anomal\u00edas en la cobertura \n  de hielo calculadas utilizando un per\u00edodo de referencia de 30 a\u00f1os, de 1981 a 2010. \n  Las im\u00e1genes y los datos se producen de manera consistente, lo que hace que la \n  serie temporal del \u00cdndice sea apropiada para su uso al examinar tendencias a largo \n  plazo en la cobertura de hielo marino. Se encuentran disponibles productos mensuales \n  y diarios. Sin embargo, los productos mensuales son mejores para analizar tendencias \n  a largo plazo, ya que los errores en el producto diario tienden a ser promediados en el \n  producto mensual y las variaciones de un d\u00eda a otro suelen ser el resultado \n  de condiciones clim\u00e1ticas a corto plazo."
+    "es": "Alguna descripción en español"
   }
 }
