@@ -7,6 +7,7 @@
 ex:WeatherDataset a dcat:Dataset ;
     dcterms:title "Weather Information" ;
     dcterms:description "This dataset contains weather information including temperature, humidity, and wind speed." ;
+    dcterms:publisher <https://noaa.gov> ;
     dcat:distribution ex:WeatherDataDistribution ;
     schema:image ex:WeatherThumbnail .
 

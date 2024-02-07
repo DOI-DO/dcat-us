@@ -1,7 +1,10 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
-
+@prefix dcterms: <http://purl.org/dc/terms/> .
 
 <https://census.gov/datasets/123>
   a dcat:Dataset ;
-  dcat:distribution <https://census.gov/resource/456>,
+  dcterms:title "Dataset 123" ;
+  dcterms:description "This dataset contains information about..." ;
+  dcterms:publisher <https://census.gov> ;
+  dcat:distribution <https://census.gov/resource/456> ,
                     <https://census.gov/resource/345> .

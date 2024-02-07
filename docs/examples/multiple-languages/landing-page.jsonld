@@ -2,5 +2,8 @@
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
   "@id": "https://nces.ed.gov/pubs2006/data/ALS2002",
   "@type": "dcat:Dataset",
+  "title": "Academic Libraries Survey (ALS) 2002",
+  "description": "The Academic Libraries Survey (ALS) is a product of the Integrated Postsecondary Education Data System (IPEDS).",
+  "publisher": "http://www.ed.gov",
   "landingPage": "https://nces.ed.gov/surveys/libraries/academic.asp"
 }

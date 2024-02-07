@@ -1,8 +1,19 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 
 <https://census.gov/opendata/123>
   a dcat:Distribution ;
-  dcat:accessService <https://census.gov/data/123> .
+  dcat:accessService <https://census.gov/data/123> ;  # reference to the data service
+  dcat:accessURL <https://census.gov/api/123> ;  #note that accessURL must be the same that endpointURL
+.
 
 <https://census.gov/data/123>
-  a dcat:DataService .
+  a dcat:DataService;
+  dcterms:title "Census Data Service" ;
+  dcterms:description "A service for accessing Census data" ; 
+  dcterms:publisher <https://census.gov> ;
+  dcat:endpointURL <https://census.gov/api/123>;
+  dcat:contactPoint <https://census.gov/contact/123> .
+
+
+

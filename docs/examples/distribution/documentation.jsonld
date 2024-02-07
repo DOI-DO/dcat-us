@@ -3,7 +3,8 @@
   "@graph": [
     {
       "@id": "https://opendata.census.gov/1234/about",
-      "@type": "foaf:Document"
+      "@type": "foaf:Document",
+      "title": "About this dataset"
     },
     {
       "@id": "https://opendata.census.gov/1234",

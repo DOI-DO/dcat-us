@@ -2312,7 +2312,7 @@ dcat-us-shp:Distribution_Shape-availability a sh:PropertyShape ;
 dcat-us-shp:Distribution_Shape-byteSize a sh:PropertyShape ;
     rdfs:label "byte size" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
-    sh:datatype xsd:decimal ;
+    sh:datatype xsd:nonNegativeInteger ;
     sh:description "The size of a Distribution in bytes." ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
@@ -3356,7 +3356,7 @@ dcat-us-shp:Standard_Shape-title a sh:PropertyShape ;
 
 dcat-us-shp:UseRestriction_Shape-restrictionNote a sh:PropertyShape ;
     rdfs:label "restriction note" ;
-    dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
+    dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
     sh:description "Significant information pertaining to the use or reproduction of the data." ;
     sh:maxCount 1 ;
     sh:minCount 0 ;

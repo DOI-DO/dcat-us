@@ -2,8 +2,8 @@
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
   "@id": "http://www.example.com#LandsatImage-001",
   "@type": "dcat:Dataset",
-  "titleMap": {
-    "en": "Landsat Image"
-  },
+  "title": "Landsat Image",
+  "description": "A Landsat image of the Earth.",
+  "publisher": "https://usgs.gov",
   "spatialResolutionInMeters": "30.0"
 }

@@ -4,11 +4,14 @@
     {
       "@id": "https://census.gov",
       "@type": "http://www.w3.org/ns/org#Organization",
-      "foaf:name": "Federal Office of Topography"
+      "name": "Federal Office of Topography",
+      "prefLabel": "Federal Office of Topography"
     },
     {
       "@id": "https://census.gov/123",
       "@type": "dcat:Dataset",
+      "title": "Dataset 123",
+      "description": "This dataset contains information about...",
       "publisher": "https://census.gov"
     }
   ]

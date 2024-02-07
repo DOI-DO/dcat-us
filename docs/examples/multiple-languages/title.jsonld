@@ -8,5 +8,7 @@
     "es": "\u00cdndice de hielo marino",
     "fr": "Indice de glace de mer",
     "pt": "\u00cdndice de gelo marinho"
-  }
+  },
+  "description":"Sea Ice Index dataset description",
+  "publisher": "http://www.noaa.gov"
 }

@@ -2,15 +2,19 @@
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
   "@graph": [
     {
-      "@id": "https://census.gov/data/123",
-      "@type": "dcat:DataService"
+      "@id": "https://census.gov/opendata/123",
+      "@type": "Distribution",
+      "accessService": "https://census.gov/data/123",
+      "accessURL": "https://census.gov/api/123"
     },
     {
-      "@id": "https://census.gov/opendata/123",
-      "@type": "dcat:Distribution",
-      "accessService": [
-        "https://census.gov/data/123"
-      ]
+      "@id": "https://census.gov/data/123",
+      "@type": "DataService",
+      "title": "Census Data Service",
+      "description": "A service for accessing Census data",
+      "publisher": "https://census.gov",
+      "endpointURL": "https://census.gov/api/123",
+      "contactPoint": "https://census.gov/contact/123"
     }
   ]
 }

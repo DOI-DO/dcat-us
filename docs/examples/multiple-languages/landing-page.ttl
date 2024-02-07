@@ -1,6 +1,11 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 
 <https://nces.ed.gov/pubs2006/data/ALS2002>
   a dcat:Dataset ;
+  dcterms:title "Academic Libraries Survey (ALS) 2002" ;
+  dcterms:description """The Academic Libraries Survey (ALS) is a 
+  product of the Integrated Postsecondary Education Data System (IPEDS).""";
+  dcterms:publisher <http://www.ed.gov> ;
   dcat:landingPage <https://nces.ed.gov/surveys/libraries/academic.asp> .
