@@ -1,7 +1,20 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-<https://census.gov/opendata/1234>
+<https://doi.org/10.7265/N5K072F8>
   a dcat:Dataset ;
+  dcterms:title "Sea Ice Index"; 
+  dcterms:description "This is an example dataset" ;
+  dcterms:publisher <https://example.com/publisher1> ;
+  dcat:theme <https://example.com/themes/ClimateChange> . # Theme from a well-defined taxonomy
 
-  dcat:theme <http://publications.europa.eu/resource/authority/data-theme/GOVE> ,
-             <http://publications.europa.eu/resource/authority/data-theme/SOCI> .
+<https://example.com/themes/ClimateChange>
+  a skos:Concept ;
+  skos:prefLabel "Climate Change"@en ;
+  skos:inScheme <https://example.com/themes/scheme> .
+
+# Scheme definition for completeness
+<https://example.com/themes/scheme>
+  a skos:ConceptScheme ;
+  dcterms:title "A Theme Taxonomy"@en .

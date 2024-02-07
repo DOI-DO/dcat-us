@@ -6,6 +6,9 @@
 
 <https://example.com/ns/Dataset1>
   a dcat:Dataset ;
+  dcterms:title "Dataset 1" ;
+  dcterms:description "This is a dataset" ;
+  dcterms:publisher <https://example.com/publisher1> ;
   dcterms:spatial [
     a dcterms:Location ;
     locn:geometry """POLYGON ((

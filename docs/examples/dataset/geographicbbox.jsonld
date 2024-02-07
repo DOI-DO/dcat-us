@@ -1,20 +1,15 @@
 {
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
-  "@graph": [
-    {
-      "@id": "https://example.com/dataset1",
-      "@type": "dcat:Dataset",
-      "geographicBoundingBox": [
-        "_:n9f22370325054b549b1feff1ac4ee0d2b1"
-      ]
-    },
-    {
-      "@id": "_:n9f22370325054b549b1feff1ac4ee0d2b1",
-      "@type": "dcat-us:GeographicBoundingBox",
-      "eastBoundingLongitude": "10.3",
-      "northBoundingLatitude": "50.2",
-      "southBoundingLatitude": "20.2",
-      "westBoundingLongitude": "22.3"
-    }
-  ]
+  "@id": "https://example.com/dataset1",
+  "@type": "dcat:Dataset",
+  "title": "Dataset 1",
+  "description": "This is a dataset",
+  "publisher":"https://example.com/publisher1",
+  "geographicBoundingBox": {
+    "@type": "dcat-us:GeographicBoundingBox",
+    "eastBoundingLongitude": "10.3",
+    "northBoundingLatitude": "50.2",
+    "southBoundingLatitude": "20.2",
+    "westBoundingLongitude": "22.3"
+  }
 }

@@ -1,35 +1,22 @@
 {
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
-  "@graph": [
-    {
-      "@id": "http://example.org/ns#MySample",
-      "@type": "dcat:Distribution",
-      "description": "This is a sample from My Dataset.",
-      "format": "https://www.iana.org/assignments/media-types/text/csv",
-      "title": "Sample of My Dataset",
-      "downloadURL": [
-        "http://example.org/data/mysample.csv"
-      ]
-    },
-    {
-      "@id": "http://example.org/ns#MyDistribution",
-      "@type": "dcat:Distribution",
-      "format": "https://www.iana.org/assignments/media-types/text/csv",
-      "accessURL": [
-        "http://example.org/data/mydataset.csv"
-      ]
-    },
-    {
-      "@id": "http://example.org/ns#MyDataset",
-      "@type": "dcat:Dataset",
-      "description": "This is an example dataset.",
-      "title": "My Dataset",
-      "sample": [
-        "http://example.org/ns#MySample"
-      ],
-      "distribution": [
-        "http://example.org/ns#MyDistribution"
-      ]
-    }
-  ]
+  "@id": "http://example.org/ns#MyDataset",
+  "@type": "dcat:Dataset",
+  "title": "My Dataset",
+  "description": "This is an example dataset.",
+  "publisher": "http://example.org/ns#Publisher1",
+  "sample": {
+    "@id": "http://example.org/ns#MySample",
+    "@type": "dcat:Distribution",
+    "description": "This is a sample from My Dataset.",
+    "format": "https://www.iana.org/assignments/media-types/text/csv",
+    "title": "Sample of My Dataset",
+    "downloadURL": "http://example.org/data/mysample.csv"
+  },
+  "distribution": {
+    "@id": "http://example.org/ns#MyDistribution",
+    "@type": "dcat:Distribution",
+    "format": "https://www.iana.org/assignments/media-types/text/csv",
+    "downloadURL": "http://example.org/data/mydataset.csv"
+  }
 }

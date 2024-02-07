@@ -2,8 +2,12 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix ex:<http://example.org/ns#> .
 
-ex:Test543L
+
+<https://example.com/dataset1>
   a dcat:Dataset ;
+  dcterms:title "Dataset 1" ;
+  dcterms:description "This is a dataset" ;
+  dcterms:publisher <https://example.com/publisher1> ;
   dcat:qualifiedRelation [
     a dcat:Relationship ;
     dcterms:relation <http://example.org/Test543R> ;

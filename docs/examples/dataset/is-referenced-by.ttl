@@ -1,9 +1,17 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 
-<https://census.gov/123>
+<https://example.com/dataset1>
   a dcat:Dataset ;
-    dcterms:isReferencedBy <https://census.gov/456> .
+  dcterms:title "Dataset 1" ;
+  dcterms:description "This is a dataset 1" ;
+  dcterms:publisher <http://example.com/Publisher1> ;
+  dcterms:isReferencedBy <https://example.com/dataset2>.
 
-<https://census.gov/456>
-  a dcat:Dataset .
+
+<https://example.com/dataset2>
+  a dcat:Dataset ;
+  dcterms:title "Dataset 2" ;
+  dcterms:description "This is a dataset 2" ;
+  dcterms:publisher <http://example.com/Publisher2> ;
+.

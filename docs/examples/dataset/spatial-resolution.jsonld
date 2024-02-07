@@ -5,5 +5,8 @@
   "title": "Landsat Image",
   "description": "A Landsat image of the Earth.",
   "publisher": "https://usgs.gov",
-  "spatialResolutionInMeters": "30.0"
+  "spatialResolutionInMeters": {
+    "@value": "30.0",
+    "@type": "xsd:decimal"
+  }
 }

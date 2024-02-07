@@ -2,8 +2,11 @@
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
   "@id": "https://doi.org/10.7265/N5K072F8",
   "@type": "dcat:Dataset",
+  "title": "Sea Ice Index",  
   "titleMap": {
     "en": "Sea Ice Index",
-    "es": "\u00cdndice de hielo marino"
-  }
+    "es": "Índice de hielo marino"
+  },
+  "description": "This is an example dataset",
+  "publisher": "https://example.com/publisher1"
 }

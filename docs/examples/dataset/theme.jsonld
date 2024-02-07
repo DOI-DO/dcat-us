@@ -1,9 +1,20 @@
 {
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
-  "@id": "https://census.gov/opendata/1234",
+  "@id": "https://doi.org/10.7265/N5K072F8",
   "@type": "dcat:Dataset",
-  "theme": [
-    "http://publications.europa.eu/resource/authority/data-theme/GOVE",
-    "http://publications.europa.eu/resource/authority/data-theme/SOCI"
-  ]
+  "title": "Sea Ice Index",
+  "description": "This is an example dataset",
+  "publisher": {
+    "@id": "https://example.com/publisher1"
+  },
+  "theme": {
+    "@id": "https://example.com/themes/ClimateChange",
+    "@type": "skos:Concept",
+    "prefLabel": "Climate Change",
+    "inScheme": {
+      "@id": "https://example.com/themes/scheme",
+      "@type": "skos:ConceptScheme",
+      "title": "A Theme Taxonomy"
+    }
+  }
 }

@@ -1,9 +1,12 @@
 {
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
-  "@id": "https://www.census.gov/geo/data/tiger/tgrshp2015",
+  "@id": "https://example.com/dataset1",
   "@type": "dcat:Dataset",
+  "title": "Dataset 1",
+  "description": "This is a dataset",
+  "publisher": "https://example.com/publisher1",
   "issued": {
-    "@type": "http://www.w3.org/2001/XMLSchema#date",
+    "@type": "xsd:date",
     "@value": "2015-04-26"
   }
 }

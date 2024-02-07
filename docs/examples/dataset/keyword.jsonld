@@ -1,7 +1,10 @@
 {
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
-  "@id": "https://doi.org/10.7265/N5K072F8",
+  "@id": "https://example.com/dataset1",
   "@type": "dcat:Dataset",
+  "title": "Dataset 1",
+  "description": "This is a dataset",
+  "publisher": "https://example.com/publisher1",
   "keywordMap": {
     "en": [
       "Sea Ice",

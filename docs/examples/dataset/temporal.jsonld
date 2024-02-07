@@ -1,25 +1,19 @@
 {
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
-  "@graph": [
-    {
-      "@id": "http://www.example.com#budget2018",
-      "@type": "dcat:Dataset",
-      "temporal": [
-        "_:n9472ac5bedc74a2899bcc3b603e3c497b1"
-      ],
-      "title": "Budget for 2018"
+  "@id": "http://www.example.com#budget2018",
+  "@type": "dcat:Dataset",
+  "title": "Budget for 2018",
+  "description": "This dataset contains the budget for 2018",
+  "publisher": "https://treasury.gov",
+  "temporal": {
+    "@type": "dcterms:PeriodOfTime",
+    "startDate": {
+      "@value": "2018-01-01",
+      "@type": "xsd:date"
     },
-    {
-      "@id": "_:n9472ac5bedc74a2899bcc3b603e3c497b1",
-      "@type": "dcterms:PeriodOfTime",
-      "endDate": {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2018-12-31"
-      },
-      "startDate": {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2018-01-01"
-      }
+    "endDate": {
+      "@value": "2018-12-31",
+      "@type": "xsd:date"
     }
-  ]
+  }
 }

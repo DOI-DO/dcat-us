@@ -2,15 +2,19 @@
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
   "@graph": [
     {
-      "@id": "https://census.gov/123",
+      "@id": "https://example.com/dataset1",
       "@type": "dcat:Dataset",
-      "isReferencedBy": [
-        "https://census.gov/456"
-      ]
+      "title": "Dataset 1",
+      "description": "This is a dataset 1",
+      "publisher": "http://example.com/Publisher1",
+      "isReferencedBy": "https://example.com/dataset2"
     },
     {
-      "@id": "https://census.gov/456",
-      "@type": "dcat:Dataset"
+      "@id": "https://example.com/dataset2",
+      "@type": "dcat:Dataset",
+      "title": "Dataset 2",
+      "description": "This is a dataset 2",
+      "publisher": "http://example.com/Publisher2"
     }
   ]
 }

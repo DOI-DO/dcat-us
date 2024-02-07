@@ -6,9 +6,7 @@
 
 ex:budget-va-2018 a dcat:Dataset;
     dcterms:title "Virginia State budget for 2018";
+	dcterms:description "This dataset contains the budget for the state of Virginia for the year 2018";
+	dcterms:publisher <http://www.virginia.gov>; 
 	dcat:temporalResolution "P1Y"^^xsd:duration;   # 1 year period
-	dcterms:temporal [ a dcterms:PeriodOfTime ;
-	   dcat:startDate "2018-01-01"^^xsd:date ;
-	   dcat:endDate   "2018-12-31"^^xsd:date ;
-	] ;
-	dcterms:spatial <http://census.gov/vocab/ansi/state/VA> . #TBD
+. 

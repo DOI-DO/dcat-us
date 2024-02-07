@@ -1,29 +1,12 @@
 {
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
-  "@graph": [
-    {
-      "@id": "http://www.example.com#budget-va-2018",
-      "@type": "dcat:Dataset",
-      "spatial": [
-        "http://census.gov/vocab/ansi/state/VA"
-      ],
-      "temporal": [
-        "_:n8326fe24046f4121a1cc53a6eff6363eb1"
-      ],
-      "title": "Virginia State budget for 2018",
-      "temporalResolution": "P1Y"
-    },
-    {
-      "@id": "_:n8326fe24046f4121a1cc53a6eff6363eb1",
-      "@type": "dcterms:PeriodOfTime",
-      "endDate": {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2018-12-31"
-      },
-      "startDate": {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2018-01-01"
-      }
-    }
-  ]
+  "@id": "http://www.example.com#budget-va-2018",
+  "@type": "dcat:Dataset",
+  "title": "Virginia State budget for 2018",
+  "description": "This dataset contains the budget for the state of Virginia for the year 2018",
+  "publisher": "http://www.virginia.gov",
+  "temporalResolution": {
+    "@value": "P1Y",
+    "@type": "xsd:duration"
+  }
 }

@@ -1,22 +1,17 @@
 {
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
-  "@graph": [
+  "@id": "https://example.com/dataset1",
+  "@type": "dcat:Dataset",
+  "title": "Dataset 1",
+  "description": "This is a dataset",
+  "publisher": "https://example.com/publisher1",
+  "qualifiedAttribution": [
     {
-      "@id": "http://example.org/Dataset1",
-      "@type": "dcat:Dataset",
-      "qualifiedAttribution": [
-        "_:nc1889696c3ae4c5f882bcd961b8a09e8b1",
-        "_:nc1889696c3ae4c5f882bcd961b8a09e8b2"
-      ]
-    },
-    {
-      "@id": "_:nc1889696c3ae4c5f882bcd961b8a09e8b1",
       "@type": "prov:Attribution",
       "hadRole": "http://resources.data.gov/vocab/isotc211/CI_RoleCode/distributor",
       "agent": "https://www.census.gov"
     },
     {
-      "@id": "_:nc1889696c3ae4c5f882bcd961b8a09e8b2",
       "@type": "prov:Attribution",
       "hadRole": "http://resources.data.gov/vocab/isotc211/CI_RoleCode/funder",
       "agent": "https://www.doi.gov"

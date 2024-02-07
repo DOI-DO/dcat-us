@@ -1,18 +1,13 @@
 {
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
-  "@graph": [
-    {
-      "@id": "http://example.org/ns#Test543L",
-      "@type": "dcat:Dataset",
-      "qualifiedRelation": [
-        "_:n9124dcc3e7e94267a4aa572a9f598af5b1"
-      ]
-    },
-    {
-      "@id": "_:n9124dcc3e7e94267a4aa572a9f598af5b1",
-      "@type": "dcat:Relationship",
-      "relation": "http://example.org/Test543R",
-      "hadRole": "http://registry.it.csiro.au/def/isotc211/DS_AssociationTypeCode/stereoMate"
-    }
-  ]
+  "@id": "https://example.com/dataset1",
+  "@type": "dcat:Dataset",
+  "title": "Dataset 1",
+  "description": "This is a dataset",
+  "publisher": "https://example.com/publisher1",
+  "qualifiedRelation": {
+    "@type": "dcat:Relationship",
+    "relation": "http://example.org/Test543R",
+    "hadRole": "http://registry.it.csiro.au/def/isotc211/DS_AssociationTypeCode/stereoMate"
+  }
 }

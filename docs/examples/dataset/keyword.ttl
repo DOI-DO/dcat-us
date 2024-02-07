@@ -1,9 +1,11 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 
-<https://doi.org/10.7265/N5K072F8>
+<https://example.com/dataset1>
   a dcat:Dataset ;
-
+  dcterms:title "Dataset 1" ;
+  dcterms:description "This is a dataset" ;
+  dcterms:publisher <https://example.com/publisher1> ;
   # Recommended property
 
   dcat:keyword "Sea Ice"@en,

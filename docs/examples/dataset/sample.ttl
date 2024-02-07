@@ -2,17 +2,18 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix ex: <http://example.org/ns#> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
 
 # Define the dataset
 ex:MyDataset a dcat:Dataset ;
     dcterms:title "My Dataset" ;
     dcterms:description "This is an example dataset." ;
-    dcat:distribution ex:MyDistribution ;
+    dcterms:publisher ex:Publisher1;
     adms:sample ex:MySample .
 
 # Define the distribution of the dataset
 ex:MyDistribution a dcat:Distribution ;
-    dcat:accessURL <http://example.org/data/mydataset.csv> ;
+    dcat:downloadURL <http://example.org/data/mydataset.csv> ;
     dcterms:format <https://www.iana.org/assignments/media-types/text/csv>.
 
 # Define the sample of the dataset modeled also as a distribution

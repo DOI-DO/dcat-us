@@ -6,6 +6,9 @@
 
 <https://example.com/dataset1>
   a dcat:Dataset ;
+  dcterms:title "Dataset 1" ;
+  dcterms:description "This is a dataset" ;
+  dcterms:publisher <https://example.com/publisher1> ;
   dcat-us:geographicBoundingBox [
       a dcat-us:GeographicBoundingBox ;
       dcat-us:westBoundingLongitude 22.3;
