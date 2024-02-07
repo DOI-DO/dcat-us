@@ -5,6 +5,7 @@
 
 ex:dataset-001-csv
   a dcat:Distribution ;
+  dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
   dcat:mediaType <http://www.iana.org/assignments/media-types/text/csv> ;      
 .
 
@@ -14,6 +15,7 @@ ex:dataset-001-csv
 # Example of custom media type that does not exist in IANA
 
 ex:GeopackageDistribution a dcat:Distribution ;
+  dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
   dcterms:format [ 
     a dcterms:MediaType ;
     rdfs:label "Geopackage" ] .

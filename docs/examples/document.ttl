@@ -1,4 +1,5 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix org: <https://www.w3.org/TR/vocab-org/#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -10,6 +11,7 @@
     a foaf:Document ;
     dcterms:type ex:TechnicalDocumentation;
     dcterms:title "TIGER/Line® Shapefiles 2015 Technical Documentation";
+    dc:creator "U.S. Census Bureau";
     dcterms:creator <http://www.census.gov>;
 
     dcterms:abstract """The document provides technical documentation for TIGER/Line® Shapefiles 2015. 

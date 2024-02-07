@@ -1,10 +1,14 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcat-us: <http://resources.data.gov/ontology/dcat-us#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .  
 @prefix ex: <http://example.org/ns#> .
 
 <http://example.org/datasets/1>
     a dcat:Dataset ;
+    dcterms:title "Example Dataset" ;
+    dcterms:description "This is an example dataset." ;
+    dcterms:publisher ex:Publisher ;
     dcat-us:liabilityStatement [
         a dcat-us:LiabilityStatement;
         rdfs:label "This dataset is provided 'as-is' without any guarantees or warranties. The provider is not responsible for any inaccuracies or omissions." 

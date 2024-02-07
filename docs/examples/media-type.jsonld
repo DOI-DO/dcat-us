@@ -8,17 +8,17 @@
     {
       "@id": "http://example.org/ns#dataset-001-csv",
       "@type": "dcat:Distribution",
+      "license": "http://creativecommons.org/licenses/by/4.0/",
       "mediaType": "http://www.iana.org/assignments/media-types/text/csv"
     },
     {
       "@id": "http://example.org/ns#GeopackageDistribution",
       "@type": "dcat:Distribution",
-      "format": "_:n70519605146340309ad20000cf9a63e0b1"
-    },
-    {
-      "@id": "_:n70519605146340309ad20000cf9a63e0b1",
-      "@type": "dcterms:MediaType",
-      "label": "Geopackage"
+      "license": "http://creativecommons.org/licenses/by/4.0/",
+      "format": {
+        "@type": "dcterms:MediaType",
+        "label": "Geopackage"
+      }
     }
   ]
 }

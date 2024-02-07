@@ -10,13 +10,17 @@
       "@id": "http://example.org/Dataset2",
       "@type": "dcat:Dataset",
       "license": "http://example.org/License2",
-      "title": "Example Dataset 2"
+      "title": "Example Dataset 2",
+      "description": "This is an second example dataset",
+      "publisher":"http://example.org/Publisher1"
     },
     {
       "@id": "http://example.org/Dataset1",
       "@type": "dcat:Dataset",
       "license": "https://creativecommons.org/licenses/by/4.0/",
-      "title": "Example Dataset 1"
+      "title": "Example Dataset 1",
+      "description": "This is an example dataset",
+      "publisher":"http://example.org/Publisher1"
     },
     {
       "@id": "https://creativecommons.org/licenses/by/4.0/",

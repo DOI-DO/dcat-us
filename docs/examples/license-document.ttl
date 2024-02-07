@@ -10,6 +10,8 @@
 ex:Dataset1
     a dcat:Dataset ;
     dcterms:title "Example Dataset 1" ;
+    dcterms:description "This is an example dataset" ;
+    dcterms:publisher ex:Publisher1 ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/>
 .
 
@@ -26,6 +28,8 @@ ex:Dataset1
 ex:Dataset2
     a dcat:Dataset ;
     dcterms:title "Example Dataset 2" ;
+     dcterms:description "This is a second example dataset" ;
+    dcterms:publisher ex:Publisher1 ;
     dcterms:license ex:License2 .
 
 # Customized license

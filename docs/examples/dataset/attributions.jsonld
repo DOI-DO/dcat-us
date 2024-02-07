@@ -4,6 +4,11 @@
     {
       "@id": "https://doi.org/10.7265/N5K072F8",
       "@type": "dcat:Dataset",
+      "title": "Sea Ice Index",
+      "titleMap": {
+        "es": "Índice de hielo marino"
+      },
+      "description": "The Sea Ice Index provides a quick look at Arctic- and Antarctic-wide changes in sea ice.",
       "contributor": [
         "https://orcid.org/0000-0002-8881-2550"
       ],
@@ -12,45 +17,39 @@
       "rightsHolder": [
         "https://www.census.gov"
       ],
-      "titleMap": {
-        "en": "Sea Ice Index",
-        "es": "\u00cdndice de hielo marino"
-      },
       "qualifiedAttribution": [
-        "_:nc932ffc3e7f74ba8abce1000e51911c0b1",
-        "_:nc932ffc3e7f74ba8abce1000e51911c0b2",
-        "_:nc932ffc3e7f74ba8abce1000e51911c0b3"
+        {
+          "@type": "prov:Attribution",
+          "hadRole": "http://resources.data.gov/vocab/isotc211/CI_RoleCode/principalInvestigator",
+          "agent": "https://orcid.org/0000-0002-8881-2550"
+        },
+        {
+          "@type": "prov:Attribution",
+          "hadRole": "http://resources.data.gov/vocab/isotc211/CI_RoleCode/distributor",
+          "agent": "https://www.census.gov"
+        },
+        {
+          "@type": "prov:Attribution",
+          "hadRole": "http://resources.data.gov/vocab/isotc211/CI_RoleCode/funder",
+          "agent": "https://www.doi.gov"
+        }
       ]
     },
     {
-      "@id": "_:nc932ffc3e7f74ba8abce1000e51911c0b1",
-      "@type": "prov:Attribution",
-      "hadRole": "http://resources.data.gov/vocab/isotc211/CI_RoleCode/principalInvestigator",
-      "agent": "https://orcid.org/0000-0002-8881-2550"
-    },
-    {
-      "@id": "_:nc932ffc3e7f74ba8abce1000e51911c0b2",
-      "@type": "prov:Attribution",
-      "hadRole": "http://resources.data.gov/vocab/isotc211/CI_RoleCode/distributor",
-      "agent": "https://www.census.gov"
-    },
-    {
-      "@id": "_:nc932ffc3e7f74ba8abce1000e51911c0b3",
-      "@type": "prov:Attribution",
-      "hadRole": "http://resources.data.gov/vocab/isotc211/CI_RoleCode/funder",
-      "agent": "https://www.doi.gov"
-    },
-    {
       "@id": "https://orcid.org/0000-0002-8881-2550",
-      "@type": "foaf:Person"
+      "@type": "foaf:Person",
+      "name": "Jane Doe"
     },
     {
       "@id": "https://orcid.org/0000-0002-0693-466X",
-      "@type": "foaf:Person"
+      "@type": "foaf:Person",
+      "name": "John Doe"
     },
     {
       "@id": "https://www.census.gov",
-      "@type": "http://www.w3.org/ns/org#Organization"
+      "@type": "http://www.w3.org/ns/org#Organization",
+      "name": "U.S. Census Bureau",
+      "prefLabel": "U.S. Census Bureau"
     }
   ]
 }

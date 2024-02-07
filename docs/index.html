@@ -193,7 +193,8 @@
         within the United States.</li>
       <li>It ensures backward compatibility with DCAT v1.1 metadata, facilitating seamless integration. While DCAT-US
         3.0 introduces additional metadata elements to address emerging needs, it preserves the integrity of existing
-        elements (with the exception of addressing errors introduced in DCAT-US 1.1), negating the necessity for metadata translation.</li>
+        elements (with the exception of addressing errors introduced in DCAT-US 1.1), negating the necessity for
+        metadata translation.</li>
       <li>The schema extends support for enriched and updated controlled vocabularies, enhancing the precision in naming
         conventions for federal agencies, file formats, and units of measurement, thereby promoting uniformity across
         datasets.</li>
@@ -7463,7 +7464,8 @@
               <tr>
                 <th>Usage note</th>
                 <td>
-                  <ul>This property SHOULD take as value one of the URIs of a concept defined in  service type taxonomy or code list. </ul>
+                  <ul>This property SHOULD take as value one of the URIs of a concept defined in service type taxonomy
+                    or code list. </ul>
                 </td>
               </tr>
             </tbody>
@@ -7764,7 +7766,7 @@
             <td>1..n</td>
             <td><span style="color: green;">Multilingual support</span></td>
           </tr>
-     
+
           <tr>
             <td><a href="#dataset-contact-point">contact point</a></td>
             <td><a data-cite="VOCAB-DCAT-3#Property:resource_contact_point"><code>dcat:contactPoint</code></a></td>
@@ -11749,69 +11751,54 @@
         </tbody>
       </table>
 
-      <section id="distribution-mandatory-props">
-
-        <h4>Mandatory Properties</h4>
-
-        <section id="distribution-license">
-          <h4>Property: license</h4>
+    
+      
+      <section id="distribution-recommended-props">
+        <h4>Recommended Properties</h4>
+        <section id="distribution-access_restriction">
+          <h4>Property: access restriction</h4>
           <table class="def">
             <tbody>
               <tr>
                 <th>Property</th>
-                <td>license</td>
+                <td>access restriction</td>
               </tr>
               <tr>
                 <th>Requirement level</th>
-                <td><strong>Mandatory</strong></td>
+                <td>Recommended</td>
               </tr>
               <tr>
                 <th>Cardinality</th>
-                <td>1..1</td>
+                <td>0..n</td>
               </tr>
               <tr>
                 <th>URI</th>
-                <td><a data-cite="VOCAB-DCAT-3#Property:distribution_license">
-                    <code>dcterms:license</code></a>
+                <td><a href="#distribution-access_restriction"><code>dcat-us:accessRestriction</code></a>
                 </td>
               </tr>
               <tr>
                 <th>Range</th>
-                <td><a
-                    data-cite="DCTERMS#http://purl.org/dc/terms/LicenseDocument"><code>dcterms:LicenseDocument</code></a>
+                <td><a href="#properties-for-access_restriction">
+                    <code>dcat-us:AccessRestriction</code></a>
                 </td>
               </tr>
               <tr>
                 <th>Usage note</th>
                 <td>
-                  <ul>
-                    <li>This property refers to the license under which the Distribution is made available.</li>
-                    <li>CV to used: [[?DATA-GOV-LICENSE]]</li>
-                  </ul>
+                  >This property refers to a statement that specifies access restriction associated with the
+                  Distribution.
                 </td>
               </tr>
             </tbody>
           </table>
-          <aside class="example ds-selector-tabs" title="Usage of dcterms:license for dcat:Distribution">
-            <div class="selectors">
-              <button class="selected exampleTab1 ttl" onclick="openTab('exampleTab1', 'ttl')">TTL</button>
-              <button class="exampleTab1 jsonld" onclick="openTab('exampleTab1', 'jsonld')">JSON-LD</button>
-            </div>
-            <pre class="selected ttl exampleTab1" data-include-format="text"
-              data-include="./examples/service/license.ttl"></pre>
-            <pre class="jsonld exampleTab1 json" data-include-format="text"
-              data-include="./examples/service/license.jsonld"></pre>
-          </aside>
         </section>
-      </section>
-      <section id="distribution-recommended-props">
-        <h4>Recommended Properties</h4>
         <section id="distribution-access-url">
           <h4>Property: access URL</h4>
           <table class="def">
             <tbody>
               <tr>
-                <th>Property</th>
+                <th>Property</th>cd ..
+                cd
                 <td>access URL</td>
               </tr>
               <tr>
@@ -12051,6 +12038,57 @@
               data-include="./examples/distribution/format.jsonld"></pre>
           </aside>
         </section>
+        <section id="distribution-license">
+          <h4>Property: license</h4>
+          <table class="def">
+            <tbody>
+              <tr>
+                <th>Property</th>
+                <td>license</td>
+              </tr>
+              <tr>
+                <th>Requirement level</th>
+                <td><strong>Recommended</strong></td>
+              </tr>
+              <tr>
+                <th>Cardinality</th>
+                <td>0..1</td>
+              </tr>
+              <tr>
+                <th>URI</th>
+                <td><a data-cite="VOCAB-DCAT-3#Property:distribution_license">
+                    <code>dcterms:license</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Range</th>
+                <td><a
+                    data-cite="DCTERMS#http://purl.org/dc/terms/LicenseDocument"><code>dcterms:LicenseDocument</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Usage note</th>
+                <td>
+                  <ul>
+                    <li>This property refers to the license under which the Distribution is made available.</li>
+                    <li>CV to used: [[?DATA-GOV-LICENSE]]</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <aside class="example ds-selector-tabs" title="Usage of dcterms:license for dcat:Distribution">
+            <div class="selectors">
+              <button class="selected exampleTab1 ttl" onclick="openTab('exampleTab1', 'ttl')">TTL</button>
+              <button class="exampleTab1 jsonld" onclick="openTab('exampleTab1', 'jsonld')">JSON-LD</button>
+            </div>
+            <pre class="selected ttl exampleTab1" data-include-format="text"
+              data-include="./examples/service/license.ttl"></pre>
+            <pre class="jsonld exampleTab1 json" data-include-format="text"
+              data-include="./examples/service/license.jsonld"></pre>
+          </aside>
+        </section>
+      </section>
         <section id="distribution-rights">
           <h4>Property: rights</h4>
           <table class="def">
@@ -12097,43 +12135,7 @@
               data-include="./examples/distribution/rights.jsonld"></pre>
           </aside>
         </section>
-        <section id="distribution-access_restriction">
-          <h4>Property: access restriction</h4>
-          <table class="def">
-            <tbody>
-              <tr>
-                <th>Property</th>
-                <td>access restriction</td>
-              </tr>
-              <tr>
-                <th>Requirement level</th>
-                <td>Recommended</td>
-              </tr>
-              <tr>
-                <th>Cardinality</th>
-                <td>0..n</td>
-              </tr>
-              <tr>
-                <th>URI</th>
-                <td><a href="#distribution-access_restriction"><code>dcat-us:accessRestriction</code></a>
-                </td>
-              </tr>
-              <tr>
-                <th>Range</th>
-                <td><a href="#properties-for-access_restriction">
-                    <code>dcat-us:AccessRestriction</code></a>
-                </td>
-              </tr>
-              <tr>
-                <th>Usage note</th>
-                <td>
-                  >This property refers to a statement that specifies access restriction associated with the
-                  Distribution.
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
+       
         <section id="distribution-use_restriction">
           <h4>Property: use restriction</h4>
           <table class="def">
@@ -12385,7 +12387,7 @@
               </tr>
             </tbody>
           </table>
-          
+
         </section>
         <section id="distribution-status">
           <h4>Property: status</h4>
@@ -13452,7 +13454,7 @@
             </td>
             <td><a href="http://xmlns.com/foaf/0.1/#term_Person"><code>foaf:Person</code></a>
             </td>
-            <td>O</td>
+            <td>R</td>
             <td>0..n</td>
           </tr>
 
@@ -13462,7 +13464,7 @@
             </td>
             <td><a href="https://www.w3.org/TR/vocab-org/#org:Organization"><code>org:Organization</code></a>
             </td>
-            <td>O</td>
+            <td>R</td>
             <td>0..n</td>
           </tr>
 
@@ -13472,8 +13474,8 @@
             </td>
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
             </td>
-            <td><strong>M</strong></td>
-            <td>1</td>
+            <td><strong>R</strong></td>
+            <td>0..n</td>
           </tr>
 
           <tr>
@@ -13482,8 +13484,8 @@
             </td>
             <td><a href="https://www.w3.org/TR/vocab-org/#org:Organization"><code>org:Organization</code></a>
             </td>
-            <td><strong>M</strong></td>
-            <td>1</td>
+            <td><strong>R</strong></td>
+            <td>0..1</td>
           </tr>
 
           <tr>
@@ -13492,8 +13494,8 @@
             </td>
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
             </td>
-            <td><strong>M</strong></td>
-            <td>1</td>
+            <td><strong>R</strong></td>
+            <td>0..n</td>
           </tr>
 
           <tr>
@@ -13518,8 +13520,8 @@
               <a data-cite="XMLSCHEMA11-2##gYear"><code>xsd:gYear</code></a>
               or <a data-cite="XMLSCHEMA11-2#gYearMonth"><code>xsd:gYearMonth</code></a>)
             </td>
-            <td><strong>M</strong></td>
-            <td>1</td>
+            <td><strong>R</strong></td>
+            <td>0..1</td>
 
           </tr>
           <tr>
@@ -13555,7 +13557,7 @@
             </td>
             <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
             </td>
-            <td>R</td>
+            <td>O</td>
             <td>0..n</td>
           </tr>
           <tr>
@@ -13580,149 +13582,6 @@
       </table>
       <section id="mandatory-document-props">
         <h4>Mandatory Properties</h4>
-        <section id="document-creator-as-literal">
-          <h4>Property: author(s) as literal</h4>
-          <table class="def">
-            <tbody>
-              <tr>
-                <th>Property</th>
-                <td>author(s) as literal</td>
-              </tr>
-              <tr>
-                <th>Requirement level</th>
-                <td>Mandatory</td>
-              </tr>
-              <tr>
-                <th>Cardinality</th>
-                <td>1..n</td>
-              </tr>
-              <tr>
-                <th>URI</th>
-                <td><a href="http://purl.org/dc/elements/1.1/creator"><code>dc:creator</code></a>
-                </td>
-              </tr>
-              <tr>
-                <th>Range</th>
-                <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
-                </td>
-              </tr>
-              <tr>
-                <th>Usage note</th>
-                <td>
-                  <ul>
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-        <section id="document-publisher-as-literal">
-          <h4>Property: publisher(s) as literal</h4>
-          <table class="def">
-            <tbody>
-              <tr>
-                <th>Property</th>
-                <td>publisher(s) as literal</td>
-              </tr>
-              <tr>
-                <th>Requirement level</th>
-                <td>Mandatory</td>
-              </tr>
-              <tr>
-                <th>Cardinality</th>
-                <td>1..n</td>
-              </tr>
-              <tr>
-                <th>URI</th>
-                <td><a href="http://purl.org/dc/elements/1.1/publisher"><code>dc:publisher</code></a>
-                </td>
-              </tr>
-              <tr>
-                <th>Range</th>
-                <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
-                </td>
-              </tr>
-              <tr>
-                <th>Usage note</th>
-                <td>
-                  <ul>
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-        <section id="document-issued">
-          <h4>Property: publication date</h4>
-          <table class="def">
-            <tbody>
-              <tr>
-                <th>Property</th>
-                <td>publication date</td>
-              </tr>
-              <tr>
-                <th>Requirement level</th>
-                <td>Mandatory</td>
-              </tr>
-              <tr>
-                <th>Cardinality</th>
-                <td>1..n</td>
-              </tr>
-              <tr>
-                <th>URI</th>
-                <td><a href="http://purl.org/dc/terms/issued"><code>dcterms:issued</code></a>
-                </td>
-              </tr>
-              <tr>
-                <th>Range</th>
-                <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
-                </td>
-              </tr>
-              <tr>
-                <th>Usage note</th>
-                <td>
-                  <ul>
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-        <section id="document-publisher">
-          <h4>Property: publisher organization</h4>
-          <table class="def">
-            <tbody>
-              <tr>
-                <th>Property</th>
-                <td>publisher organization</td>
-              </tr>
-              <tr>
-                <th>Requirement level</th>
-                <td>Mandatory</td>
-              </tr>
-              <tr>
-                <th>Cardinality</th>
-                <td>1..n</td>
-              </tr>
-              <tr>
-                <th>URI</th>
-                <td><a href="http://purl.org/dc/terms/publisher"><code>dcterms:publisher</code></a>
-                </td>
-              </tr>
-              <tr>
-                <th>Range</th>
-                <td><a href="https://www.w3.org/TR/vocab-org/#org:Organization"><code>org:Organization</code></a>
-                </td>
-              </tr>
-              <tr>
-                <th>Usage note</th>
-                <td>
-
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
         <section id="document-title">
           <h4>Property: title</h4>
           <table class="def">
@@ -13824,9 +13683,44 @@
                 </td>
               </tr>
               <tr>
+                <th>Definition</th>
+                <td>Description of the document.</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+       
+        <section id="document-creator-as-literal">
+          <h4>Property: author(s) as literal</h4>
+          <table class="def">
+            <tbody>
+              <tr>
+                <th>Property</th>
+                <td>author(s) as literal</td>
+              </tr>
+              <tr>
+                <th>Requirement level</th>
+                <td>Recommended</td>
+              </tr>
+              <tr>
+                <th>Cardinality</th>
+                <td>0..n</td>
+              </tr>
+              <tr>
+                <th>URI</th>
+                <td><a href="http://purl.org/dc/elements/1.1/creator"><code>dc:creator</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Range</th>
+                <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+                </td>
+              </tr>
+              <tr>
                 <th>Usage note</th>
                 <td>
-
+                  Use fields to represent creators as literal strings. This is useful when the creator is a structured
+                  object
                 </td>
               </tr>
             </tbody>
@@ -13862,6 +13756,113 @@
                 <th>Usage note</th>
                 <td>
 
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="document-issued">
+          <h4>Property: publication date</h4>
+          <table class="def">
+            <tbody>
+              <tr>
+                <th>Property</th>
+                <td>publication date</td>
+              </tr>
+              <tr>
+                <th>Requirement level</th>
+                <td>Recommended</td>
+              </tr>
+              <tr>
+                <th>Cardinality</th>
+                <td>0..n</td>
+              </tr>
+              <tr>
+                <th>URI</th>
+                <td><a href="http://purl.org/dc/terms/issued"><code>dcterms:issued</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Range</th>
+                <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Usage note</th>
+                <td>
+                  <ul>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section id="document-publisher">
+          <h4>Property: publisher organization</h4>
+          <table class="def">
+            <tbody>
+              <tr>
+                <th>Property</th>
+                <td>publisher organization</td>
+              </tr>
+              <tr>
+                <th>Requirement level</th>
+                <td>Recommended</td>
+              </tr>
+              <tr>
+                <th>Cardinality</th>
+                <td>0..n</td>
+              </tr>
+              <tr>
+                <th>URI</th>
+                <td><a href="http://purl.org/dc/terms/publisher"><code>dcterms:publisher</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Range</th>
+                <td><a href="https://www.w3.org/TR/vocab-org/#org:Organization"><code>org:Organization</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Usage note</th>
+                <td>
+
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section id="document-publisher-as-literal">
+          <h4>Property: publisher(s) as literal</h4>
+          <table class="def">
+            <tbody>
+              <tr>
+                <th>Property</th>
+                <td>publisher(s) as literal</td>
+              </tr>
+              <tr>
+                <th>Requirement level</th>
+                <td>Recommended</td>
+              </tr>
+              <tr>
+                <th>Cardinality</th>
+                <td>0..n</td>
+              </tr>
+              <tr>
+                <th>URI</th>
+                <td><a href="http://purl.org/dc/elements/1.1/publisher"><code>dc:publisher</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Range</th>
+                <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+                </td>
+              </tr>
+              <tr>
+                <th>Usage note</th>
+                <td>
+                  Use this property to represent publisher as literal string and not structured data.
                 </td>
               </tr>
             </tbody>
@@ -15639,7 +15640,7 @@
 
       <h2>Organization</h2>
       <aside class="note">Aligned with DCAT</aside>
-      
+
       <table class="def">
         <tr>
           <th>RDF Class:</th>
@@ -16137,7 +16138,7 @@
     <section id="properties-for-person">
       <h2>Person</h2>
       <aside class="note">Aligned with DCAT</aside>
-      
+
 
       <table class="def">
         <tr>
@@ -18518,8 +18519,9 @@
         </p>
         <p>
           It is imperative to ensure that the contact point information is accurate, up-to-date, and reliable to
-          foster           trust and facilitate efficient communication between data providers and consumers. The following
-          sub-sections          provide detailed guidance on encoding contact point information, defining associated address details, and
+          foster trust and facilitate efficient communication between data providers and consumers. The following
+          sub-sections provide detailed guidance on encoding contact point information, defining associated address
+          details, and
           linking the contact point to the resources in the DCAT-US profile.
 
         </p>
@@ -21692,7 +21694,7 @@ dcat:prev ex:budget-2019 ;
     <p>The SHACL application profile for DCAT-US can be found <a
         href="https://raw.githubusercontent.com/DOI-DO/dcat-us/main/shacl/dcat-us_3.0_shacl_shapes.ttl">here</a></p>
 
-    
+
   </section>
   <section class="appendix" id="namespaces">
     <h2>Namespaces</h2>

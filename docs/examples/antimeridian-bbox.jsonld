@@ -1,15 +1,9 @@
 {
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
-  "@graph": [
+  "@id": "https://example.com/dataset1",
+  "@type": "dcat:Dataset",
+  "geographicBoundingBox": [
     {
-      "@id": "https://example.com/dataset1",
-      "@type": "dcat:Dataset",
-      "geographicBoundingBox": [
-        "_:n07b1f95e98164eeda0ab5836d61845d2b1"
-      ]
-    },
-    {
-      "@id": "_:n07b1f95e98164eeda0ab5836d61845d2b1",
       "@type": "dcat-us:GeographicBoundingBox",
       "dcat-us:eastBoundingLongitude": -65,
       "dcat-us:northBoundingLatitude": 49,

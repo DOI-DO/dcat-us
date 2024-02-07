@@ -11,6 +11,7 @@
       "@id": "http://example.org/record-001",
       "@type": "dcat:CatalogRecord",
       "conformsTo": "https://www.data.gov/ontology/dcat-us#",
+      "modified": "2023-01-01T00:00:00Z",
       "issued": [
         {
           "@type": "http://www.w3.org/2001/XMLSchema#date",

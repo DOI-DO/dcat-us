@@ -2,12 +2,14 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix org: <http://www.w3.org/ns/org#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 
 <https://doi.org/10.7265/N5K072F8>
   a dcat:Dataset ;
-  dcterms:title "Sea Ice Index"@en,   
+  dcterms:title "Sea Ice Index",   
             "Índice de hielo marino"@es; 
+  dcterms:description "The Sea Ice Index provides a quick look at Arctic- and Antarctic-wide changes in sea ice.";          
   # creator of the resource          
   dcterms:creator <https://orcid.org/0000-0002-0693-466X>;
   dcterms:contributor <https://orcid.org/0000-0002-8881-2550>;
@@ -30,8 +32,13 @@
   ] ;
 .
 
-<https://orcid.org/0000-0002-0693-466X> a foaf:Person.
+<https://orcid.org/0000-0002-0693-466X> a foaf:Person;
+foaf:name "John Doe".
 
-<https://orcid.org/0000-0002-8881-2550> a foaf:Person.
+<https://orcid.org/0000-0002-8881-2550> a foaf:Person;
+foaf:name "Jane Doe".
    
-<https://www.census.gov>  a org:Organization.
+<https://www.census.gov>  a org:Organization;
+  foaf:name "U.S. Census Bureau";
+  skos:prefLabel "U.S. Census Bureau";
+  .

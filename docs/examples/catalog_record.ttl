@@ -9,6 +9,7 @@ ex:catalog dcat:record ex:record-001 .
 ex:record-001
   a dcat:CatalogRecord ;
   foaf:primaryTopic ex:dataset-001 ;
+  dcterms:modified "2023-01-01T00:00:00Z"^^xsd:dateTime ;
   dcterms:issued "2022-12-11"^^xsd:date ;
   dcterms:conformsTo <https://www.data.gov/ontology/dcat-us#> ;
   .

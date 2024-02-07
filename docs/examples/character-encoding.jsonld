@@ -4,21 +4,19 @@
     {
       "@id": "http://example.com/ns#CatalogRecord1",
       "@type": "dcat:CatalogRecord",
-      "cnt:characterEncoding": "UTF-8"
+      "modified": "2012-05-10T00:00:00",
+      "characterEncoding": "UTF-8"
     },
     {
       "@id": "http://example.com/ns#Dataset1",
       "@type": "dcat:Dataset",
-      "distribution": [
-        "_:nb1a8ebb562fb4b27943bce36a680eb11b1"
-      ]
-    },
-    {
-      "@id": "_:nb1a8ebb562fb4b27943bce36a680eb11b1",
-      "@type": "dcat:Distribution",
-      "characterEncoding": [
-        "UTF-8"
-      ]
+      "title": "Dataset 1",
+      "description": "This is the first dataset",
+      "publisher": "http://example.com/ns#Publisher1",
+      "distribution": {
+        "@type": "dcat:Distribution",
+        "characterEncoding": "UTF-8"
+      }
     }
   ]
 }

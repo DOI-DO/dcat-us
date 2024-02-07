@@ -9,7 +9,8 @@
       },
       "titleMap": {
         "en": "some title"
-      }
+      },
+      "publisher": "https://census.gov"
     },
     {
       "@id": "https://census.gov/catalog-endpoint.rdf",
@@ -37,10 +38,6 @@
       "homepage": "https://census.gov/index.html"
     },
     {
-      "@id": "https://census.gov/index.html",
-      "@type": "foaf:Document"
-    },
-    {
       "@id": "https://census.gov/data/123",
       "@type": "dcat:Dataset",
       "descriptionMap": {
@@ -48,15 +45,13 @@
       },
       "titleMap": {
         "en": "some title"
-      }
+      },
+      "publisher": "https://census.gov"
     },
     {
       "@id": "https://census.gov",
       "@type": "foaf:Organization",
-      "foaf:name": {
-        "@language": "en",
-        "@value": "US Census"
-      }
+      "name": "US Census"
     }
   ]
 }

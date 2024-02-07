@@ -4,15 +4,14 @@
     {
       "@id": "http://www.doi.gov",
       "@type": "http://www.w3.org/ns/org#Organization",
-      "foaf:name": "Department of Interior"
+      "name": "Department of Interior",
+      "prefLabel": "Department of Interior"
     },
     {
       "@id": "http://example.org/JohnSmith",
       "@type": "foaf:Person",
-      "http://www.w3.org/ns/org#memberOf": {
-        "@id": "http://www.doi.gov"
-      },
-      "foaf:firstName": "John",
+      "http://www.w3.org/ns/org#memberOf": "http://www.doi.gov",
+      "firstName": "John",
       "givenName": "Smith",
       "name": "John Smith"
     }

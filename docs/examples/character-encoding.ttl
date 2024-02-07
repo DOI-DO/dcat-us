@@ -1,9 +1,14 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix cnt: <http://www.w3.org/2011/content#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 prefix : <http://example.com/ns#>
 
 :Dataset1 a dcat:Dataset ;
+   dcterms:title "Dataset 1";
+   dcterms:description "This is a dataset" ;
+   dcterms:publisher <http://example.com/publisher1> ;
    dcat:distribution [ 
         a dcat:Distribution ;
         cnt:characterEncoding "UTF-8"^^xsd:string 
@@ -11,4 +16,6 @@ prefix : <http://example.com/ns#>
 
 # Metadata on metadata 
 :CatalogRecord1 a dcat:CatalogRecord ;
-  cnt:characterEncoding "UTF-8"^^xsd:string .
+  cnt:characterEncoding "UTF-8"^^xsd:string;
+  dcterms:modified "2012-05-10T00:00:00"^^xsd:dateTime;
+  foaf:primaryTopic :Dataset1 .

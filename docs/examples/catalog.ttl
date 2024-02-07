@@ -20,15 +20,16 @@
 <https://census.gov/data/123>
   a dcat:Dataset ;
   dcterms:title "some title"@en ;
-  dcterms:description "some dataset"@en .
+  dcterms:description "some dataset"@en;
+  dcterms:publisher <https://census.gov> ;
+.   
 
 <https://census.gov/data/345>
   a dcat:Dataset ;
   dcterms:title "some title"@en ;
-  dcterms:description "some dataset"@en .
+  dcterms:description "some dataset"@en;
+  dcterms:publisher <https://census.gov> .
 
-<https://census.gov/index.html>
-  a foaf:Document .
 
 <https://census.gov>
   a foaf:Organization   ;

@@ -257,7 +257,8 @@ dcat-us-shp:Dataset_Shape a sh:NodeShape ;
     sh:targetClass dcat:Dataset .
 
 dcat-us-shp:Distribution_Shape a sh:NodeShape ;
-    rdfs:label "Distribution" ;
+    rdfs:label "Distribution",
+        "Document" ;
     sh:property dcat-us-shp:Distribution_Shape-accessRestriction,
         dcat-us-shp:Distribution_Shape-accessRights,
         dcat-us-shp:Distribution_Shape-accessService,
@@ -273,6 +274,7 @@ dcat-us-shp:Distribution_Shape a sh:NodeShape ;
         dcat-us-shp:Distribution_Shape-downloadURL,
         dcat-us-shp:Distribution_Shape-format,
         dcat-us-shp:Distribution_Shape-hasQualityMeasurement,
+        dcat-us-shp:Distribution_Shape-identifier,
         dcat-us-shp:Distribution_Shape-image,
         dcat-us-shp:Distribution_Shape-issued,
         dcat-us-shp:Distribution_Shape-language,
@@ -1001,7 +1003,7 @@ dcat-us-shp:Catalog_Shape-rights a sh:PropertyShape ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "rights" ;
-    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcterms:RightStatement ] ) ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcterms:RightsStatement ] ) ;
     sh:path dcterms:rights ;
     sh:severity sh:Violation .
 
@@ -1011,7 +1013,7 @@ dcat-us-shp:Catalog_Shape-rightsHolder a sh:PropertyShape ;
     sh:description "This property refers to an organization holding rights on the Catalog." ;
     sh:minCount 0 ;
     sh:name "rightsHolder" ;
-    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class foaf:Organizatin ] ) ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class org:Organization ] ) ;
     sh:path dcterms:rightsHolder ;
     sh:severity sh:Violation .
 
@@ -1437,7 +1439,7 @@ dcat-us-shp:DataService_Shape-rights a sh:PropertyShape ;
     sh:description "A statement that concerns all rights for the Data Service not addressed with dcterms:license or dcterms:accessRights, such as copyright statements." ;
     sh:minCount 0 ;
     sh:name "rights" ;
-    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcterms:RightStatement ] ) ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcterms:RightsStatement ] ) ;
     sh:path dcterms:rights ;
     sh:severity sh:Violation .
 
@@ -1834,9 +1836,9 @@ dcat-us-shp:Dataset_Shape-hasVersion a sh:PropertyShape ;
 
 dcat-us-shp:Dataset_Shape-identifier a sh:PropertyShape ;
     rdfs:label "identifier" ;
-    dcat-us-shp:requirementLevel dcat-us-shp:Mandatory ;
+    dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
     sh:description "This property contains the unique identifier for the Dataset, e.g. the URI or other unique identifier in the context of the Catalog." ;
-    sh:minCount 1 ;
+    sh:minCount 0 ;
     sh:name "identifier" ;
     sh:nodeKind sh:Literal ;
     sh:path dcterms:identifier ;
@@ -2060,7 +2062,7 @@ dcat-us-shp:Dataset_Shape-rights a sh:PropertyShape ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "rights" ;
-    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcterms:RightStatement ] ) ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcterms:RightsStatement ] ) ;
     sh:path dcterms:rights ;
     sh:severity sh:Violation .
 
@@ -2129,6 +2131,7 @@ dcat-us-shp:Dataset_Shape-spatialResolutionInMeters a sh:PropertyShape ;
 
 dcat-us-shp:Dataset_Shape-status a sh:PropertyShape ;
     rdfs:label "lifecycle status" ;
+    dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
     sh:description "The status of the dataset  in the context of maturity lifecycle." ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
@@ -2286,7 +2289,7 @@ dcat-us-shp:Distribution_Shape-accessService a sh:PropertyShape ;
 
 dcat-us-shp:Distribution_Shape-accessURL a sh:PropertyShape ;
     rdfs:label "access URL" ;
-    dcat-us-shp:requirementLevel dcat-us-shp:Mandatory ;
+    dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
     sh:description "A URL that gives access to a Distribution of the Dataset." ;
     sh:maxCount 1 ;
     sh:minCount 0 ;
@@ -2414,6 +2417,16 @@ dcat-us-shp:Distribution_Shape-hasQualityMeasurement a sh:PropertyShape ;
     sh:path dqv:hasQualityMeasurement ;
     sh:severity sh:Violation .
 
+dcat-us-shp:Distribution_Shape-identifier a sh:PropertyShape ;
+    rdfs:label "identifier" ;
+    dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
+    sh:description "This property contains a unique identifier for the Distribution (e.g. DOI, ISBN)" ;
+    sh:minCount 0 ;
+    sh:name "identifier" ;
+    sh:nodeKind sh:Literal ;
+    sh:path dcterms:identifier ;
+    sh:severity sh:Violation .
+
 dcat-us-shp:Distribution_Shape-image a sh:PropertyShape ;
     rdfs:label "image" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
@@ -2448,10 +2461,10 @@ dcat-us-shp:Distribution_Shape-language a sh:PropertyShape ;
 
 dcat-us-shp:Distribution_Shape-license a sh:PropertyShape ;
     rdfs:label "license" ;
-    dcat-us-shp:requirementLevel dcat-us-shp:Mandatory ;
+    dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
     sh:description "A licence under which the Distribution is made available." ;
     sh:maxCount 1 ;
-    sh:minCount 1 ;
+    sh:minCount 0 ;
     sh:name "license" ;
     sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcterms:LicenseDocument ] ) ;
     sh:path dcterms:license ;
@@ -2630,16 +2643,16 @@ dcat-us-shp:Document_Shape-creator a sh:PropertyShape ;
         "The person responsible for creating the document." ;
     sh:minCount 0 ;
     sh:name "creator" ;
-    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class org:Organization ] ),
-        ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class foaf:Person ] ) ;
+    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class foaf:Person ] ),
+        ( [ sh:nodeKind sh:IRI ] [ sh:class org:Organization ] ) ;
     sh:path dcterms:creator ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Document_Shape-creators a sh:PropertyShape ;
     rdfs:label "author(s) as literal" ;
-    dcat-us-shp:requirementLevel dcat-us-shp:Mandatory ;
+    dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
     sh:description "list of authors as a literal" ;
-    sh:minCount 1 ;
+    sh:minCount 0 ;
     sh:name "creators" ;
     sh:nodeKind sh:Literal ;
     sh:path dc:creator ;
@@ -2660,7 +2673,6 @@ dcat-us-shp:Document_Shape-identifier a sh:PropertyShape ;
     rdfs:label "identifier" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
     sh:description "This property contains a unique identifier for the Document (e.g. DOI, ISBN)" ;
-    sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "identifier" ;
     sh:nodeKind sh:Literal ;
@@ -2669,10 +2681,10 @@ dcat-us-shp:Document_Shape-identifier a sh:PropertyShape ;
 
 dcat-us-shp:Document_Shape-issued a sh:PropertyShape ;
     rdfs:label "publication date" ;
-    dcat-us-shp:requirementLevel dcat-us-shp:Mandatory ;
+    dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
     sh:description "publication date of the document" ;
     sh:maxCount 1 ;
-    sh:minCount 1 ;
+    sh:minCount 0 ;
     sh:name "issued" ;
     sh:nodeKind sh:Literal ;
     sh:or dcat-us-shp:DateOrDateTimeOrYearOrYearMonth ;
@@ -2691,10 +2703,10 @@ dcat-us-shp:Document_Shape-mediaType a sh:PropertyShape ;
 
 dcat-us-shp:Document_Shape-publisher a sh:PropertyShape ;
     rdfs:label "publisher" ;
-    dcat-us-shp:requirementLevel dcat-us-shp:Mandatory ;
+    dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
     sh:description "publisher organization of the document" ;
     sh:maxCount 1 ;
-    sh:minCount 1 ;
+    sh:minCount 0 ;
     sh:name "publisher" ;
     sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class org:Organization ] ) ;
     sh:path dcterms:publisher ;
@@ -2702,10 +2714,10 @@ dcat-us-shp:Document_Shape-publisher a sh:PropertyShape ;
 
 dcat-us-shp:Document_Shape-publishers a sh:PropertyShape ;
     rdfs:label "publisher(s) as literal" ;
-    dcat-us-shp:requirementLevel dcat-us-shp:Mandatory ;
+    dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
     sh:description "list of publishers as a literal" ;
     sh:maxCount 1 ;
-    sh:minCount 1 ;
+    sh:minCount 0 ;
     sh:name "publishers" ;
     sh:nodeKind sh:Literal ;
     sh:path dc:publisher ;
@@ -2912,7 +2924,7 @@ dcat-us-shp:Kind_Shape-tel a sh:PropertyShape ;
     sh:name "tel" ;
     sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class rdfs:Resource ] ) ;
     sh:path vcard:tel ;
-    sh:pattern "^tel:\\\\+?[1-9][0-9]{1,14}$" ;
+    sh:pattern "^tel:\\+?[1-9][0-9]{1,14}$" ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Kind_Shape-title a sh:PropertyShape ;

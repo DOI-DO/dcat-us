@@ -7,6 +7,6 @@
     "@value": "2023"
   },
   "notation": "10.12345/ex.doi.67890",
-  "schemaAgency": "http://www.doi.org/",
-  "dcat:version": "1.0"
+  "schemaAgency": "Department of the Interior",
+  "version": "1.0"
 }

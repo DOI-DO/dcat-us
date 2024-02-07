@@ -5,10 +5,13 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix geonames: <http://www.geonames.org/ontology#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 # Define the DatasetSeries
 ex:populationCensus a dcat:DatasetSeries ;
-  dcterms:title "US Population Census Data"@en ;
+  dcterms:title "US Population Census Data" ;
+  dcterms:description "US Population Census Data from 1950 to 2020" ;
+  dcterms:publisher <http://census.gov> ;
   dcterms:issued "1950"^^xsd:gYear ;
   dcterms:modified "2020"^^xsd:gYear ;
   dcterms:accrualPeriodicity <http://purl.org/cld/freq/decennial> ;
@@ -22,7 +25,9 @@ ex:populationCensus a dcat:DatasetSeries ;
 
 # Define individual datasets within the series
 ex:populationCensus-1950 a dcat:Dataset ;
-  dcterms:title "US Population Census Data for year 1950"@en ;
+  dcterms:title "US Population Census Data for year 1950" ;
+  dcterms:description "US Population Census Data for year 1950" ;
+  dcterms:publisher <http://census.gov> ;
   dcat:inSeries ex:populationCensus ;
   dcterms:issued "1950"^^xsd:gYear ;
   dcat:next ex:populationCensus-1960 ;
@@ -36,7 +41,9 @@ ex:populationCensus-1950 a dcat:Dataset ;
   .
 
 ex:populationCensus-1960 a dcat:Dataset ;
-  dcterms:title "US Population Census Data for year 1960"@en ;
+  dcterms:title "US Population Census Data for year 1960" ;
+  dcterms:description "US Population Census Data from 1960" ;
+  dcterms:publisher <http://census.gov> ;
   dcat:inSeries ex:populationCensus ;
   dcterms:issued "1960"^^xsd:gYear ;
   dcat:next ex:populationCensus-1970 ;
@@ -50,5 +57,5 @@ ex:populationCensus-1960 a dcat:Dataset ;
   .
 
  <http://sws.geonames.org/6252001/> a dcterms:Location;
-    rdfs:label "United States";
+    skos:prefLabel "United States";
     .

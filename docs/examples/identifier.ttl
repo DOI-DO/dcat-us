@@ -8,7 +8,7 @@
 
 ex:Identifier1
   a adms:Identifier ;
-  adms:schemaAgency <http://www.doi.org/> ;
+  adms:schemaAgency "Department of Interior" ;
   skos:notation "10.12345/ex.doi.67890";
   dcat:version "1.0" ;
   dcterms:issued "2023"^^xsd:gYear.

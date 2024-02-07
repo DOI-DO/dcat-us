@@ -4,6 +4,7 @@
   "@type": "dcat:Dataset",
   "title": "Sample Geospatial Dataset in NAD 83",
   "description": "This dataset provides geospatial data in the North American Datum 1983 (NAD 83) CRS.",
+  "publisher": "http://example.org/publisher/001",
   "conformsTo": {
     "@id": "http://www.opengis.net/def/crs/EPSG/0/4269",
     "@type": "dct:Standard",
