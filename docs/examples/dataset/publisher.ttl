@@ -11,7 +11,11 @@
   dcterms:publisher <https://census.gov> .
 
 <https://census.gov>
-  a org:Organization ;
+  a org:Organization ;<https://example.com/dataset1>
+  a dcat:Dataset ;
+  dcterms:title "Dataset 1" ;
+  dcterms:description "This is a dataset" ;
+  dcterms:publisher <https://example.com/publisher1> ;
   foaf:name "Federal Office of Topography";
   skos:prefLabel "Federal Office of Topography";
   .

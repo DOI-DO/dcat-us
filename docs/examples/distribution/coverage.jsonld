@@ -1,0 +1,23 @@
+{
+  "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
+  "@graph": [
+    {
+      "@id": "http://bfs/kantonalen-Abstimmungsvorlagen/11",
+      "@type": "dcat:Distribution",
+      "dcterms:coverage": "2019-09-22"
+    },
+    {
+      "@id": "http://bfs/echtzeitdaten-Abstimmungsvorlagen",
+      "@type": "dcat:Dataset",
+      "distribution": [
+        "http://bfs/kantonalen-Abstimmungsvorlagen/11",
+        "http://bfs/echtzeitdaten-Abstimmungsvorlagen/12"
+      ]
+    },
+    {
+      "@id": "http://bfs/echtzeitdaten-Abstimmungsvorlagen/12",
+      "@type": "dcat:Distribution",
+      "dcterms:coverage": "2019-09-01"
+    }
+  ]
+}

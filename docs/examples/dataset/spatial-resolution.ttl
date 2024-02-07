@@ -5,8 +5,8 @@
 
 ex:LandsatImage-001
   a dcat:Dataset ;
-  dcterms:title "Landsat Image"@en ;
-  dcterms:description "A Landsat image of the Earth."@en ;
+  dcterms:title "Landsat Image" ;
+  dcterms:description "A Landsat image of the Earth.";
   dcterms:publisher <https://usgs.gov> ;
   dcat:spatialResolutionInMeters "30.0"^^xsd:decimal;
   .
