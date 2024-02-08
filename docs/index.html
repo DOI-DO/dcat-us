@@ -12,9 +12,6 @@
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" type="text/css" href="small.css" media="only all and (max-width: 649px)">
 
-  <p class="copyright">
-    Copyright © 2024
-  </p>
 
   <style>
     table.simple {
@@ -150,10 +147,14 @@
 </head>
 
 <body>
+  
   <h1 id="title">DCAT-US - Version 3</h1>
-  <h2 id="subtitle">Data Catalog Application Profile for the United States of America<br />
+  <h2 id="subtitle">Data Catalog Application Profile for the United States of America<br/>
     <b>Candidate Recommendation Snapshot</b>
   </h2>
+  <p class="copyright">
+    Copyright © 2024
+  </p>
 
   <section id="abstract">
     <p>The DCAT-US 3.0 Profile (DCAT-US 3.0) is an updated specification designed to facilitate data cataloging,
@@ -317,7 +318,7 @@
       <h3>Gaps with DCAT-US 1.1</h3>
       <p>The DCAT-US 1.1 standard, while effective for its time, had some limitations that the DCAT 3 standard has
         addressed. The key differences between the two standards include:</p>
-      </p>
+      
       <ul>
         <li><strong>Increased expressiveness</strong>: DCAT 3 offers a richer set of classes and properties, enabling
           more detailed descriptions of datasets and their relationships.
@@ -633,7 +634,7 @@
         <figure>
           <figcaption>UML Model for Core Classes of DCAT-US 3.0 (click to open)</figcaption>
           <img src="images/DCAT-US-3.0-Core-Classes.png" alt="DCAT-US 3.0 Core Classes"
-            onclick="window.open(this.src, '_blank');" />
+            onclick="window.open(this.src, '_blank');">
 
         </figure>
 
@@ -1081,12 +1082,12 @@
           </tr>
         </tbody>
       </table>
-      <div id="diagram">
+      <div id="diagram2">
 
         <figure>
           <figcaption>UML Model for Supporting Classes of DCAT-US 3.0 (click to open)</figcaption>
           <img src="images/DCAT-US-3.0-Supporting-Classes.png" alt="DCAT-US 3.0 Supporting Classes"
-            onclick="window.open(this.src, '_blank');" />
+            onclick="window.open(this.src, '_blank');">
 
         </figure>
 
@@ -2478,7 +2479,7 @@
       <h3>Catalog</h3>
       <aside class="note">Aligned with DCAT 3</aside>
       <aside class="note">
-        <p>The scope of [[VOCAB-DCAT-20114016]] (DCAT-1) and [[DCAT-US-1.1]] was catalogs of datasets. This has been
+        <p>The scope of [[VOCAB-DCAT-1]] (DCAT-1) and [[DCAT-US-1.1]] was catalogs of datasets. This has been
           generalized in [[VOCAB-DCAT-3]] and DCAT-US 3.0 application profile.
           Properties common to all cataloged resources are now associated with a super-class <a
             data-cite="VOCAB-DCAT-3#Class:Resource"><code>dcat:Resource</code></a>.</p>
@@ -6064,7 +6065,7 @@
               </tr>
               <tr>
                 <th>Range</th>
-                <td><a data-cite=" XMLSCHEMA11-2#string"><code>xsd:string</code></a>
+                <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a>
                 </td>
               </tr>
               <tr>
@@ -8942,7 +8943,7 @@
               </tr>
             </tbody>
           </table>
-          <aside class="example ds-selector-tabs" title="Example for dcat:theme for dcat:Dataset.">
+          <aside class="example ds-selector-tabs" title="Example for dcat:geographicBoundingBox for dcat:Dataset.">
             <div class="selectors">
               <button class="selected exampleTab1 ttl" onclick="openTab('exampleTab1', 'ttl')">TTL</button>
               <button class="exampleTab1 jsonld" onclick="openTab('exampleTab1', 'jsonld')">JSON-LD</button>
@@ -9054,6 +9055,7 @@
               data-include="./examples/dataset/theme.jsonld"></pre>
           </aside>
         </section>
+        
       </section>
       <section id="dataset-optional-props">
 
@@ -10812,18 +10814,8 @@
             <td>R</td>
             <td>0..n</td>
           </tr>
+        
 
-          <aside class="example ds-selector-tabs" title="Example for dcat:theme for dcat:Dataset.">
-            <div class="selectors">
-              <button class="selected exampleTab1 ttl" onclick="openTab('exampleTab1', 'ttl')">TTL</button>
-              <button class="exampleTab1 jsonld" onclick="openTab('exampleTab1', 'jsonld')">JSON-LD</button>
-            </div>
-            <pre class="selected ttl exampleTab1" data-include-format="text"
-              data-include="./examples/dataset/geographicbbox.ttl"></pre>
-            <pre class="jsonld exampleTab1 json" data-include-format="text"
-              data-include="./examples/dataset/geographicbbox.jsonld"></pre>
-          </aside>
-    </section>
 
 
     <tr>
@@ -11109,6 +11101,7 @@
             </tr>
           </tbody>
         </table>
+        
       </section>
       <section id="dataset-series-spatial">
         <h4>Property: spatial/geographic coverage</h4>
@@ -20052,7 +20045,7 @@
         or for government agencies.
       </p>
       <p>
-        The License Document typically includes information such as:
+        The License Document typically includes information such as:</p>
       <ul>
         <li>
           <strong>Terms of Use:</strong> Detailed conditions under which the
@@ -20071,7 +20064,7 @@
           the source of the dataset in derivative works or publications.
         </li>
       </ul>
-      </p>
+      
       <p>
         In dataset metadata, the <a href="#properties-for-license-document"><code>dcat-us:LicenseDocument</code></a>
         can
@@ -21184,7 +21177,7 @@
           highlighting any issues of backward compatibility with the previous version of the resource.</li>
       </ul>
 
-      <aside note="class"> The DCAT-US profile does not define a specific standard for the version name or identifier,
+      <aside class="note"> The DCAT-US profile does not define a specific standard for the version name or identifier,
         but the use of semantic
         versioning is encouraged. Incorporating semantic versioning, which uses a format of MAJOR.MINOR.PATCH, can
         further enhance this
