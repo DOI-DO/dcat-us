@@ -11,6 +11,19 @@
             "type": "string",
             "default": "Identifier"
         },
+        "schemaAgency": {
+            "$id": "http://www.w3.org/ns/adms#schemaAgency",
+            "title": "schema agency",
+            "description": "The name of the agency that issued the identifier.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
         "creator": {
             "$id": "http://purl.org/dc/terms/creator",
             "title": "creator",
@@ -80,19 +93,6 @@
             "$id": "http://www.w3.org/2004/02/skos/core#notation",
             "title": "notation",
             "description": "abbreviations or codes from code lists for an identifier",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
-            ]
-        },
-        "schemaAgency": {
-            "$id": "http://www.w3.org/ns/adms#schemaAgency",
-            "title": "schema agency",
-            "description": "The name of the agency that issued the identifier.",
             "oneOf": [
                 {
                     "type": "null"

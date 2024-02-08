@@ -325,6 +325,29 @@
                 }
             ]
         },
+        "describedBy": {
+            "$id": "http://data.resources.gov/ontology/dcat-us#describedBy",
+            "title": "data dictionary",
+            "description": "This property refers to a distribution describing the Data Dictionary.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/Distribution",
+                            "description": "inline description of Distribution"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of Distribution",
+                            "format": "iri"
+                        }
+                    ]
+                }
+            ]
+        },
         "useRestriction": {
             "$id": "http://data.resources.gov/ontology/dcat-us#useRestriction",
             "title": "use restriction",
@@ -444,6 +467,22 @@
                 }
             ]
         },
+        "identifier": {
+            "$id": "http://purl.org/dc/terms/identifier",
+            "title": "identifier",
+            "description": "This property contains a unique identifier for the Distribution (e.g. DOI, ISBN)",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            ]
+        },
         "issued": {
             "$id": "http://purl.org/dc/terms/issued",
             "title": "release date",
@@ -505,13 +544,20 @@
             "description": "A licence under which the Distribution is made available.",
             "oneOf": [
                 {
-                    "$ref": "#/definitions/LicenseDocument",
-                    "description": "inline description of LicenseDocument"
+                    "type": "null"
                 },
                 {
-                    "type": "string",
-                    "description": "reference iri of LicenseDocument",
-                    "format": "iri"
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/LicenseDocument",
+                            "description": "inline description of LicenseDocument"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of LicenseDocument",
+                            "format": "iri"
+                        }
+                    ]
                 }
             ]
         },
@@ -653,12 +699,12 @@
                     "items": {
                         "oneOf": [
                             {
-                                "$ref": "#/definitions/Resource",
-                                "description": "inline description of Resource"
+                                "$ref": "#/definitions/ImageObject",
+                                "description": "inline description of ImageObject"
                             },
                             {
                                 "type": "string",
-                                "description": "reference iri of Resource",
+                                "description": "reference iri of ImageObject",
                                 "format": "iri"
                             }
                         ]
@@ -690,7 +736,5 @@
             ]
         }
     },
-    "required": [
-        "license"
-    ]
+    "required": []
 }

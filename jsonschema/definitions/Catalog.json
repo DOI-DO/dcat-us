@@ -469,12 +469,12 @@
                 {
                     "oneOf": [
                         {
-                            "$ref": "#/definitions/RightStatement",
-                            "description": "inline description of RightStatement"
+                            "$ref": "#/definitions/RightsStatement",
+                            "description": "inline description of RightsStatement"
                         },
                         {
                             "type": "string",
-                            "description": "reference iri of RightStatement",
+                            "description": "reference iri of RightsStatement",
                             "format": "iri"
                         }
                     ]
@@ -494,12 +494,12 @@
                     "items": {
                         "oneOf": [
                             {
-                                "$ref": "#/definitions/Organizatin",
-                                "description": "inline description of Organizatin"
+                                "$ref": "#/definitions/Organization",
+                                "description": "inline description of Organization"
                             },
                             {
                                 "type": "string",
-                                "description": "reference iri of Organizatin",
+                                "description": "reference iri of Organization",
                                 "format": "iri"
                             }
                         ]

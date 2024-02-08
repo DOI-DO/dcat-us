@@ -11,6 +11,12 @@
             "type": "string",
             "default": "Organization"
         },
+        "name": {
+            "$id": "http://xmlns.com/foaf/0.1/name",
+            "title": "name",
+            "description": "The full name of the Organization",
+            "type": "string"
+        },
         "subOrganizationOf": {
             "$id": "http://www.w3.org/ns/org#subOrganizationOf",
             "title": "suborganization of",
@@ -36,12 +42,6 @@
                     }
                 }
             ]
-        },
-        "name": {
-            "$id": "http://xmlns.com/foaf/0.1/name",
-            "title": "name",
-            "description": "The full name of the Organization",
-            "type": "string"
         },
         "altLabel": {
             "$id": "http://www.w3.org/2004/02/skos/core#altLabel",

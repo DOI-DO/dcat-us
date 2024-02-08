@@ -11,6 +11,27 @@
             "type": "string",
             "default": "UseRestriction"
         },
+        "restrictionNote": {
+            "$id": "http://data.resources.gov/ontology/dcat-us#restrictionNote",
+            "title": "restriction note",
+            "description": "Significant information pertaining to the use or reproduction of the data.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "restrictionNoteMap": {
+            "$id": "http://data.resources.gov/ontology/dcat-us#restrictionNote_lang_map",
+            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+            "type": [
+                "null",
+                "object"
+            ]
+        },
         "restrictionStatus": {
             "$id": "http://data.resources.gov/ontology/dcat-us#restrictionStatus",
             "title": "restriction status",
@@ -48,27 +69,6 @@
                         }
                     ]
                 }
-            ]
-        },
-        "restrictionNote": {
-            "$id": "http://data.resources.gov/ontology/dcat-us#restrictionNote",
-            "title": "restriction note",
-            "description": "Significant information pertaining to the use or reproduction of the data.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
-            ]
-        },
-        "restrictionNoteMap": {
-            "$id": "http://data.resources.gov/ontology/dcat-us#restrictionNote_lang_map",
-            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
-            "type": [
-                "null",
-                "object"
             ]
         }
     },

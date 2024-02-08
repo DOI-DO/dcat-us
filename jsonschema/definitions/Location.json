@@ -11,29 +11,6 @@
             "type": "string",
             "default": "Location"
         },
-        "inScheme": {
-            "$id": "http://www.w3.org/2004/02/skos/core#inScheme",
-            "title": "gazetteer",
-            "description": "This property MAY be used to specify the gazetteer to which the Location belongs.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/ConceptScheme",
-                            "description": "inline description of ConceptScheme"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of ConceptScheme",
-                            "format": "iri"
-                        }
-                    ]
-                }
-            ]
-        },
         "bbox": {
             "$id": "http://www.w3.org/ns/dcat#bbox",
             "title": "bounding box",
@@ -107,11 +84,62 @@
                 }
             ]
         },
+        "inScheme": {
+            "$id": "http://www.w3.org/2004/02/skos/core#inScheme",
+            "title": "gazetteer",
+            "description": "This property MAY be used to specify the gazetteer to which the Location belongs.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/ConceptScheme",
+                            "description": "inline description of ConceptScheme"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of ConceptScheme",
+                            "format": "iri"
+                        }
+                    ]
+                }
+            ]
+        },
+        "altLabel": {
+            "$id": "http://www.w3.org/2004/02/skos/core#altLabel",
+            "title": "alternative names",
+            "description": "This property provides alternative names for a location",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "altLabelMap": {
+            "$id": "http://www.w3.org/2004/02/skos/core#altLabel_lang_map",
+            "description": "Language map for property title. E.g. {'es': 'spanish words', 'fr': 'french words'}",
+            "type": [
+                "null",
+                "object"
+            ]
+        },
         "prefLabel": {
             "$id": "http://www.w3.org/2004/02/skos/core#prefLabel",
             "title": "geographic name",
             "description": "This property contains a preferred label of the Location.",
-            "type": "string"
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string"
+                }
+            ]
         },
         "prefLabelMap": {
             "$id": "http://www.w3.org/2004/02/skos/core#prefLabel_lang_map",
@@ -122,7 +150,5 @@
             ]
         }
     },
-    "required": [
-        "prefLabel"
-    ]
+    "required": []
 }

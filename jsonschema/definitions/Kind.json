@@ -37,8 +37,8 @@
                 }
             ]
         },
-        "email": {
-            "$id": "http://www.w3.org/2006/vcard/ns#email",
+        "hasEmail": {
+            "$id": "http://www.w3.org/2006/vcard/ns#hasEmail",
             "title": "email",
             "description": "The email address of the contact",
             "oneOf": [
@@ -50,29 +50,6 @@
                     "type": "string",
                     "description": "reference iri of Resource",
                     "format": "iri"
-                }
-            ]
-        },
-        "tel": {
-            "$id": "http://www.w3.org/2006/vcard/ns#tel",
-            "title": "telephone",
-            "description": "This property specifies the telephone number for telephony communication with the person or organization.",
-            "oneOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Resource",
-                            "description": "inline description of Resource"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Resource",
-                            "format": "iri"
-                        }
-                    ]
                 }
             ]
         },
@@ -121,6 +98,29 @@
                 }
             ]
         },
+        "tel": {
+            "$id": "http://www.w3.org/2006/vcard/ns#tel",
+            "title": "telephone",
+            "description": "This property specifies the telephone number for telephony communication with the person or organization.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/Resource",
+                            "description": "inline description of Resource"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of Resource",
+                            "format": "iri"
+                        }
+                    ]
+                }
+            ]
+        },
         "title": {
             "$id": "http://www.w3.org/2006/vcard/ns#title",
             "title": "position title",
@@ -136,7 +136,7 @@
         }
     },
     "required": [
-        "email",
+        "hasEmail",
         "fn"
     ]
 }

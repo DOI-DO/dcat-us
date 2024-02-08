@@ -11,22 +11,6 @@
             "type": "string",
             "default": "Concept"
         },
-        "inScheme": {
-            "$id": "http://www.w3.org/2004/02/skos/core#inScheme",
-            "title": "in scheme",
-            "description": "\nConcept scheme defining the concept.",
-            "oneOf": [
-                {
-                    "$ref": "#/definitions/ConceptScheme",
-                    "description": "inline description of ConceptScheme"
-                },
-                {
-                    "type": "string",
-                    "description": "reference iri of ConceptScheme",
-                    "format": "iri"
-                }
-            ]
-        },
         "altLabel": {
             "$id": "http://www.w3.org/2004/02/skos/core#altLabel",
             "title": "alternate label",
@@ -67,6 +51,22 @@
             "type": [
                 "null",
                 "object"
+            ]
+        },
+        "inScheme": {
+            "$id": "http://www.w3.org/2004/02/skos/core#inScheme",
+            "title": "in scheme",
+            "description": "\nConcept scheme defining the concept.",
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/ConceptScheme",
+                    "description": "inline description of ConceptScheme"
+                },
+                {
+                    "type": "string",
+                    "description": "reference iri of ConceptScheme",
+                    "format": "iri"
+                }
             ]
         },
         "notation": {

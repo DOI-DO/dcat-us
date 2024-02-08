@@ -430,6 +430,29 @@
                 }
             ]
         },
+        "describedBy": {
+            "$id": "http://data.resources.gov/ontology/dcat-us#describedBy",
+            "title": "data dictionary",
+            "description": "This property refers to a distribution describing the Data Dictionary.",
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/Distribution",
+                            "description": "inline description of Distribution"
+                        },
+                        {
+                            "type": "string",
+                            "description": "reference iri of Distribution",
+                            "format": "iri"
+                        }
+                    ]
+                }
+            ]
+        },
         "geographicBoundingBox": {
             "$id": "http://data.resources.gov/ontology/dcat-us#geographicBoundingBox",
             "title": "geographic bounding box",
@@ -717,10 +740,17 @@
             "$id": "http://purl.org/dc/terms/identifier",
             "title": "identifier",
             "description": "This property contains the unique identifier for the Dataset, e.g. the URI or other unique identifier in the context of the Catalog.",
-            "type": "array",
-            "items": {
-                "type": "string"
-            }
+            "oneOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            ]
         },
         "isReferencedBy": {
             "$id": "http://purl.org/dc/terms/isReferencedBy",
@@ -937,12 +967,12 @@
                 {
                     "oneOf": [
                         {
-                            "$ref": "#/definitions/RightStatement",
-                            "description": "inline description of RightStatement"
+                            "$ref": "#/definitions/RightsStatement",
+                            "description": "inline description of RightsStatement"
                         },
                         {
                             "type": "string",
-                            "description": "reference iri of RightStatement",
+                            "description": "reference iri of RightsStatement",
                             "format": "iri"
                         }
                     ]
@@ -1285,12 +1315,12 @@
                     "items": {
                         "oneOf": [
                             {
-                                "$ref": "#/definitions/Resource",
-                                "description": "inline description of Resource"
+                                "$ref": "#/definitions/ImageObject",
+                                "description": "inline description of ImageObject"
                             },
                             {
                                 "type": "string",
-                                "description": "reference iri of Resource",
+                                "description": "reference iri of ImageObject",
                                 "format": "iri"
                             }
                         ]
@@ -1322,7 +1352,6 @@
     },
     "required": [
         "description",
-        "identifier",
         "publisher",
         "title"
     ]
