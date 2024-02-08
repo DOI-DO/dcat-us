@@ -1,5 +1,6 @@
 var respecConfig = {
-  specStatus: "base",
+ // specStatus: "base",
+  specStatus: "ED",
   latestVersion: "https://doi-do.github.io/dcat-us/",
   logos: [],
   maxTocLevel: 2,
@@ -46,7 +47,7 @@ var respecConfig = {
   },
   edDraftURI: "https://doi-do.github.io/dcat-us/",
   subtitle:
-    "A DCAT Application Profile for the United States of America (Candidate Recommendation Snapshot)",
+    "A DCAT Application Profile for the United States of America (Version 3.0)",
   localBiblio: {
     CC: {
       href: "http://creativecommons.org/licenses/",
