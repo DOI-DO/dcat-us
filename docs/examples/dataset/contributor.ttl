@@ -9,9 +9,9 @@
   dcterms:description "This dataset contains information about..." ;
   dcterms:publisher <https://census.gov> ;
   # contributor of the resource          
-  dcterms:contributor <https://orcid.org/0000-0002-0693-466X>.
+  dcterms:contributor <https://orcid.org/0000-0002-0693-466X> .
 
 
-<https://orcid.org/0000-0002-0693-466X> a foaf:Person.
+<https://orcid.org/0000-0002-0693-466X> a foaf:Person;
   foaf:name "John Doe" ;
 .

@@ -2,7 +2,11 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 
-<https://census.gov/1234>
+
+<https://census.gov/datasets/123>
   a dcat:Dataset ;
+  dcterms:title "Dataset 123" ;
+  dcterms:description "This dataset contains information about..." ;
+  dcterms:publisher <https://census.gov> ;
   dcterms:conformsTo <http://resource.geosciml.org/ontology/timescale/gts> ;
 .

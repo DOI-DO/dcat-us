@@ -1,21 +1,16 @@
 {
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
-  "@graph": [
-    {
-      "@id": "http://example.org/ns#Identifier1",
-      "@type": "adms:Identifier",
-      "notation": "10.12345/ex.doi.67890",
-      "schemaAgency": "http://www.doi.org/",
-      "dcat:version": "1.0"
-    },
-    {
-      "@id": "http://example.org/ns#Dataset1",
-      "@type": "dcat:Dataset",
-      "description": "This dataset provides an example of how to use a DOI as an identifier.",
-      "title": "Example Dataset with DOI",
-      "otherIdentifier": [
-        "http://example.org/ns#Identifier1"
-      ]
-    }
-  ]
+  "@id": "ex:Dataset1",
+  "@type": "dcat:Dataset",
+  "title": "Example Dataset with DOI",
+  "description": "This dataset provides an example of how to use a DOI as an identifier.",
+  "publisher": {
+    "@id": "https://doi.gov"
+  },
+  "identifier": {
+    "@type": "adms:Identifier",
+    "schemaAgency": "Department of the Interior",
+    "notation": "10.12345/ex.doi.67890",
+    "version": "1.0"
+  }
 }

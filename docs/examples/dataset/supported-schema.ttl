@@ -4,14 +4,15 @@
 @prefix ex: <http://example.org/ns#> .
 
 # Define the ISO 19139 dataset
-ex:ISO19139Dataset a dcat:Dataset ;
+ex:Dataset1 a dcat:Dataset ;
     dcterms:title "Geographic Dataset following ISO 19139" ;
     dcterms:description "This dataset contains geographic metadata and is compliant with the ISO 19139 standard." ;
-    dcat:distribution ex:ISO19139DataDistribution ;
+    dcterms:publisher ex:Organization1 ;
+    dcat:distribution ex:Distribution1 ;
     adms:supportedSchema ex:ISO19139Schema .
 
 # Define the distribution of the dataset
-ex:ISO19139DataDistribution a dcat:Distribution ;
+ex:Distribution1 a dcat:Distribution ;
     dcat:accessURL <http://example.org/data/iso19139-dataset.xml> ;
     dcterms:format <https://www.iana.org/assignments/media-types/application/xml> ;
     dcterms:conformsTo <http://www.isotc211.org/2005/gmd> .
@@ -20,6 +21,7 @@ ex:ISO19139DataDistribution a dcat:Distribution ;
 ex:ISO19139Schema a dcat:Dataset ;
     dcterms:title "ISO 19139:2007 - Geographic Information Metadata XML Schema Implementation" ;
     dcterms:description "This is the XML Schema implementation of ISO 19139:2007 standard for geographic information metadata." ;
+    dcterms:publisher <http://www.isotc211.org> ;
     dcterms:identifier "ISO 19139" ;
     dcterms:type <http://data.gov/vocab/resource-type/Schema> ;
     dcterms:conformsTo <http://www.isotc211.org/2005/gmd> .

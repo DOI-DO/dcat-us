@@ -25,6 +25,15 @@
     .prop-list {
       columns: 4;
     }
+
+    #diagram img {
+      max-width: 100%;
+      /* Makes the image fit the width of the container */
+      height: auto;
+      /* Maintains aspect ratio */
+      cursor: pointer;
+      /* Indicates the image can be clicked */
+    }
   </style>
   <!-- TABS IMPLEMENTATION -->
   <style>
@@ -47,6 +56,9 @@
         }
       }
     }
+
+
+
   </script>
   <style>
     /* example tab selection */
@@ -441,18 +453,19 @@
     <section id="receiver-requirements">
       <h3>Receiver requirements</h3>
       In order to conform to this Application Profile, an application that receives metadata MUST be able to:
-      <li>
-        It is able to process RDF catalogs that conform to DCAT-US .
-      </li>
-      <li>Process information for all classes and properties specified in the class descriptions.</li>
-      <li>Process information for all controlled vocabularies specified in section [[[#controlled-vocabularies]]].
-      </li>
-      <li>
-        Properties not mentioned in this specification MAY be used if they are included in either DCAT 3 and their
-        usage conforms to DCAT 3 if they are
-        included in DCAT-US or to DCAT if they are only included in DCAT.
-      </li>
-
+      <ul>
+        <li>
+          It is able to process RDF catalogs that conform to DCAT-US .
+        </li>
+        <li>Process information for all classes and properties specified in the class descriptions.</li>
+        <li>Process information for all controlled vocabularies specified in section [[[#controlled-vocabularies]]].
+        </li>
+        <li>
+          Properties not mentioned in this specification MAY be used if they are included in either DCAT 3 and their
+          usage conforms to DCAT 3 if they are
+          included in DCAT-US or to DCAT if they are only included in DCAT.
+        </li>
+      </ul>
       "Processing" means that receivers must accept incoming data and transparently provide these data to applications
       and services. It does neither imply nor prescribe what applications and services finally do with the data (parse,
       convert,
@@ -555,8 +568,14 @@
         </tbody>
       </table>
       <div id="diagram">
-        <!--TODO-->
-        <aside class="note">TODO :ADD UML DIAGRAM</aside>
+
+        <figure>
+          <figcaption>UML Model for Core Classes of DCAT-US 3.0 (click to open)</figcaption>
+          <img src="images/DCAT-US-3.0-Core-Classes.png" alt="DCAT-US 3.0 Core Classes"
+            onclick="window.open(this.src, '_blank');" />
+
+        </figure>
+
       </div>
 
     </section>
@@ -3027,9 +3046,8 @@
               <tr>
                 <th>Definition</th>
                 <td>A language used in the textual metadata describing titles, descriptions, etc. of the Datasets in
-                  the
-                  Catalogue.</definition>
-                </td>
+                  the Catalogue.</td>
+
               </tr>
 
 
@@ -5586,7 +5604,8 @@
               </tr>
               <tr>
                 <th>Usage note</th>
-                <td>Use email with function name instead of individual name (e.g. support). The email address should be formatted as url starting with "mailto:" scheme</td>
+                <td>Use email with function name instead of individual name (e.g. support). The email address should be
+                  formatted as url starting with "mailto:" scheme</td>
               </tr>
             </tbody>
           </table>
@@ -6364,7 +6383,6 @@
             </td>
             <td>O</td>
             <td>0..1</td>
-            <td><span style="color: green;">Aligned</span></td>
           </tr>
           <tr>
             <td><a href="#data-service-temporal">termporal coverage</a></td>
@@ -9849,13 +9867,8 @@
                 <td>
                   <ul>
                     <li>This property refers to a related resource where the relationship cannot be further specified
-                      as
-                      a
-                      <a href="#dataset-qualified-relation">dcat:qualifiedRelation</a>. This may be additional
-                      material
-                      such as an article, example or
-                      documentation helpful in the context of the Dataset.
-                    </li>
+                      as a <a href="#dataset-qualified-relation">dcat:qualifiedRelation</a>. This may be additional
+                      material such as an article, example or documentation helpful in the context of the Dataset. </li>
                     <li>
                       The element can also be used to link to legal foundations that apply to the publication or usage
                       of the Dataset.
@@ -11449,7 +11462,7 @@
             <td>0..1</td>
             <td>No Change</td>
           </tr>
-      
+
           <tr>
             <td><a href="#distribution-format">format</a></td>
             <td><a data-cite="DCTERMS#http://purl.org/dc/terms/format"><code>dcterms:format</code></a>
@@ -11852,7 +11865,7 @@
               data-include="./examples/distribution/access-url.jsonld"></pre>
           </aside>
         </section>
-      
+
         <section id="distribution-description">
           <h4>Property: description</h4>
           <table class="def">
@@ -18763,9 +18776,9 @@
         ] ;  
           </code></pre>
 
-          In this example, the 'stereo-mate' role is clearly defined using an IRI from the <a
-            href="https://standards.iso.org/iso/19115/resources/Codelists/gml/DS_AssociationTypeCode.xml">DS_AssociationTypeCodes</a>
-          codelist of [[?ISO-19115-1]].</p>
+          <p>In this example, the 'stereo-mate' role is clearly defined using an IRI from the <a
+              href="https://standards.iso.org/iso/19115/resources/Codelists/gml/DS_AssociationTypeCode.xml">DS_AssociationTypeCodes</a>
+            codelist of [[?ISO-19115-1]].</p>
           <aside class="note">Note that <a href="#dataset-qualified-relation">dcat:qualifiedRelation</a> and
             <em>dcat:Relationship</em>
             follow W3C PROV-O patterns but are adapted to support Entity-Entity relations beyond 'was derived from',
@@ -18825,14 +18838,14 @@
             comprehensively detail the nature and
             specifics of a relationship.
           </p>
-          The <a href="#properties-for-relationship">dcat:Relationship</a> class is fundamental in this profile for
-          articulating complex
-          relationships between cataloged resources. It enables the detailed expression of the nature,
-          characteristics,
-          and context of these relationships, extending beyond basic linking to provide a rich, nuanced representation
-          of interconnections. This class is particularly valuable in instances where relationships between datasets
-          or
-          between datasets and other entities are multifaceted.
+          <p>The <a href="#properties-for-relationship">dcat:Relationship</a> class is fundamental in this profile for
+            articulating complex
+            relationships between cataloged resources. It enables the detailed expression of the nature,
+            characteristics,
+            and context of these relationships, extending beyond basic linking to provide a rich, nuanced representation
+            of interconnections. This class is particularly valuable in instances where relationships between datasets
+            or
+            between datasets and other entities are multifaceted.
           </p>
           <p>
             Utilizing <a href="#properties-for-relationship">dcat:Relationship</a> in conjunction with <a
@@ -19049,7 +19062,7 @@
             bound longitude is greater than the east bound longitude, then the box spans the anti-meridian</b></p>
 
         <figure id="figure">
-          <img src="images/AntimeridianCrossing.png" alt="Antimeridian crossing" />
+          <img src="images/AntimeridianCrossing.png" alt="Antimeridian crossing">
           <figcaption>Geographic Bounding Box crossing antimeridian</figcaption>
         </figure>
         <aside class="example ds-selector-tabs" id="ex-data-antimeridian-geographicBoundingBox"
@@ -19082,7 +19095,7 @@
           simpler and more interoperable
           approach. Here are a few reasons why the <a
             href="#dataset-geographic_bounding_box"><code>dcat-us:geographicBoundingBox</code></a> is
-          advantageous:
+          advantageous:</p>
         <ul>
           <li><b>Consistent Spatial Representation</b>: Geospatial datasets can be represented in various coordinate
             systems, projections, and datums. Without a common reference system, it becomes difficult to align and
@@ -19136,7 +19149,7 @@
             applications and domains.
           </li>
         </ul>
-        </p>
+
       </section>
       <section id="spatial-coverage">
         <h4>Spatial Coverage</h4>
@@ -19829,7 +19842,7 @@
         The <a href="#distribution-access-rights"><code>dct:accessRights</code></a> property is used to
         describe the
         general conditions under which a dataset is
-        accessible. This may include information about:
+        accessible. This may include information about:</p>
       <ul>
         <li>
           <strong>Public Access:</strong> Indicating whether a dataset is publicly
@@ -19845,7 +19858,7 @@
           certain terms.
         </li>
       </ul>
-      </p>
+
       <p>
         The access rights is defined as an instance of <a
           href="#properties-for-rights-statement"><code>dcterms:RightsStatement</code></a>. This class accommodates
@@ -19951,7 +19964,7 @@
         enhancing legal compliance and transparency.
       </p>
       <p>
-        Key aspects typically covered in the Liability Statement include:
+        Key aspects typically covered in the Liability Statement include:</p>
       <ul>
         <li>
           <strong>Limitation of Responsibility:</strong> Disclaiming provider
@@ -19970,7 +19983,7 @@
           data suitability for their purposes.
         </li>
       </ul>
-      </p>
+
       <p>
         The Liability Statement can be conveyed as literal text or a URL in the
         dataset metadata, offering flexibility in communication based on the dataset's
@@ -20001,7 +20014,7 @@
         over the use and distribution of their works for a specific period.
       </p>
       <p>
-        Key aspects of copyright law include:
+        Key aspects of copyright law include:</p>
       <ul>
         <li>
           <strong>Exclusive Rights:</strong> Copyright holders have exclusive rights
@@ -20024,7 +20037,7 @@
           or payment to the copyright holder.
         </li>
       </ul>
-      </p>
+
       <p>
         The copyrights is defined as an instance of <a
           href="#properties-for-rights-statement"><code>dcterms:RightsStatement</code></a>. This class accommodates
@@ -21003,7 +21016,7 @@
         "delta"), the version's name or identifier, and its release date.
       </p>
       <p>
-        To accommodate these details, the DCAT US 3.0 profile employs several specific properties:
+        To accommodate these details, the DCAT US 3.0 profile employs several specific properties:</p>
       <ul>
         <li><code>dcat:version</code> (parallel to <code>pav:version</code> [[?PAV]]) - This property is used for
           denoting
@@ -21012,8 +21025,8 @@
         <li><code>adms:versionNotes</code> [[VOCAB-ADMS]] - Provides a textual summary of the changes in the version,
           highlighting any issues of backward compatibility with the previous version of the resource.</li>
       </ul>
-      </p>
-      <aside note="class">The DCAT-US profile does not define a specific standard for the version name or identifier,
+
+      <aside note="class"> The DCAT-US profile does not define a specific standard for the version name or identifier,
         but the use of semantic
         versioning is encouraged. Incorporating semantic versioning, which uses a format of MAJOR.MINOR.PATCH, can
         further enhance this
@@ -21066,7 +21079,7 @@
           used
           to connect an abstract resource to the snapshot representing the current version of its content. </li>
       </ul>
-      </p>
+
       <p>
         Additionally, the <code>dcat:isVersionOf</code> property (inverse of <code>dcat:hasVersion</code>) can be used
         to provide a backward link from a version to its abstract resource. The utilization of these properties
@@ -21140,13 +21153,13 @@
       <p>
         In DCAT-US 3.0 profile, a significant type of relationship is the one where a given version replaces or
         supersedes another.
-        To represent this, DCAT adopts the relevant properties from [[DCTERMS]]:
+        To represent this, DCAT adopts the relevant properties from [[DCTERMS]]:</p>
       <ul>
         <li><code>dcterms:replaces</code> - This property is used when a version supersedes another one.</li>
         <li><code>dcterms:isReplacedBy</code> - Its inverse, this property provides a back link to the newer version
           that replaces the current one.</li>
       </ul>
-      </p>
+
       <p>
         It's important to note that these properties do not necessarily indicate a version chain. That is, a version
         does not automatically replace its immediate predecessor.
@@ -21183,12 +21196,9 @@
       <p>
         The life-cycle of a resource, while distinct from versioning, is often closely related to it. The evolution of
         a resource through its life-cycle stages—conception, creation, publication—may lead to new versions, though
-        not
-        invariably (e.g., resources passing through an approval workflow without revisions). Conversely, creating a
-        new
-        version does not always signify a life-cycle status change, such as in cases of minor updates or resources
-        still
-        under development.
+        not invariably (e.g., resources passing through an approval workflow without revisions). Conversely, creating a
+        new version does not always signify a life-cycle status change, such as in cases of minor updates or resources
+        still under development.
       </p>
       <p>
         The life-cycle status of a resource holds significant value, informing data consumers about its developmental
@@ -21202,7 +21212,8 @@
         follow distinct life-cycle statuses.
       </p>
       <p>
-        DCAT utilizes the <a href=""><code>adms:status</code></a> property [[VOCAB-ADMS]] to specify life-cycle
+        DCAT utilizes the <a href="#dataset-status"><code>adms:status</code></a> property [[VOCAB-ADMS]] to specify
+        life-cycle
         statuses, supplemented by relevant [[DCTERMS]] time-related properties (e.g., <code>dcterms:created</code>,
         <code>dcterms:dateSubmitted</code>). However, DCAT-US profile does not mandate specific life-cycle statuses,
         instead deferring to standards and practices suitable for each application scenario and communities of

@@ -15,6 +15,6 @@ ex:Dataset1
 
 ex:Identifier1
   a adms:Identifier ;
-  adms:schemaAgency "Department of the Interior"
+  adms:schemaAgency "Department of the Interior";
   skos:notation "10.12345/ex.doi.67890";
   dcat:version "1.0" .
