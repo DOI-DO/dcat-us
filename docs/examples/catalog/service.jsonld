@@ -2,36 +2,37 @@
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
   "@graph": [
     {
-      "@id": "https://data.census.gov/data/345",
-      "@type": "dcat:Dataset"
-    },
-    {
-      "@id": "https://census.gov",
-      "@type": "http://www.w3.org/ns/org#Organization"
-    },
-    {
-      "@id": "https://data.census.gov/index.html",
-      "@type": "foaf:Document"
-    },
-    {
-      "@id": "https://data.census.gov/data/123",
-      "@type": "dcat:Dataset"
-    },
-    {
       "@id": "https://data.census.gov/catalog",
       "@type": "dcat:Catalog",
+      "title": "US Census Open Data Catalog",
+      "description": "US Census Data Catalog",
+      "publisher": "https://census.gov",
+      "dataset": [
+        "https://data.census.gov/data/123",
+        "https://data.census.gov/data/345"
+      ],
       "service": [
-        "https://data.census.gov/service/123",
-        "https://data.census.gov/service/345"
+        "https://data.census.gov/service/service1",
+        "https://data.census.gov/service2"
       ]
     },
     {
-      "@id": "https://data.census.gov/service/345",
-      "@type": "dcat:DataService"
+      "@id": "https://data.census.gov/service/service1",
+      "@type": "dcat:DataService",
+      "title": "Data Service 1",
+      "description": "This is a service that provides data.",
+      "publisher": "https://example.com/publisher1",
+      "endpointURL": "https://example.com/service1/endpoint1",
+      "contactPoint": "http://census.gov/contact"
     },
     {
-      "@id": "https://data.census.gov/service/123",
-      "@type": "dcat:DataService"
+      "@id": "https://data.census.gov/service2",
+      "@type": "dcat:DataService",
+      "title": "Data Service 2",
+      "description": "This is another service that provides data.",
+      "publisher": "https://example.com/publisher1",
+      "endpointURL": "https://example.com/service1/endpoint2",
+      "contactPoint": "http://census.gov/contact"
     }
   ]
 }

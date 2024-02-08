@@ -6,30 +6,36 @@
 # ---------- class Catalog --------------------------------------------------
 <https://data.census.gov/catalog>
   a dcat:Catalog ;
- # recommended property
+   # mandatory properties
+  dcterms:title "US Census Open Data Catalog" ;
+  dcterms:description "US Census Data Catalog" ;
+  dcterms:publisher  <https://census.gov> ;
+  dcat:dataset <https://data.census.gov/data/123>, <https://data.census.gov/data/345> ;
 
+  # services provided by the catalog
   dcat:service <https://data.census.gov/service/123>, 
                <https://data.census.gov/service/345> .
 
 
-# ---------- class Dataset --------------------------------------------------
-<https://data.census.gov/data/123>
-  a dcat:Dataset .
-
-<https://data.census.gov/data/345>
-  a dcat:Dataset .
-
-# ---------- class Document --------------------------------------------------
-<https://data.census.gov/index.html>
-  a foaf:Document .
 
 # ---------- class DataService -----------------------------------------------
-<https://data.census.gov/service/123>
-  a dcat:DataService .
+# ---------- class DataService -----------------------------------------------
+<https://data.census.gov/service/service1>
+  a dcat:DataService ;
+  dcterms:title "Data Service 1" ;
+  dcterms:description "This is a service that provides data." ;
+  dcterms:publisher <https://example.com/publisher1> ;
+  dcat:endpointURL <https://example.com/service1/endpoint1> ;
+  dcat:contactPoint <http://census.gov/contact>;
+  .
 
-<https://data.census.gov/service/345>
-  a dcat:DataService .
 
-# ---------- class Agent -----------------------------------------------------
-<https://census.gov>
-  a org:Organization .
+<https://data.census.gov/service2>
+  a dcat:DataService ;
+    
+  dcterms:title "Data Service 2" ;
+  dcterms:description "This is another service that provides data." ;
+  dcterms:publisher <https://example.com/publisher1> ;
+  dcat:endpointURL <https://example.com/service1/endpoint2> ;
+  dcat:contactPoint <http://census.gov/contact>;
+  .

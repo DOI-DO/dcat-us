@@ -4,5 +4,11 @@
 
 <https://data.census.gov/catalog>
   a dcat:Catalog ;
+   # mandatory properties
+  dcterms:title "US Census Open Data Catalog" ;
+  dcterms:description "US Census Data Catalog" ;
+  dcterms:publisher  <https://census.gov> ;
+  dcat:dataset <https://data.census.gov/data/123>, <https://data.census.gov/data/345> ;
+
   #recommended property
   dcterms:modified "2021-04-26"^^xsd:date .

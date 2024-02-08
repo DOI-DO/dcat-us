@@ -6,8 +6,13 @@
 # ---------- class Catalog --------------------------------------------------
 <https://data.census.gov/catalog>
   a dcat:Catalog ;
+   # mandatory properties
+  dcterms:title "US Census Open Data Catalog" ;
+  dcterms:description "US Census Data Catalog" ;
+  dcterms:publisher  <https://census.gov> ;
+  dcat:dataset <https://data.census.gov/data/123>, <https://data.census.gov/data/345> ;
 
 
-  # recommended property
+  # language supported by the catalog
   dcterms:language  <http://id.loc.gov/vocabulary/iso639-1/es>,
                 <http://id.loc.gov/vocabulary/iso639-1/en> .

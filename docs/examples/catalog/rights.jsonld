@@ -1,18 +1,19 @@
 {
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
-  "@graph": [
-    {
-      "@id": "http://www.example.com#Catalog1",
-      "@type": "dcat:Catalog",
-      "rights": "_:n778b9f3a6376437299617563a27bc44ab1"
-    },
-    {
-      "@id": "_:n778b9f3a6376437299617563a27bc44ab1",
-      "@type": "dcterms:RightsStatement",
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "\u00a9 20023 ACME Inc."
-      }
+  "@id": "https://data.census.gov/catalog",
+  "@type": "dcat:Catalog",
+  "title": "US Census Open Data Catalog",
+  "description": "US Census Data Catalog",
+  "dataset": [
+    "https://data.census.gov/data/123",
+    "https://data.census.gov/data/345"
+  ],
+  "rights": {
+    "@id": "_:n778b9f3a6376437299617563a27bc44ab1",
+    "@type": "dcterms:RightsStatement",
+    "rdfs:label": {
+      "@language": "en",
+      "@value": "© 20023 ACME Inc."
     }
-  ]
+  }
 }

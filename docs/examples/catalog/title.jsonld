@@ -2,8 +2,13 @@
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
   "@id": "https://data.census.gov/catalog",
   "@type": "dcat:Catalog",
+  "description": "US Census Data Catalog",
+  "dataset": [
+    "https://data.census.gov/data/123",
+    "https://data.census.gov/data/345"
+  ],
   "title": "US Census Open Data Catalog",
   "titleMap": {
-    "es": "Cat\u00e1logo de Datos Abiertos del Censo de EE. UU."
+    "es": "Catálogo de Datos Abiertos del Censo de EE. UU."
   }
 }

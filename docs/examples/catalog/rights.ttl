@@ -3,7 +3,14 @@
 @prefix rdfs:<http://www.w3.org/2000/01/rdf-schema#>.
 @prefix ex: <http://www.example.com#>.
 
-ex:Catalog1  a dcat:Catalog ;
+<https://data.census.gov/catalog>
+  a dcat:Catalog ;
+   # mandatory properties
+  dcterms:title "US Census Open Data Catalog" ;
+  dcterms:description "US Census Data Catalog" ;
+  dcterms:publisher  <https://census.gov> ;
+  dcat:dataset <https://data.census.gov/data/123>, <https://data.census.gov/data/345> ;
+
     dcterms:rights [ a dcterms:RightsStatement ;
         rdfs:label "© 20023 ACME Inc."@en
     ] 

@@ -2,7 +2,12 @@
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
   "@id": "https://data.census.gov/catalog",
   "@type": "dcat:Catalog",
-  "themeTaxonomy": [
-    "http://data.gov/resource/authority/data-theme"
-  ]
+  "title": "US Census Open Data Catalog",
+  "description": "US Census Data Catalog",
+  "publisher": "https://census.gov",
+  "dataset": [
+    "https://data.census.gov/data/123",
+    "https://data.census.gov/data/345"
+  ],
+  "themeTaxonomy": "http://data.gov/resource/authority/data-theme"
 }

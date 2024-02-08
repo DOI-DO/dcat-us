@@ -4,5 +4,12 @@
 
 <https://census.gov/Catalog1>
   a dcat:Catalog ;
+  # mandatory properties
+  dcterms:title "US Census Open Data Catalog" ;
+  dcterms:description "US Census Data Catalog" ;
+  dcterms:publisher  <https://census.gov> ;
+  dcat:dataset <https://census.gov/Dataset1> , <https://census.gov/Dataset2> ;
+
+  # Catalog conforms to the DCAT-US profile
   dcterms:conformsTo <http://resource.data.gov/profile/dcat-us#> ;
 .

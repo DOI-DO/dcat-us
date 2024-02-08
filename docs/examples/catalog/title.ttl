@@ -7,6 +7,12 @@
 <https://data.census.gov/catalog>
   a dcat:Catalog ;
 
-  # mandatory properties
+  # title in English and Spanish
   dcterms:title "US Census Open Data Catalog",
-            "Catálogo de Datos Abiertos del Censo de EE. UU."@es  .
+            "Catálogo de Datos Abiertos del Censo de EE. UU."@es  ;
+
+  dcterms:description "US Census Data Catalog" ;
+  dcterms:publisher  <https://census.gov> ;
+  dcat:dataset <https://data.census.gov/data/123>, <https://data.census.gov/data/345> ;
+
+.

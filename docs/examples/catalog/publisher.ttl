@@ -3,10 +3,16 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix org: <http://www.w3.org/ns/org#> .
-
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 # ---------- class Catalog --------------------------------------------------
 <https://data.census.gov/catalog>
   a dcat:Catalog ;
+   # mandatory properties
+  dcterms:title "US Census Open Data Catalog" ;
+  dcterms:description "US Census Data Catalog" ;
+  dcterms:publisher  <https://census.gov> ;
+  dcat:dataset <https://data.census.gov/data/123>, <https://data.census.gov/data/345> ;
+
 
   # mandatory properties
   dcterms:publisher  <https://census.gov> ;
@@ -15,4 +21,5 @@
 <https://census.gov>
   a org:Organization;
   foaf:name "US Census Bureau";
+  skos:prefLabel "US Census Bureau";
 .

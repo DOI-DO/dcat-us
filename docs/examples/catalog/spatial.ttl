@@ -3,8 +3,15 @@
 @prefix locn: <http://www.w3.org/ns/locn#> .
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 
+
 <https://data.census.gov/catalog>
-  a dcat:Catalog;
+  a dcat:Catalog ;
+   # mandatory properties
+  dcterms:title "US Census Open Data Catalog" ;
+  dcterms:description "US Census Data Catalog" ;
+  dcterms:publisher  <https://census.gov> ;
+  dcat:dataset <https://data.census.gov/data/123>, <https://data.census.gov/data/345> ;
+
   dcterms:spatial [
     a dcterms:Location ;
     locn:geometry """POLYGON ((

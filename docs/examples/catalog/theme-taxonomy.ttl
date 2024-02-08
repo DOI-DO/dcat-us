@@ -2,6 +2,12 @@
 
 <https://data.census.gov/catalog>
   a dcat:Catalog ;
+   # mandatory properties
+  dcterms:title "US Census Open Data Catalog" ;
+  dcterms:description "US Census Data Catalog" ;
+  dcterms:publisher  <https://census.gov> ;
+  dcat:dataset <https://data.census.gov/data/123>, <https://data.census.gov/data/345> ;
 
- #Recommended Property 
-  dcat:themeTaxonomy <http://data.gov/resource/authority/data-theme>  .
+
+  # theme taxonomy used by the catalog
+   dcat:themeTaxonomy <http://data.gov/resource/authority/data-theme>  .

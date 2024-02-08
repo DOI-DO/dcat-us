@@ -1,19 +1,18 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # ---------- class Catalog --------------------------------------------------
 <https://data.census.gov/catalog>
   a dcat:Catalog ;
 
-  # recommended property
-  dcat:dataset <https://data.census.gov/data/123>, 
-               <https://data.census.gov/data/345> .
-
-
-
-# ---------- class Dataset --------------------------------------------------
-<https://data.census.gov/data/123>
-  a dcat:Dataset .
-
-<https://data.census.gov/data/345>
-  a dcat:Dataset .
-
+  # mandatory properties
+  dcterms:title "US Census Open Data Catalog" ;
+  # default description of the catalog in english
+  dcterms:description "US Census Data Catalog",
+                      #Spanish translation of description
+                      "Catálogo de datos abiertos del censo de EE. UU."@es ;
+  dcterms:publisher  <https://census.gov> ;
+  dcat:dataset <https://data.census.gov/data/123>, <https://data.census.gov/data/345> ;
+.

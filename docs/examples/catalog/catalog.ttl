@@ -2,6 +2,8 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 
 # ---------- class Catalog --------------------------------------------------
 <https://data.census.gov/catalog>
@@ -11,10 +13,10 @@
   dcterms:title "US Census Open Data Catalog" ;
   dcterms:description "US Census Data Catalog" ;
   dcterms:publisher  <https://census.gov> ;
-
+  dcat:dataset <https://data.census.gov/data/123>, <https://data.census.gov/data/345> ;
 
   # recommended properties
-  dcat:dataset <https://data.census.gov/data/123>, <https://data.census.gov/data/345> ;
+ 
   foaf:homepage <https://census.gov/catalog.html> ;
   dcat:service <https://data.census.gov/service/123>, <https://data.census.gov/service/345> ;
   dcterms:issued "2020-05-25"^^xsd:date ;
@@ -28,22 +30,51 @@
 
 # ---------- class Dataset --------------------------------------------------
 <https://data.census.gov/data/123>
-  a dcat:Dataset .
 
+    a dcat:Dataset ;
+  dcterms:title "Dataset 123" ;
+  dcterms:description "This dataset contains information about..." ;
+  dcterms:publisher <https://census.gov> ;
+.
 <https://data.census.gov/data/345>
-  a dcat:Dataset .
-
-# ---------- class Document --------------------------------------------------
-<https://data.census.gov/index.html>
-  a foaf:Document .
+  a dcat:Dataset ;
+  dcterms:title "Dataset 345" ;
+  dcterms:description "This dataset contains information about..." ;
+  dcterms:publisher <https://census.gov> ;
+  .
 
 # ---------- class DataService -----------------------------------------------
-<https://data.census.gov/service/123>
-  a dcat:DataService .
+<https://data.census.gov/service/service1>
+  a dcat:DataService ;
+  dcterms:title "Data Service 1" ;
+  dcterms:description "This is a service that provides data." ;
+  dcterms:publisher <https://example.com/publisher1> ;
+  dcat:endpointURL <https://example.com/service1/endpoint1> ;
+  dcat:contactPoint <http://census.gov/contact>;
+  .
 
-<https://data.census.gov/service/345>
-  a dcat:DataService .
+
+<https://data.census.gov/service2>
+  a dcat:DataService ;
+    
+  dcterms:title "Data Service 2" ;
+  dcterms:description "This is another service that provides data." ;
+  dcterms:publisher <https://example.com/publisher1> ;
+  dcat:endpointURL <https://example.com/service1/endpoint2> ;
+  dcat:contactPoint <http://census.gov/contact>;
+  .
+
 
 # ---------- class Agent -----------------------------------------------------
 <https://census.gov>
-  a foaf:Organization .
+  a foaf:Organization ;
+  foaf:name "US Census Bureau" ;
+  skos:prefLabel "US Census Bureau" ;
+  .
+
+<http://census.gov/contact>
+    a vcard:Kind ;
+    vcard:fn "US Census Info" ;
+    vcard:hasEmail <mailto:info@census.gov>
+   .
+
