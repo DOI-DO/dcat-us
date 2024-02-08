@@ -313,110 +313,163 @@
 
     </section>
     <!-- Gaps between POD 1.1 and DCAT -->
-    <h3>Gaps with DCAT-US 1.1</h3>
-    <p>The DCAT-US 1.1 standard, while effective for its time, had some limitations that the DCAT 3 standard has
-      addressed. The key differences between the two standards include:
-    </p>
-    <ul>
-      <li><strong>Increased expressiveness</strong>: DCAT 3 offers a richer set of classes and properties, enabling
-        more detailed descriptions of datasets and their relationships.
-      </li>
-      <li><strong>Improved support for geospatial data</strong>: DCAT 3 provides better support for describing
-        geospatial datasets, including coordinate reference systems and geometry.
-      </li>
-      <li><strong>Enhanced handling of statistical data</strong>: DCAT 3 and RDF Data Cube (QB) specification
-        introduce new vocabulary terms to describe statistical datasets and their dimensions more effectively.
-      </li>
-      <li><strong>Refined vocabularies</strong>: DCAT 3 benefits from updated reference controlled vocabularies to
-        ensure better interoperability between agencies and systems.
-      </li>
-    </ul>
-    <h3>DCAT-US Features</h3>
-    <p>The DCAT-US 3.0 Profile not only incorporates the enhancements provided by DCAT 3 but also maintains the
-      US-specific metadata requirements defined in POD 1.1. This profile offers a harmonized approach to data cataloging
-      that accounts for the unique needs of US agencies.
-    </p>
-    <p>One of the key features of this profile is its use of reference controlled vocabularies. These vocabularies
-      enable better interoperability between US agencies by providing a common language for describing datasets. The
-      profile also introduces new properties to handle geospatial data and statistical datasets, leveraging established
-      vocabularies in these domains.
-    </p>
+    <section id="gaps-with-dcat-1-1">
+      <h3>Gaps with DCAT-US 1.1</h3>
+      <p>The DCAT-US 1.1 standard, while effective for its time, had some limitations that the DCAT 3 standard has
+        addressed. The key differences between the two standards include:</p>
+      </p>
+      <ul>
+        <li><strong>Increased expressiveness</strong>: DCAT 3 offers a richer set of classes and properties, enabling
+          more detailed descriptions of datasets and their relationships.
+        </li>
+        <li><strong>Improved support for geospatial data</strong>: DCAT 3 provides better support for describing
+          geospatial datasets, including coordinate reference systems and geometry.
+        </li>
+        <li><strong>Enhanced handling of statistical data</strong>: DCAT 3 and RDF Data Cube (QB) specification
+          introduce new vocabulary terms to describe statistical datasets and their dimensions more effectively.
+        </li>
+        <li><strong>Refined vocabularies</strong>: DCAT 3 benefits from updated reference controlled vocabularies to
+          ensure better interoperability between agencies and systems.
+        </li>
+      </ul>
+    </section>
+    <section id="dcat-us-features">
+      <h3>DCAT-US Features</h3>
+      <p>The DCAT-US 3.0 Profile not only incorporates the enhancements provided by DCAT 3 but also maintains the
+        US-specific metadata requirements defined in POD 1.1. This profile offers a harmonized approach to data
+        cataloging that accounts for the unique needs of US agencies.
+      </p>
+      <p>One of the key features of this profile is its use of reference controlled vocabularies. These vocabularies
+        enable better interoperability between US agencies by providing a common language for describing datasets. The
+        profile also introduces new properties to handle geospatial data and statistical datasets, leveraging
+        established vocabularies in these domains.
+      </p>
+      <p>The Data Catalog Vocabulary (DCAT-US) specification introduces several key features designed to enhance the
+        accessibility, interoperability, and effectiveness of data cataloging practices. Below, we outline the
+        compelling advantages of adopting DCAT-US over traditional document-centric metadata standards, such as ISO
+        19115, highlighting its superiority in meeting the needs of modern data ecosystems.</p>
 
-    <!-- Encoding of DCAT-US Profile -->
-    <h3>Profile Encoding</h3>
+      <ul>
+        <li><strong>Enhanced Interoperability and Integration:</strong> DCAT-US is engineered for maximum
+          interoperability with web technologies and data catalogs, facilitating the sharing and discovery of datasets
+          across diverse platforms. This level of integration surpasses the capabilities of document-centric standard
+          such as ISO 19115, enabling broader visibility and usability of data assets.</li>
 
-    <p>The encoding of the DCAT-US profile involves the technical aspects of how data is represented and exchanged,
-      addressing questions about data format and interoperability. While the DCAT-US 3.0 conformance does not strictly
-      mandate the use of RDF serialization for data exchange, it emphasizes the importance of ensuring that the
-      exchanged format can be unambiguously transformed into RDF. This flexibility allows for interoperability while
-      accommodating various data exchange requirements.</p>
+        <li><strong>Flexibility and Extensibility:</strong> Offering a flexible and extensible framework, DCAT-US adapts
+          to the changing requirements of data publishers and consumers. Its ability to incorporate new metadata types
+          ensures that the specification remains relevant in the face of technological advancements, a critical
+          advantage over the more static ISO 19115 standard.</li>
 
-    <p>One prevalent format for data exchange between systems is JSON (JavaScript Object Notation), which is widely used
-      due to its simplicity and human-readable nature. To facilitate data exchange in JSON while adhering to the DCAT-US
-      profile, a dedicated mechanism is provided: the JSON-LD context file. JSON-LD 1.1 (JSON for Linked Data) is a W3C
-      Recommendation [[?JSON-LD]] that establishes a standardized approach for interpreting JSON structures as RDF,
-      enhancing the potential for semantic integration and interoperability.</p>
+        <li><strong>Web-Friendly and User-Centric:</strong> With its modern web-oriented design, DCAT-US enhances data
+          accessibility and usability through JSON-LD support, making datasets more discoverable and consumable for a
+          wide range of users. This approach marks a significant improvement over the document-centric standards,
+          prioritizing ease of use and efficiency.</li>
 
-    <p> The DCAT-US profile offers a [[?JSON-LD]] context file that implementers can utilize as a foundation for their
-      data
-      exchange processes. By incorporating this JSON-LD context file, implementers can ensure that their data adheres to
-      the DCAT-US standards while being exchanged in a JSON format. This allows for a coherent and consistent
-      representation of the data that aligns with the RDF model, promoting interoperability among different systems and
-      tools.</p>
+        <li><strong>Alignment with Global Standards:</strong> By aligning with the W3C's Data Catalog Vocabulary (DCAT),
+          DCAT-US adheres to globally recognized standards, facilitating international data sharing and collaboration.
+          This global perspective is essential for transcending the limitations of the more narrowly focused syntactic
+          and structure schema-based standard.</li>
 
-    <p> It's important to note that the provided JSON-LD context file is not normative, indicating that other JSON-LD
-      contexts can also be used to establish a conformant DCAT-US data exchange. This flexibility caters to various
-      implementation scenarios and data requirements, while still adhering to the overarching principles of the DCAT-US
-      profile. Overall, the encoding of the DCAT-US profile acknowledges the significance of data format and interchange
-      methods, leveraging JSON-LD and related mechanisms to facilitate seamless and interoperable data exchange within
-      the context of the DCAT-US specification.</p>
+        <li><strong>Cost-Effective and Efficient Data Management:</strong> The adoption of DCAT-US promotes
+          cost-effective and efficient data management practices. Its emphasis on standardization and interoperability
+          reduces the complexities and costs associated with data integration, leveraging web infrastructure for data
+          publication and consumption.</li>
+      </ul>
 
+      <p>In conclusion, DCAT-US represents a forward-looking solution that significantly advances beyond traditional
+        rigid document-centric metadata standard silos. Its design and features cater to the demands of contemporary
+        data management and publishing, ensuring that data assets are more visible, accessible, and valuable to users
+        across the data ecosystem.</p>
 
+    </section>
+    <section id="encoding">
+      <!-- Encoding of DCAT-US Profile -->
+      <h3>Profile Encoding</h3>
 
-    <h3>Profile Validation</h3>
-    <p>While the JSON Schema approach used in POD 1.1 was effective in certain scenarios, it has limitations when
-      compared to using SHACL for defining data models and constraints:
-    </p>
-    <ul>
-      <li><strong>Expressiveness:</strong> JSON Schema primarily targets validation of JSON data structures, which can
-        be less expressive than RDF data models used with SHACL. RDF enables a more flexible and semantically rich
-        representation of data, while SHACL is designed to provide constraints and validation for RDF data.
-      </li>
-      <li><strong>Linked Data Compatibility:</strong> JSON Schema is not specifically designed for Linked Data or
-        semantic web applications. SHACL, on the other hand, is tailored for RDF and Linked Data, making it a more
-        natural fit for data models that need to interoperate with other semantic web resources and standards.
-      </li>
-      <li><strong>Inferencing Support:</strong> SHACL can be used in conjunction with RDF reasoners to validate inferred
-        triples, offering advanced inferencing capabilities beyond the scope of JSON Schema. This feature enables more
-        powerful and intelligent data validation.
-      </li>
-      <li><strong>Extensibility:</strong> SHACL is designed to be extensible, allowing users to define custom constraint
-        components, which can be reused across multiple shapes and datasets. In contrast, JSON Schema has a fixed set of
-        validation keywords, and extending it may require the introduction of non-standard or custom keywords,
-        potentially affecting interoperability.
-      </li>
-    </ul>
-    <p>Considering these limitations, the DCAT-US 3.0 Profile has chosen SHACL as the foundation for its data
-      modeling and validation, ensuring a more expressive, interoperable, and future-proof framework for defining
-      dataset metadata.
-    </p>
-    <p>The DCAT-US 3.0 Profile is defined using the Shapes Constraint Language (SHACL), which offers several
-      advantages over previous approaches:
-    </p>
-    <ul>
-      <li><strong>Expressive and flexible</strong>: SHACL allows for the precise definition of constraints on RDF data,
-        making it easier to validate and verify datasets.
-      </li>
-      <li><strong>Scalable and efficient</strong>: SHACL is designed for efficient validation, making it suitable for
-        use with large datasets and complex data models.
-      </li>
-      <li><strong>Widely adopted</strong>: As a W3C recommendation, SHACL enjoys broad support among data management
-        tools and libraries, facilitating interoperability and reuse.
-      </li>
-    </ul>
-    <p>By using [[?SHACL]], the DCAT-US 3.0 Profile ensures a robust and extensible foundation for future updates, as
-      well as compatibility with a wide range of data processing tools and applications.
-    </p>
+      <p>The encoding of the DCAT-US profile involves the technical aspects of how data is represented and exchanged,
+        addressing questions about data format and interoperability. While the DCAT-US 3.0 conformance does not strictly
+        mandate the use of RDF serialization for data exchange, it emphasizes the importance of ensuring that the
+        exchanged format can be unambiguously transformed into RDF. This flexibility allows for interoperability while
+        accommodating various data exchange requirements.</p>
+
+      <p>One prevalent format for data exchange between systems is JSON (JavaScript Object Notation), which is widely
+        used
+        due to its simplicity and human-readable nature. To facilitate data exchange in JSON while adhering to the
+        DCAT-US
+        profile, a dedicated mechanism is provided: the JSON-LD context file. JSON-LD 1.1 (JSON for Linked Data) is a
+        W3C
+        Recommendation [[?JSON-LD]] that establishes a standardized approach for interpreting JSON structures as RDF,
+        enhancing the potential for semantic integration and interoperability.</p>
+
+      <p> The DCAT-US profile offers a [[?JSON-LD]] context file that implementers can utilize as a foundation for their
+        data
+        exchange processes. By incorporating this JSON-LD context file, implementers can ensure that their data adheres
+        to
+        the DCAT-US standards while being exchanged in a JSON format. This allows for a coherent and consistent
+        representation of the data that aligns with the RDF model, promoting interoperability among different systems
+        and
+        tools.</p>
+
+      <p> It's important to note that the provided JSON-LD context file is not normative, indicating that other JSON-LD
+        contexts can also be used to establish a conformant DCAT-US data exchange. This flexibility caters to various
+        implementation scenarios and data requirements, while still adhering to the overarching principles of the
+        DCAT-US
+        profile. Overall, the encoding of the DCAT-US profile acknowledges the significance of data format and
+        interchange
+        methods, leveraging JSON-LD and related mechanisms to facilitate seamless and interoperable data exchange within
+        the context of the DCAT-US specification.</p>
+
+    </section>
+    <section id="profile-validation">
+      <h3>Profile Validation</h3>
+      <p>While the JSON Schema approach used in POD 1.1 was effective in certain scenarios, it has limitations when
+        compared to using SHACL for defining data models and constraints:
+      </p>
+      <ul>
+        <li><strong>Expressiveness:</strong> JSON Schema primarily targets validation of JSON data structures, which can
+          be less expressive than RDF data models used with SHACL. RDF enables a more flexible and semantically rich
+          representation of data, while SHACL is designed to provide constraints and validation for RDF data.
+        </li>
+        <li><strong>Linked Data Compatibility:</strong> JSON Schema is not specifically designed for Linked Data or
+          semantic web applications. SHACL, on the other hand, is tailored for RDF and Linked Data, making it a more
+          natural fit for data models that need to interoperate with other semantic web resources and standards.
+        </li>
+        <li><strong>Inferencing Support:</strong> SHACL can be used in conjunction with RDF reasoners to validate
+          inferred
+          triples, offering advanced inferencing capabilities beyond the scope of JSON Schema. This feature enables more
+          powerful and intelligent data validation.
+        </li>
+        <li><strong>Extensibility:</strong> SHACL is designed to be extensible, allowing users to define custom
+          constraint
+          components, which can be reused across multiple shapes and datasets. In contrast, JSON Schema has a fixed set
+          of
+          validation keywords, and extending it may require the introduction of non-standard or custom keywords,
+          potentially affecting interoperability.
+        </li>
+      </ul>
+      <p>Considering these limitations, the DCAT-US 3.0 Profile has chosen SHACL as the foundation for its data
+        modeling and validation, ensuring a more expressive, interoperable, and future-proof framework for defining
+        dataset metadata.
+      </p>
+      <p>The DCAT-US 3.0 Profile is defined using the Shapes Constraint Language (SHACL), which offers several
+        advantages over previous approaches:
+      </p>
+      <ul>
+        <li><strong>Expressive and flexible</strong>: SHACL allows for the precise definition of constraints on RDF
+          data,
+          making it easier to validate and verify datasets.
+        </li>
+        <li><strong>Scalable and efficient</strong>: SHACL is designed for efficient validation, making it suitable for
+          use with large datasets and complex data models.
+        </li>
+        <li><strong>Widely adopted</strong>: As a W3C recommendation, SHACL enjoys broad support among data management
+          tools and libraries, facilitating interoperability and reuse.
+        </li>
+      </ul>
+      <p>By using [[?SHACL]], the DCAT-US 3.0 Profile ensures a robust and extensible foundation for future updates, as
+        well as compatibility with a wide range of data processing tools and applications.
+      </p>
+    </section>
     <section id="document-status">
       <h3>Document Status</h3>
       <p>Candidate Recommendation Snapshot</p>
