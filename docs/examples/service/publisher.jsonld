@@ -1,18 +1,15 @@
 {
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
-  "@graph": [
-    {
-      "@id": "https://census.gov",
-      "@type": "foaf:Organization",
-      "foaf:name:": {
-        "@language": "en",
-        "@value": "US Census"
-      }
-    },
-    {
-      "@id": "https://census.gov/opendata/service",
-      "@type": "dcat:DataService",
-      "publisher": "https://census.gov"
-    }
-  ]
+  "@id": "https://census.gov/opendata/service",
+  "@type": "dcat:DataService",
+  "title": "US Census Data Service",
+  "description": "The US Census Data Service provides access to a wide range of data about the United States, its people, and the economy.",
+  "contactPoint": "https://census.gov/contact",
+  "endpointURL": "https://census.gov/opendata/api",
+  "publisher": {
+    "@id": "https://census.gov",
+    "@type": "foaf:Organization",
+    "name": "US Census",
+    "prefLabel": "US Census"
+  }
 }

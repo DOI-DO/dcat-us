@@ -3,4 +3,13 @@
 
 <https://census.gov/opendata/service>
   a dcat:DataService ;
-  dcterms:title "Opendata catalog service of the US Census"@en.
+  # title of the service defined in English
+  dcterms:title "Opendata catalog service of the US Census",
+                # spanish translation of the title 
+                "Servicio de catálogo de datos abiertos del censo de EE. UU."@es;
+  
+  dcterms:description "The US Census Data Service provides access to a wide range of data about the United States, its people, and the economy." ;
+  dcat:contactPoint <https://census.gov/contact> ;
+  dcat:endpointURL <https://census.gov/opendata/api> ;
+  # Publisher of the data service
+  dcterms:publisher <https://census.gov> .

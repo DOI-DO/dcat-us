@@ -16,17 +16,17 @@
     vcard:fn "US Census Bureau" ;
     vcard:hasEmail <mailto:info@census.gov>  
   ], [
-    a vcard:Individual ;
+    a vcard:Kind ;
     vcard:fn "Data Service Coordinator" ;  
     vcard:hasEmail <mailto:coordinator@census.gov>  
   ] ;
   dcterms:publisher <https://www.census.gov> ;
   
   # recommended properties
-  dcat:endpointDescription <https://data.census.gov/about.html> ;  # Example URL, adjust as per actual details
-  dcterms:license <http://www.usa.gov/publicdomain/label/1.0/> ;  # Example URL, adjust as per actual details
-  dcat:servesDataset <https://data.census.gov/dataset/1> ,  # Example URL, adjust as per actual details
-                     <https://data.census.gov/dataset/2> .  # Example URL, adjust as per actual details
+  dcat:endpointDescription <https://data.census.gov/about.html> ;  
+  dcterms:license <http://www.usa.gov/publicdomain/label/1.0/> ;  
+  dcat:servesDataset <https://data.census.gov/dataset/1> ,  
+                     <https://data.census.gov/dataset/2> .  
 
 # ---------- class Publisher ------------------------------------------------
 <https://www.census.gov/>

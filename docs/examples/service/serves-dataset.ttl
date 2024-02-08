@@ -1,6 +1,14 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 <https://census.gov/opendata/service>
   a dcat:DataService ;
-
+  dcterms:title "US Census Data Service" ;
+  dcterms:description "The US Census Data Service provides access to a wide range of data about the United States, its people, and the economy." ;
+  dcat:contactPoint <https://census.gov/contact> ;
+  dcat:endpointURL <https://census.gov/opendata/api> ;
+  dcterms:publisher <http://www.census.gov> ;
+  # data service provides access to the following datasets
   dcat:servesDataset <https://census.gov/data/123>, <https://census.gov/data/345> .

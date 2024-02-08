@@ -1,5 +1,15 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://example.com/service>
+<https://geomag.usgs.gov/ws/data/>
   a dcat:DataService ;
-  dcat:endpointURL <https://example.com/api> .
+  dcterms:title "Web Service for Geomagnetism Data" ;
+  dcterms:description "This is a service that provides data." ;
+  dcterms:publisher <https://usgs.gov> ;
+  dcat:contactPoint <https://example.com/service1/contactPoint1> ;
+  
+  # Endpoint URL to access the service
+  dcat:endpointURL <https://geomag.usgs.gov/ws/data/> ;
+.

@@ -1,6 +1,13 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 
-<https://census.gov/opendata/dataservice/1234>
+<https://example.com/service1>
   a dcat:DataService ;
-  dcterms:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> .
+  dcterms:title "Data Service 1" ;
+  dcterms:description "This is a service that provides data." ;
+  dcterms:publisher <https://example.com/publisher1> ;
+  dcat:endpointURL <https://example.com/service1/endpoint1> ;
+  dcterms:accessRights <http://resources.data.gov/authority/access-right/PUBLIC>;  # Public access rights
+  dcat:contactPoint <https://example.com/service1/contactPoint1> ;
+  .
+

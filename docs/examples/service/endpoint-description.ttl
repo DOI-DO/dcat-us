@@ -6,6 +6,10 @@
 <https://geomag.usgs.gov/ws/data/>
   a dcat:DataService ;
   dcterms:title "Web Service for Geomagnetism Data" ;
+  dcterms:description "This is a service that provides data." ;
+  dcterms:publisher <https://usgs.gov> ;
+  dcat:endpointURL <https://geomag.usgs.gov/ws/data/> ;
+  dcat:contactPoint <https://example.com/service1/contactPoint1> ;
   dcat:endpointDescription <https://geomag.usgs.gov/ws/openapi.json> .
 
 <https://geomag.usgs.gov/ws/openapi.json>

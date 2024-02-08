@@ -1,8 +1,14 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 
-<https://opendata/dataservice/1234>
+<https://example.com/dataservice/1234>
   a dcat:DataService ;
-  dcat:keyword "cadastre"@en,
+  dcterms:title "Land Management Cadastre" ;
+  dcterms:description "This service provides access to the land management cadastre";
+  dcterms:publisher <https:///example.com> ;
+  dcat:endpointURL <https://example.com/dataservice/1234/endpoint> ;
+  dcat:contactPoint <https://example.com/dataservice/1234/contactpoint> ;
+  dcat:keyword "cadastre",
+               "cadastre"@en,
                "land management"@en,
                "cadastro"@es.

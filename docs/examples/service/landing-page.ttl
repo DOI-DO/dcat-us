@@ -1,9 +1,13 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 
-<https://opendata.census.gov/1234>
+<https://example.com/service1>
   a dcat:DataService ;
-  dcat:landingPage <https://opendata.census.gov/1234/about> .
-
-<https://opendata.census.gov/1234/about>
-  a foaf:Document .
+  dcterms:title "Data Service 1" ;
+  dcterms:description "This is a service that provides data." ;
+  dcterms:publisher <https://example.com/publisher1> ;
+  dcat:endpointURL <https://example.com/service1/endpoint1> ;
+  dcat:contactPoint <https://example.com/service1/contactPoint1> ;
+  # landing page of service
+  dcat:landingPage <https://opendata.census.gov/service/about> .

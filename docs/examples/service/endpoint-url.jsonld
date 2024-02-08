@@ -1,8 +1,10 @@
 {
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
-  "@id": "https://example.com/service",
+  "@id": "https://geomag.usgs.gov/ws/data/",
   "@type": "dcat:DataService",
-  "endpointURL": [
-    "https://example.com/api"
-  ]
+  "title": "Web Service for Geomagnetism Data",
+  "description": "This is a service that provides data.",
+  "publisher": "https://usgs.gov",
+  "contactPoint": "https://example.com/service1/contactPoint1",
+  "endpointURL": "https://geomag.usgs.gov/ws/data/"
 }

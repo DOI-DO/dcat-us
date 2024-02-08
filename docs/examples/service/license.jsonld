@@ -1,6 +1,11 @@
 {
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
-  "@id": "https://census.gov/api",
+  "@id": "https://example.com/service1",
   "@type": "dcat:DataService",
+  "title": "Data Service 1",
+  "description": "This is a service that provides data.",
+  "publisher": "https://example.com/publisher1",
+  "endpointURL": "https://example.com/service1/endpoint1",
+  "contactPoint": "https://example.com/service1/contactPoint1",
   "license": "http://www.usa.gov/publicdomain/label/1.0/"
 }

@@ -1,12 +1,15 @@
 {
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
-  "@id": "https://opendata/dataservice/1234",
+  "@id": "https://example.com/dataservice/1234",
   "@type": "dcat:DataService",
+  "title": "Land Management Cadastre",
+  "description": "This service provides access to the land management cadastre",
+  "publisher": "https://example.com",
+  "endpointURL": "https://example.com/dataservice/1234/endpoint",
+  "contactPoint": "https://example.com/dataservice/1234/contactpoint",
+  "keyword": "cadastre",
   "keywordMap": {
-    "en": [
-      "cadastre",
-      "land management"
-    ],
+    "en": "land management",
     "es": "cadastro"
   }
 }

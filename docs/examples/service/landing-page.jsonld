@@ -1,16 +1,11 @@
 {
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
-  "@graph": [
-    {
-      "@id": "https://opendata.census.gov/1234/about",
-      "@type": "foaf:Document"
-    },
-    {
-      "@id": "https://opendata.census.gov/1234",
-      "@type": "dcat:DataService",
-      "dcat:landingPage": {
-        "@id": "https://opendata.census.gov/1234/about"
-      }
-    }
-  ]
+  "@id": "https://example.com/service1",
+  "@type": "dcat:DataService",
+  "title": "Data Service 1",
+  "description": "This is a service that provides data.",
+  "publisher": "https://example.com/publisher1",
+  "endpointURL": "https://example.com/service1/endpoint1",
+  "contactPoint": "https://example.com/service1/contactPoint1",
+  "landingPage": "https://opendata.census.gov/1234/about"
 }

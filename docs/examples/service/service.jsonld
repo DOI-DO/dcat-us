@@ -4,87 +4,50 @@
     {
       "@id": "https://data.census.gov/",
       "@type": "dcat:DataService",
-      "license": "http://www.usa.gov/publicdomain/label/1.0/",
-      "publisher": "https://www.census.gov",
-      "titleMap": {
-        "en": "US Census Data Service"
-      },
+      "title": "US Census Data Service",
+      "endpointURL": "https://data.census.gov/",
       "contactPoint": [
-        "_:n8839beedb0104e1bbcb5a35872e45687b1",
-        "_:n8839beedb0104e1bbcb5a35872e45687b2"
+        {
+          "@type": "vcard:Kind",
+          "fn": "US Census Bureau",
+          "hasEmail": "mailto:info@census.gov"
+        },
+        {
+          "@type": "vcard:Kind",
+          "fn": "Data Service Coordinator",
+          "hasEmail": "mailto:coordinator@census.gov"
+        }
       ],
-      "endpointDescription": [
-        "https://data.census.gov/about.html"
-      ],
-      "endpointURL": [
-        "https://data.census.gov/"
-      ],
+      "publisher": "https://www.census.gov",
+      "endpointDescription": "https://data.census.gov/about.html",
+      "license": "http://www.usa.gov/publicdomain/label/1.0/",
       "servesDataset": [
         "https://data.census.gov/dataset/1",
         "https://data.census.gov/dataset/2"
       ]
     },
     {
-      "@id": "_:n8839beedb0104e1bbcb5a35872e45687b1",
-      "@type": "vcard:Kind",
-      "fn": "US Census Bureau",
-      "vcard:hasEmail": {
-        "@id": "mailto:info@census.gov"
-      }
-    },
-    {
-      "@id": "_:n8839beedb0104e1bbcb5a35872e45687b2",
-      "@type": "vcard:Individual",
-      "vcard:fn": "Data Service Coordinator",
-      "vcard:hasEmail": {
-        "@id": "mailto:coordinator@census.gov"
-      }
-    },
-    {
-      "@id": "https://data.census.gov/dataset/2",
-      "@type": "dcat:Dataset",
-      "descriptionMap": {
-        "en": "This is another example dataset from the US Census Bureau"
-      },
-      "issued": {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2020-01-01"
-      },
-      "modified": {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-01-01"
-      },
-      "publisher": "https://www.census.gov/",
-      "titleMap": {
-        "en": "Example Dataset 2"
-      }
-    },
-    {
-      "@id": "https://www.census.gov/",
+      "@id": "https://www.census.gov",
       "@type": "foaf:Organization",
-      "foaf:name": {
-        "@language": "en",
-        "@value": "US Census Bureau"
-      }
+      "name": "US Census Bureau"
     },
     {
       "@id": "https://data.census.gov/dataset/1",
       "@type": "dcat:Dataset",
-      "descriptionMap": {
-        "en": "This is an example dataset from the US Census Bureau"
-      },
-      "issued": {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2020-01-01"
-      },
-      "modified": {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-01-01"
-      },
-      "publisher": "https://www.census.gov/",
-      "titleMap": {
-        "en": "Example Dataset 1"
-      }
+      "title": "Example Dataset 1",
+      "description": "This is an example dataset from the US Census Bureau",
+      "publisher": "https://www.census.gov",
+      "issued": "2020-01-01",
+      "modified": "2022-01-01"
+    },
+    {
+      "@id": "https://data.census.gov/dataset/2",
+      "@type": "dcat:Dataset",
+      "title": "Example Dataset 2",
+      "description": "This is another example dataset from the US Census Bureau",
+      "publisher": "https://www.census.gov",
+      "issued": "2020-01-01",
+      "modified": "2022-01-01"
     }
   ]
 }

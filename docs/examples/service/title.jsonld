@@ -2,7 +2,12 @@
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
   "@id": "https://census.gov/opendata/service",
   "@type": "dcat:DataService",
+  "title": "Opendata catalog service of the US Census",
   "titleMap": {
-    "en": "Opendata catalog service of the US Census"
-  }
+    "es": "Servicio de catálogo de datos abiertos del censo de EE. UU."
+  },
+  "description": "The US Census Data Service provides access to a wide range of data about the United States, its people, and the economy.",
+  "contactPoint": "https://census.gov/contact",
+  "endpointURL": "https://census.gov/opendata/api",
+  "publisher": "https://census.gov"
 }
