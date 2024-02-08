@@ -46,7 +46,7 @@ var respecConfig = {
   },
   edDraftURI: "https://doi-do.github.io/dcat-us/",
   subtitle:
-    "A DCAT Application Profile for the United States of America (Working Draft)",
+    "A DCAT Application Profile for the United States of America (Candidate Recommendation Snapshot)",
   localBiblio: {
     CC: {
       href: "http://creativecommons.org/licenses/",
