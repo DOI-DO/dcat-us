@@ -2,38 +2,30 @@
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
   "@graph": [
     {
-      "@id": "http://example.org/ns#ISO19139DataDistribution",
-      "@type": "dcat:Distribution",
-      "conformsTo": [
-        "http://www.isotc211.org/2005/gmd"
-      ],
-      "format": "https://www.iana.org/assignments/media-types/application/xml",
-      "accessURL": [
-        "http://example.org/data/iso19139-dataset.xml"
-      ]
+      "@id": "http://example.org/ns#Dataset1",
+      "@type": "dcat:Dataset",
+      "title": "Geographic Dataset following ISO 19139",
+      "description": "This dataset contains geographic metadata and is compliant with the ISO 19139 standard.",
+      "publisher": "http://example.org/ns#Organization1",
+      "distribution": "http://example.org/ns#Distribution1",
+      "supportedSchema": "http://example.org/ns#ISO19139Schema"
     },
     {
-      "@id": "http://example.org/ns#ISO19139Dataset",
-      "@type": "dcat:Dataset",
-      "description": "This dataset contains geographic metadata and is compliant with the ISO 19139 standard.",
-      "title": "Geographic Dataset following ISO 19139",
-      "supportedSchema": "http://example.org/ns#ISO19139Schema",
-      "distribution": [
-        "http://example.org/ns#ISO19139DataDistribution"
-      ]
+      "@id": "http://example.org/ns#Distribution1",
+      "@type": "dcat:Distribution",
+      "accessURL": "http://example.org/data/iso19139-dataset.xml",
+      "format": "https://www.iana.org/assignments/media-types/application/xml",
+      "conformsTo": "http://www.isotc211.org/2005/gmd"
     },
     {
       "@id": "http://example.org/ns#ISO19139Schema",
       "@type": "dcat:Dataset",
-      "conformsTo": "http://www.isotc211.org/2005/gmd",
-      "description": "This is the XML Schema implementation of ISO 19139:2007 standard for geographic information metadata.",
-      "identifier": [
-        "ISO 19139"
-      ],
       "title": "ISO 19139:2007 - Geographic Information Metadata XML Schema Implementation",
-      "category": [
-        "http://data.gov/vocab/resource-type/Schema"
-      ]
+      "description": "This is the XML Schema implementation of ISO 19139:2007 standard for geographic information metadata.",
+      "publisher": "http://www.isotc211.org",
+      "identifier": "ISO 19139",
+      "category": "http://data.gov/vocab/resource-type/Schema",
+      "conformsTo": "http://www.isotc211.org/2005/gmd"
     }
   ]
 }

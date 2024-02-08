@@ -206,6 +206,7 @@ dcat-us-shp:Dataset_Shape a sh:NodeShape ;
         dcat-us-shp:Dataset_Shape-contributor,
         dcat-us-shp:Dataset_Shape-created,
         dcat-us-shp:Dataset_Shape-creator,
+        dcat-us-shp:Dataset_Shape-describedBy,
         dcat-us-shp:Dataset_Shape-description,
         dcat-us-shp:Dataset_Shape-distribution,
         dcat-us-shp:Dataset_Shape-first,
@@ -270,6 +271,7 @@ dcat-us-shp:Distribution_Shape a sh:NodeShape ;
         dcat-us-shp:Distribution_Shape-compressFormat,
         dcat-us-shp:Distribution_Shape-conformsTo,
         dcat-us-shp:Distribution_Shape-cuiRestriction,
+        dcat-us-shp:Distribution_Shape-describedBy,
         dcat-us-shp:Distribution_Shape-description,
         dcat-us-shp:Distribution_Shape-downloadURL,
         dcat-us-shp:Distribution_Shape-format,
@@ -329,10 +331,10 @@ dcat-us-shp:Identifier_Shape a sh:NodeShape ;
 dcat-us-shp:Kind_Shape a sh:NodeShape ;
     rdfs:label "Contact" ;
     sh:property dcat-us-shp:Kind_Shape-address,
-        dcat-us-shp:Kind_Shape-email,
         dcat-us-shp:Kind_Shape-family-name,
         dcat-us-shp:Kind_Shape-fn,
         dcat-us-shp:Kind_Shape-given-name,
+        dcat-us-shp:Kind_Shape-hasEmail,
         dcat-us-shp:Kind_Shape-organization-name,
         dcat-us-shp:Kind_Shape-tel,
         dcat-us-shp:Kind_Shape-title ;
@@ -350,7 +352,8 @@ dcat-us-shp:LicenseDocument_Shape a sh:NodeShape ;
 
 dcat-us-shp:Location_Shape a sh:NodeShape ;
     rdfs:label "Location" ;
-    sh:property dcat-us-shp:Location_Shape-bbox,
+    sh:property dcat-us-shp:Location_Shape-altLabel,
+        dcat-us-shp:Location_Shape-bbox,
         dcat-us-shp:Location_Shape-centroid,
         dcat-us-shp:Location_Shape-geometry,
         dcat-us-shp:Location_Shape-identifier,
@@ -1751,6 +1754,16 @@ dcat-us-shp:Dataset_Shape-creator a sh:PropertyShape ;
     sh:path dcterms:creator ;
     sh:severity sh:Violation .
 
+dcat-us-shp:Dataset_Shape-describedBy a sh:PropertyShape ;
+    rdfs:label "data dictionary" ;
+    dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
+    sh:description "This property refers to a distribution describing the Data Dictionary." ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "describedBy" ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class dcat:Distribution ] ) ;
+    sh:path dcat-us:describedBy .
+
 dcat-us-shp:Dataset_Shape-description a sh:PropertyShape ;
     rdfs:label "description" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Mandatory ;
@@ -1850,7 +1863,7 @@ dcat-us-shp:Dataset_Shape-image a sh:PropertyShape ;
     sh:description "A thumbnail picture illustrating the content of the dataset." ;
     sh:minCount 0 ;
     sh:name "image" ;
-    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class rdfs:Resource ] ) ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class schema:ImageObject ] ) ;
     sh:path schema:image ;
     sh:severity sh:Violation .
 
@@ -2374,6 +2387,16 @@ dcat-us-shp:Distribution_Shape-cuiRestriction a sh:PropertyShape ;
     sh:path dcat-us:cuiRestriction ;
     sh:severity sh:Violation .
 
+dcat-us-shp:Distribution_Shape-describedBy a sh:PropertyShape ;
+    rdfs:label "data dictionary" ;
+    dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
+    sh:description "This property refers to a distribution describing the Data Dictionary." ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "describedBy" ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class dcat:Distribution ] ) ;
+    sh:path dcat-us:describedBy .
+
 dcat-us-shp:Distribution_Shape-description a sh:PropertyShape ;
     rdfs:label "description" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
@@ -2433,7 +2456,7 @@ dcat-us-shp:Distribution_Shape-image a sh:PropertyShape ;
     sh:description "A thumbnail picture illustrating the content of the distribution" ;
     sh:minCount 0 ;
     sh:name "image" ;
-    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class rdfs:Resource ] ) ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class schema:ImageObject ] ) ;
     sh:path schema:image ;
     sh:severity sh:Violation .
 
@@ -2643,8 +2666,8 @@ dcat-us-shp:Document_Shape-creator a sh:PropertyShape ;
         "The person responsible for creating the document." ;
     sh:minCount 0 ;
     sh:name "creator" ;
-    sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class foaf:Person ] ),
-        ( [ sh:nodeKind sh:IRI ] [ sh:class org:Organization ] ) ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class org:Organization ] ),
+        ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class foaf:Person ] ) ;
     sh:path dcterms:creator ;
     sh:severity sh:Violation .
 
@@ -2856,19 +2879,6 @@ dcat-us-shp:Kind_Shape-address a sh:PropertyShape ;
     sh:path vcard:address ;
     sh:severity sh:Violation .
 
-dcat-us-shp:Kind_Shape-email a sh:PropertyShape ;
-    rdfs:label "email" ;
-    dcat-us-shp:requirementLevel dcat-us-shp:Mandatory ;
-    sh:description "The email address of the contact" ;
-    sh:maxCount 1 ;
-    sh:message "Invalid email format. Should be a URI starting with mailto:" ;
-    sh:minCount 1 ;
-    sh:name "email" ;
-    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class rdfs:Resource ] ) ;
-    sh:path vcard:email ;
-    sh:pattern "^mailto:.+@.+$" ;
-    sh:severity sh:Violation .
-
 dcat-us-shp:Kind_Shape-family-name a sh:PropertyShape ;
     rdfs:label "family name" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
@@ -2903,6 +2913,18 @@ dcat-us-shp:Kind_Shape-given-name a sh:PropertyShape ;
     sh:nodeKind sh:Literal ;
     sh:path vcard:given-name .
 
+dcat-us-shp:Kind_Shape-hasEmail a sh:PropertyShape ;
+    rdfs:label "email" ;
+    dcat-us-shp:requirementLevel dcat-us-shp:Mandatory ;
+    sh:description "The email address of the contact" ;
+    sh:maxCount 1 ;
+    sh:message "Invalid email format. Should be a URI starting with mailto:" ;
+    sh:minCount 1 ;
+    sh:name "hasEmail" ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class rdfs:Resource ] ) ;
+    sh:path vcard:hasEmail ;
+    sh:severity sh:Violation .
+
 dcat-us-shp:Kind_Shape-organization-name a sh:PropertyShape ;
     rdfs:label "organization name" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
@@ -2924,7 +2946,6 @@ dcat-us-shp:Kind_Shape-tel a sh:PropertyShape ;
     sh:name "tel" ;
     sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class rdfs:Resource ] ) ;
     sh:path vcard:tel ;
-    sh:pattern "^tel:\\+?[1-9][0-9]{1,14}$" ;
     sh:severity sh:Violation .
 
 dcat-us-shp:Kind_Shape-title a sh:PropertyShape ;
@@ -2959,6 +2980,16 @@ dcat-us-shp:LicenseDocument_Shape-licenseText a sh:PropertyShape ;
     sh:nodeKind sh:Literal ;
     sh:path spdx:licenseText ;
     sh:severity sh:Violation .
+
+dcat-us-shp:Location_Shape-altLabel a sh:PropertyShape ;
+    rdfs:label "alternative names" ;
+    dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
+    sh:description "This property provides alternative names for a location" ;
+    sh:minCount 0 ;
+    sh:name "altLabel" ;
+    sh:nodeKind sh:Literal ;
+    sh:or dash:StringOrLangString ;
+    sh:path skos:altLabel .
 
 dcat-us-shp:Location_Shape-bbox a sh:PropertyShape ;
     rdfs:label "bounding box" ;
@@ -3019,9 +3050,9 @@ dcat-us-shp:Location_Shape-inScheme a sh:PropertyShape ;
 
 dcat-us-shp:Location_Shape-prefLabel a sh:PropertyShape ;
     rdfs:label "geographic name" ;
-    dcat-us-shp:requirementLevel dcat-us-shp:Mandatory ;
+    dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
     sh:description "This property contains a preferred label of the Location." ;
-    sh:minCount 1 ;
+    sh:minCount 0 ;
     sh:name "prefLabel" ;
     sh:nodeKind sh:Literal ;
     sh:or dash:StringOrLangString ;

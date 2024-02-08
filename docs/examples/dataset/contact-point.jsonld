@@ -4,9 +4,7 @@
   "@type": "dcat:Dataset",
   "title": "Dataset 123",
   "description": "This dataset contains information about...",
-  "publisher": {
-    "@id": "https://census.gov"
-  },
+  "publisher": "https://census.gov",
   "contactPoint": {
     "@type": "vcard:Kind",
     "fn": "US Census Info",

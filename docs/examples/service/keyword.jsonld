@@ -9,7 +9,10 @@
   "contactPoint": "https://example.com/dataservice/1234/contactpoint",
   "keyword": "cadastre",
   "keywordMap": {
-    "en": "land management",
+    "en": [
+      "cadastre",
+      "land management"
+    ],
     "es": "cadastro"
   }
 }

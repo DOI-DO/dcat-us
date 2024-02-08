@@ -1,0 +1,72 @@
+{
+  "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
+  "@graph": [
+    {
+      "@id": "http://example.org/ns#populationCensus",
+      "@type": "dcat:DatasetSeries",
+      "title": "US Population Census Data",
+      "description": "US Population Census Data from 1950 to 2000",
+      "publisher": "https://www.census.gov/",
+      "geographicBoundingBox": {
+        "@type": "dcat-us:GeographicBoundingBox",
+        "westBoundingLongitude": -125,
+        "eastBoundingLongitude": -66.9,
+        "northBoundingLatitude": 49.4,
+        "southBoundingLatitude": 24.5
+      },
+      "temporal": {
+        "@type": "dcterms:PeriodOfTime",
+        "start": {
+          "@value": "1950-01-01",
+          "@type": "xsd:date"
+        },
+        "end": {
+          "@value": "2000-12-31",
+          "@type": "xsd:date"
+        }
+      },
+      "seriesMember": [
+        "http://example.org/ns#populationCensus-1950",
+        "http://example.org/ns#populationCensus-1960"
+      ]
+    },
+    {
+      "@id": "http://example.org/ns#populationCensus-1950",
+      "@type": "dcat:Dataset",
+      "title": "US Population Census Data for year 1950",
+      "description": "US Population Census Data for year 1950",
+      "publisher": "https://www.census.gov/",
+      "temporal": {
+        "@type": "dcterms:PeriodOfTime",
+        "start": {
+          "@value": "1940-01-01",
+          "@type": "xsd:date"
+        },
+        "end": {
+          "@value": "1950-01-01",
+          "@type": "xsd:date"
+        }
+      },
+      "inSeries": "http://example.org/ns#populationCensus"
+    },
+    {
+      "@id": "http://example.org/ns#populationCensus-1960",
+      "@type": "dcat:Dataset",
+      "title": "US Population Census Data for year 1960",
+      "description": "US Population Census Data for year 1960",
+      "publisher": "https://www.census.gov/",
+      "temporal": {
+        "@type": "dcterms:PeriodOfTime",
+        "start": {
+          "@value": "1950-01-01",
+          "@type": "xsd:date"
+        },
+        "end": {
+          "@value": "1960-01-01",
+          "@type": "xsd:date"
+        }
+      },
+      "inSeries": "http://example.org/ns#populationCensus"
+    }
+  ]
+}

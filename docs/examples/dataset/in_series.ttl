@@ -4,20 +4,50 @@
 @prefix ex: <http://example.org/ns#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix geonames: <http://www.geonames.org/ontology#> .
+@prefix dcat-us: <http://resources.data.gov/ontology/dcat-us#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 # Define the DatasetSeries
 ex:populationCensus a dcat:DatasetSeries ;
   dcterms:title "US Population Census Data"@en ;
+  dcterms:description "US Population Census Data from 1950 to 2000"@en ;
+  dcterms:publisher <https://www.census.gov/> ;
+  dcat-us:geographicBoundingBox [
+    a dcat-us:GeographicBoundingBox ;
+    dcat-us:westBoundingLongitude -125.0 ;
+    dcat-us:eastBoundingLongitude -66.9 ;
+    dcat-us:northBoundingLatitude 49.4 ;
+    dcat-us:southBoundingLatitude 24.5
+  ];
+  dcterms:temporal [
+    a dcterms:PeriodOfTime ;
+    dcterms:start "1950-01-01"^^xsd:date ;
+    dcterms:end "2000-12-31"^^xsd:date ;
+  ] ;
+  dcat:seriesMember ex:populationCensus-1950, ex:populationCensus-1960 ;
   .
 
 # Define individual datasets within the series
 ex:populationCensus-1950 a dcat:Dataset ;
   dcterms:title "US Population Census Data for year 1950"@en ;
+  dcterms:description "US Population Census Data for year 1950"@en ;
+  dcterms:publisher <https://www.census.gov/> ;
+  dcterms:temporal [
+    a dcterms:PeriodOfTime ;
+    dcterms:start "1940-01-01"^^xsd:date ;
+    dcterms:end "1950-01-01"^^xsd:date ;
+  ] ;
   dcat:inSeries ex:populationCensus ;
   .
 
 ex:populationCensus-1960 a dcat:Dataset ;
   dcterms:title "US Population Census Data for year 1960"@en ;
+   dcterms:description "US Population Census Data for year 1960"@en ;
+  dcterms:publisher <https://www.census.gov/> ;
+  dcterms:temporal [
+    a dcterms:PeriodOfTime ;
+    dcterms:start "1950-01-01"^^xsd:date ;
+    dcterms:end "1960-01-01"^^xsd:date ;
+  ] ;
   dcat:inSeries ex:populationCensus ;
   .  

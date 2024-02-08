@@ -1,4 +1,5 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 
 <https://data.census.gov/catalog>
   a dcat:Catalog ;

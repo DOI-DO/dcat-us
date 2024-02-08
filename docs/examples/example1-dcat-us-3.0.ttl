@@ -44,7 +44,7 @@ The Owned and Leased Data Sets include the following data except where noted bel
             adms:schemaAgency "https://www.gsa.gov" ] ;
     dcat:contactPoint [ a vcard:Kind ;
             vcard:fn "Valerie R Butler" ;
-            vcard:email <mailto:valerie.butler@gsa.gov>
+            vcard:hasEmail <mailto:valerie.butler@gsa.gov>
             ] ;
     dcat:distribution <https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/967d2d5e-c917-48a3-b7d8-d01ffd7e0783>,
         <https://inventory.data.gov/dataset/9a9e946e-124e-46f5-a934-e458a6c1c2b2/resource/bfbd1f68-b7d8-4822-98bb-4eceabd2c3a7>,

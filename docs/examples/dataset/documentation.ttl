@@ -2,9 +2,12 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 
-<https://opendata.census.gov/1234>
+<https://example.com/dataset1>
   a dcat:Dataset ;
-  foaf:page <https://opendata.census.gov/1234/about> .
+  dcterms:title "Dataset 1" ;
+  dcterms:description "This is a dataset" ;
+  dcterms:publisher <https://example.com/publisher1> ;
+  foaf:page <https://example.com/dataset1/about> .
 
 <https://opendata.census.gov/1234/about>
   a foaf:Document;

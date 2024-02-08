@@ -1,14 +1,13 @@
 {
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
-  "@graph": [
-    {
-      "@id": "https://opendata.census.gov/1234/about",
-      "@type": "foaf:Document"
-    },
-    {
-      "@id": "https://opendata.census.gov/1234",
-      "@type": "dcat:Dataset",
-      "page": "https://opendata.census.gov/1234/about"
-    }
-  ]
+  "@id": "https://example.com/dataset1",
+  "@type": "dcat:Dataset",
+  "title": "Dataset 1",
+  "description": "This is a dataset",
+  "publisher": "https://example.com/publisher1",
+  "page": {
+    "@id": "https://example.com/dataset1/about",
+    "@type": "foaf:Document",
+    "title": "About this dataset"
+  }
 }

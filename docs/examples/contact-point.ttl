@@ -4,7 +4,7 @@
 # Define a vcard:Kind
 :vcard123 a vcard:Kind ;
     vcard:fn "John Doe" ;   # Full name
-    vcard:email <mailto:john.doe@example.com> ;  # Email address
+    vcard:hasEmail <mailto:john.doe@example.com> ;  # Email address
     vcard:tel <tel:123456789> ;  # Phone number
     vcard:family-name "Doe";  
     vcard:given-name "John";

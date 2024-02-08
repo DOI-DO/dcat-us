@@ -5,7 +5,7 @@
 
 # ---------- class Catalog --------------------------------------------------
 <https://data.census.gov/catalog>
-  a dcat:Catalog ;
+  a dcat:Catalog;
    # mandatory properties
   dcterms:title "US Census Open Data Catalog" ;
   dcterms:description "US Census Data Catalog" ;
@@ -17,8 +17,6 @@
                <https://data.census.gov/service/345> .
 
 
-
-# ---------- class DataService -----------------------------------------------
 # ---------- class DataService -----------------------------------------------
 <https://data.census.gov/service/service1>
   a dcat:DataService ;
@@ -32,7 +30,6 @@
 
 <https://data.census.gov/service2>
   a dcat:DataService ;
-    
   dcterms:title "Data Service 2" ;
   dcterms:description "This is another service that provides data." ;
   dcterms:publisher <https://example.com/publisher1> ;

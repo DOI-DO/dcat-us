@@ -4,53 +4,58 @@
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix org: <http://www.w3.org/ns/org#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 # ---------- class Dataset --------------------------------------------------
 <https://census.gov/dataset1>
   a dcat:Dataset ;
 
   # mandatory properties
-
+  dcterms:title "Loudoun County", "Condado de Loudoun"@es ;
+  dcterms:description "This dataset contains information regarding the census in County of Loudoun" ;
+  dcterms:publisher <https://census.gov/> ;
   dcat:contactPoint [
     a vcard:Kind ;
     vcard:fn "US Census" ;
-    vcard:email <mailto:noise@census.gov> 
+    vcard:hasEmail <mailto:noise@census.gov> 
   ], [
     a vcard:Kind ;
     vcard:fn "John Smith" ;
-    vcard:email <mailto:johnsmith@census.gov> 
+    vcard:hasEmail <mailto:johnsmith@census.gov> 
   ] ;
-  dcterms:description 
-                 """This dataset contains information regarding the
-                 census in County of Loudoun"""@en ;
-  dcterms:publisher <https://census.gov/> ;
-  dcterms:title "Loudoun County"@en, "Condado de Loudoun"@es ;
+
 
   # recommended properties
 
-  dcat:distribution <https://census.gov/data/123> ,
-                    <https://census.gov/data/456> ;
-  dcat:keyword "loudoun"@en,
-               "census"@en;
+  dcat:distribution <https://census.gov/data/dataset1/csv> ,
+                    <https://census.gov/data/dataset1/xml> ;
+  dcat:keyword "loudoun",
+               "census";
             
   dcat:landingPage <https://opendata.census.gov/1234/about> ;
   dcterms:issued "2021-04-26"^^xsd:date ;
-  dcterms:spatial <http://publications.europa.eu/resource/authority/country/CHE> ;
+  dcterms:spatial <https://www.geonames.org/4770746> ; # Loudoun County
   dcterms:temporal [ a dcterms:PeriodOfTime ;
             dcat:endDate "2021-06-22T00:00:00"^^xsd:dateTime ;
             dcat:startDate "2020-01-01T00:00:00"^^xsd:dateTime ] ;
-  dcat:theme <http://publications.europa.eu/resource/authority/data-theme/GOVE> ,
-             <http://publications.europa.eu/resource/authority/data-theme/SOCI> ;
+  dcat:theme <http://resources.data.gov/authority/themes/society>; #TBD
   dcterms:modified "2021-04-26"^^xsd:date .
 
 # ---------- class Publisher ------------------------------------------------
 <https://census.gov>
   a org:Organization ;
-  foaf:name "US Census"@en .
+  foaf:name "US Census";
+  skos:altLabel "US Census";
+  skos:prefLabel "United States Census Bureau" .
 
 # ---------- class Distribution ----------------------------------------------
-<https://census.gov/data/123>
-  a dcat:Distribution .
+<https://census.gov/data/dataset1/csv>
+  a dcat:Distribution;
+  dcterms:mediaType <https://www.iana.org/assignments/media-types/text/csv> ;
+  dcat:downloadURL <https://census.gov/data/dataset1.csv> ;
+  .
 
-<https://census.gov/data/456>
-  a dcat:Distribution .
+<https://census.gov/data/dataset1/xml>
+  a dcat:Distribution ;
+  dcterms:mediaType <https://www.iana.org/assignments/media-types/text/xml> ;
+  dcat:downloadURL <https://census.gov/data/dataset1.xml> .

@@ -1,27 +1,20 @@
 {
   "@context": "https://raw.githubusercontent.com/DOI-DO/dcat-us/main/context/dcat-us-3.0.jsonld",
-  "@graph": [
-    {
-      "@id": "http://example.org/ns#vcard123",
-      "@type": "vcard:Kind",
-      "email": "mailto:john.doe@example.com",
-      "family-name": "Doe",
-      "fn": "John Doe",
-      "given-name": "John",
-      "vcard:hasAddress": {
-        "@id": "http://example.org/ns#address456"
-      },
-      "tel": "tel:+123456789",
-      "title": "Data Manager"
-    },
-    {
-      "@id": "http://example.org/ns#address456",
-      "@type": "vcard:Address",
-      "country-name": "USA",
-      "locality": "Anytown",
-      "postal-code": "12345",
-      "region": "CA",
-      "street-address": "123 Main Street"
-    }
-  ]
+  "@id": "http://example.org/ns#vcard123",
+  "@type": "vcard:Kind",
+  "hasEmail": "mailto:john.doe@example.com",
+  "family-name": "Doe",
+  "fn": "John Doe",
+  "given-name": "John",
+  "hasAddress": {
+    "@id": "http://example.org/ns#address456",
+    "@type": "vcard:Address",
+    "country-name": "USA",
+    "locality": "Anytown",
+    "postal-code": "12345",
+    "region": "CA",
+    "street-address": "123 Main Street"
+  },
+  "tel": "tel:+123456789",
+  "title": "Data Manager"
 }

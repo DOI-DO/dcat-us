@@ -1,6 +1,9 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 
-<https://meta.geo.census.gov/data/existing/decennial/GEO/GPMB/TIGERline/Archived_19115/tl_2020_us_cbsa.shp.iso.xml>
+<https://example.com/dataset1>
   a dcat:Dataset ;
-  dcterms:accrualPeriodicity <http://publications.europa.eu/resource/authority/frequency/ANNUAL> .
+  dcterms:title "Dataset 1" ;
+  dcterms:description "This is a dataset" ;
+  dcterms:publisher <https://example.com/publisher1> ;
+  dcterms:accrualPeriodicity <http://purl.org/cld/terms/annual> .

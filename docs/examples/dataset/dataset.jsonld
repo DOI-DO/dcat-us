@@ -4,87 +4,68 @@
     {
       "@id": "https://census.gov/dataset1",
       "@type": "dcat:Dataset",
-      "descriptionMap": {
-        "en": "This dataset contains information regarding the\n                 census in County of Loudoun"
-      },
-      "issued": {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2021-04-26"
-      },
-      "modified": {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2021-04-26"
-      },
-      "publisher": "https://census.gov/",
-      "spatial": [
-        "http://publications.europa.eu/resource/authority/country/CHE"
-      ],
-      "temporal": [
-        "_:n3a21f11cd9564e0485b1fba708199788b3"
-      ],
+      "title": "Loudoun County",
       "titleMap": {
-        "en": "Loudoun County",
         "es": "Condado de Loudoun"
       },
+      "description": "This dataset contains information regarding the census in County of Loudoun",
+      "publisher": {
+        "@id": "https://census.gov/"
+      },
       "contactPoint": [
-        "_:n3a21f11cd9564e0485b1fba708199788b1",
-        "_:n3a21f11cd9564e0485b1fba708199788b2"
+        {
+          "@type": "vcard:Kind",
+          "fn": "US Census",
+          "hasEmail": "mailto:noise@census.gov"
+        },
+        {
+          "@type": "vcard:Kind",
+          "fn": "John Smith",
+          "hasEmail": "mailto:johnsmith@census.gov"
+        }
       ],
       "distribution": [
-        "https://census.gov/data/123",
-        "https://census.gov/data/456"
+        {
+          "@id": "https://census.gov/data/dataset1/csv",
+          "mediaType": "text/csv",
+          "downloadURL": "https://census.gov/data/dataset1.csv"
+        },
+        {
+          "@id": "https://census.gov/data/dataset1/xml",
+          "mediaType": "text/xml",
+          "downloadURL": "https://census.gov/data/dataset1.xml"
+        }
       ],
-      "keywordMap": {
-        "en": [
-          "loudoun",
-          "census"
-        ]
-      },
+      "keyword": ["loudoun", "census"],
       "landingPage": "https://opendata.census.gov/1234/about",
-      "theme": [
-        "http://publications.europa.eu/resource/authority/data-theme/GOVE",
-        "http://publications.europa.eu/resource/authority/data-theme/SOCI"
-      ]
-    },
-    {
-      "@id": "_:n3a21f11cd9564e0485b1fba708199788b1",
-      "@type": "vcard:Kind",
-      "email": "mailto:noise@census.gov",
-      "fn": "US Census"
-    },
-    {
-      "@id": "_:n3a21f11cd9564e0485b1fba708199788b2",
-      "@type": "vcard:Kind",
-      "email": "mailto:johnsmith@census.gov",
-      "fn": "John Smith"
-    },
-    {
-      "@id": "_:n3a21f11cd9564e0485b1fba708199788b3",
-      "@type": "dcterms:PeriodOfTime",
-      "endDate": {
-        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@value": "2021-06-22T00:00:00"
+      "issued": {
+        "@value": "2021-04-26",
+        "@type": "xsd:date"
       },
-      "startDate": {
-        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@value": "2020-01-01T00:00:00"
+      "spatial": "https://www.geonames.org/4770746",
+      "temporal": {
+        "@type": "dcterms:PeriodOfTime",
+        "endDate": {
+          "@value": "2021-06-22T00:00:00",
+          "@type": "xsd:dateTime"
+        },
+        "startDate": {
+          "@value": "2020-01-01T00:00:00",
+          "@type": "xsd:dateTime"
+        }
+      },
+      "theme": "http://resources.data.gov/authority/themes/society",
+      "modified": {
+        "@value": "2021-04-26",
+        "@type": "xsd:date"
       }
     },
     {
-      "@id": "https://census.gov/data/456",
-      "@type": "dcat:Distribution"
-    },
-    {
-      "@id": "https://census.gov/data/123",
-      "@type": "dcat:Distribution"
-    },
-    {
-      "@id": "https://census.gov",
-      "@type": "http://www.w3.org/ns/org#Organization",
-      "foaf:name": {
-        "@language": "en",
-        "@value": "US Census"
-      }
+      "@id": "https://census.gov/",
+      "@type": "org:Organization",
+      "name": "US Census",
+      "altLabel": "US Census",
+      "prefLabel": "United States Census Bureau"
     }
   ]
 }
