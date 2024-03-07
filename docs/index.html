@@ -19372,17 +19372,17 @@
           nature of geographic data often necessitates the use of various map projections and coordinate systems.
         </p>
         <p>
-          The <a href="#dataset-conforms_to"><code>dct:conformsTo</code></a> property in DCAT is integral in
+          The <a href="#dataset-conforms_to"><code>dcterms:conformsTo</code></a> property in DCAT is integral in
           specifying
           the Coordinate Reference System (CRS) utilized by a dataset or a distribution. Accurately defining the CRS
           is
           essential for understanding the spatial context, enabling precise geographic analysis and ensuring data
           interoperability. </p>
         <p>
-          Additionally, the <a href="#standard-type"><code>dct:type</code></a> property is employed alongside
-          <a href="#dataset-conforms_to"><code>dct:conformsTo</code></a> to delineate the type of reference system, be
+          Additionally, the <a href="#standard-type"><code>dcterms:type</code></a> property is employed alongside
+          <a href="#dataset-conforms_to"><code>dcterms:conformsTo</code></a> to delineate the type of reference system, be
           it spatial or temporal. For spatial
-          datasets, <a href="#standard-type"><code>dct:type</code></a> typically points to a spatial reference system,
+          datasets, <a href="#standard-type"><code>dcterms:type</code></a> typically points to a spatial reference system,
           as defined by URIs like <a
             href="http://resources.data.gov/categories/SpatialReferenceSystem">http://resources.data.gov/categories/SpatialReferenceSystem</a>.
         </p>
@@ -19976,7 +19976,7 @@
 
       <h4>Access Rights</h4>
       <p>
-        The <a href="#distribution-access-rights"><code>dct:accessRights</code></a> property in the DCAT-US
+        The <a href="#distribution-access-rights"><code>dcterms:accessRights</code></a> property in the DCAT-US
         specification plays a key role in defining the accessibility of a dataset, distribution or data
         service. This
         property provides information about the access restrictions placed on a digital resources, including
@@ -19990,7 +19990,7 @@
       </p>
 
       <p>
-        The <a href="#distribution-access-rights"><code>dct:accessRights</code></a> property is used to
+        The <a href="#distribution-access-rights"><code>dcterms:accessRights</code></a> property is used to
         describe the
         general conditions under which a dataset is
         accessible. This may include information about:</p>
@@ -20029,7 +20029,7 @@
       <p>
         This property does not typically include the access URL or mechanism, which
         is covered by the <a href="distribution-access-url"><code>dcat:accessURL</code></a> property. Instead,
-        <a href="#distribution-access-rights"><code>dct:accessRights</code></a> focuses on the legal or policy
+        <a href="#distribution-access-rights"><code>dcterms:accessRights</code></a> focuses on the legal or policy
         constraints that govern the availability of the dataset.
       </p>
       <h4>License Document</h4>
@@ -20068,7 +20068,7 @@
       <p>
         In dataset metadata, the <a href="#properties-for-license-document"><code>dcat-us:LicenseDocument</code></a>
         can
-        be referenced using the property <code>dct:license</code>. This ensures that users are aware of and can
+        be referenced using the property <code>dcterms:license</code>. This ensures that users are aware of and can
         easily
         access the licensing terms associated with a dataset. </p>
       <p>
