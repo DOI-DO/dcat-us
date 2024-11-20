@@ -1,6 +1,6 @@
 var respecConfig = {
   specStatus: "base",
-  group: "wgbase",
+  group: "",
   latestVersion: "https://doi-do.github.io/dcat-us/",
   logos: [],
   maxTocLevel: 2,
