@@ -1,10 +1,13 @@
 var respecConfig = {
   specStatus: "base",
-  group: "none",
+  group: "wgbase",
   latestVersion: "https://doi-do.github.io/dcat-us/",
   logos: [],
   maxTocLevel: 2,
   overrideCopyright: true,
+  lint: {
+    "no-w3c-group": false, // Disable linting for W3C group association
+  },
   editors: [
     {
       name: "Thomas Dabolt",
