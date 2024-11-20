@@ -1,10 +1,10 @@
 var respecConfig = {
   specStatus: "base",
-  group: "",
-  specStatus: "ED",
+  group: "none",
   latestVersion: "https://doi-do.github.io/dcat-us/",
   logos: [],
   maxTocLevel: 2,
+  overrideCopyright: true,
   editors: [
     {
       name: "Thomas Dabolt",
