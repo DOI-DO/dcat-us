@@ -1,6 +1,6 @@
 var respecConfig = {
   specStatus: "base",
-  group: ""
+  group: "",
   specStatus: "ED",
   latestVersion: "https://doi-do.github.io/dcat-us/",
   logos: [],
