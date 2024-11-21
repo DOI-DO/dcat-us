@@ -40,7 +40,7 @@
         "sample": {
             "$id": "http://www.w3.org/ns/adms#sample",
             "title": "sample",
-            "description": "Links to a sample of an Dataset, which is a dcat:Distribution.",
+            "description": "Links to a sample of a Dataset, which is a dcat:Distribution.",
             "oneOf": [
                 {
                     "type": "null"
