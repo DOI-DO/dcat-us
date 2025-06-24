@@ -1184,17 +1184,20 @@
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Document",
-                            "description": "inline description of Document"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Document",
-                            "format": "iri"
-                        }
-                    ]
+                    "type": "array",
+                    "items": {
+                       "oneOf": [
+                           {
+                               "$ref": "#/definitions/Document",
+                               "description": "inline description of Document"
+                           },
+                           {
+                               "type": "string",
+                               "description": "reference iri of Document",
+                               "format": "iri"
+                           }
+                       ]
+                    }
                 }
             ]
         },
