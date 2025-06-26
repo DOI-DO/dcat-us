@@ -16320,7 +16320,7 @@
             href="http://xmlns.com/foaf/0.1/#term_Person"><code>foaf:Person</code></a> class in DCAT-US 3.0 is to
           provide a more comprehensive and standardized representation of individuals within datasets. In earlier
           versions, like DCAT 1.1, only a single "name" property was available for describing persons, limiting the
-          richness of personal data representation. By introducing properties like "firstName," "givenName," and
+          richness of personal data representation. By introducing properties like "givenName," "familyName," and
           "affiliation," DCAT-US 3.0 aligns with best practices in data representation, allowing data publishers to
           provide more detailed information about individuals and their affiliations with organizations. This
           enhancement enhances data usability and transparency.
@@ -16358,8 +16358,8 @@
           <td>0..1</td>
         </tr>
         <tr>
-          <td><a href="#person-first_name">first name</a></td>
-          <td><a href="http://xmlns.com/foaf/0.1/#term_firstname"><code>foaf:firstname</code></a>
+          <td><a href="#person-first_name">family name</a></td>
+          <td><a href="http://xmlns.com/foaf/0.1/#term_familyName"><code>foaf:familyName</code></a>
           </td>
           <td><a data-cite="XMLSCHEMA11-2#string"><code>xsd:string</code></a>
           </td>
@@ -16449,13 +16449,13 @@
           </tbody>
         </table>
       </section>
-      <section id="person-first_name">
-        <h4>Property: first name</h4>
+      <section id="person-family_name">
+        <h4>Property: family name</h4>
         <table class="def">
           <tbody>
             <tr>
               <th>Property</th>
-              <td>first name</td>
+              <td>family name</td>
             </tr>
             <tr>
               <th>Requirement level</th>
@@ -16467,7 +16467,7 @@
             </tr>
             <tr>
               <th>URI</th>
-              <td><a href="http://xmlns.com/foaf/0.1/#term_firstname"><code>foaf:firstname</code></a>
+              <td><a href="http://xmlns.com/foaf/0.1/#term_famnilyName"><code>foaf:familyName</code></a>
               </td>
             </tr>
             <tr>
@@ -16477,7 +16477,7 @@
             </tr>
             <tr>
               <th>Definition</th>
-              <td>The first name of the Person</td>
+              <td>The family name of the Person</td>
             </tr>
           </tbody>
         </table>
@@ -18560,10 +18560,9 @@
             property is the only property mandatory for describing a person and is typically used for display.
           </li>
           <li>
-            <a data-cite="FOAF#term_firstName"><code>foaf:firstName:</code></a> This optional property represents the
-            first name of a person. It is used to provide the first name of individuals associated with or responsible
-            for resources in the DCAT-US profile. It can be used to provide structured information about an
-            individual's first name.
+            <a data-cite="FOAF#term_familyName"><code>foaf:familyName:</code></a> This optional property represents the
+            family name of a person. It can be used to provide structured information about an
+            individual's name.
           </li>
           <li>
             <a data-cite="FOAF#term_givenName"><code>foaf:givenName:</code></a> This optional property represents the
