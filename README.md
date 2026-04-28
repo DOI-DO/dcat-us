@@ -1,3 +1,6 @@
+# DEPRECATED
+Please see https://resources.data.gov/resources/dcat-us3/
+
 # [DCAT-US Schema v3.0](https://doi-do.github.io/dcat-us/)
 
 The FAIRness Project is introducing a draft update to the Data Catalog (DCAT) standard for the United States!  This update, “DCAT-US v3.0 Schema,” builds upon the requirements we received from agencies as well as data creators, providers, and users, Data Inventory statutory requirements, and the lessons learned over ten years of successful implementation of the Project Open Data Metadata Standard (DCAT-US v1.1) used by Data.gov.
