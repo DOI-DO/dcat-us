@@ -604,17 +604,20 @@
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Standard",
-                            "description": "inline description of Standard"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Standard",
-                            "format": "iri"
-                        }
-                    ]
+                    "type": "array",
+                    "items": {
+						"oneOf": [
+							{
+								"$ref": "#/definitions/Standard",
+								"description": "inline description of Standard"
+							},
+							{
+								"type": "string",
+								"description": "reference iri of Standard",
+								"format": "iri"
+							}
+						]
+					}
                 }
             ]
         },
@@ -1184,17 +1187,20 @@
                     "type": "null"
                 },
                 {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/Document",
-                            "description": "inline description of Document"
-                        },
-                        {
-                            "type": "string",
-                            "description": "reference iri of Document",
-                            "format": "iri"
-                        }
-                    ]
+                    "type": "array",
+                    "items": {
+                       "oneOf": [
+                           {
+                               "$ref": "#/definitions/Document",
+                               "description": "inline description of Document"
+                           },
+                           {
+                               "type": "string",
+                               "description": "reference iri of Document",
+                               "format": "iri"
+                           }
+                       ]
+                    }
                 }
             ]
         },

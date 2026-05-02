@@ -1704,7 +1704,6 @@ dcat-us-shp:Dataset_Shape-conformsTo a sh:PropertyShape ;
     rdfs:label "conforms to" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Optional ;
     sh:description "This property refers to an standard which the described Dataset conforms." ;
-    sh:maxCount 1 ;
     sh:minCount 0 ;
     sh:name "conformsTo" ;
     sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcterms:Standard ] ) ;
@@ -1758,11 +1757,11 @@ dcat-us-shp:Dataset_Shape-describedBy a sh:PropertyShape ;
     rdfs:label "data dictionary" ;
     dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
     sh:description "This property refers to a distribution describing the Data Dictionary." ;
-    sh:maxCount 1 ;
-    sh:minCount 0 ;
+    sh:minCount 1 ;
     sh:name "describedBy" ;
     sh:or ( [ sh:nodeKind sh:IRI ] [ sh:class dcat:Distribution ] ) ;
-    sh:path dcat-us:describedBy .
+    sh:path dcat-us:describedBy ;
+    sh:severity sh:Violation .
 
 dcat-us-shp:Dataset_Shape-description a sh:PropertyShape ;
     rdfs:label "description" ;
@@ -2484,10 +2483,10 @@ dcat-us-shp:Distribution_Shape-language a sh:PropertyShape ;
 
 dcat-us-shp:Distribution_Shape-license a sh:PropertyShape ;
     rdfs:label "license" ;
-    dcat-us-shp:requirementLevel dcat-us-shp:Recommended ;
-    sh:description "A licence under which the Distribution is made available." ;
+    dcat-us-shp:requirementLevel dcat-us-shp:Mandatory ;
+    sh:description "A license under which the Distribution is made available." ;
     sh:maxCount 1 ;
-    sh:minCount 0 ;
+    sh:minCount 1 ;
     sh:name "license" ;
     sh:or ( [ sh:nodeKind sh:BlankNodeOrIRI ] [ sh:class dcterms:LicenseDocument ] ) ;
     sh:path dcterms:license ;

@@ -1142,8 +1142,8 @@
         "foaf:Person": {
             "@id": "foaf:Person",
             "@context": {
-                "firstname": "http://xmlns.com/foaf/0.1/firstname",
                 "givenName": "http://xmlns.com/foaf/0.1/givenName",
+				"familyName": "http://xmlns.com/foaf/0.1/familyname",
                 "name": "http://xmlns.com/foaf/0.1/name",
                 "memberOf": {
                     "@id": "org:memberOf",

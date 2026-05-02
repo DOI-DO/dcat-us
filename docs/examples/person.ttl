@@ -6,8 +6,8 @@
 # Define the Person (John Smith)
 ex:JohnSmith a foaf:Person ;
     foaf:name "John Smith" ;
-    foaf:firstName "John" ;
-    foaf:givenName "Smith" ;
+    foaf:givenName "John" ;
+    foaf:familyName "Smith" ;
     org:memberOf <http://www.doi.gov> .
 
 # Define the Organization (Department of Interior)

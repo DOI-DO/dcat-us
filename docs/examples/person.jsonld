@@ -11,8 +11,8 @@
       "@id": "http://example.org/JohnSmith",
       "@type": "foaf:Person",
       "http://www.w3.org/ns/org#memberOf": "http://www.doi.gov",
-      "firstName": "John",
-      "givenName": "Smith",
+      "givenName": "John",
+      "familyName": "Smith",
       "name": "John Smith"
     }
   ]

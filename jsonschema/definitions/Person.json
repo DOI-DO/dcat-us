@@ -11,10 +11,10 @@
             "type": "string",
             "default": "Person"
         },
-        "firstname": {
-            "$id": "http://xmlns.com/foaf/0.1/firstname",
-            "title": "first name",
-            "description": "The first name of the Person",
+        "familyName": {
+            "$id": "http://xmlns.com/foaf/0.1/familyName",
+            "title": "family name",
+            "description": "The family name of the Person",
             "oneOf": [
                 {
                     "type": "null"

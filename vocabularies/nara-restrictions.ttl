@@ -82,7 +82,7 @@
     skos:inScheme :SpecificAccessRestrictionAuthorityList ;
     skos:broader <SpecificAccessRestrictionAuthorityList/FOIA> .
 
-<FOIAb2>  a skos:Concept ;
+<SpecificAccessRestrictionAuthorityList/FOIAb2>  a skos:Concept ;
     skos:prefLabel "FOIA (b)(2) Internal Personnel Rules and Practices"@en ;
     skos:inScheme :SpecificAccessRestrictionAuthorityList ;
     skos:broader <SpecificAccessRestrictionAuthorityList/FOIA> .
